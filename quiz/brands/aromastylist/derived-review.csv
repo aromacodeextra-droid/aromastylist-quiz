@@ -1,0 +1,989 @@
+handle,field,value,driving notes,confidence
+akro-awake,presence,close,italian lemon; green cardamom,Medium
+akro-awake,season,hot,italian lemon; green cardamom,Medium
+akro-awake,season,cold,coffee; green cardamom,Medium
+akro-awake,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+maison-crivelli-musc-nurasana-extrait,presence,fills,labdanum; frankincense; ginger; cardamom; extrait concentration,High
+maison-crivelli-musc-nurasana-extrait,season,cold,labdanum; tonka bean; ginger; cardamom; frankincense,High
+maison-crivelli-musc-nurasana-extrait,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+matiere-premiere-vanilla-powder-extrait,presence,noticed,vanilla; extrait concentration; white musk,Medium
+matiere-premiere-vanilla-powder-extrait,season,mild,palo santo; coconut powder; white musk,Low
+matiere-premiere-vanilla-powder-extrait,season,cold,vanilla; coconut powder; tonka bean,High
+matiere-premiere-vanilla-powder-extrait,gender,Feminine,coconut powder,Low
+matiere-premiere-vanilla-powder,presence,noticed,madagascar vanilla; vanilla absolute; white musk,Medium
+matiere-premiere-vanilla-powder,season,mild,heliotrope; palo santo; coconut powder; white musk,High
+matiere-premiere-vanilla-powder,season,cold,madagascar vanilla; vanilla absolute; coconut powder; coconut,High
+matiere-premiere-vanilla-powder,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+matiere-premiere-radical-rose-extrait,presence,fills,spanish labdanum; patchouli; saffron; pepper; extrait concentration,High
+matiere-premiere-radical-rose-extrait,season,cold,spanish labdanum; saffron; pepper; patchouli,Medium
+matiere-premiere-radical-rose-extrait,gender,Masculine,spanish labdanum,Medium
+clive-christian-no-1-masculine,presence,noticed,amber; cardamom; nutmeg; paprika; caraway; vanilla; lime; mandarin orange,High
+clive-christian-no-1-masculine,season,mild,ylang-ylang; jasmine; lily-of-the-valley; heliotrope; rose; sandalwood; virginia cedar; vetiver,High
+clive-christian-no-1-masculine,season,cold,amber; vanilla; tonka bean; cardamom; nutmeg; paprika; caraway,Medium
+clive-christian-no-1-masculine,gender,Masculine,"product name: ""No. 1 Masculine""",High
+clive-christian-matsukita,presence,noticed,amber; balsam fir; pink pepper; nutmeg; bergamot; musk; maté,High
+clive-christian-matsukita,season,hot,bergamot; maté; balsam fir,Medium
+clive-christian-matsukita,season,mild,chinese jasmine; jasmine sambac; guaiac wood; woody notes; musk,Medium
+clive-christian-matsukita,season,cold,amber; pink pepper; nutmeg; balsam fir,Medium
+clive-christian-matsukita,gender,Masculine,guaiac wood; amber; balsam fir,Medium
+clive-christian-x-for-men,presence,fills,amber; french labdanum; styrax; oakmoss; paprika; cinnamon; vanilla,High
+clive-christian-x-for-men,season,cold,amber; french labdanum; vanilla; paprika; cinnamon; styrax; oakmoss,High
+clive-christian-1872-for-men,presence,noticed,amber; french labdanum; olibanum; patchouli; pepper; nutmeg; petitgrain; lime,High
+clive-christian-1872-for-men,season,hot,petitgrain; lime; grapefruit; bergamot; mandarin orange; galbanum; lavender; rosemary,High
+clive-christian-1872-for-men,season,mild,marigold; cyclamen; freesia; jasmine; virginia cedar; musk; peach; pineapple,Medium
+clive-christian-1872-for-men,season,cold,amber; french labdanum; pepper; nutmeg; olibanum; patchouli,Medium
+clive-christian-rock-rose,presence,noticed,labdanum; amber; patchouli; black pepper; bergamot; neroli,Medium
+clive-christian-rock-rose,season,hot,bergamot; neroli; lavender; clary sage,Medium
+clive-christian-rock-rose,season,cold,labdanum; amber; cacao; black pepper; patchouli,High
+clive-christian-rock-rose,gender,Masculine,vetiver; labdanum; amber; lavender; clary sage,High
+maison-crivelli-oud-maracuja-extrait,presence,fills,agarwood; leather; amber; labdanum; benzoin; indonesian patchouli leaf; saffron; vanilla,High
+maison-crivelli-oud-maracuja-extrait,season,cold,amber; labdanum; vanilla; agarwood; saffron; leather; benzoin; indonesian patchouli leaf,High
+jusbox-use-abuse,presence,noticed,incense; opoponax; mandarin; musk,High
+jusbox-use-abuse,season,mild,white tuberose; jasmine sambac; white peony; sandalwood; musk,High
+jusbox-use-abuse,season,cold,incense; opoponax,Medium
+jusbox-use-abuse,gender,Feminine,white tuberose; jasmine sambac; white peony,Medium
+thameen-bold-as-love,presence,fills,smoky leather; patchouli; ginger,Medium
+thameen-bold-as-love,season,hot,mandarin; lavender; juniper berry; geranium; apple; pineapple,High
+thameen-bold-as-love,season,cold,ginger; smoky leather; patchouli,Medium
+thameen-bold-as-love,gender,Masculine,vetiver; lavender; juniper berry; geranium; smoky leather,Medium
+thameen-chords,presence,fills,leather; blond tobacco,Low
+thameen-chords,season,hot,bergamot; neroli,Medium
+thameen-chords,season,mild,orange blossom; ylang-ylang; cypriol; atlas cedarwood,Medium
+thameen-chords,season,cold,honey; leather; blond tobacco,Medium
+thameen-chords,gender,Masculine,cypriol; atlas cedarwood; leather; blond tobacco,Medium
+thameen-peacock-throne,presence,noticed,patchouli; pink pepper; nutmeg; vanilla; sicilian lemon; orris,Medium
+thameen-peacock-throne,season,mild,taif rose; turkish rose; jasmine; vetiver; sandalwood; orris,High
+thameen-peacock-throne,season,cold,vanilla; pink pepper; nutmeg; patchouli,Medium
+thameen-peacock-throne,gender,Unisex,vetiver; taif rose; turkish rose; jasmine; orris,Medium
+thameen-cullinan-diamond,presence,noticed,amber; black pepper; vanilla absolute; orris; cashmere musk,Medium
+thameen-cullinan-diamond,season,mild,rose; cedarwood; orris; cashmere musk,High
+thameen-cullinan-diamond,season,cold,amber; vanilla absolute; black pepper,Medium
+thameen-cullinan-diamond,gender,Unisex,cedarwood; amber; rose; orris,Medium
+thameen-royal-sapphire,presence,noticed,grey amber; moss; patchouli; mandarin; bergamot,High
+thameen-royal-sapphire,season,hot,mandarin; bergamot,Medium
+thameen-royal-sapphire,season,mild,orange blossom; jasmine; dry wood,Medium
+thameen-royal-sapphire,season,cold,grey amber; moss; patchouli,Medium
+thameen-royal-sapphire,gender,Unisex,grey amber; orange blossom; jasmine,High
+thameen-diadem,presence,fills,amber; frankincense; patchouli; cardamom; saffron; vanilla,High
+thameen-diadem,season,cold,amber; vanilla; cardamom; saffron; frankincense; patchouli,High
+thameen-diadem,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+thameen-peregrina,presence,fills,amber; myrrh; vanilla,Medium
+thameen-peregrina,season,mild,damask rose; gardenia; jasmine; lily of the valley; ylang-ylang; white musk,High
+thameen-peregrina,season,cold,amber; vanilla; caramel; myrrh,High
+thameen-peregrina,gender,Feminine,damask rose; gardenia; jasmine; lily of the valley; ylang-ylang; caramel,High
+thameen-riviere,presence,fills,oud; leather; amber; patchouli; saffron; black pepper,High
+thameen-riviere,season,cold,amber; oud; saffron; black pepper; leather; patchouli,High
+thameen-riviere,gender,Masculine,cypriol; oud; amber; clary sage; leather,High
+thameen-carved-oud,presence,fills,oud; amber; patchouli; cardamom; pink pepper,High
+thameen-carved-oud,season,mild,cypriol; cedarwood; sandalwood; vetiver; iris; musk,High
+thameen-carved-oud,season,cold,amber; oud; cardamom; pink pepper; patchouli,High
+thameen-carved-oud,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+jusbox-14hour-dream,presence,noticed,patchouli; black pepper; saffron; ginger; vanilla; iris,Medium
+jusbox-14hour-dream,season,mild,cedarwood; sandalwood; guaiac wood; iris,High
+jusbox-14hour-dream,season,cold,vanilla; black pepper; saffron; ginger; patchouli,High
+jusbox-14hour-dream,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+jusbox-siren-and-sailors,presence,noticed,suede; patchouli; rum; whiskey; vanilla; bergamot; musk,Medium
+jusbox-siren-and-sailors,season,mild,rose; osmanthus; musk; peach,Medium
+jusbox-siren-and-sailors,season,cold,vanilla; suede; rum; whiskey; patchouli,High
+jusbox-siren-and-sailors,gender,Feminine,rose; osmanthus; peach,Medium
+jusbox-night-flow,presence,fills,leather; tolu balsam; patchouli; ambergris; saffron; pink pepper,High
+jusbox-night-flow,season,cold,saffron; pink pepper; leather; tolu balsam; patchouli; ambergris,High
+jusbox-night-flow,gender,Unisex,davana; leather; osmanthus; jasmine sambac; raspberry,Medium
+jusbox-visionary-eye,presence,close,bergamot; iris; musk,High
+jusbox-visionary-eye,season,hot,bergamot; lavender; wormwood; thyme,High
+jusbox-visionary-eye,season,mild,sandalwood; iris; musk,Medium
+jusbox-visionary-eye,gender,Masculine,lavender; wormwood; thyme,High
+jusbox-good-morning,presence,close,tangerine; cashmeran; musk; sea notes; violet leaf,High
+jusbox-good-morning,season,hot,tangerine; sea notes; violet leaf,High
+jusbox-good-morning,season,mild,magnolia; cashmeran; musk,Medium
+jusbox-good-morning,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+kilian-smoking-hot,presence,fills,tobacco; amberwood; smoke; cinnamon; bourbon vanilla,High
+kilian-smoking-hot,season,cold,amberwood; bourbon vanilla; licorice; cinnamon; tobacco; smoke,High
+kilian-smoking-hot,gender,Masculine,amberwood; clary sage; tobacco,High
+kilian-good-girl-gone-bad,presence,noticed,amber; neroli; bergamot,Medium
+kilian-good-girl-gone-bad,season,mild,indian tuberose; osmanthus; jasmine; may rose; narcissus; sandalwood; peach,High
+kilian-good-girl-gone-bad,gender,Feminine,indian tuberose; osmanthus; jasmine; may rose; narcissus; peach,High
+kilian-sacred-wood,presence,fills,amber; elemi; incense; myrrh; tolu balsam; pink pepper,Medium
+kilian-sacred-wood,season,cold,amber; milk; pink pepper; elemi; incense; myrrh; tolu balsam,High
+kilian-sacred-wood,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+kilian-moonlight-in-heaven,presence,close,grapefruit; lemon; orris,Medium
+kilian-moonlight-in-heaven,season,hot,grapefruit; lemon; mango; peach,Medium
+kilian-moonlight-in-heaven,season,mild,tuberose; vetiver; orris; mango; peach,Medium
+kilian-moonlight-in-heaven,season,cold,vanilla; coconut; rice; tonka bean; pink pepper,High
+kilian-moonlight-in-heaven,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+kilian-kologne-shield-of-protection,presence,close,green mandarin; bitter orange; lime; petitgrain; neroli; musk; galbanum,High
+kilian-kologne-shield-of-protection,season,hot,green mandarin; bitter orange; lime; petitgrain; neroli; galbanum; mint; eucalyptus,High
+kilian-kologne-shield-of-protection,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+kilian-cant-stop-loving-you,presence,fills,labdanum; styrax; olibanum; oakmoss; vanilla,High
+kilian-cant-stop-loving-you,season,cold,labdanum; vanilla; honey; styrax; olibanum; oakmoss,High
+kilian-cant-stop-loving-you,gender,Unisex,labdanum; orange blossom,Medium
+kilian-apple-brandy-on-the-rocks,presence,noticed,ambroxan; brandy; rum; cardamom; vanilla; bergamot,High
+kilian-apple-brandy-on-the-rocks,season,cold,vanilla; cardamom; brandy; rum; ambroxan,High
+kilian-apple-brandy-on-the-rocks,gender,Unisex,cedar; apple; pineapple,Low
+kilian-angels-share,presence,noticed,cognac; cinnamon; vanilla,Medium
+kilian-angels-share,season,cold,vanilla; tonka bean; praline; candied almond; cinnamon; cognac,High
+kilian-angels-share,gender,Unisex,oak; praline; candied almond,Medium
+ds-durga-deep-dark-vanilla,presence,noticed,dark patchouli; pink pepper; vanilla absolute; green vanilla leaves; hay,Medium
+ds-durga-deep-dark-vanilla,season,hot,green vanilla leaves; hay; cypress root,High
+ds-durga-deep-dark-vanilla,season,cold,vanilla absolute; green vanilla leaves; pink pepper; dark patchouli,High
+ds-durga-deep-dark-vanilla,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+ds-durga-brown-flowers,presence,close,dried cedrat; aged musk,Medium
+ds-durga-brown-flowers,season,mild,brown orchid; sambac jasmine; aged musk,Medium
+ds-durga-brown-flowers,season,cold,coffee flower; coffee; roots,Medium
+ds-durga-brown-flowers,gender,Feminine,brown orchid; sambac jasmine,Medium
+ds-durga-radio-bombay,presence,close,iris; ambrette; musk,Medium
+ds-durga-radio-bombay,season,mild,boronia; sandalwood; cedar; iris; ambrette; musk; peach,High
+ds-durga-radio-bombay,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+ds-durga-pistachio,presence,noticed,patchouli; cardamom; vanilla; musk,High
+ds-durga-pistachio,season,cold,vanilla; pistachio; raw sugar; roasted almond; cardamom; patchouli,High
+ds-durga-pistachio,gender,Unisex,raw sugar,Low
+ds-durga-jazmin-yucatan,presence,close,bergamot; water notes; snake plant,Medium
+ds-durga-jazmin-yucatan,season,hot,bergamot; water notes; snake plant,High
+ds-durga-jazmin-yucatan,season,mild,jasmine sambac; passion flower; vetiver,Medium
+ds-durga-jazmin-yucatan,season,cold,clove; copal,Medium
+ds-durga-jazmin-yucatan,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+ds-durga-black-magenta,presence,noticed,tobacco; black amber; black pepper; orris; galbanum,Medium
+ds-durga-black-magenta,season,mild,dianthus; orange blossom; sandalwood; orris; pink pineapple,High
+ds-durga-black-magenta,season,cold,black amber; black pepper; tobacco,Medium
+ds-durga-black-magenta,gender,Unisex,black amber; tobacco; dianthus; orange blossom; pink pineapple; orris,Medium
+etat-libre-dorange-yes-i-do,presence,close,aldehydes; musk,High
+etat-libre-dorange-yes-i-do,season,mild,lily of the valley; jasmine; orange blossom; peony; cedar; aldehydes; musk; pear,High
+etat-libre-dorange-yes-i-do,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+etat-libre-dorange-dangerous-complicity,presence,fills,leather; patchouli; rum; ginger,Medium
+etat-libre-dorange-dangerous-complicity,season,mild,osmanthus; ylang-ylang; jasmine; sandalwood; cashmere wood,High
+etat-libre-dorange-dangerous-complicity,season,cold,coconut; ginger; leather; rum; patchouli,High
+etat-libre-dorange-dangerous-complicity,gender,Unisex,leather; osmanthus; ylang-ylang; jasmine,Medium
+etat-libre-dorange-story-of-your-life,presence,fills,amber wood; benzoin; patchouli; rum; vanilla,High
+etat-libre-dorange-story-of-your-life,season,cold,amber wood; vanilla; brioche; cocoa; benzoin; rum; patchouli,High
+etat-libre-dorange-story-of-your-life,gender,Masculine,amber wood; davana; laurel,Medium
+etat-libre-dorange-she-was-an-anomaly,presence,close,green tangerine; iris; musk,Medium
+etat-libre-dorange-she-was-an-anomaly,season,mild,vanilla orchid; white flowers; sandalwood; cedarwood; iris; musk; plum,High
+etat-libre-dorange-she-was-an-anomaly,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+etat-libre-dorange-attaquer-le-soleil,presence,fills,labdanum; amber; incense; resin,High
+etat-libre-dorange-attaquer-le-soleil,season,cold,labdanum; amber; incense; resin,High
+maison-crivelli-neroli-nasimba,presence,noticed,leather; labdanum; pink pepper; cardamom; neroli; petitgrain; mandarin,Medium
+maison-crivelli-neroli-nasimba,season,hot,neroli; petitgrain; mandarin,Medium
+maison-crivelli-neroli-nasimba,season,cold,labdanum; pink pepper; cardamom; leather,High
+maison-crivelli-neroli-nasimba,gender,Masculine,vetiver; labdanum; leather,High
+maison-crivelli-papyrus-moleculaire,presence,fills,tobacco; elemi resin; olibanum; black pepper,High
+maison-crivelli-papyrus-moleculaire,season,cold,tonka bean; black pepper; elemi resin; olibanum; tobacco,High
+maison-crivelli-cuir-infrarouge,presence,fills,oud; leather; patchouli; cinnamon; vanilla; extrait concentration,High
+maison-crivelli-cuir-infrarouge,season,cold,vanilla; tonka bean; oud; cinnamon; leather; patchouli,High
+maison-crivelli-cuir-infrarouge,gender,Unisex,cedarwood; oud; leather; osmanthus; raspberry; orris,Low
+new-notes-latte-di-cherry,presence,noticed,amber; warm spices; vanilla; sweet orange; musk,High
+new-notes-latte-di-cherry,season,mild,jasmine; ylang-ylang; bulgarian rose; sandalwood; vetiver; musk; cherry; red berries,High
+new-notes-latte-di-cherry,season,cold,amber; vanilla; almond; tonka bean; warm spices,High
+new-notes-latte-di-cherry,gender,Feminine,jasmine; ylang-ylang; bulgarian rose; cherry; red berries,Low
+matiere-premiere-parisian-musc,presence,close,ambrette; musk; ambrettolide,High
+matiere-premiere-parisian-musc,season,mild,virginia cedar; ambrette; musk; ambrettolide,Medium
+matiere-premiere-parisian-musc,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+matiere-premiere-french-flower,presence,close,chinese tea,Medium
+matiere-premiere-french-flower,season,hot,chinese tea; pear,Low
+matiere-premiere-french-flower,season,mild,tuberose; orange blossom; pear,Medium
+matiere-premiere-french-flower,season,cold,nigerian ginger; ambroxan,Low
+matiere-premiere-french-flower,gender,Feminine,tuberose; orange blossom; pear,Medium
+matiere-premiere-falcon-leather,presence,fills,agarwood; birch tar; labdanum; benzoin; saffron,High
+matiere-premiere-falcon-leather,season,cold,labdanum; agarwood; saffron; birch tar; benzoin,High
+matiere-premiere-falcon-leather,gender,Masculine,birch tar; agarwood; labdanum,High
+matiere-premiere-cologne-cedrat,presence,close,bergamot; italian citron; mate; cologne concentration,High
+matiere-premiere-cologne-cedrat,season,hot,bergamot; italian citron; mate,Medium
+matiere-premiere-cologne-cedrat,season,cold,pink pepper; black pepper,Low
+matiere-premiere-cologne-cedrat,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+matiere-premiere-crystal-saffron,presence,noticed,incense; ambroxan; saffron; musk,High
+matiere-premiere-crystal-saffron,season,cold,saffron; incense; ambroxan,Medium
+matiere-premiere-crystal-saffron,gender,Masculine,,Low
+matiere-premiere-santal-austral-extract,presence,noticed,siam benzoin; black cardamom; extrait concentration; iris,Medium
+matiere-premiere-santal-austral-extract,season,cold,almond milk; tonka bean; black cardamom; siam benzoin,High
+matiere-premiere-santal-austral-extract,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+matiere-premiere-santal-austral,presence,noticed,benzoin; iris,Low
+matiere-premiere-santal-austral,season,mild,australian sandalwood; iris,Low
+matiere-premiere-santal-austral,season,cold,tonka bean; benzoin,Medium
+matiere-premiere-santal-austral,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+matiere-premiere-encens-suave,presence,fills,labdanum; incense; benzoin; madagascar vanilla,High
+matiere-premiere-encens-suave,season,cold,labdanum; madagascar vanilla; coffee; incense; benzoin,High
+matiere-premiere-encens-suave,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+matiere-premiere-bois-debene,presence,close,oil (sits on skin),Low
+matiere-premiere-bois-debene,season,hot,juniper berries,Low
+matiere-premiere-bois-debene,season,mild,guaiac wood; cypriol oil; juniper berries,Medium
+matiere-premiere-bois-debene,gender,Masculine,guaiac wood; cypriol oil; juniper berries,High
+matiere-premiere-radical-rose,presence,noticed,labdanum; patchouli; saffron; pepper,Medium
+matiere-premiere-radical-rose,season,cold,labdanum; saffron; pepper; patchouli,High
+matiere-premiere-radical-rose,gender,Masculine,labdanum,Medium
+escentric-molecules-molecule-01-iris,presence,close,orris; iso e super,Medium
+escentric-molecules-molecule-01-iris,season,mild,orris; iso e super,Low
+escentric-molecules-molecule-01-iris,mood,focus-flow,orris; iso e super,Low
+escentric-molecules-molecule-01-iris,gender,Feminine,orris,Low
+zarkoperfume-pink-molecule-090-09,presence,noticed,champagne,Low
+zarkoperfume-pink-molecule-090-09,season,mild,black orchid; blackwood; mahogany; apricot,Medium
+zarkoperfume-pink-molecule-090-09,season,cold,whipped cream; champagne,Medium
+zarkoperfume-pink-molecule-090-09,mood,celebrate-indulge,whipped cream; champagne; apricot,Medium
+zarkoperfume-pink-molecule-090-09,gender,Feminine,black orchid; apricot; whipped cream,Medium
+zarkoperfume-the-muse,presence,noticed,white oud; cotton flower; white musk,Medium
+zarkoperfume-the-muse,season,mild,cotton flower; white musk,Low
+zarkoperfume-the-muse,season,cold,white oud,Low
+zarkoperfume-the-muse,mood,romance-presence,cotton flower; white musk; white oud,Medium
+zarkoperfume-the-muse,gender,Masculine,white oud,Low
+zarkoperfume-purple-molecule-070-07,presence,close,musk,Low
+zarkoperfume-purple-molecule-070-07,season,mild,white orchid; magnolia; wildflowers; sandalwood; musk,High
+zarkoperfume-purple-molecule-070-07,mood,romance-presence,white orchid; magnolia; wildflowers; musk; madagascar vanilla,Medium
+zarkoperfume-purple-molecule-070-07,gender,Feminine,white orchid; magnolia; wildflowers,Medium
+zarkoperfume-molecule-234-38,presence,close,iso e super,Medium
+zarkoperfume-molecule-234-38,season,mild,iso e super,Low
+zarkoperfume-molecule-234-38,mood,relax-wind-down,iso e super,Low
+zarkoperfume-molecule-234-38,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+hermes-barenia,presence,noticed,patchouli; white ginger lily; bergamot,Medium
+hermes-barenia,season,mild,white ginger lily; akigalawood; oak; miracle berry,Medium
+tiziana-terenzi-gumin,presence,noticed,agarwood; amber; birch; mandarin orange; orange; bergamot; musk; ozonic notes,Medium
+tiziana-terenzi-gumin,season,hot,mandarin orange; orange; bergamot; ozonic notes; pineapple,Medium
+tiziana-terenzi-gumin,season,mild,violet; jasmine; rose; sandalwood; musk; pineapple,Medium
+tiziana-terenzi-gumin,season,cold,amber; agarwood; birch,Medium
+tiziana-terenzi-gumin,mood,romance-presence,violet; jasmine; rose; musk; amber; agarwood,Medium
+tiziana-terenzi-gumin,gender,Unisex,birch; agarwood; amber; violet; jasmine; rose; pineapple,High
+giardino-benessere-sandalo-e-mirra,presence,noticed,oakmoss; cardamom; nutmeg; cinnamon; bergamot,High
+giardino-benessere-sandalo-e-mirra,season,hot,bergamot; geranium; lavender,Medium
+giardino-benessere-sandalo-e-mirra,season,mild,sandalwood; teak wood,Low
+giardino-benessere-sandalo-e-mirra,season,cold,cardamom; nutmeg; cinnamon; oakmoss,Medium
+escentric-molecules-molecule-01-patchouli,presence,close,iso e super,Low
+escentric-molecules-molecule-01-patchouli,season,cold,patchouli coeur; indonesian patchouli leaf,Low
+escentric-molecules-molecule-01-patchouli,mood,relax-wind-down,iso e super,Low
+escentric-molecules-molecule-01-patchouli,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+escentric-molecules-molecule-01-mandarin,presence,close,mandarin orange; iso e super,Medium
+escentric-molecules-molecule-01-mandarin,season,mild,iso e super,Low
+escentric-molecules-molecule-01-mandarin,mood,morning-boost,mandarin orange,Low
+escentric-molecules-molecule-01-mandarin,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+escentric-molecules-molecule-01-ginger,presence,close,iso e super,Medium
+escentric-molecules-molecule-01-ginger,season,mild,iso e super,Low
+escentric-molecules-molecule-01-ginger,mood,relax-wind-down,iso e super,Low
+escentric-molecules-molecule-01-ginger,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+escentric-molecules-molecule-02,presence,noticed,ambroxan,Medium
+escentric-molecules-molecule-02,season,mild,,Low
+escentric-molecules-molecule-02,mood,morning-boost,,Low
+escentric-molecules-molecule-02,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+escentric-molecules-molecule-01,presence,close,iso e super,Medium
+escentric-molecules-molecule-01,season,mild,iso e super,Low
+escentric-molecules-molecule-01,mood,relax-wind-down,iso e super,Low
+escentric-molecules-molecule-01,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+escentric-molecules-escentric-05,presence,close,bergamot; orange; iris; hedione; cashmeran; iso e super; musk; fig leaf,Medium
+escentric-molecules-escentric-05,season,hot,bergamot; orange; fig leaf; juniper; rosemary; laurel; basil; cypress,High
+escentric-molecules-escentric-05,season,mild,freesia; jasmine; iris; hedione; cashmeran; iso e super; musk,Medium
+escentric-molecules-escentric-05,mood,focus-flow,juniper; rosemary; laurel; basil; cypress; iris; bergamot; orange,High
+escentric-molecules-escentric-05,gender,Masculine,cypress; labdanum; juniper; rosemary; laurel; basil,Medium
+escentric-molecules-escentric-04,presence,close,pink grapefruit; bergamot; orris; hedione; iso e super; muscone; green cannabis leaf,Medium
+escentric-molecules-escentric-04,season,mild,osmanthus; rose; freesia; javanol; vetiver; orris; hedione; iso e super,High
+escentric-molecules-escentric-04,mood,romance-presence,osmanthus; rose; freesia; hedione; iso e super; muscone; labdanum,Medium
+escentric-molecules-escentric-04,gender,Unisex,vetiver; labdanum; juniper berry; osmanthus; rose; freesia; juniper berry,Medium
+escentric-molecules-escentric-03,presence,close,mexican lime; tea; orris; musk; green peppercorn,High
+escentric-molecules-escentric-03,season,mild,egyptian jasmine; vetiver; sandalwood; virginia cedar; orris; musk,High
+escentric-molecules-escentric-03,mood,focus-flow,vetiver; virginia cedar; tea; orris; mexican lime; musk,High
+escentric-molecules-escentric-03,gender,Masculine,vetiver; virginia cedar; leather,High
+escentric-molecules-escentric-02,presence,close,mandarin; lime; bergamot; orris; hedione; muscone,High
+escentric-molecules-escentric-02,season,hot,mandarin; lime; bergamot; juniper berry; clary sage,Medium
+escentric-molecules-escentric-02,season,mild,freesia; vetiver; orris; hedione; muscone; juniper berry,Medium
+escentric-molecules-escentric-02,season,cold,tonka; ginger; pink pepper; ambroxan,Medium
+escentric-molecules-escentric-02,mood,focus-flow,juniper berry; clary sage; vetiver; orris; mandarin; lime; bergamot; hedione,High
+escentric-molecules-escentric-02,gender,Masculine,vetiver; juniper berry; clary sage,Low
+escentric-molecules-escentric-01,presence,close,lemon; lime peel; orris; aldehydes; hedione; iso e super; muscone,High
+escentric-molecules-escentric-01,season,mild,orris; aldehydes; hedione; iso e super; muscone,High
+escentric-molecules-escentric-01,season,cold,pink pepper; incense; mastic,High
+escentric-molecules-escentric-01,mood,harmony-meditation,incense; mastic,Medium
+escentric-molecules-escentric-01,mood,focus-flow,orris; lemon; lime peel; aldehydes; hedione; iso e super; muscone,Low
+escentric-molecules-escentric-01,gender,Unisex,orris,Low
+milano-fragranze-panettone,presence,noticed,rum; ginger; vanilla; bitter orange; mandarin orange,Medium
+milano-fragranze-panettone,season,hot,bitter orange; mandarin orange; davana,Medium
+milano-fragranze-panettone,season,cold,vanilla; ginger; rum,Medium
+milano-fragranze-panettone,mood,celebrate-indulge,rum; vanilla; ginger,Medium
+milano-fragranze-panettone,gender,Unisex,davana; marigold,Medium
+milano-fragranze-basilica,presence,noticed,labdanum; incense; oil (sits on skin),High
+milano-fragranze-basilica,season,mild,woody notes; virginia cedar; cypriol oil,Medium
+milano-fragranze-basilica,season,cold,labdanum; milk; incense,High
+milano-fragranze-basilica,mood,focus-flow,thyme; rosemary; virginia cedar; cypriol oil,High
+milano-fragranze-basilica,gender,Masculine,virginia cedar; cypriol oil; labdanum; thyme; rosemary,High
+vertus-narcosis,presence,noticed,amber; ambergris; cardamom; ginger; mandarin orange; rhubarb,High
+vertus-narcosis,season,hot,mandarin orange; rhubarb; mango; peach,Medium
+vertus-narcosis,season,cold,amber; coffee; cardamom; ginger; ambergris,High
+vertus-narcosis,mood,celebrate-indulge,coffee; mango; peach; cardamom; ginger,Medium
+vertus-narcosis,gender,Unisex,vetiver; amber; mango; peach,Low
+maison-margiela-lazy-sunday-morning,presence,close,iris; aldehydes; white musk; ambrette,High
+maison-margiela-lazy-sunday-morning,season,mild,lily-of-the-valley; rose; orange blossom; iris; aldehydes; white musk; ambrette; pear,High
+maison-margiela-lazy-sunday-morning,mood,romance-presence,lily-of-the-valley; rose; orange blossom; aldehydes; white musk; ambrette,High
+maison-margiela-lazy-sunday-morning,gender,Feminine,lily-of-the-valley; rose; orange blossom; pear; iris,High
+carven-paris-sao-paulo,presence,fills,labdanum; patchouli; rum; cinnamon; cardamom; vanilla,High
+carven-paris-sao-paulo,season,cold,labdanum; vanilla; tonka bean; cinnamon; cardamom; rum; patchouli,High
+carven-paris-sao-paulo,mood,celebrate-indulge,tonka bean; rum; vanilla; cinnamon; cardamom,High
+carven-paris-sao-paulo,gender,Unisex,labdanum; orange blossom,Low
+carven-paris-santorin,presence,close,bergamot; iris; cashmeran; fig leaf,High
+carven-paris-santorin,season,hot,bergamot; fig leaf,Low
+carven-paris-santorin,season,mild,sandalwood; iris; cashmeran,Medium
+carven-paris-santorin,season,cold,tonka bean; pink pepper,Medium
+carven-paris-santorin,mood,relax-wind-down,sandalwood; cashmeran,Medium
+carven-paris-santorin,mood,celebrate-indulge,tonka bean; pink pepper,Low
+carven-paris-santorin,gender,Masculine,,Low
+attar-collection-musk-kashmir,presence,close,white musk,Low
+attar-collection-musk-kashmir,season,mild,gardenia; sandalwood; white musk,Medium
+attar-collection-musk-kashmir,season,cold,white pepper; cloves,Low
+attar-collection-musk-kashmir,mood,relax-wind-down,sandalwood; white musk,Low
+attar-collection-musk-kashmir,mood,romance-presence,gardenia; white musk,Low
+attar-collection-musk-kashmir,gender,Unisex,gardenia,Low
+attar-collection-the-queen-of-sheba,presence,noticed,tobacco leaf; amber; incense; citruses; white musk,High
+attar-collection-the-queen-of-sheba,season,mild,osmanthus; tuberose; jasmine; red rose; white musk; peach,High
+attar-collection-the-queen-of-sheba,season,cold,amber; incense; tobacco leaf,Medium
+attar-collection-the-queen-of-sheba,mood,romance-presence,osmanthus; tuberose; jasmine; red rose; white musk; amber,High
+attar-collection-the-queen-of-sheba,gender,Feminine,osmanthus; tuberose; jasmine; red rose; peach,Medium
+attar-collection-khaltat-night,presence,noticed,patchouli; cinnamon; vanilla; white musk,Medium
+attar-collection-khaltat-night,season,mild,white musk; cherry; red apple,Low
+attar-collection-khaltat-night,season,cold,vanilla; cinnamon; patchouli,Medium
+attar-collection-khaltat-night,mood,celebrate-indulge,cherry; red apple; vanilla; cinnamon,Medium
+attar-collection-khaltat-night,gender,Feminine,cherry; red apple,Medium
+attar-collection-hayati,presence,noticed,vanilla; white musk,Medium
+attar-collection-hayati,season,mild,floral notes; white musk; raspberry; berry fruits; pineapple; black currant; plum,Medium
+attar-collection-hayati,season,cold,vanilla; whipped cream; honey; ice cream,High
+attar-collection-hayati,mood,celebrate-indulge,whipped cream; honey; ice cream; raspberry; berry fruits; pineapple; black currant; plum,High
+attar-collection-hayati,gender,Feminine,floral notes; raspberry; berry fruits; pineapple; black currant; plum; whipped cream,High
+attar-collection-azora,presence,close,bergamot; orange; white musk,High
+attar-collection-azora,season,hot,bergamot; orange; litchi; peach,Medium
+attar-collection-azora,season,mild,floral notes; jasmine; woody notes; white musk; litchi; peach,High
+attar-collection-azora,mood,morning-boost,bergamot; orange; litchi; peach,Medium
+attar-collection-azora,mood,romance-presence,floral notes; jasmine; white musk,Medium
+attar-collection-azora,gender,Feminine,floral notes; jasmine; litchi; peach,Medium
+attar-collection-annabella,presence,close,oolong tea; white musk,High
+attar-collection-annabella,season,mild,osmanthus; freesia; orange blossom; gardenia; sandalwood; white musk,High
+attar-collection-annabella,mood,romance-presence,osmanthus; freesia; orange blossom; gardenia; white musk; vanilla,High
+attar-collection-annabella,gender,Feminine,osmanthus; freesia; orange blossom; gardenia,High
+attar-collection-al-rayhan,presence,close,lemon zest; tangerine; white musk,High
+attar-collection-al-rayhan,season,mild,white flowers; violet; jasmine; white rose; powdery notes; white musk; mango; exotic fruits,High
+attar-collection-al-rayhan,mood,romance-presence,white flowers; violet; jasmine; white rose; white musk,High
+attar-collection-al-rayhan,mood,celebrate-indulge,praline; loukhoum; mango; exotic fruits,Medium
+attar-collection-al-rayhan,gender,Feminine,white flowers; violet; jasmine; white rose; mango; exotic fruits; praline; powdery notes,High
+louis-vuitton-ombre-nomade,presence,fills,agarwood; amberwood; incense; benzoin; birch; saffron,High
+louis-vuitton-ombre-nomade,season,cold,amberwood; agarwood; saffron; incense; benzoin; birch,High
+louis-vuitton-ombre-nomade,mood,harmony-meditation,incense; benzoin; agarwood; birch,Medium
+louis-vuitton-ombre-nomade,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+guerlain-aqua-allegoria-forte-mandarine-basilic,presence,noticed,anise; vanilla; mandarin orange,Medium
+guerlain-aqua-allegoria-forte-mandarine-basilic,season,hot,mandarin orange; basil; cassis,Medium
+guerlain-aqua-allegoria-forte-mandarine-basilic,season,mild,orange blossom; bulgarian rose; sandalwood; cassis,Medium
+guerlain-aqua-allegoria-forte-mandarine-basilic,season,cold,vanilla; honey; anise,High
+guerlain-aqua-allegoria-forte-mandarine-basilic,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+guerlain-aqua-allegoria-forte-nerolia-vetiver,presence,close,bergamot; petitgrain; neroli; fig leaf,High
+guerlain-aqua-allegoria-forte-nerolia-vetiver,season,hot,bergamot; petitgrain; neroli; fig leaf,High
+guerlain-aqua-allegoria-forte-nerolia-vetiver,season,mild,rose; vetiver; cedar,Medium
+guerlain-aqua-allegoria-forte-nerolia-vetiver,gender,Masculine,vetiver; cedar,Medium
+zarkoperfume-molecule-c-19-the-beach,presence,noticed,vanilla; musk,Medium
+zarkoperfume-molecule-c-19-the-beach,season,cold,vanilla; coconut,High
+zarkoperfume-molecule-c-19-the-beach,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+guerlain-aqua-allegoria-forte-bosca-vanilla,presence,close,bergamot; musk; driftwood,High
+guerlain-aqua-allegoria-forte-bosca-vanilla,season,hot,bergamot; driftwood; eucalyptus,Medium
+guerlain-aqua-allegoria-forte-bosca-vanilla,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+hermes-terre-dhermes-eau-givree,presence,close,citron; mineral notes,Medium
+hermes-terre-dhermes-eau-givree,season,hot,citron; mineral notes; juniper berries,High
+hermes-terre-dhermes-eau-givree,gender,Masculine,juniper berries,Low
+hermes-un-jardin-sur-le-toit,presence,close,grass,Medium
+hermes-un-jardin-sur-le-toit,season,hot,grass; rosemary; red apple; pear,Medium
+hermes-un-jardin-sur-le-toit,season,mild,rose; magnolia; red apple; pear,Medium
+hermes-un-jardin-sur-le-toit,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+hermes-un-jardin-sur-le-nil,presence,close,grapefruit; orange; iris; musk; green mango,Medium
+hermes-un-jardin-sur-le-nil,season,hot,grapefruit; orange; green mango,Medium
+hermes-un-jardin-sur-le-nil,season,mild,lotus; hyacinth; peony; iris; musk; green mango,High
+hermes-un-jardin-sur-le-nil,season,cold,labdanum; cinnamon; incense,Medium
+hermes-un-jardin-sur-le-nil,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+acqua-di-parma-blu-mediterraneo-mandorlo-di-sicilia,presence,noticed,tolu balsam; star anise; bourbon vanilla; orange; bergamot; white musk; green almond,High
+acqua-di-parma-blu-mediterraneo-mandorlo-di-sicilia,season,hot,orange; bergamot; green almond; white peach,Medium
+acqua-di-parma-blu-mediterraneo-mandorlo-di-sicilia,season,mild,ylang-ylang; jasmine; cedar; white musk; white peach,Medium
+acqua-di-parma-blu-mediterraneo-mandorlo-di-sicilia,season,cold,bourbon vanilla; green almond; star anise; tolu balsam,High
+acqua-di-parma-blu-mediterraneo-mandorlo-di-sicilia,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+acqua-di-parma-colonia,presence,close,sicilian citruses; lemon verbena; vervain; white musk,Medium
+acqua-di-parma-colonia,season,hot,sicilian citruses; lemon verbena; vervain; lavender; rosemary,High
+acqua-di-parma-colonia,season,mild,bulgarian rose; jasmine; vetiver; sandalwood; white musk,Medium
+acqua-di-parma-colonia,gender,Masculine,vetiver; amber; lavender; rosemary,Medium
+creed-royal-princess-oud,presence,fills,agarwood; siam benzoin; styrax; resinous; patchouli; earthy; vanilla absolute,High
+creed-royal-princess-oud,season,mild,rose; violet; floral; jasmine; richly floral; sandalwood; tuscan iris; powdery,High
+creed-royal-princess-oud,season,cold,vanilla absolute; agarwood; siam benzoin; styrax; resinous; patchouli; earthy,High
+creed-royal-oud,presence,noticed,indian oud; softly resinous; peppery; calabrian lemon; sicilian bergamot; tonkin musk; galbanum,Medium
+creed-royal-oud,season,hot,calabrian lemon; sicilian bergamot; galbanum; angelica root; aromatic; pink berry,High
+creed-royal-oud,season,mild,cedar; sandalwood; woody; tonkin musk; pink berry,Medium
+creed-royal-oud,season,cold,indian oud; peppery; softly resinous,Medium
+clive-christian-e-for-men-gourmand-oriental,presence,fills,cade; labdanum; amber; resinous; myrrh; smoky; oakmoss; patchouli,High
+clive-christian-e-for-men-gourmand-oriental,season,cold,labdanum; amber; vanilla; caramel; maple; clove; cinnamon; cade,High
+clive-christian-e-for-men-gourmand-oriental,gender,Masculine,"product name: ""E for Men Gourmand Oriental""",High
+mfk-baccarat-rouge-540-extrait,presence,noticed,ambergris; ambroxan; saffron; extrait concentration; musk; cashmeran,Medium
+mfk-baccarat-rouge-540-extrait,season,mild,egyptian jasmine; virginia cedar; woody notes; musk; cashmeran,High
+mfk-baccarat-rouge-540-extrait,season,cold,bitter almond; saffron; ambergris; ambroxan,Medium
+parfums-de-marly-valaya-exclusif,presence,close,bergamot; mandarin; musk,Medium
+parfums-de-marly-valaya-exclusif,season,hot,bergamot; mandarin,Low
+parfums-de-marly-valaya-exclusif,season,mild,white florals; musk,Low
+parfums-de-marly-valaya-exclusif,gender,Feminine,white florals,Low
+widian-hili,presence,fills,tobacco leaf; amber; patchouli; cinnamon; vanilla,High
+widian-hili,season,mild,ylang-yang; tuberose; jasmine; sandalwood; cedar,High
+widian-hili,season,cold,amber; vanilla; cinnamon; tobacco leaf; patchouli,High
+parfums-de-marly-haltane,presence,fills,agarwood; saffron,Low
+parfums-de-marly-haltane,season,cold,praline; agarwood; saffron,High
+ds-durga-bowmakers,presence,fills,leather; resins,Low
+ds-durga-bowmakers,season,cold,maple; leather; resins,High
+vilhelm-faces-of-francis,presence,fills,oud; styrax; ambergris; saffron,Medium
+vilhelm-faces-of-francis,season,cold,pistachio; oud; saffron; styrax; ambergris,High
+vilhelm-poets-of-berlin,presence,close,lemon; orris; bamboo,High
+vilhelm-poets-of-berlin,season,hot,lemon; bamboo; blueberry,Medium
+vilhelm-poets-of-berlin,season,mild,sandalwood; vetiver; orris; blueberry,High
+vilhelm-sparkling-jo,presence,noticed,ambroxan; ambergris; champagne; ginger; bergamot; ambrette; musk,Medium
+vilhelm-sparkling-jo,season,mild,champaca; oak; cedar; ambrette; musk; williams pear,High
+vilhelm-sparkling-jo,season,cold,ginger; champagne; ambroxan; ambergris,Medium
+vilhelm-mango-skin,presence,noticed,patchouli; black pepper; vanilla; orris,Medium
+vilhelm-mango-skin,season,mild,jasmine; lotus; orris; mango; blackberry,High
+vilhelm-mango-skin,season,cold,vanilla; pink sugar (icing; black pepper; patchouli,High
+chabaud-lait-concentre,presence,close,,Low
+chabaud-lait-concentre,season,cold,milk; coconut; caramel,Medium
+parfums-de-marly-delina-exclusif,presence,fills,amber; incense; vanilla,Medium
+parfums-de-marly-delina-exclusif,season,cold,amber; vanilla; incense,High
+parfums-de-marly-greenley,presence,close,bergamot; cashmeran; musk; green apple,High
+parfums-de-marly-greenley,season,hot,bergamot; green apple; fruity-woody nuance,Medium
+parfums-de-marly-greenley,season,mild,pomarose; fruity-woody nuance; cedar; cashmeran; musk; green apple,High
+parfums-de-marly-oriana,presence,close,mandarin; bergamot; musk,High
+parfums-de-marly-oriana,season,hot,mandarin; bergamot; raspberry,Medium
+parfums-de-marly-oriana,season,cold,candy-like heart; marshmallow; whipped cream,High
+parfums-de-marly-delina-la-rosee,presence,close,white musk; clean foundation,High
+parfums-de-marly-delina-la-rosee,season,mild,rose water; ethereal floral core; soft woods; white musk; clean foundation; pear; lychee,High
+parfums-de-marly-galloway,presence,close,citrus; iris; clean energy; musk,High
+parfums-de-marly-galloway,season,mild,iris; clean energy; musk,Medium
+parfums-de-marly-galloway,season,cold,amber; pepper,Medium
+parfums-de-marly-valaya,presence,close,bergamot; mandarin; musk,Medium
+parfums-de-marly-valaya,season,hot,bergamot; mandarin,Low
+parfums-de-marly-valaya,season,mild,white florals; musk,Low
+parfums-de-marly-valaya,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+parfums-de-marly-layton,presence,noticed,cardamom; slightly spicy warmth; vanilla; bergamot,Medium
+parfums-de-marly-layton,season,hot,bergamot; lavender; apple,Medium
+parfums-de-marly-layton,season,mild,violet; subtly floral; apple,Medium
+parfums-de-marly-layton,season,cold,vanilla; cardamom; slightly spicy warmth,High
+parfums-de-marly-meliora,presence,close,musk,Low
+parfums-de-marly-meliora,season,mild,rose; lily; musk; blackcurrant; raspberry,Medium
+parfums-de-marly-kalan,presence,noticed,moss; spices; black pepper,Medium
+parfums-de-marly-kalan,season,mild,orange blossom; sandalwood,Low
+parfums-de-marly-kalan,season,cold,spices; black pepper; moss,Medium
+parfums-de-marly-delina,presence,close,cashmeran; rhubarb,Medium
+parfums-de-marly-delina,season,hot,rhubarb; lychee,Low
+parfums-de-marly-delina,season,mild,turkish rose; cashmeran; lychee,Low
+parfums-de-marly-delina,season,cold,vanilla,Low
+parfums-de-marly-sedley,presence,noticed,ambroxan; bergamot,Low
+parfums-de-marly-sedley,season,hot,bergamot; mint; rosemary; geranium,High
+parfums-de-marly-percival,presence,close,bergamot; mandarin; musk,Medium
+parfums-de-marly-percival,season,hot,bergamot; mandarin; lavender; geranium,High
+parfums-de-marly-althair,presence,noticed,amber; cinnamon; vanilla; bergamot,Medium
+parfums-de-marly-althair,season,cold,amber; vanilla; caramel; tonka bean; cinnamon,High
+parfums-de-marly-cassili,presence,close,,Low
+parfums-de-marly-cassili,season,mild,bulgarian rose; petalia; fruity-floral swirl; sandalwood; red currant; plum,High
+essential-parfums-bois-imperial,presence,noticed,patchouli; ambroxan; timur,High
+essential-parfums-bois-imperial,season,mild,akigalawood; vetiver,Low
+essential-parfums-bois-imperial,season,cold,timur; patchouli; ambroxan,Medium
+roja-sweetie-aoud,presence,fills,agarwood; cistus incanus; labdanum; spanish labdanum; gurjan balsam; olibanum; frankincense; patchouli,High
+roja-sweetie-aoud,season,cold,cistus incanus; labdanum; spanish labdanum; gourmand accord; agarwood; cardamom; cumin; gurjan balsam,High
+kilian-princess,presence,close,matcha tea,Medium
+kilian-princess,season,hot,matcha tea,Low
+kilian-princess,season,cold,marshmallow; ginger,Medium
+kilian-woman-in-gold,presence,noticed,patchouli; vanilla absolute; vanilla; bergamot; mandarin orange; aldehydes; musk,Medium
+kilian-woman-in-gold,season,mild,rose; freesia; akigalawood; aldehydes; musk,Medium
+kilian-woman-in-gold,season,cold,vanilla absolute; vanilla; marshmallow; tonka bean; patchouli,High
+tiziana-terenzi-kaff,presence,noticed,leather; ambergris; pink pepper; ginger; bergamot; white iris; iris; orris root,High
+tiziana-terenzi-kaff,season,mild,magnolia; vetiver; cedar; sandalwood; white iris; iris; orris root,High
+tiziana-terenzi-kaff,season,cold,tonka bean; pink pepper; ginger; leather; ambergris,Medium
+nishane-wulong-cha,presence,close,bergamot; orange; mandarin orange; litsea cubeba; oolong tea; musk,High
+nishane-wulong-cha,season,hot,bergamot; orange; mandarin orange; litsea cubeba; oolong tea,High
+v-canto-mirabile,presence,noticed,opoponax; patchouli; rum; cloves; vanilla; vanilla absolute; white musk,Medium
+v-canto-mirabile,season,cold,vanilla; vanilla absolute; malt; milk; tonka bean; cloves; opoponax; rum,High
+v-canto-ricina,presence,noticed,agarwood; oakmoss; patchouli; bergamot; orange oil; iris; oil (sits on skin),High
+v-canto-ricina,season,mild,peony; orange blossom; jasmine; sandalwood; iris; peach; plum,High
+v-canto-temptatio,presence,noticed,amber; patchouli; spicy notes; vanilla; citruses; iris; musk,High
+v-canto-temptatio,season,mild,bulgarian rose; jasmine; ylang-ylang; sandalwood; iris; musk; passionfruit; peach,High
+v-canto-temptatio,season,cold,amber; vanilla; tonka bean; spicy notes; patchouli,High
+tiziana-terenzi-delox,presence,noticed,amber; opoponax; vanilla; iris; white musk,Medium
+tiziana-terenzi-delox,season,mild,white hyacinth; turkish rose; cedar; iris; white musk,High
+tiziana-terenzi-delox,season,cold,amber; vanilla; coffee; honey; opoponax,High
+tiziana-terenzi-halley,presence,noticed,amber; cinnamon; vanilla; lemon; musk; green notes,Medium
+tiziana-terenzi-halley,season,hot,lemon; green notes; passionfruit; cassis; peach; raspberry,Medium
+tiziana-terenzi-halley,season,mild,rose; floral notes; woody notes; musk; passionfruit; cassis; peach; raspberry,High
+tiziana-terenzi-halley,season,cold,amber; vanilla; cinnamon,Medium
+tiziana-terenzi-draco,presence,close,bergamot; lemon; orange; musk; green notes,High
+tiziana-terenzi-draco,season,hot,bergamot; lemon; orange; green notes; peach; pear,Medium
+tiziana-terenzi-draco,season,mild,magnolia; jasmine; heliotrope; cedar; musk; peach; pear,High
+tiziana-terenzi-atlantide,presence,close,calabrian bergamot,Medium
+tiziana-terenzi-atlantide,season,mild,tuberose; narcissus; rose; passionfruit,Medium
+tiziana-terenzi-telea,presence,noticed,cambodian oud; citruses; musk,High
+tiziana-terenzi-telea,season,mild,rose; hawthorn; jasmine; ylang-ylang; heliotrope; haitian vetiver; mahogany; oak,High
+tiziana-terenzi-orza,presence,noticed,amber; benzoin; madagascar vanilla; mandarin orange; musk; green apple,Medium
+tiziana-terenzi-orza,season,mild,orchid; magnolia; jasmine; bulgarian rose; lily-of-the-valley; sandalwood; musk; wild berries,High
+tiziana-terenzi-orza,season,cold,amber; madagascar vanilla; coconut; caramel; benzoin,High
+xerjoff-kbridge-club,presence,noticed,bourbon vanilla,Low
+xerjoff-kbridge-club,season,mild,bulgarian rose; rose,Low
+xerjoff-kbridge-club,season,cold,bourbon vanilla; caramel,Medium
+memo-paris-irish-leather,presence,close,mandarin; iris,High
+memo-paris-irish-leather,season,hot,mandarin; clary sage,Medium
+memo-paris-irish-leather,season,mild,cedarwood; vetiver; iris,Medium
+memo-paris-madurai,presence,noticed,suede,Medium
+memo-paris-madurai,season,mild,indian jasmine; egyptian jasmine; marigold; indian tuberose; australian sandalwood,High
+maison-crivelli-tubereuse-astrale,presence,close,musk,Low
+maison-crivelli-tubereuse-astrale,season,mild,tuberose; osmanthus; musk,Medium
+maison-crivelli-tubereuse-astrale,season,cold,vanilla; cinnamon,Medium
+maison-crivelli-absinthe-boreale,presence,close,lemon; musk,High
+maison-crivelli-absinthe-boreale,season,hot,lemon; lavender; artemisia; eucalyptus; absinthe; juniper berries; mint; fern,High
+byredo-bal-dafrique,presence,close,bergamot,Medium
+byredo-bal-dafrique,season,mild,african marigold; violet; cyclamen; vetiver; cedar,High
+giardino-benessere-bianco-laos,presence,fills,laotian oud; labdanum; peru balsam; birch; ambergris; pink pepper; vanilla flower,High
+giardino-benessere-bianco-laos,season,cold,labdanum; vanilla flower; chestnut; laotian oud; pink pepper; peru balsam; ambergris; birch,High
+giardino-benessere-salaria,presence,close,musk; seaweed; salt,High
+giardino-benessere-salaria,season,hot,seaweed; salt; myrtle,Medium
+jeroboam-gozo,presence,close,bergamot; white musk; leaves,Medium
+jeroboam-gozo,season,hot,bergamot; leaves; geranium,Medium
+mizensir-sweet-praline,presence,noticed,incense; ambroxan; hedione,High
+mizensir-sweet-praline,season,mild,sambac; papyrus; hedione,Medium
+mizensir-sweet-praline,season,cold,incense; ambroxan,Low
+mizensir-tres-chere,presence,noticed,amber,Medium
+mizensir-tres-chere,season,mild,jasmine; australian sandalwood,Low
+mizensir-tres-chere,season,cold,amber,Low
+mizensir-for-your-love,presence,noticed,benzoin; musk,Medium
+mizensir-for-your-love,season,cold,benzoin,Low
+maison-crivelli-patchouli-magnetik-extrait,presence,fills,leather; benzoin; patchouli; vanilla,High
+maison-crivelli-patchouli-magnetik-extrait,season,cold,vanilla; leather; benzoin; patchouli,High
+maison-crivelli-bois-datchai,presence,close,black tea,Low
+maison-crivelli-bois-datchai,season,hot,black tea; black currant,Low
+maison-crivelli-bois-datchai,season,mild,virginia cedar; papyrus; guaiac wood; black currant,Medium
+maison-crivelli-bois-datchai,season,cold,cinnamon; incense,Medium
+maison-crivelli-rose-saltifolia,presence,close,sea water; sea salt; seaweed; sand,High
+maison-crivelli-rose-saltifolia,season,hot,sea water; sea salt; seaweed; sand,High
+maison-crivelli-santal-volcanique,presence,close,lime; musk,Medium
+maison-crivelli-santal-volcanique,season,mild,ylang-ylang; sandalwood; cedar; musk,Medium
+maison-crivelli-santal-volcanique,season,cold,ginger; cardamom,Low
+etat-libre-dorange-soul-of-my-soul,presence,fills,suede; incense; benzoin; pink pepper; madagascar vanilla,Medium
+etat-libre-dorange-soul-of-my-soul,season,cold,madagascar vanilla; tonka bean; pink pepper; suede; incense; benzoin,High
+etat-libre-dorange-soul-of-my-soul,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+etat-libre-dorange-fat-electrician,presence,fills,myrrh; opoponax; vanilla,Medium
+etat-libre-dorange-fat-electrician,season,cold,vanilla; marron glacé; myrrh; opoponax,High
+etat-libre-dorange-spice-must-flow,presence,noticed,incense; cardamom; ginger,High
+etat-libre-dorange-spice-must-flow,season,cold,cardamom; ginger; incense,Medium
+etat-libre-dorange-spice-must-flow,gender,Unisex,turkish rose,Low
+etat-libre-dorange-sous-le-pont-mirabeau,presence,noticed,elemi; olibanum; pink pepper; vanilla; bergamot; musk; sea notes; ozonic notes,High
+etat-libre-dorange-sous-le-pont-mirabeau,season,hot,bergamot; sea notes; ozonic notes; fig leaf,Medium
+etat-libre-dorange-sous-le-pont-mirabeau,season,mild,violet; sandalwood; cedar; musk,Medium
+etat-libre-dorange-sous-le-pont-mirabeau,season,cold,vanilla; pink pepper; elemi; olibanum,Medium
+etat-libre-dorange-sous-le-pont-mirabeau,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+etat-libre-dorange-remarkable-people,presence,noticed,labdanum; champagne; cardamom; black pepper; curry tree; grapefruit,High
+etat-libre-dorange-remarkable-people,season,cold,labdanum; cardamom; black pepper; curry tree; champagne,High
+etat-libre-dorange-remarkable-people,gender,Unisex,"owner rule: gender only matters for Focus & Flow, Romance & Presence, Celebrate & Indulge",High
+etat-libre-dorange-frustration,presence,fills,labdanum; rum; cinnamon; cumin; vanilla; vanilla absolute,Medium
+etat-libre-dorange-frustration,season,cold,labdanum; vanilla; vanilla absolute; chestnut; cinnamon; cumin; rum,High
+etat-libre-dorange-experimentum-crucis,presence,close,musk,Low
+etat-libre-dorange-experimentum-crucis,season,mild,rose; jasmine; akigalawood; musk; apple; litchi,High
+etat-libre-dorange-experimentum-crucis,season,cold,honey; cumin; patchouli,Medium
+amouage-opus-xv-king-blue,presence,noticed,leather; incense; pink pepper; bergamot; orris,High
+amouage-opus-xv-king-blue,season,hot,bergamot; geranium,Medium
+amouage-opus-xv-king-blue,season,mild,cedar; orris,Medium
+amouage-opus-xv-king-blue,season,cold,pink pepper; leather; incense,High
+amouage-honour-43-woman-extrait,presence,fills,leather; amber; frankincense,High
+amouage-honour-43-woman-extrait,season,mild,spicy florals; tuberose; jasmine; gardenia,High
+amouage-honour-43-woman-extrait,season,cold,amber; leather; frankincense,High
+amouage-portrayal-woman,presence,fills,tobacco; elemi; vanilla,Medium
+amouage-portrayal-woman,season,cold,vanilla; elemi; tobacco,High
+amouage-overture-woman,presence,fills,leather; labdanum; benzoin; myrrh; olibanum; brandy; saffron; cinnamon,High
+amouage-overture-woman,season,cold,labdanum; saffron; cinnamon; leather; benzoin; myrrh; olibanum; brandy,High
+amouage-honour-woman,presence,fills,leather; amber; frankincense; pepper,High
+amouage-honour-woman,season,mild,tuberose; jasmine; gardenia,Medium
+amouage-honour-woman,season,cold,amber; pepper; leather; frankincense,High
+amouage-love-mimosa,presence,close,aquatic notes; violet leaves,Low
+amouage-love-mimosa,season,mild,mimosa; ylang-ylang; heliotrope; pear,High
+amouage-reflection-man,presence,close,neroli; bitter orange leaves,Low
+amouage-reflection-man,season,hot,neroli; bitter orange leaves; rosemary; red pepper berries,Medium
+amouage-reflection-man,season,mild,jasmine; ylang-ylang; sandalwood; cedar; red pepper berries,High
+amouage-interlude-black-iris-man,presence,fills,oud; leather; amber; frankincense; patchouli,High
+amouage-interlude-black-iris-man,season,cold,amber; oud; leather; frankincense; patchouli,High
+amouage-jubilation-xxv-man,presence,noticed,labdanum; frankincense; myrrh; opoponax; orange,Medium
+amouage-jubilation-xxv-man,season,hot,orange; coriander; bay leaf; blackberry; subtle fruitiness,Medium
+amouage-jubilation-xxv-man,season,mild,orchid; atlas cedar; warm woods; blackberry; subtle fruitiness,Medium
+amouage-jubilation-xxv-man,season,cold,labdanum; honey; frankincense; myrrh; opoponax,High
+amouage-jubilation-25-woman,presence,fills,labdanum; amber; frankincense; myrrh,High
+amouage-jubilation-25-woman,season,hot,lemon; tarragon; davana,Medium
+amouage-jubilation-25-woman,season,cold,labdanum; amber; frankincense; myrrh,High
+amouage-honour-man,presence,fills,incense; incense-wood backdrop; patchouli; pink pepper; black pepper; nutmeg,Medium
+amouage-honour-man,season,cold,pink pepper; black pepper; nutmeg; incense; incense-wood backdrop; patchouli,High
+amouage-reflection-45-man-extrait,presence,noticed,ambergris; spices; citrus accents,Medium
+amouage-reflection-45-man-extrait,season,hot,citrus accents; aromatic herbs,Low
+amouage-reflection-45-man-extrait,season,mild,white florals; sandalwood; vetiver,Medium
+amouage-reflection-45-man-extrait,season,cold,spices; ambergris,Low
+amouage-guidance,presence,fills,labdanum; olibanum; ambergris; saffron; vanilla,High
+amouage-guidance,season,mild,osmanthus; rose; jasmine sambac; sandalwood; akigalawood; pear,High
+amouage-guidance,season,cold,labdanum; vanilla; hazelnut; saffron; olibanum; ambergris,High
+amouage-reflection-woman,presence,close,musk; water violet; tropical green notes,Medium
+amouage-reflection-woman,season,mild,water violet; freesia; magnolia; jasmine; ylang-ylang; sandalwood; musk,High
+amouage-lyric-man,presence,noticed,incense; ginger; bergamot; lime,Medium
+amouage-lyric-man,season,hot,bergamot; lime; angelica; pine,High
+amouage-enclave,presence,fills,leather; labdanum; patchouli; cardamom; cinnamon; pink pepper; parfum concentration,High
+amouage-enclave,season,cold,labdanum; cardamom; cinnamon; pink pepper; leather; patchouli,High
+amouage-opus-xiii-silver-oud,presence,fills,oud; cistus; amber; frankincense; patchouli,High
+amouage-opus-xiii-silver-oud,season,cold,cistus; amber; oud; frankincense; patchouli,High
+amouage-epic-56-woman-extrait,presence,fills,oud; amber; olibanum; cinnamon; pink pepper; cumin,High
+amouage-epic-56-woman-extrait,season,cold,amber; oud; cinnamon; pink pepper; cumin; olibanum,High
+mfk-aqua-vitae-cologne-forte,presence,close,mandarin orange; bergamot; musk; cologne concentration,High
+mfk-aqua-vitae-cologne-forte,season,hot,mandarin orange; bergamot,Low
+mfk-aqua-vitae-cologne-forte,season,mild,floral notes; sandalwood; musk,Medium
+mfk-aqua-celestia-cologne-forte,presence,close,lime; petitgrain; lemon; hedione; musk; cologne concentration,High
+mfk-aqua-celestia-cologne-forte,season,hot,lime; petitgrain; lemon; mint; black currant blossom,High
+mfk-aqua-celestia-cologne-forte,season,mild,black currant blossom; jasmine; mimosa; lily-of-the-valley; hedione; musk,High
+mfk-aqua-celestia,presence,close,lime; neroli; white musk; green notes,High
+mfk-aqua-celestia,season,hot,lime; neroli; green notes; mint; black currant,High
+mfk-aqua-celestia,season,mild,mimosa; rose; white musk; black currant,Medium
+mfk-a-la-rose,presence,close,calabrian bergamot; california orange; musk,High
+mfk-a-la-rose,season,mild,bulgarian rose; grasse rose; violet; magnolia; cedar; musk,High
+mfk-gentle-fluidity-silver,presence,noticed,subtle amber; nutmeg; woody/musky accord,Medium
+mfk-gentle-fluidity-silver,season,hot,juniper; coriander,Low
+mfk-gentle-fluidity-silver,season,mild,woody/musky accord,Low
+mfk-gentle-fluidity-silver,season,cold,subtle amber; nutmeg,Medium
+mfk-baccarat-rouge-540-edp,presence,fills,amberwood; fir resin; oakmoss; ambergris; ambroxan; saffron,High
+mfk-baccarat-rouge-540-edp,season,cold,amberwood; sugar; saffron; fir resin; oakmoss; ambergris; ambroxan,High
+mfk-724,presence,close,calabrian bergamot; aldehydes; white musk,High
+mfk-724,season,mild,sweet pea; egyptian jasmine; sandalwood; aldehydes; white musk,High
+marc-antoine-barrois-b683-extrait,presence,fills,oud; amber; patchouli; saffron; black pepper; nutmeg; extrait concentration,High
+marc-antoine-barrois-b683-extrait,season,cold,amber; oud; saffron; black pepper; nutmeg; patchouli,High
+marc-antoine-barrois-ganymede-extrait,presence,noticed,incense; myrrh; safraleine; mandarin orange,High
+marc-antoine-barrois-ganymede-extrait,season,cold,safraleine; incense; myrrh,Medium
+marc-antoine-barrois-tilia,presence,noticed,ambrofix™,Medium
+marc-antoine-barrois-tilia,season,mild,linden blossom; jasmine sambac; broom; heliotrope; orange blossom; vetiver; georgywood,High
+marc-antoine-barrois-aldebaran,presence,close,mate,Low
+marc-antoine-barrois-aldebaran,season,cold,tonka bean; paprika,Medium
+mfk-aqua-media-cologne-forte,presence,close,verbena; bergamot; matcha tea; hedione; musk; cologne concentration,High
+mfk-aqua-media-cologne-forte,season,hot,verbena; bergamot; fennel; matcha tea,High
+mfk-amyris-femme,presence,close,california orange; iris; musk,Medium
+mfk-amyris-femme,season,mild,lemon blossom; amyris; vetiver; iris; musk,High
+mfk-grand-soir,presence,fills,spanish labdanum; amber; siam benzoin; vanilla,High
+mfk-grand-soir,season,cold,spanish labdanum; amber; vanilla; tonka bean; siam benzoin,High
+mfk-leau-a-la-rose,presence,close,musk,Medium
+mfk-leau-a-la-rose,season,mild,damask rose; grasse rose; peony; violet; musk; litchi; pear,High
+mfk-aqua-universalis,presence,close,amalfi lemon; bergamot; orange; musk,High
+mfk-aqua-universalis,season,hot,amalfi lemon; bergamot; orange,Medium
+mfk-aqua-universalis,season,mild,orange blossom; lily-of-the-valley; musk,Medium
+mfk-amyris-homme,presence,noticed,agarwood; sicilian mandarin; iris,High
+mfk-amyris-homme,season,cold,milk chocolate; coconut; coffee; tonka bean; agarwood,High
+mfk-lhomme-a-la-rose,presence,noticed,amberwood; grapefruit,Medium
+mfk-lhomme-a-la-rose,season,hot,grapefruit; sage,Medium
+mfk-lhomme-a-la-rose,season,mild,may rose; damask rose,Low
+mfk-lhomme-a-la-rose,season,cold,amberwood,Low
+mfk-gentle-fluidity-gold,presence,noticed,amberwood; nutmeg; vanilla; musk,High
+mfk-gentle-fluidity-gold,season,cold,amberwood; vanilla; caramel; nutmeg,High
+rosendo-mateu-no-1-bergamot-tea-leaf-sandalwood,presence,close,bergamot; tea leaf,High
+rosendo-mateu-no-1-bergamot-tea-leaf-sandalwood,season,hot,bergamot; tea leaf,Medium
+rosendo-mateu-no-7-patchouli,presence,fills,oud; patchouli; vanilla,Medium
+rosendo-mateu-no-7-patchouli,season,cold,vanilla; oud; patchouli,Medium
+marc-antoine-barrois-ganymede,presence,noticed,suede; patchouli; saffron; italian mandarin; musk; mineral notes,High
+marc-antoine-barrois-ganymede,season,mild,chinese osmanthus; violet; akigalawood; cedar; musk,High
+marc-antoine-barrois-ganymede,season,cold,saffron; suede; patchouli,Medium
+xerjoff-torino-21,presence,close,lemon; lemon verbena; musk,High
+xerjoff-torino-21,season,hot,lemon; lemon verbena; mint; basil; thyme; lavender; rosemary; black currant,High
+xerjoff-400-jtc,presence,noticed,white tobacco; patchouli; vanilla; bitter orange; mandarin orange; bergamot,High
+xerjoff-400-jtc,season,hot,bitter orange; mandarin orange; bergamot,Low
+xerjoff-400-jtc,season,mild,orange blossom; ylang-ylang; rose; cedar; vetiver,High
+xerjoff-400-jtc,season,cold,vanilla; honey; white tobacco; patchouli,Medium
+xerjoff-accento-overdose,presence,close,aldehydes; green accord,Medium
+xerjoff-accento-overdose,season,hot,green accord; eucalyptus; pine; fruity notes,High
+xerjoff-accento-overdose,season,mild,egyptian jasmine; lily-of-the-; bulgarian rose; aldehydes; fruity notes,High
+xerjoff-tony-iommi-monkey-special,presence,fills,leather; labdanum; patchouli; ambergris; rum; cinnamon; vanilla,High
+xerjoff-tony-iommi-monkey-special,season,cold,labdanum; vanilla; caramel; tonka bean; cinnamon; leather; rum; patchouli,High
+xerjoff-dama-bianca,presence,close,kumquat; lime; italian iris; white musk; ambrette,High
+xerjoff-dama-bianca,season,mild,violet; lilac; egyptian jasmine; lily-of-the-valley; sandalwood; cedar; italian iris; white musk,High
+xerjoff-naxos,presence,noticed,tobacco leaf; cinnamon; vanilla; bergamot; lemon; cashmeran,Medium
+xerjoff-naxos,season,cold,vanilla; honey; tonka bean; cinnamon; tobacco leaf,High
+xerjoff-comandante,presence,fills,leather; tobacco; labdanum; patchouli; spicy notes; vanilla,High
+xerjoff-comandante,season,cold,labdanum; vanilla; honey; spicy notes; leather; tobacco; patchouli,High
+creed-spring-flower,presence,close,musk,Low
+creed-spring-flower,season,mild,jasmine; rose; floral; musk; apple; peach; melon,High
+creed-virgin-island-water,presence,close,lime; bergamot; mandarin; musk,High
+creed-virgin-island-water,season,hot,lime; bergamot; mandarin,Medium
+creed-virgin-island-water,season,mild,ylang-ylang; jasmine; floral; musk,Medium
+creed-virgin-island-water,season,cold,coconut; tonka bean; white rum,High
+creed-silver-mountain-water,presence,close,bergamot; mandarin; citrusy; petitgrain; green tea; musk,High
+creed-silver-mountain-water,season,hot,bergamot; mandarin; citrusy; petitgrain; green tea; herbal; blackcurrant; subtly fruity,High
+creed-viking,presence,close,bergamot; lemon; citrusy,Low
+creed-viking,season,hot,bergamot; lemon; citrusy; peppermint; lavender; aromatic,High
+creed-love-in-white,presence,noticed,ambergris; vanilla; orange zest,Medium
+creed-love-in-white,season,mild,magnolia; bulgarian rose; floral; sandalwood,High
+creed-love-in-white,season,cold,vanilla; ambergris,Low
+creed-aventus-for-her,presence,noticed,amber; styrax; slightly balsamic; pink pepper; slightly spicy; bergamot; lemon; musk,Medium
+creed-aventus-for-her,season,hot,bergamot; lemon; green apple; fruity; peach; blackcurrant,Medium
+creed-aventus-for-her,season,mild,violet; rose; ylang-ylang; sandalwood; musk; green apple; fruity; peach,High
+creed-aventus-for-her,season,cold,amber; pink pepper; slightly spicy; styrax; slightly balsamic,Medium
+creed-original-vetiver,presence,noticed,earthy; ambergris; white pepper; subtly spicy; bergamot; bitter orange; mandarin; citrusy,Medium
+creed-original-vetiver,season,hot,bergamot; bitter orange; mandarin; citrusy; coriander,High
+creed-original-vetiver,season,cold,white pepper; subtly spicy; earthy; ambergris,Medium
+creed-himalaya,presence,close,grapefruit; bergamot; lemon; citrusy; musk,Medium
+creed-himalaya,season,hot,grapefruit; bergamot; lemon; citrusy,High
+creed-himalaya,season,mild,sandalwood; cedarwood; subtly woody; musk,Medium
+creed-love-in-black,presence,close,iris; tonkin musk,High
+creed-love-in-black,season,mild,italian violet; bulgarian rose; floral; virginia cedar; slightly woody; iris; tonkin musk; blackcurrant,High
+creed-aventus-cologne-for-men,presence,close,mandarin orange; citrusy; musk; cologne concentration,High
+creed-aventus-cologne-for-men,season,mild,sandalwood; vetiver; woody; musk,Medium
+creed-aventus-cologne-for-men,season,cold,tonka bean; ginger; pink pepper; styrax; patchouli; birch,High
+creed-millesime-imperial,presence,close,bergamot; green mandarin; lemon; iris; musk; sea salt; aquatic,High
+creed-millesime-imperial,season,hot,bergamot; green mandarin; lemon; sea salt; aquatic,High
+creed-millesime-imperial,season,mild,slightly floral; woody notes; iris; musk,Medium
+creed-acqua-fiorentina,presence,close,bergamot; citrusy; grapefruit,High
+creed-acqua-fiorentina,season,hot,bergamot; citrusy; grapefruit; plum; greengage,High
+creed-acqua-fiorentina,season,mild,rose; pink carnation; floral; cedar; sandalwood; woody; plum; greengage,High
+creed-carmina,presence,fills,myrrh; frankincense; resinous; ambroxan; saffron; pink pepper; spicy,Medium
+creed-carmina,season,mild,may rose; peony; violet; floral; cashmere wood; musk; black cherry,High
+creed-carmina,season,cold,saffron; pink pepper; spicy; myrrh; frankincense; resinous; ambroxan,High
+creed-green-irish-tweed,presence,close,lemon verbena; iris; violet leaf,Medium
+creed-green-irish-tweed,season,hot,lemon verbena; violet leaf,Medium
+creed-green-irish-tweed,season,mild,slightly floral; sandalwood; woody; iris,High
+creed-aventus-for-men,presence,noticed,birch; patchouli; earthy; oakmoss; ambergris; vanilla; bergamot; musk,High
+creed-aventus-for-men,season,mild,rose; jasmine; slightly floral; musk; pineapple; blackcurrant; apple,High
+creed-aventus-for-men,season,cold,vanilla; patchouli; earthy; oakmoss; ambergris; birch,High
+creed-viking-cologne,presence,close,lemon; mandarin; bergamot; cologne concentration,Medium
+creed-viking-cologne,season,hot,lemon; mandarin; bergamot; lavender; geranium; sage; herbal,High
+creed-viking-cologne,season,cold,pink pepper; nutmeg; spicy; frankincense; subtly smoky,Medium
+creed-queen-of-silk,presence,fills,agarwood; myrrh; incense; resinous; patchouli; earthy; ambroxan; saffron,High
+creed-queen-of-silk,season,cold,madagascar vanilla; agarwood; saffron; slightly spicy; myrrh; incense; resinous; patchouli,High
+clive-christian-town-and-country,presence,noticed,ambergris,Medium
+clive-christian-town-and-country,season,mild,sandalwood,Low
+clive-christian-1872-for-women,presence,close,bergamot; amalti lemon; tangerine; musk,High
+clive-christian-1872-for-women,season,mild,lily-of-the-valley; violet; freesia; osmanthus; rose; jasmine; orchid; virginia cedar,High
+clive-christian-jump-up-and-kiss-me-hedonistic-masculine,presence,fills,leather; tobacco; amber; labdanum; patchouli; moss; vanilla,High
+clive-christian-jump-up-and-kiss-me-hedonistic-masculine,season,hot,bergamot; mandarin orange; neroli; grapefruit; lemon; clary sage,Medium
+clive-christian-jump-up-and-kiss-me-hedonistic-masculine,season,mild,jasmine; papyrus; sandalwood; cashmere wood; vetiver; orris; musk,Medium
+clive-christian-jump-up-and-kiss-me-hedonistic-masculine,season,cold,amber; labdanum; vanilla; tonka bean; leather; tobacco; patchouli; moss,High
+clive-christian-e-cashmere-musk,presence,close,bergamot; blood orange; cashmeran; musk; green leaves,High
+clive-christian-e-cashmere-musk,season,hot,bergamot; blood orange; green leaves,Medium
+clive-christian-e-cashmere-musk,season,mild,egyptian jasmine; flowers; guaiac wood; cashmeran; musk,High
+clive-christian-e-cashmere-musk,season,cold,ginger; pink pepper; sichuan pepper; ambroxan,Medium
+clive-christian-crab-apple-blossom,presence,close,bergamot; sea notes; driftwood; rhubarb,High
+clive-christian-crab-apple-blossom,season,hot,bergamot; sea notes; driftwood; rhubarb; apple blossom,High
+clive-christian-viii-rococo-immortelle-for-men,presence,noticed,amber; bergamot; lemon,Medium
+clive-christian-viii-rococo-immortelle-for-men,season,hot,bergamot; lemon,Low
+clive-christian-viii-rococo-immortelle-for-men,season,mild,vetiver; papyrus,Low
+clive-christian-viii-rococo-immortelle-for-men,season,cold,amber,Low
+clive-christian-jump-up-and-kiss-me-ecstatic-feminine,presence,fills,suede; amber; pink pepper; vanilla,High
+clive-christian-jump-up-and-kiss-me-ecstatic-feminine,season,mild,tuberose; jasmine; orange blossom; yang-ylang; rose; sandalwood; vetiver; woody notes,High
+clive-christian-jump-up-and-kiss-me-ecstatic-feminine,season,cold,amber; vanilla; tonka bean; pink pepper; suede,High
+clive-christian-contemporary,presence,noticed,moss; black pepper; nutmeg,Medium
+clive-christian-contemporary,season,cold,malt; black pepper; nutmeg; moss,High
+clive-christian-blonde-amber,presence,fills,white tobacco; labdanum; olibanum; myrrh; patchouli; rum; cardamom; pink pepper,High
+clive-christian-blonde-amber,season,mild,tuberose; osmanthus; jasmine; sandalwood; cedar; vetiver; orris; musk,Medium
+clive-christian-blonde-amber,season,cold,labdanum; vanilla; tonka bean; cardamom; pink pepper; ginger; saffron; olibanum,High
+clive-christian-viii-rococo-magnolia,presence,noticed,oakmoss; cloves; cinnamon; mandarin orange; bergamot,Medium
+clive-christian-viii-rococo-magnolia,season,hot,mandarin orange; bergamot; cassis,Medium
+clive-christian-viii-rococo-magnolia,season,mild,magnolia; rose; sandalwood; cassis,Medium
+clive-christian-viii-rococo-magnolia,season,cold,cloves; cinnamon; oakmoss,Medium
+clive-christian-v-for-men-amber-fougere,presence,fills,amber; olibanum; smoke; black pepper,Medium
+clive-christian-v-for-men-amber-fougere,season,cold,amber; black pepper; olibanum; smoke,High
+clive-christian-20-iconic-masculin,presence,close,petitgrain; mandarin orange; yuzu,High
+clive-christian-20-iconic-masculin,season,hot,petitgrain; mandarin orange; yuzu; rosemary,High
+clive-christian-no-1-feminine,presence,noticed,amber; benzoin; cardamom; paprika; vanilla; bergamot; amalfi lemon; iris,High
+clive-christian-no-1-feminine,season,mild,ylang-ylang; jasmine; carnation; rose; orchid; sandalwood; cedar; iris,High
+clive-christian-no-1-feminine,season,cold,amber; vanilla; tonka bean; cardamom; paprika; benzoin,Medium
+clive-christian-timeless,presence,noticed,leather; amber; ginger; nutmeg; lime; bitter orange; musk,Medium
+clive-christian-timeless,season,hot,lime; bitter orange; mint; lavender; coriander,High
+clive-christian-timeless,season,cold,amber; ginger; nutmeg; leather,High
+clive-christian-chasing-the-dragon-hypnotic,presence,noticed,amber; patchouli; cinnamon; vanilla; iris; musk,High
+clive-christian-chasing-the-dragon-hypnotic,season,mild,lily of the valley; ylang-ylang; jasmine; narcissus; oak; sandalwood; iris; musk,High
+clive-christian-chasing-the-dragon-hypnotic,season,cold,amber; vanilla; cinnamon; patchouli,Medium
+initio-addictive-vibration,presence,close,musk,Medium
+initio-addictive-vibration,season,mild,apple blossom; crisp floral-fruity spark; orange blossom; musk,High
+initio-high-frequency,presence,close,white musk,Medium
+initio-high-frequency,season,mild,magnolia; jasmine; white musk,Medium
+initio-psychedelic-love,presence,noticed,myrrh; resinous warmth; patchouli; bergamot,Medium
+initio-psychedelic-love,season,mild,heliotrope; rose,Medium
+initio-psychedelic-love,season,cold,myrrh; resinous warmth; patchouli,High
+initio-paragon,presence,close,,Low
+initio-paragon,season,hot,clary sage; lavender,Medium
+initio-rehab,presence,noticed,black pepper; slightly spicy start,Medium
+initio-rehab,season,hot,lavender,Low
+initio-rehab,season,cold,black pepper; slightly spicy start,Low
+initio-blessed-baraka,presence,noticed,amber; warm spices; musk,Medium
+initio-blessed-baraka,season,mild,sandalwood; musk,Low
+initio-blessed-baraka,season,cold,amber; warm spices,Medium
+initio-oud-for-greatness,presence,fills,oud; smoky central theme; patchouli; saffron; nutmeg; spicy,High
+initio-oud-for-greatness,season,cold,oud; saffron; nutmeg; spicy; patchouli; smoky central theme,High
+initio-oud-for-happiness,presence,noticed,oud; ginger; bergamot; musk,High
+initio-oud-for-happiness,season,cold,licorice; oud; ginger,Medium
+initio-atomic-rose,presence,noticed,warm amber; spice; soft vanilla; hedione; or musk for a luxurious,Medium
+initio-atomic-rose,season,mild,rich rose enhanced by jasmine; or other white florals; hedione; or musk for a luxurious,Medium
+initio-atomic-rose,season,cold,warm amber; soft vanilla; spice,High
+profumum-roma-ninfea,presence,close,grass; hay,High
+profumum-roma-ninfea,season,hot,grass; hay,Medium
+profumum-roma-ninfea,season,mild,violet; rose; honeysuckle,Medium
+profumum-roma-tagete,presence,noticed,moss,Low
+profumum-roma-tagete,season,mild,tuberose; marigold; jasmine; vetiver,High
+profumum-roma-eccelso,presence,noticed,french labdanum; patchouli; nutmeg; bergamot; musk,High
+profumum-roma-eccelso,season,mild,magnolia; sandalwood; musk,Medium
+profumum-roma-eccelso,season,cold,french labdanum; nutmeg; patchouli,Medium
+rosendo-mateu-no-5,presence,noticed,amber; spices; vanilla; musk,High
+rosendo-mateu-no-5,season,mild,exotic floral notes; carnation; lily-of-the-valley; musk,Medium
+rosendo-mateu-no-5,season,cold,amber; vanilla; spices,High
+maison-crivelli-safran-secret,presence,noticed,spices; saffron,Medium
+maison-crivelli-safran-secret,season,cold,spices; saffron,Low
+maison-crivelli-ambre-chromatique-extrait,presence,fills,amber; incense; benzoin; pink pepper; bourbon vanilla; extrait concentration,High
+maison-crivelli-ambre-chromatique-extrait,season,cold,amber; bourbon vanilla; pink pepper; incense; benzoin,High
+maison-crivelli-hibiscus-mahajad-extrait,presence,noticed,leather; peppermint; cinnamon; vanilla; ambrette,Medium
+maison-crivelli-hibiscus-mahajad-extrait,season,mild,hibiscus; damask rose; ambrette; cassis,Medium
+maison-crivelli-hibiscus-mahajad-extrait,season,cold,vanilla; peppermint; cinnamon; leather,High
+maison-crivelli-oud-stallion-extrait,presence,fills,agarwood; leather; patchouli; saffron; cardamom; indonesian nutmeg; extrait concentration,High
+maison-crivelli-oud-stallion-extrait,season,cold,tonka; agarwood; saffron; cardamom; indonesian nutmeg; leather; patchouli,High
+mfk-aqua-universalis-cologne-forte,presence,close,bergamot; citrus accords; white musk; cologne concentration,High
+mfk-aqua-universalis-cologne-forte,season,hot,bergamot; citrus accords,Low
+mfk-aqua-universalis-cologne-forte,season,mild,orange blossom; jasmine; white musk,Medium
+mfk-oud-satin-mood,presence,fills,oud; amber; benzoin; vanilla,High
+mfk-oud-satin-mood,season,cold,amber; vanilla; caramel; oud; benzoin,High
+mfk-apom,presence,close,white musk; clean,Low
+mfk-apom,season,mild,orange blossom; floral; ylang ylang; exotic florals; white musk; clean,High
+mfk-aqua-vitae,presence,close,calabrian lemon; sicilian mandarin; hedione,High
+mfk-aqua-vitae,season,hot,calabrian lemon; sicilian mandarin,Low
+mfk-aqua-vitae,season,mild,guaiac wood; hedione,Low
+mfk-aqua-vitae,season,cold,vanilla infusion; brazilian tonka bean,Medium
+nishane-hundred-silent-ways,presence,close,mandarin orange; orris,Medium
+nishane-hundred-silent-ways,season,mild,tuberose; jasmine; gardenia; sandalwood; vetiver; orris; peach,High
+nishane-ani,presence,noticed,benzoin; patchouli; ambergris; blue ginger; pink pepper; cardamom; vanilla; bergamot,Medium
+nishane-ani,season,mild,turkish rose; sandalwood; cedarwood; musk; blackcurrant,Medium
+nishane-ani,season,cold,vanilla; blue ginger; pink pepper; cardamom; benzoin; patchouli; ambergris,High
+profumum-roma-rosae-mundi,presence,noticed,patchouli,Low
+profumum-roma-rosae-mundi,season,mild,rose; cedar; vetiver,Medium
+chabaud-lait-et-chocolat,presence,noticed,vanilla; musk,Medium
+chabaud-lait-et-chocolat,season,mild,jasmine; teak wood; cedar; musk,Medium
+chabaud-lait-et-chocolat,season,cold,vanilla; dark chocolate; chocolate; milk,High
+chabaud-lait-de-vanille,presence,noticed,benzoin; vanilla,Medium
+chabaud-lait-de-vanille,season,cold,vanilla; caramel; benzoin,Medium
+mfk-kurky,presence,close,white musk,Low
+mfk-kurky,season,mild,white musk; raspberry; peach; fruity notes,Low
+mfk-kurky,season,cold,vanilla; gummy candies,Medium
+memo-paris-italian-leather,presence,noticed,labdanum; benzoin; tolu balsam; myrrh; opoponax; vanilla; vanilla absolute; orris root,Medium
+memo-paris-italian-leather,season,cold,labdanum; vanilla; vanilla absolute; benzoin; tolu balsam; myrrh; opoponax,High
+memo-paris-marfa,presence,close,orange; musk,High
+memo-paris-marfa,season,mild,blossom; ylang ylang; sandalwood; cedarwood; musk,High
+memo-paris-sintra,presence,close,petitgrain; musk,Medium
+memo-paris-sintra,season,hot,petitgrain; red fruits,Low
+memo-paris-sintra,season,mild,rose; musk; red fruits,Low
+memo-paris-sintra,season,cold,vanilla; cinnamon,Medium
+memo-paris-kedu,presence,close,bergamot; orange; grapefruit; tea; musk,High
+memo-paris-kedu,season,hot,bergamot; orange; grapefruit; aromatic notes; tea,High
+xerjoff-deified-tony-iommi-parfum,presence,fills,leather; patchouli; moss; cinnamon; saffron; parfum concentration,High
+xerjoff-deified-tony-iommi-parfum,season,mild,rose; papyrus; musk; apple,Medium
+xerjoff-deified-tony-iommi-parfum,season,cold,cinnamon; saffron; leather; patchouli; moss,High
+xerjoff-italica,presence,noticed,saffron; bourbon vanilla; white musk,Medium
+xerjoff-italica,season,cold,bourbon vanilla; milk; almond; toffee; saffron,High
+xerjoff-cruz-del-sur-ii,presence,close,musk; violet leaf,High
+xerjoff-cruz-del-sur-ii,season,mild,apple blossom; exotic floral notes; vetiver; cedar; musk; mango; guava; pineapple,High
+nishane-hacivat-x,presence,close,,Low
+nishane-hacivat-x,season,mild,,Low
+memo-paris-winter-palace,presence,noticed,labdanum; benzoin; clove; bergamot; mate,High
+memo-paris-winter-palace,season,hot,bergamot; mate,Medium
+memo-paris-winter-palace,season,cold,labdanum; clove; benzoin,High
+memo-paris-african-leather,presence,fills,oud; leather; patchouli; cardamom; saffron; cumin,High
+memo-paris-african-leather,season,cold,oud; cardamom; saffron; cumin; leather; patchouli,High
+max-philip-cherry,presence,fills,peru balsam; benzoin; patchouli; liquor; cinnamon; cloves; vanilla,High
+max-philip-cherry,season,mild,turkish rose; jasmine sambac; sandalwood; vetiver; cedar; sour cherry; plum,Medium
+max-philip-cherry,season,cold,vanilla; bitter almond; tonka bean; cinnamon; cloves; peru balsam; benzoin; liquor,High
+memo-paris-french-leather,presence,noticed,suede; pink pepper; lime; bergamot; hay,High
+memo-paris-french-leather,season,hot,lime; bergamot; hay; juniper berry; clary sage,High
+xerjoff-accento,presence,noticed,amber; patchouli; pink pepper; vanilla; iris; musk,High
+xerjoff-accento,season,mild,hyacinth; jasmine; vetiver; iris; musk; pineapple,High
+xerjoff-accento,season,cold,amber; vanilla; pink pepper; patchouli,High
+xerjoff-40-knots,presence,close,salt; sea water; green notes,High
+xerjoff-40-knots,season,hot,salt; sea water; green notes,High
+xerjoff-alexandria-ii-anniversary,presence,noticed,oud; amber; cardamom; cumin; vanilla; orris; musk; oil (sits on skin),Medium
+xerjoff-alexandria-ii-anniversary,season,hot,lavender; wormwood; clary sage; mint,Medium
+xerjoff-alexandria-ii-anniversary,season,mild,bulgarian rose; cypriol oil; sandalwood; orris; musk,Medium
+xerjoff-alexandria-ii-anniversary,season,cold,amber; vanilla; oud; cardamom; cumin,High
+xerjoff-erba-pura,presence,noticed,amber; vanilla; sicilian orange; bergamot; sicilian lemon; white musk,Medium
+xerjoff-erba-pura,season,hot,sicilian orange; bergamot; sicilian lemon,Medium
+xerjoff-erba-pura,season,cold,amber; vanilla,Medium
+xerjoff-alexandria-ii,presence,fills,agarwood; amber; cinnamon; vanilla,High
+xerjoff-alexandria-ii,season,mild,rose; lily-of-the-valley; palisander rosewood; cedar; sandalwood; musk; apple,High
+xerjoff-alexandria-ii,season,cold,amber; vanilla; agarwood; cinnamon,High
+marc-antoine-barrois-b683,presence,fills,labdanum; amber; resinous; patchouli; oakmoss; earthy; ambroxan; saffron,High
+marc-antoine-barrois-b683,season,cold,labdanum; amber; saffron; black pepper; nutmeg; red chilli pepper; resinous; patchouli,High
+xerjoff-uden,presence,noticed,ambergris; rum; vanilla; citruses; lemon; grapefruit; musk,Medium
+xerjoff-uden,season,hot,citruses; lemon; grapefruit,Medium
+xerjoff-uden,season,mild,rose; guaiac wood; sandalwood; musk,Medium
+xerjoff-uden,season,cold,vanilla; coffee; rum; ambergris,High
+xerjoff-more-than-words,presence,fills,agarwood; olibanum; ambergris,High
+xerjoff-more-than-words,season,mild,floral notes; woody notes; fruity notes,Medium
+xerjoff-more-than-words,season,cold,agarwood; olibanum; ambergris,Medium
+marc-antoine-barrois-encelade,presence,noticed,leather; slightly smoky; rhubarb; green,High
+marc-antoine-barrois-encelade,season,mild,cedar; woody; vetiver; sandalwood,High
+marc-antoine-barrois-encelade,season,cold,tonka bean; leather; slightly smoky,High
+profumum-roma-tuberosa,presence,close,,Low
+profumum-roma-tuberosa,season,mild,tuberose; gardenia; jasmine,Medium
+profumum-roma-fiori-dambra,presence,noticed,amber; soft resinous accents; delicate spices,Medium
+profumum-roma-fiori-dambra,season,cold,amber; delicate spices; soft resinous accents,Medium
+profumum-roma-thundra,presence,close,white musk,Low
+profumum-roma-thundra,season,hot,mint,Low
+profumum-roma-arso,presence,fills,leather; resin; incense,High
+profumum-roma-arso,season,cold,leather; resin; incense,High
+profumum-roma-dulcis-in-fundo,presence,close,juicy bergamot-an invigorating; sweet citrus opening,Medium
+profumum-roma-dulcis-in-fundo,season,hot,juicy bergamot-an invigorating; sweet citrus opening,Low
+profumum-roma-acqua-e-zucchero,presence,noticed,vanilla,Low
+profumum-roma-acqua-e-zucchero,season,mild,orange blossom; forest fruits,Low
+profumum-roma-acqua-e-zucchero,season,cold,vanilla,Low
+profumum-roma-confetto,presence,noticed,amber; anise; vanilla; musk,Medium
+profumum-roma-confetto,season,cold,amber; vanilla; candied almond; anise,High
+platinum-whisper,moment,evening,Amouage Guidance; Profumum Roma Confetto; Parfums de Marly Oriana,Medium
+platinum-whisper,mood,celebrate-indulge,Amouage Guidance; Profumum Roma Confetto; Parfums de Marly Oriana,Medium
+platinum-whisper,mood,romance-presence,Amouage Guidance; Profumum Roma Confetto; Parfums de Marly Oriana,Low
+platinum-whisper,gender,Feminine,Amouage Guidance; Profumum Roma Confetto; Parfums de Marly Oriana,Medium
+platinum-whisper,presence,fills,Amouage Guidance; Profumum Roma Confetto; Parfums de Marly Oriana,Low
+platinum-whisper,season,cold,Amouage Guidance; Profumum Roma Confetto; Parfums de Marly Oriana,Medium
+platinum-whisper,season,mild,Amouage Guidance; Profumum Roma Confetto; Parfums de Marly Oriana,Low
+modern-icons,moment,evening,Maison Francis Kurkdjian Baccarat Rouge 540 Extrait; Parfums de Marly Delina; Clive Christian Jump Up And Kiss Me Ecstatic Feminine; Maison Crivelli Hibiscus Mahajád Extract; Amouage Guidance,High
+modern-icons,mood,celebrate-indulge,Maison Francis Kurkdjian Baccarat Rouge 540 Extrait; Parfums de Marly Delina; Clive Christian Jump Up And Kiss Me Ecstatic Feminine; Maison Crivelli Hibiscus Mahajád Extract; Amouage Guidance,High
+modern-icons,mood,romance-presence,Maison Francis Kurkdjian Baccarat Rouge 540 Extrait; Parfums de Marly Delina; Clive Christian Jump Up And Kiss Me Ecstatic Feminine; Maison Crivelli Hibiscus Mahajád Extract; Amouage Guidance,High
+modern-icons,gender,Feminine,Maison Francis Kurkdjian Baccarat Rouge 540 Extrait; Parfums de Marly Delina; Clive Christian Jump Up And Kiss Me Ecstatic Feminine; Maison Crivelli Hibiscus Mahajád Extract; Amouage Guidance,High
+modern-icons,presence,noticed,Maison Francis Kurkdjian Baccarat Rouge 540 Extrait; Parfums de Marly Delina; Clive Christian Jump Up And Kiss Me Ecstatic Feminine; Maison Crivelli Hibiscus Mahajád Extract; Amouage Guidance,Medium
+modern-icons,season,mild,Maison Francis Kurkdjian Baccarat Rouge 540 Extrait; Parfums de Marly Delina; Clive Christian Jump Up And Kiss Me Ecstatic Feminine; Maison Crivelli Hibiscus Mahajád Extract; Amouage Guidance,High
+modern-icons,season,cold,Maison Francis Kurkdjian Baccarat Rouge 540 Extrait; Parfums de Marly Delina; Clive Christian Jump Up And Kiss Me Ecstatic Feminine; Maison Crivelli Hibiscus Mahajád Extract; Amouage Guidance,High
+midnight-bloom,moment,evening,Parfums de Marly Delina Exclusif; Kilian Princess; Initio Parfums Prive Atomic Rose; Tiziana Terenzi Orza; Amouage Guidance,High
+midnight-bloom,mood,romance-presence,Parfums de Marly Delina Exclusif; Kilian Princess; Initio Parfums Prive Atomic Rose; Tiziana Terenzi Orza; Amouage Guidance,High
+midnight-bloom,mood,celebrate-indulge,Parfums de Marly Delina Exclusif; Kilian Princess; Initio Parfums Prive Atomic Rose; Tiziana Terenzi Orza; Amouage Guidance,High
+midnight-bloom,gender,Feminine,Parfums de Marly Delina Exclusif; Kilian Princess; Initio Parfums Prive Atomic Rose; Tiziana Terenzi Orza; Amouage Guidance,High
+midnight-bloom,presence,fills,Parfums de Marly Delina Exclusif; Kilian Princess; Initio Parfums Prive Atomic Rose; Tiziana Terenzi Orza; Amouage Guidance,Medium
+midnight-bloom,season,cold,Parfums de Marly Delina Exclusif; Kilian Princess; Initio Parfums Prive Atomic Rose; Tiziana Terenzi Orza; Amouage Guidance,High
+midnight-bloom,season,mild,Parfums de Marly Delina Exclusif; Kilian Princess; Initio Parfums Prive Atomic Rose; Tiziana Terenzi Orza; Amouage Guidance,High
+black-ties,moment,special-occasions,Clive Christian Jump Up And Kiss Me Hedonistic Masculine; Amouage Jubilation XXV Man; Xerjoff Alexandria II Anniversary by Xerjoff; Parfums de Marly Haltane; Initio Parfums Prive Oud for Greatness,High
+black-ties,mood,celebrate-indulge,Clive Christian Jump Up And Kiss Me Hedonistic Masculine; Amouage Jubilation XXV Man; Xerjoff Alexandria II Anniversary by Xerjoff; Parfums de Marly Haltane; Initio Parfums Prive Oud for Greatness,High
+black-ties,mood,harmony-meditation,Clive Christian Jump Up And Kiss Me Hedonistic Masculine; Amouage Jubilation XXV Man; Xerjoff Alexandria II Anniversary by Xerjoff; Parfums de Marly Haltane; Initio Parfums Prive Oud for Greatness,Low
+black-ties,gender,Masculine,Clive Christian Jump Up And Kiss Me Hedonistic Masculine; Amouage Jubilation XXV Man; Xerjoff Alexandria II Anniversary by Xerjoff; Parfums de Marly Haltane; Initio Parfums Prive Oud for Greatness,High
+black-ties,presence,fills,Clive Christian Jump Up And Kiss Me Hedonistic Masculine; Amouage Jubilation XXV Man; Xerjoff Alexandria II Anniversary by Xerjoff; Parfums de Marly Haltane; Initio Parfums Prive Oud for Greatness,High
+black-ties,season,cold,Clive Christian Jump Up And Kiss Me Hedonistic Masculine; Amouage Jubilation XXV Man; Xerjoff Alexandria II Anniversary by Xerjoff; Parfums de Marly Haltane; Initio Parfums Prive Oud for Greatness,High
+black-ties,season,hot,Clive Christian Jump Up And Kiss Me Hedonistic Masculine; Amouage Jubilation XXV Man; Xerjoff Alexandria II Anniversary by Xerjoff; Parfums de Marly Haltane; Initio Parfums Prive Oud for Greatness,High
+gilded-gatsby-glam,moment,special-occasions,Amouage Epic 56 Woman Extract; Creed Royal Princess Oud; Parfums de Marly Delina Exclusif; Roja Dove Sweetie Aoud; Memo Paris French Leather,High
+gilded-gatsby-glam,mood,celebrate-indulge,Amouage Epic 56 Woman Extract; Creed Royal Princess Oud; Parfums de Marly Delina Exclusif; Roja Dove Sweetie Aoud; Memo Paris French Leather,High
+gilded-gatsby-glam,mood,romance-presence,Amouage Epic 56 Woman Extract; Creed Royal Princess Oud; Parfums de Marly Delina Exclusif; Roja Dove Sweetie Aoud; Memo Paris French Leather,High
+gilded-gatsby-glam,gender,Feminine,Amouage Epic 56 Woman Extract; Creed Royal Princess Oud; Parfums de Marly Delina Exclusif; Roja Dove Sweetie Aoud; Memo Paris French Leather,High
+gilded-gatsby-glam,presence,fills,Amouage Epic 56 Woman Extract; Creed Royal Princess Oud; Parfums de Marly Delina Exclusif; Roja Dove Sweetie Aoud; Memo Paris French Leather,High
+gilded-gatsby-glam,season,cold,Amouage Epic 56 Woman Extract; Creed Royal Princess Oud; Parfums de Marly Delina Exclusif; Roja Dove Sweetie Aoud; Memo Paris French Leather,High
+gilded-gatsby-glam,season,mild,Amouage Epic 56 Woman Extract; Creed Royal Princess Oud; Parfums de Marly Delina Exclusif; Roja Dove Sweetie Aoud; Memo Paris French Leather,Low
+the-modern-muse,moment,everyday,Byredo Bal d'Afrique; Maison Francis Kurkdjian A La Rose; Creed Love in White; Amouage Honour Woman; Clive Christian Crab Apple Blossom,High
+the-modern-muse,mood,morning-boost,Byredo Bal d'Afrique; Maison Francis Kurkdjian A La Rose; Creed Love in White; Amouage Honour Woman; Clive Christian Crab Apple Blossom,Medium
+the-modern-muse,mood,focus-flow,Byredo Bal d'Afrique; Maison Francis Kurkdjian A La Rose; Creed Love in White; Amouage Honour Woman; Clive Christian Crab Apple Blossom,Medium
+the-modern-muse,gender,Unisex,Byredo Bal d'Afrique; Maison Francis Kurkdjian A La Rose; Creed Love in White; Amouage Honour Woman; Clive Christian Crab Apple Blossom,High
+the-modern-muse,presence,close,Byredo Bal d'Afrique; Maison Francis Kurkdjian A La Rose; Creed Love in White; Amouage Honour Woman; Clive Christian Crab Apple Blossom,High
+the-modern-muse,season,mild,Byredo Bal d'Afrique; Maison Francis Kurkdjian A La Rose; Creed Love in White; Amouage Honour Woman; Clive Christian Crab Apple Blossom,High
+the-modern-muse,season,cold,Byredo Bal d'Afrique; Maison Francis Kurkdjian A La Rose; Creed Love in White; Amouage Honour Woman; Clive Christian Crab Apple Blossom,Medium
+the-executive-edit,moment,everyday,Creed Green Irish Tweed; Parfums de Marly Percival; Amouage Reflection Man by Amouage; Maison Francis Kurkdjian Aqua Universalis Cologne Forte; Essential Parfums Bois Impérial,High
+the-executive-edit,mood,focus-flow,Creed Green Irish Tweed; Parfums de Marly Percival; Amouage Reflection Man by Amouage; Maison Francis Kurkdjian Aqua Universalis Cologne Forte; Essential Parfums Bois Impérial,High
+the-executive-edit,mood,move-thrive,Creed Green Irish Tweed; Parfums de Marly Percival; Amouage Reflection Man by Amouage; Maison Francis Kurkdjian Aqua Universalis Cologne Forte; Essential Parfums Bois Impérial,Low
+the-executive-edit,gender,Unisex,Creed Green Irish Tweed; Parfums de Marly Percival; Amouage Reflection Man by Amouage; Maison Francis Kurkdjian Aqua Universalis Cologne Forte; Essential Parfums Bois Impérial,High
+the-executive-edit,presence,close,Creed Green Irish Tweed; Parfums de Marly Percival; Amouage Reflection Man by Amouage; Maison Francis Kurkdjian Aqua Universalis Cologne Forte; Essential Parfums Bois Impérial,High
+the-executive-edit,season,hot,Creed Green Irish Tweed; Parfums de Marly Percival; Amouage Reflection Man by Amouage; Maison Francis Kurkdjian Aqua Universalis Cologne Forte; Essential Parfums Bois Impérial,High
+the-executive-edit,season,mild,Creed Green Irish Tweed; Parfums de Marly Percival; Amouage Reflection Man by Amouage; Maison Francis Kurkdjian Aqua Universalis Cologne Forte; Essential Parfums Bois Impérial,High
+modern-legends,moment,work,Creed Aventus for Her; Parfums de Marly Layton; Amouage Reflection Man by Amouage; Initio Parfums Prive Rehab; Nishane Hacivat X,High
+modern-legends,mood,focus-flow,Creed Aventus for Her; Parfums de Marly Layton; Amouage Reflection Man by Amouage; Initio Parfums Prive Rehab; Nishane Hacivat X,High
+modern-legends,mood,romance-presence,Creed Aventus for Her; Parfums de Marly Layton; Amouage Reflection Man by Amouage; Initio Parfums Prive Rehab; Nishane Hacivat X,Medium
+modern-legends,gender,Unisex,Creed Aventus for Her; Parfums de Marly Layton; Amouage Reflection Man by Amouage; Initio Parfums Prive Rehab; Nishane Hacivat X,High
+modern-legends,presence,noticed,Creed Aventus for Her; Parfums de Marly Layton; Amouage Reflection Man by Amouage; Initio Parfums Prive Rehab; Nishane Hacivat X,High
+modern-legends,season,hot,Creed Aventus for Her; Parfums de Marly Layton; Amouage Reflection Man by Amouage; Initio Parfums Prive Rehab; Nishane Hacivat X,High
+modern-legends,season,mild,Creed Aventus for Her; Parfums de Marly Layton; Amouage Reflection Man by Amouage; Initio Parfums Prive Rehab; Nishane Hacivat X,High
+chromatic-couture,moment,evening,Initio Parfums Prive Atomic Rose; Maison Crivelli Hibiscus Mahajád Extract; Memo Paris Madurai; Nishane Hundred Silent Ways; Creed Queen of Silk,High
+chromatic-couture,mood,celebrate-indulge,Initio Parfums Prive Atomic Rose; Maison Crivelli Hibiscus Mahajád Extract; Memo Paris Madurai; Nishane Hundred Silent Ways; Creed Queen of Silk,High
+chromatic-couture,mood,romance-presence,Initio Parfums Prive Atomic Rose; Maison Crivelli Hibiscus Mahajád Extract; Memo Paris Madurai; Nishane Hundred Silent Ways; Creed Queen of Silk,High
+chromatic-couture,gender,Feminine,Initio Parfums Prive Atomic Rose; Maison Crivelli Hibiscus Mahajád Extract; Memo Paris Madurai; Nishane Hundred Silent Ways; Creed Queen of Silk,High
+chromatic-couture,presence,noticed,Initio Parfums Prive Atomic Rose; Maison Crivelli Hibiscus Mahajád Extract; Memo Paris Madurai; Nishane Hundred Silent Ways; Creed Queen of Silk,High
+chromatic-couture,season,mild,Initio Parfums Prive Atomic Rose; Maison Crivelli Hibiscus Mahajád Extract; Memo Paris Madurai; Nishane Hundred Silent Ways; Creed Queen of Silk,High
+chromatic-couture,season,cold,Initio Parfums Prive Atomic Rose; Maison Crivelli Hibiscus Mahajád Extract; Memo Paris Madurai; Nishane Hundred Silent Ways; Creed Queen of Silk,High
+after-hours,moment,evening,Xerjoff Naxos; Initio Parfums Prive Blessed Baraka; Marc-Antoine Barrois Ganymede; Maison Crivelli Ambre Chromatique Extrait,High
+after-hours,mood,romance-presence,Xerjoff Naxos; Initio Parfums Prive Blessed Baraka; Marc-Antoine Barrois Ganymede; Maison Crivelli Ambre Chromatique Extrait,High
+after-hours,mood,celebrate-indulge,Xerjoff Naxos; Initio Parfums Prive Blessed Baraka; Marc-Antoine Barrois Ganymede; Maison Crivelli Ambre Chromatique Extrait,High
+after-hours,gender,Masculine,Xerjoff Naxos; Initio Parfums Prive Blessed Baraka; Marc-Antoine Barrois Ganymede; Maison Crivelli Ambre Chromatique Extrait,High
+after-hours,presence,noticed,Xerjoff Naxos; Initio Parfums Prive Blessed Baraka; Marc-Antoine Barrois Ganymede; Maison Crivelli Ambre Chromatique Extrait,High
+after-hours,season,cold,Xerjoff Naxos; Initio Parfums Prive Blessed Baraka; Marc-Antoine Barrois Ganymede; Maison Crivelli Ambre Chromatique Extrait,High
+after-hours,season,mild,Xerjoff Naxos; Initio Parfums Prive Blessed Baraka; Marc-Antoine Barrois Ganymede; Maison Crivelli Ambre Chromatique Extrait,Medium
