@@ -1,3 +1,5 @@
 node_modules/
 data-raw/*.html
 data-raw/
+.cache/
+harness/logs/
