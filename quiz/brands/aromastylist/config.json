@@ -1,0 +1,143 @@
+{
+  "id": "aromastylist",
+  "locale": "en-US",
+  "currency": "USD",
+  "share": {
+    "url_text": "aromastylist.com/pages/find-your-perfume",
+    "file_name": "my-scent-persona.png",
+    "title": "My scent persona"
+  },
+  "cart": {
+    "mode": "page",
+    "count_selector": "#cart-count",
+    "total_selector": "#cart-total"
+  },
+  "copy": {
+    "intro_kicker": "Perfume quiz",
+    "intro_title": "Five questions. Your first scent wardrobe.",
+    "intro_text": "Tap through five quick choices about who it's for, when you wear it and how loud you like it. We match you with 3 to 5 samples from what's on our shelves right now.",
+    "start": "Start the quiz",
+    "back": "Back",
+    "step": "Question {n} of {total}",
+    "loading": "Matching your answers to what's on the shelf…",
+    "result_kicker": "Your scent persona",
+    "result_list_title": "Your starter wardrobe",
+    "why": "Picked for {list}.",
+    "and": "and",
+    "add_sample": "Add sample",
+    "adding": "Adding…",
+    "added": "Added",
+    "view_cart": "View bag",
+    "add_all": "Add all as my starter wardrobe",
+    "add_error": "That didn't reach your bag. Please try again.",
+    "set_kicker": "Or try the ready-made set",
+    "set_text": "A boxed Discovery Set that lines up with your answers.",
+    "set_cta": "Add the set",
+    "share_title": "Share my scent persona",
+    "share_download": "Download image",
+    "share_native": "Share",
+    "share_copy": "Copy link",
+    "share_copied": "Link copied",
+    "share_story_kicker": "My scent persona",
+    "share_story_top": "My top 3",
+    "shared_note": "Someone shared their scent persona with you. Curious about yours?",
+    "shared_cta": "Take the quiz",
+    "start_over": "Start over",
+    "fallback_note": "Nothing matched every answer, so here are the closest picks on the shelf."
+  },
+  "questions": [
+    {
+      "id": "for",
+      "title": "Who is it for?",
+      "answers": [
+        { "id": "her", "label": "Her", "why": "wearing it on her", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/232F799F-EEF2-4F0D-8771-EDBDE91E4E35.png", "tags": { "gender": { "Feminine": 3, "Unisex": 3 } }, "exclude": { "gender": ["Masculine"] } },
+        { "id": "him", "label": "Him", "why": "wearing it on him", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/73DC8906-1DD4-4869-9014-8BBDA04BAE83.png", "tags": { "gender": { "Masculine": 3, "Unisex": 3 } }, "exclude": { "gender": ["Feminine"] } },
+        { "id": "both", "label": "Both of us / no rule", "why": "sharing between you", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/A6219AFF-CD5D-4673-9333-FF478253DE16.png", "tags": { "gender": { "Unisex": 3, "Feminine": 1, "Masculine": 1 } } }
+      ]
+    },
+    {
+      "id": "when",
+      "title": "When will you wear it most?",
+      "answers": [
+        { "id": "everyday", "label": "Everyday Signature", "why": "everyday wear", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/768F88D6-A815-46E6-B09E-4223387D5C0D.png", "tags": { "moment": { "everyday": 4, "work": 1 } } },
+        { "id": "work", "label": "Work & Presence", "why": "work hours", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/7C9795A7-99CE-4E40-A225-7AFDDFA397CA.png", "tags": { "moment": { "work": 4, "everyday": 1 } } },
+        { "id": "evening", "label": "Evening & Seduction", "why": "evenings out", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/07CA7334-91E6-484E-93BB-77EF8A8461E9.png", "tags": { "moment": { "evening": 4, "special-occasions": 1 } } },
+        { "id": "special", "label": "Special Occasions", "why": "big occasions", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/99A11F99-2D04-40A1-9AC7-C020D16B0A6A.png", "tags": { "moment": { "special-occasions": 4, "evening": 1 } } }
+      ]
+    },
+    {
+      "id": "mood",
+      "title": "What should it do for you?",
+      "answers": [
+        { "id": "morning-boost", "label": "Morning Boost", "why": "a bright start to the day", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/4.png", "tags": { "mood": { "morning-boost": 5, "move-thrive": 1 } } },
+        { "id": "focus-flow", "label": "Focus & Flow", "why": "deep-work days", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/2.png", "tags": { "mood": { "focus-flow": 5, "harmony-meditation": 1 } } },
+        { "id": "romance-presence", "label": "Romance & Presence", "why": "romance and presence", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/3.png", "tags": { "mood": { "romance-presence": 5, "celebrate-indulge": 1 } } },
+        { "id": "celebrate-indulge", "label": "Celebrate & Indulge", "why": "celebrating", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/10.png", "tags": { "mood": { "celebrate-indulge": 5, "romance-presence": 1 } } },
+        { "id": "relax-wind-down", "label": "Relax & Wind Down", "why": "slow evenings in", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/582F3717-661C-4A13-B1B4-DB0AA759FAB8.png", "tags": { "mood": { "relax-wind-down": 5, "harmony-meditation": 1 } } },
+        { "id": "move-thrive", "label": "Move & Thrive", "why": "days on the move", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/5.png", "tags": { "mood": { "move-thrive": 5, "morning-boost": 1 } } },
+        { "id": "harmony-meditation", "label": "Harmony & Meditation", "why": "quiet, unhurried moments", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/7.png", "tags": { "mood": { "harmony-meditation": 5, "relax-wind-down": 1 } } }
+      ]
+    },
+    {
+      "id": "presence",
+      "title": "How present should it be?",
+      "answers": [
+        { "id": "close", "label": "Close to the skin", "why": "a close-to-skin trail", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/45737BFC-A7FC-48D4-BA5F-488FEA0E4130.png", "tags": { "presence": { "close": 3, "noticed": 1 } } },
+        { "id": "noticed", "label": "Noticed in the room", "why": "a trail people notice", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/31BF3B96-8B81-4E35-944B-0E3AA0197AE9.png", "tags": { "presence": { "noticed": 3, "close": 1, "fills": 1 } } },
+        { "id": "fills", "label": "Fills the room", "why": "a room-filling trail", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/73B7A0A5-1163-40A6-AC36-DAF32B13182A.png", "tags": { "presence": { "fills": 3, "noticed": 1 } } }
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Your weather right now?",
+      "answers": [
+        { "id": "hot", "label": "Hot and humid", "why": "hot, humid days", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/FullSizeRender_e274824a-ee92-40e2-8edf-7ddb3b5745a9.jpg", "tags": { "season": { "hot": 2, "mild": 1 } } },
+        { "id": "mild", "label": "Mild", "why": "mild weather", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/77F3F8EE-6A90-4E34-909B-27E8E53A6E4D.png", "tags": { "season": { "mild": 2, "hot": 1, "cold": 1 } } },
+        { "id": "cold", "label": "Cold", "why": "cold air", "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/85646074-6533-4FBE-AC71-5C1962AB0F09.png", "tags": { "season": { "cold": 2, "mild": 1 } } }
+      ]
+    }
+  ],
+  "why_order": ["mood", "when", "presence", "weather", "for"],
+  "scoring": {
+    "low_confidence_factor": 0.5,
+    "result_min": 3,
+    "result_max": 5,
+    "max_per_house": 2,
+    "keep_ratio": 0.85,
+    "set_within": 0.1,
+    "live_check": 15
+  },
+  "personas": {
+    "rows": "mood",
+    "cols": "presence",
+    "list": [
+      { "key": "first-light", "name": "The First Light", "line": "Zest on warm skin. A bright, close scent for the first hour of the day, noticed only by whoever leans in." },
+      { "key": "sunlit-signal", "name": "The Sunlit Signal", "line": "Citrus peel, green leaves and a clean trail that walks into the room a step behind you." },
+      { "key": "bright-entrance", "name": "The Bright Entrance", "line": "Sparkling top notes with real staying power. You arrive and the whole room brightens a shade." },
+      { "key": "quiet-signature", "name": "The Quiet Signature", "line": "Clean woods, cool herbs and a whisper of iris. Sharp, composed and kept to your own desk." },
+      { "key": "sharp-edit", "name": "The Sharp Edit", "line": "Crisp aromatics over dry cedar. The scent of someone who answers emails in full sentences." },
+      { "key": "boardroom-pull", "name": "The Boardroom Pull", "line": "Structured woods and cold spice with a trail that says the meeting starts when you sit down." },
+      { "key": "skin-secret", "name": "The Skin Secret", "line": "Soft musk, warm petals and a trace of amber, made for the distance of a whisper." },
+      { "key": "slow-burn", "name": "The Slow Burn", "line": "Rose, resin and something darker underneath. It lingers on a scarf long after you've left." },
+      { "key": "after-hours-magnet", "name": "The After-Hours Magnet", "line": "Oud, amber and velvet florals that own the room after dark. Heads turn and nobody can say why." },
+      { "key": "sweet-confidant", "name": "The Sweet Confidant", "line": "Vanilla, cream and a pinch of spice worn close. Dessert you keep to yourself." },
+      { "key": "golden-hour-guest", "name": "The Golden Hour Guest", "line": "Juicy fruit, warm amber and a pop of fizz. You make any table feel like a party." },
+      { "key": "grand-entrance", "name": "The Grand Entrance", "line": "Rum, praline, saffron and leather. Loud in the best way and still there at the last song." },
+      { "key": "soft-landing", "name": "The Soft Landing", "line": "Lavender, sandalwood and clean musk. A Sunday with nowhere to be, bottled." },
+      { "key": "cashmere-evening", "name": "The Cashmere Evening", "line": "Creamy woods and powdery vanilla that warm a room like a lamp turned low." },
+      { "key": "clean-stride", "name": "The Clean Stride", "line": "Cool water, bright citrus and a snap of ginger. Fresh from the first step to the last." },
+      { "key": "open-air", "name": "The Open Air", "line": "Sea salt, green leaves and wild herbs that trail behind you like wind off the water." },
+      { "key": "still-point", "name": "The Still Point", "line": "Sandalwood, tea and a thread of incense. Close, unhurried and completely your own." },
+      { "key": "temple-smoke", "name": "The Temple Smoke", "line": "Frankincense, myrrh and dry woods drifting through the room like the last minutes of a ritual." }
+    ],
+    "matrix": {
+      "morning-boost": { "close": "first-light", "noticed": "sunlit-signal", "fills": "bright-entrance" },
+      "focus-flow": { "close": "quiet-signature", "noticed": "sharp-edit", "fills": "boardroom-pull" },
+      "romance-presence": { "close": "skin-secret", "noticed": "slow-burn", "fills": "after-hours-magnet" },
+      "celebrate-indulge": { "close": "sweet-confidant", "noticed": "golden-hour-guest", "fills": "grand-entrance" },
+      "relax-wind-down": { "close": "soft-landing", "noticed": "cashmere-evening", "fills": "cashmere-evening" },
+      "move-thrive": { "close": "clean-stride", "noticed": "open-air", "fills": "open-air" },
+      "harmony-meditation": { "close": "still-point", "noticed": "temple-smoke", "fills": "temple-smoke" }
+    }
+  }
+}
