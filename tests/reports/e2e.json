@@ -1,0 +1,1150 @@
+{
+  "runs": [
+    {
+      "run": "390-run1",
+      "answers": [
+        "her",
+        "evening",
+        "romance-presence",
+        "fills",
+        "cold"
+      ],
+      "persona": "The After-Hours Magnet",
+      "items": [
+        {
+          "handle": "etat-libre-dorange-dangerous-complicity",
+          "variant": 52685163462936
+        },
+        {
+          "handle": "max-philip-cherry",
+          "variant": 50838982426904
+        },
+        {
+          "handle": "jusbox-night-flow",
+          "variant": 52685270810904
+        },
+        {
+          "handle": "kilian-cant-stop-loving-you",
+          "variant": 50567188250904
+        },
+        {
+          "handle": "parfums-de-marly-delina-exclusif",
+          "variant": 50567113015576
+        }
+      ],
+      "houses": [
+        "Etat Libre d'Orange",
+        "Max Philip",
+        "Jusbox",
+        "Kilian",
+        "Parfums de Marly"
+      ],
+      "set": "midnight-bloom",
+      "share_image": "screenshots/share-story-390-run1.png"
+    },
+    {
+      "run": "390-run2",
+      "answers": [
+        "him",
+        "work",
+        "focus-flow",
+        "close",
+        "mild"
+      ],
+      "persona": "The Quiet Signature",
+      "items": [
+        {
+          "handle": "acqua-di-parma-colonia",
+          "variant": 52582866256152
+        },
+        {
+          "handle": "escentric-molecules-escentric-03",
+          "variant": 52599240884504
+        },
+        {
+          "handle": "jusbox-visionary-eye",
+          "variant": 52685270712600
+        },
+        {
+          "handle": "memo-paris-irish-leather",
+          "variant": 50633460810008
+        },
+        {
+          "handle": "rosendo-mateu-no-1-bergamot-tea-leaf-sandalwood",
+          "variant": 50567177535768
+        }
+      ],
+      "houses": [
+        "Acqua di Parma",
+        "Escentric Molecules",
+        "Jusbox",
+        "Memo Paris",
+        "Rosendo Mateu"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-390-run2.png"
+    },
+    {
+      "run": "390-run3",
+      "answers": [
+        "both",
+        "everyday",
+        "morning-boost",
+        "noticed",
+        "hot"
+      ],
+      "persona": "The Sunlit Signal",
+      "items": [
+        {
+          "handle": "guerlain-aqua-allegoria-forte-mandarine-basilic",
+          "variant": 52582870319384
+        },
+        {
+          "handle": "hermes-un-jardin-sur-le-nil",
+          "variant": 52582866878744
+        },
+        {
+          "handle": "etat-libre-dorange-remarkable-people",
+          "variant": 50631025295640
+        },
+        {
+          "handle": "hermes-un-jardin-sur-le-toit",
+          "variant": 52582867403032
+        },
+        {
+          "handle": "jusbox-good-morning",
+          "variant": 52685270647064
+        }
+      ],
+      "houses": [
+        "Guerlain",
+        "Hermès",
+        "Etat Libre d'Orange",
+        "Hermès",
+        "Jusbox"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-390-run3.png"
+    },
+    {
+      "run": "390-run4",
+      "answers": [
+        "her",
+        "special",
+        "celebrate-indulge",
+        "noticed",
+        "cold"
+      ],
+      "persona": "The Golden Hour Guest",
+      "items": [
+        {
+          "handle": "milano-fragranze-panettone",
+          "variant": 52676305486104
+        },
+        {
+          "handle": "initio-oud-for-happiness",
+          "variant": 50612695204120
+        },
+        {
+          "handle": "xerjoff-erba-pura",
+          "variant": 50567192281368
+        },
+        {
+          "handle": "marc-antoine-barrois-encelade",
+          "variant": 50567221510424
+        },
+        {
+          "handle": "memo-paris-italian-leather",
+          "variant": 50567189561624
+        }
+      ],
+      "houses": [
+        "Milano Fragranze",
+        "Initio Parfums Prive",
+        "Xerjoff",
+        "Marc-Antoine Barrois",
+        "Memo Paris"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-390-run4.png"
+    },
+    {
+      "run": "390-run5",
+      "answers": [
+        "him",
+        "everyday",
+        "move-thrive",
+        "close",
+        "hot"
+      ],
+      "persona": "The Clean Stride",
+      "items": [
+        {
+          "handle": "giardino-benessere-salaria",
+          "variant": 50838909813016
+        },
+        {
+          "handle": "hermes-un-jardin-sur-le-nil",
+          "variant": 52582866878744
+        },
+        {
+          "handle": "guerlain-aqua-allegoria-forte-nerolia-vetiver",
+          "variant": 52582870024472
+        },
+        {
+          "handle": "hermes-un-jardin-sur-le-toit",
+          "variant": 52582867403032
+        },
+        {
+          "handle": "parfums-de-marly-greenley",
+          "variant": 50567112950040
+        }
+      ],
+      "houses": [
+        "Giardino Benessere",
+        "Hermès",
+        "Guerlain",
+        "Hermès",
+        "Parfums de Marly"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-390-run5.png"
+    },
+    {
+      "run": "1440-run1",
+      "answers": [
+        "her",
+        "evening",
+        "romance-presence",
+        "fills",
+        "cold"
+      ],
+      "persona": "The After-Hours Magnet",
+      "items": [
+        {
+          "handle": "etat-libre-dorange-dangerous-complicity",
+          "variant": 52685163462936
+        },
+        {
+          "handle": "max-philip-cherry",
+          "variant": 50838982426904
+        },
+        {
+          "handle": "jusbox-night-flow",
+          "variant": 52685270810904
+        },
+        {
+          "handle": "kilian-cant-stop-loving-you",
+          "variant": 50567188250904
+        },
+        {
+          "handle": "parfums-de-marly-delina-exclusif",
+          "variant": 50567113015576
+        }
+      ],
+      "houses": [
+        "Etat Libre d'Orange",
+        "Max Philip",
+        "Jusbox",
+        "Kilian",
+        "Parfums de Marly"
+      ],
+      "set": "midnight-bloom",
+      "share_image": "screenshots/share-story-1440-run1.png"
+    },
+    {
+      "run": "1440-run2",
+      "answers": [
+        "him",
+        "work",
+        "focus-flow",
+        "close",
+        "mild"
+      ],
+      "persona": "The Quiet Signature",
+      "items": [
+        {
+          "handle": "acqua-di-parma-colonia",
+          "variant": 52582866256152
+        },
+        {
+          "handle": "escentric-molecules-escentric-03",
+          "variant": 52599240884504
+        },
+        {
+          "handle": "jusbox-visionary-eye",
+          "variant": 52685270712600
+        },
+        {
+          "handle": "memo-paris-irish-leather",
+          "variant": 50633460810008
+        },
+        {
+          "handle": "rosendo-mateu-no-1-bergamot-tea-leaf-sandalwood",
+          "variant": 50567177535768
+        }
+      ],
+      "houses": [
+        "Acqua di Parma",
+        "Escentric Molecules",
+        "Jusbox",
+        "Memo Paris",
+        "Rosendo Mateu"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-1440-run2.png"
+    },
+    {
+      "run": "1440-run3",
+      "answers": [
+        "both",
+        "everyday",
+        "morning-boost",
+        "noticed",
+        "hot"
+      ],
+      "persona": "The Sunlit Signal",
+      "items": [
+        {
+          "handle": "guerlain-aqua-allegoria-forte-mandarine-basilic",
+          "variant": 52582870319384
+        },
+        {
+          "handle": "hermes-un-jardin-sur-le-nil",
+          "variant": 52582866878744
+        },
+        {
+          "handle": "etat-libre-dorange-remarkable-people",
+          "variant": 50631025295640
+        },
+        {
+          "handle": "hermes-un-jardin-sur-le-toit",
+          "variant": 52582867403032
+        },
+        {
+          "handle": "jusbox-good-morning",
+          "variant": 52685270647064
+        }
+      ],
+      "houses": [
+        "Guerlain",
+        "Hermès",
+        "Etat Libre d'Orange",
+        "Hermès",
+        "Jusbox"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-1440-run3.png"
+    },
+    {
+      "run": "1440-run4",
+      "answers": [
+        "her",
+        "special",
+        "celebrate-indulge",
+        "noticed",
+        "cold"
+      ],
+      "persona": "The Golden Hour Guest",
+      "items": [
+        {
+          "handle": "milano-fragranze-panettone",
+          "variant": 52676305486104
+        },
+        {
+          "handle": "initio-oud-for-happiness",
+          "variant": 50612695204120
+        },
+        {
+          "handle": "xerjoff-erba-pura",
+          "variant": 50567192281368
+        },
+        {
+          "handle": "marc-antoine-barrois-encelade",
+          "variant": 50567221510424
+        },
+        {
+          "handle": "memo-paris-italian-leather",
+          "variant": 50567189561624
+        }
+      ],
+      "houses": [
+        "Milano Fragranze",
+        "Initio Parfums Prive",
+        "Xerjoff",
+        "Marc-Antoine Barrois",
+        "Memo Paris"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-1440-run4.png"
+    },
+    {
+      "run": "1440-run5",
+      "answers": [
+        "him",
+        "everyday",
+        "move-thrive",
+        "close",
+        "hot"
+      ],
+      "persona": "The Clean Stride",
+      "items": [
+        {
+          "handle": "giardino-benessere-salaria",
+          "variant": 50838909813016
+        },
+        {
+          "handle": "hermes-un-jardin-sur-le-nil",
+          "variant": 52582866878744
+        },
+        {
+          "handle": "guerlain-aqua-allegoria-forte-nerolia-vetiver",
+          "variant": 52582870024472
+        },
+        {
+          "handle": "hermes-un-jardin-sur-le-toit",
+          "variant": 52582867403032
+        },
+        {
+          "handle": "parfums-de-marly-greenley",
+          "variant": 50567112950040
+        }
+      ],
+      "houses": [
+        "Giardino Benessere",
+        "Hermès",
+        "Guerlain",
+        "Hermès",
+        "Parfums de Marly"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-1440-run5.png"
+    }
+  ],
+  "checks": [
+    {
+      "name": "390-run1: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The After-Hours Magnet"
+    },
+    {
+      "name": "390-run1: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.evening.romance-presence.fills.cold"
+    },
+    {
+      "name": "390-run1: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run1: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.evening.romance-presence.fills.cold"
+    },
+    {
+      "name": "390-run1: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":52685163462936,\"quantity\":1},{\"id\":50838982426904,\"quantity\":1},{\"id\":52685270810904,\"quantity\":1},{\"id\":50567188250904,\"quantity\":1},{\"id\":50567113015576,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run1: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390-run2: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Quiet Signature"
+    },
+    {
+      "name": "390-run2: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.work.focus-flow.close.mild"
+    },
+    {
+      "name": "390-run2: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run2: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.work.focus-flow.close.mild"
+    },
+    {
+      "name": "390-run2: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":52582866256152,\"quantity\":1},{\"id\":52599240884504,\"quantity\":1},{\"id\":52685270712600,\"quantity\":1},{\"id\":50633460810008,\"quantity\":1},{\"id\":50567177535768,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run2: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390-run3: 5 perfumes from 4 houses",
+      "ok": true,
+      "detail": "The Sunlit Signal"
+    },
+    {
+      "name": "390-run3: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=both.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "390-run3: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run3: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=both.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "390-run3: \"Add sample\" adds one item and updates the header count",
+      "ok": true
+    },
+    {
+      "name": "390-run3: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":52582870319384,\"quantity\":1},{\"id\":52582866878744,\"quantity\":1},{\"id\":50631025295640,\"quantity\":1},{\"id\":52582867403032,\"quantity\":1},{\"id\":52685270647064,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run3: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390-run4: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Golden Hour Guest"
+    },
+    {
+      "name": "390-run4: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.special.celebrate-indulge.noticed.cold"
+    },
+    {
+      "name": "390-run4: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run4: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.special.celebrate-indulge.noticed.cold"
+    },
+    {
+      "name": "390-run4: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":52676305486104,\"quantity\":1},{\"id\":50612695204120,\"quantity\":1},{\"id\":50567192281368,\"quantity\":1},{\"id\":50567221510424,\"quantity\":1},{\"id\":50567189561624,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run4: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390-run5: 5 perfumes from 4 houses",
+      "ok": true,
+      "detail": "The Clean Stride"
+    },
+    {
+      "name": "390-run5: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "390-run5: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run5: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "390-run5: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50838909813016,\"quantity\":1},{\"id\":52582866878744,\"quantity\":1},{\"id\":52582870024472,\"quantity\":1},{\"id\":52582867403032,\"quantity\":1},{\"id\":50567112950040,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run5: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run1: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The After-Hours Magnet"
+    },
+    {
+      "name": "1440-run1: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.evening.romance-presence.fills.cold"
+    },
+    {
+      "name": "1440-run1: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run1: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.evening.romance-presence.fills.cold"
+    },
+    {
+      "name": "1440-run1: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":52685163462936,\"quantity\":1},{\"id\":50838982426904,\"quantity\":1},{\"id\":52685270810904,\"quantity\":1},{\"id\":50567188250904,\"quantity\":1},{\"id\":50567113015576,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run1: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run2: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Quiet Signature"
+    },
+    {
+      "name": "1440-run2: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.work.focus-flow.close.mild"
+    },
+    {
+      "name": "1440-run2: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run2: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.work.focus-flow.close.mild"
+    },
+    {
+      "name": "1440-run2: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":52582866256152,\"quantity\":1},{\"id\":52599240884504,\"quantity\":1},{\"id\":52685270712600,\"quantity\":1},{\"id\":50633460810008,\"quantity\":1},{\"id\":50567177535768,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run2: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run3: 5 perfumes from 4 houses",
+      "ok": true,
+      "detail": "The Sunlit Signal"
+    },
+    {
+      "name": "1440-run3: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=both.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "1440-run3: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run3: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=both.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "1440-run3: \"Add sample\" adds one item and updates the header count",
+      "ok": true
+    },
+    {
+      "name": "1440-run3: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":52582870319384,\"quantity\":1},{\"id\":52582866878744,\"quantity\":1},{\"id\":50631025295640,\"quantity\":1},{\"id\":52582867403032,\"quantity\":1},{\"id\":52685270647064,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run3: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run4: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Golden Hour Guest"
+    },
+    {
+      "name": "1440-run4: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.special.celebrate-indulge.noticed.cold"
+    },
+    {
+      "name": "1440-run4: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run4: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.special.celebrate-indulge.noticed.cold"
+    },
+    {
+      "name": "1440-run4: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":52676305486104,\"quantity\":1},{\"id\":50612695204120,\"quantity\":1},{\"id\":50567192281368,\"quantity\":1},{\"id\":50567221510424,\"quantity\":1},{\"id\":50567189561624,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run4: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run5: 5 perfumes from 4 houses",
+      "ok": true,
+      "detail": "The Clean Stride"
+    },
+    {
+      "name": "1440-run5: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "1440-run5: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run5: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "1440-run5: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50838909813016,\"quantity\":1},{\"id\":52582866878744,\"quantity\":1},{\"id\":52582870024472,\"quantity\":1},{\"id\":52582867403032,\"quantity\":1},{\"id\":50567112950040,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run5: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "analytics: quiz_started published",
+      "ok": true
+    },
+    {
+      "name": "analytics: quiz_completed published",
+      "ok": true
+    },
+    {
+      "name": "analytics: quiz_shared published",
+      "ok": true
+    },
+    {
+      "name": "analytics: quiz_add_to_cart published",
+      "ok": true
+    },
+    {
+      "name": "analytics: no personal data (no email / name / ip / customer fields)",
+      "ok": true
+    },
+    {
+      "name": "no-JS: quiz hidden, existing page content visible",
+      "ok": true
+    },
+    {
+      "name": "no-JS: persona texts are static HTML (crawlable)",
+      "ok": true,
+      "detail": "18 personas"
+    },
+    {
+      "name": "live page screenshot 390",
+      "ok": true
+    },
+    {
+      "name": "live page screenshot 1440",
+      "ok": true
+    },
+    {
+      "name": "added weight 101.5 KB <= 150 KB",
+      "ok": true,
+      "detail": "scent-quiz.js 32.3 KB, scent-quiz.css 11.1 KB, scent-quiz-aromastylist.json 58.1 KB"
+    },
+    {
+      "name": "every theme file < 60 KB",
+      "ok": true
+    }
+  ],
+  "cart_payloads": [
+    {
+      "run": "390-run1",
+      "payload": {
+        "items": [
+          {
+            "id": 52685163462936,
+            "quantity": 1
+          },
+          {
+            "id": 50838982426904,
+            "quantity": 1
+          },
+          {
+            "id": 52685270810904,
+            "quantity": 1
+          },
+          {
+            "id": 50567188250904,
+            "quantity": 1
+          },
+          {
+            "id": 50567113015576,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run2",
+      "payload": {
+        "items": [
+          {
+            "id": 52582866256152,
+            "quantity": 1
+          },
+          {
+            "id": 52599240884504,
+            "quantity": 1
+          },
+          {
+            "id": 52685270712600,
+            "quantity": 1
+          },
+          {
+            "id": 50633460810008,
+            "quantity": 1
+          },
+          {
+            "id": 50567177535768,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run3",
+      "payload": {
+        "items": [
+          {
+            "id": 52582870319384,
+            "quantity": 1
+          },
+          {
+            "id": 52582866878744,
+            "quantity": 1
+          },
+          {
+            "id": 50631025295640,
+            "quantity": 1
+          },
+          {
+            "id": 52582867403032,
+            "quantity": 1
+          },
+          {
+            "id": 52685270647064,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run4",
+      "payload": {
+        "items": [
+          {
+            "id": 52676305486104,
+            "quantity": 1
+          },
+          {
+            "id": 50612695204120,
+            "quantity": 1
+          },
+          {
+            "id": 50567192281368,
+            "quantity": 1
+          },
+          {
+            "id": 50567221510424,
+            "quantity": 1
+          },
+          {
+            "id": 50567189561624,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run5",
+      "payload": {
+        "items": [
+          {
+            "id": 50838909813016,
+            "quantity": 1
+          },
+          {
+            "id": 52582866878744,
+            "quantity": 1
+          },
+          {
+            "id": 52582870024472,
+            "quantity": 1
+          },
+          {
+            "id": 52582867403032,
+            "quantity": 1
+          },
+          {
+            "id": 50567112950040,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run1",
+      "payload": {
+        "items": [
+          {
+            "id": 52685163462936,
+            "quantity": 1
+          },
+          {
+            "id": 50838982426904,
+            "quantity": 1
+          },
+          {
+            "id": 52685270810904,
+            "quantity": 1
+          },
+          {
+            "id": 50567188250904,
+            "quantity": 1
+          },
+          {
+            "id": 50567113015576,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run2",
+      "payload": {
+        "items": [
+          {
+            "id": 52582866256152,
+            "quantity": 1
+          },
+          {
+            "id": 52599240884504,
+            "quantity": 1
+          },
+          {
+            "id": 52685270712600,
+            "quantity": 1
+          },
+          {
+            "id": 50633460810008,
+            "quantity": 1
+          },
+          {
+            "id": 50567177535768,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run3",
+      "payload": {
+        "items": [
+          {
+            "id": 52582870319384,
+            "quantity": 1
+          },
+          {
+            "id": 52582866878744,
+            "quantity": 1
+          },
+          {
+            "id": 50631025295640,
+            "quantity": 1
+          },
+          {
+            "id": 52582867403032,
+            "quantity": 1
+          },
+          {
+            "id": 52685270647064,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run4",
+      "payload": {
+        "items": [
+          {
+            "id": 52676305486104,
+            "quantity": 1
+          },
+          {
+            "id": 50612695204120,
+            "quantity": 1
+          },
+          {
+            "id": 50567192281368,
+            "quantity": 1
+          },
+          {
+            "id": 50567221510424,
+            "quantity": 1
+          },
+          {
+            "id": 50567189561624,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run5",
+      "payload": {
+        "items": [
+          {
+            "id": 50838909813016,
+            "quantity": 1
+          },
+          {
+            "id": 52582866878744,
+            "quantity": 1
+          },
+          {
+            "id": 52582870024472,
+            "quantity": 1
+          },
+          {
+            "id": 52582867403032,
+            "quantity": 1
+          },
+          {
+            "id": 50567112950040,
+            "quantity": 1
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "run": "390-run1",
+      "names": []
+    },
+    {
+      "run": "390-run2",
+      "names": []
+    },
+    {
+      "run": "390-run3",
+      "names": []
+    },
+    {
+      "run": "390-run4",
+      "names": []
+    },
+    {
+      "run": "390-run5",
+      "names": []
+    },
+    {
+      "run": "1440-run1",
+      "names": []
+    },
+    {
+      "run": "1440-run2",
+      "names": []
+    },
+    {
+      "run": "1440-run3",
+      "names": []
+    },
+    {
+      "run": "1440-run4",
+      "names": []
+    },
+    {
+      "run": "1440-run5",
+      "names": []
+    }
+  ],
+  "analytics_sample": [
+    {
+      "name": "quiz_started",
+      "data": {
+        "quiz": "aromastylist"
+      }
+    },
+    {
+      "name": "quiz_completed",
+      "data": {
+        "quiz": "aromastylist",
+        "answers": {
+          "for": "her",
+          "when": "evening",
+          "mood": "romance-presence",
+          "presence": "fills",
+          "weather": "cold"
+        },
+        "persona": "after-hours-magnet",
+        "products": [
+          "etat-libre-dorange-dangerous-complicity",
+          "max-philip-cherry",
+          "jusbox-night-flow",
+          "kilian-cant-stop-loving-you",
+          "parfums-de-marly-delina-exclusif"
+        ]
+      }
+    },
+    {
+      "name": "quiz_shared",
+      "data": {
+        "quiz": "aromastylist",
+        "method": "copy",
+        "persona": "after-hours-magnet"
+      }
+    },
+    {
+      "name": "quiz_add_to_cart",
+      "data": {
+        "quiz": "aromastylist",
+        "mode": "single",
+        "items": [
+          {
+            "variant_id": 52685163462936,
+            "handle": "etat-libre-dorange-dangerous-complicity"
+          }
+        ]
+      }
+    }
+  ],
+  "weight": {
+    "scent-quiz.js": 33105,
+    "scent-quiz.css": 11316,
+    "scent-quiz-aromastylist.json": 59539,
+    "total": 103960
+  }
+}

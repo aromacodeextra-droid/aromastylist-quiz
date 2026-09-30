@@ -1,0 +1,822 @@
+/* Extracted from https://aromastylist.com/pages/find-your-perfume on 2026-09-30 by scripts/extract-theme-vars.mjs. Harness only - not uploaded. */
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n4.025af1859727a91866b3c708393a6dc972156491.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n4.aebb4417dfed0dc5ec4a330249c3862add089916.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n4.81949fa0ac9fd2021e16436151e8eaa539321637.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n4.a6c632ca7b62da89c3594789ba828388aac693fe.woff") format("woff");
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n4.025af1859727a91866b3c708393a6dc972156491.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n4.aebb4417dfed0dc5ec4a330249c3862add089916.woff") format("woff");
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n5.36d0da1db617c453fb46e8089790ab6dc72c2356.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n5.40f612bab009769f87511096f185d9228ad3baa3.woff") format("woff");
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n6.8d557b0e84c45560497788408dfe3a07d8eae782.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n6.fc6506cb0940daf394e96f3e338999e9db6f2624.woff") format("woff");
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n7.837502b3cbe406d2c6f311e87870fa9980b0b36a.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n7.c198e1cda930f96f6ae1aa8ef8facc95a64cfd1f.woff") format("woff");
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n8.6ac35e0357e3d68419e55c409525fc9414834bcc.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n8.c46b5a7eedc714044f541fb9253db280f3003bb8.woff") format("woff");
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n9.1265321e678a278867040e3a8fe3bdf62204be69.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/bodoni_moda/bodonimoda_n9.46ca98e915285630230517046bfbb044e4f9b3b8.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n1.2f0714cbd41857ba00d5d4fafdce92c40aadb8e6.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n1.7bec1bf4c4d0f77c37dc95cf9616413eceba9082.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n2.6158a4b6474a580592572fe30f04d0efe5adcbe8.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n2.e4b01871223c147c2b91e7b86462152be4d7b524.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n3.29e699231893fd243e1620595067294bb067ba2a.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n3.64ed56f012a53c08a49d49bd7e0c8d2f46119150.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n4.81949fa0ac9fd2021e16436151e8eaa539321637.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n4.a6c632ca7b62da89c3594789ba828388aac693fe.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n5.07ef3781d9c78c8b93c98419da7ad4fbeebb6635.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n5.adf9b4bd8b0e4f55a0b203cdd84512667e0d5e4d.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n6.1326b3e84230700ef15b3a29fb520639977513e0.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n6.652f051080eb14192330daceed8cd53dfdc5ead9.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n7.3c434e22befd5c18a6b4afadb1e3d77c128c7939.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n7.5d9fa6e2cae713c8fb539a9876489d86207fe957.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n8.853056e398b4dadf6838423edb7abaa02f651554.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n8.9201aba6104751e1b3e48577a5a739fc14862200.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n9.680ded1be351aa3bf3b3650ac5f6df485af8a07c.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_n9.0cc5aaeff26ef35c23b69a061997d78c9697a382.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_i4.5a4ea298b4789e064f62a29aafc18d41f09ae59b.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_i4.072b5869c5e0ed5b9d2021e4c2af132e16681ad2.woff") format("woff");
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_i7.a0d4a463df4f146567d871890ffb3c80408e7732.woff2") format("woff2"),
+       url("https://aromastylist.com/cdn/fonts/montserrat/montserrat_i7.f6ec9f2a0681acc6f8152c40921d2a4d2e1a2c78.woff") format("woff");
+}
+:root {
+  	--scheme-1:                      #f4f0ea;
+  	--scheme-1_solid:                #f4f0ea;
+  	--scheme-1_bg:                   var(--scheme-1);
+  	--scheme-1_bg_dark:              #f0ebe3;
+  	--scheme-1_bg_var:               var(--scheme-1_bg_dark);
+  	--scheme-1_bg_secondary:         #ffffff;
+  	--scheme-1_fg:                   #3a2c22;
+  	--scheme-1_fg_sat:               #f2ece9;
+  	--scheme-1_title:                #a38657;
+  	--scheme-1_title_solid:          #a38657;
+
+  	--scheme-1_primary_btn_bg:       #a38657;
+  	--scheme-1_primary_btn_bg_dark:  #8c734b;
+  	--scheme-1_primary_btn_fg:       #ffffff;
+  	--scheme-1_secondary_btn_bg:     #ffffff;
+  	--scheme-1_secondary_btn_bg_dark:#ededed;
+  	--scheme-1_secondary_btn_fg:     #a38657;
+  	--scheme-1_tertiary_btn_bg:      rgba(0,0,0,0);
+  	--scheme-1_tertiary_btn_bg_dark: rgba(0, 0, 0, 0.0);
+  	--scheme-1_tertiary_btn_fg:      #a38657;
+  	--scheme-1_btn_bg:       		var(--scheme-1_primary_btn_bg);
+  	--scheme-1_btn_bg_dark:  		var(--scheme-1_primary_btn_bg_dark);
+  	--scheme-1_btn_fg:       		var(--scheme-1_primary_btn_fg);
+  	--scheme-1_bd:                   #ffffff;
+  	--scheme-1_input_bg:             #ffffff;
+  	--scheme-1_input_fg:             #3a2c22;
+  	--scheme-1_input_pl:             #5a4435;
+  	--scheme-1_accent:               #a38657;
+  	--scheme-1_accent_gradient:      #a38657;
+  	
+  	--scheme-1_fg_brightness: 0; 
+  	
+  		--primary_text_rgba:  				rgb(58, 44, 34);
+  		--body_bg:            				var(--scheme-1_bg);
+  	
+  	}
+:root, [class*="palette-scheme-1"], [data-active-content*="scheme-1"] {
+  	--primary_bg:             var(--scheme-1_bg);
+  	--bg_secondary:           var(--scheme-1_bg_secondary);
+  	--primary_text:           var(--scheme-1_fg);
+  	--primary_text_h:         var(--scheme-1_title);
+  	--headings_text:          var(--primary_text_h);
+  	--headings_text_solid:    var(--scheme-1_title_solid);
+  	--primary_bg_btn:         var(--scheme-1_primary_btn_bg);
+  	--primary_bg_btn_dark:    var(--scheme-1_primary_btn_bg_dark);
+  	--primary_btn_text:       var(--scheme-1_primary_btn_fg);
+  	--secondary_bg_btn:       var(--scheme-1_secondary_btn_bg);
+  	--secondary_bg_btn_dark:  var(--scheme-1_secondary_btn_bg_dark);
+  	--secondary_btn_text:     var(--scheme-1_secondary_btn_fg);
+  	--tertiary_bg_btn:        var(--scheme-1_tertiary_btn_bg);
+  	--tertiary_bg_btn_dark:   var(--scheme-1_tertiary_btn_bg_dark);
+  	--tertiary_btn_text:      var(--scheme-1_tertiary_btn_fg);
+  	--custom_input_bg:        var(--scheme-1_input_bg);
+  	--custom_input_fg:        var(--scheme-1_input_fg);
+  	--custom_input_pl:        var(--scheme-1_input_pl);
+  	--custom_input_bd:        var(--scheme-1_bd);
+  	--custom_bd:              var(--custom_input_bd);
+  	--secondary_bg: 		  var(--primary_bg_btn);
+  	--accent:                 var(--scheme-1_accent);
+  	--accent_gradient:        var(--scheme-1_accent_gradient);
+  	--primary_text_brightness:var(--scheme-1_fg_brightness);
+  	}
+:root {
+  	--scheme-2:                      #000000;
+  	--scheme-2_solid:                #000000;
+  	--scheme-2_bg:                   var(--scheme-2);
+  	--scheme-2_bg_dark:              #000000;
+  	--scheme-2_bg_var:               var(--scheme-2_bg_dark);
+  	--scheme-2_bg_secondary:         #7e7e7e;
+  	--scheme-2_fg:                   #ffffff;
+  	--scheme-2_fg_sat:               #ffffff;
+  	--scheme-2_title:                #ffffff;
+  	--scheme-2_title_solid:          #ffffff;
+
+  	--scheme-2_primary_btn_bg:       #ffffff;
+  	--scheme-2_primary_btn_bg_dark:  #ededed;
+  	--scheme-2_primary_btn_fg:       #000000;
+  	--scheme-2_secondary_btn_bg:     #000000;
+  	--scheme-2_secondary_btn_bg_dark:#000000;
+  	--scheme-2_secondary_btn_fg:     #ffffff;
+  	--scheme-2_tertiary_btn_bg:      #ffffff;
+  	--scheme-2_tertiary_btn_bg_dark: #ededed;
+  	--scheme-2_tertiary_btn_fg:      #000000;
+  	--scheme-2_btn_bg:       		var(--scheme-2_primary_btn_bg);
+  	--scheme-2_btn_bg_dark:  		var(--scheme-2_primary_btn_bg_dark);
+  	--scheme-2_btn_fg:       		var(--scheme-2_primary_btn_fg);
+  	--scheme-2_bd:                   #ffffff;
+  	--scheme-2_input_bg:             #ffffff;
+  	--scheme-2_input_fg:             #000000;
+  	--scheme-2_input_pl:             #1a1a1a;
+  	--scheme-2_accent:               #000000;
+  	--scheme-2_accent_gradient:      #000000;
+  	
+  	--scheme-2_fg_brightness: 1; 
+  	
+  	}
+[class*="palette-scheme-2"], [data-active-content*="scheme-2"] {
+  	--primary_bg:             var(--scheme-2_bg);
+  	--bg_secondary:           var(--scheme-2_bg_secondary);
+  	--primary_text:           var(--scheme-2_fg);
+  	--primary_text_h:         var(--scheme-2_title);
+  	--headings_text:          var(--primary_text_h);
+  	--headings_text_solid:    var(--scheme-2_title_solid);
+  	--primary_bg_btn:         var(--scheme-2_primary_btn_bg);
+  	--primary_bg_btn_dark:    var(--scheme-2_primary_btn_bg_dark);
+  	--primary_btn_text:       var(--scheme-2_primary_btn_fg);
+  	--secondary_bg_btn:       var(--scheme-2_secondary_btn_bg);
+  	--secondary_bg_btn_dark:  var(--scheme-2_secondary_btn_bg_dark);
+  	--secondary_btn_text:     var(--scheme-2_secondary_btn_fg);
+  	--tertiary_bg_btn:        var(--scheme-2_tertiary_btn_bg);
+  	--tertiary_bg_btn_dark:   var(--scheme-2_tertiary_btn_bg_dark);
+  	--tertiary_btn_text:      var(--scheme-2_tertiary_btn_fg);
+  	--custom_input_bg:        var(--scheme-2_input_bg);
+  	--custom_input_fg:        var(--scheme-2_input_fg);
+  	--custom_input_pl:        var(--scheme-2_input_pl);
+  	--custom_input_bd:        var(--scheme-2_bd);
+  	--custom_bd:              var(--custom_input_bd);
+  	--secondary_bg: 		  var(--primary_bg_btn);
+  	--accent:                 var(--scheme-2_accent);
+  	--accent_gradient:        var(--scheme-2_accent_gradient);
+  	--primary_text_brightness:var(--scheme-2_fg_brightness);
+  	}
+:root {
+  	--scheme-3:                      #ffffff;
+  	--scheme-3_solid:                #ffffff;
+  	--scheme-3_bg:                   var(--scheme-3);
+  	--scheme-3_bg_dark:              var(--scheme-3_bg);
+  	--scheme-3_bg_var:               var(--scheme-3_bg_dark);
+  	--scheme-3_bg_secondary:         #ffffff;
+  	--scheme-3_fg:                   #a38657;
+  	--scheme-3_fg_sat:               #ffffff;
+  	--scheme-3_title:                #FFFFFF;
+  	--scheme-3_title_solid:          #FFFFFF;
+
+  	--scheme-3_primary_btn_bg:       #3a2c22;
+  	--scheme-3_primary_btn_bg_dark:  #231b15;
+  	--scheme-3_primary_btn_fg:       #ffffff;
+  	--scheme-3_secondary_btn_bg:     #3a2c22;
+  	--scheme-3_secondary_btn_bg_dark:#231b15;
+  	--scheme-3_secondary_btn_fg:     #ffffff;
+  	--scheme-3_tertiary_btn_bg:      #ffffff;
+  	--scheme-3_tertiary_btn_bg_dark: #ededed;
+  	--scheme-3_tertiary_btn_fg:      #3a2c22;
+  	--scheme-3_btn_bg:       		var(--scheme-3_primary_btn_bg);
+  	--scheme-3_btn_bg_dark:  		var(--scheme-3_primary_btn_bg_dark);
+  	--scheme-3_btn_fg:       		var(--scheme-3_primary_btn_fg);
+  	--scheme-3_bd:                   #3A2C22;
+  	--scheme-3_input_bg:             #ffffff;
+  	--scheme-3_input_fg:             #3a2c22;
+  	--scheme-3_input_pl:             #5a4435;
+  	--scheme-3_accent:               #3a2c22;
+  	--scheme-3_accent_gradient:      #3a2c22;
+  	
+  	--scheme-3_fg_brightness: 1; 
+  	
+  	}
+[class*="palette-scheme-3"], [data-active-content*="scheme-3"] {
+  	--primary_bg:             var(--scheme-3_bg);
+  	--bg_secondary:           var(--scheme-3_bg_secondary);
+  	--primary_text:           var(--scheme-3_fg);
+  	--primary_text_h:         var(--scheme-3_title);
+  	--headings_text:          var(--primary_text_h);
+  	--headings_text_solid:    var(--scheme-3_title_solid);
+  	--primary_bg_btn:         var(--scheme-3_primary_btn_bg);
+  	--primary_bg_btn_dark:    var(--scheme-3_primary_btn_bg_dark);
+  	--primary_btn_text:       var(--scheme-3_primary_btn_fg);
+  	--secondary_bg_btn:       var(--scheme-3_secondary_btn_bg);
+  	--secondary_bg_btn_dark:  var(--scheme-3_secondary_btn_bg_dark);
+  	--secondary_btn_text:     var(--scheme-3_secondary_btn_fg);
+  	--tertiary_bg_btn:        var(--scheme-3_tertiary_btn_bg);
+  	--tertiary_bg_btn_dark:   var(--scheme-3_tertiary_btn_bg_dark);
+  	--tertiary_btn_text:      var(--scheme-3_tertiary_btn_fg);
+  	--custom_input_bg:        var(--scheme-3_input_bg);
+  	--custom_input_fg:        var(--scheme-3_input_fg);
+  	--custom_input_pl:        var(--scheme-3_input_pl);
+  	--custom_input_bd:        var(--scheme-3_bd);
+  	--custom_bd:              var(--custom_input_bd);
+  	--secondary_bg: 		  var(--primary_bg_btn);
+  	--accent:                 var(--scheme-3_accent);
+  	--accent_gradient:        var(--scheme-3_accent_gradient);
+  	--primary_text_brightness:var(--scheme-3_fg_brightness);
+  	}
+:root {
+  	--scheme-4:                      #585756;
+  	--scheme-4_solid:                #585756;
+  	--scheme-4_bg:                   var(--scheme-4);
+  	--scheme-4_bg_dark:              #535251;
+  	--scheme-4_bg_var:               var(--scheme-4_bg_dark);
+  	--scheme-4_bg_secondary:         #f2f2f1;
+  	--scheme-4_fg:                   #ffffff;
+  	--scheme-4_fg_sat:               #ffffff;
+  	--scheme-4_title:                #ffffff;
+  	--scheme-4_title_solid:          #ffffff;
+
+  	--scheme-4_primary_btn_bg:       #ffffff;
+  	--scheme-4_primary_btn_bg_dark:  #ededed;
+  	--scheme-4_primary_btn_fg:       #585756;
+  	--scheme-4_secondary_btn_bg:     #1d1c1c;
+  	--scheme-4_secondary_btn_bg_dark:#0b0a0a;
+  	--scheme-4_secondary_btn_fg:     #ffffff;
+  	--scheme-4_tertiary_btn_bg:      #f4f2ed;
+  	--scheme-4_tertiary_btn_bg_dark: #e6e2d7;
+  	--scheme-4_tertiary_btn_fg:      #1d1c1c;
+  	--scheme-4_btn_bg:       		var(--scheme-4_primary_btn_bg);
+  	--scheme-4_btn_bg_dark:  		var(--scheme-4_primary_btn_bg_dark);
+  	--scheme-4_btn_fg:       		var(--scheme-4_primary_btn_fg);
+  	--scheme-4_bd:                   #f2f2f1;
+  	--scheme-4_input_bg:             #ffffff;
+  	--scheme-4_input_fg:             #585756;
+  	--scheme-4_input_pl:             #72716f;
+  	--scheme-4_accent:               #ffffff;
+  	--scheme-4_accent_gradient:      #ffffff;
+  	
+  	--scheme-4_fg_brightness: 1; 
+  	
+  	}
+[class*="palette-scheme-4"], [data-active-content*="scheme-4"] {
+  	--primary_bg:             var(--scheme-4_bg);
+  	--bg_secondary:           var(--scheme-4_bg_secondary);
+  	--primary_text:           var(--scheme-4_fg);
+  	--primary_text_h:         var(--scheme-4_title);
+  	--headings_text:          var(--primary_text_h);
+  	--headings_text_solid:    var(--scheme-4_title_solid);
+  	--primary_bg_btn:         var(--scheme-4_primary_btn_bg);
+  	--primary_bg_btn_dark:    var(--scheme-4_primary_btn_bg_dark);
+  	--primary_btn_text:       var(--scheme-4_primary_btn_fg);
+  	--secondary_bg_btn:       var(--scheme-4_secondary_btn_bg);
+  	--secondary_bg_btn_dark:  var(--scheme-4_secondary_btn_bg_dark);
+  	--secondary_btn_text:     var(--scheme-4_secondary_btn_fg);
+  	--tertiary_bg_btn:        var(--scheme-4_tertiary_btn_bg);
+  	--tertiary_bg_btn_dark:   var(--scheme-4_tertiary_btn_bg_dark);
+  	--tertiary_btn_text:      var(--scheme-4_tertiary_btn_fg);
+  	--custom_input_bg:        var(--scheme-4_input_bg);
+  	--custom_input_fg:        var(--scheme-4_input_fg);
+  	--custom_input_pl:        var(--scheme-4_input_pl);
+  	--custom_input_bd:        var(--scheme-4_bd);
+  	--custom_bd:              var(--custom_input_bd);
+  	--secondary_bg: 		  var(--primary_bg_btn);
+  	--accent:                 var(--scheme-4_accent);
+  	--accent_gradient:        var(--scheme-4_accent_gradient);
+  	--primary_text_brightness:var(--scheme-4_fg_brightness);
+  	}
+:root {
+  	--scheme-5:                      #7e7e7e;
+  	--scheme-5_solid:                #7e7e7e;
+  	--scheme-5_bg:                   var(--scheme-5);
+  	--scheme-5_bg_dark:              #797979;
+  	--scheme-5_bg_var:               var(--scheme-5_bg_dark);
+  	--scheme-5_bg_secondary:         #f4f2ed;
+  	--scheme-5_fg:                   #ffffff;
+  	--scheme-5_fg_sat:               #ffffff;
+  	--scheme-5_title:                #ffffff;
+  	--scheme-5_title_solid:          #ffffff;
+
+  	--scheme-5_primary_btn_bg:       #ffffff;
+  	--scheme-5_primary_btn_bg_dark:  #ededed;
+  	--scheme-5_primary_btn_fg:       #1d1c1c;
+  	--scheme-5_secondary_btn_bg:     #1d1c1c;
+  	--scheme-5_secondary_btn_bg_dark:#0b0a0a;
+  	--scheme-5_secondary_btn_fg:     #ffffff;
+  	--scheme-5_tertiary_btn_bg:      #7e7e7e;
+  	--scheme-5_tertiary_btn_bg_dark: #6c6c6c;
+  	--scheme-5_tertiary_btn_fg:      #ffffff;
+  	--scheme-5_btn_bg:       		var(--scheme-5_primary_btn_bg);
+  	--scheme-5_btn_bg_dark:  		var(--scheme-5_primary_btn_bg_dark);
+  	--scheme-5_btn_fg:       		var(--scheme-5_primary_btn_fg);
+  	--scheme-5_bd:                   #fafafa;
+  	--scheme-5_input_bg:             #ffffff;
+  	--scheme-5_input_fg:             #585756;
+  	--scheme-5_input_pl:             #72716f;
+  	--scheme-5_accent:               #ffffff;
+  	--scheme-5_accent_gradient:      #ffffff;
+  	
+  	--scheme-5_fg_brightness: 1; 
+  	
+  	}
+[class*="palette-scheme-5"], [data-active-content*="scheme-5"] {
+  	--primary_bg:             var(--scheme-5_bg);
+  	--bg_secondary:           var(--scheme-5_bg_secondary);
+  	--primary_text:           var(--scheme-5_fg);
+  	--primary_text_h:         var(--scheme-5_title);
+  	--headings_text:          var(--primary_text_h);
+  	--headings_text_solid:    var(--scheme-5_title_solid);
+  	--primary_bg_btn:         var(--scheme-5_primary_btn_bg);
+  	--primary_bg_btn_dark:    var(--scheme-5_primary_btn_bg_dark);
+  	--primary_btn_text:       var(--scheme-5_primary_btn_fg);
+  	--secondary_bg_btn:       var(--scheme-5_secondary_btn_bg);
+  	--secondary_bg_btn_dark:  var(--scheme-5_secondary_btn_bg_dark);
+  	--secondary_btn_text:     var(--scheme-5_secondary_btn_fg);
+  	--tertiary_bg_btn:        var(--scheme-5_tertiary_btn_bg);
+  	--tertiary_bg_btn_dark:   var(--scheme-5_tertiary_btn_bg_dark);
+  	--tertiary_btn_text:      var(--scheme-5_tertiary_btn_fg);
+  	--custom_input_bg:        var(--scheme-5_input_bg);
+  	--custom_input_fg:        var(--scheme-5_input_fg);
+  	--custom_input_pl:        var(--scheme-5_input_pl);
+  	--custom_input_bd:        var(--scheme-5_bd);
+  	--custom_bd:              var(--custom_input_bd);
+  	--secondary_bg: 		  var(--primary_bg_btn);
+  	--accent:                 var(--scheme-5_accent);
+  	--accent_gradient:        var(--scheme-5_accent_gradient);
+  	--primary_text_brightness:var(--scheme-5_fg_brightness);
+  	}
+:root {
+  	--scheme-6:                      #f4f2ec;
+  	--scheme-6_solid:                #f4f2ec;
+  	--scheme-6_bg:                   var(--scheme-6);
+  	--scheme-6_bg_dark:              #f0eee6;
+  	--scheme-6_bg_var:               var(--scheme-6_bg_dark);
+  	--scheme-6_bg_secondary:         #ffffff;
+  	--scheme-6_fg:                   #373737;
+  	--scheme-6_fg_sat:               #f6f6f6;
+  	--scheme-6_title:                #2a2a2a;
+  	--scheme-6_title_solid:          #2a2a2a;
+
+  	--scheme-6_primary_btn_bg:       #2a2a2a;
+  	--scheme-6_primary_btn_bg_dark:  #181818;
+  	--scheme-6_primary_btn_fg:       #ffffff;
+  	--scheme-6_secondary_btn_bg:     #1d1c1c;
+  	--scheme-6_secondary_btn_bg_dark:#0b0a0a;
+  	--scheme-6_secondary_btn_fg:     #ffffff;
+  	--scheme-6_tertiary_btn_bg:      #ffffff;
+  	--scheme-6_tertiary_btn_bg_dark: #ededed;
+  	--scheme-6_tertiary_btn_fg:      #1d1c1c;
+  	--scheme-6_btn_bg:       		var(--scheme-6_primary_btn_bg);
+  	--scheme-6_btn_bg_dark:  		var(--scheme-6_primary_btn_bg_dark);
+  	--scheme-6_btn_fg:       		var(--scheme-6_primary_btn_fg);
+  	--scheme-6_bd:                   #f2f2f1;
+  	--scheme-6_input_bg:             #ffffff;
+  	--scheme-6_input_fg:             #585756;
+  	--scheme-6_input_pl:             #72716f;
+  	--scheme-6_accent:               #b39a7b;
+  	--scheme-6_accent_gradient:      linear-gradient(127deg, rgba(159, 108, 89, 1) 11%, rgba(230, 216, 176, 1) 81%);
+  	
+  	--scheme-6_fg_brightness: 0; 
+  	
+  	}
+[class*="palette-scheme-6"], [data-active-content*="scheme-6"] {
+  	--primary_bg:             var(--scheme-6_bg);
+  	--bg_secondary:           var(--scheme-6_bg_secondary);
+  	--primary_text:           var(--scheme-6_fg);
+  	--primary_text_h:         var(--scheme-6_title);
+  	--headings_text:          var(--primary_text_h);
+  	--headings_text_solid:    var(--scheme-6_title_solid);
+  	--primary_bg_btn:         var(--scheme-6_primary_btn_bg);
+  	--primary_bg_btn_dark:    var(--scheme-6_primary_btn_bg_dark);
+  	--primary_btn_text:       var(--scheme-6_primary_btn_fg);
+  	--secondary_bg_btn:       var(--scheme-6_secondary_btn_bg);
+  	--secondary_bg_btn_dark:  var(--scheme-6_secondary_btn_bg_dark);
+  	--secondary_btn_text:     var(--scheme-6_secondary_btn_fg);
+  	--tertiary_bg_btn:        var(--scheme-6_tertiary_btn_bg);
+  	--tertiary_bg_btn_dark:   var(--scheme-6_tertiary_btn_bg_dark);
+  	--tertiary_btn_text:      var(--scheme-6_tertiary_btn_fg);
+  	--custom_input_bg:        var(--scheme-6_input_bg);
+  	--custom_input_fg:        var(--scheme-6_input_fg);
+  	--custom_input_pl:        var(--scheme-6_input_pl);
+  	--custom_input_bd:        var(--scheme-6_bd);
+  	--custom_bd:              var(--custom_input_bd);
+  	--secondary_bg: 		  var(--primary_bg_btn);
+  	--accent:                 var(--scheme-6_accent);
+  	--accent_gradient:        var(--scheme-6_accent_gradient);
+  	--primary_text_brightness:var(--scheme-6_fg_brightness);
+  	}
+:root {
+  	--scheme-7:                      linear-gradient(120deg, rgba(236, 243, 244, 1), rgba(244, 242, 237, 1) 100%);
+  	--scheme-7_solid:                #f4f2ed;
+  	--scheme-7_bg:                   var(--scheme-7);
+  	--scheme-7_bg_dark:              #f0ede7;
+  	--scheme-7_bg_var:               var(--scheme-7_bg_dark);
+  	--scheme-7_bg_secondary:         #7e7e7e;
+  	--scheme-7_fg:                   #1d1c1c;
+  	--scheme-7_fg_sat:               #dcdbdb;
+  	--scheme-7_title:                #1d1c1c;
+  	--scheme-7_title_solid:          #1d1c1c;
+
+  	--scheme-7_primary_btn_bg:       #7e7e7e;
+  	--scheme-7_primary_btn_bg_dark:  #6c6c6c;
+  	--scheme-7_primary_btn_fg:       #ffffff;
+  	--scheme-7_secondary_btn_bg:     #1d1c1c;
+  	--scheme-7_secondary_btn_bg_dark:#0b0a0a;
+  	--scheme-7_secondary_btn_fg:     #ffffff;
+  	--scheme-7_tertiary_btn_bg:      #585756;
+  	--scheme-7_tertiary_btn_bg_dark: #464544;
+  	--scheme-7_tertiary_btn_fg:      #ffffff;
+  	--scheme-7_btn_bg:       		var(--scheme-7_primary_btn_bg);
+  	--scheme-7_btn_bg_dark:  		var(--scheme-7_primary_btn_bg_dark);
+  	--scheme-7_btn_fg:       		var(--scheme-7_primary_btn_fg);
+  	--scheme-7_bd:                   #f2f2f1;
+  	--scheme-7_input_bg:             #ffffff;
+  	--scheme-7_input_fg:             #1d1c1c;
+  	--scheme-7_input_pl:             #373535;
+  	--scheme-7_accent:               #7e7e7e;
+  	--scheme-7_accent_gradient:      #7e7e7e;
+  	
+  	--scheme-7_fg_brightness: 0; 
+  	
+  	}
+[class*="palette-scheme-7"], [data-active-content*="scheme-7"] {
+  	--primary_bg:             var(--scheme-7_bg);
+  	--bg_secondary:           var(--scheme-7_bg_secondary);
+  	--primary_text:           var(--scheme-7_fg);
+  	--primary_text_h:         var(--scheme-7_title);
+  	--headings_text:          var(--primary_text_h);
+  	--headings_text_solid:    var(--scheme-7_title_solid);
+  	--primary_bg_btn:         var(--scheme-7_primary_btn_bg);
+  	--primary_bg_btn_dark:    var(--scheme-7_primary_btn_bg_dark);
+  	--primary_btn_text:       var(--scheme-7_primary_btn_fg);
+  	--secondary_bg_btn:       var(--scheme-7_secondary_btn_bg);
+  	--secondary_bg_btn_dark:  var(--scheme-7_secondary_btn_bg_dark);
+  	--secondary_btn_text:     var(--scheme-7_secondary_btn_fg);
+  	--tertiary_bg_btn:        var(--scheme-7_tertiary_btn_bg);
+  	--tertiary_bg_btn_dark:   var(--scheme-7_tertiary_btn_bg_dark);
+  	--tertiary_btn_text:      var(--scheme-7_tertiary_btn_fg);
+  	--custom_input_bg:        var(--scheme-7_input_bg);
+  	--custom_input_fg:        var(--scheme-7_input_fg);
+  	--custom_input_pl:        var(--scheme-7_input_pl);
+  	--custom_input_bd:        var(--scheme-7_bd);
+  	--custom_bd:              var(--custom_input_bd);
+  	--secondary_bg: 		  var(--primary_bg_btn);
+  	--accent:                 var(--scheme-7_accent);
+  	--accent_gradient:        var(--scheme-7_accent_gradient);
+  	--primary_text_brightness:var(--scheme-7_fg_brightness);
+  	}
+:root {
+  	--scheme-8:                      linear-gradient(341deg, rgba(159, 108, 89, 1) 19%, rgba(230, 216, 176, 1) 100%);
+  	--scheme-8_solid:                #7e7e7e;
+  	--scheme-8_bg:                   var(--scheme-8);
+  	--scheme-8_bg_dark:              #797979;
+  	--scheme-8_bg_var:               var(--scheme-8_bg_dark);
+  	--scheme-8_bg_secondary:         #f4f2ed;
+  	--scheme-8_fg:                   #ffffff;
+  	--scheme-8_fg_sat:               #ffffff;
+  	--scheme-8_title:                #ffffff;
+  	--scheme-8_title_solid:          #ffffff;
+
+  	--scheme-8_primary_btn_bg:       #ffffff;
+  	--scheme-8_primary_btn_bg_dark:  #ededed;
+  	--scheme-8_primary_btn_fg:       #1d1c1c;
+  	--scheme-8_secondary_btn_bg:     #1d1c1c;
+  	--scheme-8_secondary_btn_bg_dark:#0b0a0a;
+  	--scheme-8_secondary_btn_fg:     #ffffff;
+  	--scheme-8_tertiary_btn_bg:      #7e7e7e;
+  	--scheme-8_tertiary_btn_bg_dark: #6c6c6c;
+  	--scheme-8_tertiary_btn_fg:      #ffffff;
+  	--scheme-8_btn_bg:       		var(--scheme-8_primary_btn_bg);
+  	--scheme-8_btn_bg_dark:  		var(--scheme-8_primary_btn_bg_dark);
+  	--scheme-8_btn_fg:       		var(--scheme-8_primary_btn_fg);
+  	--scheme-8_bd:                   #f2f2f1;
+  	--scheme-8_input_bg:             #ffffff;
+  	--scheme-8_input_fg:             #585756;
+  	--scheme-8_input_pl:             #72716f;
+  	--scheme-8_accent:               #ffffff;
+  	--scheme-8_accent_gradient:      #ffffff;
+  	
+  	--scheme-8_fg_brightness: 1; 
+  	
+  	}
+[class*="palette-scheme-8"], [data-active-content*="scheme-8"] {
+  	--primary_bg:             var(--scheme-8_bg);
+  	--bg_secondary:           var(--scheme-8_bg_secondary);
+  	--primary_text:           var(--scheme-8_fg);
+  	--primary_text_h:         var(--scheme-8_title);
+  	--headings_text:          var(--primary_text_h);
+  	--headings_text_solid:    var(--scheme-8_title_solid);
+  	--primary_bg_btn:         var(--scheme-8_primary_btn_bg);
+  	--primary_bg_btn_dark:    var(--scheme-8_primary_btn_bg_dark);
+  	--primary_btn_text:       var(--scheme-8_primary_btn_fg);
+  	--secondary_bg_btn:       var(--scheme-8_secondary_btn_bg);
+  	--secondary_bg_btn_dark:  var(--scheme-8_secondary_btn_bg_dark);
+  	--secondary_btn_text:     var(--scheme-8_secondary_btn_fg);
+  	--tertiary_bg_btn:        var(--scheme-8_tertiary_btn_bg);
+  	--tertiary_bg_btn_dark:   var(--scheme-8_tertiary_btn_bg_dark);
+  	--tertiary_btn_text:      var(--scheme-8_tertiary_btn_fg);
+  	--custom_input_bg:        var(--scheme-8_input_bg);
+  	--custom_input_fg:        var(--scheme-8_input_fg);
+  	--custom_input_pl:        var(--scheme-8_input_pl);
+  	--custom_input_bd:        var(--scheme-8_bd);
+  	--custom_bd:              var(--custom_input_bd);
+  	--secondary_bg: 		  var(--primary_bg_btn);
+  	--accent:                 var(--scheme-8_accent);
+  	--accent_gradient:        var(--scheme-8_accent_gradient);
+  	--primary_text_brightness:var(--scheme-8_fg_brightness);
+  	}
+:root {
+  --buy_button_bg:		var(--buy_btn_bg);
+  --buy_button_fg: 		var(--buy_btn_text);
+  --buy_button_bg_dark: var(--buy_btn_bg_dark);
+
+  --dynamic_buy_button_bg: var(--dynamic_buy_btn_bg);
+  --dynamic_buy_button_fg: var(--dynamic_buy_btn_text);
+  --dynamic_buy_button_bg_dark:  var(--dynamic_buy_btn_bg_dark);
+
+  --buy_btn_text:      #FFFFFF;
+  --buy_btn_bg:        #1d1c1c;
+  --buy_btn_bg_dark:   #100f0f;
+
+  --dynamic_buy_btn_text:    #ffffff;
+  --dynamic_buy_btn_bg:      #5e5e5e;
+  --dynamic_buy_btn_bg_dark: #515151;
+
+  --unavailable_buy_btn_text:    #ffffff;
+  --unavailable_buy_btn_bg:      #e5e5e5;
+  --unavailable_buy_btn_bg_dark: #d8d8d8;
+
+  --custom_top_search_bg: var(--body_bg);
+
+  --alert_error:        #000000;
+  --alert_valid:        #000000;
+  --lime:               #000000;
+  --gallery:            ;
+  --sand:               ;
+
+  --light: 				var(--bg_secondary);
+
+  --product_label_bg:   #363636;
+  --product_label_bg_dark:#292929;
+  --product_label_text: #ffffff;
+  --sale_label_bg:      #ff5c3f;
+  --sale_label_bg_dark: #ff4625;
+  --sale_label_text:    #ffffff;
+  --product_label_bg_custom: ;
+  --product_label_text_custom: ;
+
+  --positive_bg:        #000000;
+  --positive_bg_dark:   #000000;
+  --positive_fg:	      var(--white);
+
+  --custom_drop_nav_bg:         var(--scheme-1_bg);
+  --custom_drop_nav_fg:         var(--scheme-1_fg);
+  --custom_drop_nav_fg_text:    var(--scheme-1_fg);
+  --custom_drop_nav_fg_hover:   var(--scheme-1_btn_bg);
+  --custom_drop_nav_head_bg:    var(--scheme-1_bg_var);
+  --custom_drop_nav_head_fg:    var(--scheme-1_fg);
+  --custom_drop_nav_bd:         var(--scheme-1_bd);
+  --custom_drop_nav_input_bg:   var(--scheme-1_input_bg);
+  --custom_drop_nav_input_fg:   var(--scheme-1_input_fg);
+  --custom_drop_nav_input_bd:   var(--custom_drop_nav_bd);
+  --custom_drop_nav_input_pl:   var(--custom_drop_nav_input_fg);
+  --custom_top_search_bg_cont:  var(--scheme-1_bg_secondary);
+
+  --price_color:        #000000;
+  --price_color_old:    #a1a1a1;
+
+  --multiply_bg_product:  var(--scheme-1);
+  --multiply_bg_collection: var(--scheme-1);
+
+  --main_ff:            "Montserrat", sans-serif;
+  --main_ff_h:          "Bodoni Moda", serif;
+
+  --main_fw:            400;
+  --main_fw_strong:     700;
+  --breadcrumbs_fz:     13px;
+  --main_fw_h:          400;
+  --main_fw_h_strong:   700;
+  --main_fw_secondary_h:400;
+  --main_fw_secondary_h_strong: 700;
+  --main_fs_h:          normal;
+  --main_ls_h:          -0.03em;
+  --main_tt_h:          none;
+  --main_lh_h:          1.2;
+
+
+  --main_ff:             "Montserrat", sans-serif;
+  --main_fs:            normal;
+
+  --main_tt:            none;
+
+  --main_fw:            400;
+  --main_fw_strong:     700;
+
+
+  --main_ls:            0.0em;
+  --main_lh:            1.6;
+  --main_fz_scale:      1.08;
+  --main_fz:            calc(var(--main_fz_scale) * 1.4rem);
+  --base_fz_scale:      1.04;
+  --base_fz:            calc(var(--base_fz_scale) * 1.4rem);
+  --base_fz_small:      calc(var(--base_fz_scale) * 1.4rem - 0.2rem);
+
+  --main_h1:            37px;
+  --main_h2:            29px;
+  --main_h3:            23px;
+  --main_h4:            18px;
+  --main_h5:            15px;
+  --main_h6:            15px;
+
+  --mob_h1:             28px;
+  --mob_h2:             21px;
+  --mob_h3:             20px;
+  --mob_h4:             15px;
+  --mob_h5:             13px;
+  --mob_h6:             13px;
+  --mob_fz:             14px;
+
+  
+    --btn_ph: calc(18px * 1.25);
+    --btn_pv: calc(14px * 1.2);
+  
+
+  
+    --btn_br: 0;
+    --b2i: var(--btn_br);
+  
+    --btn_fw:            500;
+    --btn_tt:          uppercase;
+
+
+  --price_ff:            "Montserrat", sans-serif;
+  --price_fs:            normal;
+
+  --price_fw:            400;
+
+  
+    --b2r: 0;
+  
+
+  --ratio: 1.25;
+
+  --glw: 10000px;
+  --glw_boxed: 1000px;
+}
+:root {
+  --content_p:                  25px;
+  
+  --ghw:  10000px;
+  
+  --custom_top_up_bg:           var(--scheme-1_bg);
+  --custom_top_up_fg:           var(--scheme-1_fg);
+  --custom_top_up_fg_hover:     var(--scheme-1_btn_bg);
+  --custom_top_up_h: 	 	35px;
+  
+  --header_mih:                 89px;
+  --custom_top_main_bg:         var(--scheme-1_bg);
+  --custom_top_main_fg:         var(--scheme-1_fg);
+  
+   --custom_top_nav_h: 65px;
+  --custom_top_nav_bg:          var(--scheme-1_bg);
+  --custom_top_nav_scrollbar_bg:var(--scheme-1_fg_sat);
+  --custom_top_nav_fz:          16px;
+  --mobile_nav_fz:              20px;
+  --custom_top_nav_ls:          0.0em;
+  --custom_top_nav_fw:          400;
+  
+  
+    --custom_top_main_sh: 0 9px 32px rgba(0,0,0,0.4);
+  
+  
+--custom_top_nav_bd_op:       1.0;
+    --custom_top_nav_bd:          rgb(255, 255, 255);
+  
+  --custom_top_nav_fg:          var(--scheme-1_fg);
+  --custom_top_nav_fg_hover:    var(--custom_top_nav_fg);
+  
+--custom_top_search_bd:     var(--scheme-1_bd);--custom_top_search_bg:       var(--scheme-1_input_bg);
+  --custom_top_search_fg:       var(--scheme-1_input_fg);
+  --custom_top_search_pl:       var(--scheme-1_input_pl);
+  }
+:root {
+  --content_p:                  20px;
+  --custom_top_search_h:        45px;
+  }
+:root {
+  --custom_top_search_h:        clamp(calc(var(--main_fz) + 20px), 54px, calc(var(--header_mih) - 5px));
+  --search_w:               420px;
+  }
+:root {
+  --header_mih:                 70px;
+  --custom_top_up_h:       25px;
+  }

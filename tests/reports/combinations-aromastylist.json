@@ -1,0 +1,164 @@
+{
+  "brand": "aromastylist",
+  "combinations": 756,
+  "passed": 756,
+  "failures": [],
+  "fallback_results": 0,
+  "items_per_result": {
+    "min": 3,
+    "max": 5,
+    "histogram": {
+      "3": 82,
+      "4": 50,
+      "5": 624
+    }
+  },
+  "distinct_products_recommended": 219,
+  "catalog_perfumes": 299,
+  "top10": [
+    {
+      "handle": "guerlain-aqua-allegoria-forte-mandarine-basilic",
+      "title": "Guerlain - Aqua Allegoria Forte Mandarine Basilic",
+      "times": 112
+    },
+    {
+      "handle": "hermes-un-jardin-sur-le-nil",
+      "title": "Hermès - Un Jardin Sur Le Nil",
+      "times": 101
+    },
+    {
+      "handle": "rosendo-mateu-no-5",
+      "title": "Rosendo Mateu - Nº 5 by Rosendo Mateu",
+      "times": 69
+    },
+    {
+      "handle": "hermes-un-jardin-sur-le-toit",
+      "title": "Hermès - Un Jardin Sur Le Toit",
+      "times": 68
+    },
+    {
+      "handle": "rosendo-mateu-no-1-bergamot-tea-leaf-sandalwood",
+      "title": "Rosendo Mateu - Nº 1 Bergamot, Tea Leaf, Sandalwood",
+      "times": 66
+    },
+    {
+      "handle": "clive-christian-e-cashmere-musk",
+      "title": "Clive Christian - E Cashmere Musk",
+      "times": 65
+    },
+    {
+      "handle": "etat-libre-dorange-sous-le-pont-mirabeau",
+      "title": "Etat Libre d'Orange - Sous Le Pont Mirabeau",
+      "times": 59
+    },
+    {
+      "handle": "maison-crivelli-absinthe-boreale",
+      "title": "Maison Crivelli - Absinthe Boréale",
+      "times": 59
+    },
+    {
+      "handle": "maison-crivelli-santal-volcanique",
+      "title": "Maison Crivelli - Santal Volcanique",
+      "times": 57
+    },
+    {
+      "handle": "xerjoff-accento-overdose",
+      "title": "Xerjoff - Accento Overdose",
+      "times": 56
+    }
+  ],
+  "never_recommended": [
+    "Matière Première - Vanilla Powder Extrait",
+    "Matière Première - Radical Rose Extrait",
+    "Clive Christian - Matsukita",
+    "Clive Christian - Rock Rose",
+    "Maison Crivelli - Oud Maracujá Extrait",
+    "Jusbox - Use Abuse",
+    "Thameen - Peacock Throne",
+    "Thameen - Cullinan Diamond",
+    "Thameen - Rivière",
+    "Kilian - Good Girl Gone Bad",
+    "New Notes - Latte di Cherry",
+    "Matière Première - Crystal Saffron",
+    "Matière Première - Santal Austral",
+    "Matière Première - Bois d'Ébène",
+    "Escentric Molecules - Molecule 01 + Iris",
+    "Zarkoperfume - MOLéCULE 234.38",
+    "Escentric Molecules - Molecule 01 + Patchouli",
+    "Escentric Molecules - Molecule 01 + Mandarin",
+    "Escentric Molecules - Molecule 01 + Ginger",
+    "Escentric Molecules - Molecule 02",
+    "Escentric Molecules - Molecule 01",
+    "Escentric Molecules - Escentric 02",
+    "Attar Collection - Musk Kashmir",
+    "Parfums de Marly - Valaya Exclusif",
+    "Parfums de Marly - Haltane",
+    "D.S. & Durga - Bowmakers",
+    "Chabaud - Lait Concentré",
+    "Parfums de Marly - Delina La Rosee",
+    "Parfums de Marly - Valaya",
+    "Parfums de Marly - Meliora",
+    "Parfums de Marly - Cassili",
+    "Tiziana Terenzi - Delox",
+    "Xerjoff - K'bridge Club",
+    "Memo Paris - Madurai",
+    "Maison Crivelli - Tubéreuse Astrale",
+    "Mizensir - Sweet Praline",
+    "Mizensir - For your Love",
+    "Maison Crivelli - Patchouli Magnetik Extract",
+    "Amouage - Love Mimosa Amouage",
+    "Amouage - Reflection Man by Amouage",
+    "Amouage - Opus XIII – Silver Oud",
+    "Amouage - Epic 56 Woman Extract",
+    "Maison Francis Kurkdjian - Aqua Vitae Cologne Forte",
+    "Maison Francis Kurkdjian - A La Rose",
+    "Maison Francis Kurkdjian - Baccarat Rouge 540 EDP",
+    "Marc-Antoine Barrois - B683 Extrait",
+    "Marc-Antoine Barrois - Ganymede Extract",
+    "Maison Francis Kurkdjian - L'eau À la Rose",
+    "Maison Francis Kurkdjian - Aqua Universalis",
+    "Xerjoff - Torino 21",
+    "Xerjoff - JTC 400",
+    "Xerjoff - Tonny Iommi",
+    "Creed - Spring Flower",
+    "Creed - Silver Mountain Water",
+    "Creed - Viking",
+    "Creed - Millésime Impérial",
+    "Creed - Acqua Fiorentina",
+    "Creed - Green Irish Tweed",
+    "Creed - Queen of Silk",
+    "Clive Christian - Town & Country",
+    "Clive Christian - 1872 For Women",
+    "Clive Christian - Crab Apple Blossom",
+    "Clive Christian - VIII Rococo Immortelle for Men",
+    "Clive Christian - Contemporary",
+    "Clive Christian - 20 Iconic Masculin",
+    "Clive Christian - No. 1 Feminine",
+    "Clive Christian - Chasing the Dragon Hypnotic",
+    "Profumum Roma - Ninfea",
+    "Profumum Roma - Tagete",
+    "Maison Crivelli - Safran Secret",
+    "Maison Crivelli - Oud Stallion Extrait",
+    "Maison Francis Kurkdjian - Aqua Universalis Cologne Forte",
+    "Profumum Roma - Rosae Mundi",
+    "Maison Francis Kurkdjian - Kurky",
+    "Xerjoff - Cruz del Sur II by Xerjoff",
+    "Nishane - Hacivat X",
+    "Xerjoff - Alexandria II Anniversary by Xerjoff",
+    "Profumum Roma - Tuberosa",
+    "Profumum Roma - Thundra",
+    "Profumum Roma - Dulcis in Fundo"
+  ],
+  "set_card_shown": 195,
+  "set_card_by_set": {
+    "the-modern-muse": 54,
+    "the-executive-edit": 13,
+    "modern-legends": 51,
+    "chromatic-couture": 10,
+    "midnight-bloom": 16,
+    "gilded-gatsby-glam": 15,
+    "after-hours": 20,
+    "black-ties": 16
+  },
+  "personas_used": 18
+}

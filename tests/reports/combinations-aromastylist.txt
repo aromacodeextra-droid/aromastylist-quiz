@@ -1,0 +1,26 @@
+combinations: 756, passed: 756, failed: 0
+items per result: 3-5 { '3': 82, '4': 50, '5': 624 } | fallback results: 0
+distinct perfumes recommended: 219 of 299
+top 10:
+   1. Guerlain - Aqua Allegoria Forte Mandarine Basilic (112)
+   2. Hermès - Un Jardin Sur Le Nil (101)
+   3. Rosendo Mateu - Nº 5 by Rosendo Mateu (69)
+   4. Hermès - Un Jardin Sur Le Toit (68)
+   5. Rosendo Mateu - Nº 1 Bergamot, Tea Leaf, Sandalwood (66)
+   6. Clive Christian - E Cashmere Musk (65)
+   7. Etat Libre d'Orange - Sous Le Pont Mirabeau (59)
+   8. Maison Crivelli - Absinthe Boréale (59)
+   9. Maison Crivelli - Santal Volcanique (57)
+  10. Xerjoff - Accento Overdose (56)
+never recommended: 80
+set card shown in 195 of 756 results {
+  'the-modern-muse': 54,
+  'the-executive-edit': 13,
+  'modern-legends': 51,
+  'chromatic-couture': 10,
+  'midnight-bloom': 16,
+  'gilded-gatsby-glam': 15,
+  'after-hours': 20,
+  'black-ties': 16
+}
+personas used: 18

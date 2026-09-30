@@ -1,0 +1,10 @@
+/* harness-only chrome standing in for the theme header / other sections. Not uploaded. */
+body { margin: 0; background: var(--body_bg, #f4f0ea); }
+.hx-header { display: flex; justify-content: space-between; align-items: center; padding: 18px 16px; border-bottom: 1px solid rgba(0,0,0,.08); background: var(--primary_bg); font-family: var(--main_ff); }
+.hx-logo { font-family: var(--main_ff_h); font-size: 22px; letter-spacing: .08em; color: var(--primary_text); text-decoration: none; }
+.hx-logo small { font-family: var(--main_ff); font-size: 11px; letter-spacing: 0; opacity: .6; }
+.hx-cart { color: var(--primary_text); text-decoration: none; font-size: 14px; }
+.hx-crumbs { max-width: 1080px; margin: 0 auto; padding: 14px 16px 0; font-size: 13px; font-family: var(--main_ff); }
+.hx-crumbs a { color: inherit; }
+.hx-existing { max-width: 1080px; margin: 24px auto 48px; padding: 32px 16px; border: 1px dashed rgba(0,0,0,.25); font-family: var(--main_ff); text-align: center; }
+.hx-existing h2 { margin-top: 0; }
