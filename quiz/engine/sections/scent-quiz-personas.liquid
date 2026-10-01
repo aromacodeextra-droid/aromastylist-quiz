@@ -1,0 +1,56 @@
+{%- comment -%}
+  Scent quiz: personas (brand-agnostic). Static list of every scent persona, readable by search engines and
+  without JavaScript. The quiz section on the same page reads these texts (data-sq-persona) so wording edited
+  here is also what the quiz result shows. Keys must match the personas in the quiz config file.
+{%- endcomment -%}
+{{ 'scent-quiz.css' | asset_url | stylesheet_tag }}
+<div class="sq-section sq-section--personas palette-{{ section.settings.color_palette }} module-color-palette" id="sq-personas-{{ section.id }}">
+  {%- if section.blocks.size > 0 -%}
+    <details class="sq-personas"{% if section.settings.open %} open{% endif %}>
+      <summary><h2 class="sq-personas__title">{{ section.settings.title | escape }}</h2></summary>
+      {%- if section.settings.intro != blank -%}<p class="sq-personas__intro">{{ section.settings.intro | escape }}</p>{%- endif -%}
+      <ul class="sq-personas__list">
+        {%- for block in section.blocks -%}
+          <li data-sq-persona="{{ block.settings.persona_key | strip | escape }}" {{ block.shopify_attributes }}>
+            <h3>{{ block.settings.name | escape }}</h3>
+            <p>{{ block.settings.line | escape }}</p>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </details>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Scent quiz: personas",
+  "tag": "section",
+  "class": "shopify-section-scent-quiz-personas",
+  "max_blocks": 50,
+  "settings": [
+    {
+      "type": "select", "id": "color_palette", "label": "Color scheme", "default": "scheme-1",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" }, { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" }, { "value": "scheme-4", "label": "Scheme 4" },
+        { "value": "scheme-5", "label": "Scheme 5" }, { "value": "scheme-6", "label": "Scheme 6" },
+        { "value": "scheme-7", "label": "Scheme 7" }, { "value": "scheme-8", "label": "Scheme 8" }
+      ]
+    },
+    { "type": "text", "id": "title", "label": "Title", "default": "All scent personas" },
+    { "type": "textarea", "id": "intro", "label": "Intro" },
+    { "type": "checkbox", "id": "open", "label": "Show the list open", "default": false }
+  ],
+  "blocks": [
+    {
+      "type": "persona", "name": "Persona",
+      "settings": [
+        { "type": "text", "id": "persona_key", "label": "Persona key", "info": "Must match a persona key in the quiz config file" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "textarea", "id": "line", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Scent quiz: personas" }]
+}
+{% endschema %}
