@@ -1,0 +1,142 @@
+[
+ {
+  "id": "kilian-angels-share",
+  "image_url": "",
+  "page_url": "",
+  "source_type": "none",
+  "comment": "No page given; brand site (bykilian.com) returns 403"
+ },
+ {
+  "id": "dg-light-blue",
+  "image_url": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dw8d076661/images/zoom/VT01JMVT000_9V000_1.jpg?sw=1110&sh=1416",
+  "page_url": "https://www.dolcegabbana.com/en-us/beauty/perfumes-for-her/light-blue/light-blue-eau-de-toilette---VT01JMVT0009V000.html",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved dg-light-blue.jpg (bottle with cap off beside it; first gallery image)"
+ },
+ {
+  "id": "ysl-y",
+  "image_url": "",
+  "page_url": "https://www.yslbeautyus.com/fragrance/mens-fragrances/y/y-eau-de-parfum/727YSL.html",
+  "source_type": "none",
+  "comment": "Brand site blocked (Cloudflare/Akamai 403 to curl and WebFetch); sephora/nordstrom also bot-blocked"
+ },
+ {
+  "id": "chanel-n-5",
+  "image_url": "https://www.chanel.com/images/t_one/t_fragrance/q_auto:good,f_auto,fl_lossy,dpr_1.1/w_1920/n-5-eau-de-parfum-spray-3-4fl-oz--packshot-default-125530-9564912943134.jpg",
+  "page_url": "https://www.chanel.com/us/fragrance/p/125530/n5-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved chanel-n-5.png (1920px render via brand image CDN, served as PNG)"
+ },
+ {
+  "id": "glossier-glossier-you",
+  "image_url": "https://cdn.shopify.com/s/files/1/0627/9164/7477/files/glossier-fragrance-you-01.png?v=1762200697",
+  "page_url": "https://www.glossier.com/products/glossier-you",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved glossier-glossier-you.png"
+ },
+ {
+  "id": "byredo-gypsy-water",
+  "image_url": "https://www.byredo.com/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/8/0/806014_1_full_no.jpg",
+  "page_url": "https://www.byredo.com/us_en/p/gypsy-water-eau-de-parfum",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved byredo-gypsy-water.jpg"
+ },
+ {
+  "id": "gucci-bloom",
+  "image_url": "",
+  "page_url": "https://www.sephora.com/product/bloom-eau-de-parfum-for-her-P422093",
+  "source_type": "none",
+  "comment": "Brand site unreachable and sephora.com returns 403"
+ },
+ {
+  "id": "margiela-jazz-club",
+  "image_url": "",
+  "page_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-jazz-club/MM008.html",
+  "source_type": "none",
+  "comment": "Brand site blocked (Cloudflare/Akamai 403 to curl and WebFetch); sephora/nordstrom also bot-blocked"
+ },
+ {
+  "id": "margiela-by-the-fireplace",
+  "image_url": "",
+  "page_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-by-the-fireplace/MM005.html",
+  "source_type": "none",
+  "comment": "Brand site blocked (Cloudflare/Akamai 403 to curl and WebFetch); sephora/nordstrom also bot-blocked"
+ },
+ {
+  "id": "tom-ford-oud-wood",
+  "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T1XF01_2000x2000_0.png?v=1790862944",
+  "page_url": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved tom-ford-oud-wood.png"
+ },
+ {
+  "id": "tom-ford-black-orchid",
+  "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tfb_sku_T00501_2000x2000_0_86ae8379-c734-4b33-99e4-c8a2d0547892.png?v=1790862952",
+  "page_url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved tom-ford-black-orchid.png"
+ },
+ {
+  "id": "jpg-le-male",
+  "image_url": "https://medias.jeanpaulgaultier.com/medias/sys_master/images/hfd/hdd/10602973462558/10602973397022/10602973397022.png",
+  "page_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-male/le-male-eau-de-toilette-000000000065120122",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved jpg-le-male.png"
+ },
+ {
+  "id": "jpg-le-male-elixir",
+  "image_url": "https://medias.jeanpaulgaultier.com/medias/sys_master/images/h88/h29/9614892105758/9614892040222/9614892040222.png",
+  "page_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-male/le-male-elixir-parfum-000000000065189084",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved jpg-le-male-elixir.png"
+ },
+ {
+  "id": "rabanne-1-million",
+  "image_url": "https://medias.rabanne.com/medias/sys_master/images/h9f/hc2/10999156572190/10999156506654/10999156506654.jpg",
+  "page_url": "https://www.rabanne.com/us/en_US/fragrance/p/1-million--000000000065187136",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved rabanne-1-million.jpg"
+ },
+ {
+  "id": "rabanne-invictus",
+  "image_url": "https://medias.rabanne.com/medias/sys_master/images/ha3/h82/10972041347102/10972041281566/10972041281566.jpg",
+  "page_url": "https://www.rabanne.com/US/en_US/fragrance/p/invictus--000000000065055742",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved rabanne-invictus.jpg"
+ },
+ {
+  "id": "armani-stronger-with-you-intensely",
+  "image_url": "",
+  "page_url": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/emporio-armani/emporio-armani-stronger-with-you-intensely/ww-00180-arm.html",
+  "source_type": "none",
+  "comment": "Brand site blocked (Cloudflare/Akamai 403 to curl and WebFetch); sephora/nordstrom also bot-blocked"
+ },
+ {
+  "id": "dior-sauvage-elixir",
+  "image_url": "",
+  "page_url": "https://www.dior.com/en_us/beauty/products/sauvage-elixir-Y0996460.html",
+  "source_type": "none",
+  "comment": "Brand site blocked (Cloudflare/Akamai 403 to curl and WebFetch); sephora/nordstrom also bot-blocked"
+ },
+ {
+  "id": "chanel-chance-eau-tendre",
+  "image_url": "https://www.chanel.com/images/t_one/t_fragrance/q_auto:good,f_auto,fl_lossy,dpr_1.1/w_1920/chance-eau-tendre-eau-de-toilette-spray-1-7fl-oz--packshot-default-126310-9564852125726.jpg",
+  "page_url": "https://www.chanel.com/us/fragrance/p/126310/chance-eau-tendre-eau-de-toilette-spray/",
+  "source_type": "brand",
+  "comment": "Brand site packshot; saved chanel-chance-eau-tendre.png (1920px render via brand image CDN, served as PNG)"
+ },
+ {
+  "id": "valentino-born-in-roma-donna",
+  "image_url": "",
+  "page_url": "https://www.valentino-beauty.us/fragrances/fragrances-women/fragrances-women-born-in-roma/born-in-roma-donna-eau-de-parfum-MPL00468.html",
+  "source_type": "none",
+  "comment": "Brand site blocked (Cloudflare/Akamai 403 to curl and WebFetch); sephora/nordstrom also bot-blocked"
+ },
+ {
+  "id": "valentino-born-in-roma-uomo",
+  "image_url": "",
+  "page_url": "https://www.valentino-beauty.us/fragrances/fragrances-men/fragrances-men-born-in-roma/born-in-roma-uomo-eau-de-toilette-MPL00475.html",
+  "source_type": "none",
+  "comment": "Brand site blocked (Cloudflare/Akamai 403 to curl and WebFetch); sephora/nordstrom also bot-blocked"
+ }
+]

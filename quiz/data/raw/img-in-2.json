@@ -1,0 +1,142 @@
+[
+ {
+  "id": "kilian-angels-share",
+  "house": "Kilian",
+  "name": "Angels' Share",
+  "concentration": "EDP",
+  "notes_page": null
+ },
+ {
+  "id": "dg-light-blue",
+  "house": "Dolce&Gabbana",
+  "name": "Light Blue",
+  "concentration": "EDT",
+  "notes_page": "https://www.dolcegabbana.com/en-us/beauty/perfumes-for-her/light-blue/light-blue-eau-de-toilette---VT01JMVT0009V000.html"
+ },
+ {
+  "id": "ysl-y",
+  "house": "Yves Saint Laurent",
+  "name": "Y",
+  "concentration": "EDP",
+  "notes_page": "https://www.yslbeautyus.com/fragrance/mens-fragrances/y/y-eau-de-parfum/727YSL.html"
+ },
+ {
+  "id": "chanel-n-5",
+  "house": "Chanel",
+  "name": "N°5",
+  "concentration": "EDP",
+  "notes_page": "https://www.chanel.com/us/fragrance/p/125530/n5-eau-de-parfum-spray/"
+ },
+ {
+  "id": "glossier-glossier-you",
+  "house": "Glossier",
+  "name": "Glossier You",
+  "concentration": "EDP",
+  "notes_page": "https://www.glossier.com/products/glossier-you"
+ },
+ {
+  "id": "byredo-gypsy-water",
+  "house": "Byredo",
+  "name": "Gypsy Water",
+  "concentration": "EDP",
+  "notes_page": "https://www.byredo.com/us_en/p/gypsy-water-eau-de-parfum"
+ },
+ {
+  "id": "gucci-bloom",
+  "house": "Gucci",
+  "name": "Bloom",
+  "concentration": "EDP",
+  "notes_page": "https://www.sephora.com/product/bloom-eau-de-parfum-for-her-P422093"
+ },
+ {
+  "id": "margiela-jazz-club",
+  "house": "Maison Margiela",
+  "name": "Replica Jazz Club",
+  "concentration": "EDT",
+  "notes_page": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-jazz-club/MM008.html"
+ },
+ {
+  "id": "margiela-by-the-fireplace",
+  "house": "Maison Margiela",
+  "name": "Replica By the Fireplace",
+  "concentration": "EDT",
+  "notes_page": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-by-the-fireplace/MM005.html"
+ },
+ {
+  "id": "tom-ford-oud-wood",
+  "house": "Tom Ford",
+  "name": "Oud Wood",
+  "concentration": "EDP",
+  "notes_page": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum"
+ },
+ {
+  "id": "tom-ford-black-orchid",
+  "house": "Tom Ford",
+  "name": "Black Orchid",
+  "concentration": "EDP",
+  "notes_page": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum"
+ },
+ {
+  "id": "jpg-le-male",
+  "house": "Jean Paul Gaultier",
+  "name": "Le Male",
+  "concentration": "EDT",
+  "notes_page": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-male/le-male-eau-de-toilette-000000000065120122"
+ },
+ {
+  "id": "jpg-le-male-elixir",
+  "house": "Jean Paul Gaultier",
+  "name": "Le Male Elixir",
+  "concentration": "Parfum",
+  "notes_page": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-male/le-male-elixir-parfum-000000000065189084"
+ },
+ {
+  "id": "rabanne-1-million",
+  "house": "Rabanne",
+  "name": "1 Million",
+  "concentration": "EDT",
+  "notes_page": "https://www.rabanne.com/us/en_US/fragrance/p/1-million--000000000065187136"
+ },
+ {
+  "id": "rabanne-invictus",
+  "house": "Rabanne",
+  "name": "Invictus",
+  "concentration": "EDT",
+  "notes_page": "https://www.rabanne.com/US/en_US/fragrance/p/invictus--000000000065055742"
+ },
+ {
+  "id": "armani-stronger-with-you-intensely",
+  "house": "Emporio Armani",
+  "name": "Stronger With You Intensely",
+  "concentration": "EDP",
+  "notes_page": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/emporio-armani/emporio-armani-stronger-with-you-intensely/ww-00180-arm.html"
+ },
+ {
+  "id": "dior-sauvage-elixir",
+  "house": "Dior",
+  "name": "Sauvage Elixir",
+  "concentration": "Parfum",
+  "notes_page": "https://www.dior.com/en_us/beauty/products/sauvage-elixir-Y0996460.html"
+ },
+ {
+  "id": "chanel-chance-eau-tendre",
+  "house": "Chanel",
+  "name": "Chance Eau Tendre",
+  "concentration": "EDT",
+  "notes_page": "https://www.chanel.com/us/fragrance/p/126310/chance-eau-tendre-eau-de-toilette-spray/"
+ },
+ {
+  "id": "valentino-born-in-roma-donna",
+  "house": "Valentino",
+  "name": "Born in Roma Donna",
+  "concentration": "EDP",
+  "notes_page": "https://www.valentino-beauty.us/fragrances/fragrances-women/fragrances-women-born-in-roma/born-in-roma-donna-eau-de-parfum-MPL00468.html"
+ },
+ {
+  "id": "valentino-born-in-roma-uomo",
+  "house": "Valentino",
+  "name": "Born in Roma Uomo",
+  "concentration": "EDT",
+  "notes_page": "https://www.valentino-beauty.us/fragrances/fragrances-men/fragrances-men-born-in-roma/born-in-roma-uomo-eau-de-toilette-MPL00475.html"
+ }
+]

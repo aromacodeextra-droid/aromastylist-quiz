@@ -1,0 +1,142 @@
+[
+ {
+  "id": "dior-sauvage",
+  "image_url": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw6fd94ea5/Y0685240/Y0685240_F068524009_E01_ZHC.jpg?sw=1800",
+  "page_url": "https://www.dior.com/en_us/beauty/products/sauvage-eau-de-toilette-Y0685240.html",
+  "source_type": "brand",
+  "comment": "Dior US JSON-LD image; 1800x1200 on light grey"
+ },
+ {
+  "id": "jo-malone-wood-sage-and-sea-salt",
+  "image_url": "https://www.jomalone.com/media/export/cms/products/1000x1000/jo_sku_L41501_1000x1000_0.png",
+  "page_url": "https://www.jomalone.com/product/25946/32241/colognes/wood-sage-sea-salt-cologne",
+  "source_type": "brand",
+  "comment": "JSON-LD image 1000x1000"
+ },
+ {
+  "id": "armani-acqua-di-gio",
+  "image_url": "https://www.sephora.com/productimages/sku/s397299-main-zoom.jpg",
+  "page_url": "https://www.sephora.com/product/acqua-di-gio-pour-homme-P12430?skuId=397299",
+  "source_type": "sephora",
+  "comment": "armanibeauty.com blocked (403); Sephora EDT main image 2000px"
+ },
+ {
+  "id": "dior-miss-dior",
+  "image_url": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dwf5c850a2/Y0000393/Y0000393_E000001555_E01_ZHC.jpg?sw=1800",
+  "page_url": "https://www.dior.com/en_us/beauty/products/miss-dior-eau-de-parfum-Y0000393.html",
+  "source_type": "brand",
+  "comment": "Dior US JSON-LD image 1800x1200"
+ },
+ {
+  "id": "dior-j-adore",
+  "image_url": "https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw02c781c0/Y0998031/Y0998031_C099800244_E01_ZHC.jpg?sw=1800",
+  "page_url": "https://www.dior.com/en_us/beauty/products/j%E2%80%99adore-eau-de-parfum-Y0998031.html",
+  "source_type": "brand",
+  "comment": "Dior US JSON-LD image 1800x1200; small bottle in frame"
+ },
+ {
+  "id": "tom-ford-lost-cherry",
+  "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T81201_2000x2000_0_d83366e7-a88d-4df9-bf20-958c3c83b4d6.png?v=1790862941",
+  "page_url": "https://www.tomfordbeauty.com/products/lost-cherry-eau-de-parfum",
+  "source_type": "brand",
+  "comment": "Shopify product.json image 1, transparent PNG 2000px"
+ },
+ {
+  "id": "lancome-la-vie-est-belle",
+  "image_url": "https://www.sephora.com/productimages/sku/s1459999-main-zoom.jpg",
+  "page_url": "https://www.sephora.com/product/la-vie-est-belle-P375939?skuId=1459999",
+  "source_type": "sephora",
+  "comment": "lancome-usa.com blocked (403); Sephora main image 2000px"
+ },
+ {
+  "id": "chanel-bleu-de-chanel",
+  "image_url": "https://www.chanel.com/images//t_one/q_auto:good,f_auto,fl_lossy,dpr_1.1/w_1200/bleu-de-chanel-eau-de-parfum-spray-3-4fl-oz--packshot-default-107360-9564894232606.jpg",
+  "page_url": "https://www.chanel.com/us/fragrance/p/107360/bleu-de-chanel-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "comment": "JSON-LD packshot URL with width param w_1200 (page had w_620 crop); 1320px transparent PNG"
+ },
+ {
+  "id": "mfk-baccarat-rouge-540",
+  "image_url": "https://www.franciskurkdjian.com/dw/image/v2/BJSB_PRD/on/demandware.static/-/Sites-mfk-master-catalog/default/dwa46019b3/BACCARAT_ROUGE_540/FRAGRANCE/3700559603116_BR540_EDP_70ML_1.png?sw=1200&sh=1200&strip=false",
+  "page_url": "https://www.franciskurkdjian.com/us-en/p/baccarat-rouge-540-eau-de-parfum-RA12232.html",
+  "source_type": "brand",
+  "comment": "og:image 70ml with sw=1200 instead of 640; 1200px RGBA"
+ },
+ {
+  "id": "tom-ford-ombre-leather",
+  "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T5Y201_2000x2000_0.png?v=1790861147",
+  "page_url": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum",
+  "source_type": "brand",
+  "comment": "Shopify product.json image 1, transparent PNG 2000px"
+ },
+ {
+  "id": "viktor-and-rolf-spicebomb",
+  "image_url": "https://www.sephora.com/productimages/sku/s1463207-main-zoom.jpg",
+  "page_url": "https://www.sephora.com/product/spicebomb-P376737?skuId=1463207",
+  "source_type": "sephora",
+  "comment": "V&R US site blocked, viktor-rolf.com has no fragrance products; Sephora Spicebomb (EDT) main image 1500px"
+ },
+ {
+  "id": "prada-paradoxe",
+  "image_url": "https://www.sephora.com/productimages/sku/s2591170-main-zoom.jpg",
+  "page_url": "https://www.sephora.com/product/paradoxe-eau-de-parfum-P501198?skuId=2591170",
+  "source_type": "sephora",
+  "comment": "prada-beauty.com blocked (403); Sephora main image 2000px, tight crop"
+ },
+ {
+  "id": "ysl-black-opium",
+  "image_url": "https://www.sephora.com/productimages/sku/s1688852-main-zoom.jpg",
+  "page_url": "https://www.sephora.com/product/black-opium-P394534?skuId=1688852",
+  "source_type": "sephora",
+  "comment": "yslbeautyus.com blocked (403); Sephora main image 2000px"
+ },
+ {
+  "id": "chanel-coco-mademoiselle",
+  "image_url": "https://www.chanel.com/images//t_one/q_auto:good,f_auto,fl_lossy,dpr_1.1/w_1200/coco-mademoiselle-eau-de-parfum-spray-1-7fl-oz--packshot-default-116420-9564890529822.jpg",
+  "page_url": "https://www.chanel.com/us/fragrance/p/116420/coco-mademoiselle-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "comment": "JSON-LD packshot URL with width param w_1200; 1320px transparent PNG"
+ },
+ {
+  "id": "ysl-libre",
+  "image_url": "https://www.sephora.com/productimages/sku/s2249746-main-zoom.jpg",
+  "page_url": "https://www.sephora.com/product/libre-eau-de-parfum-P448102?skuId=2249746",
+  "source_type": "sephora",
+  "comment": "yslbeautyus.com blocked (403); Sephora main image 2000px"
+ },
+ {
+  "id": "le-labo-santal-33",
+  "image_url": "https://lelabo.ips.photos/lelabo-java/images/skus/100PS33100__PRODUCT_01--IMG_1200--SANTAL33-883562345.jpg",
+  "page_url": "https://www.lelabofragrances.com/santal-33-147.html",
+  "source_type": "brand",
+  "comment": "100 ml packshot from the product page gallery (the og:image is a lifestyle shot); brand grey studio background flattened to the card colour"
+ },
+ {
+  "id": "tom-ford-tobacco-vanille",
+  "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tf_sku_T0CA01_2000x2000_0.png?v=1790862943",
+  "page_url": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum",
+  "source_type": "brand",
+  "comment": "Shopify product.json image 1, transparent PNG 2000px"
+ },
+ {
+  "id": "ch-good-girl",
+  "image_url": "https://medias.carolinaherrera.com/medias/sys_master/images/h2a/h6a/10703146778654/10703146713118/10703146713118.jpg",
+  "page_url": "https://www.carolinaherrera.com/us/en/p-fragrance/good-girl-eau-de-parfum",
+  "source_type": "brand",
+  "comment": "og:image 2049x2560 white bg"
+ },
+ {
+  "id": "pdm-delina",
+  "image_url": "https://cdn.shopify.com/s/files/1/0525/0239/7079/files/DELINA-PERFUME-75-PACK1-1X1_CENTERED_1_4a6d11a8-5b19-4ffb-950b-15dda6043b65.png?v=1759501486",
+  "page_url": "https://parfums-de-marly.com/products/delina",
+  "source_type": "brand",
+  "comment": "Shopify product.json image 1 (og:image), 1080px transparent; bottle small in frame"
+ },
+ {
+  "id": "creed-aventus",
+  "image_url": "https://static.thcdn.com/productimg/original/12870029-1145337306138828.jpg",
+  "page_url": "https://www.creedfragrance.com/p/aventus/12870029/",
+  "source_type": "brand",
+  "comment": "og:image from creedfragrance.com, 2000px"
+ }
+]

@@ -3,3 +3,4 @@ data-raw/*.html
 data-raw/
 .cache/
 harness/logs/
+quiz/data/img-src/

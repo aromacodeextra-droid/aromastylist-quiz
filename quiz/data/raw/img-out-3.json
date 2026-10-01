@@ -1,0 +1,142 @@
+[
+ {
+  "id": "versace-eros",
+  "image_url": "",
+  "page_url": "https://www.versace.com/us/en/men/accessories/fragrances-body-care/eros/eros-edt-100-ml-blue/R740010-R100MLS_RNUL.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "mugler-alien",
+  "image_url": "",
+  "page_url": "https://www.mugler.com/fragrance/womens-fragrances/alien/alien-eau-de-parfum/M010401002.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "prada-luna-rossa-carbon",
+  "image_url": "",
+  "page_url": "https://www.prada-beauty.com/fragrance/luna-rossa/luna-rossa-carbon-eau-de-toilette/MPL01367.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "ysl-mon-paris",
+  "image_url": "",
+  "page_url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/mon-paris/mon-paris-eau-de-parfum/4150YSL.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "lancome-idole",
+  "image_url": "",
+  "page_url": "https://www.lancome-usa.com/fragrance/fragrance-by-collection/idole/idole-eau-de-parfum/LAN387.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "viktor-and-rolf-flowerbomb",
+  "image_url": "https://cdn.shopify.com/s/files/1/1455/9562/files/model_front_Flowerbomb_100.jpg?v=1760520076",
+  "page_url": "https://www.viktor-rolf.com/products/flowerbomb-eau-de-parfum-100ml",
+  "source_type": "brand",
+  "comment": "viktor-rolf.com collection products.json first image, 1600x2400 bottle on light grey"
+ },
+ {
+  "id": "marc-jacobs-daisy",
+  "image_url": "",
+  "page_url": "https://www.marcjacobs.com/us-en/daisy-eau-de-toilette-100-ml/31655513034.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "burberry-her",
+  "image_url": "https://assets.burberry.com/is/image/Burberryltd/170DBE43-9B00-40B1-A766-F1482E6F263D?wid=1200",
+  "page_url": "https://us.burberry.com/her-eau-de-parfum-100ml-p40804591",
+  "source_type": "brand",
+  "comment": "burberry.com og:image with wid=1200, 1200x1350 bottle packshot"
+ },
+ {
+  "id": "givenchy-l-interdit",
+  "image_url": "",
+  "page_url": "https://www.givenchybeauty.com/us/p/l-interdit-F10100099.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "kayali-vanilla-28",
+  "image_url": "https://kayali.com/cdn/shop/files/Vanilla_28_100_f1e9b3e5-6558-4559-8f44-89f1dee984ea.png?v=1789041787&width=1024",
+  "page_url": "https://www.kayali.com/products/vanilla-28",
+  "source_type": "brand",
+  "comment": "og:image, 1000x1000 PNG packshot"
+ },
+ {
+  "id": "jo-malone-english-pear-and-freesia",
+  "image_url": "",
+  "page_url": "https://www.jomalone.com/product/25946/12553/colognes/english-pear-freesia-cologne",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "creed-green-irish-tweed",
+  "image_url": "https://static.thcdn.com/productimg/original/12870035-8495164180496709.jpg",
+  "page_url": "https://www.creedfragrance.com/p/green-irish-tweed/12870035/",
+  "source_type": "brand",
+  "comment": "og:image from brand page, 2000x2000 packshot on light grey"
+ },
+ {
+  "id": "pdm-layton",
+  "image_url": "https://cdn.shopify.com/s/files/1/0525/0239/7079/files/LAYTON-PERFUME-125-PACK1-1X1_CENTERED_3_ff589b84-1e01-491c-a2da-2b46bad5df52.png?v=1759501471",
+  "page_url": "https://parfums-de-marly.com/products/layton",
+  "source_type": "brand",
+  "comment": "Shopify products JSON image 1, 1080x1080 bottle on white"
+ },
+ {
+  "id": "dior-dior-homme-intense",
+  "image_url": "",
+  "page_url": "https://www.dior.com/en_us/beauty/products/dior-homme-intense-Y0479201.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "chanel-allure-homme-sport",
+  "image_url": "https://www.chanel.com/images//t_one/w_0.51,h_0.51,c_crop/q_auto:good,f_auto,fl_lossy,dpr_1.1/w_620/allure-homme-sport-eau-de-toilette-spray-3-4fl-oz--packshot-default-123630-9564892856350.jpg",
+  "page_url": "https://www.chanel.com/us/fragrance/p/123630/allure-homme-sport-eau-de-toilette-spray/",
+  "source_type": "brand",
+  "comment": "JSON-LD image, 682x682 PNG packshot (only size found on page URL)"
+ },
+ {
+  "id": "armani-acqua-di-gio-profondo",
+  "image_url": "",
+  "page_url": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/acqua-di-gio/acqua-di-gio-profondo-eau-de-parfum/ww-00294-arm.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ },
+ {
+  "id": "tom-ford-fucking-fabulous",
+  "image_url": "https://cdn.shopify.com/s/files/1/0761/9690/5173/files/tfb_sku_T61501_2000x2000_0.png?v=1790861144",
+  "page_url": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum",
+  "source_type": "brand",
+  "comment": "Shopify products JSON image 1, 2000x2000 50ml bottle on white"
+ },
+ {
+  "id": "kilian-good-girl-gone-bad",
+  "image_url": "",
+  "page_url": "",
+  "source_type": "none",
+  "comment": "No notes page; brand site (bykilian.com) returns 403"
+ },
+ {
+  "id": "chanel-chance",
+  "image_url": "https://www.chanel.com/images//t_one/w_0.51,h_0.51,c_crop/q_auto:good,f_auto,fl_lossy,dpr_1.1/w_620/chance-eau-de-toilette-spray-3-4fl-oz--packshot-default-126460-9564893937694.jpg",
+  "page_url": "https://www.chanel.com/us/fragrance/p/126460/chance-eau-de-toilette-spray/",
+  "source_type": "brand",
+  "comment": "JSON-LD image, 682x682 PNG packshot (only size found on page URL)"
+ },
+ {
+  "id": "margiela-lazy-sunday-morning",
+  "image_url": "",
+  "page_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-lazy-sunday-morning/MM009.html",
+  "source_type": "none",
+  "comment": "Brand site blocks automated access (HTTP 403, bot protection); Sephora/Nordstrom product pages not reachable without search"
+ }
+]

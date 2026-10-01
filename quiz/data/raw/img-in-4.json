@@ -1,0 +1,149 @@
+[
+ {
+  "id": "kilian-angels-share",
+  "house": "Kilian",
+  "name": "Angels' Share",
+  "concentration": "EDP",
+  "notes_page": null
+ },
+ {
+  "id": "ysl-y",
+  "house": "Yves Saint Laurent",
+  "name": "Y",
+  "concentration": "EDP",
+  "notes_page": "https://www.yslbeautyus.com/fragrance/mens-fragrances/y/y-eau-de-parfum/727YSL.html"
+ },
+ {
+  "id": "gucci-bloom",
+  "house": "Gucci",
+  "name": "Bloom",
+  "concentration": "EDP",
+  "notes_page": "https://www.sephora.com/product/bloom-eau-de-parfum-for-her-P422093"
+ },
+ {
+  "id": "margiela-jazz-club",
+  "house": "Maison Margiela",
+  "name": "Replica Jazz Club",
+  "concentration": "EDT",
+  "notes_page": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-jazz-club/MM008.html"
+ },
+ {
+  "id": "margiela-by-the-fireplace",
+  "house": "Maison Margiela",
+  "name": "Replica By the Fireplace",
+  "concentration": "EDT",
+  "notes_page": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-by-the-fireplace/MM005.html"
+ },
+ {
+  "id": "armani-stronger-with-you-intensely",
+  "house": "Emporio Armani",
+  "name": "Stronger With You Intensely",
+  "concentration": "EDP",
+  "notes_page": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/emporio-armani/emporio-armani-stronger-with-you-intensely/ww-00180-arm.html"
+ },
+ {
+  "id": "dior-sauvage-elixir",
+  "house": "Dior",
+  "name": "Sauvage Elixir",
+  "concentration": "Parfum",
+  "notes_page": "https://www.dior.com/en_us/beauty/products/sauvage-elixir-Y0996460.html"
+ },
+ {
+  "id": "valentino-born-in-roma-donna",
+  "house": "Valentino",
+  "name": "Born in Roma Donna",
+  "concentration": "EDP",
+  "notes_page": "https://www.valentino-beauty.us/fragrances/fragrances-women/fragrances-women-born-in-roma/born-in-roma-donna-eau-de-parfum-MPL00468.html"
+ },
+ {
+  "id": "valentino-born-in-roma-uomo",
+  "house": "Valentino",
+  "name": "Born in Roma Uomo",
+  "concentration": "EDT",
+  "notes_page": "https://www.valentino-beauty.us/fragrances/fragrances-men/fragrances-men-born-in-roma/born-in-roma-uomo-eau-de-toilette-MPL00475.html"
+ },
+ {
+  "id": "versace-eros",
+  "house": "Versace",
+  "name": "Eros",
+  "concentration": "EDT",
+  "notes_page": "https://www.versace.com/us/en/men/accessories/fragrances-body-care/eros/eros-edt-100-ml-blue/R740010-R100MLS_RNUL.html"
+ },
+ {
+  "id": "mugler-alien",
+  "house": "Mugler",
+  "name": "Alien",
+  "concentration": "EDP",
+  "notes_page": "https://www.mugler.com/fragrance/womens-fragrances/alien/alien-eau-de-parfum/M010401002.html"
+ },
+ {
+  "id": "prada-luna-rossa-carbon",
+  "house": "Prada",
+  "name": "Luna Rossa Carbon",
+  "concentration": "EDT",
+  "notes_page": "https://www.prada-beauty.com/fragrance/luna-rossa/luna-rossa-carbon-eau-de-toilette/MPL01367.html"
+ },
+ {
+  "id": "ysl-mon-paris",
+  "house": "Yves Saint Laurent",
+  "name": "Mon Paris",
+  "concentration": "EDP",
+  "notes_page": "https://www.yslbeautyus.com/fragrance/womens-fragrances/mon-paris/mon-paris-eau-de-parfum/4150YSL.html"
+ },
+ {
+  "id": "lancome-idole",
+  "house": "Lancôme",
+  "name": "Idôle",
+  "concentration": "EDP",
+  "notes_page": "https://www.lancome-usa.com/fragrance/fragrance-by-collection/idole/idole-eau-de-parfum/LAN387.html"
+ },
+ {
+  "id": "marc-jacobs-daisy",
+  "house": "Marc Jacobs",
+  "name": "Daisy",
+  "concentration": "EDT",
+  "notes_page": "https://www.marcjacobs.com/us-en/daisy-eau-de-toilette-100-ml/31655513034.html"
+ },
+ {
+  "id": "givenchy-l-interdit",
+  "house": "Givenchy",
+  "name": "L'Interdit",
+  "concentration": "EDP",
+  "notes_page": "https://www.givenchybeauty.com/us/p/l-interdit-F10100099.html"
+ },
+ {
+  "id": "jo-malone-english-pear-and-freesia",
+  "house": "Jo Malone London",
+  "name": "English Pear & Freesia",
+  "concentration": "Cologne",
+  "notes_page": "https://www.jomalone.com/product/25946/12553/colognes/english-pear-freesia-cologne"
+ },
+ {
+  "id": "dior-dior-homme-intense",
+  "house": "Dior",
+  "name": "Dior Homme Intense",
+  "concentration": "EDP",
+  "notes_page": "https://www.dior.com/en_us/beauty/products/dior-homme-intense-Y0479201.html"
+ },
+ {
+  "id": "armani-acqua-di-gio-profondo",
+  "house": "Giorgio Armani",
+  "name": "Acqua di Giò Profondo",
+  "concentration": "EDP",
+  "notes_page": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/acqua-di-gio/acqua-di-gio-profondo-eau-de-parfum/ww-00294-arm.html"
+ },
+ {
+  "id": "kilian-good-girl-gone-bad",
+  "house": "Kilian",
+  "name": "Good Girl Gone Bad",
+  "concentration": "EDP",
+  "notes_page": null
+ },
+ {
+  "id": "margiela-lazy-sunday-morning",
+  "house": "Maison Margiela",
+  "name": "Replica Lazy Sunday Morning",
+  "concentration": "EDT",
+  "notes_page": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-lazy-sunday-morning/MM009.html"
+ }
+]

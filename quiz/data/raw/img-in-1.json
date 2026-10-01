@@ -1,0 +1,142 @@
+[
+ {
+  "id": "dior-sauvage",
+  "house": "Dior",
+  "name": "Sauvage",
+  "concentration": "EDT",
+  "notes_page": "https://www.dior.com/en_us/beauty/products/sauvage-eau-de-toilette-Y0685240.html"
+ },
+ {
+  "id": "jo-malone-wood-sage-and-sea-salt",
+  "house": "Jo Malone London",
+  "name": "Wood Sage & Sea Salt",
+  "concentration": "Cologne",
+  "notes_page": "https://www.jomalone.com/wood-sage-sea-salt"
+ },
+ {
+  "id": "armani-acqua-di-gio",
+  "house": "Giorgio Armani",
+  "name": "Acqua di Giò",
+  "concentration": "EDT",
+  "notes_page": "https://www.armanibeauty.com/int/gifts/gift-sets/acqua-di-gio-eau-de-toilette-50-ml-holiday-gift-set/ww-00550-arm.html"
+ },
+ {
+  "id": "dior-miss-dior",
+  "house": "Dior",
+  "name": "Miss Dior",
+  "concentration": "EDP",
+  "notes_page": "https://www.dior.com/en_us/beauty/products/miss-dior-eau-de-parfum-Y0000393.html"
+ },
+ {
+  "id": "dior-j-adore",
+  "house": "Dior",
+  "name": "J'adore",
+  "concentration": "EDP",
+  "notes_page": "https://www.dior.com/en_us/beauty/products/j%E2%80%99adore-eau-de-parfum-Y0998031.html"
+ },
+ {
+  "id": "tom-ford-lost-cherry",
+  "house": "Tom Ford",
+  "name": "Lost Cherry",
+  "concentration": "EDP",
+  "notes_page": "https://www.tomfordbeauty.com/products/lost-cherry-eau-de-parfum"
+ },
+ {
+  "id": "lancome-la-vie-est-belle",
+  "house": "Lancôme",
+  "name": "La Vie Est Belle",
+  "concentration": "EDP",
+  "notes_page": "https://www.lancome-usa.com/fragrance/fragrance-by-collection/la-vie-est-belle/la-vie-est-belle-eau-de-parfum/100606.html"
+ },
+ {
+  "id": "chanel-bleu-de-chanel",
+  "house": "Chanel",
+  "name": "Bleu de Chanel",
+  "concentration": "EDP",
+  "notes_page": "https://www.chanel.com/us/fragrance/p/107360/bleu-de-chanel-eau-de-parfum-spray/"
+ },
+ {
+  "id": "mfk-baccarat-rouge-540",
+  "house": "Maison Francis Kurkdjian",
+  "name": "Baccarat Rouge 540",
+  "concentration": "EDP",
+  "notes_page": null
+ },
+ {
+  "id": "tom-ford-ombre-leather",
+  "house": "Tom Ford",
+  "name": "Ombré Leather",
+  "concentration": "EDP",
+  "notes_page": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum"
+ },
+ {
+  "id": "viktor-and-rolf-spicebomb",
+  "house": "Viktor&Rolf",
+  "name": "Spicebomb",
+  "concentration": "EDT",
+  "notes_page": "https://us.viktor-rolf.com/fragrance/spicebomb-eau-de-toilette-VKR_030.html"
+ },
+ {
+  "id": "prada-paradoxe",
+  "house": "Prada",
+  "name": "Paradoxe",
+  "concentration": "EDP",
+  "notes_page": "https://www.prada-beauty.com/fragrance/paradoxe/paradoxe-eau-de-parfum/MPL01610.html"
+ },
+ {
+  "id": "ysl-black-opium",
+  "house": "Yves Saint Laurent",
+  "name": "Black Opium",
+  "concentration": "EDP",
+  "notes_page": "https://www.yslbeautyus.com/fragrance/womens-fragrances/black-opium/black-opium-eau-de-parfum/252YSL.html"
+ },
+ {
+  "id": "chanel-coco-mademoiselle",
+  "house": "Chanel",
+  "name": "Coco Mademoiselle",
+  "concentration": "EDP",
+  "notes_page": "https://www.chanel.com/us/fragrance/p/116420/coco-mademoiselle-eau-de-parfum-spray/"
+ },
+ {
+  "id": "ysl-libre",
+  "house": "Yves Saint Laurent",
+  "name": "Libre",
+  "concentration": "EDP",
+  "notes_page": "https://www.yslbeautyus.com/fragrance/womens-fragrances/libre/libre-eau-de-parfum/109YSL.html"
+ },
+ {
+  "id": "le-labo-santal-33",
+  "house": "Le Labo",
+  "name": "Santal 33",
+  "concentration": "EDP",
+  "notes_page": "https://www.lelabofragrances.com/santal-33-147.html"
+ },
+ {
+  "id": "tom-ford-tobacco-vanille",
+  "house": "Tom Ford",
+  "name": "Tobacco Vanille",
+  "concentration": "EDP",
+  "notes_page": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum"
+ },
+ {
+  "id": "ch-good-girl",
+  "house": "Carolina Herrera",
+  "name": "Good Girl",
+  "concentration": "EDP",
+  "notes_page": "https://www.carolinaherrera.com/us/en/p-fragrance/good-girl-eau-de-parfum"
+ },
+ {
+  "id": "pdm-delina",
+  "house": "Parfums de Marly",
+  "name": "Delina",
+  "concentration": "EDP",
+  "notes_page": "https://parfums-de-marly.com/products/delina"
+ },
+ {
+  "id": "creed-aventus",
+  "house": "Creed",
+  "name": "Aventus",
+  "concentration": "EDP",
+  "notes_page": "https://www.creedfragrance.com/p/aventus/12870029/"
+ }
+]

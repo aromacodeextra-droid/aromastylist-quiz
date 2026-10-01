@@ -1,0 +1,142 @@
+[
+ {
+  "id": "versace-eros",
+  "house": "Versace",
+  "name": "Eros",
+  "concentration": "EDT",
+  "notes_page": "https://www.versace.com/us/en/men/accessories/fragrances-body-care/eros/eros-edt-100-ml-blue/R740010-R100MLS_RNUL.html"
+ },
+ {
+  "id": "mugler-alien",
+  "house": "Mugler",
+  "name": "Alien",
+  "concentration": "EDP",
+  "notes_page": "https://www.mugler.com/fragrance/womens-fragrances/alien/alien-eau-de-parfum/M010401002.html"
+ },
+ {
+  "id": "prada-luna-rossa-carbon",
+  "house": "Prada",
+  "name": "Luna Rossa Carbon",
+  "concentration": "EDT",
+  "notes_page": "https://www.prada-beauty.com/fragrance/luna-rossa/luna-rossa-carbon-eau-de-toilette/MPL01367.html"
+ },
+ {
+  "id": "ysl-mon-paris",
+  "house": "Yves Saint Laurent",
+  "name": "Mon Paris",
+  "concentration": "EDP",
+  "notes_page": "https://www.yslbeautyus.com/fragrance/womens-fragrances/mon-paris/mon-paris-eau-de-parfum/4150YSL.html"
+ },
+ {
+  "id": "lancome-idole",
+  "house": "Lancôme",
+  "name": "Idôle",
+  "concentration": "EDP",
+  "notes_page": "https://www.lancome-usa.com/fragrance/fragrance-by-collection/idole/idole-eau-de-parfum/LAN387.html"
+ },
+ {
+  "id": "viktor-and-rolf-flowerbomb",
+  "house": "Viktor&Rolf",
+  "name": "Flowerbomb",
+  "concentration": "EDP",
+  "notes_page": "https://us.viktor-rolf.com/fragrance/flowerbomb-eau-de-parfum-by-viktor-rolf-VKR_002.html"
+ },
+ {
+  "id": "marc-jacobs-daisy",
+  "house": "Marc Jacobs",
+  "name": "Daisy",
+  "concentration": "EDT",
+  "notes_page": "https://www.marcjacobs.com/us-en/daisy-eau-de-toilette-100-ml/31655513034.html"
+ },
+ {
+  "id": "burberry-her",
+  "house": "Burberry",
+  "name": "Her",
+  "concentration": "EDP",
+  "notes_page": "https://www.sephora.com/product/her-eau-de-parfum-P437631"
+ },
+ {
+  "id": "givenchy-l-interdit",
+  "house": "Givenchy",
+  "name": "L'Interdit",
+  "concentration": "EDP",
+  "notes_page": "https://www.givenchybeauty.com/us/p/l-interdit-F10100099.html"
+ },
+ {
+  "id": "kayali-vanilla-28",
+  "house": "Kayali",
+  "name": "Vanilla 28",
+  "concentration": "EDP",
+  "notes_page": "https://www.kayali.com/products/vanilla-28"
+ },
+ {
+  "id": "jo-malone-english-pear-and-freesia",
+  "house": "Jo Malone London",
+  "name": "English Pear & Freesia",
+  "concentration": "Cologne",
+  "notes_page": "https://www.jomalone.com/product/25946/12553/colognes/english-pear-freesia-cologne"
+ },
+ {
+  "id": "creed-green-irish-tweed",
+  "house": "Creed",
+  "name": "Green Irish Tweed",
+  "concentration": "EDP",
+  "notes_page": "https://www.creedfragrance.com/p/green-irish-tweed/12870035/"
+ },
+ {
+  "id": "pdm-layton",
+  "house": "Parfums de Marly",
+  "name": "Layton",
+  "concentration": "EDP",
+  "notes_page": "https://parfums-de-marly.com/products/layton"
+ },
+ {
+  "id": "dior-dior-homme-intense",
+  "house": "Dior",
+  "name": "Dior Homme Intense",
+  "concentration": "EDP",
+  "notes_page": "https://www.dior.com/en_us/beauty/products/dior-homme-intense-Y0479201.html"
+ },
+ {
+  "id": "chanel-allure-homme-sport",
+  "house": "Chanel",
+  "name": "Allure Homme Sport",
+  "concentration": "EDT",
+  "notes_page": "https://www.chanel.com/us/fragrance/p/123630/allure-homme-sport-eau-de-toilette-spray/"
+ },
+ {
+  "id": "armani-acqua-di-gio-profondo",
+  "house": "Giorgio Armani",
+  "name": "Acqua di Giò Profondo",
+  "concentration": "EDP",
+  "notes_page": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/acqua-di-gio/acqua-di-gio-profondo-eau-de-parfum/ww-00294-arm.html"
+ },
+ {
+  "id": "tom-ford-fucking-fabulous",
+  "house": "Tom Ford",
+  "name": "Fucking Fabulous",
+  "concentration": "EDP",
+  "notes_page": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum"
+ },
+ {
+  "id": "kilian-good-girl-gone-bad",
+  "house": "Kilian",
+  "name": "Good Girl Gone Bad",
+  "concentration": "EDP",
+  "notes_page": null
+ },
+ {
+  "id": "chanel-chance",
+  "house": "Chanel",
+  "name": "Chance",
+  "concentration": "EDT",
+  "notes_page": "https://www.chanel.com/us/fragrance/p/126460/chance-eau-de-toilette-spray/"
+ },
+ {
+  "id": "margiela-lazy-sunday-morning",
+  "house": "Maison Margiela",
+  "name": "Replica Lazy Sunday Morning",
+  "concentration": "EDT",
+  "notes_page": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-lazy-sunday-morning/MM009.html"
+ }
+]
