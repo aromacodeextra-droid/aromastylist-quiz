@@ -75,7 +75,7 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=answer][data-a=her]');
     await page.waitForSelector('.sq-pop__tile');
     const tiles = await page.$$eval('.sq-pop__tile', (l) => l.length);
-    check(`${tag}: 12 popular perfume tiles above the search box`, tiles === 12, `${tiles} tiles`);
+    check(`${tag}: 12 bottle tiles under the "Type its name" box`, tiles === 12, `${tiles} tiles`);
     await shot(page, '03-ref');
     await page.fill('[data-sq-search]', 'bacarat');
     await page.waitForSelector('.sq-result-item');
@@ -240,6 +240,28 @@ for (const vp of VIEWPORTS) {
       check(`${vp.name}: screen 2 tiles for "${who}" are all ${want === 'F' ? 'feminine' : want === 'M' ? 'masculine' : 'unisex'}`, ids.length === 12 && imgs === 12 && !wrong.length, wrong.length ? 'wrong: ' + wrong.join(', ') : ids.slice(0, 4).join(', ') + ' …');
       await settle(page);
       await page.screenshot({ path: `${SHOTS}/${vp.name}-03-ref-tiles-${who}.png`, fullPage: true });
+      if (who === 'her') {
+        const order = await page.evaluate(() => {
+          const s = document.querySelector('[data-sq-search]'), t = document.querySelector('.sq-pop');
+          return { searchFirst: !!(s.compareDocumentPosition(t) & Node.DOCUMENT_POSITION_FOLLOWING), title: document.querySelector('.sq-q .sq-title').textContent, label: document.querySelector('.sq-search__label').textContent, tiles: document.querySelector('.sq-pop-title--tiles')?.textContent };
+        });
+        check(`${vp.name}: screen 2 reads "Do you have a signature scent?" -> "Type its name" box -> "Or tap one of these" tiles`, order.searchFirst && order.title === 'Do you have a signature scent?' && order.label === 'Type its name' && order.tiles === 'Or tap one of these', JSON.stringify(order));
+        // tap the last tile: the page must not jump to the top, the search box must not take focus (no phone keyboard)
+        const last = ids[ids.length - 1];
+        await page.locator(`.sq-pop__tile[data-id="${last}"]`).scrollIntoViewIfNeeded();
+        const before = await page.evaluate(() => window.scrollY);
+        await page.click(`.sq-pop__tile[data-id="${last}"]`);
+        await page.waitForSelector(`[data-sq-picked="r~${last}"]`);
+        await page.waitForTimeout(600);
+        const after = await page.evaluate(() => ({ y: window.scrollY, active: document.activeElement?.matches('[data-sq-search]') }));
+        check(`${vp.name}: tapping a tile keeps the place on the page and opens no keyboard`, after.y >= before - 5 && !after.active, `scrollY ${before} -> ${after.y}`);
+        await page.screenshot({ path: `${SHOTS}/${vp.name}-03d-ref-tile-picked.png` });
+        await page.click(`.sq-pop__tile[data-id="${last}"]`);
+        await page.waitForTimeout(200);
+        const gone = await page.$$eval('.sq-inside > li', (l) => l.length).catch(() => 0);
+        const pressed = await page.getAttribute(`.sq-pop__tile[data-id="${last}"]`, 'aria-pressed');
+        check(`${vp.name}: a second tap on a chosen tile takes it back out`, gone === 0 && pressed === 'false');
+      }
     }
     const overlap = seen.her.filter((id) => seen.him.includes(id) || seen.both.includes(id)).length + seen.him.filter((id) => seen.both.includes(id)).length;
     check(`${vp.name}: her / him / both tiles do not overlap`, overlap === 0, `${overlap} shared`);

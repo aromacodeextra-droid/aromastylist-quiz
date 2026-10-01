@@ -256,14 +256,14 @@
   {
    "id": "dg-light-blue",
    "tile": false,
-   "source_url": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dw8d076661/images/zoom/VT01JMVT000_9V000_1.jpg?sw=1110&sh=1416",
+   "source_url": "https://www.dolcegabbana.com/dw/image/v2/BKDB_PRD/on/demandware.static/-/Sites-15/default/dw8a77087f/images/zoom/VT01JMVT000_9V000_0.jpg?sw=1110&sh=1416",
    "page_url": "https://www.dolcegabbana.com/en-us/beauty/perfumes-for-her/light-blue/light-blue-eau-de-toilette---VT01JMVT0009V000.html",
    "source_type": "brand",
-   "comment": "Brand site packshot; saved dg-light-blue.jpg (bottle with cap off beside it; first gallery image)",
+   "comment": "Brand site packshot, front view with cap (gallery image 0); pale glass on light grey, so the background is lifted to white with levels instead of cut out",
    "file": "theme-files/assets/sq-ref-dg-light-blue.webp",
-   "bytes": 5184,
+   "bytes": 3176,
    "webp_quality": 86,
-   "background": "flood (bg 243,243,243)"
+   "background": "levels (bg 243,243,243 -> white)"
   },
   {
    "id": "ysl-y",

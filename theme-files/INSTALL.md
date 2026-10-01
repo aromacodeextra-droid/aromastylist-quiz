@@ -74,12 +74,14 @@ Blocks exist for the questions with image tiles. An empty picker shows the defau
 
 Open `/pages/find-your-perfume?preview_theme_id=<copy id>`:
 
-1. "Start the quiz" -> **Who is it for?** -> **Your signature scent**: 12 bottle tiles above the search box, different for
+1. "Start the quiz" -> **Who is it for?** -> **Do you have a signature scent?**: a "Type its name" box, then "Or tap one of
+   these" with 12 bottle tiles, different for
    each answer of screen 1 — **Her**: Black Opium, La Vie Est Belle, Coco Mademoiselle, Miss Dior, J'adore, Libre … (all
    feminine); **Him**: Sauvage, Bleu de Chanel, Y, Acqua di Giò, Aventus, Le Male … (all masculine); **Both**: Baccarat
    Rouge 540, Santal 33, Tobacco Vanille, Lost Cherry … (all unisex). No broken images. Go back, change the answer, the
    tiles change.
-2. Type `bacarat`: the first row is Maison Francis Kurkdjian · Baccarat Rouge 540 ("on our shelf"). Tap it: an
+2. Tap a tile: the page stays where it is and an "Inside <name>" card appears above Continue; tap it again to remove it.
+   Type `bacarat`: the first row is Maison Francis Kurkdjian · Baccarat Rouge 540 ("on our shelf"). Tap it: an
    **Inside Baccarat Rouge 540** card with notes and family bars. Type `lveb`, `br540`, `savage elixir`: each finds it.
 3. Tap a second perfume (max 2). Continue. Then **I don't have one** on a second pass shows the 12 note-family tiles.
 4. Taboos: tick `Coconut` and `My office is scent-sensitive`. Week: Work a lot, Evenings a lot, Everyday sometimes.

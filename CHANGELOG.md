@@ -1,5 +1,21 @@
 # Changelog
 
+## quiz-v3.3 (2026-10-01) — screen 2 made clear
+
+Owner's feedback from the phone preview: screen 2 started with pictures and a "Search" box at the very bottom, so it was
+not clear what to do.
+- The question is now **"Do you have a signature scent?"** ("The perfume you wear most, or love most. Type its name, or
+  tap it below. You can choose two."). Then a **"Type its name"** box (was "Search", at the bottom), then **"Or tap one of
+  these"** with the 12 bottle tiles, then what was chosen and Continue / I don't have one.
+- Tapping a tile no longer jumps to the top of the quiz and no longer puts the cursor in the search box (which opened the
+  keyboard on phones). The "Inside <name>" card slides into view instead. A second tap on a chosen tile removes it.
+- House names break only after "&" (Dolce& / Gabbana), never inside a word.
+- Light Blue tile: new brand-site photo (front view with cap; the old one showed the cap off and came out pale).
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
+  `assets/sq-ref-dg-light-blue.webp`. Template unchanged.
+- Tests: e2e 74 / 74 (new: screen order and wording, tile tap keeps the place and opens no keyboard, second tap removes);
+  combinations 23,612 runs 0 failures; search 100 / 100.
+
 ## quiz-v3.2 (2026-10-01) — screen 2 tiles follow "Who is it for?"
 
 - Owner's report from the preview: the 12 bottle tiles on "Your signature scent" were the same for her and for him

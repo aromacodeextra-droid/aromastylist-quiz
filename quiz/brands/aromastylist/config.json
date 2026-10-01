@@ -195,8 +195,8 @@
       "id": "ref",
       "type": "perfume",
       "max": 2,
-      "title": "Your signature scent",
-      "subtitle": "The perfume you wear most, or love most. Pick one or two: we read the notes and match them against our shelf.",
+      "title": "Do you have a signature scent?",
+      "subtitle": "The perfume you wear most, or love most. Type its name, or tap it below. You can choose two.",
       "none_label": "I don't have one"
     },
     {
@@ -1082,8 +1082,8 @@
     "start_over": "Start over",
     "next": "Continue",
     "multi_count": "{n} of {max} chosen",
-    "search_label": "Search",
-    "popular_title": "Popular picks",
+    "search_label": "Type its name",
+    "popular_title": "Or tap one of these",
     "on_our_shelf": "on our shelf",
     "dna_title": "Inside {name}",
     "families": {

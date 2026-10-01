@@ -224,6 +224,20 @@
       "detail": "ysl-black-opium, lancome-la-vie-est-belle, chanel-coco-mademoiselle, dior-miss-dior …"
     },
     {
+      "name": "390: screen 2 reads \"Do you have a signature scent?\" -> \"Type its name\" box -> \"Or tap one of these\" tiles",
+      "ok": true,
+      "detail": "{\"searchFirst\":true,\"title\":\"Do you have a signature scent?\",\"label\":\"Type its name\",\"tiles\":\"Or tap one of these\"}"
+    },
+    {
+      "name": "390: tapping a tile keeps the place on the page and opens no keyboard",
+      "ok": true,
+      "detail": "scrollY 735 -> 735"
+    },
+    {
+      "name": "390: a second tap on a chosen tile takes it back out",
+      "ok": true
+    },
+    {
       "name": "390: screen 2 tiles for \"him\" are all masculine",
       "ok": true,
       "detail": "dior-sauvage, chanel-bleu-de-chanel, ysl-y, armani-acqua-di-gio …"
@@ -242,6 +256,20 @@
       "name": "1440: screen 2 tiles for \"her\" are all feminine",
       "ok": true,
       "detail": "ysl-black-opium, lancome-la-vie-est-belle, chanel-coco-mademoiselle, dior-miss-dior …"
+    },
+    {
+      "name": "1440: screen 2 reads \"Do you have a signature scent?\" -> \"Type its name\" box -> \"Or tap one of these\" tiles",
+      "ok": true,
+      "detail": "{\"searchFirst\":true,\"title\":\"Do you have a signature scent?\",\"label\":\"Type its name\",\"tiles\":\"Or tap one of these\"}"
+    },
+    {
+      "name": "1440: tapping a tile keeps the place on the page and opens no keyboard",
+      "ok": true,
+      "detail": "scrollY 56 -> 331"
+    },
+    {
+      "name": "1440: a second tap on a chosen tile takes it back out",
+      "ok": true
     },
     {
       "name": "1440: screen 2 tiles for \"him\" are all masculine",
@@ -311,14 +339,14 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 17.6 KB, assets/scent-quiz.js 45.3 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 17.9 KB, assets/scent-quiz.js 45.7 KB"
     },
     {
-      "name": "JS + CSS + JSON 169.6 KB <= 200 KB",
+      "name": "JS + CSS + JSON 170.3 KB <= 200 KB",
       "ok": true
     },
     {
-      "name": "59 images 860 KB <= 1.8 MB, each <= 30 KB",
+      "name": "59 images 858 KB <= 1.8 MB, each <= 30 KB",
       "ok": true
     }
   ],
@@ -674,9 +702,9 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16368,
       "assets/scent-quiz-aromastylist-taste.json": 49706,
-      "assets/scent-quiz-aromastylist.json": 59505,
-      "assets/scent-quiz.css": 18062,
-      "assets/scent-quiz.js": 46347,
+      "assets/scent-quiz-aromastylist.json": 59511,
+      "assets/scent-quiz.css": 18318,
+      "assets/scent-quiz.js": 46820,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -691,7 +719,7 @@
       "assets/sq-ref-chanel-n-5.webp": 17536,
       "assets/sq-ref-creed-aventus.webp": 13666,
       "assets/sq-ref-creed-green-irish-tweed.webp": 10212,
-      "assets/sq-ref-dg-light-blue.webp": 5184,
+      "assets/sq-ref-dg-light-blue.webp": 3176,
       "assets/sq-ref-dior-dior-homme-intense.webp": 11714,
       "assets/sq-ref-dior-j-adore.webp": 8412,
       "assets/sq-ref-dior-miss-dior.webp": 29070,
@@ -737,8 +765,8 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 173620,
+    "code_total": 174355,
     "images": 59,
-    "images_total": 880278
+    "images_total": 878270
   }
 }

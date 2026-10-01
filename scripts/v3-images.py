@@ -79,7 +79,15 @@ for id in wanted:
     row = {'id': id, 'tile': id in popular['popular'], 'source_url': m.get('image_url', ''), 'page_url': m.get('page_url', ''), 'source_type': m.get('source_type', 'none') if files else 'none', 'comment': m.get('comment', '')}
     out = f'{OUT}/sq-ref-{id}.webp'
     if files and m.get('source_type') not in (None, 'none'):
-        img, how = flatten(Image.open(files[0]))
+        if m.get('levels'):
+            # pale glass on a light studio grey: cutting the background out would cut the glass too,
+            # so lift the grey to the card colour with levels instead
+            img = Image.open(files[0]).convert('RGB')
+            a = np.array(img).astype(np.float32)
+            bg = np.median(np.concatenate([a[:8].reshape(-1, 3), a[-8:].reshape(-1, 3)]), axis=0)
+            img, how = Image.fromarray(np.clip(a * (255.0 / bg), 0, 255).astype(np.uint8)), 'levels (bg %s -> white)' % ','.join(str(int(v)) for v in bg)
+        else:
+            img, how = flatten(Image.open(files[0]))
         n, q = save(square(img), out)
         row.update({'file': f'theme-files/assets/sq-ref-{id}.webp', 'bytes': n, 'webp_quality': q, 'background': how})
     elif os.path.exists(out):

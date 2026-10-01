@@ -775,17 +775,32 @@
   Quiz.prototype.index = function () { return this._index || (this._index = buildIndex(this.model)); };
   Quiz.prototype.addPerfume = function (qid, kind, id) {
     var q = Q(this.config, qid), cur = Array.isArray(this.state[qid]) ? this.state[qid].slice() : [];
-    if (!cur.some(function (x) { return x.k === kind && x.id === id; })) {
-      if (cur.length >= (q.max || 2)) cur.shift();
-      cur.push({ k: kind, id: id });
-    }
+    var key = kind + '~' + id;
+    // a second tap on a chosen tile takes it back out
+    if (cur.some(function (x) { return x.k + '~' + x.id === key; })) { this.removePerfume(qid, key); return; }
+    if (cur.length >= (q.max || 2)) cur.shift();
+    cur.push({ k: kind, id: id });
     this.state[qid] = cur;
-    this.show(this.step, '[data-sq-search]');
+    this.showInPlace();
+    // bring the new "Inside <name>" card into view (no focus on the search box: no keyboard popping up on phones)
+    var card = this.app.querySelector('[data-sq-picked="' + key.replace(/"/g, '\\"') + '"]');
+    if (card) {
+      card.focus({ preventScroll: true });
+      if (card.scrollIntoView) card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
   };
   Quiz.prototype.removePerfume = function (qid, key) {
     var cur = (Array.isArray(this.state[qid]) ? this.state[qid] : []).filter(function (x) { return x.k + '~' + x.id !== key; });
     this.state[qid] = cur.length ? cur : null;
-    this.show(this.step, '[data-sq-search]');
+    this.showInPlace();
+  };
+  // re-draw the current screen without jumping to its top
+  Quiz.prototype.showInPlace = function () {
+    var y = global.scrollY;
+    this.keepScroll = true;
+    this.show(this.step);
+    this.keepScroll = false;
+    global.scrollTo(0, y);
   };
   Quiz.prototype.search = function (input) {
     var qid = input.getAttribute('data-q'), box = this.app.querySelector('[data-sq-results]'), c = this.copy, self = this;
@@ -802,6 +817,7 @@
   // ---------------------------------------------------------------- screens
   Quiz.prototype.render = function (html, focusSel) {
     this.app.innerHTML = html;
+    if (this.keepScroll) return;
     if (this.root.getBoundingClientRect().top < 0) this.root.scrollIntoView({ block: 'start' });
     var f = this.app.querySelector(focusSel || '[data-sq-focus]');
     if (f && this.started) f.focus({ preventScroll: true });
@@ -871,18 +887,21 @@
     var P = this.model.taste.popular || [];
     var popIds = Array.isArray(P) ? P : (P[this.state['for']] || P.both || []);
     var pop = popIds.map(function (id) { return self.model.refById[id]; }).filter(Boolean);
-    var html = '<ul class="sq-pop" aria-label="' + esc(c.popular_title) + '">' + pop.map(function (r) {
+    // 1) type the name  2) or tap one of 12 tiles  3) what was picked + Continue
+    var html = '<div class="sq-pick"><label class="sq-search"><span class="sq-search__label">' + esc(c.search_label) + '</span>' +
+      '<input type="search" data-sq-search data-q="' + esc(q.id) + '" placeholder="' + esc(c.search_placeholder) + '" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="sq-results"></label>' +
+      '<ul class="sq-results" id="sq-results" data-sq-results></ul></div>' +
+      '<p class="sq-pop-title sq-pop-title--tiles">' + esc(c.popular_title) + '</p>' +
+      '<ul class="sq-pop" aria-label="' + esc(c.popular_title) + '">' + pop.map(function (r) {
       return '<li><button type="button" class="sq-pop__tile" data-act="perfume" data-q="' + esc(q.id) + '" data-kind="r" data-id="' + esc(r.id) + '" aria-pressed="' + (keys.indexOf('r~' + r.id) >= 0) + '">' +
         (r.img ? '<img src="' + esc(self.refImg(r.id)) + '" alt="" width="600" height="600" loading="eager" decoding="async">' : '<span class="sq-pop__ph" aria-hidden="true">' + esc(r.name.charAt(0)) + '</span>') +
-        '<span class="sq-pop__house">' + esc(r.house) + '</span><span class="sq-pop__name">' + esc(r.name) + '</span></button></li>';
-    }).join('') + '</ul>' +
-      '<div class="sq-pick"><label class="sq-search"><span class="sq-search__label">' + esc(c.search_label) + '</span>' +
-      '<input type="search" data-sq-search data-q="' + esc(q.id) + '" placeholder="' + esc(c.search_placeholder) + '" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="sq-results"></label>' +
-      '<ul class="sq-results" id="sq-results" data-sq-results></ul></div>';
+        // a line may break after "&" (Dolce&<wbr>Gabbana), never inside a word
+        '<span class="sq-pop__house">' + esc(r.house).replace(/&amp;/g, '&amp;<wbr>') + '</span><span class="sq-pop__name">' + esc(r.name) + '</span></button></li>';
+    }).join('') + '</ul>';
     if (cur.length) {
       html += '<p class="sq-step">' + esc(fill(c.picked_count, { n: cur.length, max: q.max || 2 })) + '</p><ul class="sq-inside">' + cur.map(function (v) {
         var pf = perfumeOf(self.model, v);
-        return '<li class="sq-ref"><p class="sq-kicker">' + esc(fill(c.dna_title, { name: pf.name })) + '</p><p class="sq-ref__house">' + esc(pf.house) + '</p>' +
+        return '<li class="sq-ref" tabindex="-1" data-sq-picked="' + esc(pf.key) + '"><p class="sq-kicker">' + esc(fill(c.dna_title, { name: pf.name })) + '</p><p class="sq-ref__house">' + esc(pf.house) + '</p>' +
           (pf.vec ? self.dnaHtml(pf.vec, pf.canon) : '<p class="sq-note">' + esc(fill(c.no_notes, { name: pf.name })) + '</p>') + '<button type="button" class="sq-restart" data-act="unpick" data-q="' + esc(q.id) + '" data-key="' + esc(pf.key) + '">' + esc(c.remove) + '</button></li>';
       }).join('') + '</ul>';
     }
