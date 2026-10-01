@@ -21,6 +21,10 @@ top 10:
    9. V Canto - Temptatio (216)
   10. Amouage - Lyric Man (215)
 never recommended: 0
+wardrobes: {
+  occasion: { shelves: 18184, share_carrying_the_shelf_tag: 1 },
+  mood: { shelves: 31822, share_carrying_the_shelf_tag: 1 }
+} | distinct perfumes on shelves: 297
 set card shown in 985 of 4546 results {
   'the-executive-edit': 101,
   'the-modern-muse': 200,

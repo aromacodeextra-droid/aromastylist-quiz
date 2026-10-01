@@ -1,5 +1,17 @@
 # Changelog
 
+## quiz-v2.1 (2026-10-01) — wardrobe by occasion and by mood
+
+- The result now has three tabs: **Your matches** (3–5 best), **By occasion** (4 shelves: Everyday Signature,
+  Work & Presence, Evening & Seduction, Special Occasions) and **By mood** (7 shelves, one per mood collection).
+  Every shelf is filled for the visitor's taste and other answers. Their own shelf comes first, marked "Your pick".
+  "Add all" adds the open tab. Shelf texts come from the Wardrobe Concept.
+- Checks: all 4,546 engine runs fill all 4 + 7 shelves with no repeats, and 100% of shelf perfumes carry that
+  shelf's occasion or mood; e2e 105/105 at 390 and 1440 px.
+- Code review of the whole branch: one bug fixed (after "Skip", the "Your notes" bars showed every chosen family at
+  100%; now shares, e.g. 33% each).
+- Theme JS and CSS are minified at build; readable sources stay in `quiz/engine`. Total 124 KB (budget 150).
+
 ## quiz-v2 (2026-10-01) — "a perfume you already love"
 
 The owner's decision: the visitor names a perfume they love, the quiz reads what is inside it and recommends what

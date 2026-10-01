@@ -1429,10 +1429,10 @@
     }
   ],
   "weight": {
-    "scent-quiz.js": 36435,
-    "scent-quiz.css": 15258,
+    "scent-quiz.js": 36447,
+    "scent-quiz.css": 15235,
     "scent-quiz-aromastylist.json": 58852,
     "scent-quiz-aromastylist-taste.json": 16715,
-    "total": 127260
+    "total": 127249
   }
 }

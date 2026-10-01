@@ -781,7 +781,7 @@
       html += '<div class="sq-ref sq-ref--result"><p class="sq-kicker">' + esc(fill(ctx.mode === 'complement' ? c.result_from_complement : c.result_from_similar, { name: ctx.label })) + '</p>' +
         this.dnaHtml(this.dna(ctx.vec, ctx.canon)) + '</div>';
     } else if (ctx) {
-      html += '<div class="sq-ref sq-ref--result"><p class="sq-kicker">' + esc(c.result_from_families) + '</p>' + this.dnaHtml(this.dna(ctx.vec, [], 3)) + '</div>';
+      html += '<div class="sq-ref sq-ref--result"><p class="sq-kicker">' + esc(c.result_from_families) + '</p>' + this.dnaHtml(this.dna(decodeVec(ctx.vec.join('')), [], 3)) + '</div>';
     }
     if (res.own) {
       var o = res.own;
