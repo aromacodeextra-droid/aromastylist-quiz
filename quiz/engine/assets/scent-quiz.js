@@ -1,46 +1,42 @@
-/*! scent-quiz engine v2 - brand-agnostic. All text, images and products come from the config JSON asset
-    (data-config) and the section's block overrides. No dependencies. */
+/*! scent-quiz engine v3 - perfume-stylist consultation. Brand-agnostic: all text, images and products come from
+    the config JSON asset (data-config), the taste JSON asset (data-taste) and the section's block overrides. */
 (function (global) {
   'use strict';
 
   var DIMS = ['gender', 'moment', 'mood', 'presence', 'season'];
   var PARAM = 'sq';
+  var KEEP_PARAMS = ['preview_theme_id'];
 
-  // ------------------------------------------------------------------ catalog
-  // Compact format written by scripts/build-theme-files.mjs:
-  // catalog = { img, houses[], values{dim:[...]}, fields[], items[[...]], sets[[...]] }
-  // A dimension cell is a string of one char per value: digit = index (store fact or High/Medium derived),
-  // letter a-j = index of a Low-confidence derived value.
+  // ================================================================== data
+  // catalog = { img, houses[], values{dim:[...]}, fields[], items[[...]], sets[[...]] }  (see build script)
+  // A dimension cell is one char per value: digit = index (store fact / solid derived), letter = Low-confidence derived.
   function decodeCatalog(cat) {
     var f = {};
     cat.fields.forEach(function (name, i) { f[name] = i; });
     function row(r, isSet) {
+      var h = String(r[f.handle]);
+      if (h.charAt(0) === '~') h = (cat.hpre || [])[r[f.house]] + h.slice(1);
       var p = {
-        handle: r[f.handle], title: r[f.title], house: cat.houses[r[f.house]] || '',
+        handle: h, title: r[f.title], house: cat.houses[r[f.house]] || '',
         image: r[f.image] ? (/^(https?:)?\/\//.test(r[f.image]) ? r[f.image] : cat.img + r[f.image]) : '',
-        variant: r[f.variant], price: r[f.price], available: !!r[f.available],
-        notes: f.notes != null ? r[f.notes] || '' : '', isSet: isSet, dims: {}
+        variant: r[f.variant], price: r[f.price], available: !!r[f.available], isSet: isSet, dims: {},
+        hot: f.hot != null ? +r[f.hot] || 0 : 0
       };
       DIMS.forEach(function (d) {
         var cell = f[d] != null ? String(r[f[d]] || '') : '';
         p.dims[d] = cell.split('').map(function (ch) {
           var low = ch >= 'a' && ch <= 'j';
-          var idx = low ? ch.charCodeAt(0) - 97 : +ch;
-          return { v: cat.values[d][idx], low: low };
+          return { v: cat.values[d][low ? ch.charCodeAt(0) - 97 : +ch], low: low };
         });
       });
       return p;
     }
-    return {
-      products: cat.items.map(function (r) { return row(r, false); }),
-      sets: (cat.sets || []).map(function (r) { return row(r, true); })
-    };
+    return { products: cat.items.map(function (r) { return row(r, false); }), sets: (cat.sets || []).map(function (r) { return row(r, true); }) };
   }
 
-  // ------------------------------------------------------------------ taste (notes)
-  // Optional second asset (data-taste) written by scripts/build-theme-files.mjs:
-  // { families[], canon[[label, familyIndex]], items[[vec, canon]], sets[[vec, canon]], refs[[id, name, house, vec, canon, popular]] }
-  // vec = 12 digits (share of each note family x 10), canon = 2-digit indices of canonical notes, strongest first.
+  // taste = { families[], canon[[label, fam]], houses[], items[[vec, canon]], sets[[vec, canon]],
+  //           refs[[id, name, house, gender, vec, canon, flags, aliases]], popular[[id, family]] }
+  // vec = 12 digits (family share x 10), canon = ALL canonical notes as 2-digit indices, strongest first.
   function decodeVec(str) {
     var v = String(str || '').split('').map(Number), sum = 0;
     v.forEach(function (x) { sum += x; });
@@ -57,12 +53,17 @@
     function add(list, rows) { list.forEach(function (p, i) { if (rows[i]) { p.vec = decodeVec(rows[i][0]); p.canon = decodeCanon(rows[i][1]); } }); }
     add(model.products, t.items || []);
     add(model.sets, t.sets || []);
-    var own = {};
-    model.products.forEach(function (p) { own[p.handle] = p; });
+    model.ownByHandle = {};
+    model.products.forEach(function (p) { model.ownByHandle[p.handle] = p; });
+    // refs[i][8] = index of the same perfume on our shelf: then our own notes are used
     model.refs = (t.refs || []).map(function (r) {
-      return { id: r[0], name: r[1], house: r[2], vec: decodeVec(r[3]), canon: decodeCanon(r[4]), popular: !!r[5] };
+      var own = r[8] != null ? model.products[r[8]] : null;
+      return { id: r[0], name: r[1], house: t.houses ? t.houses[r[2]] : r[2], gender: r[3],
+        vec: own ? own.vec : r[4] ? decodeVec(r[4]) : null, canon: own ? own.canon : decodeCanon(r[5]),
+        popular: !!(r[6] & 1), img: !!(r[6] & 2), noNotes: !!(r[6] & 4), aliases: r[7] ? String(r[7]).split('|') : [], own: own };
     });
-    model.ownByHandle = own;
+    model.refById = {};
+    model.refs.forEach(function (r) { model.refById[r.id] = r; });
   }
   function cosine(a, b) {
     if (!a || !b) return 0;
@@ -70,274 +71,542 @@
     for (var i = 0; i < a.length; i++) { d += a[i] * b[i]; na += a[i] * a[i]; nb += b[i] * b[i]; }
     return na && nb ? d / Math.sqrt(na * nb) : 0;
   }
-  // ctx = { mode: 'similar'|'complement'|'families', vec, canon, label, handle }
-  // returns 0..1 and the shared canonical notes ("the thread")
-  function tasteFit(p, ctx) {
-    if (!ctx || !p.vec) return { t: 0, shared: [] };
-    var cos = cosine(ctx.vec, p.vec);
-    var key = (ctx.canon || []).slice(0, 6);
-    var shared = (p.canon || []).filter(function (c) { return key.indexOf(c) >= 0; });
-    var t;
-    if (ctx.mode === 'families') t = cos;
-    else if (ctx.mode === 'complement') {
-      // same thread (at least one shared key note), different overall shape
-      var shape = Math.max(0, 1 - Math.abs(cos - 0.4) / 0.4);
-      t = shared.length ? 0.45 + 0.55 * shape : 0.2 * shape;
-      if (cos > 0.85) t *= 0.4;
-    } else t = 0.7 * cos + 0.3 * Math.min(shared.length, 3) / 3;
-    return { t: t, shared: shared };
+  function carries(p, dim, val) {
+    var best = 0;
+    (p.dims[dim] || []).forEach(function (d) { if (d.v === val) best = Math.max(best, d.low ? 0.5 : 1); });
+    return best;
   }
+  function famIndex(model, f) { return model.taste ? model.taste.families.indexOf(f) : -1; }
 
-  // ------------------------------------------------------------------ scoring
-  // score = sum over answers and dimensions of the best matching tag weight on the product
-  //       + taste_weight x taste fit (notes; store facts, so it counts as solid).
-  // Low-confidence derived values count at `low_confidence_factor` and are tracked separately so they are
-  // never the only reason a product is recommended (solid must be > 0 and >= the low part).
-  function scoreProduct(p, answers, S, ctx) {
-    var score = 0, solid = 0, low = 0, matched = [];
-    answers.forEach(function (a) {
-      Object.keys(a.tags || {}).forEach(function (dim) {
-        var weights = a.tags[dim], top = 0, best = 0, bestLow = false, primary = false;
-        Object.keys(weights).forEach(function (k) { top = Math.max(top, weights[k]); });
-        (p.dims[dim] || []).forEach(function (val) {
-          var w = weights[val.v] || 0;
-          if (w <= 0) return;
-          var eff = val.low ? w * S.low_confidence_factor : w;
-          if (eff > best) { best = eff; bestLow = val.low; primary = w === top; }
-        });
-        if (best > 0) {
-          score += best;
-          if (bestLow) low += best; else solid += best;
-          if (primary && !bestLow && matched.indexOf(a) < 0) matched.push(a);
-        }
-      });
-    });
-    var tf = tasteFit(p, ctx), tw = (S.taste_weight || 0) * tf.t;
-    score += tw; solid += tw;
-    return { score: score, solid: solid, low: low, matched: matched, taste: tf.t, shared: tf.shared };
-  }
+  // ================================================================== state
+  // state = { for, refs:[{k:'r'|'p', id}] | 'none', notes:[family ids], taboos:[ids], week:[0..2 x rows],
+  //           how, feel:[ids], presence, matters, climate, style }
+  function Q(config, id) { return config.questions.filter(function (q) { return q.id === id; })[0]; }
+  function findAnswer(q, id) { return q && (q.answers || []).filter(function (a) { return a.id === id; })[0] || null; }
 
-  // an answer may exclude products whose (non-low) values in a dimension are ALL in its exclude list
-  function isExcluded(p, answers) {
-    return answers.some(function (a) {
-      return Object.keys(a.exclude || {}).some(function (dim) {
-        var vals = (p.dims[dim] || []).filter(function (v) { return !v.low; });
-        return vals.length > 0 && vals.every(function (v) { return a.exclude[dim].indexOf(v.v) >= 0; });
-      });
-    });
-  }
-
-  function rank(list, answers, S, ctx) {
-    return list.map(function (p) {
-      var r = scoreProduct(p, answers, S, ctx);
-      r.p = p;
-      r.excluded = isExcluded(p, answers) || !!(ctx && ctx.handle === p.handle);
-      return r;
-    }).sort(function (a, b) {
-      return (b.score - a.score) || (b.taste - a.taste) || (b.p.available - a.p.available) || (a.p.price - b.p.price) || (a.p.handle < b.p.handle ? -1 : 1);
-    });
-  }
-
-  // model = { config, products, sets, refs? }; answers = flat list of chosen answers;
-  // opts.taste = taste context. Returns { items, set, own, persona, fallback, candidates }
-  function recommend(model, answers, opts) {
-    var S = model.config.scoring, ctx = opts && opts.taste;
-    var ranked = rank(model.products, answers, S, ctx);
-    var eligible = ranked.filter(function (r) { return !r.excluded && r.solid > 0 && r.solid >= r.low; });
-    var picks = [], houses = {}, fallback = false;
-    function take(list, useKeep) {
-      for (var i = 0; i < list.length && picks.length < S.result_max; i++) {
-        var r = list[i];
-        if (!r.p.available || picks.indexOf(r) >= 0) continue;
-        if (ctx && ctx.handle === r.p.handle) continue;
-        if ((houses[r.p.house] || 0) >= S.max_per_house) continue;
-        if (useKeep && picks.length >= S.result_min && r.score < S.keep_ratio * picks[0].score) break;
-        picks.push(r);
-        houses[r.p.house] = (houses[r.p.house] || 0) + 1;
-      }
-    }
-    take(eligible, true);
-    if (picks.length < S.result_min) {
-      // always a result: widen to anything not excluded, then to the whole shelf
-      fallback = true;
-      take(ranked.filter(function (r) { return !r.excluded; }), false);
-      if (picks.length < S.result_min) take(ranked, false);
-    }
-    var set = null;
-    if (picks.length && model.sets.length) {
-      var sr = rank(model.sets, answers, S, ctx).filter(function (r) { return r.p.available && !r.excluded && r.solid > 0; })[0];
-      if (sr && sr.score >= (1 - S.set_within) * picks[0].score) set = sr;
-    }
-    var own = ctx && ctx.handle && model.ownByHandle ? model.ownByHandle[ctx.handle] : null;
-    return {
-      items: picks, set: set, fallback: fallback, own: own && own.available ? own : null,
-      persona: personaFor(model.config, answers),
-      candidates: (opts && opts.candidates) ? eligible.slice(0, opts.candidates).map(function (r) { return r.p; }) : null
-    };
-  }
-
-  // A wardrobe: one perfume per answer of an "axis" question (e.g. the 4 occasions or the 7 moods).
-  // Each shelf re-scores the shelf with that answer swapped in, keeps the visitor's other answers and taste,
-  // prefers perfumes that actually carry the shelf's tag, and never repeats a perfume or overuses a house.
-  function wardrobe(model, answers, axisQid, opts) {
-    var S = model.config.scoring, ctx = opts && opts.taste;
-    var q = model.config.questions.filter(function (x) { return x.id === axisQid; })[0];
-    if (!q) return [];
-    var mine = answers.filter(function (a) { return a.q === axisQid; })[0];
-    var others = answers.filter(function (a) { return a.q !== axisQid; });
-    var used = {}, houses = {};
-    (opts && opts.exclude || []).forEach(function (h) { used[h] = 1; });
-    var shelves = q.answers.slice().sort(function (a, b) { return (b === mine) - (a === mine); });
-    return shelves.map(function (a) {
-      var dim = Object.keys(a.tags || {})[0], val = null, top = 0;
-      if (dim) Object.keys(a.tags[dim]).forEach(function (k) { if (a.tags[dim][k] > top) { top = a.tags[dim][k]; val = k; } });
-      var carries = function (p) { return (p.dims[dim] || []).some(function (d) { return d.v === val && !d.low; }); };
-      var ranked = rank(model.products, others.concat([a]), S, ctx).filter(function (r) {
-        return r.p.available && !r.excluded && !used[r.p.handle] && (houses[r.p.house] || 0) < S.max_per_house && r.solid >= r.low;
-      });
-      var r = ranked.filter(function (x) { return carries(x.p); })[0] || ranked[0] || null;
-      if (r) { used[r.p.handle] = 1; houses[r.p.house] = (houses[r.p.house] || 0) + 1; r.shelf = a; r.mine = a === mine; }
-      return r;
-    }).filter(Boolean);
-  }
-
-  function personaFor(config, answers) {
-    var P = config.personas;
-    if (!P) return null;
-    var byQ = {};
-    answers.forEach(function (a) { byQ[a.q] = a.id; });
-    var key = P.matrix[byQ[P.rows]] && P.matrix[byQ[P.rows]][byQ[P.cols]];
-    return P.list.filter(function (x) { return x.key === key; })[0] || P.list[0];
-  }
-
-  // ------------------------------------------------------------------ state
-  // state[i] per question: single -> answer, multi -> [answers], perfume -> {kind:'ref'|'own', id} or 'skip',
-  // hidden question -> null.  q.show_if = { q: <question id>, is: 'picked' | 'skipped' | <answer id> }
-  function findAnswer(q, id) {
-    return (q.answers || []).filter(function (a) { return a.id === id; })[0] || null;
-  }
-  function qIndex(config, id) {
-    for (var i = 0; i < config.questions.length; i++) if (config.questions[i].id === id) return i;
-    return -1;
-  }
-  function isVisible(model, state, i) {
-    var q = model.config.questions[i];
-    if ((q.type === 'perfume' || q.taste) && !model.taste) return false;
-    var c = q.show_if;
-    if (!c) return true;
-    var v = state[qIndex(model.config, c.q)];
-    if (v == null) return false;
-    if (c.is === 'picked') return v !== 'skip';
-    if (c.is === 'skipped') return v === 'skip';
-    return v && v.id === c.is;
-  }
-  function flatten(state) {
-    var out = [];
-    state.forEach(function (v) {
-      if (!v || v === 'skip') return;
-      if (Array.isArray(v)) v.forEach(function (a) { out.push(a); });
-      else if (v.q) out.push(v);
-    });
-    return out;
-  }
   function perfumeOf(model, v) {
-    if (!v || v === 'skip') return null;
-    if (v.kind === 'own') {
+    if (!v) return null;
+    if (v.k === 'p') {
       var p = model.ownByHandle && model.ownByHandle[v.id];
-      return p && p.vec ? { name: p.title, house: p.house, vec: p.vec, canon: p.canon, handle: p.handle } : null;
+      return p && p.vec ? { key: 'p~' + p.handle, name: p.title, house: p.house, vec: p.vec, canon: p.canon, handle: p.handle } : null;
     }
-    var r = (model.refs || []).filter(function (x) { return x.id === v.id; })[0];
-    return r ? { name: r.name, house: r.house, vec: r.vec, canon: r.canon } : null;
+    var r = model.refById && model.refById[v.id];
+    return r ? { key: 'r~' + r.id, id: r.id, name: r.name, house: r.house, vec: r.vec, canon: r.canon || [], img: r.img, handle: r.own ? r.own.handle : null } : null;
   }
-  // taste context from the state: a named perfume (similar / complement) or chosen families
-  function tasteContext(model, state) {
-    if (!model.taste) return null;
-    var cfg = model.config, ctx = null;
-    cfg.questions.forEach(function (q, i) {
-      var v = state[i];
-      if (q.type === 'perfume') {
-        var pf = perfumeOf(model, v);
-        if (pf) ctx = { mode: 'similar', vec: pf.vec, canon: pf.canon, label: pf.name, house: pf.house, handle: pf.handle || null };
-      }
-    });
-    cfg.questions.forEach(function (q, i) {
-      var v = state[i];
-      if (ctx && v && !Array.isArray(v) && v.taste_mode) ctx.mode = v.taste_mode;
-      if (q.taste === 'families' && Array.isArray(v) && v.length && !ctx) {
-        var fams = model.taste.families, vec = fams.map(function () { return 0; });
-        v.forEach(function (a) { var k = fams.indexOf(a.family); if (k >= 0) vec[k] = 1; });
-        ctx = { mode: 'families', vec: vec, canon: [], families: v.map(function (a) { return a.family; }) };
-      }
-    });
-    return ctx;
+  function visible(model, state, qid) {
+    var q = Q(model.config, qid);
+    if (!q) return false;
+    if ((q.type === 'perfume' || q.type === 'families') && !model.taste) return false;
+    // the note families: without a perfume, or when none of the named perfumes publishes its notes
+    if (q.show_if === 'no_ref') return state.ref === 'none' || (Array.isArray(state.ref) && state.ref.length > 0 &&
+      !state.ref.some(function (v) { var pf = perfumeOf(model, v); return pf && pf.vec; }));
+    return true;
   }
 
-  // state <-> URL code: one token per question, '.'-joined. single: id, multi: id+id, perfume: r~id | p~handle | skip, hidden: _
+  // URL code: one token per question in config order, '.'-joined. multi: a+b, perfume: r~id+p~handle | none,
+  // week: one digit per row, hidden: _
   function encodeCode(model, state) {
-    return model.config.questions.map(function (q, i) {
-      var v = state[i];
-      if (v == null) return '_';
-      if (v === 'skip') return 'skip';
-      if (q.type === 'perfume') return (v.kind === 'own' ? 'p~' : 'r~') + v.id;
-      if (Array.isArray(v)) return v.map(function (a) { return a.id; }).join('+');
-      return v.id;
+    return model.config.questions.map(function (q) {
+      if (!visible(model, state, q.id)) return '_';
+      var v = state[q.id];
+      if (q.type === 'perfume') return v === 'none' ? 'none' : (v || []).map(function (x) { return x.k + '~' + x.id; }).join('+');
+      if (q.type === 'week') return (v || []).join('');
+      if (Array.isArray(v)) return v.length ? v.join('+') : '-';
+      return v == null ? '_' : v;
     }).join('.');
   }
   function parseCode(model, code) {
-    var qs = model.config.questions, toks = String(code || '').split('.');
+    var qs = model.config.questions, toks = String(code || '').split('.'), state = {};
     if (toks.length !== qs.length) return null;
-    var state = [];
     for (var i = 0; i < qs.length; i++) {
       var q = qs[i], t = toks[i];
-      if (t === '_') { state.push(null); continue; }
+      if (t === '_') continue;
       if (q.type === 'perfume') {
-        if (t === 'skip') { state.push('skip'); continue; }
-        var m = /^(r|p)~(.+)$/.exec(t);
-        if (!m) return null;
-        var v = { kind: m[1] === 'p' ? 'own' : 'ref', id: m[2] };
-        if (!perfumeOf(model, v)) return null;
-        state.push(v);
-      } else if (q.type === 'multi') {
-        var list = t.split('+').map(function (id) { return findAnswer(q, id); });
-        if (list.some(function (a) { return !a; })) return null;
-        state.push(list);
+        if (t === 'none') { state[q.id] = 'none'; continue; }
+        var list = t.split('+').map(function (s) { var m = /^(r|p)~(.+)$/.exec(s); return m ? { k: m[1], id: m[2] } : null; });
+        if (!list.length || list.length > (q.max || 2) || list.some(function (x) { return !x || !perfumeOf(model, x); })) return null;
+        state[q.id] = list;
+      } else if (q.type === 'week') {
+        if (!new RegExp('^[0-2]{' + q.rows.length + '}$').test(t)) return null;
+        state[q.id] = t.split('').map(Number);
+      } else if (q.type === 'multi' || q.type === 'families' || q.type === 'taboo') {
+        var ids = t === '-' ? [] : t.split('+');
+        if (ids.some(function (id) { return !findAnswer(q, id); })) return null;
+        if (ids.length > (q.max || 99) || ids.length < (q.min || 0)) return null;
+        state[q.id] = ids;
       } else {
-        var a = findAnswer(q, t);
-        if (!a) return null;
-        state.push(a);
+        if (!findAnswer(q, t)) return null;
+        state[q.id] = t;
       }
     }
-    // every visible question must be answered, every hidden one empty
-    for (var k = 0; k < qs.length; k++) if (isVisible(model, state, k) !== (state[k] != null)) return null;
+    for (var k = 0; k < qs.length; k++) if (visible(model, state, qs[k].id) !== (state[qs[k].id] != null)) return null;
     return state;
   }
 
-  // attach question ids to answers so they know where they belong
+  // ================================================================== profile & filters
+  // what the visitor loves: the named perfumes, or the families they picked
+  function tasteContext(model, state) {
+    if (!model.taste) return null;
+    var refs = state.ref && state.ref !== 'none' ? state.ref.map(function (v) { return perfumeOf(model, v); }).filter(function (r) { return r && r.vec; }) : [];
+    if (refs.length) {
+      var vec = model.taste.families.map(function (_, i) { return refs.reduce(function (s, r) { return s + r.vec[i]; }, 0) / refs.length; });
+      return { mode: 'refs', refs: refs, vec: vec };
+    }
+    var fams = state.notes || [];
+    if (!fams.length) return null;
+    var q = Q(model.config, 'notes'), v2 = model.taste.families.map(function () { return 0; });
+    fams.forEach(function (id) { var a = findAnswer(q, id); var k = a ? famIndex(model, a.family) : -1; if (k >= 0) v2[k] = 1; });
+    return { mode: 'families', refs: [], vec: v2, families: fams.map(function (id) { return findAnswer(q, id).family; }) };
+  }
+
+  function canonIdx(model, ids) {
+    var out = [];
+    ids.forEach(function (id) { model.taste.canon.forEach(function (c, i) { if (c[2] === id) out.push(i); }); });
+    return out;
+  }
+  // hard filter: a perfume carrying a tabooed note (or too much of a tabooed family) never appears
+  function tabooRules(model, state) {
+    var q = Q(model.config, 'taboos'), rules = [];
+    (state.taboos || []).forEach(function (id) {
+      var a = findAnswer(q, id);
+      if (a && a.rule) rules.push({ id: id, notes: canonIdx(model, a.rule.notes || []), fam: a.rule.family ? famIndex(model, a.rule.family) : -1, max: a.rule.max_share || 1, presence: a.rule.presence || null });
+    });
+    return rules;
+  }
+  function breaksTaboo(p, rules) {
+    for (var i = 0; i < rules.length; i++) {
+      var r = rules[i];
+      if (r.presence && carries(p, 'presence', r.presence) === 1) return r.id;
+      if (!p.canon) continue;
+      for (var j = 0; j < r.notes.length; j++) if (p.canon.indexOf(r.notes[j]) >= 0) return r.id;
+      if (r.fam >= 0 && p.vec && p.vec[r.fam] >= r.max) return r.id;
+    }
+    return null;
+  }
+  // owner rule: gender matters only for perfumes in the gendered moods (Focus & Flow, Romance & Presence, Celebrate & Indulge)
+  function genderOk(model, p, who) {
+    var G = model.config.gender || {};
+    if (!who || who === 'both') return true;
+    var opposite = who === 'her' ? 'Masculine' : 'Feminine';
+    var gs = (p.dims.gender || []).filter(function (g) { return !g.low; }).map(function (g) { return g.v; });
+    if (!gs.length || gs.some(function (g) { return g !== opposite; })) return true;
+    return !(G.moods || []).some(function (m) { return carries(p, 'mood', m) > 0; });
+  }
+
+  // ================================================================== slots
+  // every week row at "sometimes" / "a lot" becomes a wardrobe slot, biggest first; "how" decides how many are kept
+  function slotsFor(model, state) {
+    var cfg = model.config, wq = Q(cfg, 'week'), levels = state.week || [];
+    var byId = {};
+    cfg.slots.forEach(function (s) { byId[s.id] = s; });
+    var active = wq.rows.map(function (r, i) { return { slot: r.slot, lv: levels[i] || 0, i: i }; })
+      .filter(function (x) { return x.lv > 0; })
+      .sort(function (a, b) { return (b.lv - a.lv) || (a.i - b.i); })
+      .map(function (x) { return x.slot; });
+    var how = findAnswer(Q(cfg, 'how'), state.how) || { min: 1, max: 1 };
+    var out = [];
+    function add(id) { if (id && out.indexOf(id) < 0 && byId[id]) out.push(id); }
+    if (how.split) {
+      // day + night: the busiest day slot and the busiest night slot
+      var day = active.filter(function (id) { return byId[id].time !== 'night'; })[0] || how.split[0];
+      var night = active.filter(function (id) { return byId[id].time === 'night'; })[0] || how.split[1];
+      var order = active.indexOf(night) >= 0 && (active.indexOf(day) < 0 || active.indexOf(night) < active.indexOf(day)) ? [night, day] : [day, night];
+      order.forEach(add);
+    } else {
+      active.slice(0, how.max).forEach(add);
+      (cfg.slot_fill || []).forEach(function (id) { if (out.length < how.min) add(id); });
+    }
+    return out.map(function (id) { return byId[id]; });
+  }
+
+  // ================================================================== scoring
+  // 0..1 components, weighted: ref 35, slot 20, feel 15, presence 10, climate 10, style+matters 10
+  function refFit(p, ctx) {
+    if (!ctx || !p.vec) return { t: 0, shared: [], ref: null };
+    if (ctx.mode === 'families') return { t: cosine(ctx.vec, p.vec), shared: [], ref: null };
+    var best = { t: -1, shared: [], ref: null };
+    ctx.refs.forEach(function (r) {
+      var key = r.canon.slice(0, 8);
+      var shared = r.canon.filter(function (c) { return p.canon.indexOf(c) >= 0; });
+      var keyShared = shared.filter(function (c) { return key.indexOf(c) >= 0; }).length;
+      var t = 0.65 * cosine(r.vec, p.vec) + 0.35 * Math.min(keyShared, 3) / 3;
+      if (t > best.t) best = { t: t, shared: shared, ref: r };
+    });
+    return best;
+  }
+  var NEAR = { close: { noticed: 0.4 }, noticed: { close: 0.4, fills: 0.4 }, fills: { noticed: 0.4 } };
+  function presenceFit(p, want) {
+    var best = 0;
+    (p.dims.presence || []).forEach(function (d) {
+      var s = d.v === want ? 1 : (NEAR[want] && NEAR[want][d.v]) || 0;
+      best = Math.max(best, d.low ? s * 0.5 : s);
+    });
+    return best;
+  }
+  function slotPresence(slot, state) {
+    if (slot.presence) return slot.presence;
+    if (slot.id === 'work' && (state.taboos || []).indexOf('office') >= 0) return 'close';
+    if ((state.taboos || []).indexOf('strong') >= 0 && state.presence === 'fills') return 'noticed';
+    return state.presence || 'noticed';
+  }
+
+  // context shared by every slot of one result
+  function prepare(model, state) {
+    var cfg = model.config, W = cfg.weights;
+    var ctx = tasteContext(model, state);
+    var rules = tabooRules(model, state);
+    var feels = (state.feel || []).map(function (id) { return findAnswer(Q(cfg, 'feel'), id); }).filter(Boolean);
+    var climate = findAnswer(Q(cfg, 'climate'), state.climate);
+    var style = findAnswer(Q(cfg, 'style'), state.style);
+    var matters = findAnswer(Q(cfg, 'matters'), state.matters);
+    var styleFams = style && style.families ? style.families.map(function (f) { return famIndex(model, f); }) : [];
+    var avoid = {};
+    // never recommend the perfume they already wear
+    if (Array.isArray(state.ref)) state.ref.forEach(function (v) { var pf = perfumeOf(model, v); if (pf && pf.handle) avoid[pf.handle] = 1; });
+    if (matters && matters.avoid_popular && model.closestToPopular) model.closestToPopular.forEach(function (h) { avoid[h] = 1; });
+    var pool = model.products.filter(function (p) {
+      return p.available && !breaksTaboo(p, rules) && genderOk(model, p, state['for']) && !avoid[p.handle];
+    });
+    return { W: W, ctx: ctx, rules: rules, feels: feels, climate: climate, style: style, matters: matters, styleFams: styleFams, pool: pool, state: state };
+  }
+
+  function scoreFor(model, P, p, slot) {
+    var W = P.W, parts = {};
+    var rf = refFit(p, P.ctx);
+    parts.ref = P.ctx ? rf.t : 0;
+    var tag = slot.tag, s = carries(p, tag.dim, tag.value);
+    if (!s && slot.related) Object.keys(slot.related).forEach(function (v) { s = Math.max(s, carries(p, tag.dim, v) * slot.related[v]); });
+    if (!s && slot.related_mood) Object.keys(slot.related_mood).forEach(function (v) { s = Math.max(s, carries(p, 'mood', v) * slot.related_mood[v]); });
+    parts.slot = s;
+    var f = 0;
+    P.feels.forEach(function (a) { (a.moods || []).forEach(function (m, i) { f = Math.max(f, carries(p, 'mood', m) * (i ? 0.7 : 1)); }); });
+    parts.feel = f;
+    parts.presence = presenceFit(p, slotPresence(slot, P.state));
+    var c = 0;
+    if (P.climate) Object.keys(P.climate.seasons).forEach(function (v) { c = Math.max(c, carries(p, 'season', v) * P.climate.seasons[v]); });
+    parts.climate = c;
+    var st = 0;
+    if (p.vec) P.styleFams.forEach(function (k) { if (k >= 0) st += p.vec[k]; });
+    parts.style = Math.min(1, st * 1.5);
+    var m = 0.5;
+    if (P.matters && model.fame) {
+      var fame = model.fame[p.handle] || 0;
+      if (P.matters.prefer === 'popular') m = fame;
+      else if (P.matters.prefer === 'trending') m = Math.max(p.hot ? 1 : 0, fame * 0.6);
+      else if (P.matters.prefer === 'rare') m = 1 - fame;
+    }
+    parts.matters = m;
+    var score = W.ref * parts.ref + W.slot * parts.slot + W.feel * parts.feel + W.presence * parts.presence + W.climate * parts.climate +
+      W.style * parts.style + W.matters * parts.matters;
+    if (!P.ctx) score += W.ref * 0.5 * parts.slot; // no taste signal: lean on the occasion instead of a flat zero
+    return { p: p, score: score, parts: parts, shared: rf.shared, ref: rf.ref };
+  }
+
+  function rankSlot(model, P, slot) {
+    var pool = P.pool;
+    // a scent-sensitive office: the work slot only takes perfumes that stay close to the skin
+    if (slot.id === 'work' && (P.state.taboos || []).indexOf('office') >= 0) {
+      var close = pool.filter(function (p) { return carries(p, 'presence', 'close') === 1; });
+      if (close.length) pool = close;
+    }
+    return pool.map(function (p) { return scoreFor(model, P, p, slot); }).sort(function (a, b) {
+      return (b.score - a.score) || (a.p.price - b.p.price) || (a.p.handle < b.p.handle ? -1 : 1);
+    });
+  }
+
+  // the wardrobe: one perfume per slot, biggest slot first; no repeats, >= 2 houses when >= 2 slots, max 2 per house
+  function wardrobe(model, state, opts) {
+    var P = prepare(model, state), slots = slotsFor(model, state), S = model.config.scoring;
+    var ranked = slots.map(function (s) { return rankSlot(model, P, s); });
+    var used = {}, houses = {}, rows = [];
+    slots.forEach(function (s, i) {
+      var pick = ranked[i].filter(function (r) { return !used[r.p.handle] && (houses[r.p.house] || 0) < S.max_per_house; })[0] || null;
+      if (pick) { used[pick.p.handle] = 1; houses[pick.p.house] = (houses[pick.p.house] || 0) + 1; }
+      rows.push({ slot: s, pick: pick, ranked: ranked[i] });
+    });
+    // >= 2 houses: swap the weakest slot to the best perfume from another house
+    var filled = rows.filter(function (r) { return r.pick; });
+    if (filled.length >= 2 && Object.keys(houses).length < 2) {
+      var last = filled[filled.length - 1], h = filled[0].pick.p.house;
+      var alt = last.ranked.filter(function (r) { return !used[r.p.handle] && r.p.house !== h; })[0];
+      if (alt) { delete used[last.pick.p.handle]; last.pick = alt; used[alt.p.handle] = 1; }
+    }
+    // "also fits this slot": next best, unused anywhere
+    rows.forEach(function (r) {
+      if (!r.pick) return;
+      r.alt = r.ranked.filter(function (x) { return !used[x.p.handle]; })[0] || null;
+      if (r.alt) used[r.alt.p.handle] = 1;
+    });
+    var set = null;
+    if (filled.length && model.sets.length) {
+      var top = rows[0];
+      var sr = model.sets.filter(function (s) { return s.available && s.vec && !breaksTaboo(s, P.rules) && !setBreaksTaboo(model, s, P.rules); })
+        .map(function (s) { return scoreFor(model, P, s, top.slot); }).sort(function (a, b) { return b.score - a.score; })[0];
+      if (sr && top.pick && sr.score >= (1 - S.set_within) * top.pick.score) set = sr;
+    }
+    var res = { rows: rows, set: set, ctx: P.ctx, P: P };
+    res.persona = personaFor(model, res, state);
+    res.profile = profileOf(model, res);
+    res.candidates = opts && opts.candidates ? candidatesOf(rows, opts.candidates) : null;
+    return res;
+  }
+  function setBreaksTaboo(model, s, rules) {
+    return (s.members || []).some(function (h) { var p = model.ownByHandle[h]; return p && breaksTaboo(p, rules); });
+  }
+  function candidatesOf(rows, n) {
+    var out = [], seen = {};
+    rows.forEach(function (r) { r.ranked.slice(0, n).forEach(function (x) { if (!seen[x.p.handle]) { seen[x.p.handle] = 1; out.push(x.p); } }); });
+    return out;
+  }
+
+  // ================================================================== persona & profile
+  function union(list) {
+    var u = {};
+    list.forEach(function (p) { (p.canon || []).forEach(function (c) { u[c] = 1; }); });
+    return u;
+  }
+  // a persona line names notes; it qualifies only if every named note is in at least one pick
+  function personaQualifies(model, persona, have) {
+    return (persona.notes || []).every(function (req) {
+      return req.some(function (n) {
+        if (n.indexOf('fam:') === 0) {
+          var k = famIndex(model, n.slice(4));
+          return model.taste.canon.some(function (c, i) { return c[1] === k && have[i]; });
+        }
+        return canonIdx(model, [n]).some(function (i) { return have[i]; });
+      });
+    });
+  }
+  function personaFor(model, res, state) {
+    var P = model.config.personas;
+    if (!P || !model.taste) return P ? P.list[0] : null;
+    var picks = res.rows.filter(function (r) { return r.pick; }).map(function (r) { return r.pick.p; });
+    var have = union(picks);
+    var feel = findAnswer(Q(model.config, 'feel'), (state.feel || [])[0]);
+    var mood = feel && feel.moods ? feel.moods[0] : null;
+    var matrixKey = mood && P.matrix[mood] ? P.matrix[mood][state.presence] : null;
+    var style = findAnswer(Q(model.config, 'style'), state.style);
+    var best = null;
+    P.list.forEach(function (x, i) {
+      if (!personaQualifies(model, x, have)) return;
+      var s = (x.notes || []).length * 2 + (x.key === matrixKey ? 3 : 0) + (style && (style.personas || []).indexOf(x.key) >= 0 ? 1.5 : 0) - i * 0.001;
+      if (!best || s > best.s) best = { s: s, x: x };
+    });
+    return best ? best.x : (P.list.filter(function (x) { return !(x.notes || []).length; })[0] || P.list[0]);
+  }
+  function profileOf(model, res) {
+    if (!model.taste) return [];
+    var picks = res.rows.filter(function (r) { return r.pick && r.pick.p.vec; }).map(function (r) { return r.pick.p.vec; });
+    var fams = model.taste.families, vec = fams.map(function () { return 0; });
+    picks.forEach(function (v) { v.forEach(function (x, i) { vec[i] += x / picks.length; }); });
+    if (res.ctx) vec = vec.map(function (x, i) { return picks.length ? (x + res.ctx.vec[i] / (res.ctx.mode === 'families' ? res.ctx.vec.reduce(function (a, b) { return a + b; }, 0) : 1)) / 2 : x; });
+    var top = fams.map(function (f, i) { return { f: f, v: vec[i] }; }).sort(function (a, b) { return b.v - a.v; }).slice(0, 3);
+    var sum = top.reduce(function (s, x) { return s + x.v; }, 0) || 1;
+    var pct = top.map(function (x) { return Math.round(x.v / sum * 100); });
+    pct[0] += 100 - pct.reduce(function (a, b) { return a + b; }, 0);
+    return top.map(function (x, i) { return { family: x.f, pct: pct[i] }; });
+  }
+
+  // ================================================================== texts
+  function noteLabel(model, i) { return model.taste && model.taste.canon[i] ? model.taste.canon[i][0] : ''; }
+  function joinList(parts, and) {
+    if (parts.length < 2) return parts.join('');
+    return parts.slice(0, -1).join(', ') + ' ' + and + ' ' + parts[parts.length - 1];
+  }
+  function fill(tpl, vars) {
+    return String(tpl || '').replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; });
+  }
+  // line 1: only notes both perfumes really carry
+  function sharesLine(model, r, c) {
+    if (!r.ref || !r.shared.length) return '';
+    // specific notes first; broad catch-alls ("woods", "floral notes") only when nothing specific is shared
+    var spec = r.shared.filter(function (i) { return !model.taste.canon[i][3]; });
+    var notes = (spec.length ? spec : r.shared).slice(0, 3).map(function (i) { return noteLabel(model, i); });
+    return fill(c.shares, { notes: joinList(notes, c.and), name: r.ref.name });
+  }
+  // line 2: from this perfume's own matched tags + 2-3 of its real notes; unique within one result
+  function whyLines(model, res, c) {
+    var used = {}, out = [];
+    var P = res.P;
+    res.rows.forEach(function (row) {
+      if (!row.pick) { out.push(''); return; }
+      var r = row.pick, p = r.p, leads = [];
+      if (r.parts.slot >= 1 && row.slot.why) leads.push(row.slot.why);
+      P.feels.forEach(function (a) { if (a.why && (a.moods || []).some(function (m) { return carries(p, 'mood', m) === 1; })) leads.push(a.why); });
+      if (P.climate && P.climate.why && r.parts.climate >= 1) leads.push(P.climate.why);
+      if (r.parts.slot > 0 && r.parts.slot < 1 && row.slot.why) leads.push(row.slot.why_near || row.slot.why);
+      var top = model.taste ? model.taste.families.map(function (f, i) { return { f: f, v: (p.vec || [])[i] || 0 }; }).sort(function (a, b) { return b.v - a.v; })[0] : null;
+      if (top) leads.push(fill(c.why_family_lead, { family: ((c.families || {})[top.f] || top.f).toLowerCase() }));
+      var shared = r.shared || [];
+      var spec = (p.canon || []).filter(function (i) { return !model.taste.canon[i][3]; });
+      var own = (spec.length >= 2 ? spec : p.canon || []).filter(function (i) { return shared.slice(0, 3).indexOf(i) < 0; });
+      if (own.length < 2) own = (p.canon || []).slice();
+      var combos = [];
+      for (var a = 0; a < own.length; a++) for (var b = a + 1; b < own.length; b++) {
+        combos.push([own[a], own[b]]);
+        if (b + 1 < own.length) combos.push([own[a], own[b], own[b + 1]]);
+      }
+      combos.sort(function (x, y) { return (x[0] + x[1] * 0.01) - (y[0] + y[1] * 0.01); });
+      var ordered = [];
+      for (var k = 0; k < own.length - 1; k++) { ordered.push(own.slice(k, k + 3)); ordered.push(own.slice(k, k + 2)); }
+      ordered = ordered.concat(combos).filter(function (x) { return x.length >= 2 || own.length < 2; });
+      if (!ordered.length && own.length) ordered = [own.slice(0, 1)];
+      var pres = c.why_presence && c.why_presence[(p.dims.presence[0] || {}).v] || '';
+      var line = '';
+      for (var li = 0; li < leads.length && !line; li++) {
+        for (var oi = 0; oi < ordered.length && !line; oi++) {
+          var cand = fill(c.why, { lead: leads[li], notes: joinList(ordered[oi].map(function (i) { return noteLabel(model, i); }), c.and), presence: pres });
+          if (!used[cand]) line = cand;
+        }
+      }
+      if (line) used[line] = 1;
+      row.whyNotes = line ? ordered : [];
+      out.push(line);
+    });
+    return out;
+  }
+  function howToWear(model, row, c) {
+    var p = row.pick.p, pr = (p.dims.presence[0] || {}).v || 'noticed';
+    return fill(c.how_to_wear, { sprays: (c.sprays || {})[pr] || '', where: row.slot.where || '' });
+  }
+
+  // ================================================================== search
+  function norm(x) { return String(x || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').trim(); }
+  // Damerau-Levenshtein with a cap (returns cap + 1 when farther)
+  function dist(a, b, cap) {
+    if (Math.abs(a.length - b.length) > cap) return cap + 1;
+    var d = [], i, j;
+    for (i = 0; i <= a.length; i++) { d[i] = [i]; }
+    for (j = 0; j <= b.length; j++) d[0][j] = j;
+    for (i = 1; i <= a.length; i++) {
+      var rowMin = cap + 1;
+      for (j = 1; j <= b.length; j++) {
+        var cost = a[i - 1] === b[j - 1] ? 0 : 1;
+        var v = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, d[i - 2][j - 2] + 1);
+        d[i][j] = v;
+        if (v < rowMin) rowMin = v;
+      }
+      if (rowMin > cap) return cap + 1;
+    }
+    return d[a.length][b.length];
+  }
+  var STOP = { de: 1, du: 1, la: 1, le: 1, l: 1, d: 1, the: 1, and: 1, eau: 1, parfum: 1, perfume: 1, edp: 1, edt: 1, toilette: 1, by: 1, for: 1, pour: 1, of: 1 };
+  function buildIndex(model) {
+    var list = [], seen = {};
+    var HA = (model.taste && model.taste.house_aliases) || {};
+    function entry(kind, id, name, house, aliases) {
+      var names = [name].concat(aliases || []).map(norm);
+      var htoks = norm(house).split(' ');
+      (HA[house] || []).forEach(function (a) { norm(a).split(' ').forEach(function (t) { if (htoks.indexOf(t) < 0) htoks.push(t); }); });
+      return { kind: kind, id: id, name: name, house: house, names: names, ntoks: names.map(function (n) { return n.split(' '); }), htoks: htoks, joined: names.map(function (n) { return n.replace(/ /g, ''); }) };
+    }
+    // a popular perfume we also stock is listed once, under its popular name and aliases
+    (model.refs || []).forEach(function (r, i) {
+      if (r.own) seen[r.own.handle] = 1;
+      var e = entry('r', r.id, r.name, r.house, r.aliases);
+      e.rank = i;
+      e.own = !!r.own;
+      list.push(e);
+    });
+    model.products.forEach(function (p) {
+      if (!p.vec || seen[p.handle]) return;
+      var e = entry('p', p.handle, p.title, p.house, []);
+      e.own = true;
+      e.rank = 1000 + list.length;
+      list.push(e);
+    });
+    return list;
+  }
+  function tokScore(q, t) {
+    if (q === t) return 3;
+    if (q.length >= 2 && t.indexOf(q) === 0) return 2.4;
+    var cap = q.length >= 7 ? 2 : q.length >= 4 ? 1 : 0;
+    if (!cap) return 0;
+    var d = dist(q, t.length > q.length + 2 ? t.slice(0, q.length + 1) : t, cap);
+    if (d <= cap) return 2.2 - 0.5 * d;
+    return 0;
+  }
+  // query words may name the house, the perfume, or both, in any order, with typos (up to 2 edits)
+  function search(index, query, limit) {
+    var qn = norm(query);
+    if (!qn) return [];
+    // filler words ("eau", "de", "parfum") count when they hit, but a miss does not rule a perfume out
+    var all0 = qn.split(' '), qt = all0.filter(function (w) { return !STOP[w]; });
+    var opt = all0.filter(function (w) { return STOP[w]; });
+    if (!qt.length) { qt = all0; opt = []; }
+    var qj = qn.replace(/ /g, '');
+    var hits = [];
+    index.forEach(function (e) {
+      var best = 0;
+      // whole query against a whole name / alias ("lveb", "br540", "bacarat")
+      e.joined.forEach(function (j, i) {
+        if (j === qj) best = Math.max(best, 10);
+        else if (qj.length >= 3 && j.indexOf(qj) === 0) best = Math.max(best, 8);
+        else if (qj.length >= 5) { var d = dist(qj, j, 2); if (d <= 2) best = Math.max(best, 7.5 - d); }
+      });
+      // word by word: every query word must hit the name or the house
+      var sum = 0, nameHit = 0, all = true;
+      qt.forEach(function (w) {
+        var s = 0, onName = false;
+        e.ntoks.forEach(function (toks) { toks.forEach(function (t) { var x = tokScore(w, t); if (x > s) { s = x; onName = true; } }); });
+        e.htoks.forEach(function (t) { var x = tokScore(w, t) * 0.8; if (x > s) { s = x; onName = false; } });
+        if (!s) all = false;
+        sum += s;
+        if (onName) nameHit++;
+      });
+      var bonus = 0;
+      opt.forEach(function (w) { e.ntoks[0].forEach(function (t) { if (t === w) bonus += 0.4; }); });
+      if (all && nameHit) best = Math.max(best, sum / qt.length + Math.min(qt.length, 3) * 0.6 + (nameHit === qt.length ? 0.3 : 0) + bonus);
+      else if (all) best = Math.max(best, sum / qt.length * 0.5);
+      // ties: fewer extra words in the name first ("Bleu de Chanel" before "... Parfum"), then the more popular perfume
+      var extra = e.ntoks[0].filter(function (t) { return !STOP[t] && !qt.some(function (w) { return tokScore(w, t) > 0; }); }).length;
+      if (best > 0) hits.push({ e: e, s: best - extra * 0.05 - (e.rank || 0) * 0.00001 });
+    });
+    hits.sort(function (a, b) { return b.s - a.s; });
+    return hits.slice(0, limit || 8).map(function (h) { return h.e; });
+  }
+
   function buildModel(config, tasteData) {
-    config.questions.forEach(function (q) { (q.answers || []).forEach(function (a) { a.q = q.id; }); });
+    config.questions.forEach(function (q) { (q.answers || []).forEach(function (a) { a.q = q.id; if (a.image && a.image.charAt(0) === '@') a.image = (config.cdn || '') + a.image.slice(1); }); });
     var cat = decodeCatalog(config.catalog);
     var model = { config: config, products: cat.products, sets: cat.sets };
+    (config.catalog.set_members || []).forEach(function (m, i) { if (model.sets[i]) model.sets[i].members = m; });
     attachTaste(model, tasteData);
+    if (model.taste) {
+      // "fame" of a perfume we stock: how close it sits to the profiles everybody wears (the popular references)
+      var pops = model.refs.filter(function (r) { return r.popular; });
+      var famous = {};
+      (config.famous_houses || []).forEach(function (h) { famous[h] = 1; });
+      model.fame = {};
+      model.products.forEach(function (p) {
+        var m = 0;
+        pops.forEach(function (r) { m = Math.max(m, cosine(r.vec, p.vec)); });
+        model.fame[p.handle] = Math.min(1, 0.6 * m + (famous[p.house] ? 0.4 : 0) + (p.hot ? 0.2 : 0));
+      });
+      // the two closest perfumes we stock to each popular profile ("unique" excludes them)
+      model.closestToPopular = [];
+      pops.forEach(function (r) {
+        model.products.filter(function (p) { return p.vec; }).map(function (p) { return { h: p.handle, c: cosine(r.vec, p.vec) }; })
+          .sort(function (a, b) { return b.c - a.c; }).slice(0, 2).forEach(function (x) { model.closestToPopular.push(x.h); });
+      });
+    }
     return model;
   }
 
-  var API = { decodeCatalog: decodeCatalog, scoreProduct: scoreProduct, recommend: recommend, wardrobe: wardrobe, personaFor: personaFor, encodeCode: encodeCode, parseCode: parseCode, buildModel: buildModel, tasteContext: tasteContext, flatten: flatten, isVisible: isVisible, perfumeOf: perfumeOf, cosine: cosine };
+  var API = { decodeCatalog: decodeCatalog, buildModel: buildModel, encodeCode: encodeCode, parseCode: parseCode, wardrobe: wardrobe,
+    slotsFor: slotsFor, tasteContext: tasteContext, breaksTaboo: breaksTaboo, tabooRules: tabooRules, personaQualifies: personaQualifies,
+    whyLines: whyLines, sharesLine: sharesLine, howToWear: howToWear, union: union, buildIndex: buildIndex, search: search, norm: norm,
+    dist: dist, perfumeOf: perfumeOf, visible: visible, cosine: cosine, genderOk: genderOk, noteLabel: noteLabel };
   if (typeof module === 'object' && module.exports) module.exports = API;
   global.ScentQuiz = API;
   if (typeof document === 'undefined') return;
 
   // ================================================================== UI
   function esc(s) {
-    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
-      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (ch) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
     });
-  }
-  function fill(tpl, vars) {
-    return String(tpl || '').replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; });
-  }
-  function joinList(parts, and) {
-    if (parts.length < 2) return parts.join('');
-    return parts.slice(0, -1).join(', ') + ' ' + and + ' ' + parts[parts.length - 1];
   }
   function cdnSized(url, w) {
     if (!url) return '';
@@ -346,9 +615,7 @@
   }
   function publish(root, name, data) {
     try {
-      if (global.Shopify && global.Shopify.analytics && typeof global.Shopify.analytics.publish === 'function') {
-        global.Shopify.analytics.publish(name, data);
-      }
+      if (global.Shopify && global.Shopify.analytics && typeof global.Shopify.analytics.publish === 'function') global.Shopify.analytics.publish(name, data);
     } catch (e) { /* analytics must never break the quiz */ }
     root.dispatchEvent(new CustomEvent('scent-quiz:' + name, { bubbles: true, detail: data }));
   }
@@ -356,11 +623,14 @@
   function Quiz(root) {
     this.root = root;
     this.app = root.querySelector('[data-sq-app]');
-    this.state = [];
+    this.state = {};
     this.step = -1;
     this.shared = false;
     this.cartRoot = (global.Shopify && global.Shopify.routes && global.Shopify.routes.root) || '/';
     this.live = {};
+    // reference bottle images sit next to the config asset: .../assets/sq-ref-<id>.webp
+    var cfgUrl = root.getAttribute('data-config') || '';
+    this.assetBase = cfgUrl.replace(/[^/]*$/, '');
   }
 
   Quiz.prototype.load = function () {
@@ -369,17 +639,14 @@
       return fetch(url, { credentials: 'same-origin' }).then(function (r) { if (!r.ok) throw new Error(url + ' ' + r.status); return r.json(); });
     };
     var tasteUrl = this.root.getAttribute('data-taste');
-    return Promise.all([
-      get(this.root.getAttribute('data-config')),
-      // the taste file is optional: without it the perfume / note questions are simply skipped
-      tasteUrl ? get(tasteUrl).catch(function () { return null; }) : Promise.resolve(null)
-    ])
+    return Promise.all([get(this.root.getAttribute('data-config')), tasteUrl ? get(tasteUrl).catch(function () { return null; }) : Promise.resolve(null)])
       .then(function (both) {
         var config = both[0];
         self.applyOverrides(config);
         self.model = buildModel(config, both[1]);
         self.config = config;
         self.copy = config.copy;
+        self.qs = config.questions;
         self.fmt = new Intl.NumberFormat(config.locale || 'en-US', { style: 'currency', currency: config.currency || 'USD' });
         self.bind();
         self.root.hidden = false;
@@ -392,33 +659,27 @@
 
   // section blocks (theme editor) override question titles, answer labels/images and persona texts
   Quiz.prototype.applyOverrides = function (config) {
-    var el = this.root.querySelector('[data-sq-overrides]');
-    var o = {};
+    var el = this.root.querySelector('[data-sq-overrides]'), o = {};
     try { if (el) o = JSON.parse(el.textContent); } catch (e) { o = {}; }
     this.blocks = o.blocks || [];
     var s = o.settings || {};
     Object.keys(s).forEach(function (k) { if (s[k]) config.copy[k] = s[k]; });
     this.blocks.forEach(function (b) {
-      var q = config.questions.filter(function (x) { return x.id === b.q; })[0];
+      var q = Q(config, b.q);
       if (b.type === 'question' && q && b.title) q.title = b.title;
       if (b.type === 'answer' && q) {
         var a = findAnswer(q, b.a);
         if (!a) return;
         if (b.label) a.label = b.label;
-        if (b.img) { a.img = b.img; }
+        if (b.img) a.img = b.img;
         a.block = b.id;
       }
-      if (b.type === 'persona' && config.personas) {
-        var p = config.personas.list.filter(function (x) { return x.key === b.key; })[0];
-        if (p) { if (b.name) p.name = b.name; if (b.line) p.line = b.line; }
-      }
     });
-    // persona texts edited in the "Scent quiz: personas" section
     if (config.personas) document.querySelectorAll('[data-sq-persona]').forEach(function (li) {
       var p = config.personas.list.filter(function (x) { return x.key === li.getAttribute('data-sq-persona'); })[0];
       var h = li.querySelector('h3'), d = li.querySelector('p');
       if (p && h && h.textContent.trim()) p.name = h.textContent.trim();
-      if (p && d && d.textContent.trim()) p.line = d.textContent.trim();
+      if (p && d && d.textContent.trim() && d.textContent.trim() !== p.line) { p.line = d.textContent.trim(); }
     });
   };
 
@@ -427,114 +688,250 @@
     this.app.addEventListener('click', function (e) {
       var t = e.target.closest('[data-act]');
       if (!t || !self.app.contains(t)) return;
-      var act = t.getAttribute('data-act');
-      if (act === 'start') { publish(self.root, 'quiz_started', { quiz: self.config.id }); self.state = []; self.show(self.nextVisible(-1)); }
-      else if (act === 'answer') self.pick(+t.getAttribute('data-q'), t.getAttribute('data-a'));
+      var act = t.getAttribute('data-act'), qid = t.getAttribute('data-q');
+      if (act === 'start') { publish(self.root, 'quiz_started', { quiz: self.config.id }); self.state = {}; self.go(0); }
+      else if (act === 'answer') { self.state[qid] = t.getAttribute('data-a'); self.advance(qid); }
       else if (act === 'toggle') self.toggle(t);
-      else if (act === 'next') self.advance(+t.getAttribute('data-q'));
-      else if (act === 'perfume') self.pickPerfume(+t.getAttribute('data-q'), t.getAttribute('data-kind'), t.getAttribute('data-id'));
-      else if (act === 'skip') self.pickPerfume(+t.getAttribute('data-q'), 'skip');
-      else if (act === 'back') self.show(self.prevVisible(self.step));
+      else if (act === 'level') self.level(t);
+      else if (act === 'next') self.advance(qid);
+      else if (act === 'perfume') self.addPerfume(qid, t.getAttribute('data-kind'), t.getAttribute('data-id'));
+      else if (act === 'unpick') self.removePerfume(qid, t.getAttribute('data-key'));
+      else if (act === 'no-ref') { self.state[qid] = 'none'; self.advance(qid); }
+      else if (act === 'back') self.go(self.prevVisible(self.step));
       else if (act === 'add') self.addOne(t);
       else if (act === 'add-all') self.addAll(t);
-      else if (act === 'tab') self.tab(t.getAttribute('data-tab'), true);
-      else if (act === 'add-set') self.addSet(t);
+      else if (act === 'add-set') self.addOne(t, 'set');
       else if (act === 'restart') self.restart();
       else if (act === 'share-open') self.openShare(t);
       else if (act === 'download') self.shareDownload();
       else if (act === 'native') self.shareNative();
       else if (act === 'copy') self.shareCopy(t);
     });
+    this.app.addEventListener('input', function (e) { if (e.target.matches('[data-sq-search]')) self.search(e.target); });
     this.app.addEventListener('keydown', function (e) {
-      var t = e.target;
-      if (!t.matches || !t.matches('[data-act=tab]') || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
-      var all = Array.prototype.slice.call(self.app.querySelectorAll('[data-act=tab]'));
-      var k = (all.indexOf(t) + (e.key === 'ArrowRight' ? 1 : all.length - 1)) % all.length;
-      self.tab(all[k].getAttribute('data-tab'), true);
-      e.preventDefault();
-    });
-    this.app.addEventListener('input', function (e) {
-      if (e.target.matches('[data-sq-search]')) self.search(e.target);
+      if (!e.target.matches('[data-sq-search]')) return;
+      var first = self.app.querySelector('[data-sq-results] button');
+      if (e.key === 'Enter' && first) { e.preventDefault(); first.click(); }
+      if (e.key === 'ArrowDown' && first) { e.preventDefault(); first.focus(); }
     });
   };
 
   Quiz.prototype.nextVisible = function (i) {
-    for (var k = i + 1; k < this.config.questions.length; k++) if (isVisible(this.model, this.state, k)) return k;
-    return this.config.questions.length;
+    for (var k = i + 1; k < this.qs.length; k++) if (visible(this.model, this.state, this.qs[k].id)) return k;
+    return this.qs.length;
   };
   Quiz.prototype.prevVisible = function (i) {
-    for (var k = i - 1; k >= 0; k--) if (isVisible(this.model, this.state, k)) return k;
+    for (var k = i - 1; k >= 0; k--) if (visible(this.model, this.state, this.qs[k].id)) return k;
     return -1;
   };
-  // answering question qi clears later answers whose visibility may change, then moves on
-  Quiz.prototype.advance = function (qi) {
-    var n = this.config.questions.length;
-    for (var k = qi + 1; k < n; k++) if (!isVisible(this.model, this.state, k)) this.state[k] = null;
-    var next = this.nextVisible(qi);
-    if (next < n) this.show(next); else this.finish(true);
+  Quiz.prototype.go = function (i) {
+    if (i >= 0 && i < this.qs.length && !visible(this.model, this.state, this.qs[i].id)) i = this.nextVisible(i);
+    if (i >= this.qs.length) this.finish(true); else this.show(i);
+  };
+  Quiz.prototype.advance = function (qid) {
+    var self = this, at = this.qs.indexOf(Q(this.config, qid));
+    this.qs.forEach(function (q) { if (!visible(self.model, self.state, q.id)) delete self.state[q.id]; });
+    this.go(this.nextVisible(at));
   };
   Quiz.prototype.toggle = function (btn) {
-    var qi = +btn.getAttribute('data-q'), q = this.config.questions[qi];
-    var cur = Array.isArray(this.state[qi]) ? this.state[qi].slice() : [];
-    var a = findAnswer(q, btn.getAttribute('data-a')), at = cur.indexOf(a);
-    if (at >= 0) cur.splice(at, 1);
-    else if (cur.length < (q.max || 3)) cur.push(a);
-    this.state[qi] = cur;
-    var self = this;
-    this.app.querySelectorAll('[data-act=toggle]').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(cur.indexOf(findAnswer(q, b.getAttribute('data-a'))) >= 0));
-    });
+    var qid = btn.getAttribute('data-q'), q = Q(this.config, qid), id = btn.getAttribute('data-a');
+    var cur = (this.state[qid] || []).slice(), at = cur.indexOf(id), a = findAnswer(q, id);
+    if (a && a.exclusive) cur = at >= 0 ? [] : [id];
+    else {
+      cur = cur.filter(function (x) { var y = findAnswer(q, x); return !(y && y.exclusive); });
+      if (at >= 0) cur.splice(cur.indexOf(id), 1);
+      else if (cur.length < (q.max || 99)) cur.push(id);
+    }
+    this.state[qid] = cur;
+    this.app.querySelectorAll('[data-act=toggle][data-q="' + qid + '"]').forEach(function (b) { b.setAttribute('aria-pressed', String(cur.indexOf(b.getAttribute('data-a')) >= 0)); });
     var next = this.app.querySelector('[data-act=next]');
-    if (next) next.disabled = cur.length < (q.min || 1);
+    if (next) next.disabled = cur.length < (q.min || 0);
     var hint = this.app.querySelector('[data-sq-count]');
-    if (hint) hint.textContent = fill(self.copy.multi_count, { n: cur.length, max: q.max || 3 });
+    if (hint && q.max < 99) hint.textContent = fill(this.copy.multi_count, { n: cur.length, max: q.max });
   };
-  Quiz.prototype.pickPerfume = function (qi, kind, id) {
-    this.state[qi] = kind === 'skip' ? 'skip' : { kind: kind, id: id };
-    this.advance(qi);
+  Quiz.prototype.level = function (btn) {
+    var qid = btn.getAttribute('data-q'), row = +btn.getAttribute('data-row'), lv = +btn.getAttribute('data-lv');
+    var q = Q(this.config, qid), cur = (this.state[qid] || q.rows.map(function () { return 0; })).slice();
+    cur[row] = lv;
+    this.state[qid] = cur;
+    this.app.querySelectorAll('[data-act=level][data-row="' + row + '"]').forEach(function (b) { b.setAttribute('aria-pressed', String(+b.getAttribute('data-lv') === lv)); });
   };
-  // search our shelf and the reference list by name or house
-  Quiz.prototype.searchIndex = function () {
-    if (this._index) return this._index;
-    var norm = function (x) { return String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); };
-    var list = [], seen = {};
-    this.model.products.forEach(function (p) {
-      if (!p.vec) return;
-      seen[norm(p.house + ' ' + p.title)] = 1;
-      list.push({ kind: 'own', id: p.handle, name: p.title, house: p.house, key: norm(p.title + ' ' + p.house) });
-    });
-    (this.model.refs || []).forEach(function (r) {
-      if (seen[norm(r.house + ' ' + r.name)]) return;
-      list.push({ kind: 'ref', id: r.id, name: r.name, house: r.house, key: norm(r.name + ' ' + r.house) });
-    });
-    this._norm = norm;
-    return (this._index = list);
+
+  // ---------------------------------------------------------------- perfume picker
+  Quiz.prototype.refImg = function (id) { return this.assetBase + 'sq-ref-' + id + '.webp'; };
+  Quiz.prototype.index = function () { return this._index || (this._index = buildIndex(this.model)); };
+  Quiz.prototype.addPerfume = function (qid, kind, id) {
+    var q = Q(this.config, qid), cur = Array.isArray(this.state[qid]) ? this.state[qid].slice() : [];
+    if (!cur.some(function (x) { return x.k === kind && x.id === id; })) {
+      if (cur.length >= (q.max || 2)) cur.shift();
+      cur.push({ k: kind, id: id });
+    }
+    this.state[qid] = cur;
+    this.show(this.step, '[data-sq-search]');
+  };
+  Quiz.prototype.removePerfume = function (qid, key) {
+    var cur = (Array.isArray(this.state[qid]) ? this.state[qid] : []).filter(function (x) { return x.k + '~' + x.id !== key; });
+    this.state[qid] = cur.length ? cur : null;
+    this.show(this.step, '[data-sq-search]');
   };
   Quiz.prototype.search = function (input) {
-    var qi = +input.getAttribute('data-q'), box = this.app.querySelector('[data-sq-results]');
-    var list = this.searchIndex();
-    var words = this._norm(input.value).split(/\s+/).filter(Boolean);
-    var hits = !words.length ? [] : list.filter(function (x) { return words.every(function (w) { return x.key.indexOf(w) >= 0; }); }).slice(0, 8);
-    var c = this.copy;
+    var qid = input.getAttribute('data-q'), box = this.app.querySelector('[data-sq-results]'), c = this.copy, self = this;
+    var hits = input.value.trim() ? search(this.index(), input.value, 8) : [];
     box.innerHTML = hits.map(function (x) {
-      return '<li><button type="button" class="sq-result-item" data-act="perfume" data-q="' + qi + '" data-kind="' + x.kind + '" data-id="' + esc(x.id) + '">' +
-        '<span class="sq-result-item__name">' + esc(x.name) + '</span><span class="sq-result-item__house">' + esc(x.house) + (x.kind === 'own' ? ' · ' + esc(c.on_our_shelf) : '') + '</span></button></li>';
-    }).join('') + (words.length && !hits.length ? '<li class="sq-noresult">' + esc(c.search_none) + '</li>' : '');
+      var r = x.kind === 'r' ? self.model.refById[x.id] : null;
+      return '<li><button type="button" class="sq-result-item" data-act="perfume" data-q="' + qid + '" data-kind="' + x.kind + '" data-id="' + esc(x.id) + '">' +
+        (r && r.img ? '<img class="sq-result-item__img" src="' + esc(self.refImg(r.id)) + '" alt="" width="40" height="40" loading="lazy">' : '<span class="sq-result-item__img" aria-hidden="true"></span>') +
+        '<span class="sq-result-item__text"><span class="sq-result-item__house">' + esc(x.house) + (x.own ? ' · ' + esc(c.on_our_shelf) : '') + '</span>' +
+        '<span class="sq-result-item__name">' + esc(x.name) + '</span></span></button></li>';
+    }).join('') + (input.value.trim() && !hits.length ? '<li class="sq-noresult">' + esc(c.search_none) + '</li>' : '');
   };
 
-  Quiz.prototype.pick = function (qi, id) {
-    this.state[qi] = findAnswer(this.config.questions[qi], id);
-    this.advance(qi);
+  // ---------------------------------------------------------------- screens
+  Quiz.prototype.render = function (html, focusSel) {
+    this.app.innerHTML = html;
+    if (this.root.getBoundingClientRect().top < 0) this.root.scrollIntoView({ block: 'start' });
+    var f = this.app.querySelector(focusSel || '[data-sq-focus]');
+    if (f && this.started) f.focus({ preventScroll: true });
+    this.started = true;
+  };
+  Quiz.prototype.img = function (a, eager) {
+    var alt = esc(a.img && a.img.alt ? a.img.alt : ''), s600, s900;
+    if (a.img) { s600 = a.img.s; s900 = a.img.l || a.img.s; } else { s600 = cdnSized(a.image, 600); s900 = cdnSized(a.image, 900); }
+    if (!s600) return '<span class="sq-tile__ph" aria-hidden="true"></span>';
+    return '<img src="' + esc(s600) + '" srcset="' + esc(s600) + ' 600w, ' + esc(s900) + ' 900w" sizes="(min-width: 750px) 25vw, 50vw" alt="' + alt + '" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
+  };
+  Quiz.prototype.progress = function (i) {
+    var n = 0, at = 0, self = this;
+    this.qs.forEach(function (q, k) { if (q.sub) return; if (k === i || visible(self.model, self.state, q.id)) { n++; if (k <= i) at = n; } });
+    if (this.qs[i].sub) at = Math.max(at, 1);
+    return '<div class="sq-top"><button type="button" class="sq-back" data-act="back"><span aria-hidden="true">&larr;</span> ' + esc(this.copy.back) + '</button>' +
+      '<p class="sq-step">' + esc(fill(this.copy.step, { n: at, total: n })) + '</p></div>' +
+      '<div class="sq-bar" role="progressbar" aria-valuemin="0" aria-valuemax="' + n + '" aria-valuenow="' + at + '"><span style="width:' + (at / n * 100) + '%"></span></div>';
+  };
+  Quiz.prototype.dnaHtml = function (vec, canon) {
+    var t = this.model.taste, labels = this.copy.families || {};
+    var fams = t.families.map(function (f, i) { return { f: f, v: vec[i] || 0 }; }).filter(function (x) { return x.v > 0.04; })
+      .sort(function (a, b) { return b.v - a.v; }).slice(0, 3);
+    var notes = (canon || []).slice(0, 6).map(function (k) { return noteLabel({ taste: t }, k); }).filter(Boolean);
+    return '<div class="sq-dna">' + (notes.length ? '<p class="sq-dna__notes">' + notes.map(esc).join(' · ') + '</p>' : '') +
+      '<ul class="sq-dna__bars">' + fams.map(function (f) {
+        var pct = Math.round(f.v * 100);
+        return '<li><span class="sq-dna__label">' + esc(labels[f.f] || f.f) + '</span><span class="sq-dna__track"><span style="width:' + pct + '%"></span></span><span class="sq-dna__pct">' + pct + '%</span></li>';
+      }).join('') + '</ul></div>';
   };
 
-  Quiz.prototype.restart = function () {
-    this.state = [];
-    this.shared = false;
-    this.result = null;
-    this.blob = null;
-    this.setUrl(null);
-    this.show(this.nextVisible(-1));
-    publish(this.root, 'quiz_started', { quiz: this.config.id, restart: true });
+  Quiz.prototype.show = function (i, focusSel) {
+    this.step = i;
+    var c = this.copy, self = this;
+    if (i < 0) {
+      this.render('<div class="sq-screen sq-intro">' + (c.intro_kicker ? '<p class="sq-kicker">' + esc(c.intro_kicker) + '</p>' : '') +
+        '<h2 class="sq-title" tabindex="-1" data-sq-focus>' + esc(c.intro_title) + '</h2><p class="sq-lead">' + esc(c.intro_text) + '</p>' +
+        '<button type="button" class="sq-btn" data-act="start">' + esc(c.start) + '</button></div>');
+      return;
+    }
+    var q = this.qs[i], v = this.state[q.id];
+    var head = '<div class="sq-screen sq-q" data-q="' + esc(q.id) + '">' + this.progress(i) +
+      '<h2 class="sq-title" tabindex="-1" data-sq-focus>' + esc(q.title) + '</h2>' + (q.subtitle ? '<p class="sq-lead sq-sub">' + esc(q.subtitle) + '</p>' : '');
+    var body;
+    if (q.type === 'perfume') body = this.perfumeScreen(q);
+    else if (q.type === 'week') body = this.weekScreen(q);
+    else if (q.type === 'taboo') body = this.tabooScreen(q);
+    else {
+      var multi = q.type === 'multi' || q.type === 'families';
+      var chosen = multi ? (v || []) : (v ? [v] : []);
+      body = '<ul class="sq-tiles" data-count="' + q.answers.length + '"' + (multi ? ' data-multi' : '') + '>' + q.answers.map(function (a) {
+        return '<li><button type="button" class="sq-tile" data-act="' + (multi ? 'toggle' : 'answer') + '" data-q="' + esc(q.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + (chosen.indexOf(a.id) >= 0) + '">' +
+          '<span class="sq-tile__img">' + self.img(a, i < 2) + '</span><span class="sq-tile__label">' + esc(a.label) + '</span>' +
+          (a.hint ? '<span class="sq-tile__hint">' + esc(a.hint) + '</span>' : '') + '</button></li>';
+      }).join('') + '</ul>' + (multi ? this.nextBtn(q, chosen.length, true) : '');
+    }
+    this.render(head + body + '</div>', focusSel);
+  };
+  Quiz.prototype.nextBtn = function (q, n, counter) {
+    return '<div class="sq-next">' + (counter && q.max ? '<p class="sq-step" data-sq-count>' + esc(fill(this.copy.multi_count, { n: n, max: q.max })) + '</p>' : '') +
+      '<button type="button" class="sq-btn" data-act="next" data-q="' + esc(q.id) + '"' + (n < (q.min || 0) ? ' disabled' : '') + '>' + esc(this.copy.next) + '</button></div>';
+  };
+  Quiz.prototype.perfumeScreen = function (q) {
+    var c = this.copy, self = this, cur = Array.isArray(this.state[q.id]) ? this.state[q.id] : [];
+    var keys = cur.map(function (x) { return x.k + '~' + x.id; });
+    var pop = (this.model.taste.popular || []).map(function (id) { return self.model.refById[id]; }).filter(Boolean);
+    var html = '<ul class="sq-pop" aria-label="' + esc(c.popular_title) + '">' + pop.map(function (r) {
+      return '<li><button type="button" class="sq-pop__tile" data-act="perfume" data-q="' + esc(q.id) + '" data-kind="r" data-id="' + esc(r.id) + '" aria-pressed="' + (keys.indexOf('r~' + r.id) >= 0) + '">' +
+        (r.img ? '<img src="' + esc(self.refImg(r.id)) + '" alt="" width="600" height="600" loading="eager" decoding="async">' : '<span class="sq-pop__ph" aria-hidden="true">' + esc(r.name.charAt(0)) + '</span>') +
+        '<span class="sq-pop__house">' + esc(r.house) + '</span><span class="sq-pop__name">' + esc(r.name) + '</span></button></li>';
+    }).join('') + '</ul>' +
+      '<div class="sq-pick"><label class="sq-search"><span class="sq-search__label">' + esc(c.search_label) + '</span>' +
+      '<input type="search" data-sq-search data-q="' + esc(q.id) + '" placeholder="' + esc(c.search_placeholder) + '" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="sq-results"></label>' +
+      '<ul class="sq-results" id="sq-results" data-sq-results></ul></div>';
+    if (cur.length) {
+      html += '<p class="sq-step">' + esc(fill(c.picked_count, { n: cur.length, max: q.max || 2 })) + '</p><ul class="sq-inside">' + cur.map(function (v) {
+        var pf = perfumeOf(self.model, v);
+        return '<li class="sq-ref"><p class="sq-kicker">' + esc(fill(c.dna_title, { name: pf.name })) + '</p><p class="sq-ref__house">' + esc(pf.house) + '</p>' +
+          (pf.vec ? self.dnaHtml(pf.vec, pf.canon) : '<p class="sq-note">' + esc(fill(c.no_notes, { name: pf.name })) + '</p>') + '<button type="button" class="sq-restart" data-act="unpick" data-q="' + esc(q.id) + '" data-key="' + esc(pf.key) + '">' + esc(c.remove) + '</button></li>';
+      }).join('') + '</ul>';
+    }
+    html += '<div class="sq-next"><button type="button" class="sq-btn" data-act="next" data-q="' + esc(q.id) + '"' + (cur.length ? '' : ' disabled') + '>' + esc(c.next) + '</button>' +
+      '<button type="button" class="sq-btn sq-btn--line" data-act="no-ref" data-q="' + esc(q.id) + '">' + esc(q.none_label) + '</button></div>';
+    return html;
+  };
+  Quiz.prototype.tabooScreen = function (q) {
+    var cur = this.state[q.id] || [];
+    var chip = function (a) {
+      return '<li><button type="button" class="sq-chip' + (a.toggle ? ' sq-chip--toggle' : '') + '" data-act="toggle" data-q="' + esc(q.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + (cur.indexOf(a.id) >= 0) + '">' +
+        '<span>' + esc(a.label) + '</span>' + (a.hint ? '<small>' + esc(a.hint) + '</small>' : '') + '</button></li>';
+    };
+    return '<ul class="sq-chips">' + q.answers.filter(function (a) { return !a.toggle && !a.exclusive; }).map(chip).join('') + '</ul>' +
+      '<p class="sq-pop-title">' + esc(q.toggles_title) + '</p><ul class="sq-chips">' + q.answers.filter(function (a) { return a.toggle; }).map(chip).join('') + '</ul>' +
+      '<ul class="sq-chips">' + q.answers.filter(function (a) { return a.exclusive; }).map(chip).join('') + '</ul>' + this.nextBtn(q, cur.length, false);
+  };
+  Quiz.prototype.weekScreen = function (q) {
+    var cur = this.state[q.id] || q.rows.map(function () { return 0; });
+    this.state[q.id] = cur;
+    return '<ul class="sq-week">' + q.rows.map(function (r, i) {
+      return '<li class="sq-week__row"><span class="sq-week__label" id="sq-week-' + i + '">' + esc(r.label) + '</span><span class="sq-week__levels" role="group" aria-labelledby="sq-week-' + i + '">' +
+        q.levels.map(function (lv, k) {
+          return '<button type="button" class="sq-level" data-act="level" data-q="' + esc(q.id) + '" data-row="' + i + '" data-lv="' + k + '" aria-pressed="' + (cur[i] === k) + '">' + esc(lv) + '</button>';
+        }).join('') + '</span></li>';
+    }).join('') + '</ul>' + this.nextBtn(q, 1, false);
+  };
+
+  // ---------------------------------------------------------------- live inventory
+  Quiz.prototype.refreshLive = function (products) {
+    var self = this, queue = products.filter(function (p) { return !self.live[p.handle]; }), running = [];
+    function one(p) {
+      return fetch(self.cartRoot + 'products/' + encodeURIComponent(p.handle) + '.js', { credentials: 'same-origin' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (!d || !d.variants) return;
+          var av = d.variants.filter(function (v) { return v.available; });
+          p.available = av.length > 0;
+          var cheapest = (av.length ? av : d.variants).slice().sort(function (a, b) { return a.price - b.price; })[0];
+          p.variant = cheapest.id;
+          p.price = cheapest.price / 100;
+          self.live[p.handle] = true;
+        }).catch(function () { /* keep catalog values */ });
+    }
+    function next() { var p = queue.shift(); return p ? one(p).then(next) : null; }
+    for (var k = 0; k < 4; k++) running.push(next());
+    return Promise.race([Promise.all(running), new Promise(function (res) { setTimeout(res, 4000); })]);
+  };
+
+  Quiz.prototype.finish = function (fresh) {
+    var self = this, c = this.copy, S = this.config.scoring;
+    this.step = this.qs.length;
+    this.render('<div class="sq-screen sq-loading"><p class="sq-lead" tabindex="-1" data-sq-focus>' + esc(c.loading) + '</p><span class="sq-spinner" aria-hidden="true"></span></div>');
+    var first = wardrobe(this.model, this.state, { candidates: S.live_check });
+    this.refreshLive(first.candidates.concat(this.model.sets)).then(function () {
+      var res = wardrobe(self.model, self.state);
+      self.result = res;
+      self.why = whyLines(self.model, res, c);
+      self.setUrl(encodeCode(self.model, self.state));
+      if (fresh) {
+        publish(self.root, 'quiz_completed', { quiz: self.config.id, answers: encodeCode(self.model, self.state), persona: res.persona && res.persona.key,
+          slots: res.rows.map(function (r) { return r.slot.id; }), products: res.rows.filter(function (r) { return r.pick; }).map(function (r) { return r.pick.p.handle; }) });
+      }
+      self.showResult();
+    });
   };
 
   Quiz.prototype.setUrl = function (code) {
@@ -544,281 +941,57 @@
       global.history.replaceState(global.history.state, '', u.toString());
     } catch (e) { /* ignore */ }
   };
-
+  // the shared link reopens the same result; a theme preview id stays so the link works inside the preview
   Quiz.prototype.shareUrl = function () {
-    var u = new URL(global.location.href);
+    var u = new URL(global.location.href), keep = {};
+    KEEP_PARAMS.forEach(function (k) { if (u.searchParams.get(k)) keep[k] = u.searchParams.get(k); });
     u.hash = '';
     u.search = '';
+    Object.keys(keep).forEach(function (k) { u.searchParams.set(k, keep[k]); });
     u.searchParams.set(PARAM, encodeCode(this.model, this.state));
     return u.toString();
   };
 
-  Quiz.prototype.render = function (html, focusSel) {
-    this.app.innerHTML = html;
-    var top = this.root.getBoundingClientRect().top;
-    if (top < 0) this.root.scrollIntoView({ block: 'start' });
-    var f = this.app.querySelector(focusSel || '[data-sq-focus]');
-    if (f && this.started) f.focus({ preventScroll: true });
-    this.started = true;
-  };
-
-  Quiz.prototype.img = function (a, eager) {
-    var alt = esc(a.img && a.img.alt ? a.img.alt : '');
-    var s600, s900;
-    if (a.img) { s600 = a.img.s; s900 = a.img.l || a.img.s; } else { s600 = cdnSized(a.image, 600); s900 = cdnSized(a.image, 900); }
-    if (!s600) return '<span class="sq-tile__ph" aria-hidden="true"></span>';
-    return '<img src="' + esc(s600) + '" srcset="' + esc(s600) + ' 600w, ' + esc(s900) + ' 900w" sizes="(min-width: 750px) 25vw, 50vw" alt="' + alt + '" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
-  };
-
-  Quiz.prototype.progress = function (i) {
-    // steps shown = questions visible with the answers so far (later branches assumed as-is)
-    var n = 0, at = 0;
-    for (var k = 0; k < this.config.questions.length; k++) {
-      if (k === i || isVisible(this.model, this.state, k)) { n++; if (k <= i) at = n; }
-    }
-    return '<div class="sq-top">' +
-      '<button type="button" class="sq-back" data-act="back"><span aria-hidden="true">&larr;</span> ' + esc(this.copy.back) + '</button>' +
-      '<p class="sq-step">' + esc(fill(this.copy.step, { n: at, total: n })) + '</p></div>' +
-      '<div class="sq-bar" role="progressbar" aria-valuemin="0" aria-valuemax="' + n + '" aria-valuenow="' + at + '"><span style="width:' + (at / n * 100) + '%"></span></div>';
-  };
-
-  // "what's inside": the canonical notes and top families of a taste vector
-  Quiz.prototype.dna = function (vec, canon, max) {
-    var t = this.model.taste, labels = this.copy.families || {};
-    var fams = t.families.map(function (f, i) { return { f: f, v: vec[i] || 0 }; })
-      .filter(function (x) { return x.v > 0.04; }).sort(function (a, b) { return b.v - a.v; }).slice(0, max || 3);
-    var notes = (canon || []).slice(0, 5).map(function (c) { return t.canon[c] ? t.canon[c][0] : ''; }).filter(Boolean);
-    return {
-      notes: notes,
-      families: fams.map(function (x) { return { key: x.f, label: labels[x.f] || x.f, pct: Math.round(x.v * 100) }; })
-    };
-  };
-  Quiz.prototype.dnaHtml = function (d) {
-    return '<div class="sq-dna">' +
-      (d.notes.length ? '<p class="sq-dna__notes">' + d.notes.map(esc).join(' · ') + '</p>' : '') +
-      '<ul class="sq-dna__bars">' + d.families.map(function (f) {
-        return '<li><span class="sq-dna__label">' + esc(f.label) + '</span><span class="sq-dna__track"><span style="width:' + f.pct + '%"></span></span><span class="sq-dna__pct">' + f.pct + '%</span></li>';
-      }).join('') + '</ul></div>';
-  };
-
-  Quiz.prototype.show = function (i) {
-    this.step = i;
-    var c = this.copy, self = this;
-    if (i < 0) {
-      this.render('<div class="sq-screen sq-intro">' +
-        (c.intro_kicker ? '<p class="sq-kicker">' + esc(c.intro_kicker) + '</p>' : '') +
-        '<h2 class="sq-title" tabindex="-1" data-sq-focus>' + esc(c.intro_title) + '</h2>' +
-        '<p class="sq-lead">' + esc(c.intro_text) + '</p>' +
-        '<button type="button" class="sq-btn" data-act="start">' + esc(c.start) + '</button></div>');
-      return;
-    }
-    if (i >= this.config.questions.length) { this.finish(true); return; }
-    var q = this.config.questions[i], v = this.state[i];
-    var head = '<div class="sq-screen sq-q" data-q="' + esc(q.id) + '">' + this.progress(i) +
-      '<h2 class="sq-title" tabindex="-1" data-sq-focus>' + esc(q.title) + '</h2>' +
-      (q.subtitle ? '<p class="sq-lead sq-sub">' + esc(q.subtitle) + '</p>' : '');
-    if (q.type === 'perfume') { this.render(head + this.perfumeScreen(q, i) + '</div>'); return; }
-    // show the DNA of the named perfume above the "similar or complement" choice
-    var dna = '';
-    if (q.show_dna) {
-      var pf = perfumeOf(this.model, this.state[qIndex(this.config, q.show_dna)]);
-      if (pf) dna = '<div class="sq-ref"><p class="sq-kicker">' + esc(fill(c.dna_title, { name: pf.name })) + '</p><p class="sq-ref__house">' + esc(pf.house) + '</p>' + this.dnaHtml(this.dna(pf.vec, pf.canon)) + '</div>';
-    }
-    var multi = q.type === 'multi';
-    var chosen = multi ? (Array.isArray(v) ? v : []) : (v && v.id ? [v] : []);
-    var tiles = q.answers.map(function (a) {
-      return '<li><button type="button" class="sq-tile" data-act="' + (multi ? 'toggle' : 'answer') + '" data-q="' + i + '" data-a="' + esc(a.id) + '" aria-pressed="' + (chosen.indexOf(a) >= 0) + '">' +
-        '<span class="sq-tile__img">' + self.img(a, i === self.nextVisible(-1)) + '</span>' +
-        '<span class="sq-tile__label">' + esc(a.label) + '</span>' + (a.hint ? '<span class="sq-tile__hint">' + esc(a.hint) + '</span>' : '') + '</button></li>';
-    }).join('');
-    var foot = multi ? '<div class="sq-next"><p class="sq-step" data-sq-count>' + esc(fill(c.multi_count, { n: chosen.length, max: q.max || 3 })) + '</p>' +
-      '<button type="button" class="sq-btn" data-act="next" data-q="' + i + '"' + (chosen.length < (q.min || 1) ? ' disabled' : '') + '>' + esc(c.next) + '</button></div>' : '';
-    this.render(head + dna + '<ul class="sq-tiles" data-count="' + q.answers.length + '"' + (multi ? ' data-multi' : '') + '>' + tiles + '</ul>' + foot + '</div>');
-  };
-
-  Quiz.prototype.perfumeScreen = function (q, i) {
-    var c = this.copy, self = this, v = this.state[i];
-    var pop = this.searchIndex().filter(function (x) {
-      if (x.kind === 'own') return (q.popular_own || []).indexOf(x.id) >= 0;
-      var r = self.model.refs.filter(function (y) { return y.id === x.id; })[0];
-      return r && r.popular;
-    });
-    var cur = v && v !== 'skip' ? v.id : null;
-    return '<div class="sq-pick">' +
-      '<label class="sq-search"><span class="sq-search__label">' + esc(c.search_label) + '</span>' +
-      '<input type="search" id="sq-search-' + i + '" data-sq-search data-q="' + i + '" placeholder="' + esc(c.search_placeholder) + '" autocomplete="off" spellcheck="false"></label>' +
-      '<ul class="sq-results" data-sq-results></ul>' +
-      '<p class="sq-pop-title">' + esc(c.popular_title) + '</p>' +
-      '<ul class="sq-chips">' + pop.map(function (x) {
-        return '<li><button type="button" class="sq-chip" data-act="perfume" data-q="' + i + '" data-kind="' + x.kind + '" data-id="' + esc(x.id) + '" aria-pressed="' + (cur === x.id) + '">' +
-          '<span>' + esc(x.name) + '</span><small>' + esc(x.house) + '</small></button></li>';
-      }).join('') + '</ul>' +
-      '<button type="button" class="sq-restart" data-act="skip" data-q="' + i + '">' + esc(q.skip_label || c.skip) + '</button></div>';
-  };
-
-  // ------------------------------------------------------------------ live inventory
-  // Re-check stock and the cheapest (sample) variant of the leading candidates from the storefront.
-  Quiz.prototype.refreshLive = function (products) {
-    var self = this;
-    var todo = products.filter(function (p) { return !self.live[p.handle]; });
-    var queue = todo.slice(), running = [];
-    function one(p) {
-      return fetch(self.cartRoot + 'products/' + encodeURIComponent(p.handle) + '.js', { credentials: 'same-origin' })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (d) {
-          if (!d || !d.variants) return;
-          var av = d.variants.filter(function (v) { return v.available; });
-          p.available = av.length > 0;
-          var pool = av.length ? av : d.variants;
-          var cheapest = pool.slice().sort(function (a, b) { return a.price - b.price; })[0];
-          p.variant = cheapest.id;
-          p.price = cheapest.price / 100;
-          self.live[p.handle] = true;
-        })
-        .catch(function () { /* keep catalog values */ });
-    }
-    function next() { var p = queue.shift(); return p ? one(p).then(next) : null; }
-    for (var k = 0; k < 4; k++) running.push(next());
-    var timeout = new Promise(function (res) { setTimeout(res, 4000); });
-    return Promise.race([Promise.all(running), timeout]);
-  };
-
-  Quiz.prototype.finish = function (fresh) {
-    var self = this, c = this.copy, S = this.config.scoring;
-    this.step = this.config.questions.length;
-    this.render('<div class="sq-screen sq-loading"><p class="sq-lead" tabindex="-1" data-sq-focus>' + esc(c.loading) + '</p><span class="sq-spinner" aria-hidden="true"></span></div>');
-    var answers = flatten(this.state), ctx = tasteContext(this.model, this.state);
-    this.ctx = ctx;
-    var first = recommend(this.model, answers, { candidates: S.live_check, taste: ctx });
-    var check = first.candidates.concat(this.model.sets);
-    if (first.own) check.push(first.own);
-    var axes = this.config.wardrobes || [];
-    axes.forEach(function (w) { wardrobe(self.model, answers, w.question, { taste: ctx }).forEach(function (r) { check.push(r.p); }); });
-    this.refreshLive(check).then(function () {
-      var res = recommend(self.model, answers, { taste: ctx });
-      res.wardrobes = {};
-      axes.forEach(function (w) { res.wardrobes[w.id] = wardrobe(self.model, answers, w.question, { taste: ctx }); });
-      self.result = res;
-      self.setUrl(encodeCode(self.model, self.state));
-      if (fresh) {
-        var ans = {};
-        self.config.questions.forEach(function (q, i) {
-          var v = self.state[i];
-          if (v == null) return;
-          ans[q.id] = v === 'skip' ? 'skip' : Array.isArray(v) ? v.map(function (a) { return a.id; }).join('+') : q.type === 'perfume' ? v.id : v.id;
-        });
-        publish(self.root, 'quiz_completed', { quiz: self.config.id, answers: ans, persona: res.persona && res.persona.key, taste_mode: ctx ? ctx.mode : null, products: res.items.map(function (r) { return r.p.handle; }) });
-      }
-      self.showResult();
-    });
-  };
-
-  // one line from the notes ("Shares the vanilla and tonka of your Black Opium.") ...
-  Quiz.prototype.whyTaste = function (r) {
-    var ctx = this.ctx, c = this.copy, t = this.model.taste;
-    if (!ctx || !t) return '';
-    var notes = (r.shared || []).slice(0, 3).map(function (k) { return t.canon[k] ? t.canon[k][0] : ''; }).filter(Boolean);
-    if (ctx.mode === 'families') {
-      var labels = c.families || {}, mine = [];
-      t.families.forEach(function (f, i) { if (ctx.families.indexOf(f) >= 0 && r.p.vec && r.p.vec[i] >= 0.15) mine.push((labels[f] || f).toLowerCase()); });
-      return mine.length ? fill(c.why_families, { list: joinList(mine.slice(0, 2), c.and) }) : '';
-    }
-    if (!notes.length) return ctx.mode === 'complement' ? fill(c.why_complement_free, { name: ctx.label }) : '';
-    var top = this.dna(r.p.vec || [], [], 1).families[0];
-    return fill(ctx.mode === 'complement' ? c.why_complement : c.why_similar, {
-      notes: joinList(notes, c.and), name: ctx.label, family: top ? top.label.toLowerCase() : ''
-    });
-  };
-  // ... and one from the answers ("Picked for evenings out and cold air.")
-  Quiz.prototype.why = function (r) {
-    var order = this.config.why_order || this.config.questions.map(function (q) { return q.id; });
-    var parts = [];
-    order.forEach(function (qid) {
-      r.matched.forEach(function (a) { if (a.q === qid && a.why && parts.indexOf(a.why) < 0) parts.push(a.why); });
-    });
-    parts = parts.slice(0, this.ctx ? 2 : 3);
-    return parts.length ? fill(this.copy.why, { list: joinList(parts, this.copy.and) }) : '';
-  };
-
-  // two or three key notes for a card: from the catalog row if present, else from the taste file
-  Quiz.prototype.cardNotes = function (p) {
-    if (p.notes) return p.notes;
-    var t = this.model.taste;
-    return t && p.canon ? p.canon.slice(0, 3).map(function (k) { return t.canon[k] ? t.canon[k][0] : ''; }).filter(Boolean).join(', ') : '';
-  };
-
-  Quiz.prototype.addAllBtn = function (list, rows) {
-    var total = rows.reduce(function (s, r) { return s + r.p.price; }, 0);
-    var label = list === 'matches' ? this.copy.add_all : fill(this.copy.add_all_shelves, { n: rows.length });
-    return '<div class="sq-actions"><button type="button" class="sq-btn" data-act="add-all" data-list="' + list + '">' + esc(label) + ' · ' + esc(this.fmt.format(total)) + '</button></div>';
-  };
-
-  Quiz.prototype.card = function (r, i, head) {
-    var p = r.p, c = this.copy;
-    return '<li class="sq-card' + (head ? ' sq-card--shelf' : '') + (r.mine ? ' is-mine' : '') + '">' + (head || '') +
-      '<a class="sq-card__img" href="' + esc(this.cartRoot + 'products/' + p.handle) + '" tabindex="-1" aria-hidden="true">' +
-      (p.image ? '<img src="' + esc(cdnSized(p.image, 600)) + '" srcset="' + esc(cdnSized(p.image, 600)) + ' 600w, ' + esc(cdnSized(p.image, 900)) + ' 900w" sizes="(min-width: 750px) 20vw, 30vw" alt="" width="600" height="600" loading="' + (i < 2 ? 'eager' : 'lazy') + '" decoding="async">' : '') + '</a>' +
-      '<div class="sq-card__body">' +
-      '<p class="sq-card__house">' + esc(p.house) + '</p>' +
-      '<h3 class="sq-card__name"><a href="' + esc(this.cartRoot + 'products/' + p.handle) + '">' + esc(p.title) + '</a></h3>' +
-      (this.whyTaste(r) ? '<p class="sq-card__why sq-card__why--taste">' + esc(this.whyTaste(r)) + '</p>' : '') +
-      '<p class="sq-card__why">' + esc(this.why(r)) + '</p>' +
-      (this.cardNotes(p) ? '<p class="sq-card__notes">' + esc(this.cardNotes(p)) + '</p>' : '') +
+  Quiz.prototype.productLink = function (p) { return this.cartRoot + 'products/' + p.handle; };
+  Quiz.prototype.card = function (row, i) {
+    var r = row.pick, p = r.p, c = this.copy, why = this.why[i], shares = sharesLine(this.model, r, c);
+    var alt = row.alt ? row.alt.p : null;
+    return '<li class="sq-card sq-card--slot"><div class="sq-shelf__head"><p class="sq-shelf__name">' + esc(row.slot.label) + '</p>' +
+      (row.slot.text ? '<p class="sq-shelf__text">' + esc(row.slot.text) + '</p>' : '') + '</div>' +
+      '<a class="sq-card__img" href="' + esc(this.productLink(p)) + '" tabindex="-1" aria-hidden="true">' +
+      (p.image ? '<img src="' + esc(cdnSized(p.image, 600)) + '" srcset="' + esc(cdnSized(p.image, 600)) + ' 600w, ' + esc(cdnSized(p.image, 900)) + ' 900w" sizes="(min-width: 750px) 20vw, 40vw" alt="" width="600" height="600" loading="' + (i < 2 ? 'eager' : 'lazy') + '" decoding="async">' : '') + '</a>' +
+      '<div class="sq-card__body"><p class="sq-card__house">' + esc(p.house) + '</p>' +
+      '<h3 class="sq-card__name"><a href="' + esc(this.productLink(p)) + '">' + esc(p.title) + '</a></h3>' +
+      (shares ? '<p class="sq-card__why sq-card__why--taste" data-sq-shares>' + esc(shares) + '</p>' : '') +
+      (why ? '<p class="sq-card__why" data-sq-why>' + esc(why) + '</p>' : '') +
+      '<p class="sq-card__wear">' + esc(howToWear(this.model, row, c)) + '</p>' +
       '<button type="button" class="sq-btn sq-btn--line" data-act="add" data-variant="' + esc(p.variant) + '" data-handle="' + esc(p.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(p.price)) + '</button>' +
+      (alt ? '<details class="sq-alt"><summary>' + esc(c.also_fits) + '</summary><p><a href="' + esc(this.productLink(alt)) + '">' + esc(alt.house) + ' · ' + esc(alt.title) + '</a></p>' +
+        '<button type="button" class="sq-btn sq-btn--line" data-act="add" data-variant="' + esc(alt.variant) + '" data-handle="' + esc(alt.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(alt.price)) + '</button></details>' : '') +
       '</div></li>';
   };
-
   Quiz.prototype.showResult = function () {
     var self = this, c = this.copy, res = this.result, per = res.persona || { name: '', line: '' };
+    var rows = res.rows.filter(function (r) { return r.pick; });
     var html = '<div class="sq-screen sq-result">';
     if (this.shared) html += '<div class="sq-shared"><p>' + esc(c.shared_note) + '</p><button type="button" class="sq-btn sq-btn--line" data-act="restart">' + esc(c.shared_cta) + '</button></div>';
-    html += '<p class="sq-kicker">' + esc(c.result_kicker) + '</p>' +
-      '<h2 class="sq-title sq-persona" tabindex="-1" data-sq-focus>' + esc(per.name) + '</h2>' +
-      '<p class="sq-lead">' + esc(per.line) + '</p>';
-    if (res.fallback) html += '<p class="sq-note">' + esc(c.fallback_note) + '</p>';
-    var ctx = this.ctx;
-    if (ctx && ctx.mode !== 'families') {
-      html += '<div class="sq-ref sq-ref--result"><p class="sq-kicker">' + esc(fill(ctx.mode === 'complement' ? c.result_from_complement : c.result_from_similar, { name: ctx.label })) + '</p>' +
-        this.dnaHtml(this.dna(ctx.vec, ctx.canon)) + '</div>';
-    } else if (ctx) {
-      html += '<div class="sq-ref sq-ref--result"><p class="sq-kicker">' + esc(c.result_from_families) + '</p>' + this.dnaHtml(this.dna(decodeVec(ctx.vec.join('')), [], 3)) + '</div>';
+    html += '<p class="sq-kicker">' + esc(c.result_kicker) + '</p><h2 class="sq-title sq-persona" tabindex="-1" data-sq-focus>' + esc(per.name) + '</h2><p class="sq-lead">' + esc(per.line) + '</p>';
+    if (res.profile.length) {
+      html += '<div class="sq-ref sq-ref--result"><p class="sq-kicker">' + esc(c.profile_title) + '</p><ul class="sq-dna__bars">' + res.profile.map(function (f) {
+        return '<li><span class="sq-dna__label">' + esc((c.families || {})[f.family] || f.family) + '</span><span class="sq-dna__track"><span style="width:' + f.pct + '%"></span></span><span class="sq-dna__pct">' + f.pct + '%</span></li>';
+      }).join('') + '</ul></div>';
     }
-    if (res.own) {
-      var o = res.own;
-      html += '<aside class="sq-set sq-own"><a class="sq-set__img" href="' + esc(this.cartRoot + 'products/' + o.handle) + '" tabindex="-1" aria-hidden="true">' +
-        (o.image ? '<img src="' + esc(cdnSized(o.image, 600)) + '" alt="" width="600" height="600" loading="lazy" decoding="async">' : '') + '</a>' +
-        '<div><p class="sq-kicker">' + esc(c.own_kicker) + '</p><h3 class="sq-card__name"><a href="' + esc(this.cartRoot + 'products/' + o.handle) + '">' + esc(o.title) + '</a></h3>' +
-        '<p class="sq-card__why">' + esc(o.house) + '</p>' +
-        '<button type="button" class="sq-btn sq-btn--line" data-act="add" data-variant="' + esc(o.variant) + '" data-handle="' + esc(o.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(o.price)) + '</button></div></aside>';
-    }
-    var axes = (this.config.wardrobes || []).filter(function (w) { return (res.wardrobes[w.id] || []).length; });
-    var tabs = [{ id: 'matches', label: c.tab_matches || c.result_list_title }].concat(axes);
-    if (axes.length) {
-      html += '<div class="sq-tabs" role="tablist" aria-label="' + esc(c.tabs_label || '') + '">' + tabs.map(function (t, i) {
-        return '<button type="button" class="sq-tab" role="tab" id="sq-tab-' + t.id + '" aria-controls="sq-panel-' + t.id + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" data-act="tab" data-tab="' + t.id + '">' + esc(t.label) + '</button>';
-      }).join('') + '</div>';
-    }
-    html += '<div class="sq-panel" role="tabpanel" id="sq-panel-matches" aria-labelledby="sq-tab-matches" data-panel="matches">' +
-      '<h3 class="sq-subtitle">' + esc(ctx && ctx.mode === 'complement' ? c.result_list_title_complement : c.result_list_title) + '</h3>' +
-      '<ol class="sq-cards">' + res.items.map(function (r, i) { return self.card(r, i); }).join('') + '</ol>' +
-      this.addAllBtn('matches', res.items) + '</div>';
-    axes.forEach(function (w) {
-      var list = res.wardrobes[w.id];
-      html += '<div class="sq-panel" role="tabpanel" id="sq-panel-' + w.id + '" aria-labelledby="sq-tab-' + w.id + '" data-panel="' + w.id + '" hidden>' +
-        (w.intro ? '<p class="sq-lead sq-panel__intro">' + esc(w.intro) + '</p>' : '') +
-        '<ol class="sq-cards sq-shelves">' + list.map(function (r, i) {
-          return self.card(r, i + 2, '<div class="sq-shelf__head"><p class="sq-shelf__name">' + esc(r.shelf.label) + (r.mine ? ' <span class="sq-shelf__mine">' + esc(c.shelf_mine) + '</span>' : '') + '</p>' +
-            (r.shelf.shelf_text ? '<p class="sq-shelf__text">' + esc(r.shelf.shelf_text) + '</p>' : '') + '</div>');
-        }).join('') + '</ol>' + self.addAllBtn(w.id, list) + '</div>';
-    });
+    html += '<h3 class="sq-subtitle">' + esc(c.result_list_title) + '</h3><ol class="sq-cards sq-shelves">' +
+      res.rows.map(function (r, i) { return r.pick ? self.card(r, i) : ''; }).join('') + '</ol>';
+    var total = rows.reduce(function (s, r) { return s + r.pick.p.price; }, 0);
+    if (rows.length > 1) html += '<div class="sq-actions"><button type="button" class="sq-btn" data-act="add-all">' + esc(fill(c.add_all, { n: rows.length })) + ' · ' + esc(this.fmt.format(total)) + '</button></div>';
     html += '<p class="sq-msg" role="status" data-sq-msg></p>';
     if (res.set) {
       var s = res.set.p;
-      html += '<aside class="sq-set"><a class="sq-set__img" href="' + esc(this.cartRoot + 'products/' + s.handle) + '" tabindex="-1" aria-hidden="true">' +
+      html += '<aside class="sq-set"><a class="sq-set__img" href="' + esc(this.productLink(s)) + '" tabindex="-1" aria-hidden="true">' +
         (s.image ? '<img src="' + esc(cdnSized(s.image, 600)) + '" alt="" width="600" height="600" loading="lazy" decoding="async">' : '') + '</a>' +
-        '<div><p class="sq-kicker">' + esc(c.set_kicker) + '</p><h3 class="sq-card__name"><a href="' + esc(this.cartRoot + 'products/' + s.handle) + '">' + esc(s.title) + '</a></h3>' +
-        '<p class="sq-card__why">' + esc(c.set_text) + '</p>' +
-        '<button type="button" class="sq-btn sq-btn--line" data-act="add-set" data-variant="' + esc(s.variant) + '" data-handle="' + esc(s.handle) + '">' + esc(c.set_cta) + ' · ' + esc(this.fmt.format(s.price)) + '</button></div></aside>';
+        '<div><p class="sq-kicker">' + esc(c.set_kicker) + '</p><h3 class="sq-card__name"><a href="' + esc(this.productLink(s)) + '">' + esc(s.title) + '</a></h3>' +
+        '<p class="sq-card__why">' + esc(c.set_text) + '</p><button type="button" class="sq-btn sq-btn--line" data-act="add-set" data-variant="' + esc(s.variant) + '" data-handle="' + esc(s.handle) + '">' + esc(c.set_cta) + ' · ' + esc(this.fmt.format(s.price)) + '</button></div></aside>';
     }
     html += '<div class="sq-share"><button type="button" class="sq-btn sq-btn--line" data-act="share-open" aria-expanded="false">' + esc(c.share_title) + '</button>' +
       '<div class="sq-share__panel" hidden data-sq-share><img class="sq-share__preview" alt="" data-sq-preview>' +
@@ -829,15 +1002,12 @@
     this.render(html);
   };
 
-  // ------------------------------------------------------------------ cart
+  // ---------------------------------------------------------------- cart
   Quiz.prototype.post = function (items) {
     return fetch(this.cartRoot + 'cart/add.js', {
-      method: 'POST', credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ items: items })
+      method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ items: items })
     }).then(function (r) { if (!r.ok) throw new Error('cart ' + r.status); return r.json(); });
   };
-
   Quiz.prototype.updateCounters = function () {
     var cc = this.config.cart || {}, self = this;
     if (!cc.count_selector && !cc.total_selector) return;
@@ -849,178 +1019,145 @@
       }
     }).catch(function () {});
   };
-
   Quiz.prototype.openCart = function () {
-    var cc = this.config.cart || {};
-    var opener = cc.mode === 'drawer' && cc.open_selector && document.querySelector(cc.open_selector);
+    var cc = this.config.cart || {}, opener = cc.mode === 'drawer' && cc.open_selector && document.querySelector(cc.open_selector);
     if (opener) { this.updateCounters(); opener.click(); } else global.location.href = this.cartRoot + 'cart';
   };
-
   Quiz.prototype.busy = function (btn, on) {
     if (on) { btn.setAttribute('data-label', btn.innerHTML); btn.textContent = this.copy.adding; btn.disabled = true; }
     else { btn.innerHTML = btn.getAttribute('data-label'); btn.disabled = false; }
   };
-
-  Quiz.prototype.msg = function (text) {
-    var m = this.app.querySelector('[data-sq-msg]');
-    if (m) m.textContent = text || '';
-  };
-
+  Quiz.prototype.msg = function (text) { var m = this.app.querySelector('[data-sq-msg]'); if (m) m.textContent = text || ''; };
   Quiz.prototype.addOne = function (btn, mode) {
     var self = this, id = +btn.getAttribute('data-variant'), handle = btn.getAttribute('data-handle');
     this.busy(btn, true);
     this.post([{ id: id, quantity: 1 }]).then(function () {
-      btn.disabled = false;
       btn.outerHTML = '<a class="sq-btn sq-btn--done" href="' + esc(self.cartRoot + 'cart') + '"><span aria-hidden="true">&#10003;</span> ' + esc(self.copy.added) + ' · ' + esc(self.copy.view_cart) + '</a>';
       self.updateCounters();
       publish(self.root, 'quiz_add_to_cart', { quiz: self.config.id, mode: mode || 'single', items: [{ variant_id: id, handle: handle }] });
     }).catch(function () { self.busy(btn, false); self.msg(self.copy.add_error); });
   };
-
-  Quiz.prototype.addSet = function (btn) { this.addOne(btn, 'set'); };
-
-  Quiz.prototype.tab = function (id, focus) {
-    this.app.querySelectorAll('[data-act=tab]').forEach(function (b) {
-      var on = b.getAttribute('data-tab') === id;
-      b.setAttribute('aria-selected', String(on));
-      b.tabIndex = on ? 0 : -1;
-      if (on && focus) b.focus();
-    });
-    this.app.querySelectorAll('[data-panel]').forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== id; });
-    publish(this.root, 'quiz_tab', { quiz: this.config.id, tab: id });
-  };
-
   Quiz.prototype.addAll = function (btn) {
-    var self = this, list = btn.getAttribute('data-list') || 'matches';
-    var rows = list === 'matches' ? this.result.items : (this.result.wardrobes[list] || []);
-    var items = rows.map(function (r) { return { id: r.p.variant, quantity: 1 }; });
+    var self = this, rows = this.result.rows.filter(function (r) { return r.pick; });
     this.busy(btn, true);
     this.msg('');
-    this.post(items).then(function () {
-      publish(self.root, 'quiz_add_to_cart', { quiz: self.config.id, mode: 'all', list: list, items: rows.map(function (r) { return { variant_id: r.p.variant, handle: r.p.handle }; }) });
+    this.post(rows.map(function (r) { return { id: r.pick.p.variant, quantity: 1 }; })).then(function () {
+      publish(self.root, 'quiz_add_to_cart', { quiz: self.config.id, mode: 'all', items: rows.map(function (r) { return { variant_id: r.pick.p.variant, handle: r.pick.p.handle }; }) });
       self.busy(btn, false);
       self.openCart();
     }).catch(function () { self.busy(btn, false); self.msg(self.copy.add_error); });
   };
 
-  // ------------------------------------------------------------------ share
-  Quiz.prototype.openShare = function (btn) {
-    var panel = this.app.querySelector('[data-sq-share]'), self = this;
-    var open = panel.hidden;
-    panel.hidden = !open;
-    btn.setAttribute('aria-expanded', String(open));
-    if (open && !this.blob) {
-      this.story().then(function (blob) {
-        self.blob = blob;
-        var img = self.app.querySelector('[data-sq-preview]');
-        if (img && blob) img.src = URL.createObjectURL(blob);
-      });
-    }
+  Quiz.prototype.restart = function () {
+    this.state = {};
+    this.shared = false;
+    this.result = null;
+    this.blob = null;
+    this.setUrl(null);
+    this.go(0);
+    publish(this.root, 'quiz_started', { quiz: this.config.id, restart: true });
   };
 
+  // ---------------------------------------------------------------- share
+  Quiz.prototype.openShare = function (btn) {
+    var panel = this.app.querySelector('[data-sq-share]'), self = this, open = panel.hidden;
+    panel.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    if (open && !this.blob) this.story().then(function (blob) {
+      self.blob = blob;
+      var img = self.app.querySelector('[data-sq-preview]');
+      if (img && blob) img.src = URL.createObjectURL(blob);
+    });
+  };
   function wrap(ctx, text, maxW) {
     var words = String(text).split(/\s+/), lines = [], line = '';
-    words.forEach(function (w) {
-      var t = line ? line + ' ' + w : w;
-      if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t;
-    });
+    words.forEach(function (w) { var t = line ? line + ' ' + w : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; });
     if (line) lines.push(line);
     return lines;
   }
-
-  // 1080x1920 story image drawn in the browser with the theme's own fonts and colours
+  // 1080x1920 story: persona, every slot with its perfume, the quiz address
   Quiz.prototype.story = function () {
-    var self = this, c = this.copy, res = this.result;
+    var self = this, c = this.copy, res = this.result, rows = res.rows.filter(function (r) { return r.pick; });
     var head = this.app.querySelector('.sq-persona') || this.app;
     var cs = getComputedStyle(this.root), hs = getComputedStyle(head);
     var bodyFont = cs.fontFamily, headFont = hs.fontFamily;
     var bg = getComputedStyle(this.root.closest('.sq-section') || this.root).backgroundColor;
     if (!bg || bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent') bg = getComputedStyle(document.body).backgroundColor || '#ffffff';
     var fg = cs.color, accent = hs.color;
-    var loads = document.fonts ? Promise.all([
-      document.fonts.load('400 120px ' + headFont), document.fonts.load('400 34px ' + bodyFont), document.fonts.load('600 34px ' + bodyFont)
-    ]).catch(function () {}) : Promise.resolve();
+    var loads = document.fonts ? Promise.all([document.fonts.load('400 120px ' + headFont), document.fonts.load('400 34px ' + bodyFont), document.fonts.load('600 34px ' + bodyFont)]).catch(function () {}) : Promise.resolve();
     return loads.then(function () {
       var W = 1080, H = 1920, M = 110, LIMIT = H - 230;
       var cv = document.createElement('canvas');
       cv.width = W; cv.height = H;
       var x = cv.getContext('2d');
       var spaced = function (on) { if ('letterSpacing' in x) x.letterSpacing = on ? '6px' : '0px'; };
-      // lay the story out at scale k; returns the y where the product list ends (draw=false only measures)
       function paint(k, draw) {
         var put = function (t, y) { if (draw) x.fillText(t, W / 2, y); };
-        var y = 330 * k;
+        var y = 300 * k;
         spaced(true); x.fillStyle = accent; x.font = '600 34px ' + bodyFont;
         put(String(c.share_story_kicker || '').toUpperCase(), y);
-        spaced(false); x.fillStyle = fg; x.font = '400 ' + Math.round(118 * k) + 'px ' + headFont;
-        y += 170 * k;
-        wrap(x, res.persona ? res.persona.name : '', W - 2 * M).forEach(function (l) { put(l, y); y += 132 * k; });
-        x.font = '400 ' + Math.round(40 * k) + 'px ' + bodyFont; y += 20 * k;
-        wrap(x, res.persona ? res.persona.line : '', W - 2 * M - 40).forEach(function (l) { put(l, y); y += 60 * k; });
-        y += 70 * k;
+        spaced(false); x.fillStyle = fg; x.font = '400 ' + Math.round(110 * k) + 'px ' + headFont;
+        y += 160 * k;
+        wrap(x, res.persona ? res.persona.name : '', W - 2 * M).forEach(function (l) { put(l, y); y += 124 * k; });
+        x.font = '400 ' + Math.round(38 * k) + 'px ' + bodyFont; y += 10 * k;
+        wrap(x, res.persona ? res.persona.line : '', W - 2 * M - 40).forEach(function (l) { put(l, y); y += 56 * k; });
+        y += 50 * k;
         if (draw) { x.fillStyle = accent; x.fillRect(W / 2 - 60, y, 120, 3); }
-        y += 110 * k;
+        y += 100 * k;
         spaced(true); x.fillStyle = accent; x.font = '600 32px ' + bodyFont;
         put(String(c.share_story_top || '').toUpperCase(), y);
         spaced(false);
-        y += 100 * k;
-        res.items.slice(0, 3).forEach(function (r) {
-          x.fillStyle = accent; x.font = '600 30px ' + bodyFont;
-          put(String(r.p.house).toUpperCase(), y);
-          x.fillStyle = fg; x.font = '400 ' + Math.round(66 * k) + 'px ' + headFont;
-          var lines = wrap(x, r.p.title, W - 2 * M).slice(0, 2);
-          lines.forEach(function (l, i) { put(l, y + 80 * k + i * 74 * k); });
-          y += 80 * k + (lines.length - 1) * 74 * k + 90 * k;
+        y += 90 * k;
+        rows.forEach(function (r) {
+          x.fillStyle = accent; x.font = '600 ' + Math.round(28 * k) + 'px ' + bodyFont;
+          put(String(r.slot.label).toUpperCase(), y);
+          x.fillStyle = fg; x.font = '400 ' + Math.round(54 * k) + 'px ' + headFont;
+          var lines = wrap(x, r.pick.p.title, W - 2 * M).slice(0, 2);
+          lines.forEach(function (l, i) { put(l, y + 66 * k + i * 60 * k); });
+          y += 66 * k + (lines.length - 1) * 60 * k;
+          x.font = '400 ' + Math.round(30 * k) + 'px ' + bodyFont;
+          put(r.pick.p.house, y + 48 * k);
+          y += 48 * k + 80 * k;
         });
-        return y - 90 * k;
+        return y - 80 * k;
       }
       var k = 1;
-      while (k > 0.55 && paint(k, false) > LIMIT) k -= 0.05;
+      while (k > 0.5 && paint(k, false) > LIMIT) k -= 0.05;
       x.fillStyle = bg; x.fillRect(0, 0, W, H);
       x.strokeStyle = accent; x.lineWidth = 2; x.strokeRect(56, 56, W - 112, H - 112);
       x.textAlign = 'center'; x.textBaseline = 'alphabetic';
       paint(k, true);
       x.fillStyle = fg; x.font = '400 36px ' + bodyFont;
       x.fillText((self.config.share && self.config.share.url_text) || global.location.host, W / 2, H - 150);
-      return new Promise(function (res2) { cv.toBlob(function (b) { res2(b); }, 'image/png'); });
+      return new Promise(function (done) { cv.toBlob(function (b) { done(b); }, 'image/png'); });
     });
   };
-
   Quiz.prototype.withBlob = function () {
     var self = this;
     return this.blob ? Promise.resolve(this.blob) : this.story().then(function (b) { self.blob = b; return b; });
   };
-
-  Quiz.prototype.shared_ = function (method) {
-    publish(this.root, 'quiz_shared', { quiz: this.config.id, method: method, persona: this.result.persona && this.result.persona.key });
-  };
-
+  Quiz.prototype.sharedEvent = function (method) { publish(this.root, 'quiz_shared', { quiz: this.config.id, method: method, persona: this.result.persona && this.result.persona.key }); };
   Quiz.prototype.shareDownload = function () {
     var self = this;
     this.withBlob().then(function (b) {
       var a = document.createElement('a');
       a.href = URL.createObjectURL(b);
-      a.download = (self.config.share && self.config.share.file_name) || 'scent-persona.png';
+      a.download = (self.config.share && self.config.share.file_name) || 'scent-wardrobe.png';
       document.body.appendChild(a); a.click(); a.remove();
-      self.shared_('download');
+      self.sharedEvent('download');
     });
   };
-
   Quiz.prototype.shareNative = function () {
-    var self = this, url = this.shareUrl(), sh = this.config.share || {};
-    var text = this.result.persona ? this.result.persona.name : '';
+    var self = this, url = this.shareUrl(), sh = this.config.share || {}, text = this.result.persona ? this.result.persona.name : '';
     this.withBlob().then(function (b) {
-      var file = new File([b], sh.file_name || 'scent-persona.png', { type: 'image/png' });
+      var file = new File([b], sh.file_name || 'scent-wardrobe.png', { type: 'image/png' });
       var data = navigator.canShare && navigator.canShare({ files: [file] }) ? { files: [file], title: sh.title, text: text + ' ' + url } : { title: sh.title, text: text, url: url };
-      return navigator.share(data).then(function () { self.shared_('native'); });
-    }).catch(function () { /* user cancelled */ });
+      return navigator.share(data).then(function () { self.sharedEvent('native'); });
+    }).catch(function () { /* cancelled */ });
   };
-
   Quiz.prototype.shareCopy = function (btn) {
     var self = this, url = this.shareUrl();
-    var done = function () { btn.textContent = self.copy.share_copied; self.shared_('copy'); };
-    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, fallback);
-    else fallback();
+    var done = function () { btn.textContent = self.copy.share_copied; self.sharedEvent('copy'); };
     function fallback() {
       var t = document.createElement('textarea');
       t.value = url; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
@@ -1028,9 +1165,10 @@
       try { document.execCommand('copy'); done(); } catch (e) { /* ignore */ }
       t.remove();
     }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, fallback); else fallback();
   };
 
-  // ------------------------------------------------------------------ boot
+  // ---------------------------------------------------------------- boot
   function boot(scope) {
     (scope || document).querySelectorAll('[data-scent-quiz]').forEach(function (root) {
       if (root.__sq) return;
@@ -1038,18 +1176,14 @@
       root.__sq.load();
     });
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { boot(); });
-  else boot();
-  // theme editor: re-init when the section is re-rendered; jump to the question of a selected answer block
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { boot(); }); else boot();
   document.addEventListener('shopify:section:load', function (e) { boot(e.target); });
   document.addEventListener('shopify:block:select', function (e) {
     var root = e.target.closest ? e.target.closest('.sq-section') : null;
-    var q = root && root.querySelector('[data-scent-quiz]');
-    var quiz = q && q.__sq;
+    var el = root && root.querySelector('[data-scent-quiz]'), quiz = el && el.__sq;
     if (!quiz || !quiz.config || !quiz.blocks) return;
     var b = quiz.blocks.filter(function (x) { return x.id === e.detail.blockId; })[0];
-    if (!b) return;
-    var qi = quiz.config.questions.map(function (x) { return x.id; }).indexOf(b.q);
+    var qi = b ? quiz.qs.indexOf(Q(quiz.config, b.q)) : -1;
     if (qi >= 0) quiz.show(qi);
   });
 })(typeof window !== 'undefined' ? window : globalThis);

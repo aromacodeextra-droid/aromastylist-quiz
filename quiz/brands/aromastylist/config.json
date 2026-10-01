@@ -1,192 +1,213 @@
 {
   "id": "aromastylist",
+  "version": 3,
   "locale": "en-US",
   "currency": "USD",
   "share": {
     "url_text": "aromastylist.com/pages/find-your-perfume",
-    "file_name": "my-scent-persona.png",
-    "title": "My scent persona"
+    "file_name": "my-perfume-wardrobe.png",
+    "title": "My perfume wardrobe"
   },
   "cart": {
     "mode": "page",
     "count_selector": "#cart-count",
     "total_selector": "#cart-total"
   },
-  "copy": {
-    "intro_kicker": "Perfume quiz",
-    "intro_title": "Find your perfume. Then build the wardrobe around it.",
-    "intro_text": "Name a perfume you already love (or tell us the notes you like), then a few quick choices. We read the notes and match them against what's on our shelves right now: more of the same, or the pieces your wardrobe is missing.",
-    "start": "Start the quiz",
-    "back": "Back",
-    "step": "Question {n} of {total}",
-    "loading": "Matching your answers to what's on the shelf…",
-    "result_kicker": "Your scent persona",
-    "result_list_title": "Your starter wardrobe",
-    "why": "Picked for {list}.",
-    "and": "and",
-    "add_sample": "Add sample",
-    "adding": "Adding…",
-    "added": "Added",
-    "view_cart": "View bag",
-    "add_all": "Add all as my starter wardrobe",
-    "add_error": "That didn't reach your bag. Please try again.",
-    "set_kicker": "Or try the ready-made set",
-    "set_text": "A boxed Discovery Set that lines up with your answers.",
-    "set_cta": "Add the set",
-    "share_title": "Share my scent persona",
-    "share_download": "Download image",
-    "share_native": "Share",
-    "share_copy": "Copy link",
-    "share_copied": "Link copied",
-    "share_story_kicker": "My scent persona",
-    "share_story_top": "My top 3",
-    "shared_note": "Someone shared their scent persona with you. Curious about yours?",
-    "shared_cta": "Take the quiz",
-    "start_over": "Start over",
-    "fallback_note": "Nothing matched every answer, so here are the closest picks on the shelf.",
-    "next": "Continue",
-    "multi_count": "{n} of {max} chosen",
-    "skip": "Skip",
-    "search_label": "Search",
-    "search_placeholder": "Perfume or house, e.g. Santal 33",
-    "search_none": "Not in our list yet. Pick the closest one or skip.",
-    "popular_title": "Popular picks",
-    "on_our_shelf": "on our shelf",
-    "dna_title": "Inside {name}",
-    "result_from_similar": "Matched to the notes of {name}",
-    "result_from_complement": "Built around one thread of {name}",
-    "result_from_families": "Your notes",
-    "result_list_title_complement": "Your wardrobe, completed",
-    "own_kicker": "Your favourite is on our shelf",
-    "why_similar": "Shares the {notes} of your {name}.",
-    "why_complement": "Keeps the {notes} of your {name}, with {family} up front.",
-    "why_complement_free": "A new direction next to your {name}.",
-    "why_families": "Built on the {list} you picked.",
-    "families": {
-      "citrus": "Citrus",
-      "green": "Green & herbs",
-      "aquatic": "Fresh & aquatic",
-      "florals": "Rose & florals",
-      "white_florals": "White florals",
-      "fruity": "Fruity",
-      "gourmand": "Vanilla & gourmand",
-      "woods": "Woods",
-      "amber": "Amber & resins",
-      "oud_leather": "Oud, leather & smoke",
-      "spices": "Spices",
-      "musk_powder": "Musk, iris & powder"
-    },
-    "tab_matches": "Your matches",
-    "tabs_label": "Ways to see your result",
-    "shelf_mine": "Your pick",
-    "add_all_shelves": "Add all {n} shelves"
+  "weights": {
+    "ref": 0.35,
+    "slot": 0.2,
+    "feel": 0.15,
+    "presence": 0.1,
+    "climate": 0.1,
+    "style": 0.05,
+    "matters": 0.05
   },
+  "scoring": {
+    "max_per_house": 2,
+    "set_within": 0.1,
+    "live_check": 6
+  },
+  "gender": {
+    "moods": [
+      "focus-flow",
+      "romance-presence",
+      "celebrate-indulge"
+    ],
+    "note": "Owner rule: gender applies only to Focus & Flow, Romance & Presence, Celebrate & Indulge."
+  },
+  "famous_houses": [
+    "Creed",
+    "Maison Francis Kurkdjian",
+    "Parfums de Marly",
+    "Kilian",
+    "Xerjoff",
+    "Initio Parfums Prive",
+    "Hermès",
+    "Guerlain",
+    "Louis Vuitton",
+    "Maison Margiela",
+    "Byredo",
+    "Acqua di Parma",
+    "Amouage",
+    "Roja Dove"
+  ],
+  "slots": [
+    {
+      "id": "everyday",
+      "label": "Everyday Signature",
+      "time": "day",
+      "tag": {
+        "dim": "moment",
+        "value": "everyday"
+      },
+      "related": {
+        "work": 0.5
+      },
+      "text": "The one they remember. Easy, close, worn most days.",
+      "why": "Made for every day",
+      "where": "wrists and the base of the neck"
+    },
+    {
+      "id": "work",
+      "label": "Work & Presence",
+      "time": "day",
+      "tag": {
+        "dim": "moment",
+        "value": "work"
+      },
+      "related": {
+        "everyday": 0.5
+      },
+      "text": "Polished, never loud. It stays within arm's length.",
+      "why": "Built for work hours",
+      "where": "chest, under your shirt, so it rises gently"
+    },
+    {
+      "id": "relax",
+      "label": "Relax & Wind Down",
+      "time": "day",
+      "presence": "close",
+      "tag": {
+        "dim": "mood",
+        "value": "relax-wind-down"
+      },
+      "related": {
+        "harmony-meditation": 0.5
+      },
+      "text": "Soft and close, for home and the people in it.",
+      "why": "For slow time at home",
+      "where": "inner wrists only, it stays close"
+    },
+    {
+      "id": "evening",
+      "label": "Evening & Seduction",
+      "time": "night",
+      "tag": {
+        "dim": "moment",
+        "value": "evening"
+      },
+      "related": {
+        "special-occasions": 0.5
+      },
+      "text": "Warmer, deeper, closer. Built for conversation distance after dark.",
+      "why": "Made for evenings out",
+      "where": "neck and behind the ears"
+    },
+    {
+      "id": "special",
+      "label": "Special Occasions",
+      "time": "night",
+      "tag": {
+        "dim": "moment",
+        "value": "special-occasions"
+      },
+      "related": {
+        "evening": 0.5
+      },
+      "text": "The one you save. Loud is allowed: it's for the nights that get photographed.",
+      "why": "Saved for the big nights",
+      "where": "neck, chest and one mist over your hair"
+    },
+    {
+      "id": "move",
+      "label": "Move & Thrive",
+      "time": "day",
+      "tag": {
+        "dim": "mood",
+        "value": "move-thrive"
+      },
+      "related": {
+        "morning-boost": 0.5
+      },
+      "text": "Fresh from the first step to the last.",
+      "why": "For active days",
+      "where": "chest and the back of the neck, after the shower"
+    },
+    {
+      "id": "harmony",
+      "label": "Harmony & Meditation",
+      "time": "day",
+      "tag": {
+        "dim": "mood",
+        "value": "harmony-meditation"
+      },
+      "related": {
+        "relax-wind-down": 0.5
+      },
+      "text": "Unhurried, for time that is only yours.",
+      "why": "For time that is yours",
+      "where": "wrists, then breathe it in"
+    }
+  ],
+  "slot_fill": [
+    "everyday",
+    "evening",
+    "work",
+    "relax",
+    "special",
+    "move",
+    "harmony"
+  ],
   "questions": [
     {
       "id": "for",
+      "type": "single",
       "title": "Who is it for?",
       "answers": [
         {
           "id": "her",
           "label": "Her",
-          "why": "wearing it on her",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/232F799F-EEF2-4F0D-8771-EDBDE91E4E35.png",
-          "tags": {
-            "gender": {
-              "Feminine": 3,
-              "Unisex": 3
-            }
-          },
-          "exclude": {
-            "gender": [
-              "Masculine"
-            ]
-          }
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/232F799F-EEF2-4F0D-8771-EDBDE91E4E35.png"
         },
         {
           "id": "him",
           "label": "Him",
-          "why": "wearing it on him",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/73DC8906-1DD4-4869-9014-8BBDA04BAE83.png",
-          "tags": {
-            "gender": {
-              "Masculine": 3,
-              "Unisex": 3
-            }
-          },
-          "exclude": {
-            "gender": [
-              "Feminine"
-            ]
-          }
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/73DC8906-1DD4-4869-9014-8BBDA04BAE83.png"
         },
         {
           "id": "both",
           "label": "Both of us / no rule",
-          "why": "sharing between you",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/A6219AFF-CD5D-4673-9333-FF478253DE16.png",
-          "tags": {
-            "gender": {
-              "Unisex": 3,
-              "Feminine": 1,
-              "Masculine": 1
-            }
-          }
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/A6219AFF-CD5D-4673-9333-FF478253DE16.png"
         }
       ]
     },
     {
       "id": "ref",
       "type": "perfume",
-      "title": "Name a perfume you already love",
-      "subtitle": "Tap one or search. We read its notes and match them against our shelf.",
-      "skip_label": "Skip: I don't have one yet",
-      "popular_own": [
-        "mfk-baccarat-rouge-540-edp",
-        "creed-aventus-for-men",
-        "parfums-de-marly-delina",
-        "parfums-de-marly-layton",
-        "kilian-angels-share",
-        "xerjoff-erba-pura"
-      ]
-    },
-    {
-      "id": "mode",
-      "title": "What do you want next?",
-      "show_if": {
-        "q": "ref",
-        "is": "picked"
-      },
-      "show_dna": "ref",
-      "answers": [
-        {
-          "id": "similar",
-          "label": "More like it",
-          "hint": "Same notes, other houses",
-          "taste_mode": "similar",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/768F88D6-A815-46E6-B09E-4223387D5C0D.png"
-        },
-        {
-          "id": "complement",
-          "label": "Complete my wardrobe",
-          "hint": "One shared note, a new mood",
-          "taste_mode": "complement",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/07CA7334-91E6-484E-93BB-77EF8A8461E9.png"
-        }
-      ]
+      "max": 2,
+      "title": "Your signature scent",
+      "subtitle": "The perfume you wear most, or love most. Pick one or two: we read the notes and match them against our shelf.",
+      "none_label": "I don't have one"
     },
     {
       "id": "notes",
-      "type": "multi",
-      "taste": "families",
+      "type": "families",
+      "sub": true,
+      "show_if": "no_ref",
       "min": 1,
       "max": 3,
       "title": "Which notes pull you in?",
       "subtitle": "Pick up to three.",
-      "show_if": {
-        "q": "ref",
-        "is": "skipped"
-      },
       "answers": [
         {
           "id": "citrus",
@@ -275,357 +296,728 @@
       ]
     },
     {
-      "id": "when",
-      "title": "When will you wear it most?",
+      "id": "taboos",
+      "type": "taboo",
+      "title": "Anything you can't stand?",
+      "subtitle": "We will never put these in your wardrobe.",
+      "toggles_title": "And also",
       "answers": [
         {
-          "id": "everyday",
-          "label": "Everyday Signature",
-          "why": "everyday wear",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/768F88D6-A815-46E6-B09E-4223387D5C0D.png",
-          "tags": {
-            "moment": {
-              "everyday": 4,
-              "work": 1
-            }
-          },
-          "shelf_text": "The one they remember. Clean, easy, close to the skin, and worn most days."
+          "id": "too-sweet",
+          "label": "Too sweet",
+          "hint": "caramel, chocolate, honey",
+          "rule": {
+            "notes": [
+              "caramel",
+              "chocolate",
+              "honey"
+            ],
+            "family": "gourmand",
+            "max_share": 0.3
+          }
         },
         {
-          "id": "work",
-          "label": "Work & Presence",
-          "why": "work hours",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/7C9795A7-99CE-4E40-A225-7AFDDFA397CA.png",
-          "tags": {
-            "moment": {
-              "work": 4,
-              "everyday": 1
-            }
-          },
-          "shelf_text": "Polished, never loud. It stays within arm's length and reads as quiet authority."
+          "id": "powdery",
+          "label": "Powdery",
+          "hint": "iris, violet, aldehydes",
+          "rule": {
+            "notes": [
+              "iris",
+              "powder",
+              "violet"
+            ]
+          }
         },
         {
-          "id": "evening",
-          "label": "Evening & Seduction",
-          "why": "evenings out",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/07CA7334-91E6-484E-93BB-77EF8A8461E9.png",
-          "tags": {
-            "moment": {
-              "evening": 4,
-              "special-occasions": 1
-            }
-          },
-          "shelf_text": "Warmer, deeper, closer. Built for conversation distance after dark."
+          "id": "heavy-oud-smoke",
+          "label": "Heavy oud & smoke",
+          "hint": "oud, incense, tobacco",
+          "rule": {
+            "notes": [
+              "oud",
+              "smoke",
+              "incense",
+              "tobacco"
+            ],
+            "family": "oud_leather",
+            "max_share": 0.2
+          }
         },
         {
-          "id": "special",
-          "label": "Special Occasions",
-          "why": "big occasions",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/99A11F99-2D04-40A1-9AC7-C020D16B0A6A.png",
-          "tags": {
-            "moment": {
-              "special-occasions": 4,
-              "evening": 1
-            }
-          },
-          "shelf_text": "The one you save. Loud is allowed: it's for the nights that get photographed."
+          "id": "big-florals",
+          "label": "Big florals",
+          "hint": "tuberose, gardenia, ylang",
+          "rule": {
+            "notes": [
+              "tuberose",
+              "gardenia",
+              "ylang"
+            ],
+            "family": "white_florals",
+            "max_share": 0.3
+          }
+        },
+        {
+          "id": "shower-gel-fresh",
+          "label": "Shower-gel fresh",
+          "hint": "sea notes, ozone",
+          "rule": {
+            "notes": [
+              "sea"
+            ],
+            "family": "aquatic",
+            "max_share": 0.15
+          }
+        },
+        {
+          "id": "coconut",
+          "label": "Coconut",
+          "rule": {
+            "notes": [
+              "coconut"
+            ]
+          }
+        },
+        {
+          "id": "patchouli",
+          "label": "Patchouli",
+          "rule": {
+            "notes": [
+              "patchouli"
+            ]
+          }
+        },
+        {
+          "id": "strong",
+          "toggle": true,
+          "label": "Strong scents bother me",
+          "rule": {
+            "presence": "fills"
+          }
+        },
+        {
+          "id": "office",
+          "toggle": true,
+          "label": "My office is scent-sensitive"
+        },
+        {
+          "id": "none",
+          "exclusive": true,
+          "label": "None, I'm open"
         }
       ]
     },
     {
-      "id": "mood",
-      "title": "What should it do for you?",
+      "id": "week",
+      "type": "week",
+      "title": "Where does your week go?",
+      "subtitle": "Every part of your week you mark sometimes or a lot gets its own perfume.",
+      "levels": [
+        "Rarely",
+        "Sometimes",
+        "A lot"
+      ],
+      "rows": [
+        {
+          "id": "work-study",
+          "label": "Work / study",
+          "slot": "work"
+        },
+        {
+          "id": "everyday-errands",
+          "label": "Everyday errands",
+          "slot": "everyday"
+        },
+        {
+          "id": "family-home",
+          "label": "Family & home",
+          "slot": "relax"
+        },
+        {
+          "id": "evenings-dates",
+          "label": "Evenings & dates",
+          "slot": "evening"
+        },
+        {
+          "id": "events-celebrations",
+          "label": "Events & celebrations",
+          "slot": "special"
+        },
+        {
+          "id": "sport",
+          "label": "Sport",
+          "slot": "move"
+        },
+        {
+          "id": "time-for-me-growth",
+          "label": "Time for me & growth",
+          "slot": "harmony"
+        }
+      ]
+    },
+    {
+      "id": "how",
+      "type": "single",
+      "title": "How do you wear perfume?",
       "answers": [
         {
-          "id": "morning-boost",
-          "label": "Morning Boost",
-          "why": "a bright start to the day",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/4.png",
-          "tags": {
-            "mood": {
-              "morning-boost": 5,
-              "move-thrive": 1
-            }
-          },
-          "shelf_text": "Bright and sparkling, for the first hours of the day."
+          "id": "one-bottle",
+          "label": "One bottle",
+          "hint": "One perfume for everything",
+          "min": 1,
+          "max": 1,
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/768F88D6-A815-46E6-B09E-4223387D5C0D.png"
         },
         {
-          "id": "focus-flow",
-          "label": "Focus & Flow",
-          "why": "deep-work days",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/2.png",
-          "tags": {
-            "mood": {
-              "focus-flow": 5,
-              "harmony-meditation": 1
-            }
-          },
-          "shelf_text": "Clear and composed, for long desk days."
+          "id": "day-night",
+          "label": "Day & night",
+          "hint": "One for day, one for after dark",
+          "split": [
+            "everyday",
+            "evening"
+          ],
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/07CA7334-91E6-484E-93BB-77EF8A8461E9.png"
         },
         {
-          "id": "romance-presence",
-          "label": "Romance & Presence",
-          "why": "romance and presence",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/3.png",
-          "tags": {
-            "mood": {
-              "romance-presence": 5,
-              "celebrate-indulge": 1
-            }
-          },
-          "shelf_text": "Close-up warmth that lingers on a scarf."
+          "id": "full-wardrobe",
+          "label": "A full wardrobe",
+          "hint": "3 to 5, one for each part of my week",
+          "min": 3,
+          "max": 5,
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/99A11F99-2D04-40A1-9AC7-C020D16B0A6A.png"
+        }
+      ]
+    },
+    {
+      "id": "feel",
+      "type": "multi",
+      "min": 1,
+      "max": 2,
+      "title": "With it on, you want to feel…",
+      "subtitle": "Pick up to two.",
+      "answers": [
+        {
+          "id": "confident",
+          "label": "Confident",
+          "moods": [
+            "focus-flow"
+          ],
+          "why": "Clear and composed",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/2.png"
         },
         {
-          "id": "celebrate-indulge",
-          "label": "Celebrate & Indulge",
-          "why": "celebrating",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/10.png",
-          "tags": {
-            "mood": {
-              "celebrate-indulge": 5,
-              "romance-presence": 1
-            }
-          },
-          "shelf_text": "Rich and generous, made for a toast."
+          "id": "attractive",
+          "label": "Attractive",
+          "moods": [
+            "romance-presence"
+          ],
+          "why": "Close-up warmth",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/3.png"
         },
         {
-          "id": "relax-wind-down",
-          "label": "Relax & Wind Down",
-          "why": "slow evenings in",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/582F3717-661C-4A13-B1B4-DB0AA759FAB8.png",
-          "tags": {
-            "mood": {
-              "relax-wind-down": 5,
-              "harmony-meditation": 1
-            }
-          },
-          "shelf_text": "Soft and slow, for evenings in."
+          "id": "calm",
+          "label": "Calm",
+          "moods": [
+            "relax-wind-down",
+            "harmony-meditation"
+          ],
+          "why": "Soft and calming",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/582F3717-661C-4A13-B1B4-DB0AA759FAB8.png"
         },
         {
-          "id": "move-thrive",
-          "label": "Move & Thrive",
-          "why": "days on the move",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/5.png",
-          "tags": {
-            "mood": {
-              "move-thrive": 5,
-              "morning-boost": 1
-            }
-          },
-          "shelf_text": "Fresh air in a bottle, for days in motion."
+          "id": "energised",
+          "label": "Energised",
+          "moods": [
+            "morning-boost"
+          ],
+          "why": "A bright lift",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/4.png"
         },
         {
-          "id": "harmony-meditation",
-          "label": "Harmony & Meditation",
-          "why": "quiet, unhurried moments",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/7.png",
-          "tags": {
-            "mood": {
-              "harmony-meditation": 5,
-              "relax-wind-down": 1
-            }
-          },
-          "shelf_text": "Quiet woods and incense, for unhurried moments."
+          "id": "festive",
+          "label": "Festive",
+          "moods": [
+            "celebrate-indulge"
+          ],
+          "why": "Rich and generous",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/10.png"
+        },
+        {
+          "id": "free",
+          "label": "Free",
+          "moods": [
+            "move-thrive"
+          ],
+          "why": "Light and free",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/5.png"
         }
       ]
     },
     {
       "id": "presence",
+      "type": "single",
       "title": "How present should it be?",
       "answers": [
         {
           "id": "close",
-          "label": "Close to the skin",
-          "why": "a close-to-skin trail",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/45737BFC-A7FC-48D4-BA5F-488FEA0E4130.png",
-          "tags": {
-            "presence": {
-              "close": 3,
-              "noticed": 1
-            }
-          }
+          "label": "Just for me",
+          "hint": "Close to the skin",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/45737BFC-A7FC-48D4-BA5F-488FEA0E4130.png"
         },
         {
           "id": "noticed",
-          "label": "Noticed in the room",
-          "why": "a trail people notice",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/31BF3B96-8B81-4E35-944B-0E3AA0197AE9.png",
-          "tags": {
-            "presence": {
-              "noticed": 3,
-              "close": 1,
-              "fills": 1
-            }
-          }
+          "label": "Pleasantly noticed",
+          "hint": "A soft trail",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/31BF3B96-8B81-4E35-944B-0E3AA0197AE9.png"
         },
         {
           "id": "fills",
-          "label": "Fills the room",
-          "why": "a room-filling trail",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/73B7A0A5-1163-40A6-AC36-DAF32B13182A.png",
-          "tags": {
-            "presence": {
-              "fills": 3,
-              "noticed": 1
-            }
-          }
+          "label": "Remembered in the room",
+          "hint": "It fills the room",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/73B7A0A5-1163-40A6-AC36-DAF32B13182A.png"
         }
       ]
     },
     {
-      "id": "weather",
-      "title": "Your weather right now?",
+      "id": "matters",
+      "type": "single",
+      "title": "What matters most?",
       "answers": [
         {
-          "id": "hot",
-          "label": "Hot and humid",
-          "why": "hot, humid days",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/FullSizeRender_e274824a-ee92-40e2-8edf-7ddb3b5745a9.jpg",
-          "tags": {
-            "season": {
-              "hot": 2,
-              "mild": 1
-            }
-          }
+          "id": "easy",
+          "label": "Easy & loved by all",
+          "hint": "Classic, crowd-pleasing",
+          "prefer": "popular",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/768F88D6-A815-46E6-B09E-4223387D5C0D.png"
         },
         {
-          "id": "mild",
-          "label": "Mild",
-          "why": "mild weather",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/77F3F8EE-6A90-4E34-909B-27E8E53A6E4D.png",
-          "tags": {
-            "season": {
-              "mild": 2,
-              "hot": 1,
-              "cold": 1
-            }
-          }
+          "id": "trending",
+          "label": "What everyone's talking about",
+          "hint": "Our bestsellers right now",
+          "prefer": "trending",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/10.png"
         },
         {
-          "id": "cold",
-          "label": "Cold",
-          "why": "cold air",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/85646074-6533-4FBE-AC71-5C1962AB0F09.png",
-          "tags": {
-            "season": {
-              "cold": 2,
-              "mild": 1
-            }
-          }
+          "id": "unique",
+          "label": "Unique",
+          "hint": "Nobody smells like me",
+          "prefer": "rare",
+          "avoid_popular": true,
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/07CA7334-91E6-484E-93BB-77EF8A8461E9.png"
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "type": "single",
+      "title": "Your climate?",
+      "answers": [
+        {
+          "id": "hot-humid",
+          "label": "Hot & humid",
+          "seasons": {
+            "hot": 1,
+            "mild": 0.4
+          },
+          "why": "Holds up in humid heat",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/FullSizeRender_e274824a-ee92-40e2-8edf-7ddb3b5745a9.jpg"
+        },
+        {
+          "id": "dry-heat",
+          "label": "Dry heat",
+          "seasons": {
+            "hot": 1,
+            "mild": 0.6
+          },
+          "why": "Made for dry heat",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/FullSizeRender_e274824a-ee92-40e2-8edf-7ddb3b5745a9.jpg"
+        },
+        {
+          "id": "four-seasons",
+          "label": "Four seasons",
+          "seasons": {
+            "mild": 1,
+            "cold": 0.8,
+            "hot": 0.6
+          },
+          "why": "Works across the seasons",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/85646074-6533-4FBE-AC71-5C1962AB0F09.png"
+        },
+        {
+          "id": "mild-coast",
+          "label": "Mild coast",
+          "seasons": {
+            "mild": 1,
+            "hot": 0.6
+          },
+          "why": "Easy in mild coastal air",
+          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/77F3F8EE-6A90-4E34-909B-27E8E53A6E4D.png"
+        }
+      ]
+    },
+    {
+      "id": "style",
+      "type": "single",
+      "title": "Which style is most you?",
+      "answers": [
+        {
+          "id": "classic",
+          "label": "Classic",
+          "families": [
+            "florals",
+            "musk_powder",
+            "citrus"
+          ],
+          "personas": [
+            "quiet-signature",
+            "skin-secret",
+            "first-light"
+          ]
+        },
+        {
+          "id": "dramatic",
+          "label": "Dramatic",
+          "families": [
+            "oud_leather",
+            "amber",
+            "spices"
+          ],
+          "personas": [
+            "after-hours-magnet",
+            "grand-entrance",
+            "temple-smoke"
+          ]
+        },
+        {
+          "id": "romantic",
+          "label": "Romantic",
+          "families": [
+            "florals",
+            "white_florals",
+            "gourmand"
+          ],
+          "personas": [
+            "slow-burn",
+            "skin-secret",
+            "sweet-confidant"
+          ]
+        },
+        {
+          "id": "minimal",
+          "label": "Minimal",
+          "families": [
+            "musk_powder",
+            "woods",
+            "green"
+          ],
+          "personas": [
+            "quiet-signature",
+            "still-point",
+            "soft-landing"
+          ]
+        },
+        {
+          "id": "casual",
+          "label": "Casual",
+          "families": [
+            "citrus",
+            "fruity",
+            "green"
+          ],
+          "personas": [
+            "sunlit-signal",
+            "golden-hour-guest",
+            "clean-stride"
+          ]
+        },
+        {
+          "id": "sporty",
+          "label": "Sporty",
+          "families": [
+            "aquatic",
+            "citrus",
+            "green"
+          ],
+          "personas": [
+            "clean-stride",
+            "open-air",
+            "bright-entrance"
+          ]
         }
       ]
     }
   ],
-  "why_order": [
-    "mood",
-    "when",
-    "presence",
-    "weather",
-    "for"
-  ],
-  "scoring": {
-    "low_confidence_factor": 0.5,
-    "result_min": 3,
-    "result_max": 5,
-    "max_per_house": 2,
-    "keep_ratio": 0.85,
-    "set_within": 0.1,
-    "live_check": 15,
-    "taste_weight": 16
-  },
   "personas": {
-    "rows": "mood",
-    "cols": "presence",
     "list": [
       {
         "key": "first-light",
         "name": "The First Light",
-        "line": "Zest on warm skin. A bright, close scent for the first hour of the day, noticed only by whoever leans in."
+        "line": "Zest on warm skin. A bright, close scent for the first hour of the day, noticed only by whoever leans in.",
+        "notes": [
+          [
+            "fam:citrus"
+          ]
+        ]
       },
       {
         "key": "sunlit-signal",
         "name": "The Sunlit Signal",
-        "line": "Citrus peel, green leaves and a clean trail that walks into the room a step behind you."
+        "line": "Citrus peel, green leaves and a clean trail that walks into the room a step behind you.",
+        "notes": [
+          [
+            "fam:citrus"
+          ],
+          [
+            "greens"
+          ]
+        ]
       },
       {
         "key": "bright-entrance",
         "name": "The Bright Entrance",
-        "line": "Sparkling top notes with real staying power. You arrive and the whole room brightens a shade."
+        "line": "Sparkling top notes with real staying power. You arrive and the whole room brightens a shade.",
+        "notes": []
       },
       {
         "key": "quiet-signature",
         "name": "The Quiet Signature",
-        "line": "Clean woods, cool herbs and a whisper of iris. Sharp, composed and kept to your own desk."
+        "line": "Clean woods, cool herbs and a whisper of iris. Sharp, composed and kept to your own desk.",
+        "notes": [
+          [
+            "fam:woods"
+          ],
+          [
+            "herbs",
+            "sage",
+            "lavender",
+            "mint"
+          ],
+          [
+            "iris"
+          ]
+        ]
       },
       {
         "key": "sharp-edit",
         "name": "The Sharp Edit",
-        "line": "Crisp aromatics over dry cedar. The scent of someone who answers emails in full sentences."
+        "line": "Crisp aromatics over dry cedar. The scent of someone who answers emails in full sentences.",
+        "notes": [
+          [
+            "herbs",
+            "sage",
+            "lavender",
+            "mint"
+          ],
+          [
+            "cedar"
+          ]
+        ]
       },
       {
         "key": "boardroom-pull",
         "name": "The Boardroom Pull",
-        "line": "Structured woods and cold spice with a trail that says the meeting starts when you sit down."
+        "line": "Structured woods and cold spice with a trail that says the meeting starts when you sit down.",
+        "notes": [
+          [
+            "fam:woods"
+          ],
+          [
+            "fam:spices"
+          ]
+        ]
       },
       {
         "key": "skin-secret",
         "name": "The Skin Secret",
-        "line": "Soft musk, warm petals and a trace of amber, made for the distance of a whisper."
+        "line": "Soft musk, warm petals and a trace of amber, made for the distance of a whisper.",
+        "notes": [
+          [
+            "musk"
+          ],
+          [
+            "fam:florals",
+            "fam:white_florals"
+          ],
+          [
+            "amber"
+          ]
+        ]
       },
       {
         "key": "slow-burn",
         "name": "The Slow Burn",
-        "line": "Rose, resin and something darker underneath. It lingers on a scarf long after you've left."
+        "line": "Rose, resin and something darker underneath. It lingers on a scarf long after you've left.",
+        "notes": [
+          [
+            "rose"
+          ],
+          [
+            "benzoin",
+            "incense",
+            "myrrh",
+            "amber"
+          ]
+        ]
       },
       {
         "key": "after-hours-magnet",
         "name": "The After-Hours Magnet",
-        "line": "Oud, amber and velvet florals that own the room after dark. Heads turn and nobody can say why."
+        "line": "Oud, amber and velvet florals that own the room after dark. Heads turn and nobody can say why.",
+        "notes": [
+          [
+            "oud"
+          ],
+          [
+            "amber"
+          ],
+          [
+            "fam:florals",
+            "fam:white_florals"
+          ]
+        ]
       },
       {
         "key": "sweet-confidant",
         "name": "The Sweet Confidant",
-        "line": "Vanilla, cream and a pinch of spice worn close. Dessert you keep to yourself."
+        "line": "Vanilla, cream and a pinch of spice worn close. Dessert you keep to yourself.",
+        "notes": [
+          [
+            "vanilla"
+          ],
+          [
+            "milk"
+          ],
+          [
+            "fam:spices"
+          ]
+        ]
       },
       {
         "key": "golden-hour-guest",
         "name": "The Golden Hour Guest",
-        "line": "Juicy fruit, warm amber and a pop of fizz. You make any table feel like a party."
+        "line": "Juicy fruit, warm amber and a pop of fizz. You make any table feel like a party.",
+        "notes": [
+          [
+            "fam:fruity"
+          ],
+          [
+            "amber"
+          ]
+        ]
       },
       {
         "key": "grand-entrance",
         "name": "The Grand Entrance",
-        "line": "Rum, praline, saffron and leather. Loud in the best way and still there at the last song."
+        "line": "Rum, praline, saffron and leather. Loud in the best way and still there at the last song.",
+        "notes": [
+          [
+            "boozy"
+          ],
+          [
+            "caramel"
+          ],
+          [
+            "saffron"
+          ],
+          [
+            "leather"
+          ]
+        ]
       },
       {
         "key": "soft-landing",
         "name": "The Soft Landing",
-        "line": "Lavender, sandalwood and clean musk. A Sunday with nowhere to be, bottled."
+        "line": "Lavender, sandalwood and clean musk. A Sunday with nowhere to be, bottled.",
+        "notes": [
+          [
+            "lavender"
+          ],
+          [
+            "sandalwood"
+          ],
+          [
+            "musk"
+          ]
+        ]
       },
       {
         "key": "cashmere-evening",
         "name": "The Cashmere Evening",
-        "line": "Creamy woods and powdery vanilla that warm a room like a lamp turned low."
+        "line": "Creamy woods and powdery vanilla that warm a room like a lamp turned low.",
+        "notes": [
+          [
+            "fam:woods"
+          ],
+          [
+            "vanilla"
+          ]
+        ]
       },
       {
         "key": "clean-stride",
         "name": "The Clean Stride",
-        "line": "Cool water, bright citrus and a snap of ginger. Fresh from the first step to the last."
+        "line": "Cool water, bright citrus and a snap of ginger. Fresh from the first step to the last.",
+        "notes": [
+          [
+            "sea"
+          ],
+          [
+            "fam:citrus"
+          ],
+          [
+            "ginger"
+          ]
+        ]
       },
       {
         "key": "open-air",
         "name": "The Open Air",
-        "line": "Sea salt, green leaves and wild herbs that trail behind you like wind off the water."
+        "line": "Sea salt, green leaves and wild herbs that trail behind you like wind off the water.",
+        "notes": [
+          [
+            "sea"
+          ],
+          [
+            "greens"
+          ],
+          [
+            "herbs",
+            "sage",
+            "mint"
+          ]
+        ]
       },
       {
         "key": "still-point",
         "name": "The Still Point",
-        "line": "Sandalwood, tea and a thread of incense. Close, unhurried and completely your own."
+        "line": "Sandalwood, tea and a thread of incense. Close, unhurried and completely your own.",
+        "notes": [
+          [
+            "sandalwood"
+          ],
+          [
+            "tea"
+          ],
+          [
+            "incense"
+          ]
+        ]
       },
       {
         "key": "temple-smoke",
         "name": "The Temple Smoke",
-        "line": "Frankincense, myrrh and dry woods drifting through the room like the last minutes of a ritual."
+        "line": "Frankincense, myrrh and dry woods drifting through the room like the last minutes of a ritual.",
+        "notes": [
+          [
+            "incense"
+          ],
+          [
+            "myrrh"
+          ],
+          [
+            "fam:woods"
+          ]
+        ]
       }
     ],
     "matrix": {
@@ -666,18 +1058,76 @@
       }
     }
   },
-  "wardrobes": [
-    {
-      "id": "occasion",
-      "label": "By occasion",
-      "question": "when",
-      "intro": "Four shelves, one for every part of your week. Same taste, a different job each."
+  "copy": {
+    "intro_kicker": "Perfume quiz",
+    "back": "Back",
+    "step": "Question {n} of {total}",
+    "loading": "Matching your answers to what's on the shelf…",
+    "result_kicker": "Your scent persona",
+    "and": "and",
+    "add_sample": "Add sample",
+    "adding": "Adding…",
+    "added": "Added",
+    "view_cart": "View bag",
+    "add_error": "That didn't reach your bag. Please try again.",
+    "set_kicker": "Or try the ready-made set",
+    "set_text": "A boxed Discovery Set that lines up with your top slot.",
+    "set_cta": "Add the set",
+    "share_download": "Download image",
+    "share_native": "Share",
+    "share_copy": "Copy link",
+    "share_copied": "Link copied",
+    "shared_note": "Someone shared their scent persona with you. Curious about yours?",
+    "shared_cta": "Take the quiz",
+    "start_over": "Start over",
+    "next": "Continue",
+    "multi_count": "{n} of {max} chosen",
+    "search_label": "Search",
+    "popular_title": "Popular picks",
+    "on_our_shelf": "on our shelf",
+    "dna_title": "Inside {name}",
+    "families": {
+      "citrus": "Citrus",
+      "green": "Green & herbs",
+      "aquatic": "Fresh & aquatic",
+      "florals": "Rose & florals",
+      "white_florals": "White florals",
+      "fruity": "Fruity",
+      "gourmand": "Vanilla & gourmand",
+      "woods": "Woods",
+      "amber": "Amber & resins",
+      "oud_leather": "Oud, leather & smoke",
+      "spices": "Spices",
+      "musk_powder": "Musk, iris & powder"
     },
-    {
-      "id": "mood",
-      "label": "By mood",
-      "question": "mood",
-      "intro": "Seven moods, one scent each, all built on the notes you like."
-    }
-  ]
+    "start": "Start the quiz",
+    "intro_title": "Your perfume stylist. Ten questions, one wardrobe.",
+    "intro_text": "Tell us the perfume you wear now, what you never want to smell, and where your week goes. We read the notes and build a small wardrobe from what is on our shelf right now: one perfume for each part of your week.",
+    "search_placeholder": "Perfume or house, e.g. Santal 33, BR540",
+    "search_none": "We don't know that one yet. Try the house name, or pick \"I don't have one\".",
+    "picked_count": "{n} of {max} chosen",
+    "remove": "Remove",
+    "profile_title": "Your scent profile",
+    "result_list_title": "Your Perfume Wardrobe",
+    "shares": "Shares the {notes} of your {name}.",
+    "why": "{lead}: {notes}{presence}.",
+    "why_family_lead": "A {family} pick",
+    "why_presence": {
+      "close": ", close to the skin",
+      "noticed": ", with a soft trail",
+      "fills": ", with a trail that fills the room"
+    },
+    "how_to_wear": "How to wear: {sprays} on {where}.",
+    "sprays": {
+      "close": "3 sprays",
+      "noticed": "2 sprays",
+      "fills": "1 spray"
+    },
+    "also_fits": "Also fits this slot",
+    "add_all": "Add all {n} samples",
+    "share_title": "Share my wardrobe",
+    "share_story_kicker": "My scent persona",
+    "share_story_top": "My perfume wardrobe",
+    "no_notes": "{name}: the house does not publish its notes, so after this we will ask which notes you like."
+  }
 }

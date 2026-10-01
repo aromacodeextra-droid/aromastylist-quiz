@@ -33,36 +33,6 @@
           "label": "Both of us / no rule"
         }
       },
-      "q_ref": {
-        "type": "question",
-        "settings": {
-          "question_id": "ref",
-          "title": "Name a perfume you already love"
-        }
-      },
-      "q_mode": {
-        "type": "question",
-        "settings": {
-          "question_id": "mode",
-          "title": "What do you want next?"
-        }
-      },
-      "a_mode_similar": {
-        "type": "answer",
-        "settings": {
-          "question_id": "mode",
-          "answer_id": "similar",
-          "label": "More like it"
-        }
-      },
-      "a_mode_complement": {
-        "type": "answer",
-        "settings": {
-          "question_id": "mode",
-          "answer_id": "complement",
-          "label": "Complete my wardrobe"
-        }
-      },
       "q_notes": {
         "type": "question",
         "settings": {
@@ -166,106 +136,90 @@
           "label": "Musk, iris & powder"
         }
       },
-      "q_when": {
+      "q_how": {
         "type": "question",
         "settings": {
-          "question_id": "when",
-          "title": "When will you wear it most?"
+          "question_id": "how",
+          "title": "How do you wear perfume?"
         }
       },
-      "a_when_everyday": {
+      "a_how_one_bottle": {
         "type": "answer",
         "settings": {
-          "question_id": "when",
-          "answer_id": "everyday",
-          "label": "Everyday Signature"
+          "question_id": "how",
+          "answer_id": "one-bottle",
+          "label": "One bottle"
         }
       },
-      "a_when_work": {
+      "a_how_day_night": {
         "type": "answer",
         "settings": {
-          "question_id": "when",
-          "answer_id": "work",
-          "label": "Work & Presence"
+          "question_id": "how",
+          "answer_id": "day-night",
+          "label": "Day & night"
         }
       },
-      "a_when_evening": {
+      "a_how_full_wardrobe": {
         "type": "answer",
         "settings": {
-          "question_id": "when",
-          "answer_id": "evening",
-          "label": "Evening & Seduction"
+          "question_id": "how",
+          "answer_id": "full-wardrobe",
+          "label": "A full wardrobe"
         }
       },
-      "a_when_special": {
-        "type": "answer",
-        "settings": {
-          "question_id": "when",
-          "answer_id": "special",
-          "label": "Special Occasions"
-        }
-      },
-      "q_mood": {
+      "q_feel": {
         "type": "question",
         "settings": {
-          "question_id": "mood",
-          "title": "What should it do for you?"
+          "question_id": "feel",
+          "title": "With it on, you want to feel…"
         }
       },
-      "a_mood_morning_boost": {
+      "a_feel_confident": {
         "type": "answer",
         "settings": {
-          "question_id": "mood",
-          "answer_id": "morning-boost",
-          "label": "Morning Boost"
+          "question_id": "feel",
+          "answer_id": "confident",
+          "label": "Confident"
         }
       },
-      "a_mood_focus_flow": {
+      "a_feel_attractive": {
         "type": "answer",
         "settings": {
-          "question_id": "mood",
-          "answer_id": "focus-flow",
-          "label": "Focus & Flow"
+          "question_id": "feel",
+          "answer_id": "attractive",
+          "label": "Attractive"
         }
       },
-      "a_mood_romance_presence": {
+      "a_feel_calm": {
         "type": "answer",
         "settings": {
-          "question_id": "mood",
-          "answer_id": "romance-presence",
-          "label": "Romance & Presence"
+          "question_id": "feel",
+          "answer_id": "calm",
+          "label": "Calm"
         }
       },
-      "a_mood_celebrate_indulge": {
+      "a_feel_energised": {
         "type": "answer",
         "settings": {
-          "question_id": "mood",
-          "answer_id": "celebrate-indulge",
-          "label": "Celebrate & Indulge"
+          "question_id": "feel",
+          "answer_id": "energised",
+          "label": "Energised"
         }
       },
-      "a_mood_relax_wind_down": {
+      "a_feel_festive": {
         "type": "answer",
         "settings": {
-          "question_id": "mood",
-          "answer_id": "relax-wind-down",
-          "label": "Relax & Wind Down"
+          "question_id": "feel",
+          "answer_id": "festive",
+          "label": "Festive"
         }
       },
-      "a_mood_move_thrive": {
+      "a_feel_free": {
         "type": "answer",
         "settings": {
-          "question_id": "mood",
-          "answer_id": "move-thrive",
-          "label": "Move & Thrive"
-        }
-      },
-      "a_mood_harmony_meditation": {
-        "type": "answer",
-        "settings": {
-          "question_id": "mood",
-          "answer_id": "harmony-meditation",
-          "label": "Harmony & Meditation"
+          "question_id": "feel",
+          "answer_id": "free",
+          "label": "Free"
         }
       },
       "q_presence": {
@@ -280,7 +234,7 @@
         "settings": {
           "question_id": "presence",
           "answer_id": "close",
-          "label": "Close to the skin"
+          "label": "Just for me"
         }
       },
       "a_presence_noticed": {
@@ -288,7 +242,7 @@
         "settings": {
           "question_id": "presence",
           "answer_id": "noticed",
-          "label": "Noticed in the room"
+          "label": "Pleasantly noticed"
         }
       },
       "a_presence_fills": {
@@ -296,38 +250,132 @@
         "settings": {
           "question_id": "presence",
           "answer_id": "fills",
-          "label": "Fills the room"
+          "label": "Remembered in the room"
         }
       },
-      "q_weather": {
+      "q_matters": {
         "type": "question",
         "settings": {
-          "question_id": "weather",
-          "title": "Your weather right now?"
+          "question_id": "matters",
+          "title": "What matters most?"
         }
       },
-      "a_weather_hot": {
+      "a_matters_easy": {
         "type": "answer",
         "settings": {
-          "question_id": "weather",
-          "answer_id": "hot",
-          "label": "Hot and humid"
+          "question_id": "matters",
+          "answer_id": "easy",
+          "label": "Easy & loved by all"
         }
       },
-      "a_weather_mild": {
+      "a_matters_trending": {
         "type": "answer",
         "settings": {
-          "question_id": "weather",
-          "answer_id": "mild",
-          "label": "Mild"
+          "question_id": "matters",
+          "answer_id": "trending",
+          "label": "What everyone's talking about"
         }
       },
-      "a_weather_cold": {
+      "a_matters_unique": {
         "type": "answer",
         "settings": {
-          "question_id": "weather",
-          "answer_id": "cold",
-          "label": "Cold"
+          "question_id": "matters",
+          "answer_id": "unique",
+          "label": "Unique"
+        }
+      },
+      "q_climate": {
+        "type": "question",
+        "settings": {
+          "question_id": "climate",
+          "title": "Your climate?"
+        }
+      },
+      "a_climate_hot_humid": {
+        "type": "answer",
+        "settings": {
+          "question_id": "climate",
+          "answer_id": "hot-humid",
+          "label": "Hot & humid"
+        }
+      },
+      "a_climate_dry_heat": {
+        "type": "answer",
+        "settings": {
+          "question_id": "climate",
+          "answer_id": "dry-heat",
+          "label": "Dry heat"
+        }
+      },
+      "a_climate_four_seasons": {
+        "type": "answer",
+        "settings": {
+          "question_id": "climate",
+          "answer_id": "four-seasons",
+          "label": "Four seasons"
+        }
+      },
+      "a_climate_mild_coast": {
+        "type": "answer",
+        "settings": {
+          "question_id": "climate",
+          "answer_id": "mild-coast",
+          "label": "Mild coast"
+        }
+      },
+      "q_style": {
+        "type": "question",
+        "settings": {
+          "question_id": "style",
+          "title": "Which style is most you?"
+        }
+      },
+      "a_style_classic": {
+        "type": "answer",
+        "settings": {
+          "question_id": "style",
+          "answer_id": "classic",
+          "label": "Classic"
+        }
+      },
+      "a_style_dramatic": {
+        "type": "answer",
+        "settings": {
+          "question_id": "style",
+          "answer_id": "dramatic",
+          "label": "Dramatic"
+        }
+      },
+      "a_style_romantic": {
+        "type": "answer",
+        "settings": {
+          "question_id": "style",
+          "answer_id": "romantic",
+          "label": "Romantic"
+        }
+      },
+      "a_style_minimal": {
+        "type": "answer",
+        "settings": {
+          "question_id": "style",
+          "answer_id": "minimal",
+          "label": "Minimal"
+        }
+      },
+      "a_style_casual": {
+        "type": "answer",
+        "settings": {
+          "question_id": "style",
+          "answer_id": "casual",
+          "label": "Casual"
+        }
+      },
+      "a_style_sporty": {
+        "type": "answer",
+        "settings": {
+          "question_id": "style",
+          "answer_id": "sporty",
+          "label": "Sporty"
         }
       }
     },
@@ -336,10 +384,6 @@
       "a_for_her",
       "a_for_him",
       "a_for_both",
-      "q_ref",
-      "q_mode",
-      "a_mode_similar",
-      "a_mode_complement",
       "q_notes",
       "a_notes_citrus",
       "a_notes_green",
@@ -353,27 +397,37 @@
       "a_notes_oud_leather",
       "a_notes_spices",
       "a_notes_musk_powder",
-      "q_when",
-      "a_when_everyday",
-      "a_when_work",
-      "a_when_evening",
-      "a_when_special",
-      "q_mood",
-      "a_mood_morning_boost",
-      "a_mood_focus_flow",
-      "a_mood_romance_presence",
-      "a_mood_celebrate_indulge",
-      "a_mood_relax_wind_down",
-      "a_mood_move_thrive",
-      "a_mood_harmony_meditation",
+      "q_how",
+      "a_how_one_bottle",
+      "a_how_day_night",
+      "a_how_full_wardrobe",
+      "q_feel",
+      "a_feel_confident",
+      "a_feel_attractive",
+      "a_feel_calm",
+      "a_feel_energised",
+      "a_feel_festive",
+      "a_feel_free",
       "q_presence",
       "a_presence_close",
       "a_presence_noticed",
       "a_presence_fills",
-      "q_weather",
-      "a_weather_hot",
-      "a_weather_mild",
-      "a_weather_cold"
+      "q_matters",
+      "a_matters_easy",
+      "a_matters_trending",
+      "a_matters_unique",
+      "q_climate",
+      "a_climate_hot_humid",
+      "a_climate_dry_heat",
+      "a_climate_four_seasons",
+      "a_climate_mild_coast",
+      "q_style",
+      "a_style_classic",
+      "a_style_dramatic",
+      "a_style_romantic",
+      "a_style_minimal",
+      "a_style_casual",
+      "a_style_sporty"
     ],
     "settings": {
       "config_file": "scent-quiz-aromastylist.json",

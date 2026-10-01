@@ -1,12 +1,13 @@
-// Build theme-files/ from the engine + one brand:
-//   theme-files/sections/scent-quiz.liquid      (copy of quiz/engine/sections)
-//   theme-files/assets/scent-quiz.js / .css     (copies of quiz/engine/assets)
-//   theme-files/assets/scent-quiz-<brand>.json  (config + compact catalog, minified)
-//   theme-files/templates/<brand>.scent-quiz.section.json  (section entry with all blocks, for INSTALL.md)
+// Build theme-files/ from the engine + one brand (v3):
+//   theme-files/sections/scent-quiz.liquid, scent-quiz-personas.liquid   (copies of quiz/engine/sections)
+//   theme-files/assets/scent-quiz.js / .css                               (minified copies of quiz/engine/assets)
+//   theme-files/assets/scent-quiz-<brand>.json        (questions, slots, copy + compact catalog)
+//   theme-files/assets/scent-quiz-<brand>-taste.json  (note profiles of our perfumes + the 400 popular perfumes)
+//   theme-files/templates/<brand>.scent-quiz.section.json  (both section entries with their blocks, for INSTALL.md)
 // Usage: node scripts/build-theme-files.mjs [brand]
 import fs from 'node:fs';
 import path from 'node:path';
-import { taste, FAMILIES, CANON, encVec, encCanon } from './taste.mjs';
+import { taste, FAMILIES, CANON, encVec } from './taste.mjs';
 import { minify } from 'terser';
 
 const BRAND = process.argv[2] || 'aromastylist';
@@ -16,8 +17,9 @@ const LIMIT = 60 * 1024;
 
 const config = JSON.parse(fs.readFileSync(`${SRC}/config.json`, 'utf8'));
 const catalog = JSON.parse(fs.readFileSync(`${SRC}/catalog.json`, 'utf8'));
-const refFile = `${SRC}/reference-perfumes.json`;
-const reference = fs.existsSync(refFile) ? JSON.parse(fs.readFileSync(refFile, 'utf8')).perfumes : [];
+const popular = JSON.parse(fs.readFileSync('quiz/data/popular-perfumes.json', 'utf8')).perfumes;
+const meta = JSON.parse(fs.readFileSync('quiz/data/popular-meta.json', 'utf8'));
+const best = fs.existsSync('quiz/data/store-bestsellers.json') ? JSON.parse(fs.readFileSync('quiz/data/store-bestsellers.json', 'utf8')).rows : [];
 
 const VALUES = {
   gender: ['Feminine', 'Masculine', 'Unisex'],
@@ -26,8 +28,6 @@ const VALUES = {
   presence: ['close', 'noticed', 'fills'],
   season: ['hot', 'mild', 'cold'],
 };
-
-// one char per value: digit = index (store fact, or High/Medium derived), letter = Low-confidence derived
 function cell(dim, entries) {
   return entries.map(({ value, confidence }) => {
     const i = VALUES[dim].indexOf(value);
@@ -36,135 +36,128 @@ function cell(dim, entries) {
   }).join('');
 }
 const fact = (v) => ({ value: v, confidence: 'Store' });
-
 function dims(p) {
   const d = p.derived || {};
-  const gender = p.store.gender.length ? p.store.gender.map(fact) : d.gender ? [d.gender] : [];
-  const moment = p.store.moment ? [fact(p.store.moment)] : d.moment ? [d.moment] : [];
-  const mood = p.store.moods.length ? p.store.moods.map(fact) : d.moods || [];
   return {
-    gender: cell('gender', gender),
-    moment: cell('moment', moment),
-    mood: cell('mood', mood),
+    gender: cell('gender', p.store.gender.length ? p.store.gender.map(fact) : d.gender ? [d.gender] : []),
+    moment: cell('moment', p.store.moment ? [fact(p.store.moment)] : d.moment ? [d.moment] : []),
+    mood: cell('mood', p.store.moods.length ? p.store.moods.map(fact) : d.moods || []),
     presence: cell('presence', d.presence ? [d.presence] : []),
     season: cell('season', d.season || []),
   };
 }
+const norm = (x) => String(x).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
+const hot = new Set(best.map(([t]) => norm(t)));
+const isHot = (p) => hot.has(norm(p.title)) || [...hot].some((t) => norm(p.title).startsWith(t) || t.startsWith(norm(p.title)));
 
-// common image prefix
 const imgs = catalog.products.map((p) => p.image).filter(Boolean);
 let base = imgs[0].slice(0, imgs[0].lastIndexOf('/files/') + 7);
 if (!imgs.every((i) => i.startsWith(base))) base = '';
 const houses = [...new Set(catalog.products.map((p) => p.house))].sort();
-// key notes for the cards come from the taste file (canonical notes), so the catalog row carries none
-const FIELDS = ['handle', 'title', 'house', 'image', 'gender', 'moment', 'mood', 'presence', 'season', 'variant', 'price', 'available'];
-
+// handle prefix per house (the longest "xxx-" prefix most of its handles share); rows store "~rest"
+const hpre = houses.map((h) => {
+  const hs = catalog.products.filter((p) => p.house === h).map((p) => p.handle);
+  const cand = {};
+  hs.forEach((x) => { const parts = x.split('-'); for (let i = 1; i < parts.length; i++) { const k = parts.slice(0, i).join('-') + '-'; cand[k] = (cand[k] || 0) + 1; } });
+  const best = Object.entries(cand).filter(([, n]) => n >= Math.max(1, hs.length / 2)).sort((x, y) => y[0].length - x[0].length)[0];
+  return best ? best[0] : '';
+});
+const shortHandle = (p) => { const pre = hpre[houses.indexOf(p.house)]; return pre && p.handle.startsWith(pre) && p.handle.length > pre.length ? '~' + p.handle.slice(pre.length) : p.handle; };
+const FIELDS = ['handle', 'title', 'house', 'image', 'gender', 'moment', 'mood', 'presence', 'season', 'variant', 'price', 'available', 'hot'];
 function row(p) {
   const variant = p.variants.find((v) => v.id === p.sample_variant_id);
   const d = dims(p);
-  return [
-    p.handle,
-    p.title,
-    houses.indexOf(p.house),
-    p.image ? p.image.slice(base.length).replace(/\?v=\d+$/, '') : '',
-    d.gender, d.moment, d.mood, d.presence, d.season,
-    variant.id,
-    variant.price,
-    p.variants.some((v) => v.available) ? 1 : 0,
-  ];
+  return [shortHandle(p), p.title, houses.indexOf(p.house), p.image ? p.image.slice(base.length).replace(/\?v=\d+$/, '') : '',
+    d.gender, d.moment, d.mood, d.presence, d.season, variant.id, variant.price, p.variants.some((v) => v.available) ? 1 : 0, isHot(p) ? 1 : 0];
 }
+const items = catalog.products.filter((p) => !p.is_set);
+const sets = catalog.products.filter((p) => p.is_set);
 
-const merged = {
-  ...config,
-  built_at: new Date().toISOString(),
-  catalog: {
-    img: base,
-    houses,
-    values: VALUES,
-    fields: FIELDS,
-    items: catalog.products.filter((p) => !p.is_set).map(row),
-    sets: catalog.products.filter((p) => p.is_set).map(row),
-  },
-};
-
-// sanity: every answer tag value exists in the catalog vocabulary
-for (const q of config.questions) for (const a of q.answers || []) for (const [dim, w] of Object.entries(a.tags || {})) {
-  for (const v of Object.keys(w)) if (!VALUES[dim].includes(v)) throw new Error(`answer ${q.id}/${a.id}: unknown ${dim} value ${v}`);
-}
-
-// ---- taste file: note-family profile + canonical notes per product, and the reference perfumes
+// ---- taste: canonical notes (ALL of them, so taboos and why-lines can check every note) + family profile
 const tasteOf = (p) => (p.notes ? taste(p.notes) : null);
+const encAll = (ids) => ids.map((id) => String(CANON.findIndex((c) => c[0] === id)).padStart(2, '0')).join('');
+const tasteRow = (t) => (t ? [encVec(t.vec), encAll(t.canon)] : ['', '']);
 const memberTaste = (s) => {
-  // a set tastes like the average of its member perfumes
-  const ms = (s.set_members || []).map((m) => catalog.products.find((p) => p.handle === m.handle)).filter((p) => p && p.notes).map(tasteOf);
+  const ms = (s.set_members || []).map((m) => items.find((p) => p.handle === m.handle)).filter((p) => p && p.notes).map(tasteOf);
   if (!ms.length) return null;
   const vec = FAMILIES.map((_, i) => ms.reduce((a, t) => a + t.vec[i], 0) / ms.length);
-  const count = {};
-  ms.forEach((t) => t.canon.slice(0, 4).forEach((c) => (count[c] = (count[c] || 0) + 1)));
-  return { vec, canon: Object.entries(count).sort((a, b) => b[1] - a[1]).map(([c]) => c) };
+  const all = [...new Set(ms.flatMap((t) => t.canon))];
+  return { vec, canon: all };
 };
-const tasteRow = (t) => (t ? [encVec(t.vec), encCanon(t.canon)] : ['', '']);
-const norm = (x) => x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
-const ours = new Set(catalog.products.map((p) => norm(`${p.house} ${p.title}`)));
-const refs = reference.filter((r) => !ours.has(norm(`${r.house} ${r.name}`)));
+const refHouses = [...new Set(popular.map((r) => r.house))].sort();
+const order = [...meta.popular, ...popular.map((r) => r.id).filter((id) => !meta.popular.includes(id))];
+const byId = Object.fromEntries(popular.map((r) => [r.id, r]));
+const refs = order.map((id) => {
+  const r = byId[id];
+  const own = r.in_store ? items.findIndex((p) => p.handle === r.in_store) : -1;
+  const n = r.notes.top.length + r.notes.heart.length + r.notes.base.length + r.notes.key.length;
+  // brand "key" notes (no tiers) weigh like heart notes
+  const t = own < 0 && n ? taste({ top: r.notes.top, heart: [...r.notes.heart, ...r.notes.key], base: r.notes.base }) : null;
+  const flags = (meta.popular.includes(id) ? 1 : 0) | (fs.existsSync(`${OUT}/assets/sq-ref-${id}.webp`) ? 2 : 0) | (own < 0 && !t ? 4 : 0);
+  const out = [r.id, r.name, refHouses.indexOf(r.house), r.gender, t ? encVec(t.vec) : '', t ? encAll(t.canon) : '', flags, (r.aliases || []).join('|')];
+  if (own >= 0) out.push(own);
+  return out;
+});
 const tasteFile = {
   families: FAMILIES,
-  canon: CANON.map(([, label, fam]) => [label, FAMILIES.indexOf(fam)]),
-  items: catalog.products.filter((p) => !p.is_set).map((p) => tasteRow(tasteOf(p))),
-  sets: catalog.products.filter((p) => p.is_set).map((p) => tasteRow(memberTaste(p))),
-  refs: refs.map((r) => { const t = taste(r); return [r.id, r.name, r.house, encVec(t.vec), encCanon(t.canon), r.popular ? 1 : 0]; }),
+  canon: CANON.map(([id, label, fam, , broad]) => (broad ? [label, FAMILIES.indexOf(fam), id, 1] : [label, FAMILIES.indexOf(fam), id])),
+  houses: refHouses,
+  items: items.map((p) => tasteRow(tasteOf(p))),
+  sets: sets.map((p) => tasteRow(memberTaste(p))),
+  popular: meta.popular,
+  house_aliases: meta.house_aliases || {},
+  refs,
 };
 
-// placeholder image for a note-family answer without one: the most typical in-stock perfume of that family
-for (const q of merged.questions) for (const a of q.answers || []) {
-  if (a.image || !a.family) continue;
-  const k = FAMILIES.indexOf(a.family);
-  const best = catalog.products.filter((p) => !p.is_set && p.notes && p.image && p.variants.some((v) => v.available))
-    .map((p) => ({ p, share: tasteOf(p).vec[k] })).sort((x, y) => y.share - x.share)[0];
-  if (best) a.image = best.p.image.replace(/\?v=\d+$/, '');
+// ---- config: placeholder images for answers without one (note families, styles): the most typical in-stock perfume
+const typical = (fams, skip) => items.filter((p) => p.notes && p.image && p.variants.some((v) => v.available) && !skip.has(p.handle))
+  .map((p) => ({ p, s: fams.reduce((a, f) => a + tasteOf(p).vec[FAMILIES.indexOf(f)], 0) })).sort((x, y) => y.s - x.s)[0];
+const usedImg = new Set();
+for (const q of config.questions) for (const a of q.answers || []) {
+  if (a.image) continue;
+  const fams = a.family ? [a.family] : a.families;
+  if (!fams) continue;
+  const t = typical(fams, usedImg);
+  if (t) { a.image = t.p.image.replace(/\?v=\d+$/, ''); usedImg.add(t.p.handle); }
 }
-
-// review list for the owner: how each reference perfume was read
-const csvCell = (v) => (/[",\n]/.test(String(v)) ? `"${String(v).replace(/"/g, '""')}"` : v);
-const refRows = reference.map((r) => {
-  const t = taste(r);
-  const fams = FAMILIES.map((f, i) => [f, t.vec[i]]).filter(([, v]) => v > 0.04).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([f, v]) => `${f} ${Math.round(v * 100)}%`).join('; ');
-  const inCat = ours.has(norm(`${r.house} ${r.name}`));
-  return [r.id, r.house, r.name, [...r.top, ...r.heart, ...r.base].join('; '), t.canon.slice(0, 6).join('; '), fams, inCat ? 'ours (catalog notes used)' : 'reference'];
-});
-fs.writeFileSync(`${SRC}/reference-review.csv`, ['id,house,name,listed notes,read as,top families,source', ...refRows.map((r) => r.map(csvCell).join(','))].join('\n') + '\n');
+// answer images on the store CDN are written relative to it ("@files/x.png") to keep the asset under 60 KB
+const CDN = base.replace(/(files|collections)\/$/, '');
+for (const q of config.questions) for (const a of q.answers || []) if (a.image && CDN && a.image.startsWith(CDN)) a.image = '@' + a.image.slice(CDN.length);
+delete config.gender.note;
+const merged = {
+  ...config,
+  cdn: CDN,
+  catalog: {
+    img: base, houses, hpre, values: VALUES, fields: FIELDS,
+    items: items.map(row), sets: sets.map(row),
+    set_members: sets.map((s) => (s.set_members || []).map((m) => m.handle).filter((h) => items.some((p) => p.handle === h))),
+  },
+};
 
 fs.mkdirSync(`${OUT}/sections`, { recursive: true });
 fs.mkdirSync(`${OUT}/assets`, { recursive: true });
 fs.mkdirSync(`${OUT}/templates`, { recursive: true });
 fs.copyFileSync('quiz/engine/sections/scent-quiz.liquid', `${OUT}/sections/scent-quiz.liquid`);
-// theme copies are minified (readable sources stay in quiz/engine); the license comment /*! ... */ is kept
+fs.copyFileSync('quiz/engine/sections/scent-quiz-personas.liquid', `${OUT}/sections/scent-quiz-personas.liquid`);
 const js = await minify(fs.readFileSync('quiz/engine/assets/scent-quiz.js', 'utf8'), { compress: true, mangle: true, format: { comments: /^!/ } });
 fs.writeFileSync(`${OUT}/assets/scent-quiz.js`, js.code + '\n');
 const css = fs.readFileSync('quiz/engine/assets/scent-quiz.css', 'utf8')
   .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ').replace(/\s*([{}:;,>])\s*/g, '$1').replace(/;}/g, '}').trim();
 fs.writeFileSync(`${OUT}/assets/scent-quiz.css`, css + '\n');
-const jsonName = `scent-quiz-${BRAND}.json`;
+const jsonName = `scent-quiz-${BRAND}.json`, tasteName = `scent-quiz-${BRAND}-taste.json`;
 fs.writeFileSync(`${OUT}/assets/${jsonName}`, JSON.stringify(merged));
-const tasteName = `scent-quiz-${BRAND}-taste.json`;
 fs.writeFileSync(`${OUT}/assets/${tasteName}`, JSON.stringify(tasteFile));
-fs.copyFileSync('quiz/engine/sections/scent-quiz-personas.liquid', `${OUT}/sections/scent-quiz-personas.liquid`);
 
-// Section entry for the page template: every question / answer / persona as a block, prefilled from config.
-// Images are left empty on purpose: the engine falls back to the config image until the owner picks one.
-const blocks = {};
-const order = [];
-const add = (id, b) => { blocks[id] = b; order.push(id); };
+// ---- section entries. Blocks only for questions with image tiles (Shopify: max 50 blocks per section);
+// the perfume search, the taboo chips and the week grid are edited in the config file.
+const blocks = {}, blockOrder = [];
+const add = (id, b) => { blocks[id] = b; blockOrder.push(id); };
 for (const q of config.questions) {
+  if (!['single', 'multi', 'families'].includes(q.type)) continue;
   add(`q_${q.id}`.replace(/[^a-z0-9_]/gi, '_'), { type: 'question', settings: { question_id: q.id, title: q.title } });
-  for (const a of q.answers || []) add(`a_${q.id}_${a.id}`.replace(/[^a-z0-9_]/gi, '_'), { type: 'answer', settings: { question_id: q.id, answer_id: a.id, label: a.label } });
+  for (const a of q.answers) add(`a_${q.id}_${a.id}`.replace(/[^a-z0-9_]/gi, '_'), { type: 'answer', settings: { question_id: q.id, answer_id: a.id, label: a.label } });
 }
-const section = {
-  type: 'scent-quiz',
-  blocks,
-  block_order: order,
-  settings: { config_file: jsonName, taste_file: tasteName, color_palette: 'scheme-1' },
-};
+const section = { type: 'scent-quiz', blocks, block_order: blockOrder, settings: { config_file: jsonName, taste_file: tasteName, color_palette: 'scheme-1' } };
 const pBlocks = {}, pOrder = [];
 for (const p of config.personas.list) {
   const id = `p_${p.key}`.replace(/[^a-z0-9_]/gi, '_');
@@ -174,15 +167,18 @@ for (const p of config.personas.list) {
 const personaSection = { type: 'scent-quiz-personas', blocks: pBlocks, block_order: pOrder, settings: { color_palette: 'scheme-1', title: 'All scent personas', intro: '' } };
 fs.writeFileSync(`${OUT}/templates/${BRAND}.scent-quiz.section.json`, JSON.stringify({ scent_quiz: section, scent_quiz_personas: personaSection }, null, 2) + '\n');
 
-// sizes
-const files = ['sections/scent-quiz.liquid', 'sections/scent-quiz-personas.liquid', 'assets/scent-quiz.js', 'assets/scent-quiz.css', `assets/${jsonName}`, `assets/${tasteName}`];
+// ---- sizes (budgets: each file <= 60 KB; js + css + json <= 200 KB; images <= 1.8 MB)
+const files = ['sections/scent-quiz.liquid', 'sections/scent-quiz-personas.liquid', 'templates/' + BRAND + '.scent-quiz.section.json', 'assets/scent-quiz.js', 'assets/scent-quiz.css', `assets/${jsonName}`, `assets/${tasteName}`];
 let total = 0;
 for (const f of files) {
   const n = fs.statSync(path.join(OUT, f)).size;
-  if (f.startsWith('assets/')) total += n;
-  console.log(`${f.padEnd(34)} ${(n / 1024).toFixed(1).padStart(6)} KB${n > LIMIT ? '  <-- over 60 KB!' : ''}`);
+  if (/\.(js|css|json)$/.test(f) && f.startsWith('assets/')) total += n;
+  console.log(`${f.padEnd(44)} ${(n / 1024).toFixed(1).padStart(6)} KB${n > LIMIT ? '  <-- over 60 KB!' : ''}`);
   if (n > LIMIT) process.exitCode = 1;
 }
-console.log(`assets total (js+css+json)         ${(total / 1024).toFixed(1).padStart(6)} KB (budget 150 KB)${total > 150 * 1024 ? ' <-- OVER' : ''}`);
-console.log(`blocks: quiz ${order.length}, personas ${pOrder.length} (max 50 each) | reference perfumes ${refs.length} (+${reference.length - refs.length} already ours)`);
-if (order.length > 50 || pOrder.length > 50) process.exitCode = 1;
+const webp = fs.readdirSync(`${OUT}/assets`).filter((f) => /^sq-ref-.*\.webp$/.test(f));
+const imgTotal = webp.reduce((s, f) => s + fs.statSync(`${OUT}/assets/${f}`).size, 0);
+console.log(`assets js+css+json total ${(total / 1024).toFixed(1)} KB (budget 200)${total > 200 * 1024 ? ' <-- OVER' : ''}`);
+console.log(`images: ${webp.length} webp, ${(imgTotal / 1024).toFixed(0)} KB (budget 1800), largest ${webp.length ? (Math.max(...webp.map((f) => fs.statSync(`${OUT}/assets/${f}`).size)) / 1024).toFixed(1) : 0} KB`);
+console.log(`blocks: quiz ${blockOrder.length}, personas ${pOrder.length} (max 50 each) | refs ${refs.length} (${refs.filter((r) => r[6] & 4).length} without notes)`);
+if (total > 200 * 1024 || imgTotal > 1800 * 1024 || blockOrder.length > 50) process.exitCode = 1;

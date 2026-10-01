@@ -8,7 +8,8 @@
     "build": "node scripts/build-theme-files.mjs",
     "harness": "node harness/server.mjs",
     "test:combos": "node tests/combinations.mjs",
-    "test:e2e": "node tests/e2e.mjs"
+    "test:e2e": "node tests/e2e.mjs",
+    "test:search": "node tests/search.mjs"
   },
   "devDependencies": {
     "liquidjs": "10.29.0",
