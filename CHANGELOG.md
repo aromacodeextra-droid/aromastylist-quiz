@@ -1,5 +1,14 @@
 # Changelog
 
+## quiz-v3.3.2 (2026-10-01) — name first, then house; aligned tiles
+
+- Owner's rule: the perfume's name always comes first, the house under it. Applied to the 12 tiles on screen 2, the
+  search rows, the result cards and "Also fits this slot".
+- Tiles: photo, then the name in a fixed box (3 lines on phones, 2 on desktop), then the house in a fixed 2-line box, so
+  across the grid every name starts on the same line and every house starts on the same line. Long names show in full
+  (no "…"): Stronger With You Intensely, Born in Roma Donna, Replica By the Fireplace, English Pear & Freesia.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`. e2e 74 / 74.
+
 ## quiz-v3.3.1 (2026-10-01) — two tile photos
 
 - **1 Million** (him): the rabanne.com photo carried a 2023 award badge, so the bottle came out small and off-centre.

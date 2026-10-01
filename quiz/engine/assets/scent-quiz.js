@@ -809,8 +809,8 @@
       var r = x.kind === 'r' ? self.model.refById[x.id] : null;
       return '<li><button type="button" class="sq-result-item" data-act="perfume" data-q="' + qid + '" data-kind="' + x.kind + '" data-id="' + esc(x.id) + '">' +
         (r && r.img ? '<img class="sq-result-item__img" src="' + esc(self.refImg(r.id)) + '" alt="" width="40" height="40" loading="lazy">' : '<span class="sq-result-item__img" aria-hidden="true"></span>') +
-        '<span class="sq-result-item__text"><span class="sq-result-item__house">' + esc(x.house) + (x.own ? ' · ' + esc(c.on_our_shelf) : '') + '</span>' +
-        '<span class="sq-result-item__name">' + esc(x.name) + '</span></span></button></li>';
+        '<span class="sq-result-item__text"><span class="sq-result-item__name">' + esc(x.name) + '</span>' +
+        '<span class="sq-result-item__house">' + esc(x.house) + (x.own ? ' · ' + esc(c.on_our_shelf) : '') + '</span></span></button></li>';
     }).join('') + (input.value.trim() && !hits.length ? '<li class="sq-noresult">' + esc(c.search_none) + '</li>' : '');
   };
 
@@ -896,7 +896,7 @@
       return '<li><button type="button" class="sq-pop__tile" data-act="perfume" data-q="' + esc(q.id) + '" data-kind="r" data-id="' + esc(r.id) + '" aria-pressed="' + (keys.indexOf('r~' + r.id) >= 0) + '">' +
         (r.img ? '<img src="' + esc(self.refImg(r.id)) + '" alt="" width="600" height="600" loading="eager" decoding="async">' : '<span class="sq-pop__ph" aria-hidden="true">' + esc(r.name.charAt(0)) + '</span>') +
         // a line may break after "&" (Dolce&<wbr>Gabbana), never inside a word
-        '<span class="sq-pop__house">' + esc(r.house).replace(/&amp;/g, '&amp;<wbr>') + '</span><span class="sq-pop__name">' + esc(r.name) + '</span></button></li>';
+        '<span class="sq-pop__name">' + esc(r.name) + '</span><span class="sq-pop__house">' + esc(r.house).replace(/&amp;/g, '&amp;<wbr>') + '</span></button></li>';
     }).join('') + '</ul>';
     if (cur.length) {
       html += '<p class="sq-step">' + esc(fill(c.picked_count, { n: cur.length, max: q.max || 2 })) + '</p><ul class="sq-inside">' + cur.map(function (v) {
@@ -996,13 +996,13 @@
       (row.slot.text ? '<p class="sq-shelf__text">' + esc(row.slot.text) + '</p>' : '') + '</div>' +
       '<a class="sq-card__img" href="' + esc(this.productLink(p)) + '" tabindex="-1" aria-hidden="true">' +
       (p.image ? '<img src="' + esc(cdnSized(p.image, 600)) + '" srcset="' + esc(cdnSized(p.image, 600)) + ' 600w, ' + esc(cdnSized(p.image, 900)) + ' 900w" sizes="(min-width: 750px) 20vw, 40vw" alt="" width="600" height="600" loading="' + (i < 2 ? 'eager' : 'lazy') + '" decoding="async">' : '') + '</a>' +
-      '<div class="sq-card__body"><p class="sq-card__house">' + esc(p.house) + '</p>' +
-      '<h3 class="sq-card__name"><a href="' + esc(this.productLink(p)) + '">' + esc(p.title) + '</a></h3>' +
+      '<div class="sq-card__body"><h3 class="sq-card__name"><a href="' + esc(this.productLink(p)) + '">' + esc(p.title) + '</a></h3>' +
+      '<p class="sq-card__house">' + esc(p.house) + '</p>' +
       (shares ? '<p class="sq-card__why sq-card__why--taste" data-sq-shares>' + esc(shares) + '</p>' : '') +
       (why ? '<p class="sq-card__why" data-sq-why>' + esc(why) + '</p>' : '') +
       '<p class="sq-card__wear">' + esc(howToWear(this.model, row, c)) + '</p>' +
       '<button type="button" class="sq-btn sq-btn--line" data-act="add" data-variant="' + esc(p.variant) + '" data-handle="' + esc(p.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(p.price)) + '</button>' +
-      (alt ? '<details class="sq-alt"><summary>' + esc(c.also_fits) + '</summary><p><a href="' + esc(this.productLink(alt)) + '">' + esc(alt.house) + ' · ' + esc(alt.title) + '</a></p>' +
+      (alt ? '<details class="sq-alt"><summary>' + esc(c.also_fits) + '</summary><p><a href="' + esc(this.productLink(alt)) + '">' + esc(alt.title) + ' · ' + esc(alt.house) + '</a></p>' +
         '<button type="button" class="sq-btn sq-btn--line" data-act="add" data-variant="' + esc(alt.variant) + '" data-handle="' + esc(alt.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(alt.price)) + '</button></details>' : '') +
       '</div></li>';
   };

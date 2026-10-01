@@ -8,7 +8,7 @@
     {
       "name": "390-A: typo \"bacarat\" finds Baccarat Rouge 540",
       "ok": true,
-      "detail": "Maison Francis Kurkdjian · on our shelfBaccarat Rouge 540"
+      "detail": "Baccarat Rouge 540Maison Francis Kurkdjian · on our shelf"
     },
     {
       "name": "390-A: \"Inside <name>\" card for both picks (max 2)",
@@ -117,7 +117,7 @@
     {
       "name": "1440-A: typo \"bacarat\" finds Baccarat Rouge 540",
       "ok": true,
-      "detail": "Maison Francis Kurkdjian · on our shelfBaccarat Rouge 540"
+      "detail": "Baccarat Rouge 540Maison Francis Kurkdjian · on our shelf"
     },
     {
       "name": "1440-A: \"Inside <name>\" card for both picks (max 2)",
@@ -231,7 +231,7 @@
     {
       "name": "390: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 735 -> 735"
+      "detail": "scrollY 853 -> 853"
     },
     {
       "name": "390: a second tap on a chosen tile takes it back out",
@@ -265,7 +265,7 @@
     {
       "name": "1440: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 56 -> 331"
+      "detail": "scrollY 134 -> 410"
     },
     {
       "name": "1440: a second tap on a chosen tile takes it back out",
@@ -339,10 +339,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 17.9 KB, assets/scent-quiz.js 45.7 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 18.4 KB, assets/scent-quiz.js 45.7 KB"
     },
     {
-      "name": "JS + CSS + JSON 170.3 KB <= 200 KB",
+      "name": "JS + CSS + JSON 170.7 KB <= 200 KB",
       "ok": true
     },
     {
@@ -703,7 +703,7 @@
       "templates/aromastylist.scent-quiz.section.json": 16368,
       "assets/scent-quiz-aromastylist-taste.json": 49706,
       "assets/scent-quiz-aromastylist.json": 59511,
-      "assets/scent-quiz.css": 18318,
+      "assets/scent-quiz.css": 18796,
       "assets/scent-quiz.js": 46820,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
@@ -765,7 +765,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 174355,
+    "code_total": 174833,
     "images": 59,
     "images_total": 891710
   }
