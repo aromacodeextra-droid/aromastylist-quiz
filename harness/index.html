@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" class="js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find your Perfume – harness</title>
+<!-- live theme stylesheets (read-only GET from the store CDN) so theme-wide rules are in play, as on the site -->
+<link href="https://aromastylist.com/cdn/shop/t/70/assets/screen.css" rel="stylesheet" type="text/css" media="screen">
+<link href="https://aromastylist.com/cdn/shop/t/70/assets/theme-xtra.css" rel="stylesheet" type="text/css" media="screen">
+<link href="/harness/theme-vars.css" rel="stylesheet">
+<link href="/harness/harness.css" rel="stylesheet">
+<script>
+  // mock of what Shopify injects on every storefront page
+  window.Shopify = window.Shopify || {};
+  Shopify.routes = { root: '/' };
+  window.__sqEvents = [];
+  Shopify.analytics = { publish: function (name, data) { window.__sqEvents.push({ name: name, data: JSON.parse(JSON.stringify(data)) }); console.log('[analytics]', name, JSON.stringify(data)); } };
+</script>
+</head>
+<body>
+<div id="root">
+  <header class="hx-header palette-scheme-1">
+    <a class="hx-logo" href="/">AROMA STYLIST <small>(harness)</small></a>
+    <a class="hx-cart" href="/cart" data-panel="cart" aria-label="Cart">Bag <span id="cart-count">0</span> · <span id="cart-total">$0.00</span></a>
+  </header>
+  <main id="content">
+    <nav class="hx-crumbs" aria-label="Breadcrumbs"><a href="/">Homepage</a> / Find your Perfume</nav>
+    <div id="shopify-section-template--harness__scent_quiz" class="shopify-section shopify-section-scent-quiz">
+<link href="/theme-files/assets/scent-quiz.css" rel="stylesheet" type="text/css" media="all" />
+<div class="sq-section palette-scheme-1 module-color-palette" id="sq-template--harness__scent_quiz"><div class="sq" data-scent-quiz data-config="/theme-files/assets/scent-quiz-aromastylist.json" data-taste="/theme-files/assets/scent-quiz-aromastylist-taste.json" hidden>
+      <script type="application/json" data-sq-overrides>
+        {
+          "settings": {
+            "intro_kicker": "",
+            "intro_title": "",
+            "intro_text": "",
+            "start": ""
+          },
+          "blocks": [{"id": "q_for", "type": "question", "q": "for", "title": "Who is it for?"},{"id": "a_for_her", "type": "answer", "q": "for", "a": "her", "label": "Her",
+                   "img":null},{"id": "a_for_him", "type": "answer", "q": "for", "a": "him", "label": "Him",
+                   "img":null},{"id": "a_for_both", "type": "answer", "q": "for", "a": "both", "label": "Both of us / no rule",
+                   "img":null},{"id": "q_ref", "type": "question", "q": "ref", "title": "Name a perfume you already love"},{"id": "q_mode", "type": "question", "q": "mode", "title": "What do you want next?"},{"id": "a_mode_similar", "type": "answer", "q": "mode", "a": "similar", "label": "More like it",
+                   "img":null},{"id": "a_mode_complement", "type": "answer", "q": "mode", "a": "complement", "label": "Complete my wardrobe",
+                   "img":null},{"id": "q_notes", "type": "question", "q": "notes", "title": "Which notes pull you in?"},{"id": "a_notes_citrus", "type": "answer", "q": "notes", "a": "citrus", "label": "Citrus",
+                   "img":null},{"id": "a_notes_green", "type": "answer", "q": "notes", "a": "green", "label": "Green & herbs",
+                   "img":null},{"id": "a_notes_aquatic", "type": "answer", "q": "notes", "a": "aquatic", "label": "Fresh & aquatic",
+                   "img":null},{"id": "a_notes_florals", "type": "answer", "q": "notes", "a": "florals", "label": "Rose & florals",
+                   "img":null},{"id": "a_notes_white_florals", "type": "answer", "q": "notes", "a": "white-florals", "label": "White florals",
+                   "img":null},{"id": "a_notes_fruity", "type": "answer", "q": "notes", "a": "fruity", "label": "Fruity",
+                   "img":null},{"id": "a_notes_gourmand", "type": "answer", "q": "notes", "a": "gourmand", "label": "Vanilla & gourmand",
+                   "img":null},{"id": "a_notes_woods", "type": "answer", "q": "notes", "a": "woods", "label": "Woods",
+                   "img":null},{"id": "a_notes_amber", "type": "answer", "q": "notes", "a": "amber", "label": "Amber & resins",
+                   "img":null},{"id": "a_notes_oud_leather", "type": "answer", "q": "notes", "a": "oud-leather", "label": "Oud, leather & smoke",
+                   "img":null},{"id": "a_notes_spices", "type": "answer", "q": "notes", "a": "spices", "label": "Spices",
+                   "img":null},{"id": "a_notes_musk_powder", "type": "answer", "q": "notes", "a": "musk-powder", "label": "Musk, iris & powder",
+                   "img":null},{"id": "q_when", "type": "question", "q": "when", "title": "When will you wear it most?"},{"id": "a_when_everyday", "type": "answer", "q": "when", "a": "everyday", "label": "Everyday Signature",
+                   "img":null},{"id": "a_when_work", "type": "answer", "q": "when", "a": "work", "label": "Work & Presence",
+                   "img":null},{"id": "a_when_evening", "type": "answer", "q": "when", "a": "evening", "label": "Evening & Seduction",
+                   "img":null},{"id": "a_when_special", "type": "answer", "q": "when", "a": "special", "label": "Special Occasions",
+                   "img":null},{"id": "q_mood", "type": "question", "q": "mood", "title": "What should it do for you?"},{"id": "a_mood_morning_boost", "type": "answer", "q": "mood", "a": "morning-boost", "label": "Morning Boost",
+                   "img":null},{"id": "a_mood_focus_flow", "type": "answer", "q": "mood", "a": "focus-flow", "label": "Focus & Flow",
+                   "img":null},{"id": "a_mood_romance_presence", "type": "answer", "q": "mood", "a": "romance-presence", "label": "Romance & Presence",
+                   "img":null},{"id": "a_mood_celebrate_indulge", "type": "answer", "q": "mood", "a": "celebrate-indulge", "label": "Celebrate & Indulge",
+                   "img":null},{"id": "a_mood_relax_wind_down", "type": "answer", "q": "mood", "a": "relax-wind-down", "label": "Relax & Wind Down",
+                   "img":null},{"id": "a_mood_move_thrive", "type": "answer", "q": "mood", "a": "move-thrive", "label": "Move & Thrive",
+                   "img":null},{"id": "a_mood_harmony_meditation", "type": "answer", "q": "mood", "a": "harmony-meditation", "label": "Harmony & Meditation",
+                   "img":null},{"id": "q_presence", "type": "question", "q": "presence", "title": "How present should it be?"},{"id": "a_presence_close", "type": "answer", "q": "presence", "a": "close", "label": "Close to the skin",
+                   "img":null},{"id": "a_presence_noticed", "type": "answer", "q": "presence", "a": "noticed", "label": "Noticed in the room",
+                   "img":null},{"id": "a_presence_fills", "type": "answer", "q": "presence", "a": "fills", "label": "Fills the room",
+                   "img":null},{"id": "q_weather", "type": "question", "q": "weather", "title": "Your weather right now?"},{"id": "a_weather_hot", "type": "answer", "q": "weather", "a": "hot", "label": "Hot and humid",
+                   "img":null},{"id": "a_weather_mild", "type": "answer", "q": "weather", "a": "mild", "label": "Mild",
+                   "img":null},{"id": "a_weather_cold", "type": "answer", "q": "weather", "a": "cold", "label": "Cold",
+                   "img":null}]
+        }
+      </script>
+      <div class="sq__app" data-sq-app aria-live="polite"></div>
+    </div></div>
+<script src="/theme-files/assets/scent-quiz.js" defer></script>
+
+
+
+    </div>
+    <div id="shopify-section-template--harness__scent_quiz_personas" class="shopify-section shopify-section-scent-quiz-personas">
+<link href="/theme-files/assets/scent-quiz.css" rel="stylesheet" type="text/css" media="all" />
+<div class="sq-section sq-section--personas palette-scheme-1 module-color-palette" id="sq-personas-template--harness__scent_quiz_personas"><details class="sq-personas">
+      <summary><h2 class="sq-personas__title">All scent personas</h2></summary><ul class="sq-personas__list"><li data-sq-persona="first-light" data-shopify-editor-block='{"id":"p_first_light"}'>
+            <h3>The First Light</h3>
+            <p>Zest on warm skin. A bright, close scent for the first hour of the day, noticed only by whoever leans in.</p>
+          </li><li data-sq-persona="sunlit-signal" data-shopify-editor-block='{"id":"p_sunlit_signal"}'>
+            <h3>The Sunlit Signal</h3>
+            <p>Citrus peel, green leaves and a clean trail that walks into the room a step behind you.</p>
+          </li><li data-sq-persona="bright-entrance" data-shopify-editor-block='{"id":"p_bright_entrance"}'>
+            <h3>The Bright Entrance</h3>
+            <p>Sparkling top notes with real staying power. You arrive and the whole room brightens a shade.</p>
+          </li><li data-sq-persona="quiet-signature" data-shopify-editor-block='{"id":"p_quiet_signature"}'>
+            <h3>The Quiet Signature</h3>
+            <p>Clean woods, cool herbs and a whisper of iris. Sharp, composed and kept to your own desk.</p>
+          </li><li data-sq-persona="sharp-edit" data-shopify-editor-block='{"id":"p_sharp_edit"}'>
+            <h3>The Sharp Edit</h3>
+            <p>Crisp aromatics over dry cedar. The scent of someone who answers emails in full sentences.</p>
+          </li><li data-sq-persona="boardroom-pull" data-shopify-editor-block='{"id":"p_boardroom_pull"}'>
+            <h3>The Boardroom Pull</h3>
+            <p>Structured woods and cold spice with a trail that says the meeting starts when you sit down.</p>
+          </li><li data-sq-persona="skin-secret" data-shopify-editor-block='{"id":"p_skin_secret"}'>
+            <h3>The Skin Secret</h3>
+            <p>Soft musk, warm petals and a trace of amber, made for the distance of a whisper.</p>
+          </li><li data-sq-persona="slow-burn" data-shopify-editor-block='{"id":"p_slow_burn"}'>
+            <h3>The Slow Burn</h3>
+            <p>Rose, resin and something darker underneath. It lingers on a scarf long after you&#39;ve left.</p>
+          </li><li data-sq-persona="after-hours-magnet" data-shopify-editor-block='{"id":"p_after_hours_magnet"}'>
+            <h3>The After-Hours Magnet</h3>
+            <p>Oud, amber and velvet florals that own the room after dark. Heads turn and nobody can say why.</p>
+          </li><li data-sq-persona="sweet-confidant" data-shopify-editor-block='{"id":"p_sweet_confidant"}'>
+            <h3>The Sweet Confidant</h3>
+            <p>Vanilla, cream and a pinch of spice worn close. Dessert you keep to yourself.</p>
+          </li><li data-sq-persona="golden-hour-guest" data-shopify-editor-block='{"id":"p_golden_hour_guest"}'>
+            <h3>The Golden Hour Guest</h3>
+            <p>Juicy fruit, warm amber and a pop of fizz. You make any table feel like a party.</p>
+          </li><li data-sq-persona="grand-entrance" data-shopify-editor-block='{"id":"p_grand_entrance"}'>
+            <h3>The Grand Entrance</h3>
+            <p>Rum, praline, saffron and leather. Loud in the best way and still there at the last song.</p>
+          </li><li data-sq-persona="soft-landing" data-shopify-editor-block='{"id":"p_soft_landing"}'>
+            <h3>The Soft Landing</h3>
+            <p>Lavender, sandalwood and clean musk. A Sunday with nowhere to be, bottled.</p>
+          </li><li data-sq-persona="cashmere-evening" data-shopify-editor-block='{"id":"p_cashmere_evening"}'>
+            <h3>The Cashmere Evening</h3>
+            <p>Creamy woods and powdery vanilla that warm a room like a lamp turned low.</p>
+          </li><li data-sq-persona="clean-stride" data-shopify-editor-block='{"id":"p_clean_stride"}'>
+            <h3>The Clean Stride</h3>
+            <p>Cool water, bright citrus and a snap of ginger. Fresh from the first step to the last.</p>
+          </li><li data-sq-persona="open-air" data-shopify-editor-block='{"id":"p_open_air"}'>
+            <h3>The Open Air</h3>
+            <p>Sea salt, green leaves and wild herbs that trail behind you like wind off the water.</p>
+          </li><li data-sq-persona="still-point" data-shopify-editor-block='{"id":"p_still_point"}'>
+            <h3>The Still Point</h3>
+            <p>Sandalwood, tea and a thread of incense. Close, unhurried and completely your own.</p>
+          </li><li data-sq-persona="temple-smoke" data-shopify-editor-block='{"id":"p_temple_smoke"}'>
+            <h3>The Temple Smoke</h3>
+            <p>Frankincense, myrrh and dry woods drifting through the room like the last minutes of a ritual.</p>
+          </li></ul>
+    </details></div>
+
+
+
+    </div>
+    <section class="hx-existing" data-existing-content>
+      <h2>Existing page content</h2>
+      <p>Image banners · Fresh · Clean · Fruity · Floral · Vanilla · Gourmand · Amber · Woody · Lavender · reviews - these sections stay exactly as they are on the live page.</p>
+    </section>
+  </main>
+</div>
+</body>
+</html>

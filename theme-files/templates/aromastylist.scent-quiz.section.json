@@ -1,0 +1,558 @@
+{
+  "scent_quiz": {
+    "type": "scent-quiz",
+    "blocks": {
+      "q_for": {
+        "type": "question",
+        "settings": {
+          "question_id": "for",
+          "title": "Who is it for?"
+        }
+      },
+      "a_for_her": {
+        "type": "answer",
+        "settings": {
+          "question_id": "for",
+          "answer_id": "her",
+          "label": "Her"
+        }
+      },
+      "a_for_him": {
+        "type": "answer",
+        "settings": {
+          "question_id": "for",
+          "answer_id": "him",
+          "label": "Him"
+        }
+      },
+      "a_for_both": {
+        "type": "answer",
+        "settings": {
+          "question_id": "for",
+          "answer_id": "both",
+          "label": "Both of us / no rule"
+        }
+      },
+      "q_ref": {
+        "type": "question",
+        "settings": {
+          "question_id": "ref",
+          "title": "Name a perfume you already love"
+        }
+      },
+      "q_mode": {
+        "type": "question",
+        "settings": {
+          "question_id": "mode",
+          "title": "What do you want next?"
+        }
+      },
+      "a_mode_similar": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mode",
+          "answer_id": "similar",
+          "label": "More like it"
+        }
+      },
+      "a_mode_complement": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mode",
+          "answer_id": "complement",
+          "label": "Complete my wardrobe"
+        }
+      },
+      "q_notes": {
+        "type": "question",
+        "settings": {
+          "question_id": "notes",
+          "title": "Which notes pull you in?"
+        }
+      },
+      "a_notes_citrus": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "citrus",
+          "label": "Citrus"
+        }
+      },
+      "a_notes_green": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "green",
+          "label": "Green & herbs"
+        }
+      },
+      "a_notes_aquatic": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "aquatic",
+          "label": "Fresh & aquatic"
+        }
+      },
+      "a_notes_florals": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "florals",
+          "label": "Rose & florals"
+        }
+      },
+      "a_notes_white_florals": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "white-florals",
+          "label": "White florals"
+        }
+      },
+      "a_notes_fruity": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "fruity",
+          "label": "Fruity"
+        }
+      },
+      "a_notes_gourmand": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "gourmand",
+          "label": "Vanilla & gourmand"
+        }
+      },
+      "a_notes_woods": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "woods",
+          "label": "Woods"
+        }
+      },
+      "a_notes_amber": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "amber",
+          "label": "Amber & resins"
+        }
+      },
+      "a_notes_oud_leather": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "oud-leather",
+          "label": "Oud, leather & smoke"
+        }
+      },
+      "a_notes_spices": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "spices",
+          "label": "Spices"
+        }
+      },
+      "a_notes_musk_powder": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "musk-powder",
+          "label": "Musk, iris & powder"
+        }
+      },
+      "q_when": {
+        "type": "question",
+        "settings": {
+          "question_id": "when",
+          "title": "When will you wear it most?"
+        }
+      },
+      "a_when_everyday": {
+        "type": "answer",
+        "settings": {
+          "question_id": "when",
+          "answer_id": "everyday",
+          "label": "Everyday Signature"
+        }
+      },
+      "a_when_work": {
+        "type": "answer",
+        "settings": {
+          "question_id": "when",
+          "answer_id": "work",
+          "label": "Work & Presence"
+        }
+      },
+      "a_when_evening": {
+        "type": "answer",
+        "settings": {
+          "question_id": "when",
+          "answer_id": "evening",
+          "label": "Evening & Seduction"
+        }
+      },
+      "a_when_special": {
+        "type": "answer",
+        "settings": {
+          "question_id": "when",
+          "answer_id": "special",
+          "label": "Special Occasions"
+        }
+      },
+      "q_mood": {
+        "type": "question",
+        "settings": {
+          "question_id": "mood",
+          "title": "What should it do for you?"
+        }
+      },
+      "a_mood_morning_boost": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mood",
+          "answer_id": "morning-boost",
+          "label": "Morning Boost"
+        }
+      },
+      "a_mood_focus_flow": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mood",
+          "answer_id": "focus-flow",
+          "label": "Focus & Flow"
+        }
+      },
+      "a_mood_romance_presence": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mood",
+          "answer_id": "romance-presence",
+          "label": "Romance & Presence"
+        }
+      },
+      "a_mood_celebrate_indulge": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mood",
+          "answer_id": "celebrate-indulge",
+          "label": "Celebrate & Indulge"
+        }
+      },
+      "a_mood_relax_wind_down": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mood",
+          "answer_id": "relax-wind-down",
+          "label": "Relax & Wind Down"
+        }
+      },
+      "a_mood_move_thrive": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mood",
+          "answer_id": "move-thrive",
+          "label": "Move & Thrive"
+        }
+      },
+      "a_mood_harmony_meditation": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mood",
+          "answer_id": "harmony-meditation",
+          "label": "Harmony & Meditation"
+        }
+      },
+      "q_presence": {
+        "type": "question",
+        "settings": {
+          "question_id": "presence",
+          "title": "How present should it be?"
+        }
+      },
+      "a_presence_close": {
+        "type": "answer",
+        "settings": {
+          "question_id": "presence",
+          "answer_id": "close",
+          "label": "Close to the skin"
+        }
+      },
+      "a_presence_noticed": {
+        "type": "answer",
+        "settings": {
+          "question_id": "presence",
+          "answer_id": "noticed",
+          "label": "Noticed in the room"
+        }
+      },
+      "a_presence_fills": {
+        "type": "answer",
+        "settings": {
+          "question_id": "presence",
+          "answer_id": "fills",
+          "label": "Fills the room"
+        }
+      },
+      "q_weather": {
+        "type": "question",
+        "settings": {
+          "question_id": "weather",
+          "title": "Your weather right now?"
+        }
+      },
+      "a_weather_hot": {
+        "type": "answer",
+        "settings": {
+          "question_id": "weather",
+          "answer_id": "hot",
+          "label": "Hot and humid"
+        }
+      },
+      "a_weather_mild": {
+        "type": "answer",
+        "settings": {
+          "question_id": "weather",
+          "answer_id": "mild",
+          "label": "Mild"
+        }
+      },
+      "a_weather_cold": {
+        "type": "answer",
+        "settings": {
+          "question_id": "weather",
+          "answer_id": "cold",
+          "label": "Cold"
+        }
+      }
+    },
+    "block_order": [
+      "q_for",
+      "a_for_her",
+      "a_for_him",
+      "a_for_both",
+      "q_ref",
+      "q_mode",
+      "a_mode_similar",
+      "a_mode_complement",
+      "q_notes",
+      "a_notes_citrus",
+      "a_notes_green",
+      "a_notes_aquatic",
+      "a_notes_florals",
+      "a_notes_white_florals",
+      "a_notes_fruity",
+      "a_notes_gourmand",
+      "a_notes_woods",
+      "a_notes_amber",
+      "a_notes_oud_leather",
+      "a_notes_spices",
+      "a_notes_musk_powder",
+      "q_when",
+      "a_when_everyday",
+      "a_when_work",
+      "a_when_evening",
+      "a_when_special",
+      "q_mood",
+      "a_mood_morning_boost",
+      "a_mood_focus_flow",
+      "a_mood_romance_presence",
+      "a_mood_celebrate_indulge",
+      "a_mood_relax_wind_down",
+      "a_mood_move_thrive",
+      "a_mood_harmony_meditation",
+      "q_presence",
+      "a_presence_close",
+      "a_presence_noticed",
+      "a_presence_fills",
+      "q_weather",
+      "a_weather_hot",
+      "a_weather_mild",
+      "a_weather_cold"
+    ],
+    "settings": {
+      "config_file": "scent-quiz-aromastylist.json",
+      "taste_file": "scent-quiz-aromastylist-taste.json",
+      "color_palette": "scheme-1"
+    }
+  },
+  "scent_quiz_personas": {
+    "type": "scent-quiz-personas",
+    "blocks": {
+      "p_first_light": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "first-light",
+          "name": "The First Light",
+          "line": "Zest on warm skin. A bright, close scent for the first hour of the day, noticed only by whoever leans in."
+        }
+      },
+      "p_sunlit_signal": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "sunlit-signal",
+          "name": "The Sunlit Signal",
+          "line": "Citrus peel, green leaves and a clean trail that walks into the room a step behind you."
+        }
+      },
+      "p_bright_entrance": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "bright-entrance",
+          "name": "The Bright Entrance",
+          "line": "Sparkling top notes with real staying power. You arrive and the whole room brightens a shade."
+        }
+      },
+      "p_quiet_signature": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "quiet-signature",
+          "name": "The Quiet Signature",
+          "line": "Clean woods, cool herbs and a whisper of iris. Sharp, composed and kept to your own desk."
+        }
+      },
+      "p_sharp_edit": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "sharp-edit",
+          "name": "The Sharp Edit",
+          "line": "Crisp aromatics over dry cedar. The scent of someone who answers emails in full sentences."
+        }
+      },
+      "p_boardroom_pull": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "boardroom-pull",
+          "name": "The Boardroom Pull",
+          "line": "Structured woods and cold spice with a trail that says the meeting starts when you sit down."
+        }
+      },
+      "p_skin_secret": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "skin-secret",
+          "name": "The Skin Secret",
+          "line": "Soft musk, warm petals and a trace of amber, made for the distance of a whisper."
+        }
+      },
+      "p_slow_burn": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "slow-burn",
+          "name": "The Slow Burn",
+          "line": "Rose, resin and something darker underneath. It lingers on a scarf long after you've left."
+        }
+      },
+      "p_after_hours_magnet": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "after-hours-magnet",
+          "name": "The After-Hours Magnet",
+          "line": "Oud, amber and velvet florals that own the room after dark. Heads turn and nobody can say why."
+        }
+      },
+      "p_sweet_confidant": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "sweet-confidant",
+          "name": "The Sweet Confidant",
+          "line": "Vanilla, cream and a pinch of spice worn close. Dessert you keep to yourself."
+        }
+      },
+      "p_golden_hour_guest": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "golden-hour-guest",
+          "name": "The Golden Hour Guest",
+          "line": "Juicy fruit, warm amber and a pop of fizz. You make any table feel like a party."
+        }
+      },
+      "p_grand_entrance": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "grand-entrance",
+          "name": "The Grand Entrance",
+          "line": "Rum, praline, saffron and leather. Loud in the best way and still there at the last song."
+        }
+      },
+      "p_soft_landing": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "soft-landing",
+          "name": "The Soft Landing",
+          "line": "Lavender, sandalwood and clean musk. A Sunday with nowhere to be, bottled."
+        }
+      },
+      "p_cashmere_evening": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "cashmere-evening",
+          "name": "The Cashmere Evening",
+          "line": "Creamy woods and powdery vanilla that warm a room like a lamp turned low."
+        }
+      },
+      "p_clean_stride": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "clean-stride",
+          "name": "The Clean Stride",
+          "line": "Cool water, bright citrus and a snap of ginger. Fresh from the first step to the last."
+        }
+      },
+      "p_open_air": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "open-air",
+          "name": "The Open Air",
+          "line": "Sea salt, green leaves and wild herbs that trail behind you like wind off the water."
+        }
+      },
+      "p_still_point": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "still-point",
+          "name": "The Still Point",
+          "line": "Sandalwood, tea and a thread of incense. Close, unhurried and completely your own."
+        }
+      },
+      "p_temple_smoke": {
+        "type": "persona",
+        "settings": {
+          "persona_key": "temple-smoke",
+          "name": "The Temple Smoke",
+          "line": "Frankincense, myrrh and dry woods drifting through the room like the last minutes of a ritual."
+        }
+      }
+    },
+    "block_order": [
+      "p_first_light",
+      "p_sunlit_signal",
+      "p_bright_entrance",
+      "p_quiet_signature",
+      "p_sharp_edit",
+      "p_boardroom_pull",
+      "p_skin_secret",
+      "p_slow_burn",
+      "p_after_hours_magnet",
+      "p_sweet_confidant",
+      "p_golden_hour_guest",
+      "p_grand_entrance",
+      "p_soft_landing",
+      "p_cashmere_evening",
+      "p_clean_stride",
+      "p_open_air",
+      "p_still_point",
+      "p_temple_smoke"
+    ],
+    "settings": {
+      "color_palette": "scheme-1",
+      "title": "All scent personas",
+      "intro": ""
+    }
+  }
+}

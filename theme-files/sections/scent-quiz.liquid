@@ -1,0 +1,94 @@
+{%- comment -%}
+  Scent quiz (brand-agnostic engine).
+  All questions, tags, products and default texts live in the JSON asset named in "Config file".
+  Blocks override wording and images per question / answer. Persona texts live in the
+  separate "Scent quiz: personas" section (Shopify allows 50 blocks per section) so they can be edited in the theme editor.
+  Without JavaScript the quiz stays hidden and the rest of the page is untouched.
+{%- endcomment -%}
+{%- liquid
+  assign cfg = section.settings.config_file | strip
+  assign taste = section.settings.taste_file | strip
+-%}
+{{ 'scent-quiz.css' | asset_url | stylesheet_tag }}
+<div class="sq-section palette-{{ section.settings.color_palette }} module-color-palette" id="sq-{{ section.id }}">
+  {%- if cfg != blank -%}
+    <div class="sq" data-scent-quiz data-config="{{ cfg | asset_url }}"{% if taste != blank %} data-taste="{{ taste | asset_url }}"{% endif %} hidden>
+      <script type="application/json" data-sq-overrides>
+        {
+          "settings": {
+            "intro_kicker": {{ section.settings.intro_kicker | default: '' | json }},
+            "intro_title": {{ section.settings.intro_title | default: '' | json }},
+            "intro_text": {{ section.settings.intro_text | default: '' | json }},
+            "start": {{ section.settings.start_label | default: '' | json }}
+          },
+          "blocks": [
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'question' -%}
+                  {"id": {{ block.id | json }}, "type": "question", "q": {{ block.settings.question_id | default: '' | strip | json }}, "title": {{ block.settings.title | default: '' | json }}}
+                {%- when 'answer' -%}
+                  {"id": {{ block.id | json }}, "type": "answer", "q": {{ block.settings.question_id | default: '' | strip | json }}, "a": {{ block.settings.answer_id | default: '' | strip | json }}, "label": {{ block.settings.label | default: '' | json }},
+                   "img": {%- if block.settings.image != blank -%}{"s": {{ block.settings.image | image_url: width: 600 | json }}, "l": {{ block.settings.image | image_url: width: 900 | json }}, "alt": {{ block.settings.image.alt | default: block.settings.label | default: '' | json }}}{%- else -%}null{%- endif -%}}
+              {%- endcase -%}
+              {%- unless forloop.last -%},{%- endunless -%}
+            {%- endfor -%}
+          ]
+        }
+      </script>
+      <div class="sq__app" data-sq-app aria-live="polite"></div>
+    </div>
+    {%- if request.design_mode -%}
+      {%- for block in section.blocks -%}<span class="sq-anchor" {{ block.shopify_attributes }}></span>{%- endfor -%}
+    {%- endif -%}
+  {%- elsif request.design_mode -%}
+    <p class="sq-editor-note">Scent quiz: enter the config file name (for example scent-quiz-brand.json) in the section settings.</p>
+  {%- endif -%}
+
+</div>
+<script src="{{ 'scent-quiz.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Scent quiz",
+  "tag": "section",
+  "class": "shopify-section-scent-quiz",
+  "max_blocks": 50,
+  "settings": [
+    { "type": "text", "id": "config_file", "label": "Config file (theme asset)", "info": "JSON asset with questions, scoring and catalog, e.g. scent-quiz-brand.json" },
+    { "type": "text", "id": "taste_file", "label": "Notes file (theme asset)", "info": "Optional JSON asset with note profiles and reference perfumes, e.g. scent-quiz-brand-taste.json. Without it the perfume and note questions are skipped." },
+    {
+      "type": "select", "id": "color_palette", "label": "Color scheme", "default": "scheme-1",
+      "options": [
+        { "value": "scheme-1", "label": "Scheme 1" }, { "value": "scheme-2", "label": "Scheme 2" },
+        { "value": "scheme-3", "label": "Scheme 3" }, { "value": "scheme-4", "label": "Scheme 4" },
+        { "value": "scheme-5", "label": "Scheme 5" }, { "value": "scheme-6", "label": "Scheme 6" },
+        { "value": "scheme-7", "label": "Scheme 7" }, { "value": "scheme-8", "label": "Scheme 8" }
+      ]
+    },
+    { "type": "header", "content": "Intro (leave blank to use the config file)" },
+    { "type": "text", "id": "intro_kicker", "label": "Small line above the title" },
+    { "type": "text", "id": "intro_title", "label": "Title" },
+    { "type": "textarea", "id": "intro_text", "label": "Text" },
+    { "type": "text", "id": "start_label", "label": "Start button" }
+  ],
+  "blocks": [
+    {
+      "type": "question", "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question_id", "label": "Question id", "info": "Must match an id in the config file" },
+        { "type": "text", "id": "title", "label": "Question text" }
+      ]
+    },
+    {
+      "type": "answer", "name": "Answer",
+      "settings": [
+        { "type": "text", "id": "question_id", "label": "Question id" },
+        { "type": "text", "id": "answer_id", "label": "Answer id", "info": "Must match an answer id in the config file" },
+        { "type": "text", "id": "label", "label": "Label" },
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Square images work best. Empty = default image from the config file." }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Scent quiz" }]
+}
+{% endschema %}

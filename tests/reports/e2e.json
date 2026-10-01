@@ -1,0 +1,1438 @@
+{
+  "runs": [
+    {
+      "run": "390-run1",
+      "answers": [
+        "her",
+        {
+          "search": "black opium"
+        },
+        "similar",
+        "evening",
+        "romance-presence",
+        "fills",
+        "cold"
+      ],
+      "persona": "The After-Hours Magnet",
+      "items": [
+        {
+          "handle": "widian-hili",
+          "variant": 50633353920792
+        },
+        {
+          "handle": "max-philip-cherry",
+          "variant": 50838982426904
+        },
+        {
+          "handle": "xerjoff-comandante",
+          "variant": 50619273773336
+        },
+        {
+          "handle": "xerjoff-400-jtc",
+          "variant": 50619337277720
+        },
+        {
+          "handle": "etat-libre-dorange-dangerous-complicity",
+          "variant": 52685163462936
+        }
+      ],
+      "houses": [
+        "WIDIAN",
+        "Max Philip",
+        "Xerjoff",
+        "Xerjoff",
+        "Etat Libre d'Orange"
+      ],
+      "set": "modern-icons",
+      "share_image": "screenshots/share-story-390-run1.png"
+    },
+    {
+      "run": "390-run2",
+      "answers": [
+        "him",
+        {
+          "chip": "dior-sauvage"
+        },
+        "complement",
+        "work",
+        "focus-flow",
+        "close",
+        "mild"
+      ],
+      "persona": "The Quiet Signature",
+      "items": [
+        {
+          "handle": "maison-crivelli-absinthe-boreale",
+          "variant": 50633330786584
+        },
+        {
+          "handle": "jusbox-visionary-eye",
+          "variant": 52685270712600
+        },
+        {
+          "handle": "parfums-de-marly-layton",
+          "variant": 50567114817816
+        },
+        {
+          "handle": "creed-aventus-for-men",
+          "variant": 50567172391192
+        },
+        {
+          "handle": "mfk-apom",
+          "variant": 50567183434008
+        }
+      ],
+      "houses": [
+        "Maison Crivelli",
+        "Jusbox",
+        "Parfums de Marly",
+        "Creed",
+        "Maison Francis Kurkdjian"
+      ],
+      "set": "modern-legends",
+      "share_image": "screenshots/share-story-390-run2.png"
+    },
+    {
+      "run": "390-run3",
+      "answers": [
+        "both",
+        "skip",
+        {
+          "notes": [
+            "citrus",
+            "green",
+            "aquatic"
+          ]
+        },
+        "everyday",
+        "morning-boost",
+        "noticed",
+        "hot"
+      ],
+      "persona": "The Sunlit Signal",
+      "items": [
+        {
+          "handle": "clive-christian-crab-apple-blossom",
+          "variant": 50567167443224
+        },
+        {
+          "handle": "kilian-kologne-shield-of-protection",
+          "variant": 50816273350936
+        },
+        {
+          "handle": "nishane-wulong-cha",
+          "variant": 50816250708248
+        },
+        {
+          "handle": "jusbox-good-morning",
+          "variant": 52685270647064
+        },
+        {
+          "handle": "creed-silver-mountain-water",
+          "variant": 50567171735832
+        }
+      ],
+      "houses": [
+        "Clive Christian",
+        "Kilian",
+        "Nishane",
+        "Jusbox",
+        "Creed"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-390-run3.png"
+    },
+    {
+      "run": "390-run4",
+      "answers": [
+        "her",
+        {
+          "chip": "parfums-de-marly-delina"
+        },
+        "similar",
+        "special",
+        "celebrate-indulge",
+        "noticed",
+        "cold"
+      ],
+      "persona": "The Golden Hour Guest",
+      "items": [
+        {
+          "handle": "mfk-oud-satin-mood",
+          "variant": 50567183466776
+        },
+        {
+          "handle": "tiziana-terenzi-halley",
+          "variant": 50816244777240
+        },
+        {
+          "handle": "v-canto-temptatio",
+          "variant": 50816249135384
+        },
+        {
+          "handle": "jusbox-siren-and-sailors",
+          "variant": 52685274120472
+        },
+        {
+          "handle": "kilian-woman-in-gold",
+          "variant": 50816272072984
+        }
+      ],
+      "houses": [
+        "Maison Francis Kurkdjian",
+        "Tiziana Terenzi",
+        "V Canto",
+        "Jusbox",
+        "Kilian"
+      ],
+      "set": "modern-icons",
+      "share_image": "screenshots/share-story-390-run4.png"
+    },
+    {
+      "run": "390-run5",
+      "answers": [
+        "him",
+        "skip",
+        {
+          "notes": [
+            "woods",
+            "spices"
+          ]
+        },
+        "everyday",
+        "move-thrive",
+        "close",
+        "hot"
+      ],
+      "persona": "The Clean Stride",
+      "items": [
+        {
+          "handle": "clive-christian-20-iconic-masculin",
+          "variant": 50567170556184
+        },
+        {
+          "handle": "creed-viking-cologne",
+          "variant": 50567172358424
+        },
+        {
+          "handle": "escentric-molecules-molecule-01-ginger",
+          "variant": 52599245734168
+        },
+        {
+          "handle": "maison-crivelli-santal-volcanique",
+          "variant": 50633287696664
+        },
+        {
+          "handle": "creed-himalaya",
+          "variant": 50567171997976
+        }
+      ],
+      "houses": [
+        "Clive Christian",
+        "Creed",
+        "Escentric Molecules",
+        "Maison Crivelli",
+        "Creed"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-390-run5.png"
+    },
+    {
+      "run": "1440-run1",
+      "answers": [
+        "her",
+        {
+          "search": "black opium"
+        },
+        "similar",
+        "evening",
+        "romance-presence",
+        "fills",
+        "cold"
+      ],
+      "persona": "The After-Hours Magnet",
+      "items": [
+        {
+          "handle": "widian-hili",
+          "variant": 50633353920792
+        },
+        {
+          "handle": "max-philip-cherry",
+          "variant": 50838982426904
+        },
+        {
+          "handle": "xerjoff-comandante",
+          "variant": 50619273773336
+        },
+        {
+          "handle": "xerjoff-400-jtc",
+          "variant": 50619337277720
+        },
+        {
+          "handle": "etat-libre-dorange-dangerous-complicity",
+          "variant": 52685163462936
+        }
+      ],
+      "houses": [
+        "WIDIAN",
+        "Max Philip",
+        "Xerjoff",
+        "Xerjoff",
+        "Etat Libre d'Orange"
+      ],
+      "set": "modern-icons",
+      "share_image": "screenshots/share-story-1440-run1.png"
+    },
+    {
+      "run": "1440-run2",
+      "answers": [
+        "him",
+        {
+          "chip": "dior-sauvage"
+        },
+        "complement",
+        "work",
+        "focus-flow",
+        "close",
+        "mild"
+      ],
+      "persona": "The Quiet Signature",
+      "items": [
+        {
+          "handle": "maison-crivelli-absinthe-boreale",
+          "variant": 50633330786584
+        },
+        {
+          "handle": "jusbox-visionary-eye",
+          "variant": 52685270712600
+        },
+        {
+          "handle": "parfums-de-marly-layton",
+          "variant": 50567114817816
+        },
+        {
+          "handle": "creed-aventus-for-men",
+          "variant": 50567172391192
+        },
+        {
+          "handle": "mfk-apom",
+          "variant": 50567183434008
+        }
+      ],
+      "houses": [
+        "Maison Crivelli",
+        "Jusbox",
+        "Parfums de Marly",
+        "Creed",
+        "Maison Francis Kurkdjian"
+      ],
+      "set": "modern-legends",
+      "share_image": "screenshots/share-story-1440-run2.png"
+    },
+    {
+      "run": "1440-run3",
+      "answers": [
+        "both",
+        "skip",
+        {
+          "notes": [
+            "citrus",
+            "green",
+            "aquatic"
+          ]
+        },
+        "everyday",
+        "morning-boost",
+        "noticed",
+        "hot"
+      ],
+      "persona": "The Sunlit Signal",
+      "items": [
+        {
+          "handle": "clive-christian-crab-apple-blossom",
+          "variant": 50567167443224
+        },
+        {
+          "handle": "kilian-kologne-shield-of-protection",
+          "variant": 50816273350936
+        },
+        {
+          "handle": "nishane-wulong-cha",
+          "variant": 50816250708248
+        },
+        {
+          "handle": "jusbox-good-morning",
+          "variant": 52685270647064
+        },
+        {
+          "handle": "creed-silver-mountain-water",
+          "variant": 50567171735832
+        }
+      ],
+      "houses": [
+        "Clive Christian",
+        "Kilian",
+        "Nishane",
+        "Jusbox",
+        "Creed"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-1440-run3.png"
+    },
+    {
+      "run": "1440-run4",
+      "answers": [
+        "her",
+        {
+          "chip": "parfums-de-marly-delina"
+        },
+        "similar",
+        "special",
+        "celebrate-indulge",
+        "noticed",
+        "cold"
+      ],
+      "persona": "The Golden Hour Guest",
+      "items": [
+        {
+          "handle": "mfk-oud-satin-mood",
+          "variant": 50567183466776
+        },
+        {
+          "handle": "tiziana-terenzi-halley",
+          "variant": 50816244777240
+        },
+        {
+          "handle": "v-canto-temptatio",
+          "variant": 50816249135384
+        },
+        {
+          "handle": "jusbox-siren-and-sailors",
+          "variant": 52685274120472
+        },
+        {
+          "handle": "kilian-woman-in-gold",
+          "variant": 50816272072984
+        }
+      ],
+      "houses": [
+        "Maison Francis Kurkdjian",
+        "Tiziana Terenzi",
+        "V Canto",
+        "Jusbox",
+        "Kilian"
+      ],
+      "set": "modern-icons",
+      "share_image": "screenshots/share-story-1440-run4.png"
+    },
+    {
+      "run": "1440-run5",
+      "answers": [
+        "him",
+        "skip",
+        {
+          "notes": [
+            "woods",
+            "spices"
+          ]
+        },
+        "everyday",
+        "move-thrive",
+        "close",
+        "hot"
+      ],
+      "persona": "The Clean Stride",
+      "items": [
+        {
+          "handle": "clive-christian-20-iconic-masculin",
+          "variant": 50567170556184
+        },
+        {
+          "handle": "creed-viking-cologne",
+          "variant": 50567172358424
+        },
+        {
+          "handle": "escentric-molecules-molecule-01-ginger",
+          "variant": 52599245734168
+        },
+        {
+          "handle": "maison-crivelli-santal-volcanique",
+          "variant": 50633287696664
+        },
+        {
+          "handle": "creed-himalaya",
+          "variant": 50567171997976
+        }
+      ],
+      "houses": [
+        "Clive Christian",
+        "Creed",
+        "Escentric Molecules",
+        "Maison Crivelli",
+        "Creed"
+      ],
+      "set": null,
+      "share_image": "screenshots/share-story-1440-run5.png"
+    }
+  ],
+  "checks": [
+    {
+      "name": "390-run1: 5 perfumes from 4 houses",
+      "ok": true,
+      "detail": "The After-Hours Magnet"
+    },
+    {
+      "name": "390-run1: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "3 families, 5/5 cards"
+    },
+    {
+      "name": "390-run1: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.r~ysl-black-opium.similar._.evening.romance-presence.fills.cold"
+    },
+    {
+      "name": "390-run1: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run1: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "390-run1: \"Add all 7 shelves\" posts the 7 shelf variants",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50633353920792,\"quantity\":1},{\"id\":50838670049560,\"quantity\":1},{\"id\":52685285196056,\"quantity\":1},{\"id\":50619273773336,\"quantity\":1},{\"id\":50567192150296,\"quantity\":1},{\"id\":52582870319384,\"quantity\":1},{\"id\":52685274186008,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run1: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run1: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.r%7Eysl-black-opium.similar._.evening.romance-presence.fills.cold"
+    },
+    {
+      "name": "390-run1: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50633353920792,\"quantity\":1},{\"id\":50838982426904,\"quantity\":1},{\"id\":50619273773336,\"quantity\":1},{\"id\":50619337277720,\"quantity\":1},{\"id\":52685163462936,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run1: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390-run2: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Quiet Signature"
+    },
+    {
+      "name": "390-run2: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "3 families, 5/5 cards"
+    },
+    {
+      "name": "390-run2: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.r~dior-sauvage.complement._.work.focus-flow.close.mild"
+    },
+    {
+      "name": "390-run2: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run2: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "390-run2: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run2: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.r%7Edior-sauvage.complement._.work.focus-flow.close.mild"
+    },
+    {
+      "name": "390-run2: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50633330786584,\"quantity\":1},{\"id\":52685270712600,\"quantity\":1},{\"id\":50567114817816,\"quantity\":1},{\"id\":50567172391192,\"quantity\":1},{\"id\":50567183434008,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run2: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390-run3: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Sunlit Signal"
+    },
+    {
+      "name": "390-run3: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "3 families, 5/5 cards"
+    },
+    {
+      "name": "390-run3: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=both.skip._.citrus+green+aquatic.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "390-run3: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run3: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "390-run3: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run3: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=both.skip._.citrus%2Bgreen%2Baquatic.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "390-run3: \"Add sample\" adds one item and updates the header count",
+      "ok": true
+    },
+    {
+      "name": "390-run3: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50567167443224,\"quantity\":1},{\"id\":50816273350936,\"quantity\":1},{\"id\":50816250708248,\"quantity\":1},{\"id\":52685270647064,\"quantity\":1},{\"id\":50567171735832,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run3: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390-run4: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Golden Hour Guest"
+    },
+    {
+      "name": "390-run4: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "3 families, 5/5 cards"
+    },
+    {
+      "name": "390-run4: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.p~parfums-de-marly-delina.similar._.special.celebrate-indulge.noticed.cold"
+    },
+    {
+      "name": "390-run4: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run4: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "390-run4: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run4: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.p%7Eparfums-de-marly-delina.similar._.special.celebrate-indulge.noticed.cold"
+    },
+    {
+      "name": "390-run4: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50567183466776,\"quantity\":1},{\"id\":50816244777240,\"quantity\":1},{\"id\":50816249135384,\"quantity\":1},{\"id\":52685274120472,\"quantity\":1},{\"id\":50816272072984,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run4: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390-run5: 5 perfumes from 4 houses",
+      "ok": true,
+      "detail": "The Clean Stride"
+    },
+    {
+      "name": "390-run5: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "2 families, 5/5 cards"
+    },
+    {
+      "name": "390-run5: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.skip._.woods+spices.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "390-run5: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run5: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "390-run5: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "390-run5: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.skip._.woods%2Bspices.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "390-run5: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50567170556184,\"quantity\":1},{\"id\":50567172358424,\"quantity\":1},{\"id\":52599245734168,\"quantity\":1},{\"id\":50633287696664,\"quantity\":1},{\"id\":50567171997976,\"quantity\":1}]}"
+    },
+    {
+      "name": "390-run5: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run1: 5 perfumes from 4 houses",
+      "ok": true,
+      "detail": "The After-Hours Magnet"
+    },
+    {
+      "name": "1440-run1: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "3 families, 5/5 cards"
+    },
+    {
+      "name": "1440-run1: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.r~ysl-black-opium.similar._.evening.romance-presence.fills.cold"
+    },
+    {
+      "name": "1440-run1: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run1: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "1440-run1: \"Add all 7 shelves\" posts the 7 shelf variants",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50633353920792,\"quantity\":1},{\"id\":50838670049560,\"quantity\":1},{\"id\":52685285196056,\"quantity\":1},{\"id\":50619273773336,\"quantity\":1},{\"id\":50567192150296,\"quantity\":1},{\"id\":52582870319384,\"quantity\":1},{\"id\":52685274186008,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run1: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run1: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.r%7Eysl-black-opium.similar._.evening.romance-presence.fills.cold"
+    },
+    {
+      "name": "1440-run1: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50633353920792,\"quantity\":1},{\"id\":50838982426904,\"quantity\":1},{\"id\":50619273773336,\"quantity\":1},{\"id\":50619337277720,\"quantity\":1},{\"id\":52685163462936,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run1: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run2: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Quiet Signature"
+    },
+    {
+      "name": "1440-run2: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "3 families, 5/5 cards"
+    },
+    {
+      "name": "1440-run2: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.r~dior-sauvage.complement._.work.focus-flow.close.mild"
+    },
+    {
+      "name": "1440-run2: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run2: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "1440-run2: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run2: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.r%7Edior-sauvage.complement._.work.focus-flow.close.mild"
+    },
+    {
+      "name": "1440-run2: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50633330786584,\"quantity\":1},{\"id\":52685270712600,\"quantity\":1},{\"id\":50567114817816,\"quantity\":1},{\"id\":50567172391192,\"quantity\":1},{\"id\":50567183434008,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run2: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run3: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Sunlit Signal"
+    },
+    {
+      "name": "1440-run3: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "3 families, 5/5 cards"
+    },
+    {
+      "name": "1440-run3: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=both.skip._.citrus+green+aquatic.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "1440-run3: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run3: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "1440-run3: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run3: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=both.skip._.citrus%2Bgreen%2Baquatic.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "1440-run3: \"Add sample\" adds one item and updates the header count",
+      "ok": true
+    },
+    {
+      "name": "1440-run3: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50567167443224,\"quantity\":1},{\"id\":50816273350936,\"quantity\":1},{\"id\":50816250708248,\"quantity\":1},{\"id\":52685270647064,\"quantity\":1},{\"id\":50567171735832,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run3: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run4: 5 perfumes from 5 houses",
+      "ok": true,
+      "detail": "The Golden Hour Guest"
+    },
+    {
+      "name": "1440-run4: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "3 families, 5/5 cards"
+    },
+    {
+      "name": "1440-run4: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.p~parfums-de-marly-delina.similar._.special.celebrate-indulge.noticed.cold"
+    },
+    {
+      "name": "1440-run4: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run4: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "1440-run4: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run4: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=her.p%7Eparfums-de-marly-delina.similar._.special.celebrate-indulge.noticed.cold"
+    },
+    {
+      "name": "1440-run4: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50567183466776,\"quantity\":1},{\"id\":50816244777240,\"quantity\":1},{\"id\":50816249135384,\"quantity\":1},{\"id\":52685274120472,\"quantity\":1},{\"id\":50816272072984,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run4: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440-run5: 5 perfumes from 4 houses",
+      "ok": true,
+      "detail": "The Clean Stride"
+    },
+    {
+      "name": "1440-run5: note DNA shown and every card says which notes it shares",
+      "ok": true,
+      "detail": "2 families, 5/5 cards"
+    },
+    {
+      "name": "1440-run5: URL carries the answers",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.skip._.woods+spices.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "1440-run5: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run5: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "1440-run5: share image is 1080x1920",
+      "ok": true,
+      "detail": "1080x1920"
+    },
+    {
+      "name": "1440-run5: shared link reopens the same result",
+      "ok": true,
+      "detail": "/pages/find-your-perfume?sq=him.skip._.woods%2Bspices.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "1440-run5: \"Add all\" POSTs /cart/add.js with items [{id, quantity:1}]",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50567170556184,\"quantity\":1},{\"id\":50567172358424,\"quantity\":1},{\"id\":52599245734168,\"quantity\":1},{\"id\":50633287696664,\"quantity\":1},{\"id\":50567171997976,\"quantity\":1}]}"
+    },
+    {
+      "name": "1440-run5: no page errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "analytics: quiz_started published",
+      "ok": true
+    },
+    {
+      "name": "analytics: quiz_completed published",
+      "ok": true
+    },
+    {
+      "name": "analytics: quiz_shared published",
+      "ok": true
+    },
+    {
+      "name": "analytics: quiz_add_to_cart published",
+      "ok": true
+    },
+    {
+      "name": "analytics: no personal data (no email / name / ip / customer fields)",
+      "ok": true
+    },
+    {
+      "name": "no-JS: quiz hidden, existing page content visible",
+      "ok": true
+    },
+    {
+      "name": "no-JS: persona texts are static HTML (crawlable)",
+      "ok": true,
+      "detail": "18 personas"
+    },
+    {
+      "name": "live page screenshot 390",
+      "ok": true
+    },
+    {
+      "name": "live page screenshot 1440",
+      "ok": true
+    },
+    {
+      "name": "added weight 124.3 KB <= 150 KB",
+      "ok": true,
+      "detail": "scent-quiz.js 35.6 KB, scent-quiz.css 14.9 KB, scent-quiz-aromastylist.json 57.5 KB, scent-quiz-aromastylist-taste.json 16.3 KB"
+    },
+    {
+      "name": "every theme file < 60 KB",
+      "ok": true
+    }
+  ],
+  "cart_payloads": [
+    {
+      "run": "390-run1-mood",
+      "payload": {
+        "items": [
+          {
+            "id": 50633353920792,
+            "quantity": 1
+          },
+          {
+            "id": 50838670049560,
+            "quantity": 1
+          },
+          {
+            "id": 52685285196056,
+            "quantity": 1
+          },
+          {
+            "id": 50619273773336,
+            "quantity": 1
+          },
+          {
+            "id": 50567192150296,
+            "quantity": 1
+          },
+          {
+            "id": 52582870319384,
+            "quantity": 1
+          },
+          {
+            "id": 52685274186008,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run1",
+      "payload": {
+        "items": [
+          {
+            "id": 50633353920792,
+            "quantity": 1
+          },
+          {
+            "id": 50838982426904,
+            "quantity": 1
+          },
+          {
+            "id": 50619273773336,
+            "quantity": 1
+          },
+          {
+            "id": 50619337277720,
+            "quantity": 1
+          },
+          {
+            "id": 52685163462936,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run2",
+      "payload": {
+        "items": [
+          {
+            "id": 50633330786584,
+            "quantity": 1
+          },
+          {
+            "id": 52685270712600,
+            "quantity": 1
+          },
+          {
+            "id": 50567114817816,
+            "quantity": 1
+          },
+          {
+            "id": 50567172391192,
+            "quantity": 1
+          },
+          {
+            "id": 50567183434008,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run3",
+      "payload": {
+        "items": [
+          {
+            "id": 50567167443224,
+            "quantity": 1
+          },
+          {
+            "id": 50816273350936,
+            "quantity": 1
+          },
+          {
+            "id": 50816250708248,
+            "quantity": 1
+          },
+          {
+            "id": 52685270647064,
+            "quantity": 1
+          },
+          {
+            "id": 50567171735832,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run4",
+      "payload": {
+        "items": [
+          {
+            "id": 50567183466776,
+            "quantity": 1
+          },
+          {
+            "id": 50816244777240,
+            "quantity": 1
+          },
+          {
+            "id": 50816249135384,
+            "quantity": 1
+          },
+          {
+            "id": 52685274120472,
+            "quantity": 1
+          },
+          {
+            "id": 50816272072984,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "390-run5",
+      "payload": {
+        "items": [
+          {
+            "id": 50567170556184,
+            "quantity": 1
+          },
+          {
+            "id": 50567172358424,
+            "quantity": 1
+          },
+          {
+            "id": 52599245734168,
+            "quantity": 1
+          },
+          {
+            "id": 50633287696664,
+            "quantity": 1
+          },
+          {
+            "id": 50567171997976,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run1-mood",
+      "payload": {
+        "items": [
+          {
+            "id": 50633353920792,
+            "quantity": 1
+          },
+          {
+            "id": 50838670049560,
+            "quantity": 1
+          },
+          {
+            "id": 52685285196056,
+            "quantity": 1
+          },
+          {
+            "id": 50619273773336,
+            "quantity": 1
+          },
+          {
+            "id": 50567192150296,
+            "quantity": 1
+          },
+          {
+            "id": 52582870319384,
+            "quantity": 1
+          },
+          {
+            "id": 52685274186008,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run1",
+      "payload": {
+        "items": [
+          {
+            "id": 50633353920792,
+            "quantity": 1
+          },
+          {
+            "id": 50838982426904,
+            "quantity": 1
+          },
+          {
+            "id": 50619273773336,
+            "quantity": 1
+          },
+          {
+            "id": 50619337277720,
+            "quantity": 1
+          },
+          {
+            "id": 52685163462936,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run2",
+      "payload": {
+        "items": [
+          {
+            "id": 50633330786584,
+            "quantity": 1
+          },
+          {
+            "id": 52685270712600,
+            "quantity": 1
+          },
+          {
+            "id": 50567114817816,
+            "quantity": 1
+          },
+          {
+            "id": 50567172391192,
+            "quantity": 1
+          },
+          {
+            "id": 50567183434008,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run3",
+      "payload": {
+        "items": [
+          {
+            "id": 50567167443224,
+            "quantity": 1
+          },
+          {
+            "id": 50816273350936,
+            "quantity": 1
+          },
+          {
+            "id": 50816250708248,
+            "quantity": 1
+          },
+          {
+            "id": 52685270647064,
+            "quantity": 1
+          },
+          {
+            "id": 50567171735832,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run4",
+      "payload": {
+        "items": [
+          {
+            "id": 50567183466776,
+            "quantity": 1
+          },
+          {
+            "id": 50816244777240,
+            "quantity": 1
+          },
+          {
+            "id": 50816249135384,
+            "quantity": 1
+          },
+          {
+            "id": 52685274120472,
+            "quantity": 1
+          },
+          {
+            "id": 50816272072984,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run5",
+      "payload": {
+        "items": [
+          {
+            "id": 50567170556184,
+            "quantity": 1
+          },
+          {
+            "id": 50567172358424,
+            "quantity": 1
+          },
+          {
+            "id": 52599245734168,
+            "quantity": 1
+          },
+          {
+            "id": 50633287696664,
+            "quantity": 1
+          },
+          {
+            "id": 50567171997976,
+            "quantity": 1
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "run": "390-run1",
+      "names": []
+    },
+    {
+      "run": "390-run2",
+      "names": []
+    },
+    {
+      "run": "390-run3",
+      "names": []
+    },
+    {
+      "run": "390-run4",
+      "names": []
+    },
+    {
+      "run": "390-run5",
+      "names": []
+    },
+    {
+      "run": "1440-run1",
+      "names": []
+    },
+    {
+      "run": "1440-run2",
+      "names": []
+    },
+    {
+      "run": "1440-run3",
+      "names": []
+    },
+    {
+      "run": "1440-run4",
+      "names": []
+    },
+    {
+      "run": "1440-run5",
+      "names": []
+    }
+  ],
+  "analytics_sample": [
+    {
+      "name": "quiz_started",
+      "data": {
+        "quiz": "aromastylist"
+      }
+    },
+    {
+      "name": "quiz_completed",
+      "data": {
+        "quiz": "aromastylist",
+        "answers": {
+          "for": "her",
+          "ref": "ysl-black-opium",
+          "mode": "similar",
+          "when": "evening",
+          "mood": "romance-presence",
+          "presence": "fills",
+          "weather": "cold"
+        },
+        "persona": "after-hours-magnet",
+        "taste_mode": "similar",
+        "products": [
+          "widian-hili",
+          "max-philip-cherry",
+          "xerjoff-comandante",
+          "xerjoff-400-jtc",
+          "etat-libre-dorange-dangerous-complicity"
+        ]
+      }
+    },
+    {
+      "name": "quiz_shared",
+      "data": {
+        "quiz": "aromastylist",
+        "method": "copy",
+        "persona": "after-hours-magnet"
+      }
+    },
+    {
+      "name": "quiz_add_to_cart",
+      "data": {
+        "quiz": "aromastylist",
+        "mode": "single",
+        "items": [
+          {
+            "variant_id": 50633353920792,
+            "handle": "widian-hili"
+          }
+        ]
+      }
+    }
+  ],
+  "weight": {
+    "scent-quiz.js": 36447,
+    "scent-quiz.css": 15235,
+    "scent-quiz-aromastylist.json": 58852,
+    "scent-quiz-aromastylist-taste.json": 16715,
+    "total": 127249
+  }
+}

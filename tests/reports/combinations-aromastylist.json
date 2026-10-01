@@ -1,0 +1,103 @@
+{
+  "brand": "aromastylist",
+  "runs": 4546,
+  "passed": 4546,
+  "failures": [],
+  "failure_count": 0,
+  "fallback_results": 0,
+  "items_per_result": {
+    "3": 561,
+    "4": 298,
+    "5": 3687
+  },
+  "named_perfumes": 362,
+  "family_sets": 298,
+  "tag_combinations": 756,
+  "match_quality": {
+    "similar_avg_family_cosine_top3": 0.734,
+    "similar_share_top3_with_a_shared_key_note": 0.973,
+    "complement_avg_family_cosine_top3": 0.412,
+    "complement_share_top3_with_a_thread_note": 1,
+    "families_avg_cosine_top3": 0.688
+  },
+  "distinct_products_recommended": 299,
+  "catalog_perfumes": 299,
+  "max_share_of_results": 0.07,
+  "top10": [
+    {
+      "handle": "clive-christian-e-cashmere-musk",
+      "title": "Clive Christian - E Cashmere Musk",
+      "times": 319
+    },
+    {
+      "handle": "guerlain-aqua-allegoria-forte-mandarine-basilic",
+      "title": "Guerlain - Aqua Allegoria Forte Mandarine Basilic",
+      "times": 315
+    },
+    {
+      "handle": "rosendo-mateu-no-5",
+      "title": "Rosendo Mateu - Nº 5 by Rosendo Mateu",
+      "times": 292
+    },
+    {
+      "handle": "memo-paris-italian-leather",
+      "title": "Memo Paris - Italian Leather",
+      "times": 274
+    },
+    {
+      "handle": "creed-virgin-island-water",
+      "title": "Creed - Virgin Island Water",
+      "times": 253
+    },
+    {
+      "handle": "nishane-wulong-cha",
+      "title": "Nishane - Wulong Chá",
+      "times": 249
+    },
+    {
+      "handle": "hermes-un-jardin-sur-le-nil",
+      "title": "Hermès - Un Jardin Sur Le Nil",
+      "times": 248
+    },
+    {
+      "handle": "maison-crivelli-santal-volcanique",
+      "title": "Maison Crivelli - Santal Volcanique",
+      "times": 220
+    },
+    {
+      "handle": "v-canto-temptatio",
+      "title": "V Canto - Temptatio",
+      "times": 216
+    },
+    {
+      "handle": "amouage-lyric-man",
+      "title": "Amouage - Lyric Man",
+      "times": 215
+    }
+  ],
+  "never_recommended": [],
+  "wardrobes": {
+    "occasion": {
+      "shelves": 18184,
+      "share_carrying_the_shelf_tag": 1
+    },
+    "mood": {
+      "shelves": 31822,
+      "share_carrying_the_shelf_tag": 1
+    }
+  },
+  "distinct_products_on_shelves": 297,
+  "set_card_shown": 985,
+  "set_card_by_set": {
+    "the-executive-edit": 101,
+    "the-modern-muse": 200,
+    "modern-legends": 277,
+    "black-ties": 66,
+    "gilded-gatsby-glam": 71,
+    "platinum-whisper": 14,
+    "after-hours": 74,
+    "midnight-bloom": 71,
+    "chromatic-couture": 66,
+    "modern-icons": 45
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "aromastylist-quiz",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch-catalog.mjs",
+    "derive": "node scripts/derive.mjs",
+    "build": "node scripts/build-theme-files.mjs",
+    "harness": "node harness/server.mjs",
+    "test:combos": "node tests/combinations.mjs",
+    "test:e2e": "node tests/e2e.mjs"
+  },
+  "devDependencies": {
+    "liquidjs": "10.29.0",
+    "playwright": "1.56.1",
+    "terser": "^5.51.2"
+  }
+}

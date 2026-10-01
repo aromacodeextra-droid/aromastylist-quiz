@@ -1,0 +1,39 @@
+runs: 4546 (named perfumes 362 x 2 modes x 4, family sets 298 x 3, tag combos 756)
+passed: 4546, failed: 0
+items per result: { '3': 561, '4': 298, '5': 3687 } | fallback results: 0
+match quality: {
+  similar_avg_family_cosine_top3: 0.734,
+  similar_share_top3_with_a_shared_key_note: 0.973,
+  complement_avg_family_cosine_top3: 0.412,
+  complement_share_top3_with_a_thread_note: 1,
+  families_avg_cosine_top3: 0.688
+}
+distinct perfumes recommended: 299 of 299; most frequent in 7.0% of runs
+top 10:
+   1. Clive Christian - E Cashmere Musk (319)
+   2. Guerlain - Aqua Allegoria Forte Mandarine Basilic (315)
+   3. Rosendo Mateu - Nº 5 by Rosendo Mateu (292)
+   4. Memo Paris - Italian Leather (274)
+   5. Creed - Virgin Island Water (253)
+   6. Nishane - Wulong Chá (249)
+   7. Hermès - Un Jardin Sur Le Nil (248)
+   8. Maison Crivelli - Santal Volcanique (220)
+   9. V Canto - Temptatio (216)
+  10. Amouage - Lyric Man (215)
+never recommended: 0
+wardrobes: {
+  occasion: { shelves: 18184, share_carrying_the_shelf_tag: 1 },
+  mood: { shelves: 31822, share_carrying_the_shelf_tag: 1 }
+} | distinct perfumes on shelves: 297
+set card shown in 985 of 4546 results {
+  'the-executive-edit': 101,
+  'the-modern-muse': 200,
+  'modern-legends': 277,
+  'black-ties': 66,
+  'gilded-gatsby-glam': 71,
+  'platinum-whisper': 14,
+  'after-hours': 74,
+  'midnight-bloom': 71,
+  'chromatic-couture': 66,
+  'modern-icons': 45
+}
