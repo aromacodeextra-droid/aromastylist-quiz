@@ -1,5 +1,14 @@
 # Changelog
 
+## quiz-v3.3.1 (2026-10-01) — two tile photos
+
+- **1 Million** (him): the rabanne.com photo carried a 2023 award badge, so the bottle came out small and off-centre.
+  Replaced with the clean packshot from the brand's Sephora page (1 Million EDT, P269120).
+- **Santal 33** (both): clear glass on Le Labo's grey studio background cannot be cut out without losing the glass (the
+  tile showed grey patches and a shadow streak). The tile now keeps the brand's grey background, square crop around the
+  bottle. All 36 tiles were checked by eye after this.
+- Changed theme files: `assets/sq-ref-rabanne-1-million.webp`, `assets/sq-ref-le-labo-santal-33.webp`. e2e 74 / 74.
+
 ## quiz-v3.3 (2026-10-01) — screen 2 made clear
 
 Owner's feedback from the phone preview: screen 2 started with pictures and a "Search" box at the very bottom, so it was

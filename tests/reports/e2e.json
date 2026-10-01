@@ -1,7 +1,7 @@
 {
   "checks": [
     {
-      "name": "390-A: 12 popular perfume tiles above the search box",
+      "name": "390-A: 12 bottle tiles under the \"Type its name\" box",
       "ok": true,
       "detail": "12 tiles"
     },
@@ -110,7 +110,7 @@
       "ok": true
     },
     {
-      "name": "1440-A: 12 popular perfume tiles above the search box",
+      "name": "1440-A: 12 bottle tiles under the \"Type its name\" box",
       "ok": true,
       "detail": "12 tiles"
     },
@@ -346,7 +346,7 @@
       "ok": true
     },
     {
-      "name": "59 images 858 KB <= 1.8 MB, each <= 30 KB",
+      "name": "59 images 871 KB <= 1.8 MB, each <= 30 KB",
       "ok": true
     }
   ],
@@ -736,7 +736,7 @@
       "assets/sq-ref-kilian-good-girl-gone-bad.webp": 8170,
       "assets/sq-ref-lancome-idole.webp": 9506,
       "assets/sq-ref-lancome-la-vie-est-belle.webp": 18516,
-      "assets/sq-ref-le-labo-santal-33.webp": 14366,
+      "assets/sq-ref-le-labo-santal-33.webp": 29320,
       "assets/sq-ref-marc-jacobs-daisy.webp": 10824,
       "assets/sq-ref-margiela-by-the-fireplace.webp": 21974,
       "assets/sq-ref-margiela-jazz-club.webp": 22188,
@@ -747,7 +747,7 @@
       "assets/sq-ref-pdm-layton.webp": 10606,
       "assets/sq-ref-prada-luna-rossa-carbon.webp": 8500,
       "assets/sq-ref-prada-paradoxe.webp": 28770,
-      "assets/sq-ref-rabanne-1-million.webp": 12722,
+      "assets/sq-ref-rabanne-1-million.webp": 11208,
       "assets/sq-ref-rabanne-invictus.webp": 22070,
       "assets/sq-ref-tom-ford-black-orchid.webp": 12386,
       "assets/sq-ref-tom-ford-fucking-fabulous.webp": 7234,
@@ -767,6 +767,6 @@
     },
     "code_total": 174355,
     "images": 59,
-    "images_total": 878270
+    "images_total": 891710
   }
 }

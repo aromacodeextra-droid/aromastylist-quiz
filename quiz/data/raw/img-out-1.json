@@ -109,7 +109,12 @@
   "image_url": "https://lelabo.ips.photos/lelabo-java/images/skus/100PS33100__PRODUCT_01--IMG_1200--SANTAL33-883562345.jpg",
   "page_url": "https://www.lelabofragrances.com/santal-33-147.html",
   "source_type": "brand",
-  "comment": "100 ml packshot from the product page gallery (the og:image is a lifestyle shot); brand grey studio background flattened to the card colour"
+  "comment": "100 ml packshot from the product page gallery. Clear glass on Le Labo grey studio background cannot be cut out without losing the glass, so the tile keeps the brand grey background: square crop around the bottle.",
+  "keep_background": {
+   "cx": 600,
+   "cy": 735,
+   "side": 760
+  }
  },
  {
   "id": "tom-ford-tobacco-vanille",

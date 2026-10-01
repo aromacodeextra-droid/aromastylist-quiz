@@ -79,6 +79,14 @@ for id in wanted:
     row = {'id': id, 'tile': id in popular['popular'], 'source_url': m.get('image_url', ''), 'page_url': m.get('page_url', ''), 'source_type': m.get('source_type', 'none') if files else 'none', 'comment': m.get('comment', '')}
     out = f'{OUT}/sq-ref-{id}.webp'
     if files and m.get('source_type') not in (None, 'none'):
+        if m.get('keep_background'):
+            # clear glass on a mid-grey studio background (Le Labo): keep the brand's background, square crop around the bottle
+            k = m['keep_background']
+            img = Image.open(files[0]).convert('RGB').crop((k['cx'] - k['side'] // 2, k['cy'] - k['side'] // 2, k['cx'] + k['side'] // 2, k['cy'] + k['side'] // 2)).resize((SIZE, SIZE), Image.LANCZOS)
+            n, q = save(img, out)
+            row.update({'file': f'theme-files/assets/sq-ref-{id}.webp', 'bytes': n, 'webp_quality': q, 'background': 'kept (brand studio grey), square crop'})
+            manifest.append(row)
+            continue
         if m.get('levels'):
             # pale glass on a light studio grey: cutting the background out would cut the glass too,
             # so lift the grey to the card colour with levels instead

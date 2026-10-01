@@ -187,11 +187,11 @@
    "source_url": "https://lelabo.ips.photos/lelabo-java/images/skus/100PS33100__PRODUCT_01--IMG_1200--SANTAL33-883562345.jpg",
    "page_url": "https://www.lelabofragrances.com/santal-33-147.html",
    "source_type": "brand",
-   "comment": "100 ml packshot from the product page gallery (the og:image is a lifestyle shot); brand grey studio background flattened to the card colour",
+   "comment": "100 ml packshot from the product page gallery. Clear glass on Le Labo grey studio background cannot be cut out without losing the glass, so the tile keeps the brand grey background: square crop around the bottle.",
    "file": "theme-files/assets/sq-ref-le-labo-santal-33.webp",
-   "bytes": 14366,
-   "webp_quality": 86,
-   "background": "flood (bg 83,87,83)"
+   "bytes": 29320,
+   "webp_quality": 82,
+   "background": "kept (brand studio grey), square crop"
   },
   {
    "id": "tom-ford-tobacco-vanille",
@@ -400,14 +400,14 @@
   {
    "id": "rabanne-1-million",
    "tile": false,
-   "source_url": "https://medias.rabanne.com/medias/sys_master/images/h9f/hc2/10999156572190/10999156506654/10999156506654.jpg",
-   "page_url": "https://www.rabanne.com/us/en_US/fragrance/p/1-million--000000000065187136",
-   "source_type": "brand",
-   "comment": "Brand site packshot; saved rabanne-1-million.jpg",
+   "source_url": "https://www.sephora.com/productimages/sku/s1200773-main-zoom.jpg",
+   "page_url": "https://www.sephora.com/product/1-million-P269120?skuId=1200773",
+   "source_type": "sephora",
+   "comment": "Rabanne 1 Million EDT on its Sephora page (P269120): clean packshot. The rabanne.com image carried a 2023 Fragrance Foundation award badge, which made the bottle small and off-centre on the tile.",
    "file": "theme-files/assets/sq-ref-rabanne-1-million.webp",
-   "bytes": 12722,
+   "bytes": 11208,
    "webp_quality": 86,
-   "background": "flood (bg 243,243,243)"
+   "background": "flood (bg 255,255,255)"
   },
   {
    "id": "rabanne-invictus",
