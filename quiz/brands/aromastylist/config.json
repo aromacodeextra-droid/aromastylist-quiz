@@ -196,7 +196,7 @@
       "type": "perfume",
       "max": 2,
       "title": "Do you have a signature scent?",
-      "subtitle": "The perfume you wear most, or love most. Type its name, or tap it below. You can choose two.",
+      "subtitle": "Type its name or tap a bottle. Up to two.",
       "none_label": "I don't have one"
     },
     {
@@ -1082,7 +1082,7 @@
     "start_over": "Start over",
     "next": "Continue",
     "multi_count": "{n} of {max} chosen",
-    "search_label": "Type its name",
+    "search_label": "Type a perfume name",
     "popular_title": "Or tap one of these",
     "on_our_shelf": "on our shelf",
     "dna_title": "Inside {name}",
@@ -1103,7 +1103,7 @@
     "start": "Start the quiz",
     "intro_title": "Your perfume stylist. Ten questions, one wardrobe.",
     "intro_text": "Tell us the perfume you wear now, what you never want to smell, and where your week goes. We read the notes and build a small wardrobe from what is on our shelf right now: one perfume for each part of your week.",
-    "search_placeholder": "e.g. Santal 33 or Dior",
+    "search_placeholder": "Type a perfume, e.g. Santal 33",
     "search_none": "We don't know that one yet. Try the house name, or pick \"I don't have one\".",
     "picked_count": "{n} of {max} chosen",
     "remove": "Remove",
@@ -1128,6 +1128,8 @@
     "share_title": "Share my wardrobe",
     "share_story_kicker": "My scent persona",
     "share_story_top": "My perfume wardrobe",
-    "no_notes": "{name}: the house does not publish its notes, so after this we will ask which notes you like."
+    "no_notes": "{name}: the house does not publish its notes, so after this we will ask which notes you like.",
+    "remove_named": "Remove {name}",
+    "no_notes_short": "The house does not publish its notes"
   }
 }

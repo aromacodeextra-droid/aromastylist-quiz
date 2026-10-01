@@ -1,7 +1,7 @@
 {
   "checks": [
     {
-      "name": "390-A: 12 bottle tiles under the \"Type its name\" box",
+      "name": "390-A: 12 bottle tiles under the name box",
       "ok": true,
       "detail": "12 tiles"
     },
@@ -11,9 +11,9 @@
       "detail": "Baccarat Rouge 540Maison Francis Kurkdjian · on our shelf"
     },
     {
-      "name": "390-A: \"Inside <name>\" card for both picks (max 2)",
+      "name": "390-A: both picks shown as chips with notes, right under the box (max 2)",
       "ok": true,
-      "detail": "Inside Baccarat Rouge 540 / Inside Black Opium"
+      "detail": "Baccarat Rouge 540 | ambergris · jasmine · amber · benzoin / Black Opium | tea · orange blossom · coffee · mandarin"
     },
     {
       "name": "390-A: one card per slot, biggest first",
@@ -110,7 +110,7 @@
       "ok": true
     },
     {
-      "name": "1440-A: 12 bottle tiles under the \"Type its name\" box",
+      "name": "1440-A: 12 bottle tiles under the name box",
       "ok": true,
       "detail": "12 tiles"
     },
@@ -120,9 +120,9 @@
       "detail": "Baccarat Rouge 540Maison Francis Kurkdjian · on our shelf"
     },
     {
-      "name": "1440-A: \"Inside <name>\" card for both picks (max 2)",
+      "name": "1440-A: both picks shown as chips with notes, right under the box (max 2)",
       "ok": true,
-      "detail": "Inside Baccarat Rouge 540 / Inside Black Opium"
+      "detail": "Baccarat Rouge 540 | ambergris · jasmine · amber · benzoin / Black Opium | tea · orange blossom · coffee · mandarin"
     },
     {
       "name": "1440-A: one card per slot, biggest first",
@@ -224,14 +224,14 @@
       "detail": "ysl-black-opium, lancome-la-vie-est-belle, chanel-coco-mademoiselle, dior-miss-dior …"
     },
     {
-      "name": "390: screen 2 reads \"Do you have a signature scent?\" -> \"Type its name\" box -> \"Or tap one of these\" tiles",
+      "name": "390: screen 2 reads \"Do you have a signature scent?\" -> one hint -> name box + \"I don't have one\" -> \"Or tap one of these\" tiles",
       "ok": true,
-      "detail": "{\"searchFirst\":true,\"title\":\"Do you have a signature scent?\",\"label\":\"Type its name\",\"tiles\":\"Or tap one of these\"}"
+      "detail": "{\"searchFirst\":true,\"title\":\"Do you have a signature scent?\",\"placeholder\":\"Type a perfume, e.g. Santal 33\",\"hint\":\"Type its name or tap a bottle. Up to two.\",\"noneNearBox\":true,\"tiles\":\"Or tap one of these\"}"
     },
     {
       "name": "390: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 821 -> 821"
+      "detail": "scrollY 795 -> 795"
     },
     {
       "name": "390: a second tap on a chosen tile takes it back out",
@@ -258,14 +258,14 @@
       "detail": "ysl-black-opium, lancome-la-vie-est-belle, chanel-coco-mademoiselle, dior-miss-dior …"
     },
     {
-      "name": "1440: screen 2 reads \"Do you have a signature scent?\" -> \"Type its name\" box -> \"Or tap one of these\" tiles",
+      "name": "1440: screen 2 reads \"Do you have a signature scent?\" -> one hint -> name box + \"I don't have one\" -> \"Or tap one of these\" tiles",
       "ok": true,
-      "detail": "{\"searchFirst\":true,\"title\":\"Do you have a signature scent?\",\"label\":\"Type its name\",\"tiles\":\"Or tap one of these\"}"
+      "detail": "{\"searchFirst\":true,\"title\":\"Do you have a signature scent?\",\"placeholder\":\"Type a perfume, e.g. Santal 33\",\"hint\":\"Type its name or tap a bottle. Up to two.\",\"noneNearBox\":true,\"tiles\":\"Or tap one of these\"}"
     },
     {
       "name": "1440: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 90 -> 366"
+      "detail": "scrollY 87 -> 87"
     },
     {
       "name": "1440: a second tap on a chosen tile takes it back out",
@@ -339,10 +339,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 18.4 KB, assets/scent-quiz.js 45.8 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.2 KB, assets/scent-quiz.css 20.0 KB, assets/scent-quiz.js 45.9 KB"
     },
     {
-      "name": "JS + CSS + JSON 170.8 KB <= 200 KB",
+      "name": "JS + CSS + JSON 172.6 KB <= 200 KB",
       "ok": true
     },
     {
@@ -702,9 +702,9 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16354,
       "assets/scent-quiz-aromastylist-taste.json": 49706,
-      "assets/scent-quiz-aromastylist.json": 59497,
-      "assets/scent-quiz.css": 18796,
-      "assets/scent-quiz.js": 46920,
+      "assets/scent-quiz-aromastylist.json": 59547,
+      "assets/scent-quiz.css": 20515,
+      "assets/scent-quiz.js": 47008,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -765,7 +765,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 174919,
+    "code_total": 176776,
     "images": 59,
     "images_total": 891710
   }

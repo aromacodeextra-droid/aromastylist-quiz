@@ -285,3 +285,25 @@
 .sq-q[data-q="ref"] .sq-search__label { font-size: 13px; }
 .sq-pop-title--tiles { max-width: 1080px; margin: 0 auto 10px; text-align: center; }
 .sq-inside .sq-ref:focus { outline: 2px solid var(--sq-accent); outline-offset: 2px; }
+
+/* v3.5: screen 2 compact: box, chosen perfumes as chips right under it, "I don't have one" next to it */
+.sq-visually-hidden { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.sq-q[data-q="ref"] .sq-pick { gap: 10px; margin-bottom: 16px; }
+.sq-picked-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.sq-picked-list li::before { content: none; }
+.sq-picked { display: flex; align-items: center; gap: 10px; margin: 0; padding: 10px 8px 10px 14px; background: #fff;
+  border: 1px solid var(--sq-accent); border-radius: var(--sq-radius); text-align: left; outline: none; }
+.sq-picked__text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.sq-picked__name { font-family: var(--main_ff_h, inherit); font-size: 17px; line-height: 1.2; color: var(--sq-h); }
+.sq-picked__house { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.sq-picked__notes { margin-top: 2px; font-size: 13px; color: var(--sq-fg); opacity: .8; }
+:is(#root, body) .sq-section .sq-picked__x { flex: 0 0 40px; width: 40px; height: 40px; padding: 0; background: none; border: 0;
+  color: var(--sq-fg); font-size: 24px; line-height: 1; cursor: pointer; }
+:is(#root, body) .sq-section .sq-none { align-self: center; padding: 6px 4px; min-height: 40px; background: none; border: 0;
+  color: var(--sq-fg); font: inherit; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-transform: none; letter-spacing: normal; }
+/* a chosen bottle: tick + frame (the same mark as every other chosen answer) */
+.sq-pop__tile { position: relative; }
+:is(#root, body) .sq-section .sq-pop__tile[aria-pressed="true"]::after { content: "\2713"; display: flex; align-items: center; justify-content: center;
+  position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--sq-accent); color: var(--sq-on-accent); font-size: 13px; line-height: 1; }
+/* the hint inside the box must not look like typed text */
+.sq-section .sq-search input::placeholder { color: var(--sq-fg); opacity: .5; font-weight: 400; }

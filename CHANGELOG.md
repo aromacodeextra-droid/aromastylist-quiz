@@ -1,5 +1,15 @@
 # Changelog
 
+## quiz-v3.5 (2026-10-01) — UX step 2: screen 2 "Do you have a signature scent?"
+
+- One hint instead of three: "Type its name or tap a bottle. Up to two." The "Type its name" label moved into the box
+  ("Type a perfume, e.g. Santal 33", light grey so it does not read as typed text; the label stays for screen readers).
+- Chosen perfumes appear **right under the box** as compact chips: name, house, 4 notes, × to remove. They replace the
+  big "Inside <name>" cards with family bars.
+- "I don't have one" sits right under the box; at the bottom only Continue.
+- A chosen bottle tile shows a tick in the corner plus the frame.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`. e2e 74 / 74.
+
 ## quiz-v3.4 (2026-10-01) — UX step 1: screen 1 "Who is it for?"
 
 - Third answer "Both of us / no rule" -> **"Unisex"** (one meaning per button). With Unisex, unisex perfumes now rank

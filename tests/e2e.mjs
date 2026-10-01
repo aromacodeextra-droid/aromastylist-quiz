@@ -2,7 +2,7 @@
 //  run A  named perfume: popular tile + fuzzy search ("bacarat"), taboos, week, full wardrobe ... -> result
 //  run B  "I don't have one" -> note families -> day & night -> result with 2 slots
 //  run C  deep link with preview_theme_id -> opens the result; "Copy link" keeps preview_theme_id
-// Checks: one card per slot (biggest first), in stock, "Inside <name>" card, share image 1080x1920, copied link
+// Checks: one card per slot (biggest first), in stock, chosen perfumes as chips with notes under the box, share image 1080x1920, copied link
 // reopens the same result, "Add all" POSTs {items:[{id,quantity:1}...]}, analytics carry no personal data,
 // no email field anywhere, no-JS leaves the page as is, weight budgets. Screenshots -> screenshots/.
 // Usage: node tests/e2e.mjs   (starts harness/server.mjs itself)
@@ -75,7 +75,7 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=answer][data-a=her]');
     await page.waitForSelector('.sq-pop__tile');
     const tiles = await page.$$eval('.sq-pop__tile', (l) => l.length);
-    check(`${tag}: 12 bottle tiles under the "Type its name" box`, tiles === 12, `${tiles} tiles`);
+    check(`${tag}: 12 bottle tiles under the name box`, tiles === 12, `${tiles} tiles`);
     await shot(page, '03-ref');
     await page.fill('[data-sq-search]', 'bacarat');
     await page.waitForSelector('.sq-result-item');
@@ -83,11 +83,12 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: typo "bacarat" finds Baccarat Rouge 540`, /Baccarat Rouge 540/.test(firstHit), firstHit);
     await shot(page, '03b-search');
     await page.click('.sq-result-item');
-    await page.waitForSelector('.sq-inside .sq-dna');
+    await page.waitForSelector('.sq-picked .sq-picked__notes');
     await page.click('.sq-pop__tile[data-id="ysl-black-opium"]');
-    await page.waitForFunction(() => document.querySelectorAll('.sq-inside > li').length === 2);
-    const inside = await page.$$eval('.sq-inside .sq-kicker', (l) => l.map((e) => e.textContent));
-    check(`${tag}: "Inside <name>" card for both picks (max 2)`, inside.length === 2 && inside.every((t) => /^Inside /.test(t)), inside.join(' / '));
+    await page.waitForFunction(() => document.querySelectorAll('.sq-picked').length === 2);
+    const inside = await page.$$eval('.sq-picked', (l) => l.map((e) => e.querySelector('.sq-picked__name').textContent + ' | ' + e.querySelector('.sq-picked__notes').textContent));
+    const chipsUnderBox = await page.evaluate(() => !!(document.querySelector('[data-sq-search]').compareDocumentPosition(document.querySelector('.sq-picked-list')) & Node.DOCUMENT_POSITION_FOLLOWING) && !!(document.querySelector('.sq-picked-list').compareDocumentPosition(document.querySelector('.sq-pop')) & Node.DOCUMENT_POSITION_FOLLOWING));
+    check(`${tag}: both picks shown as chips with notes, right under the box (max 2)`, inside.length === 2 && chipsUnderBox && inside.every((t) => /\| \S/.test(t)), inside.join(' / '));
     await shot(page, '03c-inside');
     await page.click('[data-act=next][data-q=ref]');
     await page.waitForSelector('.sq-chip');
@@ -243,9 +244,9 @@ for (const vp of VIEWPORTS) {
       if (who === 'her') {
         const order = await page.evaluate(() => {
           const s = document.querySelector('[data-sq-search]'), t = document.querySelector('.sq-pop');
-          return { searchFirst: !!(s.compareDocumentPosition(t) & Node.DOCUMENT_POSITION_FOLLOWING), title: document.querySelector('.sq-q .sq-title').textContent, label: document.querySelector('.sq-search__label').textContent, tiles: document.querySelector('.sq-pop-title--tiles')?.textContent };
+          return { searchFirst: !!(s.compareDocumentPosition(t) & Node.DOCUMENT_POSITION_FOLLOWING), title: document.querySelector('.sq-q .sq-title').textContent, placeholder: document.querySelector('[data-sq-search]').placeholder, hint: document.querySelector('.sq-q .sq-sub').textContent, noneNearBox: !!document.querySelector('.sq-pick [data-act=no-ref]'), tiles: document.querySelector('.sq-pop-title--tiles')?.textContent };
         });
-        check(`${vp.name}: screen 2 reads "Do you have a signature scent?" -> "Type its name" box -> "Or tap one of these" tiles`, order.searchFirst && order.title === 'Do you have a signature scent?' && order.label === 'Type its name' && order.tiles === 'Or tap one of these', JSON.stringify(order));
+        check(`${vp.name}: screen 2 reads "Do you have a signature scent?" -> one hint -> name box + "I don't have one" -> "Or tap one of these" tiles`, order.searchFirst && order.title === 'Do you have a signature scent?' && order.placeholder === 'Type a perfume, e.g. Santal 33' && order.hint === 'Type its name or tap a bottle. Up to two.' && order.noneNearBox && order.tiles === 'Or tap one of these', JSON.stringify(order));
         // tap the last tile: the page must not jump to the top, the search box must not take focus (no phone keyboard)
         const last = ids[ids.length - 1];
         await page.locator(`.sq-pop__tile[data-id="${last}"]`).scrollIntoViewIfNeeded();
@@ -258,7 +259,7 @@ for (const vp of VIEWPORTS) {
         await page.screenshot({ path: `${SHOTS}/${vp.name}-03d-ref-tile-picked.png` });
         await page.click(`.sq-pop__tile[data-id="${last}"]`);
         await page.waitForTimeout(200);
-        const gone = await page.$$eval('.sq-inside > li', (l) => l.length).catch(() => 0);
+        const gone = await page.$$eval('.sq-picked', (l) => l.length).catch(() => 0);
         const pressed = await page.getAttribute(`.sq-pop__tile[data-id="${last}"]`, 'aria-pressed');
         check(`${vp.name}: a second tap on a chosen tile takes it back out`, gone === 0 && pressed === 'false');
       }
