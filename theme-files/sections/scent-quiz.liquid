@@ -1,17 +1,18 @@
 {%- comment -%}
   Scent quiz (brand-agnostic engine).
   All questions, tags, products and default texts live in the JSON asset named in "Config file".
-  Blocks override wording and images per answer / question / persona so they can be edited in the theme editor.
+  Blocks override wording and images per question / answer. Persona texts live in the
+  separate "Scent quiz: personas" section (Shopify allows 50 blocks per section) so they can be edited in the theme editor.
   Without JavaScript the quiz stays hidden and the rest of the page is untouched.
 {%- endcomment -%}
 {%- liquid
   assign cfg = section.settings.config_file | strip
-  assign personas = section.blocks | where: 'type', 'persona'
+  assign taste = section.settings.taste_file | strip
 -%}
 {{ 'scent-quiz.css' | asset_url | stylesheet_tag }}
 <div class="sq-section palette-{{ section.settings.color_palette }} module-color-palette" id="sq-{{ section.id }}">
   {%- if cfg != blank -%}
-    <div class="sq" data-scent-quiz data-config="{{ cfg | asset_url }}" hidden>
+    <div class="sq" data-scent-quiz data-config="{{ cfg | asset_url }}"{% if taste != blank %} data-taste="{{ taste | asset_url }}"{% endif %} hidden>
       <script type="application/json" data-sq-overrides>
         {
           "settings": {
@@ -28,8 +29,6 @@
                 {%- when 'answer' -%}
                   {"id": {{ block.id | json }}, "type": "answer", "q": {{ block.settings.question_id | default: '' | strip | json }}, "a": {{ block.settings.answer_id | default: '' | strip | json }}, "label": {{ block.settings.label | default: '' | json }},
                    "img": {%- if block.settings.image != blank -%}{"s": {{ block.settings.image | image_url: width: 600 | json }}, "l": {{ block.settings.image | image_url: width: 900 | json }}, "alt": {{ block.settings.image.alt | default: block.settings.label | default: '' | json }}}{%- else -%}null{%- endif -%}}
-                {%- when 'persona' -%}
-                  {"id": {{ block.id | json }}, "type": "persona", "key": {{ block.settings.persona_key | default: '' | strip | json }}, "name": {{ block.settings.name | default: '' | json }}, "line": {{ block.settings.line | default: '' | json }}}
               {%- endcase -%}
               {%- unless forloop.last -%},{%- endunless -%}
             {%- endfor -%}
@@ -39,26 +38,12 @@
       <div class="sq__app" data-sq-app aria-live="polite"></div>
     </div>
     {%- if request.design_mode -%}
-      {%- for block in section.blocks -%}{%- unless block.type == 'persona' -%}<span class="sq-anchor" {{ block.shopify_attributes }}></span>{%- endunless -%}{%- endfor -%}
+      {%- for block in section.blocks -%}<span class="sq-anchor" {{ block.shopify_attributes }}></span>{%- endfor -%}
     {%- endif -%}
   {%- elsif request.design_mode -%}
     <p class="sq-editor-note">Scent quiz: enter the config file name (for example scent-quiz-brand.json) in the section settings.</p>
   {%- endif -%}
 
-  {%- if section.settings.show_personas and personas.size > 0 -%}
-    <details class="sq-personas">
-      <summary><h2 class="sq-personas__title">{{ section.settings.personas_title | escape }}</h2></summary>
-      {%- if section.settings.personas_intro != blank -%}<p class="sq-personas__intro">{{ section.settings.personas_intro | escape }}</p>{%- endif -%}
-      <ul class="sq-personas__list">
-        {%- for block in personas -%}
-          <li {{ block.shopify_attributes }}>
-            <h3>{{ block.settings.name | escape }}</h3>
-            <p>{{ block.settings.line | escape }}</p>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </details>
-  {%- endif -%}
 </div>
 <script src="{{ 'scent-quiz.js' | asset_url }}" defer></script>
 
@@ -70,6 +55,7 @@
   "max_blocks": 50,
   "settings": [
     { "type": "text", "id": "config_file", "label": "Config file (theme asset)", "info": "JSON asset with questions, scoring and catalog, e.g. scent-quiz-brand.json" },
+    { "type": "text", "id": "taste_file", "label": "Notes file (theme asset)", "info": "Optional JSON asset with note profiles and reference perfumes, e.g. scent-quiz-brand-taste.json. Without it the perfume and note questions are skipped." },
     {
       "type": "select", "id": "color_palette", "label": "Color scheme", "default": "scheme-1",
       "options": [
@@ -83,11 +69,7 @@
     { "type": "text", "id": "intro_kicker", "label": "Small line above the title" },
     { "type": "text", "id": "intro_title", "label": "Title" },
     { "type": "textarea", "id": "intro_text", "label": "Text" },
-    { "type": "text", "id": "start_label", "label": "Start button" },
-    { "type": "header", "content": "Persona list (static text for search engines)" },
-    { "type": "checkbox", "id": "show_personas", "label": "Show persona list below the quiz", "default": true },
-    { "type": "text", "id": "personas_title", "label": "List title", "default": "All scent personas" },
-    { "type": "textarea", "id": "personas_intro", "label": "List intro" }
+    { "type": "text", "id": "start_label", "label": "Start button" }
   ],
   "blocks": [
     {
@@ -104,14 +86,6 @@
         { "type": "text", "id": "answer_id", "label": "Answer id", "info": "Must match an answer id in the config file" },
         { "type": "text", "id": "label", "label": "Label" },
         { "type": "image_picker", "id": "image", "label": "Image", "info": "Square images work best. Empty = default image from the config file." }
-      ]
-    },
-    {
-      "type": "persona", "name": "Persona",
-      "settings": [
-        { "type": "text", "id": "persona_key", "label": "Persona key", "info": "Must match a persona key in the config file" },
-        { "type": "text", "id": "name", "label": "Name" },
-        { "type": "textarea", "id": "line", "label": "Description" }
       ]
     }
   ],

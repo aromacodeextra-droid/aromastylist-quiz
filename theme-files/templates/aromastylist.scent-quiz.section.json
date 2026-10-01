@@ -33,6 +33,139 @@
           "label": "Both of us / no rule"
         }
       },
+      "q_ref": {
+        "type": "question",
+        "settings": {
+          "question_id": "ref",
+          "title": "Name a perfume you already love"
+        }
+      },
+      "q_mode": {
+        "type": "question",
+        "settings": {
+          "question_id": "mode",
+          "title": "What do you want next?"
+        }
+      },
+      "a_mode_similar": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mode",
+          "answer_id": "similar",
+          "label": "More like it"
+        }
+      },
+      "a_mode_complement": {
+        "type": "answer",
+        "settings": {
+          "question_id": "mode",
+          "answer_id": "complement",
+          "label": "Complete my wardrobe"
+        }
+      },
+      "q_notes": {
+        "type": "question",
+        "settings": {
+          "question_id": "notes",
+          "title": "Which notes pull you in?"
+        }
+      },
+      "a_notes_citrus": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "citrus",
+          "label": "Citrus"
+        }
+      },
+      "a_notes_green": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "green",
+          "label": "Green & herbs"
+        }
+      },
+      "a_notes_aquatic": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "aquatic",
+          "label": "Fresh & aquatic"
+        }
+      },
+      "a_notes_florals": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "florals",
+          "label": "Rose & florals"
+        }
+      },
+      "a_notes_white_florals": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "white-florals",
+          "label": "White florals"
+        }
+      },
+      "a_notes_fruity": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "fruity",
+          "label": "Fruity"
+        }
+      },
+      "a_notes_gourmand": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "gourmand",
+          "label": "Vanilla & gourmand"
+        }
+      },
+      "a_notes_woods": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "woods",
+          "label": "Woods"
+        }
+      },
+      "a_notes_amber": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "amber",
+          "label": "Amber & resins"
+        }
+      },
+      "a_notes_oud_leather": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "oud-leather",
+          "label": "Oud, leather & smoke"
+        }
+      },
+      "a_notes_spices": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "spices",
+          "label": "Spices"
+        }
+      },
+      "a_notes_musk_powder": {
+        "type": "answer",
+        "settings": {
+          "question_id": "notes",
+          "answer_id": "musk-powder",
+          "label": "Musk, iris & powder"
+        }
+      },
       "q_when": {
         "type": "question",
         "settings": {
@@ -196,7 +329,61 @@
           "answer_id": "cold",
           "label": "Cold"
         }
-      },
+      }
+    },
+    "block_order": [
+      "q_for",
+      "a_for_her",
+      "a_for_him",
+      "a_for_both",
+      "q_ref",
+      "q_mode",
+      "a_mode_similar",
+      "a_mode_complement",
+      "q_notes",
+      "a_notes_citrus",
+      "a_notes_green",
+      "a_notes_aquatic",
+      "a_notes_florals",
+      "a_notes_white_florals",
+      "a_notes_fruity",
+      "a_notes_gourmand",
+      "a_notes_woods",
+      "a_notes_amber",
+      "a_notes_oud_leather",
+      "a_notes_spices",
+      "a_notes_musk_powder",
+      "q_when",
+      "a_when_everyday",
+      "a_when_work",
+      "a_when_evening",
+      "a_when_special",
+      "q_mood",
+      "a_mood_morning_boost",
+      "a_mood_focus_flow",
+      "a_mood_romance_presence",
+      "a_mood_celebrate_indulge",
+      "a_mood_relax_wind_down",
+      "a_mood_move_thrive",
+      "a_mood_harmony_meditation",
+      "q_presence",
+      "a_presence_close",
+      "a_presence_noticed",
+      "a_presence_fills",
+      "q_weather",
+      "a_weather_hot",
+      "a_weather_mild",
+      "a_weather_cold"
+    ],
+    "settings": {
+      "config_file": "scent-quiz-aromastylist.json",
+      "taste_file": "scent-quiz-aromastylist-taste.json",
+      "color_palette": "scheme-1"
+    }
+  },
+  "scent_quiz_personas": {
+    "type": "scent-quiz-personas",
+    "blocks": {
       "p_first_light": {
         "type": "persona",
         "settings": {
@@ -343,31 +530,6 @@
       }
     },
     "block_order": [
-      "q_for",
-      "a_for_her",
-      "a_for_him",
-      "a_for_both",
-      "q_when",
-      "a_when_everyday",
-      "a_when_work",
-      "a_when_evening",
-      "a_when_special",
-      "q_mood",
-      "a_mood_morning_boost",
-      "a_mood_focus_flow",
-      "a_mood_romance_presence",
-      "a_mood_celebrate_indulge",
-      "a_mood_relax_wind_down",
-      "a_mood_move_thrive",
-      "a_mood_harmony_meditation",
-      "q_presence",
-      "a_presence_close",
-      "a_presence_noticed",
-      "a_presence_fills",
-      "q_weather",
-      "a_weather_hot",
-      "a_weather_mild",
-      "a_weather_cold",
       "p_first_light",
       "p_sunlit_signal",
       "p_bright_entrance",
@@ -388,11 +550,9 @@
       "p_temple_smoke"
     ],
     "settings": {
-      "config_file": "scent-quiz-aromastylist.json",
       "color_palette": "scheme-1",
-      "show_personas": true,
-      "personas_title": "All scent personas",
-      "personas_intro": ""
+      "title": "All scent personas",
+      "intro": ""
     }
   }
 }
