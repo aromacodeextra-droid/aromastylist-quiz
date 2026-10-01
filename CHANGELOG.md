@@ -1,5 +1,28 @@
 # Changelog
 
+## quiz-v3.1 (2026-10-01) — the set card respects "Who is it for?"
+
+- Bug from the live preview: a "Him" run (notes woods + amber, Energised, Unique, Hot & humid, Sporty) was offered
+  **The Modern Muse**, a feminine Discovery Set. The set card checked the visitor's gender only through the owner
+  rule for perfumes, and the old derived set gender called The Modern Muse "Unisex" although all five perfumes in it
+  are in the store's feminine collection.
+- Sets are in no gender collection in the store, so each set's gender now comes from the store gender collections
+  (feminine / masculine-activities / unisex) of the perfumes inside it: only feminine-only members -> Feminine, only
+  masculine-only -> Masculine, all wearable by both -> Unisex, both kinds -> the majority. It is written into the
+  config as `catalog.set_gender` (inspectable):
+  - Feminine: Platinum Whisper, Modern Icons, Midnight Bloom, Gilded Gatsby Glam, The Modern Muse, Chromatic Couture
+  - Masculine: Black Ties, The Executive Edit, Modern Legends (1 feminine-only member vs 3 masculine-only), After Hours
+  - Unisex: none
+- The set card now follows screen 1 exactly: her -> feminine or unisex sets, him -> masculine or unisex, both -> any.
+  If no eligible set scores within 10% of the top pick, the card is hidden (the reported run now shows no set card).
+- Changed theme files: only `assets/scent-quiz.js` and `assets/scent-quiz-aromastylist.json`. The template, the
+  sections, the CSS, the taste file and the images are byte-for-byte unchanged.
+- Tests: `combinations.mjs` adds the check "set card gender conflict" (set gender recomputed independently from the
+  catalog) and 180 runs of the reported Him case: **11,324 runs, 0 failures** (on the old code the same check finds
+  537 conflicts). Set card shown in 913 runs (her 222, him 312, both 379). `e2e.mjs`: 5 set-card cases (her, him,
+  both, him with the "her" answers, the reported run) -> **60 / 60**. Search 100 / 100.
+- Weight: JS 46.0 KB, config 59.5 KB (decimal, limit 60), total code 172.7 KB (limit 200).
+
 ## quiz-v3 (2026-10-01) — a perfume-stylist consultation
 
 Owner's verdict on v2.1: "not working". The root cause: the "name a perfume" step knew 63 perfumes, so most visitors

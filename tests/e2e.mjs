@@ -221,6 +221,31 @@ for (const vp of VIEWPORTS) {
   }
 }
 
+// set card follows screen 1: her -> feminine / unisex sets, him -> masculine / unisex, both -> any
+{
+  const SET_GENDER = Object.fromEntries(JSON.parse(fs.readFileSync('theme-files/assets/scent-quiz-aromastylist.json', 'utf8')).catalog.set_gender);
+  const CASES = [
+    ['her', 'her.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Feminine', 'Unisex'], true],
+    ['him', 'him.r~viktor-and-rolf-spicebomb._.none.1201000.one-bottle.attractive.noticed.easy.four-seasons.classic', ['Masculine', 'Unisex'], true],
+    ['both', 'both.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Feminine', 'Masculine', 'Unisex'], true],
+    // the same answers as "her" above, as him: The Modern Muse (feminine) must not be offered
+    ['him (her answers)', 'him.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Masculine', 'Unisex'], false],
+    // the run reported from the live preview
+    ['him (reported run)', 'him.none.woods+amber.none.1201000.full-wardrobe.energised.noticed.unique.hot-humid.sporty', ['Masculine', 'Unisex'], false],
+  ];
+  const ctx = await newContext({ viewport: { width: 390, height: 844 } });
+  const page = await ctx.newPage();
+  for (const [who, code, allowed, mustShow] of CASES) {
+    await page.goto(`${PAGE}?sq=${encodeURIComponent(code)}`);
+    await page.waitForSelector('.sq-result');
+    const set = await page.$eval('.sq-set [data-act=add-set]', (b) => b.dataset.handle).catch(() => null);
+    const g = set ? SET_GENDER[set] : null;
+    check(`set card for ${who}: ${set ? `${set} (${g})` : 'hidden'}`, (set ? allowed.includes(g) : true) && (!mustShow || !!set), allowed.join(' / ') + ' allowed');
+    if (who === 'her') await page.screenshot({ path: `${SHOTS}/390-16-set-card-her.png`, fullPage: true });
+  }
+  await ctx.close();
+}
+
 // analytics: one whole session, no personal data
 {
   const ctx = await newContext({ viewport: { width: 390, height: 844 }, permissions: ['clipboard-read', 'clipboard-write'] });

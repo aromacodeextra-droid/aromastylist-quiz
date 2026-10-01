@@ -64,9 +64,24 @@ const hpre = houses.map((h) => {
 });
 const shortHandle = (p) => { const pre = hpre[houses.indexOf(p.house)]; return pre && p.handle.startsWith(pre) && p.handle.length > pre.length ? '~' + p.handle.slice(pre.length) : p.handle; };
 const FIELDS = ['handle', 'title', 'house', 'image', 'gender', 'moment', 'mood', 'presence', 'season', 'variant', 'price', 'available'];
+// A Discovery Set's gender from the store gender collections of the perfumes inside it (sets themselves are in
+// no gender collection): only feminine-only members -> Feminine, only masculine-only -> Masculine, members all
+// wearable by both -> Unisex, both kinds -> the majority (a tie -> Unisex).
+export function setGender(s, all) {
+  let f = 0, m = 0;
+  for (const mem of s.set_members || []) {
+    const p = all.find((x) => x.handle === mem.handle);
+    const g = p ? p.store.gender : [];
+    if (!g.length) continue;
+    const her = g.includes('Feminine') || g.includes('Unisex'), him = g.includes('Masculine') || g.includes('Unisex');
+    if (her && !him) f++; else if (him && !her) m++;
+  }
+  return f > m ? 'Feminine' : m > f ? 'Masculine' : 'Unisex';
+}
 function row(p) {
   const variant = p.variants.find((v) => v.id === p.sample_variant_id);
   const d = dims(p);
+  if (p.is_set) d.gender = cell('gender', [fact(setGender(p, catalog.products))]);
   return [shortHandle(p), p.title, houses.indexOf(p.house), p.image ? p.image.slice(base.length).replace(/\?v=\d+$/, '') : '',
     d.gender, d.moment, d.mood, d.presence, d.season, variant.id, variant.price, p.variants.some((v) => v.available) ? 1 : 0];
 }
@@ -132,6 +147,8 @@ const merged = {
     items: items.map(row), sets: sets.map(row),
     // indices into items: the store bestsellers and the perfumes inside each set
     hot: items.map((p, i) => (isHot(p) ? i : -1)).filter((i) => i >= 0),
+    // inspectable: the gender each set card is filtered by (screen 1: her -> Feminine / Unisex, him -> Masculine / Unisex)
+    set_gender: sets.map((s) => [s.handle, setGender(s, catalog.products)]),
     set_members: sets.map((s) => (s.set_members || []).map((m) => items.findIndex((p) => p.handle === m.handle)).filter((i) => i >= 0)),
   },
 };

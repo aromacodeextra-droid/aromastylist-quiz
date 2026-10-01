@@ -31,6 +31,17 @@ for (const r of popular) {
   const n = r.notes;
   if (n.top.length + n.heart.length + n.base.length + n.key.length) { const t = taste({ top: n.top, heart: [...n.heart, ...n.key], base: n.base }); refTruth[r.id] = { canon: new Set(t.canon), vec: t.vec }; }
 }
+// set gender, recomputed here from the store gender collections of each set's members (independent of the build)
+const setGender = {};
+for (const st of catalog.products.filter((p) => p.is_set)) {
+  let f = 0, m = 0;
+  for (const mem of st.set_members || []) {
+    const g = catalog.products.find((x) => x.handle === mem.handle)?.store.gender || [];
+    const her = g.includes('Feminine') || g.includes('Unisex'), him = g.includes('Masculine') || g.includes('Unisex');
+    if (g.length && her && !him) f++; else if (g.length && him && !her) m++;
+  }
+  setGender[st.handle] = f > m ? 'Feminine' : m > f ? 'Masculine' : 'Unisex';
+}
 const labelToId = Object.fromEntries(CANON.map(([id, label]) => [label, id]));
 
 // mulberry32 (fixed seed): 32-bit integer maths, so the sequence does not collapse in floating point
@@ -59,7 +70,7 @@ function randomState(fixed = {}) {
   return Object.assign(st, fixed);
 }
 
-const stats = { runs: 0, fail: {}, slots: 0, picks: {}, persona: {}, sets: 0, examples: [] };
+const stats = { setsBy: {}, runs: 0, fail: {}, slots: 0, picks: {}, persona: {}, sets: 0, examples: [] };
 const fail = (k, detail) => { stats.fail[k] = (stats.fail[k] || 0) + 1; if (stats.examples.length < 30) stats.examples.push(k + ': ' + detail); };
 
 function tabooHit(handle, rules) {
@@ -121,7 +132,10 @@ function run(st) {
   stats.persona[res.persona.key] = (stats.persona[res.persona.key] || 0) + 1;
   if (res.set) {
     stats.sets++;
-    if (res.set.score < 0.9 * rows[0].pick.score - 1e-9) fail('set card not within 10%', res.set.p.handle);
+    if (res.set.score < 0.9 * rows[0].pick.score - 1e-9) fail('set card not within 10%', 'set card gender conflict', res.set.p.handle);
+    const g = setGender[res.set.p.handle];
+    stats.setsBy[st.for] = (stats.setsBy[st.for] || 0) + 1;
+    if ((st.for === 'her' && g === 'Masculine') || (st.for === 'him' && g === 'Feminine')) fail('set card gender conflict', `${st.for} got ${res.set.p.handle} (${g})`);
   }
   const code = E.encodeCode(model, st), back = E.parseCode(model, code);
   if (!back) fail('share link does not parse', code);
@@ -139,17 +153,21 @@ const usedA = Object.keys(stats.picks).length;
 const taboSets = [];
 for (let m = 0; m < 1 << NOTE_TABOOS.length; m++) taboSets.push(NOTE_TABOOS.filter((_, i) => m & (1 << i)));
 for (const id of tasteData.popular) for (const tb of taboSets) for (const cl of ids('climate')) run(randomState({ ref: [{ k: 'r', id }], notes: undefined, taboos: tb.length ? tb : ['none'], climate: cl }));
+// C. the case found in the live preview: Him, no perfume, woods + amber, Energised, Unique, Hot & humid, Sporty
+for (const tb of [['none'], [], ['coconut']]) for (const how of ids('how')) for (let w = 0; w < 20; w++) {
+  run(randomState({ for: 'him', ref: 'none', notes: ['woods', 'amber'], taboos: tb, how, feel: ['energised'], matters: 'unique', climate: 'hot-humid', style: 'sporty' }));
+}
 const partB = stats.runs - partA;
 
 const counts = Object.entries(stats.picks).sort((a, b) => b[1] - a[1]);
 const lines = [
-  `combinations: ${stats.runs} runs (A random ${partA}, ${distinct.size} distinct, B popular x taboos x climates ${partB}), ${stats.slots} slots, ${((Date.now() - t0) / 1000).toFixed(1)} s`,
+  `combinations: ${stats.runs} runs (A random ${partA}, ${distinct.size} distinct, B popular x taboos x climates + the reported Him case ${partB}), ${stats.slots} slots, ${((Date.now() - t0) / 1000).toFixed(1)} s`,
   `failures: ${Object.keys(stats.fail).length ? JSON.stringify(stats.fail) : 'none'}`,
   ...['slot not filled', 'out of stock', 'duplicate', 'set in a slot', 'one house', 'tabooed note', 'strong scent', 'gender rule', 'named perfume recommended', 'no why-line', 'duplicate why-line', 'why names a note it lacks', 'shares-line names a note not shared', 'persona names a note no pick has', 'set card not within 10%', 'share link does not parse', 'share link gives another result']
     .map((k) => `  ${k.padEnd(38)} ${stats.fail[k] || 0}`),
   `perfumes used: ${usedA} in the random part A, ${counts.length} overall, of ${model.products.filter((p) => p.available).length} in stock; most used: ${counts.slice(0, 8).map(([h, n]) => `${h} ${n}`).join(', ')}`,
   `personas: ${Object.entries(stats.persona).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(', ')}`,
-  `ready-made set card shown in ${stats.sets} of ${stats.runs}`,
+  `ready-made set card shown in ${stats.sets} of ${stats.runs} (her ${stats.setsBy.her || 0}, him ${stats.setsBy.him || 0}, both ${stats.setsBy.both || 0}); set genders: ${Object.entries(setGender).map(([h, g]) => h + ' ' + g).join(', ')}`,
   ...stats.examples.slice(0, 15).map((e) => '  e.g. ' + e),
 ];
 console.log(lines.join('\n'));

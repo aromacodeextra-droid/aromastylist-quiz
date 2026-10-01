@@ -341,7 +341,7 @@
     var set = null;
     if (filled.length && model.sets.length) {
       var top = rows[0];
-      var sr = model.sets.filter(function (s) { return s.available && s.vec && !breaksTaboo(s, P.rules) && !setBreaksTaboo(model, s, P.rules); })
+      var sr = model.sets.filter(function (s) { return s.available && s.vec && setGenderOk(s, state['for']) && !breaksTaboo(s, P.rules) && !setBreaksTaboo(model, s, P.rules); })
         .map(function (s) { return scoreFor(model, P, s, top.slot); }).sort(function (a, b) { return b.score - a.score; })[0];
       if (sr && top.pick && sr.score >= (1 - S.set_within) * top.pick.score) set = sr;
     }
@@ -350,6 +350,12 @@
     res.profile = profileOf(model, res);
     res.candidates = opts && opts.candidates ? candidatesOf(rows, opts.candidates) : null;
     return res;
+  }
+  // the set card follows screen 1 strictly: her -> feminine or unisex sets, him -> masculine or unisex, both -> any
+  function setGenderOk(s, who) {
+    if (!who || who === 'both') return true;
+    var g = (s.dims.gender || []).map(function (x) { return x.v; });
+    return g.indexOf('Unisex') >= 0 || g.indexOf(who === 'her' ? 'Feminine' : 'Masculine') >= 0;
   }
   function setBreaksTaboo(model, s, rules) {
     return (s.members || []).some(function (h) { var p = model.ownByHandle[h]; return p && breaksTaboo(p, rules); });
@@ -599,7 +605,7 @@
   var API = { decodeCatalog: decodeCatalog, buildModel: buildModel, encodeCode: encodeCode, parseCode: parseCode, wardrobe: wardrobe,
     slotsFor: slotsFor, tasteContext: tasteContext, breaksTaboo: breaksTaboo, tabooRules: tabooRules, personaQualifies: personaQualifies,
     whyLines: whyLines, sharesLine: sharesLine, howToWear: howToWear, union: union, buildIndex: buildIndex, search: search, norm: norm,
-    dist: dist, perfumeOf: perfumeOf, visible: visible, cosine: cosine, genderOk: genderOk, noteLabel: noteLabel };
+    dist: dist, perfumeOf: perfumeOf, visible: visible, cosine: cosine, genderOk: genderOk, setGenderOk: setGenderOk, noteLabel: noteLabel };
   if (typeof module === 'object' && module.exports) module.exports = API;
   global.ScentQuiz = API;
   if (typeof document === 'undefined') return;

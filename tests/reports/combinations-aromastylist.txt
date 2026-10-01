@@ -1,5 +1,5 @@
-combinations: 11144 runs (A random 5000, 5000 distinct, B popular x taboos x climates 6144), 27416 slots, 23.0 s
-failures: none
+combinations: 11324 runs (A random 5000, 5000 distinct, B popular x taboos x climates + the reported Him case 6324), 27869 slots, 22.9 s
+failures: {"set card gender conflict":537}
   slot not filled                        0
   out of stock                           0
   duplicate                              0
@@ -17,6 +17,21 @@ failures: none
   set card not within 10%                0
   share link does not parse              0
   share link gives another result        0
-perfumes used: 278 in the random part A, 283 overall, of 299 in stock; most used: clive-christian-e-cashmere-musk 1960, creed-himalaya 901, creed-royal-oud 861, creed-original-vetiver 661, acqua-di-parma-colonia 642, nishane-wulong-cha 598, rosendo-mateu-no-5 586, guerlain-aqua-allegoria-forte-mandarine-basilic 529
-personas: skin-secret 2704, boardroom-pull 1594, sunlit-signal 1563, first-light 1192, quiet-signature 1133, cashmere-evening 647, sharp-edit 468, soft-landing 337, bright-entrance 320, slow-burn 242, sweet-confidant 196, after-hours-magnet 184, golden-hour-guest 169, clean-stride 134, open-air 95, temple-smoke 84, still-point 63, grand-entrance 19
-ready-made set card shown in 1278 of 11144
+perfumes used: 278 in the random part A, 283 overall, of 299 in stock; most used: clive-christian-e-cashmere-musk 1960, creed-himalaya 901, creed-royal-oud 861, creed-original-vetiver 661, acqua-di-parma-colonia 650, nishane-wulong-cha 598, rosendo-mateu-no-5 586, guerlain-aqua-allegoria-forte-mandarine-basilic 529
+personas: skin-secret 2734, boardroom-pull 1600, sunlit-signal 1583, first-light 1220, quiet-signature 1172, cashmere-evening 647, sharp-edit 476, soft-landing 339, bright-entrance 334, slow-burn 242, sweet-confidant 196, after-hours-magnet 185, golden-hour-guest 169, clean-stride 134, open-air 95, still-point 91, temple-smoke 88, grand-entrance 19
+ready-made set card shown in 1347 of 11324 (her 500, him 468, both 379); set genders: platinum-whisper Feminine, modern-icons Feminine, midnight-bloom Feminine, black-ties Masculine, gilded-gatsby-glam Feminine, the-modern-muse Feminine, the-executive-edit Masculine, modern-legends Masculine, chromatic-couture Feminine, after-hours Masculine
+  e.g. set card gender conflict: her got the-executive-edit (Masculine)
+  e.g. set card gender conflict: her got modern-legends (Masculine)
+  e.g. set card gender conflict: him got the-modern-muse (Feminine)
+  e.g. set card gender conflict: her got the-executive-edit (Masculine)
+  e.g. set card gender conflict: her got the-executive-edit (Masculine)
+  e.g. set card gender conflict: her got the-executive-edit (Masculine)
+  e.g. set card gender conflict: him got the-modern-muse (Feminine)
+  e.g. set card gender conflict: her got modern-legends (Masculine)
+  e.g. set card gender conflict: her got modern-legends (Masculine)
+  e.g. set card gender conflict: him got modern-icons (Feminine)
+  e.g. set card gender conflict: her got black-ties (Masculine)
+  e.g. set card gender conflict: him got chromatic-couture (Feminine)
+  e.g. set card gender conflict: her got black-ties (Masculine)
+  e.g. set card gender conflict: him got gilded-gatsby-glam (Feminine)
+  e.g. set card gender conflict: him got the-modern-muse (Feminine)
