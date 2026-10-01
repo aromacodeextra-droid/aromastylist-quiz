@@ -158,5 +158,50 @@
    "vs",
    "victorias secret"
   ]
- }
+ },
+ "popular_by_for": {
+  "her": [
+   "ysl-black-opium",
+   "lancome-la-vie-est-belle",
+   "chanel-coco-mademoiselle",
+   "dior-miss-dior",
+   "dior-j-adore",
+   "ysl-libre",
+   "ch-good-girl",
+   "pdm-delina",
+   "valentino-born-in-roma-donna",
+   "dg-light-blue",
+   "gucci-bloom",
+   "prada-paradoxe"
+  ],
+  "him": [
+   "dior-sauvage",
+   "chanel-bleu-de-chanel",
+   "ysl-y",
+   "armani-acqua-di-gio",
+   "creed-aventus",
+   "jpg-le-male",
+   "viktor-and-rolf-spicebomb",
+   "armani-stronger-with-you-intensely",
+   "versace-eros",
+   "rabanne-1-million",
+   "pdm-layton",
+   "dior-dior-homme-intense"
+  ],
+  "both": [
+   "mfk-baccarat-rouge-540",
+   "le-labo-santal-33",
+   "tom-ford-tobacco-vanille",
+   "tom-ford-lost-cherry",
+   "tom-ford-oud-wood",
+   "jo-malone-wood-sage-and-sea-salt",
+   "byredo-gypsy-water",
+   "kilian-angels-share",
+   "tom-ford-ombre-leather",
+   "margiela-by-the-fireplace",
+   "glossier-glossier-you",
+   "jo-malone-english-pear-and-freesia"
+  ]
+ },
+ "note_popular_by_for": "The 12 bottle tiles on screen 2 follow screen 1: her = feminine perfumes, him = masculine, both = unisex (gender from popular-perfumes.json). Every one has an image."
 }

@@ -514,6 +514,7 @@
       var e = entry('r', r.id, r.name, r.house, r.aliases);
       e.rank = i;
       e.own = !!r.own;
+      e.g = r.gender;
       list.push(e);
     });
     model.products.forEach(function (p) {
@@ -521,6 +522,8 @@
       var e = entry('p', p.handle, p.title, p.house, []);
       e.own = true;
       e.rank = 1000 + list.length;
+      var gs = (p.dims.gender || []).map(function (x) { return x.v; });
+      e.g = gs.indexOf('Unisex') >= 0 || (gs.indexOf('Feminine') >= 0 && gs.indexOf('Masculine') >= 0) ? 'U' : gs.indexOf('Feminine') >= 0 ? 'F' : gs.indexOf('Masculine') >= 0 ? 'M' : '';
       list.push(e);
     });
     return list;
@@ -535,7 +538,7 @@
     return 0;
   }
   // query words may name the house, the perfume, or both, in any order, with typos (up to 2 edits)
-  function search(index, query, limit) {
+  function search(index, query, limit, who) {
     var qn = norm(query);
     if (!qn) return [];
     // filler words ("eau", "de", "parfum") count when they hit, but a miss does not rule a perfume out
@@ -568,7 +571,9 @@
       else if (all) best = Math.max(best, sum / qt.length * 0.5);
       // ties: fewer extra words in the name first ("Bleu de Chanel" before "... Parfum"), then the more popular perfume
       var extra = e.ntoks[0].filter(function (t) { return !STOP[t] && !qt.some(function (w) { return tokScore(w, t) > 0; }); }).length;
-      if (best > 0) hits.push({ e: e, s: best - extra * 0.05 - (e.rank || 0) * 0.00001 });
+      // screen 1 answer: perfumes of that gender (and unisex) rank first; nothing is hidden
+      var fit = who && e.g ? (e.g === 'U' || e.g === (who === 'her' ? 'F' : who === 'him' ? 'M' : 'U') ? 0.6 : 0) : 0;
+      if (best > 0) hits.push({ e: e, s: best + fit - extra * 0.05 - (e.rank || 0) * 0.00001 });
     });
     hits.sort(function (a, b) { return b.s - a.s; });
     return hits.slice(0, limit || 8).map(function (h) { return h.e; });
@@ -784,7 +789,7 @@
   };
   Quiz.prototype.search = function (input) {
     var qid = input.getAttribute('data-q'), box = this.app.querySelector('[data-sq-results]'), c = this.copy, self = this;
-    var hits = input.value.trim() ? search(this.index(), input.value, 8) : [];
+    var hits = input.value.trim() ? search(this.index(), input.value, 8, this.state['for']) : [];
     box.innerHTML = hits.map(function (x) {
       var r = x.kind === 'r' ? self.model.refById[x.id] : null;
       return '<li><button type="button" class="sq-result-item" data-act="perfume" data-q="' + qid + '" data-kind="' + x.kind + '" data-id="' + esc(x.id) + '">' +
@@ -862,7 +867,10 @@
   Quiz.prototype.perfumeScreen = function (q) {
     var c = this.copy, self = this, cur = Array.isArray(this.state[q.id]) ? this.state[q.id] : [];
     var keys = cur.map(function (x) { return x.k + '~' + x.id; });
-    var pop = (this.model.taste.popular || []).map(function (id) { return self.model.refById[id]; }).filter(Boolean);
+    // the 12 tiles follow screen 1: her -> feminine, him -> masculine, both -> unisex
+    var P = this.model.taste.popular || [];
+    var popIds = Array.isArray(P) ? P : (P[this.state['for']] || P.both || []);
+    var pop = popIds.map(function (id) { return self.model.refById[id]; }).filter(Boolean);
     var html = '<ul class="sq-pop" aria-label="' + esc(c.popular_title) + '">' + pop.map(function (r) {
       return '<li><button type="button" class="sq-pop__tile" data-act="perfume" data-q="' + esc(q.id) + '" data-kind="r" data-id="' + esc(r.id) + '" aria-pressed="' + (keys.indexOf('r~' + r.id) >= 0) + '">' +
         (r.img ? '<img src="' + esc(self.refImg(r.id)) + '" alt="" width="600" height="600" loading="eager" decoding="async">' : '<span class="sq-pop__ph" aria-hidden="true">' + esc(r.name.charAt(0)) + '</span>') +

@@ -84,7 +84,7 @@ for (const vp of VIEWPORTS) {
     await shot(page, '03b-search');
     await page.click('.sq-result-item');
     await page.waitForSelector('.sq-inside .sq-dna');
-    await page.click('.sq-pop__tile[data-id="dior-sauvage"]');
+    await page.click('.sq-pop__tile[data-id="ysl-black-opium"]');
     await page.waitForFunction(() => document.querySelectorAll('.sq-inside > li').length === 2);
     const inside = await page.$$eval('.sq-inside .sq-kicker', (l) => l.map((e) => e.textContent));
     check(`${tag}: "Inside <name>" card for both picks (max 2)`, inside.length === 2 && inside.every((t) => /^Inside /.test(t)), inside.join(' / '));
@@ -124,12 +124,12 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: >= 2 houses, no repeats`, new Set(st.houses).size >= 2 && new Set(st.items.map((i) => i.handle)).size === st.items.length, st.houses.join(', '));
     check(`${tag}: persona, scent profile (3 families), why-lines all different`, st.persona && st.profile === 3 && new Set(st.why).size === st.why.length && st.why.length === st.items.length, st.persona);
     check(`${tag}: never recommends the named perfume`, !st.items.some((i) => /baccarat-rouge-540/.test(i.handle)));
-    check(`${tag}: "Shares the ... of your ..." lines`, st.shares.length >= 1 && st.shares.every((s) => /^Shares the .+ of your (Baccarat Rouge 540|Sauvage)\.$/.test(s)), st.shares[0]);
+    check(`${tag}: "Shares the ... of your ..." lines`, st.shares.length >= 1 && st.shares.every((s) => /^Shares the .+ of your (Baccarat Rouge 540|Black Opium)\.$/.test(s)), st.shares[0]);
     const alts = await page.$$eval('.sq-alt summary', (l) => l.length);
     check(`${tag}: "Also fits this slot" collapsed on each card`, alts === st.items.length && !(await page.isVisible('.sq-alt p')));
     check(`${tag}: no email field anywhere`, (await page.$$('input[type=email], input[name*=mail]')).length === 0);
     const url = decodeURIComponent(page.url());
-    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~dior-sauvage\._\.too-sweet\+coconut\+office\.2102100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.four-seasons\.classic/.test(url), url.replace(BASE, ''));
+    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~ysl-black-opium\._\.too-sweet\+coconut\+office\.2102100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.four-seasons\.classic/.test(url), url.replace(BASE, ''));
 
     await page.click('[data-act=share-open]');
     await page.waitForFunction(() => document.querySelector('[data-sq-preview]')?.src?.startsWith('blob:'));
@@ -217,6 +217,32 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: page URL still has preview_theme_id after the result`, /preview_theme_id=123456789/.test(page.url()));
     await shot(page, '12-result-C-deeplink');
     report.runs.push({ run: tag, ...st });
+    await ctx.close();
+  }
+}
+
+// screen 2 tiles follow screen 1: her -> 12 feminine, him -> 12 masculine, both -> 12 unisex
+{
+  const G = Object.fromEntries(JSON.parse(fs.readFileSync('quiz/data/popular-perfumes.json', 'utf8')).perfumes.map((p) => [p.id, p.gender]));
+  for (const vp of VIEWPORTS) {
+    const ctx = await newContext({ viewport: { width: vp.width, height: vp.height } });
+    const page = await ctx.newPage();
+    const seen = {};
+    for (const [who, want] of [['her', 'F'], ['him', 'M'], ['both', 'U']]) {
+      await page.goto(PAGE);
+      await page.click('[data-act=start]');
+      await page.click(`[data-act=answer][data-a=${who}]`);
+      await page.waitForSelector('.sq-pop__tile');
+      const ids = await page.$$eval('.sq-pop__tile', (l) => l.map((b) => b.dataset.id));
+      const imgs = await page.$$eval('.sq-pop__tile img', (l) => l.length);
+      seen[who] = ids;
+      const wrong = ids.filter((id) => G[id] !== want);
+      check(`${vp.name}: screen 2 tiles for "${who}" are all ${want === 'F' ? 'feminine' : want === 'M' ? 'masculine' : 'unisex'}`, ids.length === 12 && imgs === 12 && !wrong.length, wrong.length ? 'wrong: ' + wrong.join(', ') : ids.slice(0, 4).join(', ') + ' …');
+      await settle(page);
+      await page.screenshot({ path: `${SHOTS}/${vp.name}-03-ref-tiles-${who}.png`, fullPage: true });
+    }
+    const overlap = seen.her.filter((id) => seen.him.includes(id) || seen.both.includes(id)).length + seen.him.filter((id) => seen.both.includes(id)).length;
+    check(`${vp.name}: her / him / both tiles do not overlap`, overlap === 0, `${overlap} shared`);
     await ctx.close();
   }
 }

@@ -1,7 +1,7 @@
 // Run the engine's own wardrobe builder (theme-files/assets/scent-quiz.js) over the built config + taste files.
 //  A. 5,000 random answer sets (fixed seed): 0-2 named perfumes (popular list + our shelf) or "I don't have one" + note families,
 //     random taboos / toggles, week, how, feel, presence, matters, climate, style
-//  B. every one of the 12 popular perfumes x every combination of the 7 taboos (128) x the 4 climates, other answers random
+//  B. every one of the 36 popular tiles (12 for her, 12 for him, 12 for both) x every combination of the 7 taboos (128) x the 4 climates, other answers random
 // Checks, recomputed from the raw notes in catalog.json (not from the engine's encoding):
 //  every requested slot filled, in stock, no duplicates (picks and "also fits"), no sets, >= 2 houses when >= 2 slots,
 //  zero tabooed notes, "strong scents bother me" -> nothing that fills the room, gender rule, never the perfume they named,
@@ -152,7 +152,8 @@ const partA = stats.runs;
 const usedA = Object.keys(stats.picks).length;
 const taboSets = [];
 for (let m = 0; m < 1 << NOTE_TABOOS.length; m++) taboSets.push(NOTE_TABOOS.filter((_, i) => m & (1 << i)));
-for (const id of tasteData.popular) for (const tb of taboSets) for (const cl of ids('climate')) run(randomState({ ref: [{ k: 'r', id }], notes: undefined, taboos: tb.length ? tb : ['none'], climate: cl }));
+const POPULAR = [...new Set(Object.values(tasteData.popular).flat())];
+for (const id of POPULAR) for (const tb of taboSets) for (const cl of ids('climate')) run(randomState({ ref: [{ k: 'r', id }], notes: undefined, taboos: tb.length ? tb : ['none'], climate: cl }));
 // C. the case found in the live preview: Him, no perfume, woods + amber, Energised, Unique, Hot & humid, Sporty
 for (const tb of [['none'], [], ['coconut']]) for (const how of ids('how')) for (let w = 0; w < 20; w++) {
   run(randomState({ for: 'him', ref: 'none', notes: ['woods', 'amber'], taboos: tb, how, feel: ['energised'], matters: 'unique', climate: 'hot-humid', style: 'sporty' }));
@@ -161,7 +162,7 @@ const partB = stats.runs - partA;
 
 const counts = Object.entries(stats.picks).sort((a, b) => b[1] - a[1]);
 const lines = [
-  `combinations: ${stats.runs} runs (A random ${partA}, ${distinct.size} distinct, B popular x taboos x climates + the reported Him case ${partB}), ${stats.slots} slots, ${((Date.now() - t0) / 1000).toFixed(1)} s`,
+  `combinations: ${stats.runs} runs (A random ${partA}, ${distinct.size} distinct, B 36 popular tiles x taboos x climates + the reported Him case ${partB}), ${stats.slots} slots, ${((Date.now() - t0) / 1000).toFixed(1)} s`,
   `failures: ${Object.keys(stats.fail).length ? JSON.stringify(stats.fail) : 'none'}`,
   ...['slot not filled', 'out of stock', 'duplicate', 'set in a slot', 'one house', 'tabooed note', 'strong scent', 'gender rule', 'named perfume recommended', 'no why-line', 'duplicate why-line', 'why names a note it lacks', 'shares-line names a note not shared', 'persona names a note no pick has', 'set card not within 10%', 'share link does not parse', 'share link gives another result']
     .map((k) => `  ${k.padEnd(38)} ${stats.fail[k] || 0}`),

@@ -100,7 +100,9 @@ const memberTaste = (s) => {
   return { vec, canon: all };
 };
 const refHouses = [...new Set(popular.map((r) => r.house))].sort();
-const order = [...meta.popular, ...popular.map((r) => r.id).filter((id) => !meta.popular.includes(id))];
+// screen 2 tiles per answer of screen 1 (her / him / both); the union counts as "popular"
+const popAll = [...new Set(Object.values(meta.popular_by_for).flat())];
+const order = [...popAll, ...popular.map((r) => r.id).filter((id) => !popAll.includes(id))];
 const byId = Object.fromEntries(popular.map((r) => [r.id, r]));
 const refs = order.map((id) => {
   const r = byId[id];
@@ -108,7 +110,7 @@ const refs = order.map((id) => {
   const n = r.notes.top.length + r.notes.heart.length + r.notes.base.length + r.notes.key.length;
   // brand "key" notes (no tiers) weigh like heart notes
   const t = own < 0 && n ? taste({ top: r.notes.top, heart: [...r.notes.heart, ...r.notes.key], base: r.notes.base }) : null;
-  const flags = (meta.popular.includes(id) ? 1 : 0) | (fs.existsSync(`${OUT}/assets/sq-ref-${id}.webp`) ? 2 : 0) | (own < 0 && !t ? 4 : 0);
+  const flags = (popAll.includes(id) ? 1 : 0) | (fs.existsSync(`${OUT}/assets/sq-ref-${id}.webp`) ? 2 : 0) | (own < 0 && !t ? 4 : 0);
   const out = [r.id, r.name, refHouses.indexOf(r.house), r.gender, t ? encVec(t.vec) : '', t ? encAll(t.canon) : '', flags, (r.aliases || []).join('|')];
   if (own >= 0) out.push(own);
   return out;
@@ -119,7 +121,7 @@ const tasteFile = {
   houses: refHouses,
   items: items.map((p) => tasteRow(tasteOf(p))),
   sets: sets.map((p) => tasteRow(memberTaste(p))),
-  popular: meta.popular,
+  popular: meta.popular_by_for,
   house_aliases: meta.house_aliases || {},
   refs,
 };

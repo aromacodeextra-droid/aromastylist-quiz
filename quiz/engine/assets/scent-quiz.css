@@ -233,7 +233,7 @@
 :is(#root, body) .sq-section .sq-pop__tile:focus-visible { outline: 2px solid var(--sq-accent); outline-offset: 2px; }
 .sq-pop__tile img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: contain; }
 .sq-pop__ph { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1 / 1; font-family: var(--main_ff_h, inherit); font-size: 40px; color: var(--sq-h); background: color-mix(in srgb, var(--sq-fg) 5%, transparent); }
-.sq-pop__house { padding: 0 6px; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.sq-pop__house { padding: 0 6px; max-width: 100%; overflow-wrap: anywhere; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
 .sq-pop__name { padding: 0 6px; font-family: var(--main_ff_h, inherit); font-size: 14px; line-height: 1.2; color: var(--sq-h); }
 :is(#root, body) .sq-section .sq-result-item { flex-wrap: nowrap; align-items: center; justify-content: flex-start; }
 .sq-result-item__img { flex: 0 0 40px; width: 40px; height: 40px; object-fit: contain; background: #fff; }

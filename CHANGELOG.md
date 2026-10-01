@@ -1,5 +1,24 @@
 # Changelog
 
+## quiz-v3.2 (2026-10-01) — screen 2 tiles follow "Who is it for?"
+
+- Owner's report from the preview: the 12 bottle tiles on "Your signature scent" were the same for her and for him
+  (one tile per note family, mixed genders).
+- Now three sets of 12, by the perfume's own gender (`quiz/data/popular-meta.json` -> `popular_by_for`), all with images:
+  - **Her** (feminine): Black Opium, La Vie Est Belle, Coco Mademoiselle, Miss Dior, J'adore, Libre, Good Girl, Delina,
+    Born in Roma Donna, Light Blue, Bloom, Paradoxe.
+  - **Him** (masculine): Sauvage, Bleu de Chanel, Y, Acqua di Giò, Aventus, Le Male, Spicebomb, Stronger With You
+    Intensely, Eros, 1 Million, Layton, Dior Homme Intense.
+  - **Both** (unisex): Baccarat Rouge 540, Santal 33, Tobacco Vanille, Lost Cherry, Oud Wood, Wood Sage & Sea Salt,
+    Gypsy Water, Angels' Share, Ombré Leather, By the Fireplace, Glossier You, English Pear & Freesia.
+- Search: perfumes of the visitor's gender (and unisex) rank first; nothing is hidden, so a woman who wears Sauvage still
+  finds it.
+- Long house names wrap inside the tile on phones (Dolce&Gabbana was cut off).
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist-taste.json`.
+  No new images, template unchanged.
+- Tests: combinations 23,612 runs (part B now all 36 tiles x 128 taboo sets x 4 climates), 0 failures; e2e 68 / 68
+  (new: tiles for her / him / both are all of that gender and do not overlap, at 390 and 1440 px); search 100 / 100.
+
 ## quiz-v3.1 (2026-10-01) — the set card respects "Who is it for?"
 
 - Bug from the live preview: a "Him" run (notes woods + amber, Energised, Unique, Hot & humid, Sporty) was offered
