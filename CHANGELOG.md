@@ -75,7 +75,6 @@ not clear what to do.
   keyboard on phones). The "Inside <name>" card slides into view instead. A second tap on a chosen tile removes it.
 - House names break only after "&" (Dolce& / Gabbana), never inside a word.
 - Light Blue tile: new brand-site photo (front view with cap; the old one showed the cap off and came out pale).
-- A typed share link with a plain `+` (read by the browser as a space) now opens too.
 - Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
   `assets/sq-ref-dg-light-blue.webp`. Template unchanged.
 - Tests: e2e 74 / 74 (new: screen order and wording, tile tap keeps the place and opens no keyboard, second tap removes);
