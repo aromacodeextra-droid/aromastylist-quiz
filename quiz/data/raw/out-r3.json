@@ -1,0 +1,380 @@
+[
+ {
+  "id": "bvlgari-man-in-black",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "bvlgari-aqva-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "cartier-declaration",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "cartier-la-panthere",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "tiffany-and-co-tiffany-and-co",
+  "top": [
+   "vert de mandarine"
+  ],
+  "heart": [
+   "iris"
+  ],
+  "base": [
+   "patchouli",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.tiffany.ca/fragrance/tiffany-eau-de-parfum/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Tiffany.ca collection page, 'Signature Eau de Parfum' (original fragrance): top vert de mandarine, noble iris heart, patchouli and musk base."
+ },
+ {
+  "id": "chloe-chloe",
+  "top": [
+   "peony"
+  ],
+  "heart": [
+   "rose petals",
+   "magnolia"
+  ],
+  "base": [
+   "cedar",
+   "ambergris"
+  ],
+  "key": [],
+  "source_url": "https://www.chloe.com/en-us/p/fragrances/eau-de-parfum/CHCA608500.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "chloe-nomade",
+  "top": [
+   "mirabelle plum"
+  ],
+  "heart": [
+   "freesia"
+  ],
+  "base": [
+   "oak moss"
+  ],
+  "key": [],
+  "source_url": "https://www.chloe.com/en-us/p/fragrances/eau-de-parfum/CHCA64994052.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "narciso-rodriguez-for-her",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "peach",
+   "rose",
+   "heart of musc",
+   "patchouli",
+   "amber"
+  ],
+  "source_url": "https://www.narcisorodriguezparfums.com/en/narciso-rodriguez-for-her/for-her-edp.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand lists notes as one 'Notes' line (no tiers)."
+ },
+ {
+  "id": "narciso-rodriguez-narciso",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site lists only Narciso variants (Ambree, Cristal, Poudree, Radiante), not original EDP."
+ },
+ {
+  "id": "narciso-rodriguez-bleu-noir",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "black pepper",
+   "heart of musc",
+   "woods"
+  ],
+  "source_url": "https://www.narcisorodriguezparfums.com/en/narciso-rodriguez-for-him-bleu-noir/for-him-bleu-noir-eau-de-parfum.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand 'Notes' line; description also mentions blue cedar, black ebony, vetiver, amber."
+ },
+ {
+  "id": "jimmy-choo-jimmy-choo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "abercrombie-and-fitch-fierce",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Cologne",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "victoria-s-secret-bombshell",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "philosophy-amazing-grace",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "muguet",
+   "musk"
+  ],
+  "source_url": "https://philosophy.com/products/amazing-grace-eau-de-toilette",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "clean-reserve-warm-cotton",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand page (cleanbeauty.com) gives no notes, only 'crisp airy freshness settling to warm cotton musk'."
+ },
+ {
+  "id": "phlur-missing-person",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "nautica-voyage",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "ex-nihilo-fleur-narcotique",
+  "top": [
+   "bergamot",
+   "lychee",
+   "peach"
+  ],
+  "heart": [
+   "petalia",
+   "orange blossom",
+   "jasmine"
+  ],
+  "base": [
+   "musk",
+   "transparent wood",
+   "moss"
+  ],
+  "key": [],
+  "source_url": "https://us.ex-nihilo-paris.com/products/fleur-narcotique-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ralph-lauren-polo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "chanel-coco",
+  "top": [
+   "sicilian mandarin"
+  ],
+  "heart": [
+   "jasmine absolute",
+   "ylang-ylang",
+   "orange blossom"
+  ],
+  "base": [
+   "patchouli",
+   "benzoin",
+   "tonka"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/p/113530/coco-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "From brand 'Composition' text."
+ },
+ {
+  "id": "ysl-paris",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "hugo-boss-hugo-man",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "green apple",
+   "fir balsam",
+   "aromatic notes"
+  ],
+  "source_url": "https://www.hugoboss.com/us/hugo-man-eau-de-toilette-125-ml/hbna58097774_999.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "From brand description; no tiers given."
+ },
+ {
+  "id": "ralph-lauren-polo-black",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "jimmy-choo-man",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ },
+ {
+  "id": "ch-212-men",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "citrus leaves",
+   "gardenia petals",
+   "sandalwood"
+  ],
+  "source_url": "https://www.carolinaherrera.com/us/en/p-fragrance/212-nyc-men?sku=000000000065183412",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand page is '212 Men NYC' (described as the original men's 212 fragrance, EDT); no tiers given."
+ },
+ {
+  "id": "rabanne-pure-xs",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable (brand site blocked 403/captcha or SPA, or no page for this exact product)."
+ }
+]

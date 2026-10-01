@@ -1,0 +1,357 @@
+[
+ {
+  "id": "guerlain-vetiver",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "acqua-di-parma-colonia",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Cologne",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "acqua-di-parma-fico-di-amalfi",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "acqua-di-parma-arancia-di-capri",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "louis-vuitton-imagination",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "louis-vuitton-afternoon-swim",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Cologne",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "calvin-klein-ck-one",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "calvin-klein-eternity",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "calvin-klein-eternity-for-men",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "calvin-klein-obsession",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "calvin-klein-euphoria",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "calvin-klein-defy",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "davidoff-cool-water",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "davidoff.com is cigars only; no fragrance page found"
+ },
+ {
+  "id": "ralph-lauren-polo-blue",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "ralph-lauren-polo-red",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "ralph-lauren-romance",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "ralph-lauren-ralph-s-club",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "azzaro-chrome",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "azzaro.com Chrome page lists only Chrome Parfum notes (bergamot, sage, fir balsam, lentisk), not the EDT; not used"
+ },
+ {
+  "id": "issey-miyake-l-eau-d-issey",
+  "top": [
+   "lotus accord",
+   "rose"
+  ],
+  "heart": [
+   "lily accord",
+   "peony",
+   "white lily"
+  ],
+  "base": [
+   "exotic wood",
+   "amber",
+   "sandalwood",
+   "musk",
+   "cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://www.isseymiyakeparfums.com/en/issey-miyake-l-eau-d-issey-eau-de-toilette-EI_EDT.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "notes from brand olfactive text (tiers described in prose)"
+ },
+ {
+  "id": "issey-miyake-l-eau-d-issey-pour-homme",
+  "top": [
+   "yuzu",
+   "lemon",
+   "tangerine"
+  ],
+  "heart": [
+   "water lily",
+   "nutmeg"
+  ],
+  "base": [
+   "sandalwood",
+   "vetiver",
+   "amber accord"
+  ],
+  "key": [],
+  "source_url": "https://www.isseymiyakeparfums.com/en/issey-miyake-l%E2%80%99eau-d%E2%80%99issey-pour-homme-eau-de-toilette-3423470311358.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "notes from brand page"
+ },
+ {
+  "id": "kenzo-flower-by-kenzo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "estee-lauder-beautiful",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "estee-lauder-pleasures",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "estee-lauder-white-linen",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403/captcha) via curl and WebFetch; no notes collected"
+ },
+ {
+  "id": "clinique-happy",
+  "top": [
+   "ruby red grapefruit",
+   "mandarin",
+   "bergamot"
+  ],
+  "heart": [
+   "hawaiian wedding flower",
+   "morning dew orchid"
+  ],
+  "base": [
+   "mimosa",
+   "transparent wood accord"
+  ],
+  "key": [],
+  "source_url": "https://www.clinique.com/products/clinique-happy-eau-de-parfum-spray",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "notes from brand page"
+ },
+ {
+  "id": "clinique-aromatics-elixir",
+  "top": [
+   "bulgarian rose",
+   "orange blossom"
+  ],
+  "heart": [
+   "jasmine",
+   "ylang ylang"
+  ],
+  "base": [
+   "patchouli",
+   "oakmoss"
+  ],
+  "key": [],
+  "source_url": "https://www.clinique.com/products/aromatics-elixir-eau-de-parfum-spray",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Parfum",
+  "comment": "notes from brand page"
+ }
+]

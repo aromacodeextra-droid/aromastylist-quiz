@@ -1,0 +1,514 @@
+[
+ {
+  "id": "byredo-super-cedar",
+  "top": [
+   "rose petals"
+  ],
+  "heart": [
+   "virginian cedarwood"
+  ],
+  "base": [
+   "haitian vetiver",
+   "silk musk"
+  ],
+  "key": [],
+  "source_url": "https://www.byredo.com/us_en/p/super-cedar-eau-de-parfum?sku=0065205628",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "byredo-bibliotheque",
+  "top": [
+   "plum",
+   "cinnamon"
+  ],
+  "heart": [
+   "leather accord",
+   "violet"
+  ],
+  "base": [
+   "birch woods",
+   "patchouli",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.byredo.com/us_en/p/bibliotheque-eau-de-parfum",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "byredo-mixed-emotions",
+  "top": [
+   "blackcurrant",
+   "maté"
+  ],
+  "heart": [
+   "violet leaves",
+   "ceylon black tea"
+  ],
+  "base": [
+   "birch woods",
+   "papyrus"
+  ],
+  "key": [],
+  "source_url": "https://www.byredo.com/us_en/p/mixed-emotion-eau-de-parfum",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "jo-malone-wood-sage-and-sea-salt",
+  "top": [
+   "ambrette seeds"
+  ],
+  "heart": [
+   "sea salt"
+  ],
+  "base": [
+   "sage"
+  ],
+  "key": [
+   "landing page",
+   "not product page"
+  ],
+  "source_url": "https://www.jomalone.com/wood-sage-sea-salt",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Cologne",
+  "comment": "URL is brand landing page"
+ },
+ {
+  "id": "jo-malone-english-pear-and-freesia",
+  "top": [
+   "williams pear"
+  ],
+  "heart": [
+   "freesia"
+  ],
+  "base": [
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.jomalone.com/product/25946/12553/colognes/english-pear-freesia-cologne",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Cologne",
+  "comment": ""
+ },
+ {
+  "id": "jo-malone-peony-and-blush-suede",
+  "top": [
+   "red apple"
+  ],
+  "heart": [
+   "peony"
+  ],
+  "base": [
+   "suede"
+  ],
+  "key": [],
+  "source_url": "https://www.jomalone.com/product/25946/27028/colognes/peony-blush-suede-cologne",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Cologne",
+  "comment": ""
+ },
+ {
+  "id": "jo-malone-lime-basil-and-mandarin",
+  "top": [
+   "mandarin"
+  ],
+  "heart": [
+   "basil"
+  ],
+  "base": [
+   "amberwood"
+  ],
+  "key": [],
+  "source_url": "https://www.jomalone.com/product/25946/10101/colognes/lime-basil-mandarin-cologne",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Cologne",
+  "comment": ""
+ },
+ {
+  "id": "jo-malone-myrrh-and-tonka",
+  "top": [
+   "lavender"
+  ],
+  "heart": [
+   "omumbiri myrrh"
+  ],
+  "base": [
+   "tonka bean"
+  ],
+  "key": [],
+  "source_url": "https://www.jomalone.com/product/25946/110447/colognes/myrrh-tonka-cologne-intense",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Cologne Intense",
+  "comment": ""
+ },
+ {
+  "id": "jo-malone-blackberry-and-bay",
+  "top": [
+   "blackberry"
+  ],
+  "heart": [
+   "bay leaves"
+  ],
+  "base": [
+   "cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://www.jomalone.com/product/25946/23540/colognes/blackberry-bay-cologne",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Cologne",
+  "comment": ""
+ },
+ {
+  "id": "jo-malone-velvet-rose-and-oud",
+  "top": [
+   "clove"
+  ],
+  "heart": [
+   "damask rose"
+  ],
+  "base": [
+   "oud"
+  ],
+  "key": [],
+  "source_url": "https://www.jomalone.com/product/25946/110452/colognes/velvet-rose-oud-cologne-intense",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Cologne Intense",
+  "comment": ""
+ },
+ {
+  "id": "jo-malone-pomegranate-noir",
+  "top": [
+   "pomegranate"
+  ],
+  "heart": [
+   "casablanca lily"
+  ],
+  "base": [
+   "guaiacwood",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.jomalone.com/product/25946/9900/colognes/pomegranate-noir-cologne",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Cologne",
+  "comment": ""
+ },
+ {
+  "id": "margiela-jazz-club",
+  "top": [
+   "pink pepper",
+   "primofiore lemon",
+   "neroli"
+  ],
+  "heart": [
+   "rum absolute",
+   "clary sage",
+   "java vetiver"
+  ],
+  "base": [
+   "styrax resin",
+   "tobacco leaf absolute",
+   "vanilla bean"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-jazz-club/MM008.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "margiela-by-the-fireplace",
+  "top": [
+   "pink pepper",
+   "orange flower petals",
+   "clove"
+  ],
+  "heart": [
+   "chestnut accord",
+   "guaiac wood",
+   "cade"
+  ],
+  "base": [
+   "vanilla accord",
+   "peru balsam",
+   "cashmeran"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-by-the-fireplace/MM005.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "margiela-lazy-sunday-morning",
+  "top": [
+   "aldehydes",
+   "lily of the valley accord",
+   "pear accord"
+  ],
+  "heart": [
+   "iris accord",
+   "rose accord",
+   "orange flower accord"
+  ],
+  "base": [
+   "cotton accord",
+   "white musks",
+   "indonesian patchouli",
+   "ambrette seeds absolute"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-lazy-sunday-morning/MM009.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "margiela-beach-walk",
+  "top": [
+   "bergamot",
+   "pink pepper",
+   "lemon"
+  ],
+  "heart": [
+   "ylang ylang",
+   "transluzone",
+   "heliotrope accord",
+   "coconut milk accord"
+  ],
+  "base": [
+   "cedarwood",
+   "white musks",
+   "benzoin resinoid"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-beach-walk/MM003.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "margiela-coffee-break",
+  "top": [
+   "coffee accord",
+   "red apple accord",
+   "lemon"
+  ],
+  "heart": [
+   "lavender",
+   "spearmint",
+   "orange flower absolute"
+  ],
+  "base": [
+   "milk mousse accord",
+   "sandalwood",
+   "cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-coffee-break/MM006.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "margiela-bubble-bath",
+  "top": [
+   "soap bubbles accord",
+   "pink pepper",
+   "bergamot"
+  ],
+  "heart": [
+   "lavender flower accord",
+   "rose",
+   "jasmine absolute"
+  ],
+  "base": [
+   "patchouli",
+   "coconut milk accord",
+   "white musks"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-bubble-bath/MM004.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "margiela-when-the-rain-stops",
+  "top": [
+   "bergamot",
+   "vegetal accord",
+   "pink pepper"
+  ],
+  "heart": [
+   "aquatic accord",
+   "isparta rose petal",
+   "jasmine grandiflorum"
+  ],
+  "base": [
+   "pine needle",
+   "bali patchouli",
+   "moss accord"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-when-the-rain-stops/MM014.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "margiela-under-the-lemon-trees",
+  "top": [
+   "kalamansi lime accord",
+   "petitgrain",
+   "cardamom"
+  ],
+  "heart": [
+   "coriander",
+   "maté absolute",
+   "green tea extract"
+  ],
+  "base": [
+   "cedarwood",
+   "cistus absolute",
+   "musks"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-under-the-lemon-trees/MM013.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "margiela-autumn-vibes",
+  "top": [
+   "pink pepper co2",
+   "cardamom"
+  ],
+  "heart": [
+   "carrot seeds",
+   "nutmeg",
+   "olibanum"
+  ],
+  "base": [
+   "virginia cedarwood",
+   "moss accord",
+   "fir balsam absolute"
+  ],
+  "key": [],
+  "source_url": "https://www.maisonmargiela-fragrances.us/fragrances/replica-eau-de-toilette/replica-autumn-vibes/MM002.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "diptyque-philosykos",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "fig leaves",
+   "fig tree sap",
+   "fig tree wood",
+   "black pepper"
+  ],
+  "source_url": "https://www.diptyqueparis.com/en_us/p/philosykos-eau-de-toilette-100ml-1.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "diptyque-do-son",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "tuberose",
+   "orange blossom",
+   "jasmine",
+   "marine accord"
+  ],
+  "source_url": "https://www.diptyqueparis.com/en_us/p/fragrances/do-son-eau-de-toilette-100ml-1.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "diptyque-tam-dao",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "sandalwood",
+   "cedar",
+   "cypress",
+   "myrtle"
+  ],
+  "source_url": "https://www.diptyqueparis.com/en_us/p/tam-dao-eau-de-toilette-100ml-1.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "diptyque-orpheon",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "juniper berry",
+   "cedar",
+   "tonka bean",
+   "jasmine"
+  ],
+  "source_url": "https://us.diptyqueparis.com/en-us/products/eau-de-parfum-orpheon-orphp75c",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "diptyque-eau-rose",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "damascena rose",
+   "centifolia rose",
+   "litchi accord",
+   "ambroxan"
+  ],
+  "source_url": "https://www.diptyqueparis.com/en_us/p/eau-rose-eau-de-toilette-1.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ }
+]

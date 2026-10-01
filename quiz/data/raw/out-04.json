@@ -1,0 +1,498 @@
+[
+ {
+  "id": "ch-212-vip-rose",
+  "top": [
+   "champagne rosé",
+   "pink pepper"
+  ],
+  "heart": [
+   "peach tree flower",
+   "rose"
+  ],
+  "base": [
+   "peach",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.carolinaherrera.com/us/en/p-fragrance/212-vip-rose",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "ch-212-vip-men",
+  "top": [
+   "caviar lime",
+   "frozen mint"
+  ],
+  "heart": [
+   "ginger",
+   "chilled vodka"
+  ],
+  "base": [
+   "kingwood",
+   "tonka bean"
+  ],
+  "key": [],
+  "source_url": "https://www.carolinaherrera.com/us/en/p-fragrance/212-vip-men",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "ch-bad-boy",
+  "top": [
+   "bergamot",
+   "pink pepper",
+   "white pepper"
+  ],
+  "heart": [
+   "cedarwood",
+   "clary sage"
+  ],
+  "base": [
+   "tonka bean",
+   "cocoa"
+  ],
+  "key": [],
+  "source_url": "https://www.carolinaherrera.com/us/en/p-fragrance/bad-boy",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "ch-ch-men",
+  "top": [
+   "grapefruit",
+   "violet leaves"
+  ],
+  "heart": [
+   "saffron",
+   "cyclamen"
+  ],
+  "base": [
+   "cashmeran",
+   "leather"
+  ],
+  "key": [],
+  "source_url": "https://www.carolinaherrera.com/us/en/p-fragrance/ch-men-edt-100ml",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "rabanne-1-million",
+  "top": [
+   "blood mandarin",
+   "grapefruit",
+   "mint"
+  ],
+  "heart": [
+   "cinnamon",
+   "rose"
+  ],
+  "base": [
+   "leather",
+   "amber",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/us/en_US/fragrance/p/1-million--000000000065187136",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "rabanne-1-million-parfum",
+  "top": [
+   "grapefruit",
+   "monoï",
+   "sea salt accord"
+  ],
+  "heart": [
+   "salty tuberose",
+   "pine",
+   "cashmeran",
+   "cinnamon"
+  ],
+  "base": [
+   "labdanum",
+   "leather",
+   "woody amber",
+   "vanilla",
+   "tonka bean"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/us/en_US/fragrance/p/1-million-parfum--000000000065156000",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "rabanne-1-million-elixir",
+  "top": [
+   "turkish damascena rose"
+  ],
+  "heart": [
+   "osmanthus",
+   "tonka bean"
+  ],
+  "base": [
+   "davana",
+   "woods",
+   "black vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/us/en_US/fragrance/p/1-million-elixir--000000000065177273",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": "Brand page lists apple and davana as well; tiers per headline pyramid"
+ },
+ {
+  "id": "rabanne-invictus",
+  "top": [
+   "grapefruit"
+  ],
+  "heart": [
+   "marine accord"
+  ],
+  "base": [
+   "guaiac wood"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/US/en_US/fragrance/p/invictus--000000000065055742",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "rabanne-invictus-victory-elixir",
+  "top": [
+   "tonka bean"
+  ],
+  "heart": [
+   "incense"
+  ],
+  "base": [
+   "opulent wood"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/us/en_US/fragrance/p/invictus-victory-elixir--000000000065188730",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "rabanne-phantom",
+  "top": [
+   "creamy lavender"
+  ],
+  "heart": [
+   "lemon"
+  ],
+  "base": [
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/us/en_US/fragrance/p/phantom--000000000065158923",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "Brand pyramid order as returned by search"
+ },
+ {
+  "id": "rabanne-lady-million",
+  "top": [
+   "neroli",
+   "raspberry",
+   "bitter orange"
+  ],
+  "heart": [
+   "jasmine sambac",
+   "orange blossom"
+  ],
+  "base": [
+   "honey",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/us/en_US/fragrance/p/lady-million--000000000065051781",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "rabanne-olympea",
+  "top": [
+   "jasmine"
+  ],
+  "heart": [
+   "ginger flower"
+  ],
+  "base": [
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/ww/en/fragrance/p/olympea--000000000065137847",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WW page; US page not returned"
+ },
+ {
+  "id": "rabanne-fame",
+  "top": [
+   "mango",
+   "bergamot"
+  ],
+  "heart": [
+   "jasmine",
+   "olibanum"
+  ],
+  "base": [
+   "vanilla",
+   "sandalwood",
+   "incense"
+  ],
+  "key": [],
+  "source_url": "https://www.rabanne.com/us/en_US/fragrance/p/fame--000000000065170087",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "jpg-le-male",
+  "top": [
+   "mint"
+  ],
+  "heart": [
+   "lavender"
+  ],
+  "base": [
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-male/le-male-eau-de-toilette-000000000065120122",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "jpg-le-male-elixir",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lavender",
+   "tonka bean",
+   "benzoin"
+  ],
+  "source_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-male/le-male-elixir-parfum-000000000065189084",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": "Key notes only"
+ },
+ {
+  "id": "jpg-le-male-le-parfum",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cardamom",
+   "lavender",
+   "iris",
+   "vanilla"
+  ],
+  "source_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-male/le-male-le-parfum-eau-de-parfum-intense-000000000065156533",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "Key notes only"
+ },
+ {
+  "id": "jpg-le-beau",
+  "top": [
+   "bergamot"
+  ],
+  "heart": [
+   "coconut wood"
+  ],
+  "base": [
+   "tonka bean"
+  ],
+  "key": [],
+  "source_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-beau/le-beau-eau-de-toilette-000000000065132208",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "jpg-le-beau-le-parfum",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "coconut wood accord",
+   "tonka bean",
+   "sandalwood"
+  ],
+  "source_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-le-beau/le-beau-le-parfum-eau-de-parfum-intense-000000000065245300",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "Key notes only"
+ },
+ {
+  "id": "jpg-scandal",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "gardenia",
+   "honey",
+   "patchouli"
+  ],
+  "source_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-scandal/scandal-eau-de-parfum-000000000065176518",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "Key notes only"
+ },
+ {
+  "id": "jpg-la-belle",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "pear",
+   "vanilla",
+   "vetiver"
+  ],
+  "source_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-la-belle/la-belle-eau-de-parfum-000000000065132212",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "Key notes only; page also mentions bergamot, green pear, vanilla pod"
+ },
+ {
+  "id": "jpg-gaultier-divine",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "fleur de lys",
+   "meringue",
+   "sea salt"
+  ],
+  "source_url": "https://www.jeanpaulgaultier.com/us/en_US/p/range-gaultier-divine/gaultier-divine-eau-de-parfum-000000000065188916",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "Brand labels these as top/heart/base but they read as key notes"
+ },
+ {
+  "id": "versace-eros",
+  "top": [
+   "italian lemon",
+   "mandarin",
+   "mint oil",
+   "candied apple"
+  ],
+  "heart": [
+   "geranium flower",
+   "clary sage",
+   "ambermax"
+  ],
+  "base": [
+   "cedarwood atlas",
+   "cedarwood virginia",
+   "vetiver",
+   "patchouli",
+   "sandalwood",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.versace.com/us/en/men/accessories/fragrances-body-care/eros/eros-edt-100-ml-blue/R740010-R100MLS_RNUL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "versace-eros-flame",
+  "top": [
+   "chinotto accord",
+   "madagascar black pepper"
+  ],
+  "heart": [
+   "wild rosemary",
+   "pepperwood"
+  ],
+  "base": [
+   "patchouli",
+   "haitian vetiver",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.versace.com/us/en/men/accessories/fragrances-body-care/eros-flame/eros-flame-edp-100-ml-red/R741010-R100MLS_RNUL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "versace-eros-parfum",
+  "top": [
+   "italian lemon",
+   "italian mandarin",
+   "litsea cubeba",
+   "elemi",
+   "black pepper"
+  ],
+  "heart": [
+   "pomarose",
+   "egyptian geranium",
+   "lavender",
+   "clary sage"
+  ],
+  "base": [
+   "benzoin",
+   "cashmeran",
+   "patchouli",
+   "vanilla",
+   "haitian vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.versace.com/us/en/men/accessories/fragrances-body-care/eros/eros-parfum-100-ml-black/R740210-R100MLS_RNUL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "versace-dylan-blue-pour-homme",
+  "top": [
+   "water notes",
+   "fig leaves",
+   "bergamot",
+   "grapefruit"
+  ],
+  "heart": [
+   "violet leaves",
+   "patchouli",
+   "papyrus",
+   "black pepper",
+   "ambroxan"
+  ],
+  "base": [
+   "musk",
+   "tonka bean",
+   "saffron",
+   "frankincense"
+  ],
+  "key": [],
+  "source_url": "https://www.versace.com/us/en/men/accessories/fragrances-body-care/dylan-blue-pour-homme/dylan-blue-pour-homme-edt-100-ml-blue/R721010-R100MLS_RNUL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ }
+]

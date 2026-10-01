@@ -1,0 +1,396 @@
+[
+ {
+  "id": "louis-vuitton-attrape-reves",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cocoa",
+   "peony accord",
+   "litchi accord",
+   "patchouli heart",
+   "turkish rose absolute",
+   "ginger",
+   "bergamot"
+  ],
+  "source_url": "https://us.louisvuitton.com/eng-us/products/attrape-reves-nvprod1160017v/LP0087",
+  "source_type": "brand",
+  "method": "search",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "louis-vuitton-l-immensite",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "ginger",
+   "grapefruit",
+   "vetiver"
+  ],
+  "source_url": "https://us.louisvuitton.com/eng-us/products/limmensite-nvprod1030132v/LP0062",
+  "source_type": "brand",
+  "method": "search",
+  "comment": "brand summary also mentions amber note",
+  "concentration": "EDP"
+ },
+ {
+  "id": "louis-vuitton-afternoon-swim",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "LV site blocked (403) and search budget exhausted",
+  "concentration": "Cologne"
+ },
+ {
+  "id": "d-s-and-durga-i-don-t-know-what",
+  "top": [
+   "bergamot"
+  ],
+  "heart": [
+   "iso e super",
+   "vetiver acetate"
+  ],
+  "base": [
+   "civettone",
+   "firsantol",
+   "ambrox super"
+  ],
+  "key": [],
+  "source_url": "https://www.dsanddurga.com/products/i-dont-know-what",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "d-s-and-durga-burning-barbershop",
+  "top": [
+   "spearmint",
+   "lime",
+   "hemlock spruce"
+  ],
+  "heart": [
+   "lavender absolute",
+   "tuberose",
+   "turkish rose"
+  ],
+  "base": [
+   "burnt oil",
+   "vanilla",
+   "hay"
+  ],
+  "key": [],
+  "source_url": "https://www.dsanddurga.com/products/burning-barbershop",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "d-s-and-durga-debaser",
+  "top": [
+   "bergamot",
+   "green leaf",
+   "pear stem"
+  ],
+  "heart": [
+   "fig",
+   "coconut milk",
+   "iris"
+  ],
+  "base": [
+   "blond woods",
+   "tonka bean",
+   "moss"
+  ],
+  "key": [],
+  "source_url": "https://www.dsanddurga.com/products/debaser",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "essential-parfums-bois-imperial",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "thai basil",
+   "grapefruit",
+   "timut pepper",
+   "haitian vetiver",
+   "georgywood",
+   "petalia",
+   "akigalawood",
+   "patchouli",
+   "ambrofix"
+  ],
+  "source_url": "https://www.essentialparfums.com/en/products/bois-imperial-eau-de-parfum-refillable-spray-100-ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "prose description, no tiers",
+  "concentration": "EDP"
+ },
+ {
+  "id": "roja-parfums-elysium-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "grapefruit",
+   "lime",
+   "lavender",
+   "thyme",
+   "musk",
+   "pink pepper",
+   "cedarwood",
+   "juniper berry",
+   "benzoin"
+  ],
+  "source_url": "https://www.rojaparfums.com/products/elysium-homme-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "key ingredients list",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "roja-parfums-enigma-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "heliotrope",
+   "cognac",
+   "tobacco",
+   "benzoin",
+   "vanilla"
+  ],
+  "source_url": "https://www.rojaparfums.com/products/enigma-homme-edp",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "key ingredients list; page covers parfum 50ml and EDP",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "calvin-klein-ck-one",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDT"
+ },
+ {
+  "id": "calvin-klein-eternity",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDP"
+ },
+ {
+  "id": "calvin-klein-eternity-for-men",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDT"
+ },
+ {
+  "id": "calvin-klein-obsession",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDP"
+ },
+ {
+  "id": "calvin-klein-euphoria",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDP"
+ },
+ {
+  "id": "calvin-klein-defy",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDT"
+ },
+ {
+  "id": "davidoff-cool-water",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "no reachable brand fragrance page; sephora/nordstrom blocked",
+  "concentration": "EDT"
+ },
+ {
+  "id": "hugo-boss-boss-bottled",
+  "top": [],
+  "heart": [
+   "geranium",
+   "clove"
+  ],
+  "base": [
+   "sandalwood",
+   "cedar",
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.hugoboss.com/us/boss-bottled-eau-de-toilette-100-ml/hbna58000026_999.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "top described only as fresh and fruity, no named notes",
+  "concentration": "EDT"
+ },
+ {
+  "id": "hugo-boss-boss-the-scent",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "ginger",
+   "maninka fruit",
+   "leather"
+  ],
+  "source_url": "https://www.hugoboss.com/us/boss-the-scent-eau-de-toilette-100-ml-%E2%80%93-3.4-fl-oz/hbna58228609_999.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDT"
+ },
+ {
+  "id": "hugo-boss-boss-the-scent-for-her",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "peach",
+   "osmanthus",
+   "white musk"
+  ],
+  "source_url": "https://www.hugoboss.com/us/boss-the-scent-eau-de-parfum-100-ml-%E2%80%93-3.4-oz/hbna58228624_999.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "ralph-lauren-polo-blue",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "ralphlauren.com bot-blocked; sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDT"
+ },
+ {
+  "id": "ralph-lauren-polo-red",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "ralphlauren.com bot-blocked; sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDT"
+ },
+ {
+  "id": "ralph-lauren-romance",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "ralphlauren.com bot-blocked; sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDP"
+ },
+ {
+  "id": "ralph-lauren-ralph-s-club",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "comment": "ralphlauren.com bot-blocked; sephora/nordstrom blocked, search budget exhausted",
+  "concentration": "EDP"
+ },
+ {
+  "id": "azzaro-wanted",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lemon",
+   "cardamom",
+   "vetiver"
+  ],
+  "source_url": "https://www.azzaro.com/en/fragrances/azzaro-wanted",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "page lists these three; may cover range",
+  "concentration": "EDT"
+ },
+ {
+  "id": "azzaro-the-most-wanted",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cardamom",
+   "caramel",
+   "woody amber"
+  ],
+  "source_url": "https://www.azzaro.com/en/fragrances/azzaro-the-most-wanted",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "woody amber = bourbon vanilla and vetiver accord",
+  "concentration": "EDP"
+ }
+]

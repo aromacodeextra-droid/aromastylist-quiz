@@ -1,0 +1,571 @@
+[
+ {
+  "id": "initio-side-effect",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cinnamon",
+   "rum",
+   "tobacco",
+   "saffron",
+   "sandalwood",
+   "hedione"
+  ],
+  "source_url": "https://us.initioparfums.com/products/side-effect",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "key notes only"
+ },
+ {
+  "id": "initio-rehab",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "lavender",
+   "cedarwood",
+   "patchouli",
+   "sandalwood",
+   "hedione",
+   "musk"
+  ],
+  "source_url": "https://us.initioparfums.com/products/rehab",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "key notes only"
+ },
+ {
+  "id": "initio-musk-therapy",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "mandarin",
+   "white magnolia",
+   "blackcurrant",
+   "white sandalwood",
+   "white musk",
+   "pink musk"
+  ],
+  "source_url": "https://us.initioparfums.com/products/musk-therapy",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "key notes only"
+ },
+ {
+  "id": "initio-atomic-rose",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "turkish rose",
+   "bulgarian rose",
+   "jasmine",
+   "vanilla",
+   "hedione"
+  ],
+  "source_url": "https://us.initioparfums.com/products/atomic-rose",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "key notes only"
+ },
+ {
+  "id": "initio-psychedelic-love",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "rose",
+   "myrrh",
+   "vanilla",
+   "patchouli",
+   "heliotropin",
+   "hedione"
+  ],
+  "source_url": "https://us.initioparfums.com/products/psychedelic-love",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "key notes only"
+ },
+ {
+  "id": "initio-absolute-aphrodisiac",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "white flowers",
+   "amber",
+   "vanilla",
+   "musk",
+   "castoreum"
+  ],
+  "source_url": "https://us.initioparfums.com/products/absolute-aphrodisiac",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "key notes only"
+ },
+ {
+  "id": "initio-high-frequency",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "magnolia",
+   "jasmine",
+   "vanilla",
+   "almond",
+   "sandalwood",
+   "heliotrope",
+   "hedione"
+  ],
+  "source_url": "https://us.initioparfums.com/products/high-frequency",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "key notes only"
+ },
+ {
+  "id": "amouage-reflection-man",
+  "top": [
+   "rosemary",
+   "red pepper berries",
+   "bitter orange leaves"
+  ],
+  "heart": [
+   "neroli",
+   "orris",
+   "jasmine",
+   "ylang-ylang"
+  ],
+  "base": [
+   "vetiver",
+   "patchouli",
+   "sandalwood",
+   "cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://amouage.com/products/reflection-man-100ml",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "amouage-interlude-man",
+  "top": [
+   "bergamot",
+   "oregano",
+   "pimento berry oil"
+  ],
+  "heart": [
+   "amber",
+   "frankincense",
+   "cistus",
+   "opoponax"
+  ],
+  "base": [
+   "leather",
+   "agarwood smoke",
+   "patchouli",
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://amouage.com/products/interlude-man-100ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "amouage-jubilation-xxv",
+  "top": [
+   "labdanum ciste",
+   "coriander",
+   "orange",
+   "davana",
+   "frankincense",
+   "blackberry"
+  ],
+  "heart": [
+   "honey",
+   "bay",
+   "cinnamon",
+   "orchid",
+   "rose",
+   "clove",
+   "celery seeds",
+   "gaiac wood"
+  ],
+  "base": [
+   "patchouli",
+   "opoponax",
+   "myrrh",
+   "atlas cedarwood",
+   "musk",
+   "moss",
+   "ambergris",
+   "oud wood",
+   "immortelle"
+  ],
+  "key": [],
+  "source_url": "https://amouage.com/products/jubilation-xxv-man",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "amouage-guidance",
+  "top": [
+   "pear",
+   "frankincense",
+   "hazelnut"
+  ],
+  "heart": [
+   "saffron",
+   "rose",
+   "jasmine sambac",
+   "osmanthus"
+  ],
+  "base": [
+   "cistus",
+   "sandalwood",
+   "akigalawood",
+   "ambergris",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://amouage.com/products/100ml-guidance",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "amouage-honour-woman",
+  "top": [
+   "pepper",
+   "rhubarb leaves",
+   "coriander"
+  ],
+  "heart": [
+   "jasmine",
+   "tuberose",
+   "gardenia",
+   "lily of the valley",
+   "carnation"
+  ],
+  "base": [
+   "vetiver",
+   "frankincense",
+   "amber",
+   "opoponax",
+   "leather"
+  ],
+  "key": [],
+  "source_url": "https://amouage.com/products/honour-woman-100ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "nishane-hacivat",
+  "top": [
+   "bergamot",
+   "pineapple",
+   "grapefruit"
+  ],
+  "heart": [
+   "jasmine",
+   "patchouli",
+   "cedarwood"
+  ],
+  "base": [
+   "clearwood",
+   "oakmoss",
+   "dry timberwood"
+  ],
+  "key": [],
+  "source_url": "https://nishane.com/product/hacivat/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Extrait",
+  "comment": ""
+ },
+ {
+  "id": "nishane-ani",
+  "top": [
+   "bergamot",
+   "green notes",
+   "blue ginger",
+   "pink pepper"
+  ],
+  "heart": [
+   "blackcurrant",
+   "turkish rose",
+   "cardamom"
+  ],
+  "base": [
+   "patchouli",
+   "cedarwood",
+   "vanilla",
+   "benzoin",
+   "ambergris",
+   "musk",
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://nishane.com/product/ani/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": ""
+ },
+ {
+  "id": "nishane-wulong-cha",
+  "top": [
+   "bergamot",
+   "orange",
+   "litsea",
+   "mandarin"
+  ],
+  "heart": [
+   "oolong tea",
+   "nutmeg"
+  ],
+  "base": [
+   "musk",
+   "fig"
+  ],
+  "key": [],
+  "source_url": "https://nishane.com/product/wulong-cha/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": ""
+ },
+ {
+  "id": "nishane-fan-your-flames",
+  "top": [
+   "coconut",
+   "rum"
+  ],
+  "heart": [
+   "tobacco",
+   "tonka bean"
+  ],
+  "base": [
+   "oakmoss",
+   "chinese cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://nishane.com/product/fan-your-flames/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": ""
+ },
+ {
+  "id": "clive-christian-x-for-women",
+  "top": [
+   "rhubarb",
+   "peach",
+   "mandarin",
+   "bergamot"
+  ],
+  "heart": [
+   "jasmine",
+   "rose",
+   "orris",
+   "narcissus",
+   "lily of the valley",
+   "tuberose"
+  ],
+  "base": [
+   "vanilla",
+   "cashmeran musk",
+   "patchouli",
+   "rum",
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://www.clivechristian.com/products/x-feminine-1",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Parfum",
+  "comment": ""
+ },
+ {
+  "id": "clive-christian-1872-for-men",
+  "top": [
+   "petitgrain",
+   "peach",
+   "lavender",
+   "citrus"
+  ],
+  "heart": [
+   "clary sage",
+   "jasmine",
+   "neroli",
+   "musk"
+  ],
+  "base": [
+   "cedarwood",
+   "sandalwood",
+   "freesia"
+  ],
+  "key": [],
+  "source_url": "https://www.clivechristian.com/products/1872-masculine",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Parfum",
+  "comment": ""
+ },
+ {
+  "id": "memo-paris-african-leather",
+  "top": [
+   "cardamom essence guatemala",
+   "geranium absolute egypt",
+   "pink pepper co2 extract"
+  ],
+  "heart": [
+   "rose essence",
+   "patchouli essence indonesia",
+   "cinnamon essence"
+  ],
+  "base": [
+   "leather accord",
+   "oud essence",
+   "amber accord"
+  ],
+  "key": [],
+  "source_url": "https://www.memoparis.com/products/african-leather-eau-de-parfum-75ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "memo-paris-irish-leather",
+  "top": [
+   "pepper essence",
+   "mandarin essence",
+   "juniper berry essence"
+  ],
+  "heart": [
+   "iris concrete",
+   "clary sage essence",
+   "green mate absolute"
+  ],
+  "base": [
+   "green leather",
+   "cedarwood essence",
+   "vetiver essence"
+  ],
+  "key": [],
+  "source_url": "https://www.memoparis.com/products/irish-leather-eau-de-parfum-75ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "memo-paris-inle",
+  "top": [
+   "cardamom essence",
+   "bergamot essence",
+   "tea accord",
+   "neroli essence"
+  ],
+  "heart": [
+   "osmanthus absolu",
+   "fig accord",
+   "jasmine sambac absolu"
+  ],
+  "base": [
+   "musk",
+   "cedarwood essence",
+   "violet accord",
+   "mate absolute"
+  ],
+  "key": [],
+  "source_url": "https://www.memoparis.com/products/inle-eau-de-parfum-75ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "memo-paris-marfa",
+  "top": [
+   "mandarin essence",
+   "peach accord"
+  ],
+  "heart": [
+   "ylang ylang extract",
+   "tuberose absolute",
+   "orange flower absolute"
+  ],
+  "base": [
+   "cedarwood essence virginia",
+   "vanilla bean extract",
+   "tonka bean absolute",
+   "sandalwood essence",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.memoparis.com/products/marfa-eau-de-parfum-75ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "tiziana-terenzi-kirke",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": "brand site notes not reachable (search budget exhausted, product pages 404/429)"
+ },
+ {
+  "id": "tiziana-terenzi-andromeda",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": "brand site notes not reachable (search budget exhausted, product pages 404/429)"
+ },
+ {
+  "id": "tiziana-terenzi-orza",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": "brand site notes not reachable (search budget exhausted, product pages 404/429)"
+ }
+]

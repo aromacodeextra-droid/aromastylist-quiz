@@ -1,0 +1,4 @@
+{
+  "note": "Store sales by product title, last 365 days (ShopifyQL: FROM sales SHOW net_items_sold GROUP BY product_title SINCE -365d), read 2026-10-01 via the read-only analytics query. Titles and unit counts only; no order or customer data. Used for the 'What everyone's talking about' answer.",
+  "rows": [["Ninfea",3],["Hibiscus Mahajád Extract",2],["The Muse",2],["Santal Volcanique",2],["Rosae Mundi",2],["Reflection Man by Amouage",1],["Poets Of Berlin",1],["Town & Country",1],["Bois Impérial",1],["Modern Legends",1],["Modern Icons",1],["MOLéCULE 234.38",1],["Original Vetiver",1],["Reflection Woman",1],["Althaïr",1],["Acqua e Zucchero",1],["PINK MOLéCULE 090.09",1],["Aventus Cologne for Men",1],["Jubilation 25 Woman",1],["Himalaya",1],["Crab Apple Blossom",1],["Virgin Island Water",1],["Guidance",1],["Interlude Black Iris Man Amouage",1]]
+}

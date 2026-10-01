@@ -1,0 +1,383 @@
+[
+ {
+  "id": "diptyque-l-ombre-dans-l-eau",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "rose",
+   "blackcurrant buds",
+   "petitgrain",
+   "blackcurrant leaves"
+  ],
+  "source_url": "https://us.diptyqueparis.com/en-us/products/eau-de-toilette-ombre-dans-eau-ombre50v2",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "diptyque-fleur-de-peau",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "musk",
+   "iris",
+   "ambrette",
+   "pink peppercorn"
+  ],
+  "source_url": "https://us.diptyqueparis.com/en-us/products/eau-de-parfum-fleur-de-peau-fleurp75cv1",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "diptyque-eau-duelle",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "vanilla",
+   "pink peppercorn",
+   "cypriol",
+   "calamus"
+  ],
+  "source_url": "https://www.diptyqueparis.com/en_us/p/eau-duelle-eau-de-toilette-100ml-1.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "mfk-baccarat-rouge-540",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mfk-baccarat-rouge-540-extrait",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "Extrait"
+ },
+ {
+  "id": "mfk-grand-soir",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mfk-gentle-fluidity-gold",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mfk-aqua-universalis",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDT"
+ },
+ {
+  "id": "mfk-a-la-rose",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mfk-oud-satin-mood",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mfk-amyris-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDT"
+ },
+ {
+  "id": "mfk-724",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mfk-l-homme-a-la-rose",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "franciskurkdjian.com blocks fetch (403); search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-delina",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lychee",
+   "damascena rose",
+   "musks",
+   "cashmeran"
+  ],
+  "source_url": "https://parfums-de-marly.com/products/delina",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-delina-exclusif",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lychee",
+   "pear",
+   "damascena rose",
+   "musks",
+   "vanilla"
+  ],
+  "source_url": "https://parfums-de-marly.com/products/delina-exclusif",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "pdm-layton",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "apple",
+   "lavender",
+   "patchouli"
+  ],
+  "source_url": "https://parfums-de-marly.com/products/layton",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-layton-exclusif",
+  "top": [
+   "bergamot",
+   "lavender"
+  ],
+  "heart": [],
+  "base": [
+   "sandalwood",
+   "oud",
+   "leather"
+  ],
+  "key": [],
+  "source_url": "https://parfums-de-marly.com/products/layton-exclusif",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "pdm-herod",
+  "top": [
+   "cinnamon"
+  ],
+  "heart": [
+   "tobacco leaves"
+  ],
+  "base": [
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://parfums-de-marly.com/products/herod",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-pegasus",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "almond",
+   "vanilla"
+  ],
+  "source_url": "https://parfums-de-marly.com/products/pegasus",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-percival",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "lavender",
+   "tonka bean"
+  ],
+  "source_url": "https://parfums-de-marly.com/products/percival",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-valaya",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "mandarin",
+   "white flowers",
+   "akigalawood",
+   "musk"
+  ],
+  "source_url": "https://parfums-de-marly.com/products/valaya",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-haltane",
+  "top": [
+   "bergamot",
+   "lavender"
+  ],
+  "heart": [
+   "praline"
+  ],
+  "base": [
+   "oud"
+  ],
+  "key": [],
+  "source_url": "https://parfums-de-marly.com/products/haltane",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-greenley",
+  "top": [
+   "green apple"
+  ],
+  "heart": [
+   "petitgrain"
+  ],
+  "base": [
+   "ambrox",
+   "amber woods"
+  ],
+  "key": [],
+  "source_url": "https://parfums-de-marly.com/products/greenley",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-kalan",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "orange",
+   "black pepper",
+   "lavender",
+   "cedarwood"
+  ],
+  "source_url": "https://parfums-de-marly.com/products/kalan",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-oriana",
+  "top": [
+   "mandarin"
+  ],
+  "heart": [
+   "orange blossom",
+   "jasmine"
+  ],
+  "base": [
+   "marshmallow",
+   "praline",
+   "musks"
+  ],
+  "key": [],
+  "source_url": "https://parfums-de-marly.com/products/oriana",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "notes from product description prose (products.json)",
+  "concentration": "EDP"
+ }
+]

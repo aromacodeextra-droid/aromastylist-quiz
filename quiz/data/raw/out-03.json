@@ -1,0 +1,490 @@
+[
+ {
+  "id": "armani-acqua-di-gio-profondo",
+  "top": [
+   "marine notes",
+   "green mandarin",
+   "bergamot"
+  ],
+  "heart": [
+   "patchouli",
+   "mineral amber accord",
+   "musk"
+  ],
+  "base": [],
+  "key": [],
+  "source_url": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/acqua-di-gio/acqua-di-gio-profondo-eau-de-parfum/ww-00294-arm.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "base tier described only as aromatic essences, no named notes"
+ },
+ {
+  "id": "armani-acqua-di-gio-parfum",
+  "top": [
+   "marine notes",
+   "green mandarin"
+  ],
+  "heart": [
+   "patchouli",
+   "mineral amber accord",
+   "musk"
+  ],
+  "base": [],
+  "key": [
+   "marine notes accord",
+   "incense",
+   "patchouli"
+  ],
+  "source_url": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/acqua-di-gio/acqua-di-gio-profumo/ww-00402-arm.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": "Profumo page; base tier not named"
+ },
+ {
+  "id": "armani-armani-code",
+  "top": [
+   "olive flower"
+  ],
+  "heart": [
+   "tonka bean"
+  ],
+  "base": [
+   "guaiac wood"
+  ],
+  "key": [],
+  "source_url": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/armani-code-men/armani-code-eau-de-toilette/ww-00403-arm.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "armani-armani-code-parfum",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "mandarin",
+   "bergamot",
+   "rosemary",
+   "vanilla",
+   "cedarwood",
+   "tonka bean"
+  ],
+  "source_url": "https://www.sephora.com/product/ga-code-le-parfum-edp-P503246",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": "armanibeauty search gave no notes; sephora key notes"
+ },
+ {
+  "id": "armani-si",
+  "top": [
+   "blackcurrant nectar",
+   "mandarin"
+  ],
+  "heart": [
+   "orange blossom"
+  ],
+  "base": [
+   "vanilla"
+  ],
+  "key": [
+   "rose",
+   "woody vanilla"
+  ],
+  "source_url": "https://www.sephora.com/product/si-eau-de-parfum-P388029",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "armanibeauty search gave no notes"
+ },
+ {
+  "id": "armani-si-passione",
+  "top": [
+   "pear"
+  ],
+  "heart": [
+   "rose petal"
+  ],
+  "base": [
+   "woody vanilla"
+  ],
+  "key": [
+   "blackcurrant nectar",
+   "jasmine"
+  ],
+  "source_url": "https://www.sephora.com/product/si-passione-eau-de-parfum-P430871",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "armanibeauty search unclear; sephora"
+ },
+ {
+  "id": "armani-my-way",
+  "top": [
+   "bergamot from calabria",
+   "orange blossom from egypt"
+  ],
+  "heart": [
+   "tuberose",
+   "jasmine from india"
+  ],
+  "base": [
+   "cedarwood from virginia",
+   "vanilla from madagascar",
+   "white musks"
+  ],
+  "key": [],
+  "source_url": "https://www.armanibeauty.com/int/fragrances/women-s-fragrance/my-way/my-way-eau-de-parfum/ww-00343-arm.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "armani-my-way-intense",
+  "top": [
+   "bergamot from calabria",
+   "orange blossom from egypt"
+  ],
+  "heart": [
+   "tuberose",
+   "jasmine from india"
+  ],
+  "base": [
+   "cedarwood from virginia",
+   "vanilla from madagascar",
+   "white musks"
+  ],
+  "key": [],
+  "source_url": "https://www.armanibeauty.com/int/fragrances/women-s-fragrance/my-way/my-way-eau-de-parfum-intense/ww-00537-arm.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "search result identical to My Way; may be shared text"
+ },
+ {
+  "id": "armani-stronger-with-you-intensely",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "amber",
+   "wood",
+   "vanilla essence"
+  ],
+  "source_url": "https://www.armanibeauty.com/int/fragrances/men-s-fragrance/emporio-armani/emporio-armani-stronger-with-you-intensely/ww-00180-arm.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "armani-stronger-with-you",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "pink pepper accord",
+   "sage essence",
+   "candied chestnut accord"
+  ],
+  "source_url": "https://www.sephora.com/product/emporio-armani-stronger-with-you-P421783",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand search gave vanilla/chestnut only; sephora key notes"
+ },
+ {
+  "id": "armani-stronger-with-you-absolutely",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": "no reliable notes from allowed sources"
+ },
+ {
+  "id": "prada-paradoxe",
+  "top": [
+   "neroli bud"
+  ],
+  "heart": [
+   "ambrofix"
+  ],
+  "base": [
+   "serenolide"
+  ],
+  "key": [],
+  "source_url": "https://www.prada-beauty.com/fragrance/paradoxe/paradoxe-eau-de-parfum/MPL01610.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "brand names ingredients per tier"
+ },
+ {
+  "id": "prada-paradoxe-intense",
+  "top": [
+   "bergamot essence",
+   "neroli buds",
+   "pear accord"
+  ],
+  "heart": [
+   "neroli essence",
+   "jasmine super infusion",
+   "moss accord"
+  ],
+  "base": [
+   "amber accord",
+   "vanilla infusion",
+   "white musk accord"
+  ],
+  "key": [],
+  "source_url": "https://www.prada-beauty.com/fragrance/paradoxe/paradoxe-intense-eau-de-parfum/MPL01658.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "prada-luna-rossa-carbon",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lavender",
+   "vert de bergamote",
+   "geranium",
+   "patchouli",
+   "ambroxan"
+  ],
+  "source_url": "https://www.prada-beauty.com/fragrance/luna-rossa/luna-rossa-carbon-eau-de-toilette/MPL01367.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "prada-luna-rossa-ocean",
+  "top": [
+   "bergamot",
+   "pink pepper",
+   "artemisia"
+  ],
+  "heart": [
+   "iris notes",
+   "lavender",
+   "saffron accord"
+  ],
+  "base": [
+   "vetiver",
+   "musks",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.prada-beauty.com/fragrance/luna-rossa/luna-rossa-ocean-eau-de-toilette/MPL01651.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "prada-l-homme-prada",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "black pepper",
+   "geranium",
+   "patchouli"
+  ],
+  "source_url": "https://www.prada-beauty.com/fragrance/lhomme-prada/lhomme-prada-eau-de-toilette/MPL01352.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "prada-candy",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "benzoin resin",
+   "caramel accord",
+   "white musk"
+  ],
+  "source_url": "https://www.prada-beauty.com/fragrance/candy/candy-eau-de-parfum/MPL01333.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "valentino-born-in-roma-donna",
+  "top": [
+   "jasmine sambac"
+  ],
+  "heart": [
+   "cashmeran"
+  ],
+  "base": [
+   "vanilla bourbon"
+  ],
+  "key": [],
+  "source_url": "https://www.valentino-beauty.us/fragrances/fragrances-women/fragrances-women-born-in-roma/born-in-roma-donna-eau-de-parfum-MPL00468.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "valentino-born-in-roma-donna-intense",
+  "top": [
+   "vanilla bourbon",
+   "bergamot",
+   "blackcurrant accord"
+  ],
+  "heart": [
+   "jasmine"
+  ],
+  "base": [
+   "benzoin resin"
+  ],
+  "key": [],
+  "source_url": "https://www.valentino-beauty.us/fragrances/fragrances-women/born-in-roma-donna-intense/born-in-roma-donna-eau-de-parfum-intense-MPL01906.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "valentino-born-in-roma-uomo",
+  "top": [
+   "violet leaf absolute"
+  ],
+  "heart": [
+   "sage"
+  ],
+  "base": [
+   "smoked vetiver"
+  ],
+  "key": [
+   "mineral salt",
+   "ginger"
+  ],
+  "source_url": "https://www.valentino-beauty.us/fragrances/fragrances-men/fragrances-men-born-in-roma/born-in-roma-uomo-eau-de-toilette-MPL00475.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "valentino-born-in-roma-uomo-intense",
+  "top": [
+   "vanilla bourbon"
+  ],
+  "heart": [
+   "lavender"
+  ],
+  "base": [
+   "smoked vetiver"
+  ],
+  "key": [
+   "vanilla",
+   "lavandin",
+   "vetiver"
+  ],
+  "source_url": "https://www.valentino-beauty.us/fragrances/fragrances-men/born-in-roma-uomo-intense/born-in-roma-uomo-eau-de-parfum-intense-MPL01907.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "valentino-born-in-roma-coral-fantasy-uomo",
+  "top": [
+   "red apple accord"
+  ],
+  "heart": [
+   "sage"
+  ],
+  "base": [
+   "tobacco"
+  ],
+  "key": [],
+  "source_url": "https://www.valentino-beauty.us/fragrances/fragrances-men/fragrances-men-born-in-roma-coral/born-in-roma-uomo-coral-fantasy-eau-de-toilette-MPL01750.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "ch-good-girl",
+  "top": [
+   "almond"
+  ],
+  "heart": [
+   "jasmine sambac",
+   "tuberose"
+  ],
+  "base": [
+   "tonka bean",
+   "cocoa"
+  ],
+  "key": [],
+  "source_url": "https://www.carolinaherrera.com/us/en/p-fragrance/good-girl-eau-de-parfum",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "coffee also mentioned in description"
+ },
+ {
+  "id": "ch-very-good-girl",
+  "top": [
+   "red currant",
+   "lychee"
+  ],
+  "heart": [
+   "rose",
+   "lily"
+  ],
+  "base": [
+   "vanilla bourbon",
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.carolinaherrera.com/us/en/p-fragrance/very-good-girl",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ch-good-girl-blush",
+  "top": [
+   "bergamot",
+   "bitter almond"
+  ],
+  "heart": [
+   "ylang ylang",
+   "peony"
+  ],
+  "base": [
+   "vanilla",
+   "tonka bean"
+  ],
+  "key": [],
+  "source_url": "https://www.carolinaherrera.com/us/en/p-fragrance/good-girl-blush",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ }
+]

@@ -1,0 +1,482 @@
+[
+ {
+  "id": "dior-fahrenheit",
+  "top": [
+   "sicilian mandarin"
+  ],
+  "heart": [
+   "violet"
+  ],
+  "base": [
+   "leather"
+  ],
+  "key": [],
+  "source_url": "https://www.dior.com/en_us/beauty/products/fahrenheit-eau-de-toilette-Y0066001.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "base leather note (birch, styrax, cade)"
+ },
+ {
+  "id": "dior-eau-sauvage",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "san carlo bergamot",
+   "hedione",
+   "lavender",
+   "oak moss",
+   "patchouli"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/eau-sauvage-eau-de-toilette-Y0097001.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "dior-gris-dior",
+  "top": [
+   "bergamot"
+  ],
+  "heart": [
+   "rose centifolia",
+   "iris"
+  ],
+  "base": [
+   "oakmoss",
+   "vetiver",
+   "labdanum"
+  ],
+  "key": [],
+  "source_url": "https://www.dior.com/en_us/beauty/products/gris-dior-Y0840550.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "tiers inferred from brand description"
+ },
+ {
+  "id": "dior-oud-ispahan",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "oud wood",
+   "damascena rose"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/oud-ispahan-Y0909280.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dior-ambre-nuit",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "amber",
+   "turkish rose",
+   "spices"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/ambre-nuit-Y0958160.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dior-bois-d-argent",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "iris",
+   "frankincense",
+   "woods"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/bois-dargent-Y0959160.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dior-vanilla-diorama",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "madagascar bourbon vanilla",
+   "cocoa",
+   "orange",
+   "rum",
+   "patchouli"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/vanilla-diorama-Y0996344.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-libre",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lavender",
+   "orange blossom",
+   "vanilla",
+   "musk accord"
+  ],
+  "source_url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/libre/libre-eau-de-parfum/109YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-libre-intense",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lavender",
+   "orange blossom",
+   "orchid",
+   "vanilla"
+  ],
+  "source_url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/libre/libre-eau-de-parfum-intense/306YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-black-opium",
+  "top": [
+   "green tangerine",
+   "pear"
+  ],
+  "heart": [
+   "jasmine tea petal",
+   "orange flower petal"
+  ],
+  "base": [
+   "green coffee",
+   "white woody"
+  ],
+  "key": [],
+  "source_url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/black-opium/black-opium-eau-de-parfum/252YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-black-opium-le-parfum",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "coffee",
+   "white flowers",
+   "vanilla"
+  ],
+  "source_url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/black-opium/black-opium-le-parfum/WW-51036YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": ""
+ },
+ {
+  "id": "ysl-black-opium-over-red",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "coffee",
+   "white flowers",
+   "cherry",
+   "vanilla"
+  ],
+  "source_url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/black-opium/black-opium-eau-de-parfum-over-red/WW-51116YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-mon-paris",
+  "top": [
+   "red berries"
+  ],
+  "heart": [
+   "datura",
+   "white peony"
+  ],
+  "base": [
+   "white patchouli",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/mon-paris/mon-paris-eau-de-parfum/4150YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-y",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "sage",
+   "geranium",
+   "woods"
+  ],
+  "source_url": "https://www.yslbeautyus.com/fragrance/mens-fragrances/y/y-eau-de-parfum/727YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-y-elixir",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lavender",
+   "geranium",
+   "oud wood"
+  ],
+  "source_url": "https://www.yslbeautyus.com/fragrance/mens-fragrances/y/y-elixir/728YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": ""
+ },
+ {
+  "id": "ysl-la-nuit-de-l-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cardamom",
+   "cedarwood",
+   "coumarin"
+  ],
+  "source_url": "https://www.yslbeautyus.com/fragrance/mens-fragrances/la-nuit-de-lhomme/la-nuit-de-lhomme-eau-de-toilette-spray/426YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "ysl-l-homme",
+  "top": [
+   "lemon cedrat",
+   "bergamot",
+   "ginger"
+  ],
+  "heart": [
+   "violet leaves",
+   "basil flower",
+   "white pepper"
+  ],
+  "base": [
+   "sandalwood",
+   "virginia cedar",
+   "haitian vetiver",
+   "tonka bean"
+  ],
+  "key": [],
+  "source_url": "https://www.yslbeautyus.com/fragrance/mens-fragrances/lhomme/lhomme-eau-de-toilette-spray/284YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "ysl-myslf",
+  "top": [
+   "bergamot"
+  ],
+  "heart": [
+   "orange blossom absolute"
+  ],
+  "base": [
+   "patchouli",
+   "ambrofix"
+  ],
+  "key": [],
+  "source_url": "https://www.yslbeautyus.com/fragrance/mens-fragrances/myslf/myslf-eau-de-parfum/WW-51115YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-opium",
+  "top": [
+   "mandarin",
+   "bergamot"
+  ],
+  "heart": [
+   "myrrh",
+   "jasmine"
+  ],
+  "base": [
+   "amber",
+   "opoponax"
+  ],
+  "key": [],
+  "source_url": "https://www.yslbeautyus.com/fragrance/womens-fragrances/opium/opium-eau-de-parfum-spray/231YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ysl-tuxedo",
+  "top": [
+   "violet leaf",
+   "bergamot",
+   "coriander"
+  ],
+  "heart": [
+   "rose",
+   "lily of the valley",
+   "black pepper"
+  ],
+  "base": [
+   "ambergris",
+   "patchouli",
+   "vanilla bourbon"
+  ],
+  "key": [],
+  "source_url": "https://www.yslbeautyus.com/fragrance/le-vestiaire-des-parfums/the-signature-collection/tuxedo---le-vestiaire-des-parfums/809YSL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "lancome-la-vie-est-belle",
+  "top": [
+   "iris"
+  ],
+  "heart": [
+   "patchouli"
+  ],
+  "base": [
+   "vanilla",
+   "spun sugar"
+  ],
+  "key": [],
+  "source_url": "https://www.lancome-usa.com/fragrance/fragrance-by-collection/la-vie-est-belle/la-vie-est-belle-eau-de-parfum/100606.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "also arabian jasmine sambac, tunisian orange blossom mentioned"
+ },
+ {
+  "id": "lancome-la-vie-est-belle-l-elixir",
+  "top": [
+   "raspberry",
+   "calabrian bergamot"
+  ],
+  "heart": [
+   "violet",
+   "rose absolute"
+  ],
+  "base": [
+   "cocoa butter",
+   "leather accord",
+   "virginian cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://www.lancome-usa.com/fragrance/fragrance-by-collection/la-vie-est-belle/la-vie-est-belle-lelixir-eau-de-parfum/00973-LAC.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "lancome-idole",
+  "top": [
+   "bergamot",
+   "pear",
+   "pink peppercorn"
+  ],
+  "heart": [
+   "rose",
+   "jasmine"
+  ],
+  "base": [
+   "white musk",
+   "vanilla",
+   "patchouli",
+   "cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://www.lancome-usa.com/fragrance/fragrance-by-collection/idole/idole-eau-de-parfum/LAN387.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "lancome-tresor",
+  "top": [
+   "apricot blossom",
+   "rose"
+  ],
+  "heart": [
+   "lilac",
+   "iris",
+   "peach"
+  ],
+  "base": [
+   "amber",
+   "sandalwood",
+   "musk",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.lancome-usa.com/fragrance/fragrance-by-collection/tresor/tresor-eau-de-parfum/072025.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "armani-acqua-di-gio",
+  "top": [
+   "calabrian bergamot",
+   "neroli",
+   "green tangerine"
+  ],
+  "heart": [
+   "marine notes",
+   "jasmine",
+   "rock rose",
+   "rosemary"
+  ],
+  "base": [
+   "persimmon",
+   "indonesian patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.armanibeauty.com/int/gifts/gift-sets/acqua-di-gio-eau-de-toilette-50-ml-holiday-gift-set/ww-00550-arm.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "URL is EDT gift-set page; no standalone EDT page returned"
+ }
+]

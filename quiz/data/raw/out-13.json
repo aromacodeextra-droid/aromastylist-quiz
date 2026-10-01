@@ -1,0 +1,363 @@
+[
+ {
+  "id": "marc-antoine-barrois-ganymede",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "mandarin",
+   "osmanthus",
+   "leather accord",
+   "akigalawood",
+   "immortelle"
+  ],
+  "source_url": "https://us.marcantoinebarrois.com/products/ganymede",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "marc-antoine-barrois-b683",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "black pepper",
+   "saffron",
+   "chili",
+   "violet leaf",
+   "leather accord",
+   "patchouli",
+   "sandalwood",
+   "oak moss"
+  ],
+  "source_url": "https://marcantoinebarrois.com/en-us/products/b683",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "marc-antoine-barrois-tilia",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "broom",
+   "heliotrope",
+   "jasmine sambac",
+   "vetiver"
+  ],
+  "source_url": "https://us.marcantoinebarrois.com/products/tilia",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "notes named in product description prose, no tiers"
+ },
+ {
+  "id": "jusbox-78-glam",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "brand site unreachable; no product page found"
+ },
+ {
+  "id": "zarkoperfume-pink-molecule-090-09",
+  "top": [
+   "elderflower",
+   "apricot",
+   "black orchid",
+   "pink molecules"
+  ],
+  "heart": [],
+  "base": [
+   "mahogany",
+   "cream accord",
+   "black wood accord"
+  ],
+  "key": [],
+  "source_url": "https://www.zarkoperfume.com/commodity/5-zarkoperfume-pink-molecule-09009",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand states heart notes: none"
+ },
+ {
+  "id": "zarkoperfume-molecule-234-38",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "not found on brand site"
+ },
+ {
+  "id": "hermes-terre-d-hermes",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "hermes-twilly-d-hermes",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "hermes-un-jardin-sur-le-nil",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "hermes-h24",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "hermes-eau-des-merveilles",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "vilhelm-parfumerie-mango-skin",
+  "top": [
+   "blackberries",
+   "mango",
+   "black pepper"
+  ],
+  "heart": [
+   "wild orris",
+   "black lotus",
+   "jasmin"
+  ],
+  "base": [
+   "patchouli",
+   "vanilla",
+   "pink sugar"
+  ],
+  "key": [],
+  "source_url": "https://vilhelmparfumerie.com/products/mango-skin",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "vilhelm-parfumerie-dear-polly",
+  "top": [
+   "bergamot",
+   "apple"
+  ],
+  "heart": [
+   "ceylon black tea"
+  ],
+  "base": [
+   "oakmoss",
+   "musk",
+   "black amber"
+  ],
+  "key": [],
+  "source_url": "https://vilhelmparfumerie.com/products/dear-polly",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "vilhelm-parfumerie-room-service",
+  "top": [
+   "mandarin nectar",
+   "blackberry"
+  ],
+  "heart": [
+   "pink orchid",
+   "bamboo",
+   "violet"
+  ],
+  "base": [
+   "black amber",
+   "musk",
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://vilhelmparfumerie.com/products/room-service",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "guerlain-shalimar",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "guerlain-mon-guerlain",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "guerlain-l-homme-ideal",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "guerlain-habit-rouge",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "guerlain-aqua-allegoria-mandarine-basilic",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "guerlain-vetiver",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "acqua-di-parma-colonia",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "Cologne",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "acqua-di-parma-fico-di-amalfi",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "acqua-di-parma-arancia-di-capri",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "louis-vuitton-imagination",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ },
+ {
+  "id": "louis-vuitton-ombre-nomade",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "brand site blocked (403)/unreachable and search budget exhausted"
+ }
+]

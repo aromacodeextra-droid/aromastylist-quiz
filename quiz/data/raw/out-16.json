@@ -1,0 +1,419 @@
+[
+ {
+  "id": "clean-reserve-warm-cotton",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "glossier-glossier-you",
+  "top": [
+   "pink pepper"
+  ],
+  "heart": [
+   "iris"
+  ],
+  "base": [
+   "ambrette",
+   "ambrox"
+  ],
+  "key": [],
+  "source_url": "https://www.glossier.com/products/glossier-you",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "phlur-missing-person",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "kayali-vanilla-28",
+  "top": [
+   "vanilla orchid",
+   "creamy jasmine"
+  ],
+  "heart": [
+   "vanilla infusion",
+   "vanilla surabsolute",
+   "sweet tonka"
+  ],
+  "base": [
+   "brown sugar",
+   "musk",
+   "patchouli",
+   "amber woods"
+  ],
+  "key": [],
+  "source_url": "https://www.kayali.com/products/vanilla-28",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "kayali-yum-pistachio-gelato-33",
+  "top": [
+   "pistachio gelato",
+   "hazelnut",
+   "italian bergamot",
+   "sweet rum",
+   "cardamom"
+  ],
+  "heart": [
+   "white peach",
+   "muguet",
+   "jasmine",
+   "raspberry",
+   "white peony",
+   "green pear",
+   "geranium"
+  ],
+  "base": [
+   "whipped cream",
+   "marshmallow",
+   "cotton candy",
+   "turkish delight",
+   "cocoa",
+   "cedarwood",
+   "sandalwood",
+   "tonka"
+  ],
+  "key": [],
+  "source_url": "https://www.kayali.com/products/yum-pistachio-gelato-33",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "kayali-deja-vu-white-flower-57",
+  "top": [
+   "green pear",
+   "white nectarine",
+   "gardenia"
+  ],
+  "heart": [
+   "indian jasmine absolute",
+   "orange blossom",
+   "tuberose"
+  ],
+  "base": [
+   "crystallized patchouli",
+   "cashmere woods",
+   "sri lankan sandalwood",
+   "tahitian vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.kayali.com/products/deja-vu-white-flower-57",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "maison-louis-marie-no-04-bois-de-balincourt",
+  "top": [
+   "sandalwood",
+   "cedarwood"
+  ],
+  "heart": [
+   "vetiver",
+   "nutmeg",
+   "cinnamon"
+  ],
+  "base": [
+   "amber wood"
+  ],
+  "key": [],
+  "source_url": "https://maisonlouismarie.com/products/no-04-bois-de-balincourt-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "nautica-voyage",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "frederic-malle-portrait-of-a-lady",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "raspberry",
+   "rose",
+   "patchouli"
+  ],
+  "source_url": "https://www.fredericmalle.com/product/19566/50241/parfums/frederic-malle-portrait-of-a-lady/by-dominique-ropion",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "page lists inconsistent tiered notes; headline key notes only"
+ },
+ {
+  "id": "frederic-malle-carnal-flower",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "melon",
+   "tuberose",
+   "white musk"
+  ],
+  "source_url": "https://www.fredericmalle.com/product/19566/50210/parfums/carnal-flower/by-dominique-ropion",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "page tiers are vague; headline key notes only"
+ },
+ {
+  "id": "frederic-malle-musc-ravageur",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "vanilla",
+   "white musk"
+  ],
+  "source_url": "https://www.fredericmalle.com/product/19566/50126/parfums/musc-ravageur/by-maurice-roucel",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "page tiers inconsistent; headline key notes only"
+ },
+ {
+  "id": "serge-lutens-ambre-sultan",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "vanilla",
+   "patchouli"
+  ],
+  "source_url": "https://sergelutens.com/products/ambre-sultan-eau-de-parfum-spray",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand text: amber eau de parfum with notes of vanilla and patchouli"
+ },
+ {
+  "id": "bdk-parfums-gris-charnel",
+  "top": [
+   "fig",
+   "black tea",
+   "cardamom essence"
+  ],
+  "heart": [
+   "iris absolute",
+   "bourbon vetiver"
+  ],
+  "base": [
+   "indian sandalwood",
+   "tonka bean absolute"
+  ],
+  "key": [],
+  "source_url": "https://www.bdkparfums.com/products/gris-charnel",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "bdk-parfums-rouge-smoking",
+  "top": [
+   "bergamot d'italie",
+   "cherry accord",
+   "pink berries"
+  ],
+  "heart": [
+   "black vanilla absolute",
+   "heliotrope"
+  ],
+  "base": [
+   "ambroxan",
+   "cashmeran",
+   "tonka bean",
+   "labdanum",
+   "white musks"
+  ],
+  "key": [],
+  "source_url": "https://www.bdkparfums.com/products/rouge-smoking",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "ex-nihilo-fleur-narcotique",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "juliette-has-a-gun-not-a-perfume",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cetalox"
+  ],
+  "source_url": "https://www.juliettehasagun.com/products/not-a-perfume-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "single-note composition; brand page labelled parfum"
+ },
+ {
+  "id": "ralph-lauren-polo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "chanel-coco",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "ysl-paris",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "elizabeth-arden-red-door",
+  "top": [
+   "lily of the valley",
+   "freesia",
+   "wild violets"
+  ],
+  "heart": [
+   "red roses",
+   "moroccan orange flower",
+   "jasmine",
+   "ylang ylang"
+  ],
+  "base": [
+   "honey",
+   "oak moss",
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://www.elizabetharden.com/products/red-door-eau-de-toilette-spray",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "hugo-boss-hugo-man",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "ralph-lauren-polo-black",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "jimmy-choo-man",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "ch-212-men",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ },
+ {
+  "id": "rabanne-pure-xs",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)"
+ }
+]

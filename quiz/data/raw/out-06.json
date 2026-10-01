@@ -1,0 +1,482 @@
+[
+ {
+  "id": "mugler-alien",
+  "top": [
+   "jasmine sambac"
+  ],
+  "heart": [
+   "cashmeran"
+  ],
+  "base": [
+   "white amber"
+  ],
+  "key": [],
+  "source_url": "https://www.mugler.com/fragrance/womens-fragrances/alien/alien-eau-de-parfum/M010401002.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mugler-alien-goddess",
+  "top": [
+   "italian bergamot",
+   "coconut water accord"
+  ],
+  "heart": [
+   "jasmine grandiflorum"
+  ],
+  "base": [
+   "bourbon vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.mugler.com/fragrance/womens-fragrances/alien/alien-goddess-eau-de-parfum/M020604230.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mugler-angel",
+  "top": [
+   "calabrian bergamot"
+  ],
+  "heart": [
+   "caramelized cotton candy",
+   "praline",
+   "honey"
+  ],
+  "base": [
+   "vanilla",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.mugler.com/fragrance/angel-eau-de-parfum-perfume/M010101003.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mugler-angel-elixir",
+  "top": [
+   "pink pepper"
+  ],
+  "heart": [
+   "ylang ylang",
+   "orange blossom",
+   "jasmine grandiflorum"
+  ],
+  "base": [
+   "vanilla",
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://www.mugler.com/fragrance/womens-fragrances/angel/angel-elixir/M020604286.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "mugler-a-men",
+  "top": [
+   "lavender"
+  ],
+  "heart": [
+   "arabica coffee"
+  ],
+  "base": [
+   "patchouli",
+   "bourbon vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.mugler.com/fragrance/mens-fragrances/a-men/a-men-eau-de-toilette/M020101024.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "viktor-and-rolf-flowerbomb",
+  "top": [
+   "peony"
+  ],
+  "heart": [
+   "centifolia rose",
+   "jasmine",
+   "orchid"
+  ],
+  "base": [
+   "freesia",
+   "amber",
+   "patchouli",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://us.viktor-rolf.com/fragrance/flowerbomb-eau-de-parfum-by-viktor-rolf-VKR_002.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "viktor-and-rolf-flowerbomb-nectar",
+  "top": [
+   "gunpowder",
+   "cassis",
+   "bergamot"
+  ],
+  "heart": [
+   "osmanthus",
+   "orange blossom",
+   "jasmine sambac"
+  ],
+  "base": [
+   "vanilla",
+   "tonka bean",
+   "benzoin",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://us.viktor-rolf.com/fragrance/flowerbomb-nectar-eau-de-parfum-VKR_016.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "viktor-and-rolf-spicebomb",
+  "top": [
+   "pink pepper",
+   "elemi",
+   "bergamot",
+   "grapefruit"
+  ],
+  "heart": [
+   "cinnamon",
+   "saffron",
+   "paprika"
+  ],
+  "base": [
+   "tobacco",
+   "leather",
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://us.viktor-rolf.com/fragrance/spicebomb-eau-de-toilette-VKR_030.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "viktor-and-rolf-spicebomb-extreme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lavender",
+   "black pepper",
+   "saffron",
+   "cinnamon",
+   "cumin",
+   "tobacco",
+   "vanilla",
+   "cistus"
+  ],
+  "source_url": "https://us.viktor-rolf.com/fragrance/spicebomb-extreme-eau-de-parfum-VKR_034.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "search summary tiers inconsistent; listed as key notes"
+ },
+ {
+  "id": "viktor-and-rolf-bonbon",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "mandarin",
+   "orange blossom",
+   "caramel"
+  ],
+  "source_url": "https://us.viktor-rolf.com/bonbon/bonbon-eau-de-parfum-VKR_047.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "search summary inconsistent on tiers; low confidence"
+ },
+ {
+  "id": "marc-jacobs-daisy",
+  "top": [
+   "wild berries"
+  ],
+  "heart": [
+   "white violet",
+   "jasmine"
+  ],
+  "base": [
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://www.marcjacobs.com/us-en/daisy-eau-de-toilette-100-ml/31655513034.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "marc-jacobs-daisy-eau-so-fresh",
+  "top": [
+   "raspberry",
+   "grapefruit",
+   "pear"
+  ],
+  "heart": [
+   "violet",
+   "wild rose",
+   "apple blossom"
+  ],
+  "base": [
+   "musk",
+   "cedarwood",
+   "plum"
+  ],
+  "key": [],
+  "source_url": "https://www.marcjacobs.com/us-en/daisy-eau-so-fresh-eau-de-toilette-75-ml/3607342221161.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "marc-jacobs-daisy-love",
+  "top": [
+   "cloudberries"
+  ],
+  "heart": [
+   "daisy tree petals"
+  ],
+  "base": [
+   "cashmere musks",
+   "driftwood"
+  ],
+  "key": [],
+  "source_url": "https://www.marcjacobs.com/us-en/daisy-love-eau-de-toilette-50-ml/3614225452079.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT"
+ },
+ {
+  "id": "marc-jacobs-perfect",
+  "top": [
+   "rhubarb",
+   "daffodil"
+  ],
+  "heart": [
+   "almond milk"
+  ],
+  "base": [
+   "cedarwood",
+   "cashmeran"
+  ],
+  "key": [],
+  "source_url": "https://www.marcjacobs.com/us-en/perfect-eau-de-parfum-50-ml/3614227086029.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "marc-jacobs-decadence",
+  "top": [
+   "italian plum",
+   "iris",
+   "saffron"
+  ],
+  "heart": [
+   "bulgarian rose",
+   "jasmine sambac",
+   "orris"
+  ],
+  "base": [
+   "vetiver",
+   "papyrus wood",
+   "liquid amber"
+  ],
+  "key": [],
+  "source_url": "https://www.marcjacobs.com/decadence-3.4-oz-eau-de-parfum-spray/C4002089.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-black-orchid",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "black truffle",
+   "ylang ylang",
+   "black orchid",
+   "black plum",
+   "rum absolute",
+   "patchouli"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/black-orchid-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-velvet-orchid",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "italian bergamot",
+   "mandarin",
+   "black orchid",
+   "jasmine absolute",
+   "sandalwood",
+   "myrrh resinoid"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/velvet-orchid-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-tobacco-vanille",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "tobacco leaf",
+   "ginger",
+   "spice notes",
+   "tonka bean",
+   "cocoa",
+   "fruit accord"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/tobacco-vanille-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-lost-cherry",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "black cherry accord",
+   "bitter almond",
+   "griotte syrup",
+   "rose absolute",
+   "peru balsam",
+   "roasted tonka"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/lost-cherry-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-oud-wood",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cardamom",
+   "pink pepper",
+   "patchouli",
+   "amber",
+   "oud",
+   "tonka bean"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/oud-wood-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-fucking-fabulous",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "almond bitter oil",
+   "tonka resinoid",
+   "orris accord",
+   "cashmeran",
+   "leather accord",
+   "clary sage oil"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/fucking-fabulous-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-ombre-leather",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "black leather accord",
+   "cardamom",
+   "jasmine sambac",
+   "patchouli",
+   "white moss",
+   "amber"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/ombre-leather-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-bitter-peach",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "peche de vigne accord",
+   "blood orange oil",
+   "davana oil",
+   "labdanum absolute",
+   "patchouli oil",
+   "sandalwood oil"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/bitter-peach-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-soleil-blanc",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "cardamom oil",
+   "pistachio accord",
+   "ylang ylang",
+   "benzoin extract",
+   "coco de mer accord"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/soleil-blanc-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-neroli-portofino",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "tunisian neroli",
+   "italian bergamot",
+   "winter yellow mandarin",
+   "orange flower",
+   "lavender"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/neroli-portofino-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ }
+]

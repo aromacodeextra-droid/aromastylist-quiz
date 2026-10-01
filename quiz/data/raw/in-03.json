@@ -1,0 +1,177 @@
+[
+ {
+  "id": "armani-acqua-di-gio-profondo",
+  "house": "Giorgio Armani",
+  "name": "Acqua di Giò Profondo",
+  "concentration": "EDP",
+  "gender": "M"
+ },
+ {
+  "id": "armani-acqua-di-gio-parfum",
+  "house": "Giorgio Armani",
+  "name": "Acqua di Giò Parfum",
+  "concentration": "Parfum",
+  "gender": "M"
+ },
+ {
+  "id": "armani-armani-code",
+  "house": "Giorgio Armani",
+  "name": "Armani Code",
+  "concentration": "EDT",
+  "gender": "M"
+ },
+ {
+  "id": "armani-armani-code-parfum",
+  "house": "Giorgio Armani",
+  "name": "Armani Code Parfum",
+  "concentration": "Parfum",
+  "gender": "M"
+ },
+ {
+  "id": "armani-si",
+  "house": "Giorgio Armani",
+  "name": "Sì",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "armani-si-passione",
+  "house": "Giorgio Armani",
+  "name": "Sì Passione",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "armani-my-way",
+  "house": "Giorgio Armani",
+  "name": "My Way",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "armani-my-way-intense",
+  "house": "Giorgio Armani",
+  "name": "My Way Intense",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "armani-stronger-with-you-intensely",
+  "house": "Emporio Armani",
+  "name": "Stronger With You Intensely",
+  "concentration": "EDP",
+  "gender": "M"
+ },
+ {
+  "id": "armani-stronger-with-you",
+  "house": "Emporio Armani",
+  "name": "Stronger With You",
+  "concentration": "EDT",
+  "gender": "M"
+ },
+ {
+  "id": "armani-stronger-with-you-absolutely",
+  "house": "Emporio Armani",
+  "name": "Stronger With You Absolutely",
+  "concentration": "Parfum",
+  "gender": "M"
+ },
+ {
+  "id": "prada-paradoxe",
+  "house": "Prada",
+  "name": "Paradoxe",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "prada-paradoxe-intense",
+  "house": "Prada",
+  "name": "Paradoxe Intense",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "prada-luna-rossa-carbon",
+  "house": "Prada",
+  "name": "Luna Rossa Carbon",
+  "concentration": "EDT",
+  "gender": "M"
+ },
+ {
+  "id": "prada-luna-rossa-ocean",
+  "house": "Prada",
+  "name": "Luna Rossa Ocean",
+  "concentration": "EDT",
+  "gender": "M"
+ },
+ {
+  "id": "prada-l-homme-prada",
+  "house": "Prada",
+  "name": "L'Homme Prada",
+  "concentration": "EDT",
+  "gender": "M"
+ },
+ {
+  "id": "prada-candy",
+  "house": "Prada",
+  "name": "Candy",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "valentino-born-in-roma-donna",
+  "house": "Valentino",
+  "name": "Born in Roma Donna",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "valentino-born-in-roma-donna-intense",
+  "house": "Valentino",
+  "name": "Born in Roma Donna Intense",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "valentino-born-in-roma-uomo",
+  "house": "Valentino",
+  "name": "Born in Roma Uomo",
+  "concentration": "EDT",
+  "gender": "M"
+ },
+ {
+  "id": "valentino-born-in-roma-uomo-intense",
+  "house": "Valentino",
+  "name": "Born in Roma Uomo Intense",
+  "concentration": "EDP",
+  "gender": "M"
+ },
+ {
+  "id": "valentino-born-in-roma-coral-fantasy-uomo",
+  "house": "Valentino",
+  "name": "Born in Roma Coral Fantasy Uomo",
+  "concentration": "EDT",
+  "gender": "M"
+ },
+ {
+  "id": "ch-good-girl",
+  "house": "Carolina Herrera",
+  "name": "Good Girl",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "ch-very-good-girl",
+  "house": "Carolina Herrera",
+  "name": "Very Good Girl",
+  "concentration": "EDP",
+  "gender": "F"
+ },
+ {
+  "id": "ch-good-girl-blush",
+  "house": "Carolina Herrera",
+  "name": "Good Girl Blush",
+  "concentration": "EDP",
+  "gender": "F"
+ }
+]

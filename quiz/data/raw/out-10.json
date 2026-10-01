@@ -1,0 +1,462 @@
+[
+ {
+  "id": "pdm-althair",
+  "top": [
+   "bergamot",
+   "mandarin",
+   "elemi"
+  ],
+  "heart": [
+   "orange blossom",
+   "cinnamon",
+   "cardamom"
+  ],
+  "base": [
+   "bourbon vanilla",
+   "guaiacwood",
+   "praline"
+  ],
+  "key": [],
+  "source_url": "https://us.parfums-de-marly.com/products/althair",
+  "source_type": "brand",
+  "method": "search",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "pdm-carlisle",
+  "top": [
+   "green apple",
+   "nutmeg",
+   "saffron"
+  ],
+  "heart": [
+   "tonka bean",
+   "rose",
+   "osmanthus",
+   "davana"
+  ],
+  "base": [
+   "vanilla",
+   "patchouli",
+   "opopanax resinoid"
+  ],
+  "key": [],
+  "source_url": "https://us.parfums-de-marly.com/products/carlisle",
+  "source_type": "brand",
+  "method": "search",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-aventus",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "calabrian bergamot",
+   "pineapple",
+   "birch"
+  ],
+  "source_url": "https://www.creedfragrance.com/p/aventus/12870029/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "brand page gives no pyramid, only prose",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-aventus-for-her",
+  "top": [
+   "sicilian lemon"
+  ],
+  "heart": [
+   "bulgarian rose"
+  ],
+  "base": [
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.creedfragrance.com/p/aventus-for-her/12870031/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-absolu-aventus",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "grapefruit",
+   "bergamot",
+   "lemon",
+   "pineapple",
+   "patchouli",
+   "haitian vetiver",
+   "ginger",
+   "cinnamon",
+   "cardamom"
+  ],
+  "source_url": "https://www.creedfragrance.com/p/absolu-aventus/14926231/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "prose only, no tiers",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-green-irish-tweed",
+  "top": [
+   "bergamot",
+   "lemon",
+   "peppermint"
+  ],
+  "heart": [
+   "geranium",
+   "lavender"
+  ],
+  "base": [
+   "oakmoss",
+   "woods"
+  ],
+  "key": [],
+  "source_url": "https://www.creedfragrance.com/p/green-irish-tweed/12870035/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-silver-mountain-water",
+  "top": [
+   "bergamot",
+   "blackcurrant"
+  ],
+  "heart": [
+   "tea",
+   "ozonic accord"
+  ],
+  "base": [
+   "sandalwood",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.creedfragrance.com/p/silver-mountain-water/12870049/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "tiers from description prose",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-viking",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "rose oil",
+   "bergamot",
+   "lemon",
+   "pink pepper",
+   "black pepper",
+   "peppermint",
+   "cedarwood",
+   "haitian vetiver"
+  ],
+  "source_url": "https://www.creedfragrance.com/p/viking/12870053/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "prose only",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-millesime-imperial",
+  "top": [
+   "bergamot",
+   "blackcurrant",
+   "violet leaves"
+  ],
+  "heart": [
+   "marine accord",
+   "orris"
+  ],
+  "base": [
+   "cedarwood",
+   "sandalwood",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.creedfragrance.com/p/millesime-imperial/12870041/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-royal-oud",
+  "top": [
+   "grapefruit",
+   "cardamom"
+  ],
+  "heart": [],
+  "base": [
+   "oud",
+   "cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://www.creedfragrance.com/p/royal-oud/12870045/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "no heart given",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-wind-flowers",
+  "top": [
+   "jasmine",
+   "orange blossom",
+   "peach"
+  ],
+  "heart": [
+   "jasmine sambac",
+   "tuberose absolute",
+   "rose de mai"
+  ],
+  "base": [
+   "iris",
+   "orange blossom",
+   "musk",
+   "sandalwood",
+   "praline"
+  ],
+  "key": [],
+  "source_url": "https://www.creedfragrance.com/p/wind-flowers/14942229/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "creed-carmina",
+  "top": [
+   "black cherry",
+   "saffron"
+  ],
+  "heart": [
+   "rose de mai",
+   "cashmere wood"
+  ],
+  "base": [
+   "amber",
+   "myrrh",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.creedfragrance.com/p/carmina/14882499/",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "kilian-angels-share",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "bykilian.com returns 403; web search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "kilian-love-don-t-be-shy",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "bykilian.com returns 403; web search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "kilian-good-girl-gone-bad",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "bykilian.com returns 403; web search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "kilian-black-phantom",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "bykilian.com returns 403; web search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "kilian-rolling-in-love",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "bykilian.com returns 403; web search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "kilian-straight-to-heaven",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "bykilian.com returns 403; web search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "kilian-roses-on-ice",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "bykilian.com returns 403; web search budget exhausted so sephora/nordstrom not checked",
+  "concentration": "EDP"
+ },
+ {
+  "id": "xerjoff-erba-pura",
+  "top": [
+   "lemon",
+   "calabrian bergamot",
+   "sicilian orange"
+  ],
+  "heart": [
+   "mediterranean fruit"
+  ],
+  "base": [
+   "amber",
+   "madagascar vanilla beans",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.xerjoff.com/en-us/products/erba-pura-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "xerjoff-naxos",
+  "top": [
+   "lemon",
+   "bergamot",
+   "lavender",
+   "incense from oman"
+  ],
+  "heart": [
+   "jasmine sambac",
+   "honey",
+   "cinnamon",
+   "cashmere"
+  ],
+  "base": [
+   "vanilla",
+   "tobacco leaf",
+   "tonka bean"
+  ],
+  "key": [],
+  "source_url": "https://www.xerjoff.com/en-us/products/naxos-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "EDP"
+ },
+ {
+  "id": "xerjoff-alexandria-ii",
+  "top": [
+   "apple",
+   "cinnamon",
+   "lavender",
+   "rosewood"
+  ],
+  "heart": [
+   "cedarwood",
+   "lily of the valley",
+   "bulgarian rose"
+  ],
+  "base": [
+   "amber",
+   "laotian oud",
+   "musk",
+   "sandalwood",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.xerjoff.com/en-us/products/alexandria-ll-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "xerjoff-40-knots",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "brand page says notes are a closely guarded secret",
+  "concentration": "EDP"
+ },
+ {
+  "id": "xerjoff-torino21",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "comment": "brand page says notes are a closely guarded secret",
+  "concentration": "EDP"
+ },
+ {
+  "id": "initio-oud-for-greatness",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "oud",
+   "lavender",
+   "saffron",
+   "nutmeg",
+   "patchouli",
+   "musk"
+  ],
+  "source_url": "https://initioparfums.com/products/oud-for-greatness",
+  "source_type": "brand",
+  "method": "fetch",
+  "comment": "from brand description prose, no tiers",
+  "concentration": "EDP"
+ }
+]

@@ -1,0 +1,546 @@
+# house | name | gender F/M/U | concentration | aliases (;) | flanker of (line id, optional)
+# Orientation only: Sephora / Ulta / Nordstrom / Bloomingdale's bestseller lists and the houses the store carries.
+Chanel | N°5 | F | EDP | No 5; Number 5; Chanel 5; N5
+Chanel | N°5 L'Eau | F | EDT | No 5 L'Eau | N°5
+Chanel | Coco Mademoiselle | F | EDP | Coco Madmoiselle; CM
+Chanel | Coco Mademoiselle Intense | F | EDP | | Coco Mademoiselle
+Chanel | Coco Noir | F | EDP |
+Chanel | Chance | F | EDT |
+Chanel | Chance Eau Tendre | F | EDT | Eau Tendre | Chance
+Chanel | Chance Eau Fraîche | F | EDT | Eau Fraiche | Chance
+Chanel | Gabrielle | F | EDP |
+Chanel | Bleu de Chanel | M | EDP | BDC; Bleu
+Chanel | Bleu de Chanel Parfum | M | Parfum | BDC Parfum | Bleu de Chanel
+Chanel | Allure Homme Sport | M | EDT | AHS
+Chanel | Allure Homme Sport Eau Extrême | M | EDP | AHS Eau Extreme | Allure Homme Sport
+Chanel | Allure | F | EDP |
+Chanel | Égoïste Platinum | M | EDT | Egoiste Platinum
+Dior | Sauvage | M | EDT | Savage; Dior Savage
+Dior | Sauvage Eau de Parfum | M | EDP | Sauvage EDP | Sauvage
+Dior | Sauvage Elixir | M | Parfum | Savage Elixir | Sauvage
+Dior | J'adore | F | EDP | Jadore
+Dior | J'adore Parfum d'Eau | F | EDP | | J'adore
+Dior | Miss Dior | F | EDP |
+Dior | Miss Dior Blooming Bouquet | F | EDT | | Miss Dior
+Dior | Hypnotic Poison | F | EDT |
+Dior | Poison Girl | F | EDP |
+Dior | Dior Homme Intense | M | EDP | | Dior Homme
+Dior | Dior Homme | M | EDT |
+Dior | Fahrenheit | M | EDT |
+Dior | Eau Sauvage | M | EDT |
+Dior | Gris Dior | U | EDP | Gris Montaigne
+Dior | Oud Ispahan | U | EDP |
+Dior | Ambre Nuit | U | EDP |
+Dior | Bois d'Argent | U | EDP |
+Dior | Vanilla Diorama | U | EDP |
+Dior | Tobacolor | U | EDP |
+Yves Saint Laurent | Libre | F | EDP | YSL Libre
+Yves Saint Laurent | Libre Intense | F | EDP | | Libre
+Yves Saint Laurent | Black Opium | F | EDP | BO; YSL Black Opium
+Yves Saint Laurent | Black Opium Le Parfum | F | Parfum | | Black Opium
+Yves Saint Laurent | Black Opium Over Red | F | EDP | | Black Opium
+Yves Saint Laurent | Mon Paris | F | EDP |
+Yves Saint Laurent | Y | M | EDP | YSL Y; Y EDP
+Yves Saint Laurent | Y Elixir | M | Parfum | Y Le Parfum | Y
+Yves Saint Laurent | La Nuit de L'Homme | M | EDT | LNDL
+Yves Saint Laurent | L'Homme | M | EDT | YSL L'Homme
+Yves Saint Laurent | Kouros | M | EDT |
+Yves Saint Laurent | MYSLF | M | EDP | Myself
+Yves Saint Laurent | Opium | F | EDP |
+Yves Saint Laurent | Tuxedo | U | EDP | Le Vestiaire Tuxedo
+Lancôme | La Vie Est Belle | F | EDP | LVEB; La Vie Belle; Lavie est belle
+Lancôme | La Vie Est Belle L'Elixir | F | EDP | LVEB Elixir | La Vie Est Belle
+Lancôme | Idôle | F | EDP | Idole
+Lancôme | Trésor | F | EDP | Tresor
+Lancôme | Hypnôse | F | EDP | Hypnose
+Lancôme | Miracle | F | EDP |
+Giorgio Armani | Acqua di Giò | M | EDT | ADG; Acqua di Gio; Aqua di Gio
+Giorgio Armani | Acqua di Giò Profondo | M | EDP | ADG Profondo | Acqua di Giò
+Giorgio Armani | Acqua di Giò Parfum | M | Parfum | ADG Parfum | Acqua di Giò
+Giorgio Armani | Armani Code | M | EDT | Code
+Giorgio Armani | Armani Code Parfum | M | Parfum | Code Parfum | Armani Code
+Giorgio Armani | Sì | F | EDP | Si; Armani Si
+Giorgio Armani | Sì Passione | F | EDP | Si Passione | Sì
+Giorgio Armani | My Way | F | EDP |
+Giorgio Armani | My Way Intense | F | EDP | | My Way
+Emporio Armani | Stronger With You Intensely | M | EDP | SWY Intensely; SWYI | Stronger With You
+Emporio Armani | Stronger With You | M | EDT | SWY
+Emporio Armani | Stronger With You Absolutely | M | Parfum | SWY Absolutely | Stronger With You
+Prada | Paradoxe | F | EDP |
+Prada | Paradoxe Intense | F | EDP | | Paradoxe
+Prada | Luna Rossa Carbon | M | EDT | Carbon
+Prada | Luna Rossa Ocean | M | EDT | | Luna Rossa Carbon
+Prada | L'Homme Prada | M | EDT | Prada L'Homme
+Prada | Candy | F | EDP | Prada Candy
+Prada | Infusion d'Iris | F | EDP |
+Valentino | Born in Roma Donna | F | EDP | Valentino Donna; BIR Donna
+Valentino | Born in Roma Donna Intense | F | EDP | | Born in Roma Donna
+Valentino | Born in Roma Uomo | M | EDT | Valentino Uomo; BIR Uomo
+Valentino | Born in Roma Uomo Intense | M | EDP | | Born in Roma Uomo
+Valentino | Born in Roma Coral Fantasy Uomo | M | EDT | Coral Fantasy | Born in Roma Uomo
+Carolina Herrera | Good Girl | F | EDP | CH Good Girl
+Carolina Herrera | Very Good Girl | F | EDP | | Good Girl
+Carolina Herrera | Good Girl Blush | F | EDP | | Good Girl
+Carolina Herrera | 212 VIP Rosé | F | EDP | 212 VIP Rose
+Carolina Herrera | 212 VIP Men | M | EDT | 212 VIP
+Carolina Herrera | Bad Boy | M | EDT | CH Bad Boy
+Carolina Herrera | CH Men | M | EDT | CH for Men
+Rabanne | 1 Million | M | EDT | One Million; Paco Rabanne 1 Million
+Rabanne | 1 Million Parfum | M | Parfum | One Million Parfum | 1 Million
+Rabanne | 1 Million Elixir | M | Parfum | One Million Elixir | 1 Million
+Rabanne | Invictus | M | EDT | Invictus Paco
+Rabanne | Invictus Victory Elixir | M | Parfum | | Invictus
+Rabanne | Phantom | M | EDT |
+Rabanne | Lady Million | F | EDP |
+Rabanne | Olympéa | F | EDP | Olympea
+Rabanne | Fame | F | EDP |
+Jean Paul Gaultier | Le Male | M | EDT | JPG Le Male; Gaultier Le Male
+Jean Paul Gaultier | Le Male Elixir | M | Parfum | JPG Elixir | Le Male
+Jean Paul Gaultier | Le Male Le Parfum | M | EDP | JPG Le Parfum | Le Male
+Jean Paul Gaultier | Le Beau | M | EDT | JPG Le Beau
+Jean Paul Gaultier | Le Beau Le Parfum | M | EDP | | Le Beau
+Jean Paul Gaultier | Scandal | F | EDP | JPG Scandal
+Jean Paul Gaultier | La Belle | F | EDP | JPG La Belle
+Jean Paul Gaultier | Gaultier Divine | F | EDP | Divine
+Versace | Eros | M | EDT | Versace Eros
+Versace | Eros Flame | M | EDP | | Eros
+Versace | Eros Parfum | M | Parfum | | Eros
+Versace | Dylan Blue Pour Homme | M | EDT | Dylan Blue
+Versace | Bright Crystal | F | EDT |
+Versace | Crystal Noir | F | EDT |
+Versace | Versace Pour Homme | M | EDT |
+Versace | Eros Pour Femme | F | EDP |
+Gucci | Bloom | F | EDP | Gucci Bloom
+Gucci | Flora Gorgeous Gardenia | F | EDP | Gorgeous Gardenia
+Gucci | Flora Gorgeous Jasmine | F | EDP | | Flora Gorgeous Gardenia
+Gucci | Guilty Pour Homme | M | EDT | Gucci Guilty
+Gucci | Guilty Pour Femme | F | EDP |
+Gucci | Guilty Elixir Pour Homme | M | Parfum | | Guilty Pour Homme
+Gucci | Mémoire d'une Odeur | U | EDP | Memoire d'une Odeur
+Gucci | Bamboo | F | EDP |
+Dolce&Gabbana | Light Blue | F | EDT | D&G Light Blue; DG Light Blue
+Dolce&Gabbana | Light Blue Pour Homme | M | EDT |
+Dolce&Gabbana | Light Blue Eau Intense | F | EDP | | Light Blue
+Dolce&Gabbana | The One for Men | M | EDP | The One
+Dolce&Gabbana | The One | F | EDP |
+Dolce&Gabbana | K by Dolce&Gabbana | M | EDP | K by DG
+Dolce&Gabbana | Devotion | F | EDP |
+Dolce&Gabbana | Q by Dolce&Gabbana | F | EDP | Q by DG
+Burberry | Her | F | EDP | Burberry Her
+Burberry | Her Elixir de Parfum | F | EDP | | Her
+Burberry | Goddess | F | EDP | Burberry Goddess
+Burberry | Hero | M | EDT | Burberry Hero
+Burberry | Brit for Her | F | EDT |
+Givenchy | L'Interdit | F | EDP | Linterdit
+Givenchy | L'Interdit Rouge | F | EDP | | L'Interdit
+Givenchy | Irresistible | F | EDP | Irrésistible
+Givenchy | Gentleman | M | EDP | Givenchy Gentleman
+Givenchy | Gentleman Réserve Privée | M | EDP | Gentleman Reserve Privee | Gentleman
+Mugler | Alien | F | EDP | Thierry Mugler Alien
+Mugler | Alien Goddess | F | EDP | | Alien
+Mugler | Angel | F | EDP | Thierry Mugler Angel
+Mugler | Angel Elixir | F | EDP | | Angel
+Mugler | A*Men | M | EDT | Angel Men; A Men
+Viktor&Rolf | Flowerbomb | F | EDP | Flower Bomb
+Viktor&Rolf | Flowerbomb Nectar | F | EDP | | Flowerbomb
+Viktor&Rolf | Spicebomb | M | EDT | Spice Bomb
+Viktor&Rolf | Spicebomb Extreme | M | EDP | | Spicebomb
+Viktor&Rolf | Bonbon | F | EDP | Bon Bon
+Marc Jacobs | Daisy | F | EDT | MJ Daisy
+Marc Jacobs | Daisy Eau So Fresh | F | EDT | | Daisy
+Marc Jacobs | Daisy Love | F | EDT | | Daisy
+Marc Jacobs | Perfect | F | EDP | MJ Perfect
+Marc Jacobs | Decadence | F | EDP |
+Tom Ford | Black Orchid | F | EDP | TF Black Orchid
+Tom Ford | Velvet Orchid | F | EDP | | Black Orchid
+Tom Ford | Tobacco Vanille | U | EDP | Tobacco Vanilla; TF Tobacco
+Tom Ford | Lost Cherry | U | EDP | TF Lost Cherry
+Tom Ford | Oud Wood | U | EDP | TF Oud Wood
+Tom Ford | Fucking Fabulous | U | EDP | F Fabulous; Fabulous
+Tom Ford | Ombré Leather | U | EDP | Ombre Leather
+Tom Ford | Bitter Peach | U | EDP |
+Tom Ford | Soleil Blanc | U | EDP |
+Tom Ford | Neroli Portofino | U | EDP |
+Tom Ford | Noir Extreme | M | EDP |
+Tom Ford | Tuscan Leather | U | EDP |
+Tom Ford | Rose Prick | U | EDP |
+Tom Ford | Ébène Fumé | U | EDP | Ebene Fume
+Tom Ford | Vanilla Sex | U | EDP |
+Tom Ford | Café Rose | U | EDP | Cafe Rose
+Tom Ford | Noir de Noir | U | EDP |
+Tom Ford | Costa Azzurra | U | EDP |
+Tom Ford | Grey Vetiver | M | EDP |
+Tom Ford | Ombré Leather Parfum | U | Parfum | | Ombré Leather
+Le Labo | Santal 33 | U | EDP | Santal; Le Labo Santal
+Le Labo | Another 13 | U | EDP | Another13
+Le Labo | Rose 31 | U | EDP |
+Le Labo | Bergamote 22 | U | EDP | Bergamot 22
+Le Labo | Thé Noir 29 | U | EDP | The Noir 29
+Le Labo | Lys 41 | U | EDP |
+Le Labo | Ylang 49 | U | EDP |
+Le Labo | Vetiver 46 | U | EDP |
+Le Labo | Patchouli 24 | U | EDP |
+Le Labo | Fleur d'Oranger 27 | U | EDP |
+Byredo | Gypsy Water | U | EDP |
+Byredo | Mojave Ghost | U | EDP |
+Byredo | Bal d'Afrique | U | EDP | Bal dAfrique
+Byredo | Blanche | U | EDP |
+Byredo | Rose of No Man's Land | U | EDP |
+Byredo | Super Cedar | U | EDP |
+Byredo | Bibliothèque | U | EDP | Bibliotheque
+Byredo | Mixed Emotions | U | EDP |
+Jo Malone London | Wood Sage & Sea Salt | U | Cologne | Wood Sage and Sea Salt
+Jo Malone London | English Pear & Freesia | U | Cologne | English Pear and Freesia
+Jo Malone London | Peony & Blush Suede | U | Cologne | Peony and Blush Suede
+Jo Malone London | Lime Basil & Mandarin | U | Cologne | Lime Basil and Mandarin
+Jo Malone London | Myrrh & Tonka | U | Cologne Intense | Myrrh and Tonka
+Jo Malone London | Blackberry & Bay | U | Cologne | Blackberry and Bay
+Jo Malone London | Velvet Rose & Oud | U | Cologne Intense | Velvet Rose and Oud
+Jo Malone London | Pomegranate Noir | U | Cologne |
+Maison Margiela | Replica Jazz Club | M | EDT | Jazz Club
+Maison Margiela | Replica By the Fireplace | U | EDT | By the Fireplace
+Maison Margiela | Replica Lazy Sunday Morning | U | EDT | Lazy Sunday Morning
+Maison Margiela | Replica Beach Walk | U | EDT | Beach Walk
+Maison Margiela | Replica Coffee Break | U | EDT | Coffee Break
+Maison Margiela | Replica Bubble Bath | U | EDT | Bubble Bath
+Maison Margiela | Replica When the Rain Stops | U | EDT | When the Rain Stops
+Maison Margiela | Replica Under the Lemon Trees | U | EDT | Under the Lemon Trees
+Maison Margiela | Replica Autumn Vibes | U | EDT | Autumn Vibes
+Diptyque | Philosykos | U | EDT |
+Diptyque | Do Son | U | EDT |
+Diptyque | Tam Dao | U | EDT |
+Diptyque | Orphéon | U | EDP | Orpheon
+Diptyque | Eau Rose | U | EDT |
+Diptyque | L'Ombre dans l'Eau | U | EDT | Ombre dans l'Eau
+Diptyque | Fleur de Peau | U | EDP |
+Diptyque | Eau Duelle | U | EDT |
+Maison Francis Kurkdjian | Baccarat Rouge 540 | U | EDP | BR540; BR 540; Baccarat; Bacarat; Baccarat Rouge
+Maison Francis Kurkdjian | Baccarat Rouge 540 Extrait | U | Extrait | BR540 Extrait | Baccarat Rouge 540
+Maison Francis Kurkdjian | Grand Soir | U | EDP |
+Maison Francis Kurkdjian | Gentle Fluidity Gold | U | EDP |
+Maison Francis Kurkdjian | Aqua Universalis | U | EDT |
+Maison Francis Kurkdjian | À la rose | F | EDP | A la rose
+Maison Francis Kurkdjian | Oud Satin Mood | U | EDP |
+Maison Francis Kurkdjian | Amyris Homme | M | EDT |
+Maison Francis Kurkdjian | 724 | U | EDP |
+Maison Francis Kurkdjian | L'Homme À la rose | M | EDP | L'Homme A la rose
+Parfums de Marly | Delina | F | EDP | PDM Delina
+Parfums de Marly | Delina Exclusif | F | Parfum | | Delina
+Parfums de Marly | Layton | M | EDP | PDM Layton
+Parfums de Marly | Layton Exclusif | M | Parfum | | Layton
+Parfums de Marly | Herod | M | EDP |
+Parfums de Marly | Pegasus | M | EDP |
+Parfums de Marly | Percival | M | EDP |
+Parfums de Marly | Valaya | F | EDP |
+Parfums de Marly | Haltane | M | EDP |
+Parfums de Marly | Greenley | M | EDP |
+Parfums de Marly | Kalan | M | EDP |
+Parfums de Marly | Oriana | F | EDP |
+Parfums de Marly | Althaïr | M | EDP | Althair
+Parfums de Marly | Carlisle | U | EDP |
+Creed | Aventus | M | EDP | Creed Aventus; Aventis
+Creed | Aventus for Her | F | EDP | | Aventus
+Creed | Absolu Aventus | M | EDP | | Aventus
+Creed | Green Irish Tweed | M | EDP | GIT
+Creed | Silver Mountain Water | U | EDP | SMW
+Creed | Viking | M | EDP |
+Creed | Millésime Impérial | U | EDP | Millesime Imperial
+Creed | Royal Oud | U | EDP |
+Creed | Wind Flowers | F | EDP |
+Creed | Himalaya | M | EDP |
+Creed | Carmina | F | EDP |
+Kilian | Angels' Share | U | EDP | Angels Share; Kilian Angels Share
+Kilian | Love, Don't Be Shy | F | EDP | Love Dont Be Shy
+Kilian | Good Girl Gone Bad | F | EDP |
+Kilian | Black Phantom | U | EDP |
+Kilian | Rolling in Love | U | EDP |
+Kilian | Straight to Heaven | M | EDP |
+Kilian | Roses on Ice | U | EDP |
+Kilian | Apple Brandy on the Rocks | U | EDP |
+Xerjoff | Erba Pura | U | EDP |
+Xerjoff | Naxos | U | EDP |
+Xerjoff | Alexandria II | U | Parfum |
+Xerjoff | 40 Knots | U | EDP |
+Xerjoff | Torino21 | U | EDP | Torino 21
+Xerjoff | Lira | F | EDP |
+Initio Parfums Prive | Oud for Greatness | U | EDP |
+Initio Parfums Prive | Side Effect | U | EDP |
+Initio Parfums Prive | Rehab | U | EDP |
+Initio Parfums Prive | Musk Therapy | U | EDP |
+Initio Parfums Prive | Atomic Rose | F | EDP |
+Initio Parfums Prive | Psychedelic Love | U | EDP |
+Initio Parfums Prive | Absolute Aphrodisiac | U | EDP |
+Initio Parfums Prive | High Frequency | U | EDP |
+Amouage | Reflection Man | M | EDP |
+Amouage | Interlude Man | M | EDP |
+Amouage | Jubilation XXV | M | EDP | Jubilation 25
+Amouage | Guidance | U | EDP |
+Amouage | Honour Woman | F | EDP |
+Amouage | Epic Woman | F | EDP |
+Nishane | Hacivat | U | Extrait |
+Nishane | Ani | U | Extrait |
+Nishane | Wulong Cha | U | Extrait |
+Nishane | Fan Your Flames | U | Extrait |
+Clive Christian | X for Women | F | Parfum |
+Clive Christian | 1872 for Men | M | Parfum | 1872
+Clive Christian | No1 for Women | F | Parfum | No 1
+Memo Paris | African Leather | U | EDP |
+Memo Paris | Irish Leather | U | EDP |
+Memo Paris | Inlé | U | EDP | Inle
+Memo Paris | Marfa | U | EDP |
+Tiziana Terenzi | Kirkè | U | Extrait | Kirke
+Tiziana Terenzi | Andromeda | U | Extrait |
+Tiziana Terenzi | Orza | U | Extrait |
+Maison Crivelli | Hibiscus Mahajád | U | Extrait | Hibiscus Mahajad
+Maison Crivelli | Oud Maracujá | U | Extrait | Oud Maracuja
+Maison Crivelli | Bois Datchaï | U | EDP | Bois Datchai
+Mancera | Cedrat Boisé | U | EDP | Cedrat Boise
+Mancera | Red Tobacco | U | EDP |
+Mancera | Instant Crush | U | EDP |
+Montale | Intense Café | U | EDP | Intense Cafe
+Montale | Arabians Tonka | U | EDP |
+Montale | Roses Musk | F | EDP |
+Matière Première | Radical Rose | U | Extrait |
+Matière Première | French Flower | U | EDP |
+Matière Première | Crystal Saffron | U | EDP |
+Etat Libre d'Orange | You or Someone Like You | U | EDP |
+Etat Libre d'Orange | Fat Electrician | M | EDP |
+Etat Libre d'Orange | I Am Trash | U | EDP |
+Escentric Molecules | Molecule 01 | U | EDT | Molecule 1
+Escentric Molecules | Escentric 01 | U | EDT |
+Escentric Molecules | Molecule 02 | U | EDT |
+Profumum Roma | Acqua di Sale | U | EDP |
+Profumum Roma | Ambra Aurea | U | EDP |
+Profumum Roma | Dulcis in Fundo | U | EDP |
+Thameen | Carved Oud | U | Extrait |
+Thameen | Regent Leather | U | Extrait |
+Attar Collection | Hayati | U | Extrait |
+Attar Collection | Musk Kashmir | U | Extrait |
+Attar Collection | Azora | U | Extrait |
+Marc-Antoine Barrois | Ganymede | U | EDP |
+Marc-Antoine Barrois | B683 | U | EDP |
+Marc-Antoine Barrois | Tilia | U | EDP |
+Jusbox | 78 Glam | U | EDP |
+Zarkoperfume | Pink Molécule 090.09 | U | EDP | Pink Molecule
+Zarkoperfume | Molécule 234.38 | U | EDP | Molecule 234
+Hermès | Terre d'Hermès | M | EDT | Terre d'Hermes
+Hermès | Twilly d'Hermès | F | EDP | Twilly
+Hermès | Un Jardin sur le Nil | U | EDT |
+Hermès | H24 | M | EDT |
+Hermès | Barénia | F | EDP | Barenia
+Hermès | Eau des Merveilles | F | EDT |
+Vilhelm Parfumerie | Mango Skin | U | EDP |
+Vilhelm Parfumerie | Dear Polly | U | EDP |
+Vilhelm Parfumerie | Room Service | U | EDP |
+Guerlain | Shalimar | F | EDP |
+Guerlain | Mon Guerlain | F | EDP |
+Guerlain | L'Homme Idéal | M | EDT | L'Homme Ideal
+Guerlain | Habit Rouge | M | EDT |
+Guerlain | Aqua Allegoria Mandarine Basilic | F | EDT | Mandarine Basilic
+Guerlain | Vétiver | M | EDT | Guerlain Vetiver
+Acqua di Parma | Colonia | U | Cologne | Acqua di Parma Colonia
+Acqua di Parma | Fico di Amalfi | U | EDT | Blu Mediterraneo Fico di Amalfi
+Acqua di Parma | Arancia di Capri | U | EDT |
+Acqua di Parma | Colonia Intensa | M | Cologne | | Colonia
+Louis Vuitton | Imagination | M | EDP | LV Imagination
+Louis Vuitton | Ombre Nomade | U | EDP | LV Ombre Nomade
+Louis Vuitton | Attrape-Rêves | F | EDP | Attrape Reves
+Louis Vuitton | L'Immensité | M | EDP | Limmensite
+Louis Vuitton | Afternoon Swim | U | Cologne |
+Louis Vuitton | Spell on You | F | EDP |
+D.S. & Durga | I Don't Know What | U | EDP |
+D.S. & Durga | Burning Barbershop | U | EDP |
+D.S. & Durga | Debaser | U | EDP |
+Essential Parfums | Bois Impérial | U | EDP | Bois Imperial
+Roja Parfums | Elysium Pour Homme | M | Parfum | Roja Elysium
+Roja Parfums | Enigma Pour Homme | M | Parfum | Roja Enigma
+Calvin Klein | CK One | U | EDT | CK1
+Calvin Klein | Eternity | F | EDP |
+Calvin Klein | Eternity for Men | M | EDT |
+Calvin Klein | Obsession | F | EDP |
+Calvin Klein | Euphoria | F | EDP |
+Calvin Klein | Defy | M | EDT |
+Davidoff | Cool Water | M | EDT | Davidoff Cool Water
+Davidoff | Cool Water Woman | F | EDT | | Cool Water
+Hugo Boss | Boss Bottled | M | EDT | Hugo Boss Bottled
+Hugo Boss | Boss The Scent | M | EDT | The Scent
+Hugo Boss | Boss The Scent for Her | F | EDP | | Boss The Scent
+Ralph Lauren | Polo Blue | M | EDT |
+Ralph Lauren | Polo Red | M | EDT |
+Ralph Lauren | Romance | F | EDP | Ralph Lauren Romance
+Ralph Lauren | Ralph's Club | M | EDP | Ralphs Club
+Azzaro | Wanted | M | EDT | Azzaro Wanted
+Azzaro | The Most Wanted | M | EDP | Most Wanted | Wanted
+Azzaro | Chrome | M | EDT | Azzaro Chrome
+Montblanc | Legend | M | EDT | Mont Blanc Legend
+Montblanc | Explorer | M | EDP | Mont Blanc Explorer
+Issey Miyake | L'Eau d'Issey | F | EDT | Issey Miyake
+Issey Miyake | L'Eau d'Issey Pour Homme | M | EDT |
+Kenzo | Flower by Kenzo | F | EDP | Kenzo Flower
+Estée Lauder | Beautiful | F | EDP |
+Estée Lauder | Pleasures | F | EDP |
+Estée Lauder | White Linen | F | EDP |
+Clinique | Happy | F | EDP | Clinique Happy
+Clinique | Aromatics Elixir | F | Parfum |
+Bvlgari | Man in Black | M | EDP | Bulgari Man in Black
+Bvlgari | Aqva Pour Homme | M | EDT | Aqva; Bulgari Aqua
+Bvlgari | Omnia Crystalline | F | EDT | Omnia
+Cartier | Déclaration | M | EDT | Declaration
+Cartier | La Panthère | F | EDP | La Panthere
+Tiffany & Co. | Tiffany & Co. | F | EDP | Tiffany
+Chloé | Chloé | F | EDP | Chloe
+Chloé | Nomade | F | EDP | Chloe Nomade
+Narciso Rodriguez | For Her | F | EDP | Narciso For Her
+Narciso Rodriguez | Narciso | F | EDP |
+Narciso Rodriguez | Bleu Noir | M | EDP |
+Jimmy Choo | Jimmy Choo | F | EDP |
+Coach | Coach for Men | M | EDT |
+Nina Ricci | L'Air du Temps | F | EDT | Lair du Temps
+Moschino | Toy Boy | M | EDP |
+Abercrombie & Fitch | Fierce | M | Cologne | A&F Fierce
+Victoria's Secret | Bombshell | F | EDP | VS Bombshell
+Philosophy | Amazing Grace | F | EDT |
+Clean Reserve | Warm Cotton | U | EDP | Clean Warm Cotton
+Glossier | Glossier You | U | EDP | You
+Phlur | Missing Person | U | EDP |
+Kayali | Vanilla 28 | F | EDP | Kayali Vanilla
+Kayali | Yum Pistachio Gelato 33 | F | EDP | Pistachio Gelato
+Kayali | Déjà Vu White Flower 57 | F | EDP | Deja Vu White Flower
+Maison Louis Marie | No.04 Bois de Balincourt | U | EDP | Bois de Balincourt
+Lacoste | L.12.12 Blanc | M | EDT | Lacoste Blanc
+Nautica | Voyage | M | EDT | Nautica Voyage
+Juicy Couture | Viva la Juicy | F | EDP |
+Frédéric Malle | Portrait of a Lady | F | EDP | Frederic Malle Portrait
+Frédéric Malle | Carnal Flower | F | EDP |
+Frédéric Malle | Musc Ravageur | U | EDP |
+Serge Lutens | Ambre Sultan | U | EDP |
+BDK Parfums | Gris Charnel | U | EDP |
+BDK Parfums | Rouge Smoking | U | EDP |
+Ex Nihilo | Fleur Narcotique | U | EDP |
+Juliette Has a Gun | Not a Perfume | U | EDP |
+Penhaligon's | Halfeti | U | EDP |
+Maison Margiela | Replica Sailing Day | U | EDT | Sailing Day
+Bvlgari | Rose Goldea | F | EDP |
+Cartier | Pasha de Cartier | M | EDT | Pasha
+Ralph Lauren | Polo | M | EDT | Polo Green
+Tommy Hilfiger | Tommy | M | EDT |
+Chanel | Antaeus | M | EDT |
+Chanel | Cristalle | F | EDT |
+Chanel | Coco | F | EDP |
+Dior | Dune | F | EDT |
+Dior | Diorissimo | F | EDT |
+Dior | Joy by Dior | F | EDP | Joy
+Yves Saint Laurent | Paris | F | EDT |
+Yves Saint Laurent | Cinéma | F | EDP | Cinema
+Lancôme | Poême | F | EDP | Poeme
+Giorgio Armani | Acqua di Gioia | F | EDP |
+Prada | Prada Amber Pour Homme | M | EDT |
+Gucci | Gucci Rush | F | EDT | Rush
+Gucci | Envy Me | F | EDT |
+Hermès | Twilly d'Hermès Eau Ginger | F | EDP | | Twilly d'Hermès
+Hermès | Terre d'Hermès Parfum | M | Parfum | | Terre d'Hermès
+Guerlain | L'Instant de Guerlain | F | EDP |
+Guerlain | Samsara | F | EDP |
+Guerlain | Angélique Noire | U | EDP | Angelique Noire
+Tom Ford | Oud Minérale | U | EDP | Oud Minerale
+Tom Ford | Beau de Jour | M | EDP |
+Le Labo | Gaïac 10 | U | EDP | Gaiac 10
+Byredo | Eleventh Hour | U | EDP |
+Diptyque | Oyédo | U | EDT | Oyedo
+Jo Malone London | English Oak & Hazelnut | U | Cologne |
+Maison Francis Kurkdjian | Petit Matin | U | EDP |
+Maison Francis Kurkdjian | Kurky | U | EDP |
+Creed | Love in White | F | EDP |
+Creed | Queen of Silk | F | EDP |
+Kilian | Smoking Hot | U | EDP |
+Xerjoff | Accento | U | EDP |
+Amouage | Love Delight | F | EDP |
+Initio Parfums Prive | Blessed Baraka | U | EDP |
+Nishane | Hundred Silent Ways | U | Extrait |
+Parfums de Marly | Sedley | M | EDP |
+Mancera | Roses Vanille | F | EDP |
+Montale | Black Aoud | U | EDP |
+Escentric Molecules | Escentric 02 | U | EDT |
+Frédéric Malle | Une Rose | F | EDP |
+Serge Lutens | Féminité du Bois | U | EDP | Feminite du Bois
+Ex Nihilo | Outcast Blue | U | EDP |
+Penhaligon's | The Tragedy of Lord George | M | EDP | Lord George
+BDK Parfums | Pas Ce Soir | F | EDP |
+Juliette Has a Gun | Mmmm... | U | EDP | Mmmm
+Maison Louis Marie | No.02 Le Long Fond | U | EDP |
+Kayali | Utopia Vanilla Coco 21 | F | EDP | Vanilla Coco
+Glossier | Glossier You Doux | U | EDP | | Glossier You
+Phlur | Vanilla Skin | U | EDP |
+Commodity | Book | U | EDP |
+Henry Rose | Jake's House | U | EDP |
+Ellis Brooklyn | Myth | U | EDP |
+Calvin Klein | Obsession for Men | M | EDT |
+Calvin Klein | CK Be | U | EDT |
+Bvlgari | Bvlgari Pour Homme | M | EDT |
+Burberry | Hero Eau de Parfum | M | EDP | | Hero
+Burberry | Burberry Brit for Him | M | EDT |
+Givenchy | Pi | M | EDT |
+Givenchy | Ange ou Démon | F | EDP | Ange ou Demon
+Mugler | Aura | F | EDP |
+Viktor&Rolf | Good Fortune | F | EDP |
+Marc Jacobs | Daisy Wild | F | EDP | | Daisy
+Moschino | Toy 2 | F | EDT |
+Moschino | Toy 2 Bubble Gum | F | EDT | | Toy 2
+Valentino | Voce Viva | F | EDP |
+Valentino | Valentina | F | EDP |
+Carolina Herrera | Carolina Herrera | F | EDP |
+Carolina Herrera | 212 Men | M | EDT |
+Rabanne | Pure XS | M | EDT |
+Jean Paul Gaultier | Classique | F | EDT |
+Versace | Versace Pour Femme Dylan Blue | F | EDP | Dylan Blue Femme
+Versace | Yellow Diamond | F | EDT |
+Dolce&Gabbana | Dolce Garden | F | EDP |
+Dolce&Gabbana | Pour Homme | M | EDT | DG Pour Homme
+Prada | Luna Rossa Black | M | EDP |
+Giorgio Armani | Armani Privé Rose d'Arabie | U | EDP | Rose d'Arabie
+Emporio Armani | Because It's You | F | EDP |
+Hugo Boss | Hugo Man | M | EDT | Hugo
+Hugo Boss | Boss Alive | F | EDP |
+Ralph Lauren | Polo Black | M | EDT |
+Azzaro | Pour Homme | M | EDT | Azzaro Pour Homme
+Montblanc | Signature | F | EDP |
+Issey Miyake | Nuit d'Issey | M | EDT |
+Kenzo | Kenzo Homme | M | EDT |
+Estée Lauder | Youth Dew | F | EDP |
+Estée Lauder | Sensuous | F | EDP |
+Clinique | Happy for Men | M | Cologne |
+Elizabeth Arden | Red Door | F | EDT |
+Elizabeth Arden | 5th Avenue | F | EDP |
+Tiffany & Co. | Rose Gold | F | EDP | Tiffany Rose Gold
+Chloé | Love Story | F | EDP |
+Jimmy Choo | Man | M | EDT | Jimmy Choo Man
+Jimmy Choo | I Want Choo | F | EDP |
+Coach | Coach | F | EDP | Coach EDP
+Nina Ricci | Nina | F | EDT |
+Lacoste | Pour Femme | F | EDP |
+Michael Kors | Michael Kors | F | EDP |
+Tory Burch | Tory Burch | F | EDP |
+Kate Spade | Kate Spade New York | F | EDP |
+Ferragamo | Signorina | F | EDP |
+Bottega Veneta | Bottega Veneta | F | EDP |
+Miu Miu | Miu Miu | F | EDP |
+Lancôme | Ô de Lancôme | F | EDT | O de Lancome
+Escada | Especially Escada | F | EDP |
+Cacharel | Anaïs Anaïs | F | EDT | Anais Anais
+Cacharel | Amor Amor | F | EDT |
+Guess | Seductive | F | EDT |
+Dunhill | Icon | M | EDP |
+Bentley | For Men Intense | M | EDP |
+Bond No. 9 | Bleecker Street | U | EDP |
+Bond No. 9 | Lafayette Street | U | EDP |
+Atelier Cologne | Orange Sanguine | U | Cologne |
+Goldfield & Banks | Pacific Rock Moss | U | Parfum |
+Orto Parisi | Megamare | U | Parfum |
+Zoologist | Bat | U | EDP |
+Ormonde Jayne | Ormonde Man | M | EDP |
+Maison Margiela | Replica Whispers in the Library | U | EDT | Whispers in the Library
+Hermès | Hermessence Cuir d'Ange | U | EDT | Cuir d'Ange
+Le Labo | Labdanum 18 | U | EDP |
+Diptyque | Eau Capitale | U | EDP |
+Byredo | Velvet Haze | U | EDP |
+Tom Ford | Ombré Leather Eau de Parfum | U | EDP |

@@ -1,0 +1,483 @@
+[
+ {
+  "id": "versace-bright-crystal",
+  "top": [
+   "yuzu",
+   "iced accord",
+   "pomegranate"
+  ],
+  "heart": [
+   "peony",
+   "magnolia",
+   "lotus flower"
+  ],
+  "base": [
+   "acajou",
+   "vegetal amber",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.versace.com/us/en/women/accessories/fragrances-body-care/bright-crystal/bright-crystal-edt-90-ml-pink/R510032-R090MLS_RNUL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "versace-versace-pour-homme",
+  "top": [
+   "bergamot",
+   "neroli",
+   "citron of diamante",
+   "bitter orange leaves"
+  ],
+  "heart": [
+   "geranium",
+   "clary sage",
+   "blue hyacinth"
+  ],
+  "base": [
+   "oud wood",
+   "mineral amber",
+   "cedar wood"
+  ],
+  "key": [],
+  "source_url": "https://www.versace.com/us/en/men/accessories/fragrances-body-care/pour-homme/pour-homme-edt-100-ml-blue/R720010-R100MLS_RNUL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "versace-eros-pour-femme",
+  "top": [
+   "sicilian lemon",
+   "calabrian bergamot",
+   "pomegranate"
+  ],
+  "heart": [
+   "lemon flower",
+   "sambac jasmine absolute",
+   "jasmine infusion",
+   "peony"
+  ],
+  "base": [
+   "sandalwood",
+   "amber",
+   "musk",
+   "sensual woods"
+  ],
+  "key": [],
+  "source_url": "https://www.versace.com/us/en/women/accessories/fragrances-body-care/eros-pour-femme/eros-pour-femme-edp-100-ml-gold/R750032-R100MLS_RNUL.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "gucci-bloom",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "rangoon creeper",
+   "jasmine",
+   "tuberose"
+  ],
+  "source_url": "https://www.sephora.com/product/bloom-eau-de-parfum-for-her-P422093",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "gucci.com not reachable"
+ },
+ {
+  "id": "gucci-flora-gorgeous-gardenia",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "pear blossom",
+   "white gardenia",
+   "brown sugar"
+  ],
+  "source_url": "https://www.sephora.com/product/gucci-flora-by-gucci-gorgeous-gardenia-eau-de-parfum-P474051",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "gucci.com not reachable"
+ },
+ {
+  "id": "gucci-flora-gorgeous-jasmine",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "mandarin essence",
+   "grandiflorum jasmine",
+   "sandalwood"
+  ],
+  "source_url": "https://www.sephora.com/product/flora-gorgeous-jasmine-eau-de-parfum-P501141",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "gucci.com not reachable"
+ },
+ {
+  "id": "gucci-guilty-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lavender",
+   "orange flower",
+   "cedarwood"
+  ],
+  "source_url": "https://www.sephora.com/product/guilty-pour-homme-P285804",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "gucci.com not reachable; search summary mixed"
+ },
+ {
+  "id": "gucci-guilty-pour-femme",
+  "top": [
+   "mandora",
+   "natural bergamot",
+   "pink pepper"
+  ],
+  "heart": [
+   "lilac",
+   "rose",
+   "violet",
+   "geranium"
+  ],
+  "base": [
+   "natural patchouli oils"
+  ],
+  "key": [],
+  "source_url": "https://www.sephora.com/product/gucci-guilty-P441304",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "gucci.com not reachable"
+ },
+ {
+  "id": "gucci-guilty-elixir-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "orris butter",
+   "ambrofix",
+   "benzoin"
+  ],
+  "source_url": "https://www.sephora.com/ca/en/product/gucci-guilty-elixir-de-parfum-P513618",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": "gucci.com not reachable; unsure Sephora page is the men's version"
+ },
+ {
+  "id": "gucci-memoire-d-une-odeur",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "no notes found on allowed sources"
+ },
+ {
+  "id": "dg-light-blue",
+  "top": [
+   "granny smith apple",
+   "sicilian lemon",
+   "bluebell"
+  ],
+  "heart": [
+   "jasmine",
+   "white rose",
+   "bamboo wood"
+  ],
+  "base": [
+   "virginian cedarwood",
+   "amber",
+   "white moss"
+  ],
+  "key": [],
+  "source_url": "https://www.dolcegabbana.com/en-us/beauty/perfumes-for-her/light-blue/light-blue-eau-de-toilette---VT01JMVT0009V000.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "dg-light-blue-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lemon",
+   "rosemary",
+   "patchouli"
+  ],
+  "source_url": "https://www.dolcegabbana.com/en-us/beauty/perfumes-for-him/light-blue-pour-homme/light-blue-pour-homme-eau-de-toilette---VT01CPVT0009V000.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "dg-light-blue-eau-intense",
+  "top": [
+   "sicilian lemon",
+   "granny smith apple"
+  ],
+  "heart": [
+   "marigold",
+   "jasmine"
+  ],
+  "base": [
+   "musk",
+   "amberwood"
+  ],
+  "key": [],
+  "source_url": "https://us.dolcegabbana.com/en/beauty/perfumes-for-her/light-blue/light-blue-eau-de-parfum-intense---VP2307VP0009V000.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "D&G page titled Light Blue Eau de Parfum Intense"
+ },
+ {
+  "id": "dg-the-one-for-men",
+  "top": [
+   "italian tarocco orange",
+   "grand vert basil",
+   "bergamot"
+  ],
+  "heart": [
+   "french clary sage",
+   "orange blossom",
+   "french lavender"
+  ],
+  "base": [
+   "australian sandalwood",
+   "amber",
+   "cedarwood"
+  ],
+  "key": [],
+  "source_url": "https://us.dolcegabbana.com/en/beauty/perfumes-for-him/the-one-for-men/the-one-for-men-eau-de-parfum---VP2015VP2459V000.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dg-the-one",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "mandarin orange",
+   "rose",
+   "vanilla"
+  ],
+  "source_url": "https://www.dolcegabbana.com/en-us/beauty/perfumes-for-her/the-one/the-one-eau-de-parfum---VP7117VP1039V000.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dg-k-by-dolce-and-gabbana",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "sicilian lemon",
+   "fig",
+   "virginian cedarwood"
+  ],
+  "source_url": "https://www.dolcegabbana.com/en-us/beauty/perfumes-for-him/k-by-dolceandgabbana/k-by-dolceandgabbana-eau-de-parfum---VP001UVP0009V000.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dg-devotion",
+  "top": [
+   "candied citrus"
+  ],
+  "heart": [
+   "orange blossom"
+  ],
+  "base": [
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.dolcegabbana.com/en-us/beauty/perfumes-for-her/devotion/devotion-eau-de-parfum---VT0063VT0009V000.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "burberry-her",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "blackcurrant",
+   "jasmine accord",
+   "white woods",
+   "musk",
+   "dry amber"
+  ],
+  "source_url": "https://www.sephora.com/product/her-eau-de-parfum-P437631",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "burberry.com only gives descriptive sentence"
+ },
+ {
+  "id": "burberry-her-elixir-de-parfum",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "strawberry accord",
+   "blackberry accord",
+   "jasmine accord",
+   "vanilla",
+   "amber",
+   "sandalwood"
+  ],
+  "source_url": "https://www.sephora.com/product/her-elixir-eau-de-parfum-intense-P502245",
+  "source_type": "sephora",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "burberry-goddess",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "vanilla",
+   "lavender"
+  ],
+  "source_url": "https://us.burberry.com/burberry-goddess-eau-de-parfum-for-women-100ml-p40835981",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand text: trio of vanillas, enriched with lavender"
+ },
+ {
+  "id": "burberry-hero",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cedarwood",
+   "juniper",
+   "black pepper",
+   "bergamot"
+  ],
+  "source_url": "https://us.burberry.com/burberry-hero-eau-de-toilette-100ml-p40818661",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "givenchy-l-interdit",
+  "top": [
+   "bergamot",
+   "fresh ginger"
+  ],
+  "heart": [
+   "orange blossom",
+   "sambac jasmine",
+   "tuberose absolute"
+  ],
+  "base": [
+   "patchouli",
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.givenchybeauty.com/us/p/l-interdit-F10100099.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "givenchy-irresistible",
+  "top": [
+   "pear accord",
+   "ambrette absolute"
+  ],
+  "heart": [
+   "rose essential",
+   "iris butter"
+  ],
+  "base": [
+   "cedarwood essence",
+   "blond wood"
+  ],
+  "key": [],
+  "source_url": "https://www.givenchybeauty.com/us/p/irresistible-F10100128.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "givenchy-gentleman",
+  "top": [
+   "pepper",
+   "lavender"
+  ],
+  "heart": [
+   "orris",
+   "peru balm"
+  ],
+  "base": [
+   "patchouli",
+   "black vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.givenchybeauty.com/us/p/gentleman-givenchy-F10100026.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "givenchy-gentleman-reserve-privee",
+  "top": [
+   "bergamot",
+   "whisky absolute"
+  ],
+  "heart": [
+   "chestnut",
+   "orris",
+   "benzoin"
+  ],
+  "base": [
+   "cedarwood",
+   "vetiver",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.givenchybeauty.com/us/p/gentleman-reserve-privee-F10100159.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ }
+]

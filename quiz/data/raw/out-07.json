@@ -1,0 +1,478 @@
+[
+ {
+  "id": "tom-ford-noir-extreme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "neroli oil north africa orpur",
+   "saffron",
+   "indian kulfi",
+   "rose absolute",
+   "sandalwood",
+   "vanilla ember"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/noir-extreme-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-tuscan-leather",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "saffron",
+   "raspberry",
+   "thyme",
+   "olibanum",
+   "night blooming jasmine",
+   "leather",
+   "black suede",
+   "amberwood"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/tuscan-leather-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-rose-prick",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bulgarian rose",
+   "turmeric extract",
+   "indonesian patchouli",
+   "sichuan pepper",
+   "roasted tonka",
+   "tolu balsam"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/rose-prick-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-ebene-fume",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "palo santo accord",
+   "african ebony accord",
+   "black pepper",
+   "cistus resin absolute spain",
+   "pine tar essence france"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/ebene-fume-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-vanilla-sex",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "vanilla tincture india",
+   "vanilla absolute",
+   "sandalwood essence",
+   "jasmine absolute",
+   "orris accord",
+   "animalis accord"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/vanilla-sex-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-cafe-rose",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "rose essence",
+   "rose absolute",
+   "ylang ylang comoros orpur",
+   "coffee co2 extraction",
+   "coriander orpur",
+   "patchouli indonesia orpur"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/cafe-rose-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-noir-de-noir",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "saffron",
+   "black truffle",
+   "vanilla",
+   "patchouli",
+   "oud wood",
+   "crocus flower"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/noir-de-noir-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-costa-azzurra",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "lemon",
+   "cypress oil",
+   "oakwood",
+   "driftwood accord",
+   "cistus absolute",
+   "salty amber"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/costa-azzurra-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-grey-vetiver",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "orange flower",
+   "grapefruit",
+   "nutmeg",
+   "pimento",
+   "vetiver",
+   "oakmoss"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/grey-vetiver-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "tom-ford-ombre-leather-parfum",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cardamom",
+   "jasmine sambac",
+   "black leather",
+   "patchouli",
+   "white moss",
+   "amber"
+  ],
+  "source_url": "https://www.tomfordbeauty.com/products/ombre-leather-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Parfum"
+ },
+ {
+  "id": "le-labo-santal-33",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cardamom",
+   "iris",
+   "violet",
+   "australian sandalwood",
+   "cedarwood"
+  ],
+  "source_url": "https://www.lelabofragrances.com/santal-33-147.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-another-13",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "ambroxyde",
+   "jasmine",
+   "moss"
+  ],
+  "source_url": "https://www.lelabofragrances.com/another-13-463.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-rose-31",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "centifolia rose",
+   "cumin",
+   "olibanum",
+   "cedar",
+   "amber",
+   "gaiac wood",
+   "cistus"
+  ],
+  "source_url": "https://www.lelabofragrances.eu/fr/en/classic-collection/rose-31/eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-bergamote-22",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "petit grain",
+   "grapefruit",
+   "amber",
+   "musk",
+   "vetiver"
+  ],
+  "source_url": "https://www.lelabofragrances.eu/fr/en/classic-collection/bergamote-22/eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-the-noir-29",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "fig",
+   "bay leaves",
+   "cedarwood",
+   "vetiver",
+   "musk",
+   "black tea"
+  ],
+  "source_url": "https://www.lelabofragrances.eu/fr/en/classic-collection/the-noir-29/eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-lys-41",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "jasmine",
+   "tuberose absolute",
+   "lily",
+   "vanilla",
+   "musks"
+  ],
+  "source_url": "https://www.lelabofragrances.eu/fr/en/classic-collection/lys-41/eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-ylang-49",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "ylang ylang",
+   "pua noa noa",
+   "patchouli",
+   "oakmoss",
+   "vetiver",
+   "sandalwood",
+   "benjoin"
+  ],
+  "source_url": "https://www.lelabofragrances.eu/fr/en/classic-collection/ylang-49/eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-vetiver-46",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "vetiver",
+   "pepper",
+   "gaiac",
+   "labdanum",
+   "cedar",
+   "olibanum"
+  ],
+  "source_url": "https://www.lelabofragrances.eu/fr/en/classic-collection/vetiver-46/eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-patchouli-24",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "patchouli",
+   "birch",
+   "vanilla"
+  ],
+  "source_url": "https://www.lelabofragrances.eu/fr/en/classic-collection/patchouli-24/eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "le-labo-fleur-d-oranger-27",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "orange blossom",
+   "bergamot",
+   "petit grain",
+   "lemon",
+   "musk"
+  ],
+  "source_url": "https://www.lelabofragrances.eu/fr/en/classic-collection/fleur-doranger-27/eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Notes extracted from brand description prose (no tiers listed)"
+ },
+ {
+  "id": "byredo-gypsy-water",
+  "top": [
+   "bergamot",
+   "juniper berries",
+   "lemon",
+   "pepper"
+  ],
+  "heart": [
+   "incense",
+   "orris",
+   "pine needle"
+  ],
+  "base": [
+   "amber",
+   "sandalwood",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.byredo.com/us_en/p/gypsy-water-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "byredo-mojave-ghost",
+  "top": [
+   "ambrette",
+   "naseberry"
+  ],
+  "heart": [
+   "magnolia",
+   "sandalwood",
+   "violet"
+  ],
+  "base": [
+   "cedarwood",
+   "musks",
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.byredo.com/us_en/p/mojave-ghost-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "byredo-bal-d-afrique",
+  "top": [
+   "buchu",
+   "african marigold",
+   "bergamot",
+   "blackcurrant"
+  ],
+  "heart": [
+   "cyclamen",
+   "jasmine petals",
+   "violet"
+  ],
+  "base": [
+   "tonka bean absolue",
+   "cedarwood",
+   "musks",
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.byredo.com/us_en/p/bal-d-afrique-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "byredo-blanche",
+  "top": [
+   "aldehyde",
+   "rose centifolia"
+  ],
+  "heart": [
+   "peony",
+   "violet"
+  ],
+  "base": [
+   "musks",
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://www.byredo.com/us_en/p/blanche-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ },
+ {
+  "id": "byredo-rose-of-no-man-s-land",
+  "top": [
+   "pink pepper",
+   "turkish rose petals"
+  ],
+  "heart": [
+   "raspberry blossom",
+   "turkish rose absolute"
+  ],
+  "base": [
+   "amber",
+   "papyrus"
+  ],
+  "key": [],
+  "source_url": "https://www.byredo.com/us_en/p/rose-of-no-mans-land-eau-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP"
+ }
+]

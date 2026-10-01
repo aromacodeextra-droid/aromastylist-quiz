@@ -1,0 +1,478 @@
+[
+ {
+  "id": "chanel-n-5",
+  "top": [
+   "citrus"
+  ],
+  "heart": [
+   "may rose",
+   "jasmine"
+  ],
+  "base": [
+   "bourbon vanilla"
+  ],
+  "key": [
+   "aldehydes"
+  ],
+  "source_url": "https://www.chanel.com/us/fragrance/p/125530/n5-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "chanel-n-5-l-eau",
+  "top": [
+   "lemon",
+   "mandarin",
+   "orange"
+  ],
+  "heart": [
+   "rose",
+   "jasmine",
+   "ylang-ylang"
+  ],
+  "base": [
+   "cedar",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/p/105530/n5-leau-eau-de-toilette-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "chanel-coco-mademoiselle",
+  "top": [
+   "orange"
+  ],
+  "heart": [
+   "jasmine",
+   "may rose"
+  ],
+  "base": [
+   "patchouli",
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/p/116420/coco-mademoiselle-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "chanel-coco-mademoiselle-intense",
+  "top": [
+   "sicilian mandarin"
+  ],
+  "heart": [
+   "jasmine absolute",
+   "ylang-ylang",
+   "orange blossom"
+  ],
+  "base": [
+   "patchouli",
+   "benzoin",
+   "tonka bean",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/p/116660/coco-mademoiselle-eau-de-parfum-intense-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "chanel-coco-noir",
+  "top": [
+   "bergamot"
+  ],
+  "heart": [
+   "may rose",
+   "geranium rose leaf"
+  ],
+  "base": [
+   "tonka bean",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/p/113660/coco-noir-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "chanel-chance",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "white musk",
+   "hyacinth",
+   "citron",
+   "pink pepper",
+   "jasmine",
+   "fresh vetiver",
+   "orris absolute",
+   "amber patchouli"
+  ],
+  "source_url": "https://www.chanel.com/us/fragrance/p/126460/chance-eau-de-toilette-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "chanel-chance-eau-tendre",
+  "top": [
+   "grapefruit",
+   "quince"
+  ],
+  "heart": [
+   "jasmine",
+   "rose"
+  ],
+  "base": [
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/p/126310/chance-eau-tendre-eau-de-toilette-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "chanel-chance-eau-fraiche",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "citron",
+   "jasmine",
+   "teak wood"
+  ],
+  "source_url": "https://www.chanel.com/us/fragrance/p/136420/chance-eau-fraiche-eau-de-toilette-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "chanel-gabrielle",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "jasmine",
+   "ylang-ylang",
+   "orange blossom",
+   "grasse tuberose"
+  ],
+  "source_url": "https://www.chanel.com/us/fragrance/p/120525/gabrielle-chanel-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "chanel-bleu-de-chanel",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "citrus",
+   "ambery cedar",
+   "tonka bean",
+   "new caledonian sandalwood"
+  ],
+  "source_url": "https://www.chanel.com/us/fragrance/p/107360/bleu-de-chanel-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "search summary unclear on tiers"
+ },
+ {
+  "id": "chanel-bleu-de-chanel-parfum",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "bergamot",
+   "new caledonian sandalwood"
+  ],
+  "source_url": "https://www.chanel.com/ca-en/fragrance/p/107180/bleu-de-chanel-parfum-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": "CA site; weak summary"
+ },
+ {
+  "id": "chanel-allure-homme-sport",
+  "top": [
+   "italian mandarin"
+  ],
+  "heart": [
+   "cedar accord"
+  ],
+  "base": [
+   "tonka bean",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/p/123630/allure-homme-sport-eau-de-toilette-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "chanel-allure-homme-sport-eau-extreme",
+  "top": [
+   "italian mandarin"
+  ],
+  "heart": [
+   "moroccan cypress"
+  ],
+  "base": [
+   "white musk",
+   "venezuelan tonka bean"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/p/123560/allure-homme-sport-eau-extreme-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "chanel-allure",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "mandarin",
+   "may rose",
+   "vanilla"
+  ],
+  "source_url": "https://www.chanel.com/us/fragrance/p/112430/allure-eau-de-parfum-spray/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "chanel-egoiste-platinum",
+  "top": [
+   "lavender",
+   "rosemary",
+   "petitgrain"
+  ],
+  "heart": [
+   "clary sage",
+   "geranium"
+  ],
+  "base": [
+   "ambery wood"
+  ],
+  "key": [],
+  "source_url": "https://www.chanel.com/us/fragrance/men/c/7x1x2x33/platinum-egoiste/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "category page, not product page"
+ },
+ {
+  "id": "dior-sauvage",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "calabrian bergamot",
+   "sichuan pepper",
+   "ambroxan",
+   "elemi"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/sauvage-eau-de-toilette-Y0685240.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "dior-sauvage-eau-de-parfum",
+  "top": [
+   "calabrian bergamot"
+  ],
+  "heart": [
+   "sichuan pepper",
+   "lavender",
+   "star anise"
+  ],
+  "base": [
+   "vanilla",
+   "ambroxan"
+  ],
+  "key": [],
+  "source_url": "https://www.dior.com/en_us/beauty/products/sauvage-eau-de-parfum-Y0785220.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dior-sauvage-elixir",
+  "top": [
+   "grapefruit",
+   "cinnamon",
+   "nutmeg",
+   "cardamom"
+  ],
+  "heart": [
+   "lavender"
+  ],
+  "base": [
+   "licorice",
+   "haitian vetiver",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.dior.com/en_us/beauty/products/sauvage-elixir-Y0996460.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": ""
+ },
+ {
+  "id": "dior-j-adore",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "ylang-ylang",
+   "damascus rose",
+   "jasmine grandiflorum",
+   "jasmine sambac"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/j%E2%80%99adore-eau-de-parfum-Y0998031.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dior-j-adore-parfum-d-eau",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "neroli",
+   "jasmine sambac",
+   "chinese magnolia"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/jadore-parfum-deau-Y0996491.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dior-miss-dior",
+  "top": [
+   "lily-of-the-valley",
+   "peony",
+   "iris"
+  ],
+  "heart": [
+   "centifolia rose"
+  ],
+  "base": [
+   "musk",
+   "vanilla",
+   "benzoin",
+   "tonka bean",
+   "sandalwood"
+  ],
+  "key": [],
+  "source_url": "https://www.dior.com/en_us/beauty/products/miss-dior-eau-de-parfum-Y0000393.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dior-miss-dior-blooming-bouquet",
+  "top": [
+   "sweet pea",
+   "bergamot"
+  ],
+  "heart": [
+   "peony",
+   "damascus rose"
+  ],
+  "base": [
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.dior.com/en_us/beauty/products/miss-dior-blooming-bouquet-Y0996612.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "dior-hypnotic-poison",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "jasmine",
+   "bitter almond",
+   "vanilla"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/hypnotic-poison-eau-de-toilette-Y0063401.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "dior-dior-homme-intense",
+  "top": [
+   "tuscan iris"
+  ],
+  "heart": [
+   "ambrette"
+  ],
+  "base": [
+   "virginia cedar"
+  ],
+  "key": [],
+  "source_url": "https://www.dior.com/en_us/beauty/products/dior-homme-intense-Y0479201.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "dior-dior-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "atlas cedar",
+   "haitian vetiver",
+   "patchouli"
+  ],
+  "source_url": "https://www.dior.com/en_us/beauty/products/dior-homme-Y0996157.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ }
+]

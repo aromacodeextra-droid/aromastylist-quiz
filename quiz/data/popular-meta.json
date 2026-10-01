@@ -1,0 +1,162 @@
+{
+ "note": "popular = the 12 image tiles shown before the visitor types (one per note family: the family each one leads with, her / him / both mixed). images = the next 48 most-searched, shown with a bottle thumbnail in the search dropdown.",
+ "popular": [
+  "dior-sauvage",
+  "jo-malone-wood-sage-and-sea-salt",
+  "armani-acqua-di-gio",
+  "dior-miss-dior",
+  "dior-j-adore",
+  "tom-ford-lost-cherry",
+  "lancome-la-vie-est-belle",
+  "chanel-bleu-de-chanel",
+  "mfk-baccarat-rouge-540",
+  "tom-ford-ombre-leather",
+  "viktor-and-rolf-spicebomb",
+  "prada-paradoxe"
+ ],
+ "popular_family": {
+  "dior-sauvage": "citrus",
+  "jo-malone-wood-sage-and-sea-salt": "green",
+  "armani-acqua-di-gio": "aquatic",
+  "dior-miss-dior": "florals",
+  "dior-j-adore": "white_florals",
+  "tom-ford-lost-cherry": "fruity",
+  "lancome-la-vie-est-belle": "gourmand",
+  "chanel-bleu-de-chanel": "woods",
+  "mfk-baccarat-rouge-540": "amber",
+  "tom-ford-ombre-leather": "oud_leather",
+  "viktor-and-rolf-spicebomb": "spices",
+  "prada-paradoxe": "musk_powder"
+ },
+ "images": [
+  "ysl-black-opium",
+  "chanel-coco-mademoiselle",
+  "ysl-libre",
+  "le-labo-santal-33",
+  "tom-ford-tobacco-vanille",
+  "ch-good-girl",
+  "pdm-delina",
+  "creed-aventus",
+  "kilian-angels-share",
+  "dg-light-blue",
+  "ysl-y",
+  "chanel-n-5",
+  "glossier-glossier-you",
+  "byredo-gypsy-water",
+  "gucci-bloom",
+  "margiela-jazz-club",
+  "margiela-by-the-fireplace",
+  "tom-ford-oud-wood",
+  "tom-ford-black-orchid",
+  "jpg-le-male",
+  "jpg-le-male-elixir",
+  "rabanne-1-million",
+  "rabanne-invictus",
+  "armani-stronger-with-you-intensely",
+  "dior-sauvage-elixir",
+  "chanel-chance-eau-tendre",
+  "valentino-born-in-roma-donna",
+  "valentino-born-in-roma-uomo",
+  "versace-eros",
+  "mugler-alien",
+  "prada-luna-rossa-carbon",
+  "ysl-mon-paris",
+  "lancome-idole",
+  "viktor-and-rolf-flowerbomb",
+  "marc-jacobs-daisy",
+  "burberry-her",
+  "givenchy-l-interdit",
+  "kayali-vanilla-28",
+  "jo-malone-english-pear-and-freesia",
+  "creed-green-irish-tweed",
+  "pdm-layton",
+  "dior-dior-homme-intense",
+  "chanel-allure-homme-sport",
+  "armani-acqua-di-gio-profondo",
+  "tom-ford-fucking-fabulous",
+  "kilian-good-girl-gone-bad",
+  "chanel-chance",
+  "margiela-lazy-sunday-morning"
+ ],
+ "house_aliases": {
+  "Yves Saint Laurent": [
+   "ysl",
+   "saint laurent"
+  ],
+  "Maison Francis Kurkdjian": [
+   "mfk",
+   "francis kurkdjian"
+  ],
+  "Parfums de Marly": [
+   "pdm",
+   "marly"
+  ],
+  "Dolce&Gabbana": [
+   "dg",
+   "dolce gabbana"
+  ],
+  "Jean Paul Gaultier": [
+   "jpg",
+   "gaultier"
+  ],
+  "Carolina Herrera": [
+   "ch"
+  ],
+  "Tom Ford": [
+   "tf"
+  ],
+  "Emporio Armani": [
+   "giorgio"
+  ],
+  "Giorgio Armani": [
+   "emporio"
+  ],
+  "Rabanne": [
+   "paco rabanne"
+  ],
+  "Viktor&Rolf": [
+   "viktor rolf"
+  ],
+  "Kilian": [
+   "killian",
+   "by kilian"
+  ],
+  "Maison Margiela": [
+   "margiela",
+   "replica"
+  ],
+  "Jo Malone London": [
+   "jo malone"
+  ],
+  "Initio Parfums Prive": [
+   "initio"
+  ],
+  "Lanc\u00f4me": [
+   "lancome"
+  ],
+  "Herm\u00e8s": [
+   "hermes"
+  ],
+  "Chlo\u00e9": [
+   "chloe"
+  ],
+  "Est\u00e9e Lauder": [
+   "estee lauder"
+  ],
+  "Fr\u00e9d\u00e9ric Malle": [
+   "frederic malle",
+   "malle"
+  ],
+  "Bvlgari": [
+   "bulgari"
+  ],
+  "Abercrombie & Fitch": [
+   "abercrombie",
+   "a and f"
+  ],
+  "Victoria's Secret": [
+   "vs",
+   "victorias secret"
+  ]
+ }
+}

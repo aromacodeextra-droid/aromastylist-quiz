@@ -1,0 +1,458 @@
+[
+ {
+  "id": "maison-crivelli-hibiscus-mahajad",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "hibiscus",
+   "rose damascena absolute",
+   "vanilla absolute",
+   "leather",
+   "spearmint essential oil",
+   "blackcurrant",
+   "ambrette seeds absolute",
+   "cinnamon essential oil"
+  ],
+  "source_url": "https://maisoncrivelli.com/en/product/hibiscus-mahajad/",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "Extrait",
+  "comment": ""
+ },
+ {
+  "id": "maison-crivelli-oud-maracuja",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "passion fruit accord",
+   "saffron",
+   "rose absolute",
+   "oud accord",
+   "benzoin",
+   "cistus absolute",
+   "leather accord",
+   "patchouli oil",
+   "vanilla",
+   "akigalawood"
+  ],
+  "source_url": "https://maisoncrivelli.com/en-exl/products/oud-maracuja",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": ""
+ },
+ {
+  "id": "maison-crivelli-bois-datchai",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "blackcurrant bud absolute",
+   "black tea absolute",
+   "cinnamon essential oil",
+   "patchouli essential oil",
+   "cedar essential oil",
+   "leather accord"
+  ],
+  "source_url": "https://maisoncrivelli.com/en-int/products/bois-datchai",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "mancera-cedrat-boise",
+  "top": [
+   "citrus from sicily",
+   "blackcurrant",
+   "cold spices"
+  ],
+  "heart": [
+   "aquatic jasmine",
+   "leaves of patchouli"
+  ],
+  "base": [
+   "woody notes",
+   "leather",
+   "oakmoss",
+   "sensual vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.manceraparfums.com/en/men/16-cedrat-boise.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "mancera-red-tobacco",
+  "top": [
+   "saffron",
+   "cinnamon",
+   "incense",
+   "nutmeg",
+   "white peach",
+   "green apple",
+   "nepalese oud"
+  ],
+  "heart": [
+   "patchouli leaves",
+   "delicate jasmine"
+  ],
+  "base": [
+   "precious tobacco",
+   "amber",
+   "woody notes",
+   "vetiver",
+   "vanilla pods",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.manceraparfums.com/en/oriental/67-red-tobacco.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "mancera-instant-crush",
+  "top": [
+   "citrus fruits",
+   "saffron",
+   "ginger"
+  ],
+  "heart": [
+   "rose from morocco",
+   "egyptian jasmine",
+   "precious amber"
+  ],
+  "base": [
+   "sandalwood",
+   "oakmoss",
+   "vanilla",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.manceraparfums.com/en/oriental/82-instant-crush.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "montale-intense-cafe",
+  "top": [
+   "floral notes"
+  ],
+  "heart": [
+   "rose",
+   "coffee"
+  ],
+  "base": [
+   "amber",
+   "vanilla",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.montaleparfums.com/en/gourmand/176-intense-cafe.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "montale-arabians-tonka",
+  "top": [
+   "bergamot",
+   "saffron"
+  ],
+  "heart": [
+   "rose",
+   "oud"
+  ],
+  "base": [
+   "amber",
+   "oakmoss",
+   "tonka bean",
+   "leather",
+   "brown sugar",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://www.montaleparfums.com/en/oriental/282-arabians-tonka.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "matiere-premiere-radical-rose",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "rose centifolia absolute",
+   "immortelle absolute"
+  ],
+  "source_url": "https://matiere-premiere.com/products/radical-rose-extrait-de-parfum",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": "brand lists central and guest ingredient only"
+ },
+ {
+  "id": "matiere-premiere-french-flower",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "tuberose absolute and enfleurage",
+   "ginger",
+   "tea leaf essence",
+   "pear green accord"
+  ],
+  "source_url": "https://matiere-premiere.com/products/french-flower-3",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand lists key ingredients only"
+ },
+ {
+  "id": "matiere-premiere-crystal-saffron",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "saffron essence"
+  ],
+  "source_url": "https://matiere-premiere.com/products/crystal-saffron-2",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand lists central ingredient only"
+ },
+ {
+  "id": "etat-libre-d-orange-you-or-someone-like-you",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "https://www.etatlibredorange.com/products/you-or-someone-like-you",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand page has no note list, only description and INCI"
+ },
+ {
+  "id": "etat-libre-d-orange-fat-electrician",
+  "top": [
+   "black pepper",
+   "elemi resin"
+  ],
+  "heart": [
+   "cedarwood",
+   "vetiver"
+  ],
+  "base": [
+   "opoponax",
+   "myrrh",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.etatlibredorange.com/products/fat-electrician",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "etat-libre-d-orange-i-am-trash",
+  "top": [
+   "apple essence",
+   "bitter orange",
+   "green tangerine"
+  ],
+  "heart": [
+   "rose absolute",
+   "iso e super",
+   "gariguette strawberry"
+  ],
+  "base": [
+   "cedarwood atlas",
+   "sandalore",
+   "akigalawood"
+  ],
+  "key": [],
+  "source_url": "https://www.etatlibredorange.com/products/les-fleurs-du-dechet-i-am-trash",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ },
+ {
+  "id": "escentric-molecules-molecule-01",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "iso e super"
+  ],
+  "source_url": "https://www.escentric.com/products/molecule-01-100ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "escentric-molecules-escentric-01",
+  "top": [
+   "lime",
+   "pink pepper",
+   "aldehydes"
+  ],
+  "heart": [
+   "orris",
+   "hedione"
+  ],
+  "base": [
+   "iso e super",
+   "incense",
+   "mastic",
+   "muscone"
+  ],
+  "key": [],
+  "source_url": "https://www.escentric.com/products/escentric-01-100ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "escentric-molecules-molecule-02",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "ambroxan"
+  ],
+  "source_url": "https://www.escentric.com/products/molecule-02-100ml",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "profumum-roma-acqua-di-sale",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "no notes found on brand site / allowed sources"
+ },
+ {
+  "id": "profumum-roma-ambra-aurea",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "no notes found on brand site / allowed sources"
+ },
+ {
+  "id": "profumum-roma-dulcis-in-fundo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "no notes found on brand site / allowed sources"
+ },
+ {
+  "id": "thameen-carved-oud",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "Extrait",
+  "comment": "no notes found on brand site / allowed sources"
+ },
+ {
+  "id": "thameen-regent-leather",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "Extrait",
+  "comment": "no notes found on brand site / allowed sources"
+ },
+ {
+  "id": "attar-collection-hayati",
+  "top": [],
+  "heart": [],
+  "base": [
+   "vanilla ice-cream",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://attarcollection.com/product/hayati/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand lists base only; page is EDP"
+ },
+ {
+  "id": "attar-collection-musk-kashmir",
+  "top": [],
+  "heart": [],
+  "base": [
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://attarcollection.com/product/musk-kashmir-2/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "brand lists base only; page is EDP"
+ },
+ {
+  "id": "attar-collection-azora",
+  "top": [
+   "bergamot",
+   "lychee",
+   "orange"
+  ],
+  "heart": [
+   "flower mix",
+   "peach",
+   "jasmine"
+  ],
+  "base": [
+   "wood",
+   "white musk"
+  ],
+  "key": [],
+  "source_url": "https://attarcollection.com/product/azora/",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": ""
+ }
+]

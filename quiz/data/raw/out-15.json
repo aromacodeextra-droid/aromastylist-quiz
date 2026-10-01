@@ -1,0 +1,326 @@
+[
+ {
+  "id": "azzaro-chrome",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "montblanc-legend",
+  "top": [
+   "lavender",
+   "citrus",
+   "bergamot"
+  ],
+  "heart": [
+   "white cedar",
+   "rose",
+   "fresh jasmin"
+  ],
+  "base": [
+   "evernyl (oak accord)",
+   "sandalwood",
+   "tonka beans"
+  ],
+  "key": [],
+  "source_url": "https://www.montblanc.com/en-us/legend-eau-de-toilette-100-ml-MB107460.html",
+  "source_type": "brand",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": ""
+ },
+ {
+  "id": "montblanc-explorer",
+  "top": [
+   "bergamot",
+   "pomarose",
+   "sage"
+  ],
+  "heart": [
+   "vetiver",
+   "leather",
+   "sandalwood"
+  ],
+  "base": [
+   "patchouli",
+   "ambrofix",
+   "akigalawood"
+  ],
+  "key": [],
+  "source_url": "https://www.montblanc.com/en-us/fragrances/collection/explorer",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "notes from brand collection page FAQ for classic Explorer EDP; product page itself lacks notes text"
+ },
+ {
+  "id": "issey-miyake-l-eau-d-issey",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "issey-miyake-l-eau-d-issey-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "kenzo-flower-by-kenzo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "estee-lauder-beautiful",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "estee-lauder-pleasures",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "estee-lauder-white-linen",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "clinique-happy",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "clinique-aromatics-elixir",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "Parfum",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "bvlgari-man-in-black",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "bvlgari-aqva-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "cartier-declaration",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "cartier-la-panthere",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "tiffany-and-co-tiffany-and-co",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "chloe-chloe",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "chloe-nomade",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "narciso-rodriguez-for-her",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "narciso-rodriguez-narciso",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "narciso-rodriguez-bleu-noir",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "jimmy-choo-jimmy-choo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "abercrombie-and-fitch-fierce",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "Cologne",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "victoria-s-secret-bombshell",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDP",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ },
+ {
+  "id": "philosophy-amazing-grace",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "search",
+  "concentration": "EDT",
+  "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch"
+ }
+]
