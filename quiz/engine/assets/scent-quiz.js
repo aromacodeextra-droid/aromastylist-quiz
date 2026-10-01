@@ -247,7 +247,6 @@
   function slotPresence(slot, state) {
     if (slot.presence) return slot.presence;
     if (slot.id === 'work' && (state.taboos || []).indexOf('office') >= 0) return 'close';
-    if ((state.taboos || []).indexOf('strong') >= 0 && state.presence === 'fills') return 'noticed';
     return state.presence || 'noticed';
   }
 
@@ -257,7 +256,11 @@
     var ctx = tasteContext(model, state);
     var rules = tabooRules(model, state);
     var feels = (state.feel || []).map(function (id) { return findAnswer(Q(cfg, 'feel'), id); }).filter(Boolean);
-    var climate = findAnswer(Q(cfg, 'climate'), state.climate);
+    // seasons ("climate"): one or more answers; per season the highest weight counts
+    var cq = Q(cfg, 'climate'), chosen = (Array.isArray(state.climate) ? state.climate : state.climate ? [state.climate] : []).map(function (id) { return findAnswer(cq, id); }).filter(Boolean);
+    var climate = chosen.length ? { seasons: {}, why: chosen[0].why } : null;
+    chosen.forEach(function (a) { Object.keys(a.seasons || {}).forEach(function (k) { climate.seasons[k] = Math.max(climate.seasons[k] || 0, a.seasons[k]); }); });
+    var pres = findAnswer(Q(cfg, 'presence'), state.presence);
     var style = findAnswer(Q(cfg, 'style'), state.style);
     var matters = findAnswer(Q(cfg, 'matters'), state.matters);
     var styleFams = style && style.families ? style.families.map(function (f) { return famIndex(model, f); }) : [];
@@ -266,7 +269,8 @@
     if (Array.isArray(state.ref)) state.ref.forEach(function (v) { var pf = perfumeOf(model, v); if (pf && pf.handle) avoid[pf.handle] = 1; });
     if (matters && matters.avoid_popular && model.closestToPopular) model.closestToPopular.forEach(function (h) { avoid[h] = 1; });
     var pool = model.products.filter(function (p) {
-      return p.available && !breaksTaboo(p, rules) && genderOk(model, p, state['for']) && !avoid[p.handle];
+      return p.available && !breaksTaboo(p, rules) && genderOk(model, p, state['for']) && !avoid[p.handle] &&
+        !(pres && pres.exclude_presence && carries(p, 'presence', pres.exclude_presence) === 1);
     });
     return { W: W, ctx: ctx, rules: rules, feels: feels, climate: climate, style: style, matters: matters, styleFams: styleFams, pool: pool, state: state };
   }
@@ -618,6 +622,14 @@
   if (typeof document === 'undefined') return;
 
   // ================================================================== UI
+  // temporary line icons (stroke = currentColor) until the owner's own icon files are uploaded
+  var ICONS = {
+    winter: '<path d="M24 6v36M8.4 15l31.2 18M8.4 33l31.2-18M19 9l5 4 5-4M19 39l5-4 5 4"/>',
+    spring: '<path d="M24 42V22M24 22c-9 0-14-6-14-14 9 0 14 6 14 14zM24 30c7 0 11-5 11-11-7 0-11 5-11 11z"/>',
+    summer: '<circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2"/>',
+    fall: '<path d="M24 44V24M24 6l4 8 8-3-3 9 8 3-9 5 2 7-10-4-10 4 2-7-9-5 8-3-3-9 8 3z"/>',
+    'all-year': '<path d="M38 18a15 15 0 0 0-27-4M10 30a15 15 0 0 0 27 4M11 6v8h8M37 42v-8h-8"/>'
+  };
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (ch) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch];
@@ -666,6 +678,7 @@
         self.bind();
         self.root.hidden = false;
         var code = new URLSearchParams(global.location.search).get(PARAM);
+        if (code) code = code.replace(/ /g, '+');
         var shared = code && parseCode(self.model, code);
         if (shared) { self.shared = true; self.state = shared; self.finish(false); } else self.show(-1);
       })
@@ -824,6 +837,9 @@
     this.started = true;
   };
   Quiz.prototype.img = function (a, eager) {
+    if (a.icon_file) return '<img class="sq-icon" src="' + esc(this.assetBase + a.icon_file) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
+    if (a.icon && ICONS[a.icon]) return '<svg class="sq-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">' + ICONS[a.icon] + '</svg>';
+    if (a.dots) return '<span class="sq-dots" aria-hidden="true">' + [1, 2, 3].map(function (k) { return '<i class="sq-dot' + (k <= a.dots ? ' is-on' : '') + '" style="--d:' + (6 + k * 7) + 'px"></i>'; }).join('') + '</span>';
     var alt = esc(a.img && a.img.alt ? a.img.alt : ''), s600, s900;
     if (a.img) { s600 = a.img.s; s900 = a.img.l || a.img.s; } else { s600 = cdnSized(a.image, 600); s900 = cdnSized(a.image, 900); }
     if (!s600) return '<span class="sq-tile__ph" aria-hidden="true"></span>';

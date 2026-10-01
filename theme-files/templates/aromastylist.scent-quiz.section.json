@@ -226,7 +226,7 @@
         "type": "question",
         "settings": {
           "question_id": "presence",
-          "title": "How present should it be?"
+          "title": "How far should it reach?"
         }
       },
       "a_presence_close": {
@@ -234,7 +234,7 @@
         "settings": {
           "question_id": "presence",
           "answer_id": "close",
-          "label": "Just for me"
+          "label": "Close to skin"
         }
       },
       "a_presence_noticed": {
@@ -242,7 +242,7 @@
         "settings": {
           "question_id": "presence",
           "answer_id": "noticed",
-          "label": "Pleasantly noticed"
+          "label": "Moderate"
         }
       },
       "a_presence_fills": {
@@ -250,7 +250,7 @@
         "settings": {
           "question_id": "presence",
           "answer_id": "fills",
-          "label": "Remembered in the room"
+          "label": "Strong"
         }
       },
       "q_matters": {
@@ -288,39 +288,47 @@
         "type": "question",
         "settings": {
           "question_id": "climate",
-          "title": "Your climate?"
+          "title": "When will you wear it?"
         }
       },
-      "a_climate_hot_humid": {
+      "a_climate_winter": {
         "type": "answer",
         "settings": {
           "question_id": "climate",
-          "answer_id": "hot-humid",
-          "label": "Hot & humid"
+          "answer_id": "winter",
+          "label": "Winter"
         }
       },
-      "a_climate_dry_heat": {
+      "a_climate_spring": {
         "type": "answer",
         "settings": {
           "question_id": "climate",
-          "answer_id": "dry-heat",
-          "label": "Dry heat"
+          "answer_id": "spring",
+          "label": "Spring"
         }
       },
-      "a_climate_four_seasons": {
+      "a_climate_summer": {
         "type": "answer",
         "settings": {
           "question_id": "climate",
-          "answer_id": "four-seasons",
-          "label": "Four seasons"
+          "answer_id": "summer",
+          "label": "Summer"
         }
       },
-      "a_climate_mild_coast": {
+      "a_climate_fall": {
         "type": "answer",
         "settings": {
           "question_id": "climate",
-          "answer_id": "mild-coast",
-          "label": "Mild coast"
+          "answer_id": "fall",
+          "label": "Fall"
+        }
+      },
+      "a_climate_all_year": {
+        "type": "answer",
+        "settings": {
+          "question_id": "climate",
+          "answer_id": "all-year",
+          "label": "All year"
         }
       },
       "q_style": {
@@ -417,10 +425,11 @@
       "a_matters_trending",
       "a_matters_unique",
       "q_climate",
-      "a_climate_hot_humid",
-      "a_climate_dry_heat",
-      "a_climate_four_seasons",
-      "a_climate_mild_coast",
+      "a_climate_winter",
+      "a_climate_spring",
+      "a_climate_summer",
+      "a_climate_fall",
+      "a_climate_all_year",
       "q_style",
       "a_style_classic",
       "a_style_dramatic",

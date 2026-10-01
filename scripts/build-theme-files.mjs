@@ -137,6 +137,14 @@ for (const q of config.questions) for (const a of q.answers || []) {
   const t = typical(fams, usedImg);
   if (t) { a.image = t.p.image.replace(/\?v=\d+$/, ''); usedImg.add(t.p.handle); }
 }
+// owner icons: theme-files/assets/sq-icon-<screen>-<answer>.(svg|png|webp) replace the built-in icon / image of that answer
+const ICON_SCREEN = { climate: 'season', taboos: 'avoid' };
+for (const q of config.questions) for (const a of q.answers || []) {
+  for (const scr of [ICON_SCREEN[q.id], q.id].filter(Boolean)) for (const ext of ['svg', 'png', 'webp']) {
+    const f = `sq-icon-${scr}-${a.id}.${ext}`;
+    if (!a.icon_file && fs.existsSync(`${OUT}/assets/${f}`)) a.icon_file = f;
+  }
+}
 // answer images on the store CDN are written relative to it ("@files/x.png") to keep the asset under 60 KB
 const CDN = base.replace(/(files|collections)\/$/, '');
 for (const q of config.questions) for (const a of q.answers || []) if (a.image && CDN && a.image.startsWith(CDN)) a.image = '@' + a.image.slice(CDN.length);

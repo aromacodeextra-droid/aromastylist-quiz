@@ -1,4 +1,4 @@
-combinations: 23612 runs (A random 5000, 5000 distinct, B 36 popular tiles x taboos x climates + the reported Him case 18612), 58115 slots, 36.9 s
+combinations: 28220 runs (A random 5000, 5000 distinct, B 36 popular tiles x taboos x seasons + the reported Him case 23220), 69902 slots, 36.1 s
 failures: none
   slot not filled                        0
   out of stock                           0
@@ -6,7 +6,7 @@ failures: none
   set in a slot                          0
   one house                              0
   tabooed note                           0
-  strong scent                           0
+  close to skin got a strong perfume     0
   gender rule                            0
   named perfume recommended              0
   no why-line                            0
@@ -17,6 +17,6 @@ failures: none
   set card not within 10%                0
   share link does not parse              0
   share link gives another result        0
-perfumes used: 280 in the random part A, 289 overall, of 299 in stock; most used: clive-christian-e-cashmere-musk 5077, creed-himalaya 2144, creed-royal-oud 1516, rosendo-mateu-no-1-bergamot-tea-leaf-sandalwood 1292, nishane-wulong-cha 1254, rosendo-mateu-no-5 1223, acqua-di-parma-colonia 1179, memo-paris-kedu 1163
-personas: skin-secret 5587, sunlit-signal 3544, boardroom-pull 3442, first-light 2657, quiet-signature 2299, cashmere-evening 1247, sharp-edit 930, bright-entrance 785, soft-landing 720, slow-burn 561, sweet-confidant 402, after-hours-magnet 371, golden-hour-guest 324, clean-stride 282, still-point 154, temple-smoke 148, open-air 137, grand-entrance 22
-ready-made set card shown in 1315 of 23612 (her 381, him 465, both 469); set genders: platinum-whisper Feminine, modern-icons Feminine, midnight-bloom Feminine, black-ties Masculine, gilded-gatsby-glam Feminine, the-modern-muse Feminine, the-executive-edit Masculine, modern-legends Masculine, chromatic-couture Feminine, after-hours Masculine
+perfumes used: 285 in the random part A, 292 overall, of 299 in stock; most used: clive-christian-e-cashmere-musk 6293, creed-himalaya 2466, rosendo-mateu-no-5 1870, creed-royal-oud 1691, nishane-ani 1559, maison-crivelli-hibiscus-mahajad-extrait 1420, acqua-di-parma-colonia 1338, guerlain-aqua-allegoria-forte-mandarine-basilic 1279
+personas: skin-secret 7329, boardroom-pull 4211, sunlit-signal 3858, quiet-signature 3022, first-light 2752, cashmere-evening 1531, sharp-edit 1023, bright-entrance 894, soft-landing 815, slow-burn 640, sweet-confidant 526, after-hours-magnet 454, golden-hour-guest 349, clean-stride 294, temple-smoke 212, open-air 149, still-point 122, grand-entrance 39
+ready-made set card shown in 1568 of 28220 (her 535, him 495, both 538); set genders: platinum-whisper Feminine, modern-icons Feminine, midnight-bloom Feminine, black-ties Masculine, gilded-gatsby-glam Feminine, the-modern-muse Feminine, the-executive-edit Masculine, modern-legends Masculine, chromatic-couture Feminine, after-hours Masculine

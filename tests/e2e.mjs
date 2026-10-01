@@ -119,14 +119,19 @@ for (const vp of VIEWPORTS) {
     await page.waitForSelector('[data-act=answer][data-a=full-wardrobe][aria-pressed=true]');
     await page.click('[data-act=answer][data-a=full-wardrobe]');
     await page.click('[data-act=next][data-q=feel]');
-    const strongAbove = await page.evaluate(() => { const sw = document.querySelector('.sq-switches [data-a=strong]'), t = document.querySelector('.sq-tiles'); return !!sw && !!(sw.compareDocumentPosition(t) & Node.DOCUMENT_POSITION_FOLLOWING); });
-    check(`${tag}: "Strong scents bother me" sits above the presence answers`, strongAbove);
+    const reach = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-tile__label')].map((e) => e.textContent),
+      dots: [...document.querySelectorAll('.sq-tile .sq-dots')].map((d) => d.querySelectorAll('.sq-dot.is-on').length), strong: !!document.querySelector('[data-a=strong]') }));
+    check(`${tag}: "How far should it reach?" = 3 growing-dot answers, no "Strong scents bother me" switch`, reach.title === 'How far should it reach?' && reach.labels.join('|') === 'Close to skin|Moderate|Strong' && reach.dots.join('') === '123' && !reach.strong, JSON.stringify(reach));
     await shot(page, '08-presence');
     await page.click('[data-act=answer][data-a=noticed]');
     await shot(page, '09-matters');
     await page.click('[data-act=answer][data-a=easy]');
     await shot(page, '10-climate');
-    await page.click('[data-act=answer][data-a=four-seasons]');
+    const seasons = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-tile__label')].map((e) => e.textContent), icons: document.querySelectorAll('.sq-tile svg.sq-icon, .sq-tile img.sq-icon').length }));
+    check(`${tag}: "When will you wear it?" = 5 season icons, several can be chosen`, seasons.title === 'When will you wear it?' && seasons.labels.join('|') === 'Winter|Spring|Summer|Fall|All year' && seasons.icons === 5, JSON.stringify(seasons));
+    await page.click('[data-act=toggle][data-a=fall]');
+    await page.click('[data-act=toggle][data-a=winter]');
+    await page.click('[data-act=next][data-q=climate]');
     await shot(page, '11-style');
     await page.click('[data-act=answer][data-a=classic]');
     await page.waitForSelector('.sq-result');
@@ -141,7 +146,7 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: "Also fits this slot" collapsed on each card`, alts === st.items.length && !(await page.isVisible('.sq-alt p')));
     check(`${tag}: no email field anywhere`, (await page.$$('input[type=email], input[name*=mail]')).length === 0);
     const url = decodeURIComponent(page.url());
-    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~ysl-black-opium\._\.too-sweet\+coconut\+office\.2102100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.four-seasons\.classic/.test(url), url.replace(BASE, ''));
+    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~ysl-black-opium\._\.too-sweet\+coconut\+office\.2102100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.fall\+winter\.classic/.test(url), url.replace(BASE, ''));
 
     await page.click('[data-act=share-open]');
     await page.waitForFunction(() => document.querySelector('[data-sq-preview]')?.src?.startsWith('blob:'));
@@ -199,7 +204,8 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=next][data-q=feel]');
     await page.click('[data-act=answer][data-a=close]');
     await page.click('[data-act=answer][data-a=unique]');
-    await page.click('[data-act=answer][data-a=hot-humid]');
+    await page.click('[data-act=toggle][data-a=summer]');
+    await page.click('[data-act=next][data-q=climate]');
     await page.click('[data-act=answer][data-a=sporty]');
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
@@ -217,7 +223,7 @@ for (const vp of VIEWPORTS) {
     const tag = `${vp.name}-C`;
     const ctx = await newContext({ viewport: { width: vp.width, height: vp.height }, permissions: ['clipboard-read', 'clipboard-write'] });
     const page = await ctx.newPage();
-    const code = 'both.r~le-labo-santal-33._.heavy-oud-smoke+strong.1201011.full-wardrobe.calm.close.trending.mild-coast.minimal';
+    const code = 'both.r~le-labo-santal-33._.heavy-oud-smoke.1201011.full-wardrobe.calm.close.trending.spring.minimal';
     await page.goto(`${PAGE}?preview_theme_id=123456789&sq=${encodeURIComponent(code)}`);
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
@@ -285,13 +291,13 @@ for (const vp of VIEWPORTS) {
 {
   const SET_GENDER = Object.fromEntries(JSON.parse(fs.readFileSync('theme-files/assets/scent-quiz-aromastylist.json', 'utf8')).catalog.set_gender);
   const CASES = [
-    ['her', 'her.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Feminine', 'Unisex'], true],
-    ['him', 'him.r~viktor-and-rolf-spicebomb._.none.1201000.one-bottle.attractive.noticed.easy.four-seasons.classic', ['Masculine', 'Unisex'], true],
-    ['both', 'both.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Feminine', 'Masculine', 'Unisex'], false], // Unisex answer: unisex perfumes rank first, so a gendered set may fall outside the 10% window,
+    ['her', 'her.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.fall+winter.romantic', ['Feminine', 'Unisex'], true],
+    ['him', 'him.r~viktor-and-rolf-spicebomb._.none.1201000.one-bottle.attractive.noticed.easy.fall+winter.classic', ['Masculine', 'Unisex'], true],
+    ['both', 'both.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.fall+winter.romantic', ['Feminine', 'Masculine', 'Unisex'], false], // Unisex answer: unisex perfumes rank first, so a gendered set may fall outside the 10% window,
     // the same answers as "her" above, as him: The Modern Muse (feminine) must not be offered
-    ['him (her answers)', 'him.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Masculine', 'Unisex'], false],
+    ['him (her answers)', 'him.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.fall+winter.romantic', ['Masculine', 'Unisex'], false],
     // the run reported from the live preview
-    ['him (reported run)', 'him.none.woods+amber.none.1201000.full-wardrobe.energised.noticed.unique.hot-humid.sporty', ['Masculine', 'Unisex'], false],
+    ['him (reported run)', 'him.none.woods+amber.none.1201000.full-wardrobe.energised.noticed.unique.summer.sporty', ['Masculine', 'Unisex'], false],
   ];
   const ctx = await newContext({ viewport: { width: 390, height: 844 } });
   const page = await ctx.newPage();
@@ -310,7 +316,7 @@ for (const vp of VIEWPORTS) {
 {
   const ctx = await newContext({ viewport: { width: 390, height: 844 }, permissions: ['clipboard-read', 'clipboard-write'] });
   const page = await ctx.newPage();
-  await page.goto(`${PAGE}?sq=${encodeURIComponent('her.r~ysl-black-opium._.none.1101000.full-wardrobe.attractive.noticed.easy.four-seasons.romantic')}`);
+  await page.goto(`${PAGE}?sq=${encodeURIComponent('her.r~ysl-black-opium._.none.1101000.full-wardrobe.attractive.noticed.easy.fall+winter.romantic')}`);
   await page.waitForSelector('.sq-result');
   await page.click('[data-act=share-open]');
   await page.click('[data-act=copy]');

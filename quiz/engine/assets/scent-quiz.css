@@ -320,3 +320,11 @@
 .sq-switch__box { flex: 0 0 20px; width: 20px; height: 20px; border: 1px solid color-mix(in srgb, var(--sq-fg) 45%, transparent); border-radius: 3px; background: #fff; }
 :is(#root, body) .sq-section .sq-switch[aria-pressed="true"] .sq-switch__box { background: var(--sq-accent); border-color: var(--sq-accent); box-shadow: inset 0 0 0 3px #fff; }
 :is(#root, body) .sq-section .sq-switch:focus-visible { outline: 2px solid var(--sq-accent); outline-offset: 2px; }
+
+/* v3.7: icon answers (owner icon files or built-in line icons) and the growing-dots scale for "how far" */
+.sq-tile__img:has(.sq-icon), .sq-tile__img:has(.sq-dots) { display: flex; align-items: center; justify-content: center; background: #fff; }
+.sq-tile__img .sq-icon { width: 46%; height: 46%; object-fit: contain; fill: none; stroke: var(--sq-h); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.sq-tile__img img.sq-icon { width: 70%; height: 70%; }
+.sq-dots { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.sq-dot { display: block; width: var(--d); height: var(--d); border-radius: 50%; border: 1.5px solid var(--sq-h); opacity: .35; }
+.sq-dot.is-on { background: var(--sq-h); opacity: 1; }

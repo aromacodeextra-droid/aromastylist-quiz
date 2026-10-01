@@ -1,5 +1,19 @@
 # Changelog
 
+## quiz-v3.7 (2026-10-01) — seasons and sillage (owner's decision, Fragrantica style)
+
+- Screen "Your climate?" -> **"When will you wear it?"**: Winter, Spring, Summer, Fall (pick any number) or "All year"
+  (exclusive). Each answer has a line icon. Seasons chosen together are merged (the strongest weight per season wins).
+- Screen "How present should it be?" -> **"How far should it reach?"**: Close to skin · Moderate · Strong, shown as
+  1 / 2 / 3 growing dots. "Close to skin" never puts a strong (room-filling) perfume in the wardrobe.
+- The switch "Strong scents bother me" is gone (Close to skin replaces it). Old share links that carry it still open.
+- Owner icons: a file `assets/sq-icon-<screen>-<answer>.svg|png|webp` (e.g. `sq-icon-season-winter.svg`) found at
+  build time replaces the built-in icon of that answer.
+- A typed share link with a plain `+` (read by the browser as a space) now opens too.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
+  `templates/aromastylist.scent-quiz.section.json` (climate/presence blocks, 49 blocks). Combinations 28,220 / 0 failures,
+  e2e 82 / 82.
+
 ## quiz-v3.6 (2026-10-01) — UX step 3: screen 3 "What would you rather avoid?"
 
 - Title "What would you rather avoid?", one hint "Select all that apply.". One grid of 8 answers with "Nothing in
@@ -61,6 +75,7 @@ not clear what to do.
   keyboard on phones). The "Inside <name>" card slides into view instead. A second tap on a chosen tile removes it.
 - House names break only after "&" (Dolce& / Gabbana), never inside a word.
 - Light Blue tile: new brand-site photo (front view with cap; the old one showed the cap off and came out pale).
+- A typed share link with a plain `+` (read by the browser as a space) now opens too.
 - Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
   `assets/sq-ref-dg-light-blue.webp`. Template unchanged.
 - Tests: e2e 74 / 74 (new: screen order and wording, tile tap keeps the place and opens no keyboard, second tap removes);

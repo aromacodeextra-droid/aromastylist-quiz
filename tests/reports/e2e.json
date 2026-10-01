@@ -25,8 +25,14 @@
       "ok": true
     },
     {
-      "name": "390-A: \"Strong scents bother me\" sits above the presence answers",
-      "ok": true
+      "name": "390-A: \"How far should it reach?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
+      "ok": true,
+      "detail": "{\"title\":\"How far should it reach?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
+    },
+    {
+      "name": "390-A: \"When will you wear it?\" = 5 season icons, several can be chosen",
+      "ok": true,
+      "detail": "{\"title\":\"When will you wear it?\",\"labels\":[\"Winter\",\"Spring\",\"Summer\",\"Fall\",\"All year\"],\"icons\":5}"
     },
     {
       "name": "390-A: one card per slot, biggest first",
@@ -63,7 +69,7 @@
     {
       "name": "390-A: URL carries the answers",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.2102100.full-wardrobe.confident+attractive.noticed.easy.four-seasons.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.2102100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic"
     },
     {
       "name": "390-A: share image is 1080x1920",
@@ -73,7 +79,7 @@
     {
       "name": "390-A: copied link reopens the same result",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.2102100.full-wardrobe.confident%2Battractive.noticed.easy.four-seasons.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.2102100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic"
     },
     {
       "name": "390-A: \"Add sample\" adds one item and updates the header count",
@@ -101,7 +107,7 @@
     {
       "name": "390-B: taboo screen left empty still gives a valid link",
       "ok": true,
-      "detail": "him.none.woods+citrus+spices.-.0201010.day-night.free.close.unique.hot-humid.sporty"
+      "detail": "him.none.woods+citrus+spices.-.0201010.day-night.free.close.unique.summer.sporty"
     },
     {
       "name": "390-B: no page errors",
@@ -116,7 +122,7 @@
     {
       "name": "390-C: copied link keeps preview_theme_id",
       "ok": true,
-      "detail": "/pages/find-your-perfume?preview_theme_id=123456789&sq=both.r%7Ele-labo-santal-33._.heavy-oud-smoke%2Bstrong.1201011.full-wardrobe.calm.close.trending.mild-coast.minimal"
+      "detail": "/pages/find-your-perfume?preview_theme_id=123456789&sq=both.r%7Ele-labo-santal-33._.heavy-oud-smoke.1201011.full-wardrobe.calm.close.trending.spring.minimal"
     },
     {
       "name": "390-C: page URL still has preview_theme_id after the result",
@@ -147,8 +153,14 @@
       "ok": true
     },
     {
-      "name": "1440-A: \"Strong scents bother me\" sits above the presence answers",
-      "ok": true
+      "name": "1440-A: \"How far should it reach?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
+      "ok": true,
+      "detail": "{\"title\":\"How far should it reach?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
+    },
+    {
+      "name": "1440-A: \"When will you wear it?\" = 5 season icons, several can be chosen",
+      "ok": true,
+      "detail": "{\"title\":\"When will you wear it?\",\"labels\":[\"Winter\",\"Spring\",\"Summer\",\"Fall\",\"All year\"],\"icons\":5}"
     },
     {
       "name": "1440-A: one card per slot, biggest first",
@@ -185,7 +197,7 @@
     {
       "name": "1440-A: URL carries the answers",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.2102100.full-wardrobe.confident+attractive.noticed.easy.four-seasons.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.2102100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic"
     },
     {
       "name": "1440-A: share image is 1080x1920",
@@ -195,7 +207,7 @@
     {
       "name": "1440-A: copied link reopens the same result",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.2102100.full-wardrobe.confident%2Battractive.noticed.easy.four-seasons.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.2102100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic"
     },
     {
       "name": "1440-A: \"Add sample\" adds one item and updates the header count",
@@ -223,7 +235,7 @@
     {
       "name": "1440-B: taboo screen left empty still gives a valid link",
       "ok": true,
-      "detail": "him.none.woods+citrus+spices.-.0201010.day-night.free.close.unique.hot-humid.sporty"
+      "detail": "him.none.woods+citrus+spices.-.0201010.day-night.free.close.unique.summer.sporty"
     },
     {
       "name": "1440-B: no page errors",
@@ -238,7 +250,7 @@
     {
       "name": "1440-C: copied link keeps preview_theme_id",
       "ok": true,
-      "detail": "/pages/find-your-perfume?preview_theme_id=123456789&sq=both.r%7Ele-labo-santal-33._.heavy-oud-smoke%2Bstrong.1201011.full-wardrobe.calm.close.trending.mild-coast.minimal"
+      "detail": "/pages/find-your-perfume?preview_theme_id=123456789&sq=both.r%7Ele-labo-santal-33._.heavy-oud-smoke.1201011.full-wardrobe.calm.close.trending.spring.minimal"
     },
     {
       "name": "1440-C: page URL still has preview_theme_id after the result",
@@ -365,10 +377,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 21.3 KB, assets/scent-quiz.js 46.4 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 21.8 KB, assets/scent-quiz.js 47.7 KB"
     },
     {
-      "name": "JS + CSS + JSON 174.3 KB <= 200 KB",
+      "name": "JS + CSS + JSON 175.8 KB <= 200 KB",
       "ok": true
     },
     {
@@ -726,11 +738,11 @@
     "files": {
       "sections/scent-quiz-personas.liquid": 2659,
       "sections/scent-quiz.liquid": 5268,
-      "templates/aromastylist.scent-quiz.section.json": 16354,
+      "templates/aromastylist.scent-quiz.section.json": 16494,
       "assets/scent-quiz-aromastylist-taste.json": 49706,
-      "assets/scent-quiz-aromastylist.json": 59487,
-      "assets/scent-quiz.css": 21774,
-      "assets/scent-quiz.js": 47533,
+      "assets/scent-quiz-aromastylist.json": 59093,
+      "assets/scent-quiz.css": 22333,
+      "assets/scent-quiz.js": 48884,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -791,7 +803,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 178500,
+    "code_total": 180016,
     "images": 59,
     "images_total": 891710
   }

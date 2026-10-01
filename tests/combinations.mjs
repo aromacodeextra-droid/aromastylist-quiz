@@ -1,10 +1,10 @@
 // Run the engine's own wardrobe builder (theme-files/assets/scent-quiz.js) over the built config + taste files.
 //  A. 5,000 random answer sets (fixed seed): 0-2 named perfumes (popular list + our shelf) or "I don't have one" + note families,
 //     random taboos / toggles, week, how, feel, presence, matters, climate, style
-//  B. every one of the 36 popular tiles (12 for her, 12 for him, 12 for both) x every combination of the 7 taboos (128) x the 4 climates, other answers random
+//  B. every one of the 36 popular tiles (12 for her, 12 for him, 12 for both) x every combination of the 7 taboos (128) x the 5 season answers, other answers random
 // Checks, recomputed from the raw notes in catalog.json (not from the engine's encoding):
 //  every requested slot filled, in stock, no duplicates (picks and "also fits"), no sets, >= 2 houses when >= 2 slots,
-//  zero tabooed notes, "strong scents bother me" -> nothing that fills the room, gender rule, never the perfume they named,
+//  zero tabooed notes, "Close to skin" -> nothing that fills the room, gender rule, never the perfume they named,
 //  no two cards share a why-line, no why-line / shares-line names a note the perfume lacks, no persona line names a note
 //  none of the picks have, the share link reopens the same result.
 // Usage: node tests/combinations.mjs
@@ -58,14 +58,14 @@ function randomState(fixed = {}) {
   if (rnd() < 0.2) { st.ref = 'none'; st.notes = some(ids('notes'), 3, 1); }
   else st.ref = some(refPool, 2, 1);
   const tb = rnd() < 0.25 ? ['none'] : some(NOTE_TABOOS, 4);
-  if (tb[0] !== 'none') { if (rnd() < 0.3) tb.push('strong'); if (rnd() < 0.3) tb.push('office'); }
+  if (tb[0] !== 'none') { if (rnd() < 0.3) tb.push('office'); }
   st.taboos = tb;
   st.week = Q('week').rows.map(() => Math.floor(rnd() * 3));
   st.how = one(ids('how'));
   st.feel = some(ids('feel'), 2, 1);
   st.presence = one(ids('presence'));
   st.matters = one(ids('matters'));
-  st.climate = one(ids('climate'));
+  st.climate = rnd() < 0.2 ? ['all-year'] : some(ids('climate').filter((x) => x !== 'all-year'), 4, 1);
   st.style = one(ids('style'));
   return Object.assign(st, fixed);
 }
@@ -115,7 +115,7 @@ function run(st) {
     if (p.isSet) fail('set in a slot', h);
     const hit = tabooHit(h, rules);
     if (hit) fail('tabooed note', `${h} breaks ${hit}`);
-    if ((st.taboos || []).includes('strong') && p.dims.presence.some((d) => d.v === 'fills' && !d.low)) fail('strong scent', h);
+    if (st.presence === 'close' && p.dims.presence.some((d) => d.v === 'fills' && !d.low)) fail('close to skin got a strong perfume', h);
     if (!E.genderOk(model, p, st.for)) fail('gender rule', h);
     if (named.includes(h)) fail('named perfume recommended', h);
     if (!why[i]) fail('no why-line', h);
@@ -153,18 +153,18 @@ const usedA = Object.keys(stats.picks).length;
 const taboSets = [];
 for (let m = 0; m < 1 << NOTE_TABOOS.length; m++) taboSets.push(NOTE_TABOOS.filter((_, i) => m & (1 << i)));
 const POPULAR = [...new Set(Object.values(tasteData.popular).flat())];
-for (const id of POPULAR) for (const tb of taboSets) for (const cl of ids('climate')) run(randomState({ ref: [{ k: 'r', id }], notes: undefined, taboos: tb.length ? tb : ['none'], climate: cl }));
+for (const id of POPULAR) for (const tb of taboSets) for (const cl of ids('climate')) run(randomState({ ref: [{ k: 'r', id }], notes: undefined, taboos: tb.length ? tb : ['none'], climate: [cl] }));
 // C. the case found in the live preview: Him, no perfume, woods + amber, Energised, Unique, Hot & humid, Sporty
 for (const tb of [['none'], [], ['coconut']]) for (const how of ids('how')) for (let w = 0; w < 20; w++) {
-  run(randomState({ for: 'him', ref: 'none', notes: ['woods', 'amber'], taboos: tb, how, feel: ['energised'], matters: 'unique', climate: 'hot-humid', style: 'sporty' }));
+  run(randomState({ for: 'him', ref: 'none', notes: ['woods', 'amber'], taboos: tb, how, feel: ['energised'], matters: 'unique', climate: ['summer'], style: 'sporty' }));
 }
 const partB = stats.runs - partA;
 
 const counts = Object.entries(stats.picks).sort((a, b) => b[1] - a[1]);
 const lines = [
-  `combinations: ${stats.runs} runs (A random ${partA}, ${distinct.size} distinct, B 36 popular tiles x taboos x climates + the reported Him case ${partB}), ${stats.slots} slots, ${((Date.now() - t0) / 1000).toFixed(1)} s`,
+  `combinations: ${stats.runs} runs (A random ${partA}, ${distinct.size} distinct, B 36 popular tiles x taboos x seasons + the reported Him case ${partB}), ${stats.slots} slots, ${((Date.now() - t0) / 1000).toFixed(1)} s`,
   `failures: ${Object.keys(stats.fail).length ? JSON.stringify(stats.fail) : 'none'}`,
-  ...['slot not filled', 'out of stock', 'duplicate', 'set in a slot', 'one house', 'tabooed note', 'strong scent', 'gender rule', 'named perfume recommended', 'no why-line', 'duplicate why-line', 'why names a note it lacks', 'shares-line names a note not shared', 'persona names a note no pick has', 'set card not within 10%', 'share link does not parse', 'share link gives another result']
+  ...['slot not filled', 'out of stock', 'duplicate', 'set in a slot', 'one house', 'tabooed note', 'close to skin got a strong perfume', 'gender rule', 'named perfume recommended', 'no why-line', 'duplicate why-line', 'why names a note it lacks', 'shares-line names a note not shared', 'persona names a note no pick has', 'set card not within 10%', 'share link does not parse', 'share link gives another result']
     .map((k) => `  ${k.padEnd(38)} ${stats.fail[k] || 0}`),
   `perfumes used: ${usedA} in the random part A, ${counts.length} overall, of ${model.products.filter((p) => p.available).length} in stock; most used: ${counts.slice(0, 8).map(([h, n]) => `${h} ${n}`).join(', ')}`,
   `personas: ${Object.entries(stats.persona).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(', ')}`,

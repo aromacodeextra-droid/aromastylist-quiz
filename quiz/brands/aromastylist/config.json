@@ -387,14 +387,6 @@
           }
         },
         {
-          "id": "strong",
-          "label": "Strong scents bother me",
-          "rule": {
-            "presence": "fills"
-          },
-          "screen": "presence"
-        },
-        {
           "id": "office",
           "label": "My office is scent-sensitive",
           "screen": "week",
@@ -556,25 +548,23 @@
     {
       "id": "presence",
       "type": "single",
-      "title": "How present should it be?",
+      "title": "How far should it reach?",
       "answers": [
         {
           "id": "close",
-          "label": "Just for me",
-          "hint": "Close to the skin",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/45737BFC-A7FC-48D4-BA5F-488FEA0E4130.png"
+          "label": "Close to skin",
+          "dots": 1,
+          "exclude_presence": "fills"
         },
         {
           "id": "noticed",
-          "label": "Pleasantly noticed",
-          "hint": "A soft trail",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/31BF3B96-8B81-4E35-944B-0E3AA0197AE9.png"
+          "label": "Moderate",
+          "dots": 2
         },
         {
           "id": "fills",
-          "label": "Remembered in the room",
-          "hint": "It fills the room",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/73B7A0A5-1163-40A6-AC36-DAF32B13182A.png"
+          "label": "Strong",
+          "dots": 3
         }
       ]
     },
@@ -609,51 +599,63 @@
     },
     {
       "id": "climate",
-      "type": "single",
-      "title": "Your climate?",
+      "type": "multi",
+      "title": "When will you wear it?",
       "answers": [
         {
-          "id": "hot-humid",
-          "label": "Hot & humid",
+          "id": "winter",
+          "label": "Winter",
+          "icon": "winter",
           "seasons": {
-            "hot": 1,
-            "mild": 0.4
+            "cold": 1
           },
-          "why": "Holds up in humid heat",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/FullSizeRender_e274824a-ee92-40e2-8edf-7ddb3b5745a9.jpg"
+          "why": "Made for cold days"
         },
         {
-          "id": "dry-heat",
-          "label": "Dry heat",
-          "seasons": {
-            "hot": 1,
-            "mild": 0.6
-          },
-          "why": "Made for dry heat",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/FullSizeRender_e274824a-ee92-40e2-8edf-7ddb3b5745a9.jpg"
-        },
-        {
-          "id": "four-seasons",
-          "label": "Four seasons",
+          "id": "spring",
+          "label": "Spring",
+          "icon": "spring",
           "seasons": {
             "mild": 1,
-            "cold": 0.8,
-            "hot": 0.6
+            "hot": 0.4
           },
-          "why": "Works across the seasons",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/85646074-6533-4FBE-AC71-5C1962AB0F09.png"
+          "why": "Easy in spring"
         },
         {
-          "id": "mild-coast",
-          "label": "Mild coast",
+          "id": "summer",
+          "label": "Summer",
+          "icon": "summer",
+          "seasons": {
+            "hot": 1
+          },
+          "why": "Holds up in summer heat"
+        },
+        {
+          "id": "fall",
+          "label": "Fall",
+          "icon": "fall",
           "seasons": {
             "mild": 1,
-            "hot": 0.6
+            "cold": 0.4
           },
-          "why": "Easy in mild coastal air",
-          "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/77F3F8EE-6A90-4E34-909B-27E8E53A6E4D.png"
+          "why": "Made for autumn"
+        },
+        {
+          "id": "all-year",
+          "label": "All year",
+          "icon": "all-year",
+          "exclusive": true,
+          "seasons": {
+            "hot": 0.7,
+            "mild": 1,
+            "cold": 0.7
+          },
+          "why": "Works all year round"
         }
-      ]
+      ],
+      "min": 1,
+      "max": 5,
+      "subtitle": "Pick every season that fits."
     },
     {
       "id": "style",

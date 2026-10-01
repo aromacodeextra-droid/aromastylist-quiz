@@ -34,7 +34,7 @@ into a text tile; nothing breaks.
    `section_grid_UPENYR` and `section_collection_list_wTRGUj`; most likely `templates/page.find-your-perfume.json`).
    - **If the page uses the shared `templates/page.json`**, stop and ask the owner.
 2. From [`templates/aromastylist.scent-quiz.section.json`](templates/aromastylist.scent-quiz.section.json) take both objects:
-   - `"scent_quiz"`: type `scent-quiz`, **48 blocks** (v2 had 42 — replace the whole object, do not merge blocks);
+   - `"scent_quiz"`: type `scent-quiz`, **49 blocks** (v2 had 42 — replace the whole object, do not merge blocks);
    - `"scent_quiz_personas"`: type `scent-quiz-personas`, 18 blocks.
    If the template already has `scent_quiz` / `scent_quiz_personas` (v2), replace both objects. Otherwise add them.
 3. In `"order"`, `"scent_quiz"` comes directly **after `"main-page"`**, then `"scent_quiz_personas"`. Leave every other
@@ -63,12 +63,12 @@ Blocks exist for the questions with image tiles. An empty picker shows the defau
 | `notes` | 2b Which notes pull you in? (only after "I don't have one") | `citrus`, `green`, `aquatic`, `florals`, `white-florals`, `fruity`, `gourmand`, `woods`, `amber`, `oud-leather`, `spices`, `musk-powder` |
 | `how` | 5 How do you wear perfume? | `one-bottle`, `day-night`, `full-wardrobe` |
 | `feel` | 6 With it on, you want to feel… | `confident`, `attractive`, `calm`, `energised`, `festive`, `free` |
-| `presence` | 7 How present should it be? | `close`, `noticed`, `fills` |
+| `presence` | 7 How far should it reach? | `close`, `noticed`, `fills` |
 | `matters` | 8 What matters most? | `easy`, `trending`, `unique` |
-| `climate` | 9 Your climate? | `hot-humid`, `dry-heat`, `four-seasons`, `mild-coast` |
+| `climate` | 9 When will you wear it? | `winter`, `spring`, `summer`, `fall`, `all-year` |
 | `style` | 10 Which style is most you? | `classic`, `dramatic`, `romantic`, `minimal`, `casual`, `sporty` |
 
-8 question blocks + 40 answer blocks = 48. Screens 2 (`ref`), 3 (`taboos`) and 4 (`week`) are config-only.
+8 question blocks + 41 answer blocks = 49. Screens 2 (`ref`), 3 (`taboos`) and 4 (`week`) are config-only.
 
 ## 3. v3 checks in the theme preview (do not publish)
 
@@ -91,7 +91,7 @@ Open `/pages/find-your-perfume?preview_theme_id=<copy id>`:
    "Add sample · $…" and a collapsed "Also fits this slot". No two cards the same, at least 2 houses.
 6. "Share my wardrobe" shows a 9:16 image (persona, slot names, perfumes, `aromastylist.com/pages/find-your-perfume`).
    "Copy link" gives a link that **still contains `preview_theme_id`** and reopens the same result.
-7. `/pages/find-your-perfume?sq=her.r~ysl-black-opium._.none.1101000.full-wardrobe.attractive.noticed.easy.four-seasons.romantic`
+7. `/pages/find-your-perfume?sq=her.r~ysl-black-opium._.none.1101000.full-wardrobe.attractive.noticed.easy.fall+winter.romantic`
    opens straight into a result.
 8. "All scent personas" below the quiz opens the list of 18 personas.
 9. No email field anywhere. Header, menu, other sections and other pages look exactly as before.
