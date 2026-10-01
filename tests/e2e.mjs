@@ -92,12 +92,21 @@ for (const vp of VIEWPORTS) {
     await shot(page, '03c-inside');
     await page.click('[data-act=next][data-q=ref]');
     await page.waitForSelector('.sq-chip');
-    for (const a of ['too-sweet', 'coconut', 'office']) await page.click(`[data-act=toggle][data-a="${a}"]`);
+    const tabooScreen = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, hint: document.querySelector('.sq-q .sq-sub')?.textContent,
+      chips: [...document.querySelectorAll('.sq-chips--taboo .sq-chip span')].map((e) => e.textContent), andAlso: /and also/i.test(document.querySelector('.sq-q').textContent),
+      switches: document.querySelectorAll('.sq-q [data-a=strong], .sq-q [data-a=office]').length }));
+    check(`${tag}: taboo screen = "What would you rather avoid?" + "Select all that apply." + one grid with "Nothing in particular"; switches moved out`,
+      tabooScreen.title === 'What would you rather avoid?' && tabooScreen.hint === 'Select all that apply.' && tabooScreen.chips.includes('Nothing in particular') && !tabooScreen.andAlso && tabooScreen.switches === 0, JSON.stringify(tabooScreen.chips));
+    for (const a of ['too-sweet', 'coconut']) await page.click(`[data-act=toggle][data-a="${a}"]`);
     await shot(page, '04-taboos');
     await page.click('[data-act=next][data-q=taboos]');
     await page.waitForSelector('.sq-week');
     // work a lot, evenings a lot, everyday sometimes, events sometimes
     for (const [row, lv] of [[0, 2], [3, 2], [1, 1], [4, 1]]) await page.click(`[data-act=level][data-row="${row}"][data-lv="${lv}"]`);
+    // the office switch now sits under the Work / study row
+    const officeUnderWork = await page.evaluate(() => !!document.querySelector('.sq-week__row:first-child [data-a=office]'));
+    await page.click('[data-act=toggle][data-a=office]');
+    check(`${tag}: "My office is scent-sensitive" is under the Work / study row and can be ticked`, officeUnderWork && (await page.getAttribute('[data-a=office]', 'aria-pressed')) === 'true');
     await shot(page, '05-week');
     await page.click('[data-act=next][data-q=week]');
     await shot(page, '06-how');
@@ -110,6 +119,8 @@ for (const vp of VIEWPORTS) {
     await page.waitForSelector('[data-act=answer][data-a=full-wardrobe][aria-pressed=true]');
     await page.click('[data-act=answer][data-a=full-wardrobe]');
     await page.click('[data-act=next][data-q=feel]');
+    const strongAbove = await page.evaluate(() => { const sw = document.querySelector('.sq-switches [data-a=strong]'), t = document.querySelector('.sq-tiles'); return !!sw && !!(sw.compareDocumentPosition(t) & Node.DOCUMENT_POSITION_FOLLOWING); });
+    check(`${tag}: "Strong scents bother me" sits above the presence answers`, strongAbove);
     await shot(page, '08-presence');
     await page.click('[data-act=answer][data-a=noticed]');
     await shot(page, '09-matters');

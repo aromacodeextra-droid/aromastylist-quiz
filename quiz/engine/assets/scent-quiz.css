@@ -307,3 +307,16 @@
   position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--sq-accent); color: var(--sq-on-accent); font-size: 13px; line-height: 1; }
 /* the hint inside the box must not look like typed text */
 .sq-section .sq-search input::placeholder { color: var(--sq-fg); opacity: .5; font-weight: 400; }
+
+/* v3.6: taboo grid (hints in normal case), switches shown on the presence and week screens */
+.sq-chips--taboo .sq-chip small { text-transform: none; letter-spacing: normal; font-size: 12px; opacity: .75; }
+:is(#root, body) .sq-section .sq-chip[aria-pressed="true"] { position: relative; }
+:is(#root, body) .sq-section .sq-chip[aria-pressed="true"]::after { content: "\2713"; display: flex; align-items: center; justify-content: center;
+  position: absolute; top: 6px; right: 6px; width: 20px; height: 20px; border-radius: 50%; background: var(--sq-accent); color: var(--sq-on-accent); font-size: 12px; line-height: 1; }
+.sq-switches { display: flex; justify-content: center; margin: 0 auto 14px; }
+.sq-week__switch { display: flex; }
+:is(#root, body) .sq-section .sq-switch { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 6px 4px; background: none; border: 0;
+  color: var(--sq-fg); font: inherit; font-size: 14px; text-transform: none; letter-spacing: normal; text-align: left; cursor: pointer; }
+.sq-switch__box { flex: 0 0 20px; width: 20px; height: 20px; border: 1px solid color-mix(in srgb, var(--sq-fg) 45%, transparent); border-radius: 3px; background: #fff; }
+:is(#root, body) .sq-section .sq-switch[aria-pressed="true"] .sq-switch__box { background: var(--sq-accent); border-color: var(--sq-accent); box-shadow: inset 0 0 0 3px #fff; }
+:is(#root, body) .sq-section .sq-switch:focus-visible { outline: 2px solid var(--sq-accent); outline-offset: 2px; }

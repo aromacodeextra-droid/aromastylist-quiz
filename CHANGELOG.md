@@ -1,5 +1,16 @@
 # Changelog
 
+## quiz-v3.6 (2026-10-01) — UX step 3: screen 3 "What would you rather avoid?"
+
+- Title "What would you rather avoid?", one hint "Select all that apply.". One grid of 8 answers with "Nothing in
+  particular" in it; short hints in normal case (Caramel, honey · Iris, violet · Oud, incense · Tuberose, gardenia ·
+  Sea notes, ozone). "AND ALSO" and "We will never put these in your wardrobe" are gone. Chosen answers: tick + frame.
+- The two switches moved to where they belong (owner's decision): "Strong scents bother me" above the answers of
+  "How present should it be?", "My office is scent-sensitive" under the Work / study row of the week screen. They still
+  belong to the taboo answer, so the matching logic and the share-link format are unchanged; "Nothing in particular"
+  no longer clears them.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`. e2e 80 / 80.
+
 ## quiz-v3.5 (2026-10-01) — UX step 2: screen 2 "Do you have a signature scent?"
 
 - One hint instead of three: "Type its name or tap a bottle. Up to two." The "Type its name" label moved into the box

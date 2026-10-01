@@ -751,9 +751,10 @@
   Quiz.prototype.toggle = function (btn) {
     var qid = btn.getAttribute('data-q'), q = Q(this.config, qid), id = btn.getAttribute('data-a');
     var cur = (this.state[qid] || []).slice(), at = cur.indexOf(id), a = findAnswer(q, id);
-    if (a && a.exclusive) cur = at >= 0 ? [] : [id];
+    var elsewhere = function (x) { var y = findAnswer(q, x); return !!(y && y.screen); };
+    if (a && a.exclusive) cur = (at >= 0 ? [] : [id]).concat(cur.filter(elsewhere));
     else {
-      cur = cur.filter(function (x) { var y = findAnswer(q, x); return !(y && y.exclusive); });
+      cur = cur.filter(function (x) { var y = findAnswer(q, x); return !(y && y.exclusive && !a.screen); });
       if (at >= 0) cur.splice(cur.indexOf(id), 1);
       else if (cur.length < (q.max || 99)) cur.push(id);
     }
@@ -872,6 +873,8 @@
           '<span class="sq-tile__img">' + self.img(a, i < 2) + '</span><span class="sq-tile__label">' + esc(a.label) + '</span>' +
           (a.hint ? '<span class="sq-tile__hint">' + esc(a.hint) + '</span>' : '') + '</button></li>';
       }).join('') + '</ul>' + (multi ? this.nextBtn(q, chosen.length, true) : '');
+      var sw = this.borrowed(q.id, null);
+      if (sw) { if (!this.state.taboos) this.state.taboos = []; body = '<div class="sq-switches">' + sw + '</div>' + body; }
     }
     this.render(head + body + '</div>', focusSel);
   };
@@ -917,18 +920,31 @@
       return '<li><button type="button" class="sq-chip' + (a.toggle ? ' sq-chip--toggle' : '') + '" data-act="toggle" data-q="' + esc(q.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + (cur.indexOf(a.id) >= 0) + '">' +
         '<span>' + esc(a.label) + '</span>' + (a.hint ? '<small>' + esc(a.hint) + '</small>' : '') + '</button></li>';
     };
-    return '<ul class="sq-chips">' + q.answers.filter(function (a) { return !a.toggle && !a.exclusive; }).map(chip).join('') + '</ul>' +
-      '<p class="sq-pop-title">' + esc(q.toggles_title) + '</p><ul class="sq-chips">' + q.answers.filter(function (a) { return a.toggle; }).map(chip).join('') + '</ul>' +
-      '<ul class="sq-chips">' + q.answers.filter(function (a) { return a.exclusive; }).map(chip).join('') + '</ul>' + this.nextBtn(q, cur.length, false);
+    return '<ul class="sq-chips sq-chips--taboo">' + q.answers.filter(function (a) { return !a.screen; }).map(chip).join('') + '</ul>' + this.nextBtn(q, cur.length, false);
+  };
+  // switches stored with another question (q.answers[].screen = this question's id), drawn on this screen
+  Quiz.prototype.borrowed = function (screenId, rowId) {
+    var self = this, out = '';
+    this.qs.forEach(function (oq) {
+      (oq.answers || []).forEach(function (a) {
+        if (a.screen !== screenId || (a.row || null) !== (rowId || null)) return;
+        var on = (self.state[oq.id] || []).indexOf(a.id) >= 0;
+        out += '<button type="button" class="sq-switch" data-act="toggle" data-q="' + esc(oq.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + on + '">' +
+          '<span class="sq-switch__box" aria-hidden="true"></span><span>' + esc(a.label) + '</span></button>';
+      });
+    });
+    return out;
   };
   Quiz.prototype.weekScreen = function (q) {
-    var cur = this.state[q.id] || q.rows.map(function () { return 0; });
+    var cur = this.state[q.id] || q.rows.map(function () { return 0; }), self = this;
     this.state[q.id] = cur;
+    if (!this.state.taboos) this.state.taboos = [];
     return '<ul class="sq-week">' + q.rows.map(function (r, i) {
+      var sw = self.borrowed(q.id, r.id);
       return '<li class="sq-week__row"><span class="sq-week__label" id="sq-week-' + i + '">' + esc(r.label) + '</span><span class="sq-week__levels" role="group" aria-labelledby="sq-week-' + i + '">' +
         q.levels.map(function (lv, k) {
           return '<button type="button" class="sq-level" data-act="level" data-q="' + esc(q.id) + '" data-row="' + i + '" data-lv="' + k + '" aria-pressed="' + (cur[i] === k) + '">' + esc(lv) + '</button>';
-        }).join('') + '</span></li>';
+        }).join('') + '</span>' + (sw ? '<span class="sq-week__switch">' + sw + '</span>' : '') + '</li>';
     }).join('') + '</ul>' + this.nextBtn(q, 1, false);
   };
 

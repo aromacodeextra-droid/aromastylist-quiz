@@ -298,14 +298,13 @@
     {
       "id": "taboos",
       "type": "taboo",
-      "title": "Anything you can't stand?",
-      "subtitle": "We will never put these in your wardrobe.",
-      "toggles_title": "And also",
+      "title": "What would you rather avoid?",
+      "subtitle": "Select all that apply.",
       "answers": [
         {
           "id": "too-sweet",
           "label": "Too sweet",
-          "hint": "caramel, chocolate, honey",
+          "hint": "Caramel, honey",
           "rule": {
             "notes": [
               "caramel",
@@ -319,7 +318,7 @@
         {
           "id": "powdery",
           "label": "Powdery",
-          "hint": "iris, violet, aldehydes",
+          "hint": "Iris, violet",
           "rule": {
             "notes": [
               "iris",
@@ -330,8 +329,8 @@
         },
         {
           "id": "heavy-oud-smoke",
-          "label": "Heavy oud & smoke",
-          "hint": "oud, incense, tobacco",
+          "label": "Oud & smoke",
+          "hint": "Oud, incense",
           "rule": {
             "notes": [
               "oud",
@@ -346,7 +345,7 @@
         {
           "id": "big-florals",
           "label": "Big florals",
-          "hint": "tuberose, gardenia, ylang",
+          "hint": "Tuberose, gardenia",
           "rule": {
             "notes": [
               "tuberose",
@@ -359,8 +358,8 @@
         },
         {
           "id": "shower-gel-fresh",
-          "label": "Shower-gel fresh",
-          "hint": "sea notes, ozone",
+          "label": "Too fresh",
+          "hint": "Sea notes, ozone",
           "rule": {
             "notes": [
               "sea"
@@ -389,21 +388,22 @@
         },
         {
           "id": "strong",
-          "toggle": true,
           "label": "Strong scents bother me",
           "rule": {
             "presence": "fills"
-          }
+          },
+          "screen": "presence"
         },
         {
           "id": "office",
-          "toggle": true,
-          "label": "My office is scent-sensitive"
+          "label": "My office is scent-sensitive",
+          "screen": "week",
+          "row": "work-study"
         },
         {
           "id": "none",
           "exclusive": true,
-          "label": "None, I'm open"
+          "label": "Nothing in particular"
         }
       ]
     },

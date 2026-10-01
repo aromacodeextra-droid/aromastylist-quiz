@@ -16,6 +16,19 @@
       "detail": "Baccarat Rouge 540 | ambergris · jasmine · amber · benzoin / Black Opium | tea · orange blossom · coffee · mandarin"
     },
     {
+      "name": "390-A: taboo screen = \"What would you rather avoid?\" + \"Select all that apply.\" + one grid with \"Nothing in particular\"; switches moved out",
+      "ok": true,
+      "detail": "[\"Too sweet\",\"Powdery\",\"Oud & smoke\",\"Big florals\",\"Too fresh\",\"Coconut\",\"Patchouli\",\"Nothing in particular\"]"
+    },
+    {
+      "name": "390-A: \"My office is scent-sensitive\" is under the Work / study row and can be ticked",
+      "ok": true
+    },
+    {
+      "name": "390-A: \"Strong scents bother me\" sits above the presence answers",
+      "ok": true
+    },
+    {
       "name": "390-A: one card per slot, biggest first",
       "ok": true,
       "detail": "Work & Presence, Evening & Seduction, Everyday Signature, Special Occasions"
@@ -123,6 +136,19 @@
       "name": "1440-A: both picks shown as chips with notes, right under the box (max 2)",
       "ok": true,
       "detail": "Baccarat Rouge 540 | ambergris · jasmine · amber · benzoin / Black Opium | tea · orange blossom · coffee · mandarin"
+    },
+    {
+      "name": "1440-A: taboo screen = \"What would you rather avoid?\" + \"Select all that apply.\" + one grid with \"Nothing in particular\"; switches moved out",
+      "ok": true,
+      "detail": "[\"Too sweet\",\"Powdery\",\"Oud & smoke\",\"Big florals\",\"Too fresh\",\"Coconut\",\"Patchouli\",\"Nothing in particular\"]"
+    },
+    {
+      "name": "1440-A: \"My office is scent-sensitive\" is under the Work / study row and can be ticked",
+      "ok": true
+    },
+    {
+      "name": "1440-A: \"Strong scents bother me\" sits above the presence answers",
+      "ok": true
     },
     {
       "name": "1440-A: one card per slot, biggest first",
@@ -339,10 +365,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.2 KB, assets/scent-quiz.css 20.0 KB, assets/scent-quiz.js 45.9 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 21.3 KB, assets/scent-quiz.js 46.4 KB"
     },
     {
-      "name": "JS + CSS + JSON 172.6 KB <= 200 KB",
+      "name": "JS + CSS + JSON 174.3 KB <= 200 KB",
       "ok": true
     },
     {
@@ -702,9 +728,9 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16354,
       "assets/scent-quiz-aromastylist-taste.json": 49706,
-      "assets/scent-quiz-aromastylist.json": 59547,
-      "assets/scent-quiz.css": 20515,
-      "assets/scent-quiz.js": 47008,
+      "assets/scent-quiz-aromastylist.json": 59487,
+      "assets/scent-quiz.css": 21774,
+      "assets/scent-quiz.js": 47533,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -765,7 +791,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 176776,
+    "code_total": 178500,
     "images": 59,
     "images_total": 891710
   }
