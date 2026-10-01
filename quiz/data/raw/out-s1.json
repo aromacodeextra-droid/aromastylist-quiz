@@ -1,0 +1,418 @@
+[
+ {
+  "id": "armani-stronger-with-you-absolutely",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "rum accords",
+   "cedar wood",
+   "vanilla"
+  ],
+  "source_url": "https://www.sephora.com/product/giorgio-armani-beauty-stronger-with-you-absolutely-eau-de-parfum-P514247",
+  "source_type": "sephora",
+  "method": "fetch",
+  "concentration": "Parfum",
+  "comment": "Sephora lists only Key Notes (Parfum with Rum & Cedarwood); brand site armanibeauty.com blocked (403)."
+ },
+ {
+  "id": "gucci-memoire-d-une-odeur",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "kilian-love-don-t-be-shy",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "neroli",
+   "orange blossom",
+   "rose",
+   "marshmallow"
+  ],
+  "source_url": "https://www.sephora.com/product/love-don-t-be-shy-P429621",
+  "source_type": "sephora",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Sephora Key Notes only; bykilian.com blocked."
+ },
+ {
+  "id": "kilian-black-phantom",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "kilian-rolling-in-love",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "kilian-straight-to-heaven",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "kilian-roses-on-ice",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "tiziana-terenzi-kirke",
+  "top": [
+   "passion fruit",
+   "peaches",
+   "raspberries",
+   "cassis",
+   "pears",
+   "warm sand"
+  ],
+  "heart": [
+   "lily of the valley"
+  ],
+  "base": [
+   "heliotrope",
+   "sandalwood",
+   "vanilla",
+   "patchouli",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://terenziboutique.com/products/engf",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": "Official Terenzi boutique (terenziboutique.com), Extrait de Parfum 100 ml olfactory pyramid."
+ },
+ {
+  "id": "tiziana-terenzi-andromeda",
+  "top": [
+   "bergamot",
+   "cut grass",
+   "ylang ylang",
+   "water jasmine"
+  ],
+  "heart": [
+   "lilum",
+   "violet leaves",
+   "damask rose",
+   "pear nectar",
+   "heliotrope blanc",
+   "peach"
+  ],
+  "base": [
+   "coconut powder",
+   "amber",
+   "vanilla",
+   "cashmere",
+   "ebony",
+   "tonka bean",
+   "powdered sugar"
+  ],
+  "key": [],
+  "source_url": "https://terenziboutique.com/products/andromeda",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": "Official Terenzi boutique (terenziboutique.com), Extrait de Parfum 100 ml olfactory pyramid."
+ },
+ {
+  "id": "etat-libre-d-orange-you-or-someone-like-you",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand page (etatlibredorange.com/products/you-or-someone-like-you) deliberately lists no notes; not on Sephora."
+ },
+ {
+  "id": "profumum-roma-acqua-di-sale",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "profumum-roma-ambra-aurea",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "thameen-regent-leather",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Extrait",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "jusbox-78-glam",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "hermes-terre-d-hermes",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "grapefruit accord",
+   "black peppers",
+   "flint"
+  ],
+  "source_url": "https://www.sephora.com/product/terre-d-hermes-eau-de-toilette-P375120",
+  "source_type": "sephora",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Sephora Key Notes only; hermes.com product pages return 403."
+ },
+ {
+  "id": "hermes-twilly-d-hermes",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "ginger",
+   "tuberose",
+   "sandalwood"
+  ],
+  "source_url": "https://www.sephora.com/product/twilly-d-herm-P422442",
+  "source_type": "sephora",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Sephora Key Notes only; hermes.com product pages return 403."
+ },
+ {
+  "id": "hermes-h24",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "hermes-eau-des-merveilles",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "guerlain-shalimar",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "guerlain-mon-guerlain",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "jasmine",
+   "lavender",
+   "vanilla"
+  ],
+  "source_url": "https://www.sephora.com/product/mon-guerlain-P416938",
+  "source_type": "sephora",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Sephora Key Notes only; guerlain.com blocked (Akamai 403)."
+ },
+ {
+  "id": "guerlain-l-homme-ideal",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "guerlain-habit-rouge",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "guerlain-aqua-allegoria-mandarine-basilic",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "guerlain-vetiver",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "acqua-di-parma-fico-di-amalfi",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "acqua-di-parma-arancia-di-capri",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "louis-vuitton-imagination",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "louis-vuitton-afternoon-swim",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Cologne",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "calvin-klein-ck-one",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ },
+ {
+  "id": "calvin-klein-eternity",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site blocked/unreachable and product not found on Sephora; Nordstrom bot-gated."
+ }
+]

@@ -1,39 +1,22 @@
-runs: 4546 (named perfumes 362 x 2 modes x 4, family sets 298 x 3, tag combos 756)
-passed: 4546, failed: 0
-items per result: { '3': 561, '4': 298, '5': 3687 } | fallback results: 0
-match quality: {
-  similar_avg_family_cosine_top3: 0.734,
-  similar_share_top3_with_a_shared_key_note: 0.973,
-  complement_avg_family_cosine_top3: 0.412,
-  complement_share_top3_with_a_thread_note: 1,
-  families_avg_cosine_top3: 0.688
-}
-distinct perfumes recommended: 299 of 299; most frequent in 7.0% of runs
-top 10:
-   1. Clive Christian - E Cashmere Musk (319)
-   2. Guerlain - Aqua Allegoria Forte Mandarine Basilic (315)
-   3. Rosendo Mateu - Nº 5 by Rosendo Mateu (292)
-   4. Memo Paris - Italian Leather (274)
-   5. Creed - Virgin Island Water (253)
-   6. Nishane - Wulong Chá (249)
-   7. Hermès - Un Jardin Sur Le Nil (248)
-   8. Maison Crivelli - Santal Volcanique (220)
-   9. V Canto - Temptatio (216)
-  10. Amouage - Lyric Man (215)
-never recommended: 0
-wardrobes: {
-  occasion: { shelves: 18184, share_carrying_the_shelf_tag: 1 },
-  mood: { shelves: 31822, share_carrying_the_shelf_tag: 1 }
-} | distinct perfumes on shelves: 297
-set card shown in 985 of 4546 results {
-  'the-executive-edit': 101,
-  'the-modern-muse': 200,
-  'modern-legends': 277,
-  'black-ties': 66,
-  'gilded-gatsby-glam': 71,
-  'platinum-whisper': 14,
-  'after-hours': 74,
-  'midnight-bloom': 71,
-  'chromatic-couture': 66,
-  'modern-icons': 45
-}
+combinations: 11144 runs (A random 5000, 5000 distinct, B popular x taboos x climates 6144), 27416 slots, 23.0 s
+failures: none
+  slot not filled                        0
+  out of stock                           0
+  duplicate                              0
+  set in a slot                          0
+  one house                              0
+  tabooed note                           0
+  strong scent                           0
+  gender rule                            0
+  named perfume recommended              0
+  no why-line                            0
+  duplicate why-line                     0
+  why names a note it lacks              0
+  shares-line names a note not shared    0
+  persona names a note no pick has       0
+  set card not within 10%                0
+  share link does not parse              0
+  share link gives another result        0
+perfumes used: 278 in the random part A, 283 overall, of 299 in stock; most used: clive-christian-e-cashmere-musk 1960, creed-himalaya 901, creed-royal-oud 861, creed-original-vetiver 661, acqua-di-parma-colonia 642, nishane-wulong-cha 598, rosendo-mateu-no-5 586, guerlain-aqua-allegoria-forte-mandarine-basilic 529
+personas: skin-secret 2704, boardroom-pull 1594, sunlit-signal 1563, first-light 1192, quiet-signature 1133, cashmere-evening 647, sharp-edit 468, soft-landing 337, bright-entrance 320, slow-burn 242, sweet-confidant 196, after-hours-magnet 184, golden-hour-guest 169, clean-stride 134, open-air 95, temple-smoke 84, still-point 63, grand-entrance 19
+ready-made set card shown in 1278 of 11144

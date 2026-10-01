@@ -1,0 +1,523 @@
+[
+ {
+  "id": "calvin-klein-eternity-for-men",
+  "top": [
+   "mandarin",
+   "lavender",
+   "green botanics"
+  ],
+  "heart": [
+   "basil",
+   "geranium",
+   "sage"
+  ],
+  "base": [
+   "sandalwood",
+   "rosewood",
+   "amber"
+  ],
+  "key": [],
+  "source_url": "https://www.calvinklein.us/en/men/fragrance/fragrance/eternity-eau-de-toilette-for-men/LX000145-000.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site, product page states Eau de Toilette."
+ },
+ {
+  "id": "calvin-klein-obsession",
+  "top": [
+   "mandarin",
+   "bergamot"
+  ],
+  "heart": [
+   "lavender",
+   "myrrh",
+   "spices"
+  ],
+  "base": [
+   "musk",
+   "sandalwood",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.calvinklein.us/en/women/fragrance/fragrance/obsession-eau-de-parfum-for-women/LX000719-000.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site."
+ },
+ {
+  "id": "calvin-klein-euphoria",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable: calvinklein.us lists only Euphoria Elixir variants, no Euphoria EDP; Sephora/Nordstrom product pages blocked."
+ },
+ {
+  "id": "calvin-klein-defy",
+  "top": [
+   "bergamot oil",
+   "mandarin oil",
+   "cedar leaf oil"
+  ],
+  "heart": [
+   "lavender absolute",
+   "sage clary oil",
+   "violet leaf"
+  ],
+  "base": [
+   "vetiver oil",
+   "amber",
+   "musk"
+  ],
+  "key": [],
+  "source_url": "https://www.calvinklein.us/en/men/fragrance/fragrance/defy-eau-de-toilette/YS99350D-000.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site; heart listed as 'Mid notes' (lavender absolute, sage clary oil, notes of violet leaf); base 'notes of amber, musk note'."
+ },
+ {
+  "id": "davidoff-cool-water",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable: no reachable Davidoff fragrance site (davidoffgeneva.com is cigars); Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "ralph-lauren-polo-blue",
+  "top": [
+   "cantaloupe melon accord",
+   "cucumber accord",
+   "watermelon accord",
+   "bergamot oil"
+  ],
+  "heart": [
+   "aquatic accord",
+   "clary sage oil",
+   "geranium oil",
+   "basil verbena oil"
+  ],
+  "base": [
+   "washed suede accord",
+   "patchouli heart",
+   "sheer musk accord"
+  ],
+  "key": [],
+  "source_url": "https://www.ralphlauren.co.uk/en/polo-blue-eau-de-toilette-125-ml-100060123.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site (Ralph Lauren UK)."
+ },
+ {
+  "id": "ralph-lauren-polo-red",
+  "top": [
+   "lemon",
+   "bergamot",
+   "juniper"
+  ],
+  "heart": [
+   "red saffron",
+   "clary sage",
+   "lavender"
+  ],
+  "base": [
+   "cedarwood",
+   "vetiver",
+   "vanilla"
+  ],
+  "key": [],
+  "source_url": "https://www.ralphlauren.co.uk/en/polo-red-eau-de-toilette-125ml-164480.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site (Ralph Lauren UK)."
+ },
+ {
+  "id": "ralph-lauren-romance",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable: Ralph Lauren sites list only Romance EDP Intense (different product); Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "ralph-lauren-ralph-s-club",
+  "top": [
+   "lavandin",
+   "clary sage"
+  ],
+  "heart": [
+   "virginia cedarwood"
+  ],
+  "base": [
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.ralphlauren.co.uk/en/ralphs-club-eau-de-parfum-100060051.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site (Ralph Lauren UK)."
+ },
+ {
+  "id": "azzaro-chrome",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable: Azzaro fragrance sites not reachable; Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "kenzo-flower-by-kenzo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "pink pepper",
+   "damascena rose",
+   "vanilla",
+   "white musk"
+  ],
+  "source_url": "https://www.kenzoparfums.com/fr/en/fragrance/femme/flower-by-kenzo-femme/flower-by-kenzo-eau-de-parfum/K10100001.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site (Kenzo Parfums FR, English); description gives no tiers."
+ },
+ {
+  "id": "estee-lauder-beautiful",
+  "top": [
+   "rose",
+   "mandarin",
+   "lily",
+   "tuberose",
+   "marigold"
+  ],
+  "heart": [
+   "orange flower",
+   "muguet",
+   "jasmine",
+   "ylang-ylang"
+  ],
+  "base": [
+   "sandalwood",
+   "vetiver",
+   "amber"
+  ],
+  "key": [],
+  "source_url": "https://www.esteelauder.co.uk/product/9780/2116/product-catalog/fragrance/collections/beautiful/beautiful/eau-de-parfum-spray",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site (Estee Lauder UK)."
+ },
+ {
+  "id": "estee-lauder-pleasures",
+  "top": [
+   "white lily",
+   "violet leaves",
+   "green accents"
+  ],
+  "heart": [
+   "black lilac",
+   "white peony",
+   "karo-karounde blossoms",
+   "baie rose",
+   "pink rose",
+   "jasmine"
+  ],
+  "base": [
+   "sandalwood",
+   "patchouli"
+  ],
+  "key": [],
+  "source_url": "https://www.esteelauder.co.uk/product/12853/2094/product-catalog/fragrance/collections/pleasures/este-lauder-pleasures/eau-de-parfum-spray",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site (Estee Lauder UK)."
+ },
+ {
+  "id": "estee-lauder-white-linen",
+  "top": [
+   "damask rose",
+   "jasmine",
+   "muguet"
+  ],
+  "heart": [
+   "violet",
+   "orris"
+  ],
+  "base": [
+   "vetiver",
+   "moss",
+   "amber"
+  ],
+  "key": [],
+  "source_url": "https://www.esteelauder.co.uk/product/9786/1992/product-catalog/fragrance/collections/pure-white-linen/white-linen/eau-de-parfum-spray",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site (Estee Lauder UK)."
+ },
+ {
+  "id": "bvlgari-man-in-black",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable: bulgari.com blocked (403/bot challenge); Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "bvlgari-aqva-pour-homme",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable: bulgari.com blocked (403/bot challenge); Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "cartier-declaration",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "cardamom",
+   "cedarwood"
+  ],
+  "source_url": "https://www.cartier.com/en-us/fragrances/signatures/declaration-66100032.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site; prose only ('brings together cardamom and cedarwood'), no tiers."
+ },
+ {
+  "id": "cartier-la-panthere",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "gardenia",
+   "musk"
+  ],
+  "source_url": "https://www.cartier.com/en-us/fragrances/signatures/la-panthere-FS100015.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site; prose only (gardenia with velvety musk), no tiers."
+ },
+ {
+  "id": "narciso-rodriguez-narciso",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable: brand site lists only Narciso Ambree/Cristal/Poudree/Radiante, not original Narciso EDP; Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "jimmy-choo-jimmy-choo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable: brand site no longer lists the original Jimmy Choo EDP; Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "abercrombie-and-fitch-fierce",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "Cologne",
+  "comment": "No allowed source reachable: abercrombie.com bot wall (SPA, no HTML); Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "victoria-s-secret-bombshell",
+  "top": [
+   "purple passion fruit"
+  ],
+  "heart": [
+   "shangri-la peony"
+  ],
+  "base": [
+   "vanilla orchid",
+   "italian pine"
+  ],
+  "key": [],
+  "source_url": "https://www.victoriassecret.com/us/vs/beauty/fragrances-bombshell-shop",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Brand site; Bombshell fragrance guide (top note/heart/base)."
+ },
+ {
+  "id": "clean-reserve-warm-cotton",
+  "top": [
+   "aldehydes",
+   "ginger",
+   "water accord"
+  ],
+  "heart": [
+   "mint green",
+   "pepper",
+   "floral accord"
+  ],
+  "base": [
+   "musk",
+   "incense",
+   "vetiver"
+  ],
+  "key": [],
+  "source_url": "https://www.cleanbeauty.com/products/clean-reserve-warm-cotton",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "Clean Beauty Collective (Clean's own storefront); 'Dry Down' treated as base."
+ },
+ {
+  "id": "phlur-missing-person",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDP",
+  "comment": "No allowed source reachable: phlur.com Cloudflare 403; Sephora product page/API 403 (found as P482716) and Nordstrom challenge."
+ },
+ {
+  "id": "nautica-voyage",
+  "top": [
+   "green apple",
+   "green leaf"
+  ],
+  "heart": [],
+  "base": [
+   "drenched mimosa",
+   "sailcloth accord",
+   "water lotus"
+  ],
+  "key": [],
+  "source_url": "https://www.nautica.com/nautica-voyage-fragrance-gift-set/99350244573.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site; only the Voyage gift set page (1.6 oz EDT + body spray) lists notes; no heart tier listed."
+ },
+ {
+  "id": "ralph-lauren-polo",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable: original Polo (green) not listed on reachable Ralph Lauren sites; Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "ysl-paris",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable: yslbeauty sites 403 in all countries; Sephora/Nordstrom blocked."
+ },
+ {
+  "id": "ralph-lauren-polo-black",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [
+   "iced mango",
+   "silver armoise",
+   "patchouli noir"
+  ],
+  "source_url": "https://www.ralphlauren.co.uk/en/polo-black-edt-spray-125-ml-461175.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site (Ralph Lauren UK); description gives only a key-note list, no tiers."
+ },
+ {
+  "id": "jimmy-choo-man",
+  "top": [
+   "lavender",
+   "mandarin",
+   "honeydew melon"
+  ],
+  "heart": [
+   "pink pepper",
+   "geranium",
+   "pineapple leaf"
+  ],
+  "base": [
+   "patchouli",
+   "suede",
+   "ambery woods"
+  ],
+  "key": [],
+  "source_url": "https://us.jimmychoo.com/en/men/fragrance/man-100ml/jimmy-choo-man-eau-de-toilette-100ml-JCMAN100MLFSGY100544.html",
+  "source_type": "brand",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "Brand site; tiers parsed from product description prose (top/heart/finally)."
+ },
+ {
+  "id": "rabanne-pure-xs",
+  "top": [],
+  "heart": [],
+  "base": [],
+  "key": [],
+  "source_url": "",
+  "source_type": "none",
+  "method": "fetch",
+  "concentration": "EDT",
+  "comment": "No allowed source reachable: rabanne.com is a JS SPA with no server HTML; Sephora/Nordstrom blocked."
+ }
+]

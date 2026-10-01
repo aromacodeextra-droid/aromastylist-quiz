@@ -63,12 +63,12 @@ const hpre = houses.map((h) => {
   return best ? best[0] : '';
 });
 const shortHandle = (p) => { const pre = hpre[houses.indexOf(p.house)]; return pre && p.handle.startsWith(pre) && p.handle.length > pre.length ? '~' + p.handle.slice(pre.length) : p.handle; };
-const FIELDS = ['handle', 'title', 'house', 'image', 'gender', 'moment', 'mood', 'presence', 'season', 'variant', 'price', 'available', 'hot'];
+const FIELDS = ['handle', 'title', 'house', 'image', 'gender', 'moment', 'mood', 'presence', 'season', 'variant', 'price', 'available'];
 function row(p) {
   const variant = p.variants.find((v) => v.id === p.sample_variant_id);
   const d = dims(p);
   return [shortHandle(p), p.title, houses.indexOf(p.house), p.image ? p.image.slice(base.length).replace(/\?v=\d+$/, '') : '',
-    d.gender, d.moment, d.mood, d.presence, d.season, variant.id, variant.price, p.variants.some((v) => v.available) ? 1 : 0, isHot(p) ? 1 : 0];
+    d.gender, d.moment, d.mood, d.presence, d.season, variant.id, variant.price, p.variants.some((v) => v.available) ? 1 : 0];
 }
 const items = catalog.products.filter((p) => !p.is_set);
 const sets = catalog.products.filter((p) => p.is_set);
@@ -130,7 +130,9 @@ const merged = {
   catalog: {
     img: base, houses, hpre, values: VALUES, fields: FIELDS,
     items: items.map(row), sets: sets.map(row),
-    set_members: sets.map((s) => (s.set_members || []).map((m) => m.handle).filter((h) => items.some((p) => p.handle === h))),
+    // indices into items: the store bestsellers and the perfumes inside each set
+    hot: items.map((p, i) => (isHot(p) ? i : -1)).filter((i) => i >= 0),
+    set_members: sets.map((s) => (s.set_members || []).map((m) => items.findIndex((p) => p.handle === m.handle)).filter((i) => i >= 0)),
   },
 };
 
@@ -173,8 +175,8 @@ let total = 0;
 for (const f of files) {
   const n = fs.statSync(path.join(OUT, f)).size;
   if (/\.(js|css|json)$/.test(f) && f.startsWith('assets/')) total += n;
-  console.log(`${f.padEnd(44)} ${(n / 1024).toFixed(1).padStart(6)} KB${n > LIMIT ? '  <-- over 60 KB!' : ''}`);
-  if (n > LIMIT) process.exitCode = 1;
+  console.log(`${f.padEnd(44)} ${(n / 1024).toFixed(1).padStart(6)} KB${n > 60000 ? '  <-- over 60 KB!' : ''}`);
+  if (n > LIMIT || n > 60000) process.exitCode = 1;
 }
 const webp = fs.readdirSync(`${OUT}/assets`).filter((f) => /^sq-ref-.*\.webp$/.test(f));
 const imgTotal = webp.reduce((s, f) => s + fs.statSync(`${OUT}/assets/${f}`).size, 0);

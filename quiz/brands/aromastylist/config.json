@@ -1103,7 +1103,7 @@
     "start": "Start the quiz",
     "intro_title": "Your perfume stylist. Ten questions, one wardrobe.",
     "intro_text": "Tell us the perfume you wear now, what you never want to smell, and where your week goes. We read the notes and build a small wardrobe from what is on our shelf right now: one perfume for each part of your week.",
-    "search_placeholder": "Perfume or house, e.g. Santal 33, BR540",
+    "search_placeholder": "e.g. Santal 33 or Dior",
     "search_none": "We don't know that one yet. Try the house name, or pick \"I don't have one\".",
     "picked_count": "{n} of {max} chosen",
     "remove": "Remove",

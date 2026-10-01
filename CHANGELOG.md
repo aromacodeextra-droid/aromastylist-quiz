@@ -1,5 +1,80 @@
 # Changelog
 
+## quiz-v3 (2026-10-01) — a perfume-stylist consultation
+
+Owner's verdict on v2.1: "not working". The root cause: the "name a perfume" step knew 63 perfumes, so most visitors
+hit "not in our list". v3 fixes that first, then rebuilds the quiz as ten screens that end in a wardrobe.
+
+### Step 1 — 400 popular perfumes (`quiz/data/`)
+- **400 of the most-worn designer and niche perfumes in the US** (`perfume-list.txt` / `.json`), her and him, no
+  celebrity lines, no body mists, no dupes, max 2 flankers per line (Sauvage Elixir, Black Opium Le Parfum,
+  Bleu de Chanel Parfum …). Bestseller lists were used for orientation only.
+- **Notes from the brand's own site, with the source URL for every perfume** (`popular-perfumes.json`, raw notes +
+  notes mapped to the canonical notes):
+  - brand site: **326** (166 read from the page itself, 160 from the search engine's reading of that brand page);
+  - the brand's page at Sephora: **17** (brand site unreachable or without notes);
+  - none: **57**, because the brand sites block automated requests (Guerlain, Hermès, Bvlgari, Cartier, Kilian,
+    Acqua di Parma, Louis Vuitton, Calvin Klein …) or publish no notes (Xerjoff 40 Knots / Torino21, ELdO You or
+    Someone Like You). **21 of these 57 are on our shelf**, so the quiz uses our own product notes for them.
+  - **364 of 400 can be matched by notes.** The other 36 are still found by search; when one is picked, the quiz
+    says the house does not publish its notes and asks for the note families instead (screen 2b).
+- Fragrantica / Parfumo / Fragella were not used as data. No notes were filled in from memory.
+- 75 of the 400 are perfumes we stock: search shows them once, marked "on our shelf", with our notes.
+- **Search**: fuzzy (up to 2 typos, swapped letters), house-first or name-first, aliases (BR540, LVEB, Bacarat,
+  Santal, BDC …) and house short names (YSL, MFK, PDM, D&G, JPG …). 400 popular + 299 of ours.
+- `store-bestsellers.json`: our own unit sales per product title for the last 365 days (read-only analytics query;
+  titles and counts only) — used for "What everyone's talking about".
+
+### Step 2 — bottle images (`theme-files/assets/sq-ref-<id>.webp`, manifest `quiz/data/images.json`)
+- **59 of 60** official bottle images: **33 from the brand site, 26 from the brand's Sephora page**. 1 missing:
+  Givenchy L'Interdit (Givenchy blocks every request and Sephora US does not list the EDP) — it shows as a text row.
+- Background flattened to the card colour (#ffffff), centred, padded, 600x600 webp, **860 KB in all, largest 29.5 KB**.
+- The 12 popular tiles: Sauvage, Wood Sage & Sea Salt, Acqua di Giò, Miss Dior, J'adore, Lost Cherry, La Vie Est
+  Belle, Bleu de Chanel, Baccarat Rouge 540, Ombré Leather, Spicebomb, Paradoxe (one per note family; 4 her, 4 him,
+  4 shared). The other 340 are text rows in the dropdown (house in small caps + name).
+
+### Steps 3–4 — ten screens and "Your Perfume Wardrobe"
+- Screens: for · signature scent (12 tiles + search, up to 2, "Inside <name>" card; or "I don't have one" -> up to 3 note
+  families) · taboos (hard filter) + "strong scents bother me" / "scent-sensitive office" · where the week goes
+  (7 rows x rarely / sometimes / a lot) · how you wear perfume (one bottle / day & night / full wardrobe) · feel (up to 2)
+  · presence · what matters · climate · style.
+- Weights: perfume similarity 35%, week slot 20%, feel 15%, presence 10%, climate 10%, style 5% + matters 5%.
+  Gender applies only to Focus & Flow, Romance & Presence, Celebrate & Indulge (owner rule).
+- Every week row at "sometimes" / "a lot" becomes a slot, biggest first; Family & home is always close to the skin;
+  a scent-sensitive office keeps the Work slot close.
+- Result: persona (chosen by overlap with the picks' notes; a persona whose line names a note none of the picks
+  carry is never shown), scent profile (top 3 families), one card per slot: image, house, name, "Shares the … of your …"
+  (only notes both really carry), a why-line from that perfume's own matched tags and real notes (never the same
+  twice in a result), how to wear, "Add sample" (cheapest available variant), "Also fits this slot" (collapsed).
+  Never the perfume you named. Ready-made set card only within 10% of the top pick. Add all, share story
+  (1080x1920 with slots), copy link — links keep `preview_theme_id`. No email field anywhere.
+- Blocks: 48 in the quiz section (questions with image tiles), 18 in the personas section.
+
+### Step 5 — verified
+- `tests/combinations.mjs`: **11,144 wardrobes** — 5,000 random answer sets (5,000 distinct) + all 12 popular
+  perfumes x 128 taboo combinations x 4 climates — **27,416 slots, 0 failures** in all 17 checks: every slot filled,
+  in stock, no duplicates, no sets, >= 2 houses, zero tabooed notes (checked against the raw notes), strong-scent
+  toggle, gender rule, named perfume never recommended, no repeated why-line, no why-line or shares-line naming a note
+  the perfume lacks, no persona line naming a note no pick has, set card within 10%, share link round trip.
+  283 of 299 perfumes appear; the most frequent (Clive Christian E Cashmere Musk) fills 7% of slots.
+  - The random generator carried over from v2 falls into a cycle of ~10,000–15,000 values in floating point, so a long
+    run repeats the same "random" answers (my first v3 run touched only 28 perfumes because of it; v2's enumerated
+    combinations were not affected, only its random filler answers). Replaced with mulberry32 and the test now counts
+    distinct answer sets. The first run with it found one real bug (a perfume exactly at the "too sweet" threshold
+    slipped through because family shares are stored rounded); fixed.
+- `tests/search.mjs`: **100 / 100** misspelled queries resolve to the right perfume (target 95). Note: three search
+  fixes (house short names, "parfum" as an optional word, popularity tie-break) were made against this same list.
+- `tests/e2e.mjs` at 390 and 1440 px: **55 / 55** — run with named perfumes, run with "I don't have one", deep link
+  inside a theme preview, share image 1080x1920, copied link reopens the same result, "Add all" payload, analytics
+  without personal data, no-JS page. Screenshots in `screenshots/`.
+- Weight: JS 45.8 KB + CSS 18.0 KB + config 59.2 KB + taste 49.2 KB = **172.1 KB** (budget 200; all decimal KB, every
+  file < 60 KB); images 880 KB (budget 1.8 MB).
+
+### Not done / notes
+- Superseded: `quiz/brands/aromastylist/reference-perfumes.json` and `reference-review.csv` (v2's 63) are no longer built.
+- Image originals (16 MB) are not committed; `images.json` has every source URL.
+- A few images are not ideal: Light Blue (clear glass shot on grey comes out pale), 1 Million (brand image carries an award badge).
+
 ## quiz-v2.1 (2026-10-01) — wardrobe by occasion and by mood
 
 - The result now has three tabs: **Your matches** (3–5 best), **By occasion** (4 shelves: Everyday Signature,

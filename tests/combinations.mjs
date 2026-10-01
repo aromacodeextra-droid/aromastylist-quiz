@@ -1,166 +1,159 @@
-// Run the engine's own scoring (theme-files/assets/scent-quiz.js) over the built config + taste file.
-//  A. every perfume a visitor can name (our shelf + reference list) x "More like it" / "Complete my wardrobe",
-//     each with 4 random sets of the other answers (fixed seed)
-//  B. every combination of 1-3 loved note families (skip path), each with 3 random sets of the other answers
-//  C. the 756 v1 combinations of the tag questions, on the skip path with one family
-// Every run must give >= 3 in-stock perfumes from >= 2 houses, no sets, not the named perfume itself,
-// never rely on Low-confidence values alone, and survive the share-link round trip.
-// Usage: node tests/combinations.mjs [brand]
+// Run the engine's own wardrobe builder (theme-files/assets/scent-quiz.js) over the built config + taste files.
+//  A. 5,000 random answer sets (fixed seed): 0-2 named perfumes (popular list + our shelf) or "I don't have one" + note families,
+//     random taboos / toggles, week, how, feel, presence, matters, climate, style
+//  B. every one of the 12 popular perfumes x every combination of the 7 taboos (128) x the 4 climates, other answers random
+// Checks, recomputed from the raw notes in catalog.json (not from the engine's encoding):
+//  every requested slot filled, in stock, no duplicates (picks and "also fits"), no sets, >= 2 houses when >= 2 slots,
+//  zero tabooed notes, "strong scents bother me" -> nothing that fills the room, gender rule, never the perfume they named,
+//  no two cards share a why-line, no why-line / shares-line names a note the perfume lacks, no persona line names a note
+//  none of the picks have, the share link reopens the same result.
+// Usage: node tests/combinations.mjs
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { taste, CANON, FAMILIES } from '../scripts/taste.mjs';
 
-const BRAND = process.argv[2] || 'aromastylist';
 vm.runInThisContext(fs.readFileSync('theme-files/assets/scent-quiz.js', 'utf8'), { filename: 'scent-quiz.js' });
 const E = globalThis.ScentQuiz;
-const config = JSON.parse(fs.readFileSync(`theme-files/assets/scent-quiz-${BRAND}.json`, 'utf8'));
-const tasteData = JSON.parse(fs.readFileSync(`theme-files/assets/scent-quiz-${BRAND}-taste.json`, 'utf8'));
+const config = JSON.parse(fs.readFileSync('theme-files/assets/scent-quiz-aromastylist.json', 'utf8'));
+const tasteData = JSON.parse(fs.readFileSync('theme-files/assets/scent-quiz-aromastylist-taste.json', 'utf8'));
+const catalog = JSON.parse(fs.readFileSync('quiz/brands/aromastylist/catalog.json', 'utf8'));
+const popular = JSON.parse(fs.readFileSync('quiz/data/popular-perfumes.json', 'utf8')).perfumes;
 const model = E.buildModel(config, tasteData);
-const S = config.scoring;
-const Q = config.questions;
-const qi = (id) => Q.findIndex((q) => q.id === id);
+const Q = (id) => config.questions.find((q) => q.id === id);
+const c = config.copy;
 
-let seed = 42;
-const rnd = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
-const pickOne = (arr) => arr[Math.floor(rnd() * arr.length)];
+// ground truth: canonical notes from the raw catalog notes
+const truth = {};
+for (const p of catalog.products) if (p.notes) { const t = taste(p.notes); truth[p.handle] = { canon: new Set(t.canon), vec: t.vec }; }
+const refTruth = {};
+for (const r of popular) {
+  if (r.in_store) { refTruth[r.id] = truth[r.in_store]; continue; }
+  const n = r.notes;
+  if (n.top.length + n.heart.length + n.base.length + n.key.length) { const t = taste({ top: n.top, heart: [...n.heart, ...n.key], base: n.base }); refTruth[r.id] = { canon: new Set(t.canon), vec: t.vec }; }
+}
+const labelToId = Object.fromEntries(CANON.map(([id, label]) => [label, id]));
 
-// build a state: answers by question id; anything not given is random (for single questions)
-function makeState(given) {
-  const state = [];
-  Q.forEach((q, i) => {
-    if (!E.isVisible(model, state, i)) { state[i] = null; return; }
-    if (q.id in given) state[i] = given[q.id];
-    else if (q.type === 'perfume') state[i] = 'skip';
-    else if (q.type === 'multi') state[i] = [q.answers[0]];
-    else state[i] = pickOne(q.answers);
+// mulberry32 (fixed seed): 32-bit integer maths, so the sequence does not collapse in floating point
+let seed = 7;
+const rnd = () => { seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+const one = (a) => a[Math.floor(rnd() * a.length)];
+const some = (a, max, min = 0) => { const n = min + Math.floor(rnd() * (max - min + 1)); return [...a].sort(() => rnd() - 0.5).slice(0, n); };
+const ids = (q) => Q(q).answers.map((a) => a.id);
+const refPool = [...model.refs.filter((r) => !r.noNotes).map((r) => ({ k: 'r', id: r.id })), ...model.products.filter((p) => p.vec).map((p) => ({ k: 'p', id: p.handle }))];
+const NOTE_TABOOS = Q('taboos').answers.filter((a) => a.rule && a.rule.notes).map((a) => a.id);
+
+function randomState(fixed = {}) {
+  const st = { for: one(ids('for')) };
+  if (rnd() < 0.2) { st.ref = 'none'; st.notes = some(ids('notes'), 3, 1); }
+  else st.ref = some(refPool, 2, 1);
+  const tb = rnd() < 0.25 ? ['none'] : some(NOTE_TABOOS, 4);
+  if (tb[0] !== 'none') { if (rnd() < 0.3) tb.push('strong'); if (rnd() < 0.3) tb.push('office'); }
+  st.taboos = tb;
+  st.week = Q('week').rows.map(() => Math.floor(rnd() * 3));
+  st.how = one(ids('how'));
+  st.feel = some(ids('feel'), 2, 1);
+  st.presence = one(ids('presence'));
+  st.matters = one(ids('matters'));
+  st.climate = one(ids('climate'));
+  st.style = one(ids('style'));
+  return Object.assign(st, fixed);
+}
+
+const stats = { runs: 0, fail: {}, slots: 0, picks: {}, persona: {}, sets: 0, examples: [] };
+const fail = (k, detail) => { stats.fail[k] = (stats.fail[k] || 0) + 1; if (stats.examples.length < 30) stats.examples.push(k + ': ' + detail); };
+
+function tabooHit(handle, rules) {
+  const t = truth[handle];
+  if (!t) return null;
+  for (const a of rules) {
+    if (!a.rule || !a.rule.notes) continue;
+    if (a.rule.notes.some((n) => t.canon.has(n))) return a.id;
+    if (a.rule.family && t.vec[FAMILIES.indexOf(a.rule.family)] >= a.rule.max_share) return a.id;
+  }
+  return null;
+}
+// the note labels a sentence names, e.g. "Made for every day: bergamot, cedar and musk, close to the skin."
+function namedNotes(text, part) {
+  let s = text;
+  if (part === 'why') s = s.slice(s.indexOf(':') + 1).replace(/,\s*(close to the skin|with a soft trail|with a trail that fills the room)\.$/, '').replace(/\.$/, '');
+  else s = s.replace(/^Shares the /, '').replace(/ of your .*$/, '');
+  return s.split(/, | and /).map((x) => x.trim()).filter(Boolean);
+}
+function personaOk(persona, picks) {
+  const have = new Set(picks.flatMap((h) => [...(truth[h]?.canon || [])]));
+  return (persona.notes || []).every((req) => req.some((n) => (n.startsWith('fam:') ? CANON.some(([id, , f]) => f === n.slice(4) && have.has(id)) : have.has(n))));
+}
+
+function run(st) {
+  stats.runs++;
+  const res = E.wardrobe(model, st);
+  const why = E.whyLines(model, res, c);
+  const want = E.slotsFor(model, st);
+  const rows = res.rows.filter((r) => r.pick);
+  stats.slots += want.length;
+  if (rows.length !== want.length || !want.length) fail('slot not filled', `${E.encodeCode(model, st)} wanted ${want.length} got ${rows.length}`);
+  const handles = rows.map((r) => r.pick.p.handle);
+  const all = handles.concat(res.rows.filter((r) => r.alt).map((r) => r.alt.p.handle));
+  if (new Set(all).size !== all.length) fail('duplicate', handles.join(','));
+  const rules = (st.taboos || []).map((id) => Q('taboos').answers.find((a) => a.id === id));
+  const named = Array.isArray(st.ref) ? st.ref.map((v) => (v.k === 'p' ? v.id : model.refById[v.id].own?.handle)).filter(Boolean) : [];
+  rows.forEach((r, i) => {
+    const p = r.pick.p, h = p.handle;
+    stats.picks[h] = (stats.picks[h] || 0) + 1;
+    if (!p.available) fail('out of stock', h);
+    if (p.isSet) fail('set in a slot', h);
+    const hit = tabooHit(h, rules);
+    if (hit) fail('tabooed note', `${h} breaks ${hit}`);
+    if ((st.taboos || []).includes('strong') && p.dims.presence.some((d) => d.v === 'fills' && !d.low)) fail('strong scent', h);
+    if (!E.genderOk(model, p, st.for)) fail('gender rule', h);
+    if (named.includes(h)) fail('named perfume recommended', h);
+    if (!why[i]) fail('no why-line', h);
+    else for (const n of namedNotes(why[i], 'why')) if (!truth[h] || !truth[h].canon.has(labelToId[n])) fail('why names a note it lacks', `${h}: "${n}" in "${why[i]}"`);
+    const sh = E.sharesLine(model, r.pick, c);
+    if (sh) {
+      const ref = r.pick.ref, refC = ref.id ? refTruth[ref.id] : truth[ref.handle];
+      for (const n of namedNotes(sh, 'shares')) if (!truth[h].canon.has(labelToId[n]) || !refC || !refC.canon.has(labelToId[n])) fail('shares-line names a note not shared', `${h}/${ref.name}: ${n}`);
+    }
   });
-  return state;
-}
-
-const counts = {}, failures = [], setShown = {}, shelfCounts = {};
-const shelfStats = Object.fromEntries((config.wardrobes || []).map((w) => [w.id, { shelves: 0, onTag: 0 }]));
-let runs = 0, fallbacks = 0;
-const quality = { similar: { cos: 0, shared: 0, n: 0 }, complement: { cos: 0, thread: 0, n: 0 }, families: { cos: 0, n: 0 } };
-const sizeHist = {};
-
-function run(given, label) {
-  const state = makeState(given);
-  const answers = E.flatten(state);
-  const ctx = E.tasteContext(model, state);
-  const res = E.recommend(model, answers, { taste: ctx });
-  runs++;
-  const items = res.items, problems = [];
-  const houses = new Set(items.map((r) => r.p.house));
-  if (items.length < S.result_min) problems.push(`only ${items.length} items`);
-  if (houses.size < 2) problems.push(`only ${houses.size} house`);
-  if (items.some((r) => !r.p.available)) problems.push('out-of-stock item');
-  if (items.some((r) => r.p.isSet)) problems.push('set in main list');
-  if (ctx && ctx.handle && items.some((r) => r.p.handle === ctx.handle)) problems.push('named perfume recommended back');
-  if (!res.fallback && items.some((r) => !(r.solid > 0 && r.solid >= r.low))) problems.push('low-confidence-only pick');
-  if (!res.persona) problems.push('no persona');
-  // wardrobes: one perfume per occasion / per mood
-  for (const w of config.wardrobes || []) {
-    const shelves = E.wardrobe(model, answers, w.question, { taste: ctx });
-    const want = Q[qi(w.question)].answers.length;
-    const hs = shelves.map((r) => r.p.handle);
-    const hc = {};
-    shelves.forEach((r) => (hc[r.p.house] = (hc[r.p.house] || 0) + 1));
-    if (shelves.length !== want) problems.push(`${w.id}: ${shelves.length}/${want} shelves`);
-    if (new Set(hs).size !== hs.length) problems.push(`${w.id}: repeated perfume`);
-    if (shelves.some((r) => !r.p.available || r.p.isSet)) problems.push(`${w.id}: unavailable or set`);
-    if (ctx && ctx.handle && hs.includes(ctx.handle)) problems.push(`${w.id}: named perfume on a shelf`);
-    if (Object.values(hc).some((n) => n > S.max_per_house)) problems.push(`${w.id}: house over limit`);
-    const mine = answers.find((x) => x.q === w.question);
-    if (shelves.length && shelves[0].shelf !== mine) problems.push(`${w.id}: visitor's own shelf not first`);
-    const tag = (r) => { const t = r.shelf.tags; const d = Object.keys(t)[0]; const v = Object.keys(t[d]).sort((x, y) => t[d][y] - t[d][x])[0]; return r.p.dims[d].some((x) => x.v === v && !x.low); };
-    shelfStats[w.id].shelves += shelves.length;
-    shelfStats[w.id].onTag += shelves.filter(tag).length;
-    shelves.forEach((r) => (shelfCounts[r.p.handle] = (shelfCounts[r.p.handle] || 0) + 1));
+  if (new Set(why.filter(Boolean)).size !== why.filter(Boolean).length) fail('duplicate why-line', why.join(' | '));
+  if (rows.length >= 2 && new Set(rows.map((r) => r.pick.p.house)).size < 2) fail('one house', handles.join(','));
+  if (!personaOk(res.persona, handles)) fail('persona names a note no pick has', `${res.persona.key}: ${handles.join(',')}`);
+  stats.persona[res.persona.key] = (stats.persona[res.persona.key] || 0) + 1;
+  if (res.set) {
+    stats.sets++;
+    if (res.set.score < 0.9 * rows[0].pick.score - 1e-9) fail('set card not within 10%', res.set.p.handle);
   }
-  const code = E.encodeCode(model, state);
-  const back = E.parseCode(model, code);
-  if (!back || E.encodeCode(model, back) !== code) problems.push(`code does not round-trip: ${code}`);
-  if (problems.length) failures.push({ label, code, problems });
-  if (res.fallback) fallbacks++;
-  sizeHist[items.length] = (sizeHist[items.length] || 0) + 1;
-  items.forEach((r) => (counts[r.p.handle] = (counts[r.p.handle] || 0) + 1));
-  if (res.set) setShown[res.set.p.handle] = (setShown[res.set.p.handle] || 0) + 1;
-  if (ctx) {
-    const top3 = items.slice(0, 3);
-    const q = quality[ctx.mode];
-    top3.forEach((r) => {
-      q.n++;
-      q.cos += E.cosine(ctx.vec, r.p.vec);
-      if (ctx.mode === 'similar') q.shared += r.shared.length >= 1 ? 1 : 0;
-      if (ctx.mode === 'complement') q.thread += r.shared.length >= 1 ? 1 : 0;
-    });
+  const code = E.encodeCode(model, st), back = E.parseCode(model, code);
+  if (!back) fail('share link does not parse', code);
+  else {
+    const again = E.wardrobe(model, back).rows.filter((r) => r.pick).map((r) => r.pick.p.handle);
+    if (again.join() !== handles.join()) fail('share link gives another result', code);
   }
 }
 
-// A. named perfumes
-const named = [
-  ...model.products.filter((p) => p.vec).map((p) => ({ kind: 'own', id: p.handle })),
-  ...model.refs.map((r) => ({ kind: 'ref', id: r.id })),
+const t0 = Date.now();
+const distinct = new Set();
+for (let i = 0; i < 5000; i++) { const st = randomState(); distinct.add(E.encodeCode(model, st)); run(st); }
+const partA = stats.runs;
+const usedA = Object.keys(stats.picks).length;
+const taboSets = [];
+for (let m = 0; m < 1 << NOTE_TABOOS.length; m++) taboSets.push(NOTE_TABOOS.filter((_, i) => m & (1 << i)));
+for (const id of tasteData.popular) for (const tb of taboSets) for (const cl of ids('climate')) run(randomState({ ref: [{ k: 'r', id }], notes: undefined, taboos: tb.length ? tb : ['none'], climate: cl }));
+const partB = stats.runs - partA;
+
+const counts = Object.entries(stats.picks).sort((a, b) => b[1] - a[1]);
+const lines = [
+  `combinations: ${stats.runs} runs (A random ${partA}, ${distinct.size} distinct, B popular x taboos x climates ${partB}), ${stats.slots} slots, ${((Date.now() - t0) / 1000).toFixed(1)} s`,
+  `failures: ${Object.keys(stats.fail).length ? JSON.stringify(stats.fail) : 'none'}`,
+  ...['slot not filled', 'out of stock', 'duplicate', 'set in a slot', 'one house', 'tabooed note', 'strong scent', 'gender rule', 'named perfume recommended', 'no why-line', 'duplicate why-line', 'why names a note it lacks', 'shares-line names a note not shared', 'persona names a note no pick has', 'set card not within 10%', 'share link does not parse', 'share link gives another result']
+    .map((k) => `  ${k.padEnd(38)} ${stats.fail[k] || 0}`),
+  `perfumes used: ${usedA} in the random part A, ${counts.length} overall, of ${model.products.filter((p) => p.available).length} in stock; most used: ${counts.slice(0, 8).map(([h, n]) => `${h} ${n}`).join(', ')}`,
+  `personas: ${Object.entries(stats.persona).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(', ')}`,
+  `ready-made set card shown in ${stats.sets} of ${stats.runs}`,
+  ...stats.examples.slice(0, 15).map((e) => '  e.g. ' + e),
 ];
-const modeQ = Q[qi('mode')];
-for (const pf of named) for (const m of modeQ.answers) for (let k = 0; k < 4; k++) run({ ref: pf, mode: m }, `${pf.kind}:${pf.id}/${m.id}`);
-
-// B. loved families (skip path)
-const famQ = Q[qi('notes')];
-const fa = famQ.answers;
-const famSets = [];
-for (let a = 0; a < fa.length; a++) {
-  famSets.push([fa[a]]);
-  for (let b = a + 1; b < fa.length; b++) {
-    famSets.push([fa[a], fa[b]]);
-    for (let c = b + 1; c < fa.length; c++) famSets.push([fa[a], fa[b], fa[c]]);
-  }
-}
-for (const fs_ of famSets) for (let k = 0; k < 3; k++) run({ ref: 'skip', notes: fs_ }, `families:${fs_.map((x) => x.id).join('+')}`);
-
-// C. all v1 tag combinations on the skip path
-const tagIds = ['for', 'when', 'mood', 'presence', 'weather'];
-let combos = [{}];
-for (const id of tagIds) combos = combos.flatMap((c) => Q[qi(id)].answers.map((a) => ({ ...c, [id]: a })));
-combos.forEach((c, i) => run({ ...c, ref: 'skip', notes: [fa[i % fa.length]] }, 'tags'));
-
-const byHandle = Object.fromEntries(model.products.map((p) => [p.handle, p]));
-const top = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10);
-const never = model.products.filter((p) => !counts[p.handle]);
-const avg = (q, k) => (q.n ? +(q[k] / q.n).toFixed(3) : null);
-const report = {
-  brand: BRAND,
-  runs, passed: runs - failures.length, failures: failures.slice(0, 50), failure_count: failures.length,
-  fallback_results: fallbacks, items_per_result: sizeHist,
-  named_perfumes: named.length, family_sets: famSets.length, tag_combinations: combos.length,
-  match_quality: {
-    similar_avg_family_cosine_top3: avg(quality.similar, 'cos'),
-    similar_share_top3_with_a_shared_key_note: avg(quality.similar, 'shared'),
-    complement_avg_family_cosine_top3: avg(quality.complement, 'cos'),
-    complement_share_top3_with_a_thread_note: avg(quality.complement, 'thread'),
-    families_avg_cosine_top3: avg(quality.families, 'cos'),
-  },
-  distinct_products_recommended: Object.keys(counts).length,
-  catalog_perfumes: model.products.length,
-  max_share_of_results: top.length ? +(top[0][1] / runs).toFixed(3) : 0,
-  top10: top.map(([h, n]) => ({ handle: h, title: `${byHandle[h].house} - ${byHandle[h].title}`, times: n })),
-  never_recommended: never.map((p) => `${p.house} - ${p.title}`),
-  wardrobes: Object.fromEntries(Object.entries(shelfStats).map(([k, v]) => [k, { shelves: v.shelves, share_carrying_the_shelf_tag: +(v.onTag / v.shelves).toFixed(3) }])),
-  distinct_products_on_shelves: Object.keys(shelfCounts).length,
-  set_card_shown: Object.values(setShown).reduce((a, b) => a + b, 0),
-  set_card_by_set: setShown,
-};
+console.log(lines.join('\n'));
 fs.mkdirSync('tests/reports', { recursive: true });
-fs.writeFileSync(`tests/reports/combinations-${BRAND}.json`, JSON.stringify(report, null, 2) + '\n');
-
-console.log(`runs: ${runs} (named perfumes ${named.length} x 2 modes x 4, family sets ${famSets.length} x 3, tag combos ${combos.length})`);
-console.log(`passed: ${report.passed}, failed: ${failures.length}`);
-failures.slice(0, 10).forEach((f) => console.log('  FAIL', f.label, f.problems.join('; ')));
-console.log('items per result:', sizeHist, '| fallback results:', fallbacks);
-console.log('match quality:', report.match_quality);
-console.log(`distinct perfumes recommended: ${report.distinct_products_recommended} of ${report.catalog_perfumes}; most frequent in ${(report.max_share_of_results * 100).toFixed(1)}% of runs`);
-console.log('top 10:');
-report.top10.forEach((t, i) => console.log(`  ${String(i + 1).padStart(2)}. ${t.title} (${t.times})`));
-console.log(`never recommended: ${never.length}`);
-console.log('wardrobes:', report.wardrobes, `| distinct perfumes on shelves: ${report.distinct_products_on_shelves}`);
-console.log(`set card shown in ${report.set_card_shown} of ${runs} results`, setShown);
-process.exitCode = failures.length ? 1 : 0;
+fs.writeFileSync('tests/reports/combinations-aromastylist.txt', lines.join('\n') + '\n');
+fs.writeFileSync('tests/reports/combinations-aromastylist.json', JSON.stringify({ runs: stats.runs, partA, partB, slots: stats.slots, failures: stats.fail, examples: stats.examples, picks: stats.picks, personas: stats.persona, sets: stats.sets }, null, 1));
+if (Object.keys(stats.fail).length) process.exitCode = 1;

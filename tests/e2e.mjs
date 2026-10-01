@@ -1,10 +1,10 @@
-// End-to-end test of the quiz in the harness (Playwright, bundled Chromium).
-//  - completes the quiz 5 times at 390px and 5 times at 1440px, screenshots every screen
-//  - generates the share image (checks 1080x1920), copies the link and checks it reopens the same result
-//  - "Add all" -> checks the POST /cart/add.js payload is {items:[{id, quantity:1}, ...]} (mocked endpoint)
-//  - checks analytics events and that they carry no personal data
-//  - no-JS: quiz hidden, the rest of the page still shows
-//  - screenshots the live find-your-perfume page for a look comparison
+// End-to-end test of the v3 quiz in the harness (Playwright, bundled Chromium), at 390 and 1440 px:
+//  run A  named perfume: popular tile + fuzzy search ("bacarat"), taboos, week, full wardrobe ... -> result
+//  run B  "I don't have one" -> note families -> day & night -> result with 2 slots
+//  run C  deep link with preview_theme_id -> opens the result; "Copy link" keeps preview_theme_id
+// Checks: one card per slot (biggest first), in stock, "Inside <name>" card, share image 1080x1920, copied link
+// reopens the same result, "Add all" POSTs {items:[{id,quantity:1}...]}, analytics carry no personal data,
+// no email field anywhere, no-JS leaves the page as is, weight budgets. Screenshots -> screenshots/.
 // Usage: node tests/e2e.mjs   (starts harness/server.mjs itself)
 import fs from 'node:fs';
 import { spawn } from 'node:child_process';
@@ -15,31 +15,12 @@ const PORT = 8790;
 const BASE = `http://localhost:${PORT}`;
 const PAGE = `${BASE}/pages/find-your-perfume`;
 const SHOTS = 'screenshots';
+fs.rmSync(SHOTS, { recursive: true, force: true });
 fs.mkdirSync(SHOTS, { recursive: true });
 fs.mkdirSync('tests/reports', { recursive: true });
-
-// steps: 'id' = tap that answer tile; {search, pick} = type and tap the first hit; {chip} = popular pick;
-// 'skip' = no favourite perfume; {notes:[...]} = choose note families, then Continue
-const RUNS = [
-  ['her', { search: 'black opium' }, 'similar', 'evening', 'romance-presence', 'fills', 'cold'],
-  ['him', { chip: 'dior-sauvage' }, 'complement', 'work', 'focus-flow', 'close', 'mild'],
-  ['both', 'skip', { notes: ['citrus', 'green', 'aquatic'] }, 'everyday', 'morning-boost', 'noticed', 'hot'],
-  ['her', { chip: 'parfums-de-marly-delina' }, 'similar', 'special', 'celebrate-indulge', 'noticed', 'cold'],
-  ['him', 'skip', { notes: ['woods', 'spices'] }, 'everyday', 'move-thrive', 'close', 'hot'],
-];
-const BACK_RUN = 1; // run 2 also checks the back button
-
-async function step(page, s) {
-  if (typeof s === 'string' && s === 'skip') return page.click('[data-act=skip]');
-  if (typeof s === 'string') return page.click(`[data-act=answer][data-a="${s}"]`);
-  if (s.search) { await page.fill('[data-sq-search]', s.search); await page.click('.sq-result-item'); return; }
-  if (s.chip) return page.click(`.sq-chip[data-id="${s.chip}"]`);
-  if (s.notes) { for (const n of s.notes) await page.click(`[data-act=toggle][data-a="${n}"]`); return page.click('[data-act=next]'); }
-}
-const firstSel = (s) => (s === 'skip' ? '[data-act=skip]' : typeof s === 'string' ? `[data-act=answer][data-a="${s}"]` : s.search ? '[data-sq-search]' : s.chip ? `.sq-chip[data-id="${s.chip}"]` : `[data-act=toggle][data-a="${s.notes[0]}"]`);
 const VIEWPORTS = [{ name: '390', width: 390, height: 844 }, { name: '1440', width: 1440, height: 900 }];
 
-const report = { runs: [], checks: [], cart_payloads: [], events: [] };
+const report = { checks: [], runs: [], cart_payloads: [] };
 const check = (name, ok, detail) => {
   report.checks.push({ name, ok: !!ok, detail });
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ' - ' + detail : ''}`);
@@ -47,7 +28,6 @@ const check = (name, ok, detail) => {
 
 const server = spawn(process.execPath, ['harness/server.mjs', String(PORT)], { stdio: ['ignore', 'pipe', 'inherit'] });
 await new Promise((res) => server.stdout.on('data', (d) => { if (String(d).includes('harness:')) res(); }));
-
 const browser = await chromium.launch();
 async function newContext(opts = {}) {
   const ctx = await browser.newContext({ ...opts });
@@ -55,197 +35,234 @@ async function newContext(opts = {}) {
   return ctx;
 }
 async function settle(page) {
-  // load lazy images before a full-page screenshot, then wait for fonts
   await page.evaluate(async () => {
-    for (let y = 0; y < document.body.scrollHeight; y += 400) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 40)); }
+    for (let y = 0; y < document.body.scrollHeight; y += 400) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 30)); }
     window.scrollTo(0, 0);
-    // only visible images (hidden result tabs keep their lazy images unloaded), and never wait more than 5 s
     const pending = [...document.images].filter((i) => !i.complete && i.offsetParent !== null);
     await Promise.race([Promise.all(pending.map((i) => new Promise((r) => { i.onload = i.onerror = r; }))), new Promise((r) => setTimeout(r, 5000))]);
     await document.fonts.ready;
   });
-  await page.waitForTimeout(350);
+  await page.waitForTimeout(300);
 }
 const pngSize = (buf) => ({ w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) });
 const resultState = (page) => page.evaluate(() => ({
   persona: document.querySelector('.sq-persona')?.textContent.trim(),
-  items: [...document.querySelectorAll('[data-panel=matches] .sq-card [data-act=add]')].map((b) => ({ handle: b.dataset.handle, variant: +b.dataset.variant })),
-  houses: [...document.querySelectorAll('[data-panel=matches] .sq-card__house')].map((e) => e.textContent.trim()),
+  slots: [...document.querySelectorAll('.sq-card--slot .sq-shelf__name')].map((e) => e.textContent.trim()),
+  items: [...document.querySelectorAll('.sq-card--slot > .sq-card__body > [data-act=add]')].map((b) => ({ handle: b.dataset.handle, variant: +b.dataset.variant })),
+  houses: [...document.querySelectorAll('.sq-card--slot .sq-card__house')].map((e) => e.textContent.trim()),
+  why: [...document.querySelectorAll('[data-sq-why]')].map((e) => e.textContent.trim()),
+  shares: [...document.querySelectorAll('[data-sq-shares]')].map((e) => e.textContent.trim()),
+  profile: document.querySelectorAll('.sq-ref--result .sq-dna__bars li').length,
   set: document.querySelector('.sq-set [data-act=add-set]')?.dataset.handle || null,
 }));
 
 for (const vp of VIEWPORTS) {
-  for (let r = 0; r < RUNS.length; r++) {
-    const answers = RUNS[r];
+  const shot = async (page, name) => { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-${name}.png`, fullPage: true }); };
+  // ---------------------------------------------------------------- run A: with a named perfume
+  {
+    const tag = `${vp.name}-A`;
     const ctx = await newContext({ viewport: { width: vp.width, height: vp.height }, acceptDownloads: true, permissions: ['clipboard-read', 'clipboard-write'] });
     const page = await ctx.newPage();
-    const errors = [];
+    const errors = [], adds = [];
     page.on('pageerror', (e) => errors.push(e.message));
-    const addRequests = [];
-    page.on('request', (req) => { if (req.url().endsWith('/cart/add.js')) addRequests.push(JSON.parse(req.postData())); });
+    page.on('request', (req) => { if (req.url().endsWith('/cart/add.js')) adds.push(JSON.parse(req.postData())); });
     await fetch(`${BASE}/cart/clear.js`);
-    const tag = `${vp.name}-run${r + 1}`;
-    const all = r === 0; // every screen for run 1, result screens for the other runs
-
     await page.goto(PAGE);
     await page.waitForSelector('.sq-intro');
-    if (all) { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-01-intro.png`, fullPage: true }); }
+    await shot(page, '01-intro');
     await page.click('[data-act=start]');
-    for (let i = 0; i < answers.length; i++) {
-      await page.waitForSelector(firstSel(answers[i]));
-      if (all || (r === 2 && i === 2)) { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-${String(i + 2).padStart(2, '0')}-run${r + 1}-step${i + 1}.png`, fullPage: true }); }
-      if (r === BACK_RUN && i === 3) {
-        // back button: go back one question (the DNA screen) and forward again
-        await page.click('[data-act=back]');
-        await page.waitForSelector('.sq-dna');
-        await step(page, answers[2]);
-        await page.waitForSelector(firstSel(answers[3]));
-      }
-      await step(page, answers[i]);
-    }
+    await shot(page, '02-for');
+    await page.click('[data-act=answer][data-a=her]');
+    await page.waitForSelector('.sq-pop__tile');
+    const tiles = await page.$$eval('.sq-pop__tile', (l) => l.length);
+    check(`${tag}: 12 popular perfume tiles above the search box`, tiles === 12, `${tiles} tiles`);
+    await shot(page, '03-ref');
+    await page.fill('[data-sq-search]', 'bacarat');
+    await page.waitForSelector('.sq-result-item');
+    const firstHit = await page.$eval('.sq-result-item', (b) => b.textContent);
+    check(`${tag}: typo "bacarat" finds Baccarat Rouge 540`, /Baccarat Rouge 540/.test(firstHit), firstHit);
+    await shot(page, '03b-search');
+    await page.click('.sq-result-item');
+    await page.waitForSelector('.sq-inside .sq-dna');
+    await page.click('.sq-pop__tile[data-id="dior-sauvage"]');
+    await page.waitForFunction(() => document.querySelectorAll('.sq-inside > li').length === 2);
+    const inside = await page.$$eval('.sq-inside .sq-kicker', (l) => l.map((e) => e.textContent));
+    check(`${tag}: "Inside <name>" card for both picks (max 2)`, inside.length === 2 && inside.every((t) => /^Inside /.test(t)), inside.join(' / '));
+    await shot(page, '03c-inside');
+    await page.click('[data-act=next][data-q=ref]');
+    await page.waitForSelector('.sq-chip');
+    for (const a of ['too-sweet', 'coconut', 'office']) await page.click(`[data-act=toggle][data-a="${a}"]`);
+    await shot(page, '04-taboos');
+    await page.click('[data-act=next][data-q=taboos]');
+    await page.waitForSelector('.sq-week');
+    // work a lot, evenings a lot, everyday sometimes, events sometimes
+    for (const [row, lv] of [[0, 2], [3, 2], [1, 1], [4, 1]]) await page.click(`[data-act=level][data-row="${row}"][data-lv="${lv}"]`);
+    await shot(page, '05-week');
+    await page.click('[data-act=next][data-q=week]');
+    await shot(page, '06-how');
+    await page.click('[data-act=answer][data-a=full-wardrobe]');
+    await page.click('[data-act=toggle][data-a=confident]');
+    await page.click('[data-act=toggle][data-a=attractive]');
+    await shot(page, '07-feel');
+    // back button: back to "how", forward again
+    await page.click('[data-act=back]');
+    await page.waitForSelector('[data-act=answer][data-a=full-wardrobe][aria-pressed=true]');
+    await page.click('[data-act=answer][data-a=full-wardrobe]');
+    await page.click('[data-act=next][data-q=feel]');
+    await shot(page, '08-presence');
+    await page.click('[data-act=answer][data-a=noticed]');
+    await shot(page, '09-matters');
+    await page.click('[data-act=answer][data-a=easy]');
+    await shot(page, '10-climate');
+    await page.click('[data-act=answer][data-a=four-seasons]');
+    await shot(page, '11-style');
+    await page.click('[data-act=answer][data-a=classic]');
     await page.waitForSelector('.sq-result');
-    const state = await resultState(page);
-    await settle(page);
-    await page.screenshot({ path: `${SHOTS}/${vp.name}-07-result-run${r + 1}.png`, fullPage: true });
-    const okCount = state.items.length >= 3 && state.items.length <= 5;
-    check(`${tag}: ${state.items.length} perfumes from ${new Set(state.houses).size} houses`, okCount && new Set(state.houses).size >= 2, state.persona);
-    if (answers.some((x) => typeof x === 'object')) {
-      const dna = await page.$$eval('.sq-ref--result .sq-dna__bars li', (l) => l.length);
-      const tasteLines = await page.$$eval('[data-panel=matches] .sq-card__why--taste', (l) => l.length);
-      check(`${tag}: note DNA shown and every card says which notes it shares`, dna >= 1 && tasteLines === state.items.length, `${dna} families, ${tasteLines}/${state.items.length} cards`);
-    }
-    const url = page.url();
-    check(`${tag}: URL carries the answers`, /[?&]sq=[^&]+/.test(url) && decodeURIComponent(url).split('sq=')[1].split('.').length === 8, decodeURIComponent(url.replace(BASE, '')));
+    const st = await resultState(page);
+    await shot(page, '12-result-A');
+    check(`${tag}: one card per slot, biggest first`, st.items.length === 4 && st.slots[0] === 'Work & Presence' && st.slots[1] === 'Evening & Seduction', st.slots.join(', '));
+    check(`${tag}: >= 2 houses, no repeats`, new Set(st.houses).size >= 2 && new Set(st.items.map((i) => i.handle)).size === st.items.length, st.houses.join(', '));
+    check(`${tag}: persona, scent profile (3 families), why-lines all different`, st.persona && st.profile === 3 && new Set(st.why).size === st.why.length && st.why.length === st.items.length, st.persona);
+    check(`${tag}: never recommends the named perfume`, !st.items.some((i) => /baccarat-rouge-540/.test(i.handle)));
+    check(`${tag}: "Shares the ... of your ..." lines`, st.shares.length >= 1 && st.shares.every((s) => /^Shares the .+ of your (Baccarat Rouge 540|Sauvage)\.$/.test(s)), st.shares[0]);
+    const alts = await page.$$eval('.sq-alt summary', (l) => l.length);
+    check(`${tag}: "Also fits this slot" collapsed on each card`, alts === st.items.length && !(await page.isVisible('.sq-alt p')));
+    check(`${tag}: no email field anywhere`, (await page.$$('input[type=email], input[name*=mail]')).length === 0);
+    const url = decodeURIComponent(page.url());
+    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~dior-sauvage\._\.too-sweet\+coconut\+office\.2102100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.four-seasons\.classic/.test(url), url.replace(BASE, ''));
 
-    // result tabs: by occasion (4 shelves) and by mood (7 shelves), the visitor's own shelf first
-    for (const [tabId, want] of [['occasion', 4], ['mood', 7]]) {
-      await page.click(`[data-act=tab][data-tab=${tabId}]`);
-      const shelves = await page.$$eval(`[data-panel=${tabId}] .sq-card--shelf`, (l) => l.length);
-      const firstMine = await page.$eval(`[data-panel=${tabId}] .sq-card--shelf`, (el) => el.classList.contains('is-mine'));
-      const visible = await page.isVisible(`[data-panel=${tabId}]`);
-      check(`${tag}: tab "${tabId}" shows ${want} shelves, own pick first`, visible && shelves === want && firstMine, `${shelves} shelves`);
-      if (all) { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-07-result-run${r + 1}-${tabId}.png`, fullPage: true }); }
-      if (r === 0 && tabId === 'mood') {
-        const handles = await page.$$eval('[data-panel=mood] .sq-card--shelf [data-act=add]', (l) => l.map((b) => +b.dataset.variant));
-        const before = addRequests.length;
-        // "Add all 7 shelves" posts one request with all seven variants, then leaves for /cart
-        await Promise.all([page.waitForURL(`${BASE}/cart`), page.click('[data-act=add-all][data-list=mood]')]);
-        const payload = addRequests[before];
-        check(`${tag}: "Add all 7 shelves" posts the 7 shelf variants`, JSON.stringify(payload) === JSON.stringify({ items: handles.map((id) => ({ id, quantity: 1 })) }), JSON.stringify(payload));
-        report.cart_payloads.push({ run: `${tag}-mood`, payload });
-        await page.goBack();
-        await page.waitForSelector('.sq-result');
-      }
-    }
-    await page.click('[data-act=tab][data-tab=matches]');
-
-    // share image
     await page.click('[data-act=share-open]');
     await page.waitForFunction(() => document.querySelector('[data-sq-preview]')?.src?.startsWith('blob:'));
-    if (all || r === 1) { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-08-share-run${r + 1}.png`, fullPage: true }); }
+    await shot(page, '13-share-A');
     const [download] = await Promise.all([page.waitForEvent('download'), page.click('[data-act=download]')]);
-    const imgPath = `${SHOTS}/share-story-${tag}.png`;
+    const imgPath = `${SHOTS}/share-story-${vp.name}-A.png`;
     await download.saveAs(imgPath);
     const size = pngSize(fs.readFileSync(imgPath));
     check(`${tag}: share image is 1080x1920`, size.w === 1080 && size.h === 1920, `${size.w}x${size.h}`);
-
-    // copy link -> open in a fresh context -> same result
     await page.click('[data-act=copy]');
     const copied = await page.evaluate(() => navigator.clipboard.readText());
     const ctx2 = await newContext({ viewport: { width: vp.width, height: vp.height } });
     const page2 = await ctx2.newPage();
     await page2.goto(copied);
     await page2.waitForSelector('.sq-result');
-    const state2 = await resultState(page2);
-    const same = state2.persona === state.persona && JSON.stringify(state2.items) === JSON.stringify(state.items);
-    check(`${tag}: shared link reopens the same result`, same && (await page2.$('.sq-shared')) != null, copied.replace(BASE, ''));
-    if (all) { await settle(page2); await page2.screenshot({ path: `${SHOTS}/${vp.name}-09-shared-link.png`, fullPage: true }); }
+    const st2 = await resultState(page2);
+    check(`${tag}: copied link reopens the same result`, st2.persona === st.persona && JSON.stringify(st2.items) === JSON.stringify(st.items) && (await page2.$('.sq-shared')) != null, copied.replace(BASE, ''));
+    await shot(page2, '14-shared-link');
     await ctx2.close();
 
-    // single add, then add all
-    if (r === 2) {
-      await page.click('.sq-card [data-act=add]');
-      await page.waitForSelector('.sq-btn--done');
-      await page.waitForFunction(() => document.querySelector('#cart-count').textContent === '1');
-      check(`${tag}: "Add sample" adds one item and updates the header count`, true);
-      await settle(page);
-      await page.screenshot({ path: `${SHOTS}/${vp.name}-10-added-sample.png`, fullPage: true });
-    }
-    await Promise.all([page.waitForURL(`${BASE}/cart`), page.click('[data-act=add-all][data-list=matches]')]);
-    const payload = addRequests[addRequests.length - 1];
-    const expected = { items: state.items.map((i) => ({ id: i.variant, quantity: 1 })) };
-    check(`${tag}: "Add all" POSTs /cart/add.js with items [{id, quantity:1}]`, JSON.stringify(payload) === JSON.stringify(expected), JSON.stringify(payload));
+    await page.click('.sq-card--slot > .sq-card__body > [data-act=add]');
+    await page.waitForSelector('.sq-btn--done');
+    await page.waitForFunction(() => document.querySelector('#cart-count')?.textContent === '1');
+    check(`${tag}: "Add sample" adds one item and updates the header count`, true);
+    await Promise.all([page.waitForURL(`${BASE}/cart`), page.click('[data-act=add-all]')]);
+    const payload = adds[adds.length - 1];
+    const expected = { items: st.items.map((i) => ({ id: i.variant, quantity: 1 })) };
+    check(`${tag}: "Add all" POSTs /cart/add.js {items:[{id,quantity:1}...]}`, JSON.stringify(payload) === JSON.stringify(expected), JSON.stringify(payload));
     report.cart_payloads.push({ run: tag, payload });
-    if (all) await page.screenshot({ path: `${SHOTS}/${vp.name}-11-cart-mock.png` });
-
-    // analytics
-    await page.goBack();
-    const events = await page.evaluate(() => window.__sqEvents).catch(() => []);
-    report.events.push({ run: tag, names: events.map((e) => e.name) });
+    await page.screenshot({ path: `${SHOTS}/${vp.name}-15-cart-mock.png` });
     check(`${tag}: no page errors`, errors.length === 0, errors.join(' | '));
-    report.runs.push({ run: tag, answers, ...state, share_image: imgPath });
+    report.runs.push({ run: tag, ...st });
+    await ctx.close();
+  }
+  // ---------------------------------------------------------------- run B: "I don't have one"
+  {
+    const tag = `${vp.name}-B`;
+    const ctx = await newContext({ viewport: { width: vp.width, height: vp.height } });
+    const page = await ctx.newPage();
+    const errors = [];
+    page.on('pageerror', (e) => errors.push(e.message));
+    await page.goto(PAGE);
+    await page.click('[data-act=start]');
+    await page.click('[data-act=answer][data-a=him]');
+    await page.click('[data-act=no-ref]');
+    await page.waitForSelector('[data-act=toggle][data-a=woods]');
+    for (const f of ['woods', 'citrus', 'spices']) await page.click(`[data-act=toggle][data-a=${f}]`);
+    await shot(page, '03-notes-B');
+    await page.click('[data-act=next][data-q=notes]');
+    await page.click('[data-act=next][data-q=taboos]'); // nothing ticked
+    for (const [row, lv] of [[1, 2], [3, 1], [5, 1]]) await page.click(`[data-act=level][data-row="${row}"][data-lv="${lv}"]`);
+    await page.click('[data-act=next][data-q=week]');
+    await page.click('[data-act=answer][data-a=day-night]');
+    await page.click('[data-act=toggle][data-a=free]');
+    await page.click('[data-act=next][data-q=feel]');
+    await page.click('[data-act=answer][data-a=close]');
+    await page.click('[data-act=answer][data-a=unique]');
+    await page.click('[data-act=answer][data-a=hot-humid]');
+    await page.click('[data-act=answer][data-a=sporty]');
+    await page.waitForSelector('.sq-result');
+    const st = await resultState(page);
+    await shot(page, '12-result-B');
+    check(`${tag}: day & night -> 2 slots (Everyday Signature + Evening & Seduction)`, st.items.length === 2 && st.slots.includes('Everyday Signature') && st.slots.includes('Evening & Seduction'), st.slots.join(', '));
+    check(`${tag}: no "shares" line without a named perfume; profile shown`, st.shares.length === 0 && st.profile === 3);
+    const code = decodeURIComponent(page.url()).split('sq=')[1];
+    check(`${tag}: taboo screen left empty still gives a valid link`, /^him\.none\.woods\+citrus\+spices\.-\.0201010\.day-night\./.test(code), code);
+    check(`${tag}: no page errors`, errors.length === 0, errors.join(' | '));
+    report.runs.push({ run: tag, ...st });
+    await ctx.close();
+  }
+  // ---------------------------------------------------------------- run C: deep link inside a theme preview
+  {
+    const tag = `${vp.name}-C`;
+    const ctx = await newContext({ viewport: { width: vp.width, height: vp.height }, permissions: ['clipboard-read', 'clipboard-write'] });
+    const page = await ctx.newPage();
+    const code = 'both.r~le-labo-santal-33._.heavy-oud-smoke+strong.1201011.full-wardrobe.calm.close.trending.mild-coast.minimal';
+    await page.goto(`${PAGE}?preview_theme_id=123456789&sq=${encodeURIComponent(code)}`);
+    await page.waitForSelector('.sq-result');
+    const st = await resultState(page);
+    check(`${tag}: deep link opens the result directly`, st.items.length >= 3, st.slots.join(', '));
+    await page.click('[data-act=share-open]');
+    await page.click('[data-act=copy]');
+    const copied = await page.evaluate(() => navigator.clipboard.readText());
+    check(`${tag}: copied link keeps preview_theme_id`, /preview_theme_id=123456789/.test(copied) && /sq=/.test(copied), copied.replace(BASE, ''));
+    check(`${tag}: page URL still has preview_theme_id after the result`, /preview_theme_id=123456789/.test(page.url()));
+    await shot(page, '12-result-C-deeplink');
+    report.runs.push({ run: tag, ...st });
     await ctx.close();
   }
 }
 
-// analytics events: capture a whole session in one page (goBack above reloads the page, so re-run one)
+// analytics: one whole session, no personal data
 {
-  const ctx = await newContext({ viewport: { width: 390, height: 844 }, acceptDownloads: true, permissions: ['clipboard-read', 'clipboard-write'] });
+  const ctx = await newContext({ viewport: { width: 390, height: 844 }, permissions: ['clipboard-read', 'clipboard-write'] });
   const page = await ctx.newPage();
-  await page.route('**/cart', (route) => route.fulfill({ status: 200, body: 'cart' }));
-  await page.goto(PAGE);
-  await page.click('[data-act=start]');
-  for (const s of RUNS[0]) { await page.waitForSelector(firstSel(s)); await step(page, s); }
+  await page.goto(`${PAGE}?sq=${encodeURIComponent('her.r~ysl-black-opium._.none.1101000.full-wardrobe.attractive.noticed.easy.four-seasons.romantic')}`);
   await page.waitForSelector('.sq-result');
   await page.click('[data-act=share-open]');
   await page.click('[data-act=copy]');
-  await page.click('.sq-card [data-act=add]');
+  await page.click('.sq-card--slot > .sq-card__body > [data-act=add]');
   await page.waitForSelector('.sq-btn--done');
+  await page.click('[data-act=restart]');
+  await page.click('[data-act=answer][data-a=her]');
   const events = await page.evaluate(() => window.__sqEvents);
   const names = events.map((e) => e.name);
-  for (const n of ['quiz_started', 'quiz_completed', 'quiz_shared', 'quiz_add_to_cart']) check(`analytics: ${n} published`, names.includes(n));
-  const blob = JSON.stringify(events);
-  check('analytics: no personal data (no email / name / ip / customer fields)', !/@|email|phone|customer|first_name|last_name|"ip"/i.test(blob));
+  for (const n of ['quiz_started', 'quiz_shared', 'quiz_add_to_cart']) check(`analytics: ${n} published`, names.includes(n));
+  check('analytics: no personal data (no email / name / ip / customer fields)', !/@|email|phone|customer|first_name|last_name|"ip"/i.test(JSON.stringify(events)));
   report.analytics_sample = events;
   await ctx.close();
 }
 
-// no JavaScript: quiz stays hidden, the rest of the page is visible
+// no JavaScript: quiz hidden, the rest of the page visible, persona list is static HTML
 {
   const ctx = await newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
   const page = await ctx.newPage();
   await page.goto(PAGE);
-  const quizVisible = await page.isVisible('[data-scent-quiz]');
-  const existingVisible = await page.isVisible('[data-existing-content]');
-  const personasInHtml = await page.$$eval('.sq-personas__list li', (l) => l.length);
-  check('no-JS: quiz hidden, existing page content visible', !quizVisible && existingVisible);
-  check('no-JS: persona texts are static HTML (crawlable)', personasInHtml >= 12, `${personasInHtml} personas`);
+  check('no-JS: quiz hidden, existing page content visible', !(await page.isVisible('[data-scent-quiz]')) && (await page.isVisible('[data-existing-content]')));
+  const personas = await page.$$eval('.sq-personas__list li', (l) => l.length);
+  check('no-JS: "All scent personas" is static HTML (SEO)', personas === 18, `${personas} personas`);
   await page.screenshot({ path: `${SHOTS}/390-00-no-js.png`, fullPage: true });
   await ctx.close();
 }
 
-// the live page, for a look comparison
-for (const vp of VIEWPORTS) {
-  const ctx = await newContext({ viewport: { width: vp.width, height: vp.height } });
-  const page = await ctx.newPage();
-  try {
-    await page.goto('https://aromastylist.com/pages/find-your-perfume', { waitUntil: 'domcontentloaded', timeout: 45000 });
-    await page.waitForTimeout(3000);
-    await page.screenshot({ path: `${SHOTS}/live-find-your-perfume-${vp.name}.png` });
-    check(`live page screenshot ${vp.name}`, true);
-  } catch (e) {
-    check(`live page screenshot ${vp.name}`, false, e.message.split('\n')[0]);
-  }
-  await ctx.close();
-}
-
-// weight
-const assets = ['scent-quiz.js', 'scent-quiz.css', 'scent-quiz-aromastylist.json', 'scent-quiz-aromastylist-taste.json'].map((f) => [f, fs.statSync(`theme-files/assets/${f}`).size]);
-const total = assets.reduce((s, [, n]) => s + n, 0);
-report.weight = Object.fromEntries(assets);
-report.weight.total = total;
-check(`added weight ${(total / 1024).toFixed(1)} KB <= 150 KB`, total <= 150 * 1024, assets.map(([f, n]) => `${f} ${(n / 1024).toFixed(1)} KB`).join(', '));
-check('every theme file < 60 KB', [...assets.map(([, n]) => n), fs.statSync('theme-files/sections/scent-quiz.liquid').size, fs.statSync('theme-files/sections/scent-quiz-personas.liquid').size].every((n) => n < 60 * 1024));
+// weight budgets
+const theme = (d) => fs.readdirSync(`theme-files/${d}`).map((f) => [`${d}/${f}`, fs.statSync(`theme-files/${d}/${f}`).size]);
+const files = [...theme('sections'), ...theme('templates'), ...theme('assets')];
+const images = files.filter(([f]) => f.endsWith('.webp'));
+const code = files.filter(([f]) => /^assets\/.*\.(js|css|json)$/.test(f));
+const codeTotal = code.reduce((s, [, n]) => s + n, 0), imgTotal = images.reduce((s, [, n]) => s + n, 0);
+report.weight = { files: Object.fromEntries(files), code_total: codeTotal, images: images.length, images_total: imgTotal };
+check('every theme file <= 60 KB (images aside)', files.filter(([f]) => !f.endsWith('.webp')).every(([, n]) => n <= 60000), code.map(([f, n]) => `${f} ${(n / 1024).toFixed(1)} KB`).join(', '));
+check(`JS + CSS + JSON ${(codeTotal / 1024).toFixed(1)} KB <= 200 KB`, codeTotal <= 200000);
+check(`${images.length} images ${(imgTotal / 1024).toFixed(0)} KB <= 1.8 MB, each <= 30 KB`, imgTotal <= 1800000 && images.every(([, n]) => n <= 30 * 1024));
 
 await browser.close();
 server.kill();

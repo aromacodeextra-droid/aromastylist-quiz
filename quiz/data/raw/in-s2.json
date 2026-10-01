@@ -1,0 +1,242 @@
+[
+ {
+  "id": "calvin-klein-eternity-for-men",
+  "house": "Calvin Klein",
+  "name": "Eternity for Men",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "calvin-klein-obsession",
+  "house": "Calvin Klein",
+  "name": "Obsession",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "calvin-klein-euphoria",
+  "house": "Calvin Klein",
+  "name": "Euphoria",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "calvin-klein-defy",
+  "house": "Calvin Klein",
+  "name": "Defy",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "davidoff-cool-water",
+  "house": "Davidoff",
+  "name": "Cool Water",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "ralph-lauren-polo-blue",
+  "house": "Ralph Lauren",
+  "name": "Polo Blue",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "ralph-lauren-polo-red",
+  "house": "Ralph Lauren",
+  "name": "Polo Red",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "ralph-lauren-romance",
+  "house": "Ralph Lauren",
+  "name": "Romance",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "ralph-lauren-ralph-s-club",
+  "house": "Ralph Lauren",
+  "name": "Ralph's Club",
+  "concentration": "EDP",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "azzaro-chrome",
+  "house": "Azzaro",
+  "name": "Chrome",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "kenzo-flower-by-kenzo",
+  "house": "Kenzo",
+  "name": "Flower by Kenzo",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "estee-lauder-beautiful",
+  "house": "Estée Lauder",
+  "name": "Beautiful",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "estee-lauder-pleasures",
+  "house": "Estée Lauder",
+  "name": "Pleasures",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "estee-lauder-white-linen",
+  "house": "Estée Lauder",
+  "name": "White Linen",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "bvlgari-man-in-black",
+  "house": "Bvlgari",
+  "name": "Man in Black",
+  "concentration": "EDP",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "bvlgari-aqva-pour-homme",
+  "house": "Bvlgari",
+  "name": "Aqva Pour Homme",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "cartier-declaration",
+  "house": "Cartier",
+  "name": "Déclaration",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "cartier-la-panthere",
+  "house": "Cartier",
+  "name": "La Panthère",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "narciso-rodriguez-narciso",
+  "house": "Narciso Rodriguez",
+  "name": "Narciso",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "jimmy-choo-jimmy-choo",
+  "house": "Jimmy Choo",
+  "name": "Jimmy Choo",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "abercrombie-and-fitch-fierce",
+  "house": "Abercrombie & Fitch",
+  "name": "Fierce",
+  "concentration": "Cologne",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "victoria-s-secret-bombshell",
+  "house": "Victoria's Secret",
+  "name": "Bombshell",
+  "concentration": "EDP",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "clean-reserve-warm-cotton",
+  "house": "Clean Reserve",
+  "name": "Warm Cotton",
+  "concentration": "EDP",
+  "gender": "U",
+  "tried_page": null
+ },
+ {
+  "id": "phlur-missing-person",
+  "house": "Phlur",
+  "name": "Missing Person",
+  "concentration": "EDP",
+  "gender": "U",
+  "tried_page": null
+ },
+ {
+  "id": "nautica-voyage",
+  "house": "Nautica",
+  "name": "Voyage",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "ralph-lauren-polo",
+  "house": "Ralph Lauren",
+  "name": "Polo",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "ysl-paris",
+  "house": "Yves Saint Laurent",
+  "name": "Paris",
+  "concentration": "EDT",
+  "gender": "F",
+  "tried_page": null
+ },
+ {
+  "id": "ralph-lauren-polo-black",
+  "house": "Ralph Lauren",
+  "name": "Polo Black",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "jimmy-choo-man",
+  "house": "Jimmy Choo",
+  "name": "Man",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ },
+ {
+  "id": "rabanne-pure-xs",
+  "house": "Rabanne",
+  "name": "Pure XS",
+  "concentration": "EDT",
+  "gender": "M",
+  "tried_page": null
+ }
+]

@@ -20,7 +20,7 @@
         handle: h, title: r[f.title], house: cat.houses[r[f.house]] || '',
         image: r[f.image] ? (/^(https?:)?\/\//.test(r[f.image]) ? r[f.image] : cat.img + r[f.image]) : '',
         variant: r[f.variant], price: r[f.price], available: !!r[f.available], isSet: isSet, dims: {},
-        hot: f.hot != null ? +r[f.hot] || 0 : 0
+        hot: 0
       };
       DIMS.forEach(function (d) {
         var cell = f[d] != null ? String(r[f[d]] || '') : '';
@@ -179,7 +179,8 @@
       if (r.presence && carries(p, 'presence', r.presence) === 1) return r.id;
       if (!p.canon) continue;
       for (var j = 0; j < r.notes.length; j++) if (p.canon.indexOf(r.notes[j]) >= 0) return r.id;
-      if (r.fam >= 0 && p.vec && p.vec[r.fam] >= r.max) return r.id;
+      // family shares are stored rounded to tenths: stay strict by that margin so a borderline perfume never slips through
+      if (r.fam >= 0 && p.vec && p.vec[r.fam] >= r.max - 0.06) return r.id;
     }
     return null;
   }
@@ -571,7 +572,8 @@
     config.questions.forEach(function (q) { (q.answers || []).forEach(function (a) { a.q = q.id; if (a.image && a.image.charAt(0) === '@') a.image = (config.cdn || '') + a.image.slice(1); }); });
     var cat = decodeCatalog(config.catalog);
     var model = { config: config, products: cat.products, sets: cat.sets };
-    (config.catalog.set_members || []).forEach(function (m, i) { if (model.sets[i]) model.sets[i].members = m; });
+    (config.catalog.hot || []).forEach(function (i) { if (model.products[i]) model.products[i].hot = 1; });
+    (config.catalog.set_members || []).forEach(function (m, i) { if (model.sets[i]) model.sets[i].members = m.map(function (k) { return model.products[k] && model.products[k].handle; }); });
     attachTaste(model, tasteData);
     if (model.taste) {
       // "fame" of a perfume we stock: how close it sits to the profiles everybody wears (the popular references)
@@ -876,6 +878,7 @@
   };
   Quiz.prototype.tabooScreen = function (q) {
     var cur = this.state[q.id] || [];
+    this.state[q.id] = cur; // Continue with nothing ticked = nothing tabooed
     var chip = function (a) {
       return '<li><button type="button" class="sq-chip' + (a.toggle ? ' sq-chip--toggle' : '') + '" data-act="toggle" data-q="' + esc(q.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + (cur.indexOf(a.id) >= 0) + '">' +
         '<span>' + esc(a.label) + '</span>' + (a.hint ? '<small>' + esc(a.hint) + '</small>' : '') + '</button></li>';

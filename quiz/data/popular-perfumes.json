@@ -2652,18 +2652,26 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "rum accords",
+     "cedar wood",
+     "vanilla"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "boozy",
+     "cedar",
+     "vanilla"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "no reliable notes from allowed sources",
+   "source_url": "https://www.sephora.com/product/giorgio-armani-beauty-stronger-with-you-absolutely-eau-de-parfum-P514247",
+   "source_type": "sephora",
+   "method": "fetch",
+   "comment": "Sephora lists only Key Notes (Parfum with Rum & Cedarwood); brand site armanibeauty.com blocked (403).",
    "in_store": null
   },
   {
@@ -10414,18 +10422,28 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "neroli",
+     "orange blossom",
+     "rose",
+     "marshmallow"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "neroli",
+     "orange_blossom",
+     "rose",
+     "caramel"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "bykilian.com returns 403; web search budget exhausted so sephora/nordstrom not checked",
+   "source_url": "https://www.sephora.com/product/love-don-t-be-shy-P429621",
+   "source_type": "sephora",
+   "method": "fetch",
+   "comment": "Sephora Key Notes only; bykilian.com blocked.",
    "in_store": null
   },
   {
@@ -11995,21 +12013,49 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "passion fruit",
+     "peaches",
+     "raspberries",
+     "cassis",
+     "pears",
+     "warm sand"
+    ],
+    "heart": [
+     "lily of the valley"
+    ],
+    "base": [
+     "heliotrope",
+     "sandalwood",
+     "vanilla",
+     "patchouli",
+     "musk"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "tropical",
+     "peach",
+     "berries",
+     "pear"
+    ],
+    "heart": [
+     "lily"
+    ],
+    "base": [
+     "magnolia",
+     "sandalwood",
+     "vanilla",
+     "patchouli",
+     "musk"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "brand site notes not reachable (search budget exhausted, product pages 404/429)",
+   "source_url": "https://terenziboutique.com/products/engf",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Official Terenzi boutique (terenziboutique.com), Extrait de Parfum 100 ml olfactory pyramid.",
    "in_store": null
   },
   {
@@ -12023,21 +12069,60 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "bergamot",
+     "cut grass",
+     "ylang ylang",
+     "water jasmine"
+    ],
+    "heart": [
+     "lilum",
+     "violet leaves",
+     "damask rose",
+     "pear nectar",
+     "heliotrope blanc",
+     "peach"
+    ],
+    "base": [
+     "coconut powder",
+     "amber",
+     "vanilla",
+     "cashmere",
+     "ebony",
+     "tonka bean",
+     "powdered sugar"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "bergamot",
+     "greens",
+     "ylang",
+     "sea"
+    ],
+    "heart": [
+     "greens",
+     "rose",
+     "pear",
+     "magnolia",
+     "peach"
+    ],
+    "base": [
+     "coconut",
+     "amber",
+     "vanilla",
+     "cashmere",
+     "woods",
+     "tonka",
+     "caramel"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "brand site notes not reachable (search budget exhausted, product pages 404/429)",
+   "source_url": "https://terenziboutique.com/products/andromeda",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Official Terenzi boutique (terenziboutique.com), Extrait de Parfum 100 ml olfactory pyramid.",
    "in_store": null
   },
   {
@@ -13334,18 +13419,25 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "grapefruit accord",
+     "black peppers",
+     "flint"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "grapefruit",
+     "pepper"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "brand site blocked (403)/unreachable and search budget exhausted",
+   "source_url": "https://www.sephora.com/product/terre-d-hermes-eau-de-toilette-P375120",
+   "source_type": "sephora",
+   "method": "fetch",
+   "comment": "Sephora Key Notes only; hermes.com product pages return 403.",
    "in_store": null
   },
   {
@@ -13364,18 +13456,26 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "ginger",
+     "tuberose",
+     "sandalwood"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "ginger",
+     "tuberose",
+     "sandalwood"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "brand site blocked (403)/unreachable and search budget exhausted",
+   "source_url": "https://www.sephora.com/product/twilly-d-herm-P422442",
+   "source_type": "sephora",
+   "method": "fetch",
+   "comment": "Sephora Key Notes only; hermes.com product pages return 403.",
    "in_store": null
   },
   {
@@ -13652,18 +13752,26 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "jasmine",
+     "lavender",
+     "vanilla"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "jasmine",
+     "lavender",
+     "vanilla"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "brand site blocked (403)/unreachable and search budget exhausted",
+   "source_url": "https://www.sephora.com/product/mon-guerlain-P416938",
+   "source_type": "sephora",
+   "method": "fetch",
+   "comment": "Sephora Key Notes only; guerlain.com blocked (Akamai 403).",
    "in_store": null
   },
   {
@@ -14403,21 +14511,45 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "mandarin",
+     "lavender",
+     "green botanics"
+    ],
+    "heart": [
+     "basil",
+     "geranium",
+     "sage"
+    ],
+    "base": [
+     "sandalwood",
+     "rosewood",
+     "amber"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "mandarin",
+     "lavender",
+     "greens"
+    ],
+    "heart": [
+     "herbs",
+     "magnolia",
+     "sage"
+    ],
+    "base": [
+     "sandalwood",
+     "woods",
+     "amber"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+   "source_url": "https://www.calvinklein.us/en/men/fragrance/fragrance/eternity-eau-de-toilette-for-men/LX000145-000.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site, product page states Eau de Toilette.",
    "in_store": null
   },
   {
@@ -14431,21 +14563,43 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "mandarin",
+     "bergamot"
+    ],
+    "heart": [
+     "lavender",
+     "myrrh",
+     "spices"
+    ],
+    "base": [
+     "musk",
+     "sandalwood",
+     "patchouli"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "mandarin",
+     "bergamot"
+    ],
+    "heart": [
+     "lavender",
+     "myrrh",
+     "clove"
+    ],
+    "base": [
+     "musk",
+     "sandalwood",
+     "patchouli"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+   "source_url": "https://www.calvinklein.us/en/women/fragrance/fragrance/obsession-eau-de-parfum-for-women/LX000719-000.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site.",
    "in_store": null
   },
   {
@@ -14487,21 +14641,45 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "bergamot oil",
+     "mandarin oil",
+     "cedar leaf oil"
+    ],
+    "heart": [
+     "lavender absolute",
+     "sage clary oil",
+     "violet leaf"
+    ],
+    "base": [
+     "vetiver oil",
+     "amber",
+     "musk"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "bergamot",
+     "mandarin",
+     "cedar"
+    ],
+    "heart": [
+     "lavender",
+     "sage",
+     "greens"
+    ],
+    "base": [
+     "vetiver",
+     "amber",
+     "musk"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "brand site blocked (403), sephora/nordstrom blocked, search budget exhausted",
+   "source_url": "https://www.calvinklein.us/en/men/fragrance/fragrance/defy-eau-de-toilette/YS99350D-000.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site; heart listed as 'Mid notes' (lavender absolute, sage clary oil, notes of violet leaf); base 'notes of amber, musk note'.",
    "in_store": null
   },
   {
@@ -14663,21 +14841,49 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "cantaloupe melon accord",
+     "cucumber accord",
+     "watermelon accord",
+     "bergamot oil"
+    ],
+    "heart": [
+     "aquatic accord",
+     "clary sage oil",
+     "geranium oil",
+     "basil verbena oil"
+    ],
+    "base": [
+     "washed suede accord",
+     "patchouli heart",
+     "sheer musk accord"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "tropical",
+     "greens",
+     "sea",
+     "bergamot"
+    ],
+    "heart": [
+     "sea",
+     "sage",
+     "magnolia",
+     "lemon"
+    ],
+    "base": [
+     "leather",
+     "patchouli",
+     "musk"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "ralphlauren.com bot-blocked; sephora/nordstrom blocked, search budget exhausted",
+   "source_url": "https://www.ralphlauren.co.uk/en/polo-blue-eau-de-toilette-125-ml-100060123.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site (Ralph Lauren UK).",
    "in_store": null
   },
   {
@@ -14691,21 +14897,45 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "lemon",
+     "bergamot",
+     "juniper"
+    ],
+    "heart": [
+     "red saffron",
+     "clary sage",
+     "lavender"
+    ],
+    "base": [
+     "cedarwood",
+     "vetiver",
+     "vanilla"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "lemon",
+     "bergamot",
+     "herbs"
+    ],
+    "heart": [
+     "saffron",
+     "sage",
+     "lavender"
+    ],
+    "base": [
+     "cedar",
+     "vetiver",
+     "vanilla"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "ralphlauren.com bot-blocked; sephora/nordstrom blocked, search budget exhausted",
+   "source_url": "https://www.ralphlauren.co.uk/en/polo-red-eau-de-toilette-125ml-164480.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site (Ralph Lauren UK).",
    "in_store": null
   },
   {
@@ -14751,21 +14981,35 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "lavandin",
+     "clary sage"
+    ],
+    "heart": [
+     "virginia cedarwood"
+    ],
+    "base": [
+     "vetiver"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "lavender",
+     "sage"
+    ],
+    "heart": [
+     "cedar"
+    ],
+    "base": [
+     "vetiver"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "ralphlauren.com bot-blocked; sephora/nordstrom blocked, search budget exhausted",
+   "source_url": "https://www.ralphlauren.co.uk/en/ralphs-club-eau-de-parfum-100060051.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site (Ralph Lauren UK).",
    "in_store": null
   },
   {
@@ -15102,18 +15346,28 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "pink pepper",
+     "damascena rose",
+     "vanilla",
+     "white musk"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "pepper",
+     "rose",
+     "vanilla",
+     "musk"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch",
+   "source_url": "https://www.kenzoparfums.com/fr/en/fragrance/femme/flower-by-kenzo-femme/flower-by-kenzo-eau-de-parfum/K10100001.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site (Kenzo Parfums FR, English); description gives no tiers.",
    "in_store": null
   },
   {
@@ -15127,21 +15381,51 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "rose",
+     "mandarin",
+     "lily",
+     "tuberose",
+     "marigold"
+    ],
+    "heart": [
+     "orange flower",
+     "muguet",
+     "jasmine",
+     "ylang-ylang"
+    ],
+    "base": [
+     "sandalwood",
+     "vetiver",
+     "amber"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "rose",
+     "mandarin",
+     "lily",
+     "tuberose",
+     "magnolia"
+    ],
+    "heart": [
+     "orange_blossom",
+     "lily",
+     "jasmine",
+     "ylang"
+    ],
+    "base": [
+     "sandalwood",
+     "vetiver",
+     "amber"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch",
+   "source_url": "https://www.esteelauder.co.uk/product/9780/2116/product-catalog/fragrance/collections/beautiful/beautiful/eau-de-parfum-spray",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site (Estee Lauder UK).",
    "in_store": null
   },
   {
@@ -15155,21 +15439,46 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "white lily",
+     "violet leaves",
+     "green accents"
+    ],
+    "heart": [
+     "black lilac",
+     "white peony",
+     "karo-karounde blossoms",
+     "baie rose",
+     "pink rose",
+     "jasmine"
+    ],
+    "base": [
+     "sandalwood",
+     "patchouli"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "lily",
+     "greens"
+    ],
+    "heart": [
+     "lily",
+     "peony",
+     "rose",
+     "jasmine"
+    ],
+    "base": [
+     "sandalwood",
+     "patchouli"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch",
+   "source_url": "https://www.esteelauder.co.uk/product/12853/2094/product-catalog/fragrance/collections/pleasures/este-lauder-pleasures/eau-de-parfum-spray",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site (Estee Lauder UK).",
    "in_store": null
   },
   {
@@ -15183,21 +15492,43 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "damask rose",
+     "jasmine",
+     "muguet"
+    ],
+    "heart": [
+     "violet",
+     "orris"
+    ],
+    "base": [
+     "vetiver",
+     "moss",
+     "amber"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "rose",
+     "jasmine",
+     "lily"
+    ],
+    "heart": [
+     "violet",
+     "iris"
+    ],
+    "base": [
+     "vetiver",
+     "moss",
+     "amber"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch",
+   "source_url": "https://www.esteelauder.co.uk/product/9786/1992/product-catalog/fragrance/collections/pure-white-linen/white-linen/eau-de-parfum-spray",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site (Estee Lauder UK).",
    "in_store": null
   },
   {
@@ -15372,18 +15703,24 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "cardamom",
+     "cedarwood"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "cardamom",
+     "cedar"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch",
+   "source_url": "https://www.cartier.com/en-us/fragrances/signatures/declaration-66100032.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site; prose only ('brings together cardamom and cedarwood'), no tiers.",
    "in_store": null
   },
   {
@@ -15402,18 +15739,24 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "gardenia",
+     "musk"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "gardenia",
+     "musk"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch",
+   "source_url": "https://www.cartier.com/en-us/fragrances/signatures/la-panthere-FS100015.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site; prose only (gardenia with velvety musk), no tiers.",
    "in_store": null
   },
   {
@@ -15725,21 +16068,35 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "purple passion fruit"
+    ],
+    "heart": [
+     "shangri-la peony"
+    ],
+    "base": [
+     "vanilla orchid",
+     "italian pine"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "tropical"
+    ],
+    "heart": [
+     "peony"
+    ],
+    "base": [
+     "vanilla",
+     "greens"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "WebSearch budget exhausted; brand pages blocked/no notes via fetch",
+   "source_url": "https://www.victoriassecret.com/us/vs/beauty/fragrances-bombshell-shop",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site; Bombshell fragrance guide (top note/heart/base).",
    "in_store": null
   },
   {
@@ -15791,21 +16148,45 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "aldehydes",
+     "ginger",
+     "water accord"
+    ],
+    "heart": [
+     "mint green",
+     "pepper",
+     "floral accord"
+    ],
+    "base": [
+     "musk",
+     "incense",
+     "vetiver"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "powder",
+     "ginger",
+     "sea"
+    ],
+    "heart": [
+     "mint",
+     "pepper",
+     "magnolia"
+    ],
+    "base": [
+     "musk",
+     "incense",
+     "vetiver"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)",
+   "source_url": "https://www.cleanbeauty.com/products/clean-reserve-warm-cotton",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Clean Beauty Collective (Clean's own storefront); 'Dry Down' treated as base.",
    "in_store": null
   },
   {
@@ -16123,21 +16504,34 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
+    "top": [
+     "green apple",
+     "green leaf"
+    ],
     "heart": [],
-    "base": [],
+    "base": [
+     "drenched mimosa",
+     "sailcloth accord",
+     "water lotus"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
+    "top": [
+     "apple",
+     "greens"
+    ],
     "heart": [],
-    "base": [],
+    "base": [
+     "magnolia",
+     "sea"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)",
+   "source_url": "https://www.nautica.com/nautica-voyage-fragrance-gift-set/99350244573.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site; only the Voyage gift set page (1.6 oz EDT + body spray) lists notes; no heart tier listed.",
    "in_store": null
   },
   {
@@ -16681,18 +17075,25 @@
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "iced mango",
+     "silver armoise",
+     "patchouli noir"
+    ]
    },
    "canonical": {
     "top": [],
     "heart": [],
     "base": [],
-    "key": []
+    "key": [
+     "tropical",
+     "patchouli"
+    ]
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)",
+   "source_url": "https://www.ralphlauren.co.uk/en/polo-black-edt-spray-125-ml-461175.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site (Ralph Lauren UK); description gives only a key-note list, no tiers.",
    "in_store": null
   },
   {
@@ -16708,21 +17109,45 @@
    "popular": false,
    "image": false,
    "notes": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "lavender",
+     "mandarin",
+     "honeydew melon"
+    ],
+    "heart": [
+     "pink pepper",
+     "geranium",
+     "pineapple leaf"
+    ],
+    "base": [
+     "patchouli",
+     "suede",
+     "ambery woods"
+    ],
     "key": []
    },
    "canonical": {
-    "top": [],
-    "heart": [],
-    "base": [],
+    "top": [
+     "lavender",
+     "mandarin",
+     "honey"
+    ],
+    "heart": [
+     "pepper",
+     "magnolia",
+     "greens"
+    ],
+    "base": [
+     "patchouli",
+     "leather",
+     "amber"
+    ],
     "key": []
    },
-   "source_url": "",
-   "source_type": "none",
-   "method": "",
-   "comment": "no allowed source reached (search budget exhausted, brand site blocked/not found)",
+   "source_url": "https://us.jimmychoo.com/en/men/fragrance/man-100ml/jimmy-choo-man-eau-de-toilette-100ml-JCMAN100MLFSGY100544.html",
+   "source_type": "brand",
+   "method": "fetch",
+   "comment": "Brand site; tiers parsed from product description prose (top/heart/finally).",
    "in_store": null
   },
   {

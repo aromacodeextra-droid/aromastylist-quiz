@@ -15,8 +15,8 @@ Upload each file byte for byte. If an older version (v1 / v2) is already in the 
 |---|---|---|
 | `theme-files/sections/scent-quiz.liquid` | `sections/scent-quiz.liquid` | 5 KB |
 | `theme-files/sections/scent-quiz-personas.liquid` | `sections/scent-quiz-personas.liquid` | 3 KB |
-| `theme-files/assets/scent-quiz.js` | `assets/scent-quiz.js` | 45 KB |
-| `theme-files/assets/scent-quiz.css` | `assets/scent-quiz.css` | 17 KB |
+| `theme-files/assets/scent-quiz.js` | `assets/scent-quiz.js` | 46 KB |
+| `theme-files/assets/scent-quiz.css` | `assets/scent-quiz.css` | 18 KB |
 | `theme-files/assets/scent-quiz-aromastylist.json` | `assets/scent-quiz-aromastylist.json` (questions, slots, copy, our catalog) | 59 KB |
 | `theme-files/assets/scent-quiz-aromastylist-taste.json` | `assets/scent-quiz-aromastylist-taste.json` (notes of our perfumes + the 400 popular perfumes) | 49 KB |
 | `theme-files/assets/sq-ref-<id>.webp` (59 files) | `assets/sq-ref-<id>.webp`, same names | 7–30 KB each, 860 KB in all |
