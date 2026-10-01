@@ -36,7 +36,8 @@ function makeState(given) {
   return state;
 }
 
-const counts = {}, failures = [], setShown = {};
+const counts = {}, failures = [], setShown = {}, shelfCounts = {};
+const shelfStats = Object.fromEntries((config.wardrobes || []).map((w) => [w.id, { shelves: 0, onTag: 0 }]));
 let runs = 0, fallbacks = 0;
 const quality = { similar: { cos: 0, shared: 0, n: 0 }, complement: { cos: 0, thread: 0, n: 0 }, families: { cos: 0, n: 0 } };
 const sizeHist = {};
@@ -56,6 +57,25 @@ function run(given, label) {
   if (ctx && ctx.handle && items.some((r) => r.p.handle === ctx.handle)) problems.push('named perfume recommended back');
   if (!res.fallback && items.some((r) => !(r.solid > 0 && r.solid >= r.low))) problems.push('low-confidence-only pick');
   if (!res.persona) problems.push('no persona');
+  // wardrobes: one perfume per occasion / per mood
+  for (const w of config.wardrobes || []) {
+    const shelves = E.wardrobe(model, answers, w.question, { taste: ctx });
+    const want = Q[qi(w.question)].answers.length;
+    const hs = shelves.map((r) => r.p.handle);
+    const hc = {};
+    shelves.forEach((r) => (hc[r.p.house] = (hc[r.p.house] || 0) + 1));
+    if (shelves.length !== want) problems.push(`${w.id}: ${shelves.length}/${want} shelves`);
+    if (new Set(hs).size !== hs.length) problems.push(`${w.id}: repeated perfume`);
+    if (shelves.some((r) => !r.p.available || r.p.isSet)) problems.push(`${w.id}: unavailable or set`);
+    if (ctx && ctx.handle && hs.includes(ctx.handle)) problems.push(`${w.id}: named perfume on a shelf`);
+    if (Object.values(hc).some((n) => n > S.max_per_house)) problems.push(`${w.id}: house over limit`);
+    const mine = answers.find((x) => x.q === w.question);
+    if (shelves.length && shelves[0].shelf !== mine) problems.push(`${w.id}: visitor's own shelf not first`);
+    const tag = (r) => { const t = r.shelf.tags; const d = Object.keys(t)[0]; const v = Object.keys(t[d]).sort((x, y) => t[d][y] - t[d][x])[0]; return r.p.dims[d].some((x) => x.v === v && !x.low); };
+    shelfStats[w.id].shelves += shelves.length;
+    shelfStats[w.id].onTag += shelves.filter(tag).length;
+    shelves.forEach((r) => (shelfCounts[r.p.handle] = (shelfCounts[r.p.handle] || 0) + 1));
+  }
   const code = E.encodeCode(model, state);
   const back = E.parseCode(model, code);
   if (!back || E.encodeCode(model, back) !== code) problems.push(`code does not round-trip: ${code}`);
@@ -124,6 +144,8 @@ const report = {
   max_share_of_results: top.length ? +(top[0][1] / runs).toFixed(3) : 0,
   top10: top.map(([h, n]) => ({ handle: h, title: `${byHandle[h].house} - ${byHandle[h].title}`, times: n })),
   never_recommended: never.map((p) => `${p.house} - ${p.title}`),
+  wardrobes: Object.fromEntries(Object.entries(shelfStats).map(([k, v]) => [k, { shelves: v.shelves, share_carrying_the_shelf_tag: +(v.onTag / v.shelves).toFixed(3) }])),
+  distinct_products_on_shelves: Object.keys(shelfCounts).length,
   set_card_shown: Object.values(setShown).reduce((a, b) => a + b, 0),
   set_card_by_set: setShown,
 };
@@ -139,5 +161,6 @@ console.log(`distinct perfumes recommended: ${report.distinct_products_recommend
 console.log('top 10:');
 report.top10.forEach((t, i) => console.log(`  ${String(i + 1).padStart(2)}. ${t.title} (${t.times})`));
 console.log(`never recommended: ${never.length}`);
+console.log('wardrobes:', report.wardrobes, `| distinct perfumes on shelves: ${report.distinct_products_on_shelves}`);
 console.log(`set card shown in ${report.set_card_shown} of ${runs} results`, setShown);
 process.exitCode = failures.length ? 1 : 0;

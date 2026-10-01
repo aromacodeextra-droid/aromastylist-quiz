@@ -75,7 +75,11 @@
       "oud_leather": "Oud, leather & smoke",
       "spices": "Spices",
       "musk_powder": "Musk, iris & powder"
-    }
+    },
+    "tab_matches": "Your matches",
+    "tabs_label": "Ways to see your result",
+    "shelf_mine": "Your pick",
+    "add_all_shelves": "Add all {n} shelves"
   },
   "questions": [
     {
@@ -284,7 +288,8 @@
               "everyday": 4,
               "work": 1
             }
-          }
+          },
+          "shelf_text": "The one they remember. Clean, easy, close to the skin, and worn most days."
         },
         {
           "id": "work",
@@ -296,7 +301,8 @@
               "work": 4,
               "everyday": 1
             }
-          }
+          },
+          "shelf_text": "Polished, never loud. It stays within arm's length and reads as quiet authority."
         },
         {
           "id": "evening",
@@ -308,7 +314,8 @@
               "evening": 4,
               "special-occasions": 1
             }
-          }
+          },
+          "shelf_text": "Warmer, deeper, closer. Built for conversation distance after dark."
         },
         {
           "id": "special",
@@ -320,7 +327,8 @@
               "special-occasions": 4,
               "evening": 1
             }
-          }
+          },
+          "shelf_text": "The one you save. Loud is allowed: it's for the nights that get photographed."
         }
       ]
     },
@@ -338,7 +346,8 @@
               "morning-boost": 5,
               "move-thrive": 1
             }
-          }
+          },
+          "shelf_text": "Bright and sparkling, for the first hours of the day."
         },
         {
           "id": "focus-flow",
@@ -350,7 +359,8 @@
               "focus-flow": 5,
               "harmony-meditation": 1
             }
-          }
+          },
+          "shelf_text": "Clear and composed, for long desk days."
         },
         {
           "id": "romance-presence",
@@ -362,7 +372,8 @@
               "romance-presence": 5,
               "celebrate-indulge": 1
             }
-          }
+          },
+          "shelf_text": "Close-up warmth that lingers on a scarf."
         },
         {
           "id": "celebrate-indulge",
@@ -374,7 +385,8 @@
               "celebrate-indulge": 5,
               "romance-presence": 1
             }
-          }
+          },
+          "shelf_text": "Rich and generous, made for a toast."
         },
         {
           "id": "relax-wind-down",
@@ -386,7 +398,8 @@
               "relax-wind-down": 5,
               "harmony-meditation": 1
             }
-          }
+          },
+          "shelf_text": "Soft and slow, for evenings in."
         },
         {
           "id": "move-thrive",
@@ -398,7 +411,8 @@
               "move-thrive": 5,
               "morning-boost": 1
             }
-          }
+          },
+          "shelf_text": "Fresh air in a bottle, for days in motion."
         },
         {
           "id": "harmony-meditation",
@@ -410,7 +424,8 @@
               "harmony-meditation": 5,
               "relax-wind-down": 1
             }
-          }
+          },
+          "shelf_text": "Quiet woods and incense, for unhurried moments."
         }
       ]
     },
@@ -650,5 +665,19 @@
         "fills": "temple-smoke"
       }
     }
-  }
+  },
+  "wardrobes": [
+    {
+      "id": "occasion",
+      "label": "By occasion",
+      "question": "when",
+      "intro": "Four shelves, one for every part of your week. Same taste, a different job each."
+    },
+    {
+      "id": "mood",
+      "label": "By mood",
+      "question": "mood",
+      "intro": "Seven moods, one scent each, all built on the notes you like."
+    }
+  ]
 }

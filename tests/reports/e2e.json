@@ -492,6 +492,21 @@
       "detail": "/pages/find-your-perfume?sq=her.r~ysl-black-opium.similar._.evening.romance-presence.fills.cold"
     },
     {
+      "name": "390-run1: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run1: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "390-run1: \"Add all 7 shelves\" posts the 7 shelf variants",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50633353920792,\"quantity\":1},{\"id\":50838670049560,\"quantity\":1},{\"id\":52685285196056,\"quantity\":1},{\"id\":50619273773336,\"quantity\":1},{\"id\":50567192150296,\"quantity\":1},{\"id\":52582870319384,\"quantity\":1},{\"id\":52685274186008,\"quantity\":1}]}"
+    },
+    {
       "name": "390-run1: share image is 1080x1920",
       "ok": true,
       "detail": "1080x1920"
@@ -527,6 +542,16 @@
       "detail": "/pages/find-your-perfume?sq=him.r~dior-sauvage.complement._.work.focus-flow.close.mild"
     },
     {
+      "name": "390-run2: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run2: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
       "name": "390-run2: share image is 1080x1920",
       "ok": true,
       "detail": "1080x1920"
@@ -560,6 +585,16 @@
       "name": "390-run3: URL carries the answers",
       "ok": true,
       "detail": "/pages/find-your-perfume?sq=both.skip._.citrus+green+aquatic.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "390-run3: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run3: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
     },
     {
       "name": "390-run3: share image is 1080x1920",
@@ -601,6 +636,16 @@
       "detail": "/pages/find-your-perfume?sq=her.p~parfums-de-marly-delina.similar._.special.celebrate-indulge.noticed.cold"
     },
     {
+      "name": "390-run4: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run4: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
       "name": "390-run4: share image is 1080x1920",
       "ok": true,
       "detail": "1080x1920"
@@ -634,6 +679,16 @@
       "name": "390-run5: URL carries the answers",
       "ok": true,
       "detail": "/pages/find-your-perfume?sq=him.skip._.woods+spices.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "390-run5: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "390-run5: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
     },
     {
       "name": "390-run5: share image is 1080x1920",
@@ -671,6 +726,21 @@
       "detail": "/pages/find-your-perfume?sq=her.r~ysl-black-opium.similar._.evening.romance-presence.fills.cold"
     },
     {
+      "name": "1440-run1: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run1: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
+      "name": "1440-run1: \"Add all 7 shelves\" posts the 7 shelf variants",
+      "ok": true,
+      "detail": "{\"items\":[{\"id\":50633353920792,\"quantity\":1},{\"id\":50838670049560,\"quantity\":1},{\"id\":52685285196056,\"quantity\":1},{\"id\":50619273773336,\"quantity\":1},{\"id\":50567192150296,\"quantity\":1},{\"id\":52582870319384,\"quantity\":1},{\"id\":52685274186008,\"quantity\":1}]}"
+    },
+    {
       "name": "1440-run1: share image is 1080x1920",
       "ok": true,
       "detail": "1080x1920"
@@ -706,6 +776,16 @@
       "detail": "/pages/find-your-perfume?sq=him.r~dior-sauvage.complement._.work.focus-flow.close.mild"
     },
     {
+      "name": "1440-run2: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run2: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
       "name": "1440-run2: share image is 1080x1920",
       "ok": true,
       "detail": "1080x1920"
@@ -739,6 +819,16 @@
       "name": "1440-run3: URL carries the answers",
       "ok": true,
       "detail": "/pages/find-your-perfume?sq=both.skip._.citrus+green+aquatic.everyday.morning-boost.noticed.hot"
+    },
+    {
+      "name": "1440-run3: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run3: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
     },
     {
       "name": "1440-run3: share image is 1080x1920",
@@ -780,6 +870,16 @@
       "detail": "/pages/find-your-perfume?sq=her.p~parfums-de-marly-delina.similar._.special.celebrate-indulge.noticed.cold"
     },
     {
+      "name": "1440-run4: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run4: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
+    },
+    {
       "name": "1440-run4: share image is 1080x1920",
       "ok": true,
       "detail": "1080x1920"
@@ -813,6 +913,16 @@
       "name": "1440-run5: URL carries the answers",
       "ok": true,
       "detail": "/pages/find-your-perfume?sq=him.skip._.woods+spices.everyday.move-thrive.close.hot"
+    },
+    {
+      "name": "1440-run5: tab \"occasion\" shows 4 shelves, own pick first",
+      "ok": true,
+      "detail": "4 shelves"
+    },
+    {
+      "name": "1440-run5: tab \"mood\" shows 7 shelves, own pick first",
+      "ok": true,
+      "detail": "7 shelves"
     },
     {
       "name": "1440-run5: share image is 1080x1920",
@@ -872,9 +982,9 @@
       "ok": true
     },
     {
-      "name": "added weight 139.7 KB <= 150 KB",
+      "name": "added weight 124.3 KB <= 150 KB",
       "ok": true,
-      "detail": "scent-quiz.js 51.2 KB, scent-quiz.css 15.8 KB, scent-quiz-aromastylist.json 56.3 KB, scent-quiz-aromastylist-taste.json 16.3 KB"
+      "detail": "scent-quiz.js 35.6 KB, scent-quiz.css 14.9 KB, scent-quiz-aromastylist.json 57.5 KB, scent-quiz-aromastylist-taste.json 16.3 KB"
     },
     {
       "name": "every theme file < 60 KB",
@@ -882,6 +992,41 @@
     }
   ],
   "cart_payloads": [
+    {
+      "run": "390-run1-mood",
+      "payload": {
+        "items": [
+          {
+            "id": 50633353920792,
+            "quantity": 1
+          },
+          {
+            "id": 50838670049560,
+            "quantity": 1
+          },
+          {
+            "id": 52685285196056,
+            "quantity": 1
+          },
+          {
+            "id": 50619273773336,
+            "quantity": 1
+          },
+          {
+            "id": 50567192150296,
+            "quantity": 1
+          },
+          {
+            "id": 52582870319384,
+            "quantity": 1
+          },
+          {
+            "id": 52685274186008,
+            "quantity": 1
+          }
+        ]
+      }
+    },
     {
       "run": "390-run1",
       "payload": {
@@ -1012,6 +1157,41 @@
           },
           {
             "id": 50567171997976,
+            "quantity": 1
+          }
+        ]
+      }
+    },
+    {
+      "run": "1440-run1-mood",
+      "payload": {
+        "items": [
+          {
+            "id": 50633353920792,
+            "quantity": 1
+          },
+          {
+            "id": 50838670049560,
+            "quantity": 1
+          },
+          {
+            "id": 52685285196056,
+            "quantity": 1
+          },
+          {
+            "id": 50619273773336,
+            "quantity": 1
+          },
+          {
+            "id": 50567192150296,
+            "quantity": 1
+          },
+          {
+            "id": 52582870319384,
+            "quantity": 1
+          },
+          {
+            "id": 52685274186008,
             "quantity": 1
           }
         ]
@@ -1249,10 +1429,10 @@
     }
   ],
   "weight": {
-    "scent-quiz.js": 52456,
-    "scent-quiz.css": 16218,
-    "scent-quiz-aromastylist.json": 57672,
+    "scent-quiz.js": 36435,
+    "scent-quiz.css": 15258,
+    "scent-quiz-aromastylist.json": 58852,
     "scent-quiz-aromastylist-taste.json": 16715,
-    "total": 143061
+    "total": 127260
   }
 }

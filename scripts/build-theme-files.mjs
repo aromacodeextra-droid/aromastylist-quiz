@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { taste, FAMILIES, CANON, encVec, encCanon } from './taste.mjs';
+import { minify } from 'terser';
 
 const BRAND = process.argv[2] || 'aromastylist';
 const SRC = `quiz/brands/${BRAND}`;
@@ -137,8 +138,12 @@ fs.mkdirSync(`${OUT}/sections`, { recursive: true });
 fs.mkdirSync(`${OUT}/assets`, { recursive: true });
 fs.mkdirSync(`${OUT}/templates`, { recursive: true });
 fs.copyFileSync('quiz/engine/sections/scent-quiz.liquid', `${OUT}/sections/scent-quiz.liquid`);
-fs.copyFileSync('quiz/engine/assets/scent-quiz.js', `${OUT}/assets/scent-quiz.js`);
-fs.copyFileSync('quiz/engine/assets/scent-quiz.css', `${OUT}/assets/scent-quiz.css`);
+// theme copies are minified (readable sources stay in quiz/engine); the license comment /*! ... */ is kept
+const js = await minify(fs.readFileSync('quiz/engine/assets/scent-quiz.js', 'utf8'), { compress: true, mangle: true, format: { comments: /^!/ } });
+fs.writeFileSync(`${OUT}/assets/scent-quiz.js`, js.code + '\n');
+const css = fs.readFileSync('quiz/engine/assets/scent-quiz.css', 'utf8')
+  .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\s+/g, ' ').replace(/\s*([{}:;,>])\s*/g, '$1').replace(/;}/g, '}').trim();
+fs.writeFileSync(`${OUT}/assets/scent-quiz.css`, css + '\n');
 const jsonName = `scent-quiz-${BRAND}.json`;
 fs.writeFileSync(`${OUT}/assets/${jsonName}`, JSON.stringify(merged));
 const tasteName = `scent-quiz-${BRAND}-taste.json`;

@@ -59,7 +59,9 @@ async function settle(page) {
   await page.evaluate(async () => {
     for (let y = 0; y < document.body.scrollHeight; y += 400) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 40)); }
     window.scrollTo(0, 0);
-    await Promise.all([...document.images].filter((i) => !i.complete).map((i) => new Promise((r) => { i.onload = i.onerror = r; })));
+    // only visible images (hidden result tabs keep their lazy images unloaded), and never wait more than 5 s
+    const pending = [...document.images].filter((i) => !i.complete && i.offsetParent !== null);
+    await Promise.race([Promise.all(pending.map((i) => new Promise((r) => { i.onload = i.onerror = r; }))), new Promise((r) => setTimeout(r, 5000))]);
     await document.fonts.ready;
   });
   await page.waitForTimeout(350);
@@ -67,8 +69,8 @@ async function settle(page) {
 const pngSize = (buf) => ({ w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) });
 const resultState = (page) => page.evaluate(() => ({
   persona: document.querySelector('.sq-persona')?.textContent.trim(),
-  items: [...document.querySelectorAll('.sq-card [data-act=add]')].map((b) => ({ handle: b.dataset.handle, variant: +b.dataset.variant })),
-  houses: [...document.querySelectorAll('.sq-card__house')].map((e) => e.textContent.trim()),
+  items: [...document.querySelectorAll('[data-panel=matches] .sq-card [data-act=add]')].map((b) => ({ handle: b.dataset.handle, variant: +b.dataset.variant })),
+  houses: [...document.querySelectorAll('[data-panel=matches] .sq-card__house')].map((e) => e.textContent.trim()),
   set: document.querySelector('.sq-set [data-act=add-set]')?.dataset.handle || null,
 }));
 
@@ -109,11 +111,33 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: ${state.items.length} perfumes from ${new Set(state.houses).size} houses`, okCount && new Set(state.houses).size >= 2, state.persona);
     if (answers.some((x) => typeof x === 'object')) {
       const dna = await page.$$eval('.sq-ref--result .sq-dna__bars li', (l) => l.length);
-      const tasteLines = await page.$$eval('.sq-cards .sq-card__why--taste', (l) => l.length);
+      const tasteLines = await page.$$eval('[data-panel=matches] .sq-card__why--taste', (l) => l.length);
       check(`${tag}: note DNA shown and every card says which notes it shares`, dna >= 1 && tasteLines === state.items.length, `${dna} families, ${tasteLines}/${state.items.length} cards`);
     }
     const url = page.url();
     check(`${tag}: URL carries the answers`, /[?&]sq=[^&]+/.test(url) && decodeURIComponent(url).split('sq=')[1].split('.').length === 8, decodeURIComponent(url.replace(BASE, '')));
+
+    // result tabs: by occasion (4 shelves) and by mood (7 shelves), the visitor's own shelf first
+    for (const [tabId, want] of [['occasion', 4], ['mood', 7]]) {
+      await page.click(`[data-act=tab][data-tab=${tabId}]`);
+      const shelves = await page.$$eval(`[data-panel=${tabId}] .sq-card--shelf`, (l) => l.length);
+      const firstMine = await page.$eval(`[data-panel=${tabId}] .sq-card--shelf`, (el) => el.classList.contains('is-mine'));
+      const visible = await page.isVisible(`[data-panel=${tabId}]`);
+      check(`${tag}: tab "${tabId}" shows ${want} shelves, own pick first`, visible && shelves === want && firstMine, `${shelves} shelves`);
+      if (all) { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-07-result-run${r + 1}-${tabId}.png`, fullPage: true }); }
+      if (r === 0 && tabId === 'mood') {
+        const handles = await page.$$eval('[data-panel=mood] .sq-card--shelf [data-act=add]', (l) => l.map((b) => +b.dataset.variant));
+        const before = addRequests.length;
+        // "Add all 7 shelves" posts one request with all seven variants, then leaves for /cart
+        await Promise.all([page.waitForURL(`${BASE}/cart`), page.click('[data-act=add-all][data-list=mood]')]);
+        const payload = addRequests[before];
+        check(`${tag}: "Add all 7 shelves" posts the 7 shelf variants`, JSON.stringify(payload) === JSON.stringify({ items: handles.map((id) => ({ id, quantity: 1 })) }), JSON.stringify(payload));
+        report.cart_payloads.push({ run: `${tag}-mood`, payload });
+        await page.goBack();
+        await page.waitForSelector('.sq-result');
+      }
+    }
+    await page.click('[data-act=tab][data-tab=matches]');
 
     // share image
     await page.click('[data-act=share-open]');
@@ -147,7 +171,7 @@ for (const vp of VIEWPORTS) {
       await settle(page);
       await page.screenshot({ path: `${SHOTS}/${vp.name}-10-added-sample.png`, fullPage: true });
     }
-    await Promise.all([page.waitForURL(`${BASE}/cart`), page.click('[data-act=add-all]')]);
+    await Promise.all([page.waitForURL(`${BASE}/cart`), page.click('[data-act=add-all][data-list=matches]')]);
     const payload = addRequests[addRequests.length - 1];
     const expected = { items: state.items.map((i) => ({ id: i.variant, quantity: 1 })) };
     check(`${tag}: "Add all" POSTs /cart/add.js with items [{id, quantity:1}]`, JSON.stringify(payload) === JSON.stringify(expected), JSON.stringify(payload));

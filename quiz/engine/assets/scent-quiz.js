@@ -176,6 +176,31 @@
     };
   }
 
+  // A wardrobe: one perfume per answer of an "axis" question (e.g. the 4 occasions or the 7 moods).
+  // Each shelf re-scores the shelf with that answer swapped in, keeps the visitor's other answers and taste,
+  // prefers perfumes that actually carry the shelf's tag, and never repeats a perfume or overuses a house.
+  function wardrobe(model, answers, axisQid, opts) {
+    var S = model.config.scoring, ctx = opts && opts.taste;
+    var q = model.config.questions.filter(function (x) { return x.id === axisQid; })[0];
+    if (!q) return [];
+    var mine = answers.filter(function (a) { return a.q === axisQid; })[0];
+    var others = answers.filter(function (a) { return a.q !== axisQid; });
+    var used = {}, houses = {};
+    (opts && opts.exclude || []).forEach(function (h) { used[h] = 1; });
+    var shelves = q.answers.slice().sort(function (a, b) { return (b === mine) - (a === mine); });
+    return shelves.map(function (a) {
+      var dim = Object.keys(a.tags || {})[0], val = null, top = 0;
+      if (dim) Object.keys(a.tags[dim]).forEach(function (k) { if (a.tags[dim][k] > top) { top = a.tags[dim][k]; val = k; } });
+      var carries = function (p) { return (p.dims[dim] || []).some(function (d) { return d.v === val && !d.low; }); };
+      var ranked = rank(model.products, others.concat([a]), S, ctx).filter(function (r) {
+        return r.p.available && !r.excluded && !used[r.p.handle] && (houses[r.p.house] || 0) < S.max_per_house && r.solid >= r.low;
+      });
+      var r = ranked.filter(function (x) { return carries(x.p); })[0] || ranked[0] || null;
+      if (r) { used[r.p.handle] = 1; houses[r.p.house] = (houses[r.p.house] || 0) + 1; r.shelf = a; r.mine = a === mine; }
+      return r;
+    }).filter(Boolean);
+  }
+
   function personaFor(config, answers) {
     var P = config.personas;
     if (!P) return null;
@@ -296,7 +321,7 @@
     return model;
   }
 
-  var API = { decodeCatalog: decodeCatalog, scoreProduct: scoreProduct, recommend: recommend, personaFor: personaFor, encodeCode: encodeCode, parseCode: parseCode, buildModel: buildModel, tasteContext: tasteContext, flatten: flatten, isVisible: isVisible, perfumeOf: perfumeOf, cosine: cosine };
+  var API = { decodeCatalog: decodeCatalog, scoreProduct: scoreProduct, recommend: recommend, wardrobe: wardrobe, personaFor: personaFor, encodeCode: encodeCode, parseCode: parseCode, buildModel: buildModel, tasteContext: tasteContext, flatten: flatten, isVisible: isVisible, perfumeOf: perfumeOf, cosine: cosine };
   if (typeof module === 'object' && module.exports) module.exports = API;
   global.ScentQuiz = API;
   if (typeof document === 'undefined') return;
@@ -412,12 +437,21 @@
       else if (act === 'back') self.show(self.prevVisible(self.step));
       else if (act === 'add') self.addOne(t);
       else if (act === 'add-all') self.addAll(t);
+      else if (act === 'tab') self.tab(t.getAttribute('data-tab'), true);
       else if (act === 'add-set') self.addSet(t);
       else if (act === 'restart') self.restart();
       else if (act === 'share-open') self.openShare(t);
       else if (act === 'download') self.shareDownload();
       else if (act === 'native') self.shareNative();
       else if (act === 'copy') self.shareCopy(t);
+    });
+    this.app.addEventListener('keydown', function (e) {
+      var t = e.target;
+      if (!t.matches || !t.matches('[data-act=tab]') || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
+      var all = Array.prototype.slice.call(self.app.querySelectorAll('[data-act=tab]'));
+      var k = (all.indexOf(t) + (e.key === 'ArrowRight' ? 1 : all.length - 1)) % all.length;
+      self.tab(all[k].getAttribute('data-tab'), true);
+      e.preventDefault();
     });
     this.app.addEventListener('input', function (e) {
       if (e.target.matches('[data-sq-search]')) self.search(e.target);
@@ -658,8 +692,12 @@
     var first = recommend(this.model, answers, { candidates: S.live_check, taste: ctx });
     var check = first.candidates.concat(this.model.sets);
     if (first.own) check.push(first.own);
+    var axes = this.config.wardrobes || [];
+    axes.forEach(function (w) { wardrobe(self.model, answers, w.question, { taste: ctx }).forEach(function (r) { check.push(r.p); }); });
     this.refreshLive(check).then(function () {
       var res = recommend(self.model, answers, { taste: ctx });
+      res.wardrobes = {};
+      axes.forEach(function (w) { res.wardrobes[w.id] = wardrobe(self.model, answers, w.question, { taste: ctx }); });
       self.result = res;
       self.setUrl(encodeCode(self.model, self.state));
       if (fresh) {
@@ -709,9 +747,15 @@
     return t && p.canon ? p.canon.slice(0, 3).map(function (k) { return t.canon[k] ? t.canon[k][0] : ''; }).filter(Boolean).join(', ') : '';
   };
 
-  Quiz.prototype.card = function (r, i) {
+  Quiz.prototype.addAllBtn = function (list, rows) {
+    var total = rows.reduce(function (s, r) { return s + r.p.price; }, 0);
+    var label = list === 'matches' ? this.copy.add_all : fill(this.copy.add_all_shelves, { n: rows.length });
+    return '<div class="sq-actions"><button type="button" class="sq-btn" data-act="add-all" data-list="' + list + '">' + esc(label) + ' · ' + esc(this.fmt.format(total)) + '</button></div>';
+  };
+
+  Quiz.prototype.card = function (r, i, head) {
     var p = r.p, c = this.copy;
-    return '<li class="sq-card">' +
+    return '<li class="sq-card' + (head ? ' sq-card--shelf' : '') + (r.mine ? ' is-mine' : '') + '">' + (head || '') +
       '<a class="sq-card__img" href="' + esc(this.cartRoot + 'products/' + p.handle) + '" tabindex="-1" aria-hidden="true">' +
       (p.image ? '<img src="' + esc(cdnSized(p.image, 600)) + '" srcset="' + esc(cdnSized(p.image, 600)) + ' 600w, ' + esc(cdnSized(p.image, 900)) + ' 900w" sizes="(min-width: 750px) 20vw, 30vw" alt="" width="600" height="600" loading="' + (i < 2 ? 'eager' : 'lazy') + '" decoding="async">' : '') + '</a>' +
       '<div class="sq-card__body">' +
@@ -726,7 +770,6 @@
 
   Quiz.prototype.showResult = function () {
     var self = this, c = this.copy, res = this.result, per = res.persona || { name: '', line: '' };
-    var total = res.items.reduce(function (s, r) { return s + r.p.price; }, 0);
     var html = '<div class="sq-screen sq-result">';
     if (this.shared) html += '<div class="sq-shared"><p>' + esc(c.shared_note) + '</p><button type="button" class="sq-btn sq-btn--line" data-act="restart">' + esc(c.shared_cta) + '</button></div>';
     html += '<p class="sq-kicker">' + esc(c.result_kicker) + '</p>' +
@@ -748,10 +791,27 @@
         '<p class="sq-card__why">' + esc(o.house) + '</p>' +
         '<button type="button" class="sq-btn sq-btn--line" data-act="add" data-variant="' + esc(o.variant) + '" data-handle="' + esc(o.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(o.price)) + '</button></div></aside>';
     }
-    html += '<h3 class="sq-subtitle">' + esc(ctx && ctx.mode === 'complement' ? c.result_list_title_complement : c.result_list_title) + '</h3>' +
+    var axes = (this.config.wardrobes || []).filter(function (w) { return (res.wardrobes[w.id] || []).length; });
+    var tabs = [{ id: 'matches', label: c.tab_matches || c.result_list_title }].concat(axes);
+    if (axes.length) {
+      html += '<div class="sq-tabs" role="tablist" aria-label="' + esc(c.tabs_label || '') + '">' + tabs.map(function (t, i) {
+        return '<button type="button" class="sq-tab" role="tab" id="sq-tab-' + t.id + '" aria-controls="sq-panel-' + t.id + '" aria-selected="' + (i === 0) + '" tabindex="' + (i === 0 ? 0 : -1) + '" data-act="tab" data-tab="' + t.id + '">' + esc(t.label) + '</button>';
+      }).join('') + '</div>';
+    }
+    html += '<div class="sq-panel" role="tabpanel" id="sq-panel-matches" aria-labelledby="sq-tab-matches" data-panel="matches">' +
+      '<h3 class="sq-subtitle">' + esc(ctx && ctx.mode === 'complement' ? c.result_list_title_complement : c.result_list_title) + '</h3>' +
       '<ol class="sq-cards">' + res.items.map(function (r, i) { return self.card(r, i); }).join('') + '</ol>' +
-      '<div class="sq-actions"><button type="button" class="sq-btn" data-act="add-all">' + esc(c.add_all) + ' · ' + esc(this.fmt.format(total)) + '</button>' +
-      '<p class="sq-msg" role="status" data-sq-msg></p></div>';
+      this.addAllBtn('matches', res.items) + '</div>';
+    axes.forEach(function (w) {
+      var list = res.wardrobes[w.id];
+      html += '<div class="sq-panel" role="tabpanel" id="sq-panel-' + w.id + '" aria-labelledby="sq-tab-' + w.id + '" data-panel="' + w.id + '" hidden>' +
+        (w.intro ? '<p class="sq-lead sq-panel__intro">' + esc(w.intro) + '</p>' : '') +
+        '<ol class="sq-cards sq-shelves">' + list.map(function (r, i) {
+          return self.card(r, i + 2, '<div class="sq-shelf__head"><p class="sq-shelf__name">' + esc(r.shelf.label) + (r.mine ? ' <span class="sq-shelf__mine">' + esc(c.shelf_mine) + '</span>' : '') + '</p>' +
+            (r.shelf.shelf_text ? '<p class="sq-shelf__text">' + esc(r.shelf.shelf_text) + '</p>' : '') + '</div>');
+        }).join('') + '</ol>' + self.addAllBtn(w.id, list) + '</div>';
+    });
+    html += '<p class="sq-msg" role="status" data-sq-msg></p>';
     if (res.set) {
       var s = res.set.p;
       html += '<aside class="sq-set"><a class="sq-set__img" href="' + esc(this.cartRoot + 'products/' + s.handle) + '" tabindex="-1" aria-hidden="true">' +
@@ -819,13 +879,25 @@
 
   Quiz.prototype.addSet = function (btn) { this.addOne(btn, 'set'); };
 
+  Quiz.prototype.tab = function (id, focus) {
+    this.app.querySelectorAll('[data-act=tab]').forEach(function (b) {
+      var on = b.getAttribute('data-tab') === id;
+      b.setAttribute('aria-selected', String(on));
+      b.tabIndex = on ? 0 : -1;
+      if (on && focus) b.focus();
+    });
+    this.app.querySelectorAll('[data-panel]').forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== id; });
+    publish(this.root, 'quiz_tab', { quiz: this.config.id, tab: id });
+  };
+
   Quiz.prototype.addAll = function (btn) {
-    var self = this;
-    var items = this.result.items.map(function (r) { return { id: r.p.variant, quantity: 1 }; });
+    var self = this, list = btn.getAttribute('data-list') || 'matches';
+    var rows = list === 'matches' ? this.result.items : (this.result.wardrobes[list] || []);
+    var items = rows.map(function (r) { return { id: r.p.variant, quantity: 1 }; });
     this.busy(btn, true);
     this.msg('');
     this.post(items).then(function () {
-      publish(self.root, 'quiz_add_to_cart', { quiz: self.config.id, mode: 'all', items: self.result.items.map(function (r) { return { variant_id: r.p.variant, handle: r.p.handle }; }) });
+      publish(self.root, 'quiz_add_to_cart', { quiz: self.config.id, mode: 'all', list: list, items: rows.map(function (r) { return { variant_id: r.p.variant, handle: r.p.handle }; }) });
       self.busy(btn, false);
       self.openCart();
     }).catch(function () { self.busy(btn, false); self.msg(self.copy.add_error); });
