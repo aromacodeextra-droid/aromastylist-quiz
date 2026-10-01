@@ -15,7 +15,7 @@
   color: var(--sq-fg);
   font-family: var(--main_ff, inherit);
   line-height: var(--main_lh, 1.5);
-  padding: 32px 16px 40px;
+  padding: 12px 16px 40px;
 }
 .sq-section [hidden] { display: none !important; }
 .sq-section *, .sq-section *::before, .sq-section *::after { box-sizing: border-box; }
@@ -25,7 +25,7 @@
 @media (prefers-reduced-motion: reduce) { .sq-screen { animation: none; } }
 
 .sq-section h2, .sq-section h3 { font-family: var(--main_ff_h, inherit); font-weight: var(--main_fw_h, 400); letter-spacing: var(--main_ls_h, normal); color: var(--sq-h); line-height: var(--main_lh_h, 1.2); text-transform: var(--main_tt_h, none); }
-.sq-title { font-size: var(--mob_h1, 28px); margin: 8px auto 16px; max-width: 22ch; outline: none; }
+.sq-title { font-size: var(--mob_h1, 28px); margin: 4px auto 12px; max-width: 22ch; outline: none; }
 .sq-subtitle { font-size: var(--mob_h3, 20px); margin: 32px 0 16px; }
 .sq-kicker { margin: 0; font-size: 12px; font-weight: var(--main_fw_strong, 700); letter-spacing: .18em; text-transform: uppercase; color: var(--sq-h); }
 .sq-lead { max-width: 56ch; margin: 0 auto 24px; font-size: var(--base_fz, 15px); outline: none; }
@@ -59,7 +59,7 @@
 /* progress */
 .sq-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .sq-step { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
-.sq-bar { height: 3px; margin: 4px 0 20px; background: color-mix(in srgb, var(--sq-fg) 14%, transparent); overflow: hidden; }
+.sq-bar { height: 3px; margin: 4px 0 12px; background: color-mix(in srgb, var(--sq-fg) 14%, transparent); overflow: hidden; }
 .sq-bar span { display: block; height: 100%; background: var(--sq-accent); transition: width .35s ease; }
 
 /* answer tiles */
@@ -192,7 +192,7 @@
 }
 
 @media (min-width: 750px) {
-  .sq-section { padding: 56px 32px 64px; }
+  .sq-section { padding: 24px 32px 64px; }
   .sq-title, .sq-persona { font-size: var(--main_h1, 37px); }
   .sq-subtitle { font-size: var(--main_h3, 23px); }
   .sq-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }

@@ -231,7 +231,7 @@
     {
       "name": "390: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 853 -> 853"
+      "detail": "scrollY 821 -> 821"
     },
     {
       "name": "390: a second tap on a chosen tile takes it back out",
@@ -265,7 +265,7 @@
     {
       "name": "1440: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 134 -> 410"
+      "detail": "scrollY 90 -> 366"
     },
     {
       "name": "1440: a second tap on a chosen tile takes it back out",
@@ -297,7 +297,7 @@
       "detail": "Masculine / Unisex allowed"
     },
     {
-      "name": "set card for both: the-modern-muse (Feminine)",
+      "name": "set card for both: hidden",
       "ok": true,
       "detail": "Feminine / Masculine / Unisex allowed"
     },
@@ -339,10 +339,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 18.4 KB, assets/scent-quiz.js 45.7 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 18.4 KB, assets/scent-quiz.js 45.8 KB"
     },
     {
-      "name": "JS + CSS + JSON 170.7 KB <= 200 KB",
+      "name": "JS + CSS + JSON 170.8 KB <= 200 KB",
       "ok": true
     },
     {
@@ -430,7 +430,7 @@
     },
     {
       "run": "390-C",
-      "persona": "The Skin Secret",
+      "persona": "The Sweet Confidant",
       "slots": [
         "Everyday Signature",
         "Work & Presence",
@@ -452,8 +452,8 @@
           "variant": 50619337834776
         },
         {
-          "handle": "parfums-de-marly-galloway",
-          "variant": 50567113212184
+          "handle": "creed-himalaya",
+          "variant": 50567171997976
         },
         {
           "handle": "ds-durga-radio-bombay",
@@ -464,21 +464,21 @@
         "Maison Crivelli",
         "Carven",
         "Xerjoff",
-        "Parfums de Marly",
+        "Creed",
         "D.S. & Durga"
       ],
       "why": [
         "Made for every day: ginger, lime and musk, close to the skin.",
         "Built for work hours: fig, honey and cashmere wood, close to the skin.",
         "Made for evenings out: lily of the valley, musk and jasmine, close to the skin.",
-        "For active days: musk, amber and lemon, close to the skin.",
+        "For active days: lemon, milk & cream and musk, close to the skin.",
         "For time that is yours: musk, coconut and peach, close to the skin."
       ],
       "shares": [
         "Shares the cardamom, sandalwood and cedar of your Santal 33.",
         "Shares the iris and sandalwood of your Santal 33.",
         "Shares the iris, violet and sandalwood of your Santal 33.",
-        "Shares the iris of your Santal 33.",
+        "Shares the sandalwood and cedar of your Santal 33.",
         "Shares the iris, sandalwood and cedar of your Santal 33."
       ],
       "profile": 3,
@@ -563,7 +563,7 @@
     },
     {
       "run": "1440-C",
-      "persona": "The Skin Secret",
+      "persona": "The Sweet Confidant",
       "slots": [
         "Everyday Signature",
         "Work & Presence",
@@ -585,8 +585,8 @@
           "variant": 50619337834776
         },
         {
-          "handle": "parfums-de-marly-galloway",
-          "variant": 50567113212184
+          "handle": "creed-himalaya",
+          "variant": 50567171997976
         },
         {
           "handle": "ds-durga-radio-bombay",
@@ -597,21 +597,21 @@
         "Maison Crivelli",
         "Carven",
         "Xerjoff",
-        "Parfums de Marly",
+        "Creed",
         "D.S. & Durga"
       ],
       "why": [
         "Made for every day: ginger, lime and musk, close to the skin.",
         "Built for work hours: fig, honey and cashmere wood, close to the skin.",
         "Made for evenings out: lily of the valley, musk and jasmine, close to the skin.",
-        "For active days: musk, amber and lemon, close to the skin.",
+        "For active days: lemon, milk & cream and musk, close to the skin.",
         "For time that is yours: musk, coconut and peach, close to the skin."
       ],
       "shares": [
         "Shares the cardamom, sandalwood and cedar of your Santal 33.",
         "Shares the iris and sandalwood of your Santal 33.",
         "Shares the iris, violet and sandalwood of your Santal 33.",
-        "Shares the iris of your Santal 33.",
+        "Shares the sandalwood and cedar of your Santal 33.",
         "Shares the iris, sandalwood and cedar of your Santal 33."
       ],
       "profile": 3,
@@ -700,11 +700,11 @@
     "files": {
       "sections/scent-quiz-personas.liquid": 2659,
       "sections/scent-quiz.liquid": 5268,
-      "templates/aromastylist.scent-quiz.section.json": 16368,
+      "templates/aromastylist.scent-quiz.section.json": 16354,
       "assets/scent-quiz-aromastylist-taste.json": 49706,
-      "assets/scent-quiz-aromastylist.json": 59511,
+      "assets/scent-quiz-aromastylist.json": 59497,
       "assets/scent-quiz.css": 18796,
-      "assets/scent-quiz.js": 46820,
+      "assets/scent-quiz.js": 46920,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -765,7 +765,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 174833,
+    "code_total": 174919,
     "images": 59,
     "images_total": 891710
   }

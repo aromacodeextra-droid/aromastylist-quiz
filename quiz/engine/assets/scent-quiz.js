@@ -300,6 +300,8 @@
     var score = W.ref * parts.ref + W.slot * parts.slot + W.feel * parts.feel + W.presence * parts.presence + W.climate * parts.climate +
       W.style * parts.style + W.matters * parts.matters;
     if (!P.ctx) score += W.ref * 0.5 * parts.slot; // no taste signal: lean on the occasion instead of a flat zero
+    // "Unisex" on screen 1: unisex perfumes first, the others stay possible
+    if (P.state['for'] === 'both' && (p.dims.gender || []).some(function (g) { return g.v === 'Unisex' && !g.low; })) score += 0.05;
     return { p: p, score: score, parts: parts, shared: rf.shared, ref: rf.ref };
   }
 

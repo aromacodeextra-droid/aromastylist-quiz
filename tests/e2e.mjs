@@ -275,7 +275,7 @@ for (const vp of VIEWPORTS) {
   const CASES = [
     ['her', 'her.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Feminine', 'Unisex'], true],
     ['him', 'him.r~viktor-and-rolf-spicebomb._.none.1201000.one-bottle.attractive.noticed.easy.four-seasons.classic', ['Masculine', 'Unisex'], true],
-    ['both', 'both.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Feminine', 'Masculine', 'Unisex'], true],
+    ['both', 'both.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Feminine', 'Masculine', 'Unisex'], false], // Unisex answer: unisex perfumes rank first, so a gendered set may fall outside the 10% window,
     // the same answers as "her" above, as him: The Modern Muse (feminine) must not be offered
     ['him (her answers)', 'him.r~dior-sauvage._.none.1202000.one-bottle.energised.noticed.easy.four-seasons.romantic', ['Masculine', 'Unisex'], false],
     // the run reported from the live preview

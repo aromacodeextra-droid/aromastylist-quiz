@@ -1,0 +1,833 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "hide_mobile": false
+      }
+    },
+    "main-page": {
+      "type": "main-page",
+      "settings": {
+        "max_width": 980,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30,
+        "fix_zindex": 0
+      }
+    },
+    "section_grid_UPENYR": {
+      "type": "section-grid",
+      "blocks": {
+        "image_aKH7t4": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 0,
+            "color_palette": "",
+            "text_position": "text-center",
+            "cols": 1,
+            "rows": 2,
+            "title": "<h2>Image banner</h2>",
+            "title_underline_style": "none",
+            "text": "",
+            "show_link": true,
+            "link_text": "Button",
+            "link_url": "",
+            "button_style": "primary plain",
+            "show_overlay_link": true,
+            "overlay_url": "",
+            "show_look": false,
+            "product_list": [],
+            "look_btn_style": "buy_button plain",
+            "look_position": "end",
+            "show_look_label": false,
+            "look_label_text": "Label"
+          }
+        },
+        "image_AjcgyK": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 0,
+            "color_palette": "",
+            "text_position": "text-center",
+            "cols": 1,
+            "rows": 1,
+            "title": "<h2>Image banner</h2>",
+            "title_underline_style": "none",
+            "text": "",
+            "show_link": true,
+            "link_text": "Button",
+            "link_url": "",
+            "button_style": "primary plain",
+            "show_overlay_link": true,
+            "overlay_url": "",
+            "show_look": false,
+            "product_list": [],
+            "look_btn_style": "buy_button plain",
+            "look_position": "end",
+            "show_look_label": false,
+            "look_label_text": "Label"
+          }
+        },
+        "image_td9GN4": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 0,
+            "color_palette": "",
+            "text_position": "text-center",
+            "cols": 1,
+            "rows": 1,
+            "title": "<h2>Image banner</h2>",
+            "title_underline_style": "none",
+            "text": "",
+            "show_link": true,
+            "link_text": "Button",
+            "link_url": "",
+            "button_style": "primary plain",
+            "show_overlay_link": true,
+            "overlay_url": "",
+            "show_look": false,
+            "product_list": [],
+            "look_btn_style": "buy_button plain",
+            "look_position": "end",
+            "show_look_label": false,
+            "look_label_text": "Label"
+          }
+        },
+        "image_Tmy7wq": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 0,
+            "color_palette": "",
+            "text_position": "text-center",
+            "cols": 2,
+            "rows": 1,
+            "title": "<h2>Image banner</h2>",
+            "title_underline_style": "none",
+            "text": "",
+            "show_link": true,
+            "link_text": "Button",
+            "link_url": "",
+            "button_style": "primary plain",
+            "show_overlay_link": true,
+            "overlay_url": "",
+            "show_look": false,
+            "product_list": [],
+            "look_btn_style": "buy_button plain",
+            "look_position": "end",
+            "show_look_label": false,
+            "look_label_text": "Label"
+          }
+        },
+        "image_JHT6ax": {
+          "type": "image",
+          "settings": {
+            "overlay_opacity": 0,
+            "color_palette": "",
+            "text_position": "text-center",
+            "cols": 1,
+            "rows": 2,
+            "title": "<h2>Image banner</h2>",
+            "title_underline_style": "none",
+            "text": "",
+            "show_link": true,
+            "link_text": "Button",
+            "link_url": "",
+            "button_style": "primary plain",
+            "show_overlay_link": true,
+            "overlay_url": "",
+            "show_look": false,
+            "product_list": [],
+            "look_btn_style": "buy_button plain",
+            "look_position": "end",
+            "show_look_label": false,
+            "look_label_text": "Label"
+          }
+        }
+      },
+      "block_order": [
+        "image_aKH7t4",
+        "image_AjcgyK",
+        "image_td9GN4",
+        "image_Tmy7wq",
+        "image_JHT6ax"
+      ],
+      "name": "t:sections.grid.presets.name",
+      "settings": {
+        "number_of_columns": "4",
+        "height": "size-s",
+        "width": "boxed",
+        "space_between": 16,
+        "image_zoom": true,
+        "image_move": false,
+        "layout_mobile": "rows",
+        "mobile_height": "size-s",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30,
+        "fix_zindex": 0
+      }
+    },
+    "section_collection_list_wTRGUj": {
+      "type": "section-collection-list",
+      "name": "t:sections.collection_list.presets.name",
+      "settings": {
+        "collections": [
+          "citrus",
+          "clean-fragrance",
+          "feminine-activities",
+          "white-floral",
+          "vanilla",
+          "gourmand",
+          "amber",
+          "woody",
+          "lavender"
+        ],
+        "image_ratio": "portrait",
+        "fill_images": true,
+        "layout": "slider",
+        "number_of_items": 5,
+        "text_alignment": "start",
+        "width": "wide",
+        "title": "",
+        "title_underline_style": "none",
+        "show_link": false,
+        "link_text": "Button",
+        "link_url": "/",
+        "button_style": "primary plain",
+        "collection_title_size": "h5",
+        "mobile_layout": "slider",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30,
+        "fix_zindex": 0
+      }
+    },
+    "scent_quiz": {
+      "type": "scent-quiz",
+      "blocks": {
+        "q_for": {
+          "type": "question",
+          "settings": {
+            "question_id": "for",
+            "title": "Who is it for?"
+          }
+        },
+        "a_for_her": {
+          "type": "answer",
+          "settings": {
+            "question_id": "for",
+            "answer_id": "her",
+            "label": "Her"
+          }
+        },
+        "a_for_him": {
+          "type": "answer",
+          "settings": {
+            "question_id": "for",
+            "answer_id": "him",
+            "label": "Him"
+          }
+        },
+        "a_for_both": {
+          "type": "answer",
+          "settings": {
+            "question_id": "for",
+            "answer_id": "both",
+            "label": "Unisex"
+          }
+        },
+        "q_notes": {
+          "type": "question",
+          "settings": {
+            "question_id": "notes",
+            "title": "Which notes pull you in?"
+          }
+        },
+        "a_notes_citrus": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "citrus",
+            "label": "Citrus"
+          }
+        },
+        "a_notes_green": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "green",
+            "label": "Green & herbs"
+          }
+        },
+        "a_notes_aquatic": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "aquatic",
+            "label": "Fresh & aquatic"
+          }
+        },
+        "a_notes_florals": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "florals",
+            "label": "Rose & florals"
+          }
+        },
+        "a_notes_white_florals": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "white-florals",
+            "label": "White florals"
+          }
+        },
+        "a_notes_fruity": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "fruity",
+            "label": "Fruity"
+          }
+        },
+        "a_notes_gourmand": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "gourmand",
+            "label": "Vanilla & gourmand"
+          }
+        },
+        "a_notes_woods": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "woods",
+            "label": "Woods"
+          }
+        },
+        "a_notes_amber": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "amber",
+            "label": "Amber & resins"
+          }
+        },
+        "a_notes_oud_leather": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "oud-leather",
+            "label": "Oud, leather & smoke"
+          }
+        },
+        "a_notes_spices": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "spices",
+            "label": "Spices"
+          }
+        },
+        "a_notes_musk_powder": {
+          "type": "answer",
+          "settings": {
+            "question_id": "notes",
+            "answer_id": "musk-powder",
+            "label": "Musk, iris & powder"
+          }
+        },
+        "q_how": {
+          "type": "question",
+          "settings": {
+            "question_id": "how",
+            "title": "How do you wear perfume?"
+          }
+        },
+        "a_how_one_bottle": {
+          "type": "answer",
+          "settings": {
+            "question_id": "how",
+            "answer_id": "one-bottle",
+            "label": "One bottle"
+          }
+        },
+        "a_how_day_night": {
+          "type": "answer",
+          "settings": {
+            "question_id": "how",
+            "answer_id": "day-night",
+            "label": "Day & night"
+          }
+        },
+        "a_how_full_wardrobe": {
+          "type": "answer",
+          "settings": {
+            "question_id": "how",
+            "answer_id": "full-wardrobe",
+            "label": "A full wardrobe"
+          }
+        },
+        "q_feel": {
+          "type": "question",
+          "settings": {
+            "question_id": "feel",
+            "title": "With it on, you want to feel…"
+          }
+        },
+        "a_feel_confident": {
+          "type": "answer",
+          "settings": {
+            "question_id": "feel",
+            "answer_id": "confident",
+            "label": "Confident"
+          }
+        },
+        "a_feel_attractive": {
+          "type": "answer",
+          "settings": {
+            "question_id": "feel",
+            "answer_id": "attractive",
+            "label": "Attractive"
+          }
+        },
+        "a_feel_calm": {
+          "type": "answer",
+          "settings": {
+            "question_id": "feel",
+            "answer_id": "calm",
+            "label": "Calm"
+          }
+        },
+        "a_feel_energised": {
+          "type": "answer",
+          "settings": {
+            "question_id": "feel",
+            "answer_id": "energised",
+            "label": "Energised"
+          }
+        },
+        "a_feel_festive": {
+          "type": "answer",
+          "settings": {
+            "question_id": "feel",
+            "answer_id": "festive",
+            "label": "Festive"
+          }
+        },
+        "a_feel_free": {
+          "type": "answer",
+          "settings": {
+            "question_id": "feel",
+            "answer_id": "free",
+            "label": "Free"
+          }
+        },
+        "q_presence": {
+          "type": "question",
+          "settings": {
+            "question_id": "presence",
+            "title": "How present should it be?"
+          }
+        },
+        "a_presence_close": {
+          "type": "answer",
+          "settings": {
+            "question_id": "presence",
+            "answer_id": "close",
+            "label": "Just for me"
+          }
+        },
+        "a_presence_noticed": {
+          "type": "answer",
+          "settings": {
+            "question_id": "presence",
+            "answer_id": "noticed",
+            "label": "Pleasantly noticed"
+          }
+        },
+        "a_presence_fills": {
+          "type": "answer",
+          "settings": {
+            "question_id": "presence",
+            "answer_id": "fills",
+            "label": "Remembered in the room"
+          }
+        },
+        "q_matters": {
+          "type": "question",
+          "settings": {
+            "question_id": "matters",
+            "title": "What matters most?"
+          }
+        },
+        "a_matters_easy": {
+          "type": "answer",
+          "settings": {
+            "question_id": "matters",
+            "answer_id": "easy",
+            "label": "Easy & loved by all"
+          }
+        },
+        "a_matters_trending": {
+          "type": "answer",
+          "settings": {
+            "question_id": "matters",
+            "answer_id": "trending",
+            "label": "What everyone's talking about"
+          }
+        },
+        "a_matters_unique": {
+          "type": "answer",
+          "settings": {
+            "question_id": "matters",
+            "answer_id": "unique",
+            "label": "Unique"
+          }
+        },
+        "q_climate": {
+          "type": "question",
+          "settings": {
+            "question_id": "climate",
+            "title": "Your climate?"
+          }
+        },
+        "a_climate_hot_humid": {
+          "type": "answer",
+          "settings": {
+            "question_id": "climate",
+            "answer_id": "hot-humid",
+            "label": "Hot & humid"
+          }
+        },
+        "a_climate_dry_heat": {
+          "type": "answer",
+          "settings": {
+            "question_id": "climate",
+            "answer_id": "dry-heat",
+            "label": "Dry heat"
+          }
+        },
+        "a_climate_four_seasons": {
+          "type": "answer",
+          "settings": {
+            "question_id": "climate",
+            "answer_id": "four-seasons",
+            "label": "Four seasons"
+          }
+        },
+        "a_climate_mild_coast": {
+          "type": "answer",
+          "settings": {
+            "question_id": "climate",
+            "answer_id": "mild-coast",
+            "label": "Mild coast"
+          }
+        },
+        "q_style": {
+          "type": "question",
+          "settings": {
+            "question_id": "style",
+            "title": "Which style is most you?"
+          }
+        },
+        "a_style_classic": {
+          "type": "answer",
+          "settings": {
+            "question_id": "style",
+            "answer_id": "classic",
+            "label": "Classic"
+          }
+        },
+        "a_style_dramatic": {
+          "type": "answer",
+          "settings": {
+            "question_id": "style",
+            "answer_id": "dramatic",
+            "label": "Dramatic"
+          }
+        },
+        "a_style_romantic": {
+          "type": "answer",
+          "settings": {
+            "question_id": "style",
+            "answer_id": "romantic",
+            "label": "Romantic"
+          }
+        },
+        "a_style_minimal": {
+          "type": "answer",
+          "settings": {
+            "question_id": "style",
+            "answer_id": "minimal",
+            "label": "Minimal"
+          }
+        },
+        "a_style_casual": {
+          "type": "answer",
+          "settings": {
+            "question_id": "style",
+            "answer_id": "casual",
+            "label": "Casual"
+          }
+        },
+        "a_style_sporty": {
+          "type": "answer",
+          "settings": {
+            "question_id": "style",
+            "answer_id": "sporty",
+            "label": "Sporty"
+          }
+        }
+      },
+      "block_order": [
+        "q_for",
+        "a_for_her",
+        "a_for_him",
+        "a_for_both",
+        "q_notes",
+        "a_notes_citrus",
+        "a_notes_green",
+        "a_notes_aquatic",
+        "a_notes_florals",
+        "a_notes_white_florals",
+        "a_notes_fruity",
+        "a_notes_gourmand",
+        "a_notes_woods",
+        "a_notes_amber",
+        "a_notes_oud_leather",
+        "a_notes_spices",
+        "a_notes_musk_powder",
+        "q_how",
+        "a_how_one_bottle",
+        "a_how_day_night",
+        "a_how_full_wardrobe",
+        "q_feel",
+        "a_feel_confident",
+        "a_feel_attractive",
+        "a_feel_calm",
+        "a_feel_energised",
+        "a_feel_festive",
+        "a_feel_free",
+        "q_presence",
+        "a_presence_close",
+        "a_presence_noticed",
+        "a_presence_fills",
+        "q_matters",
+        "a_matters_easy",
+        "a_matters_trending",
+        "a_matters_unique",
+        "q_climate",
+        "a_climate_hot_humid",
+        "a_climate_dry_heat",
+        "a_climate_four_seasons",
+        "a_climate_mild_coast",
+        "q_style",
+        "a_style_classic",
+        "a_style_dramatic",
+        "a_style_romantic",
+        "a_style_minimal",
+        "a_style_casual",
+        "a_style_sporty"
+      ],
+      "settings": {
+        "config_file": "scent-quiz-aromastylist.json",
+        "taste_file": "scent-quiz-aromastylist-taste.json",
+        "color_palette": "scheme-1"
+      }
+    },
+    "scent_quiz_personas": {
+      "type": "scent-quiz-personas",
+      "blocks": {
+        "p_first_light": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "first-light",
+            "name": "The First Light",
+            "line": "Zest on warm skin. A bright, close scent for the first hour of the day, noticed only by whoever leans in."
+          }
+        },
+        "p_sunlit_signal": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "sunlit-signal",
+            "name": "The Sunlit Signal",
+            "line": "Citrus peel, green leaves and a clean trail that walks into the room a step behind you."
+          }
+        },
+        "p_bright_entrance": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "bright-entrance",
+            "name": "The Bright Entrance",
+            "line": "Sparkling top notes with real staying power. You arrive and the whole room brightens a shade."
+          }
+        },
+        "p_quiet_signature": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "quiet-signature",
+            "name": "The Quiet Signature",
+            "line": "Clean woods, cool herbs and a whisper of iris. Sharp, composed and kept to your own desk."
+          }
+        },
+        "p_sharp_edit": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "sharp-edit",
+            "name": "The Sharp Edit",
+            "line": "Crisp aromatics over dry cedar. The scent of someone who answers emails in full sentences."
+          }
+        },
+        "p_boardroom_pull": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "boardroom-pull",
+            "name": "The Boardroom Pull",
+            "line": "Structured woods and cold spice with a trail that says the meeting starts when you sit down."
+          }
+        },
+        "p_skin_secret": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "skin-secret",
+            "name": "The Skin Secret",
+            "line": "Soft musk, warm petals and a trace of amber, made for the distance of a whisper."
+          }
+        },
+        "p_slow_burn": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "slow-burn",
+            "name": "The Slow Burn",
+            "line": "Rose, resin and something darker underneath. It lingers on a scarf long after you've left."
+          }
+        },
+        "p_after_hours_magnet": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "after-hours-magnet",
+            "name": "The After-Hours Magnet",
+            "line": "Oud, amber and velvet florals that own the room after dark. Heads turn and nobody can say why."
+          }
+        },
+        "p_sweet_confidant": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "sweet-confidant",
+            "name": "The Sweet Confidant",
+            "line": "Vanilla, cream and a pinch of spice worn close. Dessert you keep to yourself."
+          }
+        },
+        "p_golden_hour_guest": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "golden-hour-guest",
+            "name": "The Golden Hour Guest",
+            "line": "Juicy fruit, warm amber and a pop of fizz. You make any table feel like a party."
+          }
+        },
+        "p_grand_entrance": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "grand-entrance",
+            "name": "The Grand Entrance",
+            "line": "Rum, praline, saffron and leather. Loud in the best way and still there at the last song."
+          }
+        },
+        "p_soft_landing": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "soft-landing",
+            "name": "The Soft Landing",
+            "line": "Lavender, sandalwood and clean musk. A Sunday with nowhere to be, bottled."
+          }
+        },
+        "p_cashmere_evening": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "cashmere-evening",
+            "name": "The Cashmere Evening",
+            "line": "Creamy woods and powdery vanilla that warm a room like a lamp turned low."
+          }
+        },
+        "p_clean_stride": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "clean-stride",
+            "name": "The Clean Stride",
+            "line": "Cool water, bright citrus and a snap of ginger. Fresh from the first step to the last."
+          }
+        },
+        "p_open_air": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "open-air",
+            "name": "The Open Air",
+            "line": "Sea salt, green leaves and wild herbs that trail behind you like wind off the water."
+          }
+        },
+        "p_still_point": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "still-point",
+            "name": "The Still Point",
+            "line": "Sandalwood, tea and a thread of incense. Close, unhurried and completely your own."
+          }
+        },
+        "p_temple_smoke": {
+          "type": "persona",
+          "settings": {
+            "persona_key": "temple-smoke",
+            "name": "The Temple Smoke",
+            "line": "Frankincense, myrrh and dry woods drifting through the room like the last minutes of a ritual."
+          }
+        }
+      },
+      "block_order": [
+        "p_first_light",
+        "p_sunlit_signal",
+        "p_bright_entrance",
+        "p_quiet_signature",
+        "p_sharp_edit",
+        "p_boardroom_pull",
+        "p_skin_secret",
+        "p_slow_burn",
+        "p_after_hours_magnet",
+        "p_sweet_confidant",
+        "p_golden_hour_guest",
+        "p_grand_entrance",
+        "p_soft_landing",
+        "p_cashmere_evening",
+        "p_clean_stride",
+        "p_open_air",
+        "p_still_point",
+        "p_temple_smoke"
+      ],
+      "settings": {
+        "color_palette": "scheme-1",
+        "title": "All scent personas",
+        "intro": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-page",
+    "scent_quiz",
+    "scent_quiz_personas",
+    "section_grid_UPENYR",
+    "section_collection_list_wTRGUj"
+  ]
+}

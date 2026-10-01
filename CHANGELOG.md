@@ -1,5 +1,16 @@
 # Changelog
 
+## quiz-v3.4 (2026-10-01) — UX step 1: screen 1 "Who is it for?"
+
+- Third answer "Both of us / no rule" -> **"Unisex"** (one meaning per button). With Unisex, unisex perfumes now rank
+  first in every slot; the others stay possible. The set card rule stays "any" (there are no unisex sets).
+- Less empty space above the question (section top padding 32 -> 12 px on phones, 56 -> 24 px on desktop; tighter
+  progress bar and title margins): the question and its three answers fit on one phone screen (answers end at 420 px
+  of 844).
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`, and the
+  page template's block label (`templates/page.find-your-perfume.json`, block `a_for_both`; snapshot in `docs/theme-copy/`).
+- Tests: combinations 0 failures; e2e 74 / 74 (the Unisex set-card case may now be hidden: no unisex set within 10%).
+
 ## quiz-v3.3.2 (2026-10-01) — name first, then house; aligned tiles
 
 - Owner's rule: the perfume's name always comes first, the house under it. Applied to the 12 tiles on screen 2, the
