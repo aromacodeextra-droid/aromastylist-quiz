@@ -18,13 +18,25 @@ const SHOTS = 'screenshots';
 fs.mkdirSync(SHOTS, { recursive: true });
 fs.mkdirSync('tests/reports', { recursive: true });
 
+// steps: 'id' = tap that answer tile; {search, pick} = type and tap the first hit; {chip} = popular pick;
+// 'skip' = no favourite perfume; {notes:[...]} = choose note families, then Continue
 const RUNS = [
-  ['her', 'evening', 'romance-presence', 'fills', 'cold'],
-  ['him', 'work', 'focus-flow', 'close', 'mild'],
-  ['both', 'everyday', 'morning-boost', 'noticed', 'hot'],
-  ['her', 'special', 'celebrate-indulge', 'noticed', 'cold'],
-  ['him', 'everyday', 'move-thrive', 'close', 'hot'],
+  ['her', { search: 'black opium' }, 'similar', 'evening', 'romance-presence', 'fills', 'cold'],
+  ['him', { chip: 'dior-sauvage' }, 'complement', 'work', 'focus-flow', 'close', 'mild'],
+  ['both', 'skip', { notes: ['citrus', 'green', 'aquatic'] }, 'everyday', 'morning-boost', 'noticed', 'hot'],
+  ['her', { chip: 'parfums-de-marly-delina' }, 'similar', 'special', 'celebrate-indulge', 'noticed', 'cold'],
+  ['him', 'skip', { notes: ['woods', 'spices'] }, 'everyday', 'move-thrive', 'close', 'hot'],
 ];
+const BACK_RUN = 1; // run 2 also checks the back button
+
+async function step(page, s) {
+  if (typeof s === 'string' && s === 'skip') return page.click('[data-act=skip]');
+  if (typeof s === 'string') return page.click(`[data-act=answer][data-a="${s}"]`);
+  if (s.search) { await page.fill('[data-sq-search]', s.search); await page.click('.sq-result-item'); return; }
+  if (s.chip) return page.click(`.sq-chip[data-id="${s.chip}"]`);
+  if (s.notes) { for (const n of s.notes) await page.click(`[data-act=toggle][data-a="${n}"]`); return page.click('[data-act=next]'); }
+}
+const firstSel = (s) => (s === 'skip' ? '[data-act=skip]' : typeof s === 'string' ? `[data-act=answer][data-a="${s}"]` : s.search ? '[data-sq-search]' : s.chip ? `.sq-chip[data-id="${s.chip}"]` : `[data-act=toggle][data-a="${s.notes[0]}"]`);
 const VIEWPORTS = [{ name: '390', width: 390, height: 844 }, { name: '1440', width: 1440, height: 900 }];
 
 const report = { runs: [], checks: [], cart_payloads: [], events: [] };
@@ -78,17 +90,16 @@ for (const vp of VIEWPORTS) {
     if (all) { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-01-intro.png`, fullPage: true }); }
     await page.click('[data-act=start]');
     for (let i = 0; i < answers.length; i++) {
-      const sel = `[data-act=answer][data-q="${i}"][data-a="${answers[i]}"]`;
-      await page.waitForSelector(sel);
-      if (all) { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-0${i + 2}-question${i + 1}.png`, fullPage: true }); }
-      if (r === 1 && i === 2) {
-        // back button: go back one question and forward again
+      await page.waitForSelector(firstSel(answers[i]));
+      if (all || (r === 2 && i === 2)) { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-${String(i + 2).padStart(2, '0')}-run${r + 1}-step${i + 1}.png`, fullPage: true }); }
+      if (r === BACK_RUN && i === 3) {
+        // back button: go back one question (the DNA screen) and forward again
         await page.click('[data-act=back]');
-        await page.waitForSelector(`[data-act=answer][data-q="1"][aria-pressed=true]`);
-        await page.click(`[data-act=answer][data-q="1"][data-a="${answers[1]}"]`);
-        await page.waitForSelector(sel);
+        await page.waitForSelector('.sq-dna');
+        await step(page, answers[2]);
+        await page.waitForSelector(firstSel(answers[3]));
       }
-      await page.click(sel);
+      await step(page, answers[i]);
     }
     await page.waitForSelector('.sq-result');
     const state = await resultState(page);
@@ -96,8 +107,13 @@ for (const vp of VIEWPORTS) {
     await page.screenshot({ path: `${SHOTS}/${vp.name}-07-result-run${r + 1}.png`, fullPage: true });
     const okCount = state.items.length >= 3 && state.items.length <= 5;
     check(`${tag}: ${state.items.length} perfumes from ${new Set(state.houses).size} houses`, okCount && new Set(state.houses).size >= 2, state.persona);
+    if (answers.some((x) => typeof x === 'object')) {
+      const dna = await page.$$eval('.sq-ref--result .sq-dna__bars li', (l) => l.length);
+      const tasteLines = await page.$$eval('.sq-cards .sq-card__why--taste', (l) => l.length);
+      check(`${tag}: note DNA shown and every card says which notes it shares`, dna >= 1 && tasteLines === state.items.length, `${dna} families, ${tasteLines}/${state.items.length} cards`);
+    }
     const url = page.url();
-    check(`${tag}: URL carries the answers`, url.includes(`sq=${answers.join('.')}`), url.replace(BASE, ''));
+    check(`${tag}: URL carries the answers`, /[?&]sq=[^&]+/.test(url) && decodeURIComponent(url).split('sq=')[1].split('.').length === 8, decodeURIComponent(url.replace(BASE, '')));
 
     // share image
     await page.click('[data-act=share-open]');
@@ -155,7 +171,7 @@ for (const vp of VIEWPORTS) {
   await page.route('**/cart', (route) => route.fulfill({ status: 200, body: 'cart' }));
   await page.goto(PAGE);
   await page.click('[data-act=start]');
-  for (let i = 0; i < RUNS[0].length; i++) await page.click(`[data-act=answer][data-q="${i}"][data-a="${RUNS[0][i]}"]`);
+  for (const s of RUNS[0]) { await page.waitForSelector(firstSel(s)); await step(page, s); }
   await page.waitForSelector('.sq-result');
   await page.click('[data-act=share-open]');
   await page.click('[data-act=copy]');
@@ -200,12 +216,12 @@ for (const vp of VIEWPORTS) {
 }
 
 // weight
-const assets = ['scent-quiz.js', 'scent-quiz.css', 'scent-quiz-aromastylist.json'].map((f) => [f, fs.statSync(`theme-files/assets/${f}`).size]);
+const assets = ['scent-quiz.js', 'scent-quiz.css', 'scent-quiz-aromastylist.json', 'scent-quiz-aromastylist-taste.json'].map((f) => [f, fs.statSync(`theme-files/assets/${f}`).size]);
 const total = assets.reduce((s, [, n]) => s + n, 0);
 report.weight = Object.fromEntries(assets);
 report.weight.total = total;
 check(`added weight ${(total / 1024).toFixed(1)} KB <= 150 KB`, total <= 150 * 1024, assets.map(([f, n]) => `${f} ${(n / 1024).toFixed(1)} KB`).join(', '));
-check('every theme file < 60 KB', [...assets.map(([, n]) => n), fs.statSync('theme-files/sections/scent-quiz.liquid').size].every((n) => n < 60 * 1024));
+check('every theme file < 60 KB', [...assets.map(([, n]) => n), fs.statSync('theme-files/sections/scent-quiz.liquid').size, fs.statSync('theme-files/sections/scent-quiz-personas.liquid').size].every((n) => n < 60 * 1024));
 
 await browser.close();
 server.kill();

@@ -21,15 +21,22 @@ liquid.registerFilter('asset_url', (f) => `/theme-files/assets/${f}`);
 liquid.registerFilter('stylesheet_tag', (u) => `<link href="${u}" rel="stylesheet" type="text/css" media="all" />`);
 liquid.registerFilter('image_url', (img, opts) => `${img.src}${img.src.includes('?') ? '&' : '?'}width=${(opts && opts.width) || 600}`);
 
-const tpl = JSON.parse(fs.readFileSync(`theme-files/templates/${BRAND}.scent-quiz.section.json`, 'utf8')).scent_quiz;
-const blocks = tpl.block_order.map((id) => ({
-  id, type: tpl.blocks[id].type,
-  settings: { image: null, ...tpl.blocks[id].settings },
-  shopify_attributes: `data-shopify-editor-block='{"id":"${id}"}'`,
-}));
-const section = { id: 'template--harness__scent_quiz', settings: tpl.settings, blocks };
-const src = fs.readFileSync('theme-files/sections/scent-quiz.liquid', 'utf8');
-const rendered = await liquid.parseAndRender(src, { section, request: { design_mode: false } });
+const tplAll = JSON.parse(fs.readFileSync(`theme-files/templates/${BRAND}.scent-quiz.section.json`, 'utf8'));
+async function renderSection(key, file) {
+  const tpl = tplAll[key];
+  const blocks = tpl.block_order.map((id) => ({
+    id, type: tpl.blocks[id].type,
+    settings: { image: null, ...tpl.blocks[id].settings },
+    shopify_attributes: `data-shopify-editor-block='{"id":"${id}"}'`,
+  }));
+  const section = { id: `template--harness__${key}`, settings: tpl.settings, blocks };
+  const html = await liquid.parseAndRender(fs.readFileSync(file, 'utf8'), { section, request: { design_mode: false } });
+  return { section, html, count: blocks.length };
+}
+const quiz = await renderSection('scent_quiz', 'theme-files/sections/scent-quiz.liquid');
+const personas = await renderSection('scent_quiz_personas', 'theme-files/sections/scent-quiz-personas.liquid');
+const section = quiz.section;
+const rendered = quiz.html;
 
 // the live page's own sections around the quiz (simplified): header with cart counter, breadcrumbs,
 // then the quiz, then placeholders for the page's existing image banners / collection list
@@ -63,6 +70,9 @@ const page = `<!doctype html>
     <div id="shopify-section-${section.id}" class="shopify-section shopify-section-scent-quiz">
 ${rendered}
     </div>
+    <div id="shopify-section-${personas.section.id}" class="shopify-section shopify-section-scent-quiz-personas">
+${personas.html}
+    </div>
     <section class="hx-existing" data-existing-content>
       <h2>Existing page content</h2>
       <p>Image banners · Fresh · Clean · Fruity · Floral · Vanilla · Gourmand · Amber · Woody · Lavender · reviews - these sections stay exactly as they are on the live page.</p>
@@ -73,4 +83,4 @@ ${rendered}
 </html>
 `;
 fs.writeFileSync('harness/index.html', page);
-console.log(`harness/index.html rendered (${blocks.length} blocks)`);
+console.log(`harness/index.html rendered (quiz ${quiz.count} blocks, personas ${personas.count} blocks)`);

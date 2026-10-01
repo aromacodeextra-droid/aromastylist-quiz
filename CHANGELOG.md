@@ -1,5 +1,50 @@
 # Changelog
 
+## quiz-v2 (2026-10-01) — "a perfume you already love"
+
+The owner's decision: the visitor names a perfume they love, the quiz reads what is inside it and recommends what
+we have, either **more like it** or **to complete the wardrobe**.
+
+### Built
+- **Note analysis** (`scripts/taste.mjs`): every note is mapped to ~70 canonical notes and 12 note families
+  (Citrus, Green & herbs, Fresh & aquatic, Rose & florals, White florals, Fruity, Vanilla & gourmand, Woods,
+  Amber & resins, Oud/leather/smoke, Spices, Musk/iris/powder). The same function reads our 299 perfumes (notes from
+  our product pages) and the perfumes visitors can name, so they are compared like with like.
+- **Perfumes visitors can name**: all 299 of ours plus 63 well-known ones we don't stock
+  (`quiz/brands/aromastylist/reference-perfumes.json`, notes simplified from the brands' published pyramids).
+  **Owner: please check `reference-review.csv`** (how each one was read).
+- **New questions**: "Name a perfume you already love" (search or 18 popular picks, or Skip), then
+  "More like it / Complete my wardrobe" with the perfume's DNA on screen ("Inside Black Opium: coffee · jasmine ·
+  almond · vanilla · patchouli" + family bars). After Skip: "Which notes pull you in?" (pick up to 3 of 12 families).
+- **Matching**: family-profile similarity + shared key notes, on top of the v1 answer tags.
+  - More like it: same DNA, other houses.
+  - Complete my wardrobe: one shared note (the thread) in a differently shaped perfume.
+  - If the named perfume is ours, it is shown separately ("Your favourite is on our shelf") and never repeated in the list.
+  - Discovery Sets are now scored by the perfumes inside them.
+- **Result**: the named perfume's DNA, and on each card "Shares the vanilla, cedar and patchouli of your Black Opium."
+  plus the v1 reason line.
+- **Persona list** moved into its own section (`scent-quiz-personas`) because Shopify allows 50 blocks per section.
+- Second theme asset `scent-quiz-aromastylist-taste.json` (16 KB).
+
+### Verified
+- 4,546 engine runs. Each of 362 nameable perfumes × both modes × 4 random answer sets, all 298 combinations of
+  1–3 note families × 3, and the 756 v1 tag combinations. **All pass:** 3–5 in-stock perfumes, ≥ 2 houses, no sets,
+  never the named perfume itself, share link round-trips.
+- Match quality:
+  - "More like it": top 3 have average family similarity 0.73, and 97% share at least one key note.
+  - "Complete my wardrobe": 100% share a thread note, average similarity 0.41 (different on purpose).
+- **Coverage fixed:** all 299 perfumes appear in some result (v1: 80 never did). The most frequent perfume appears in
+  7% of runs. Every Discovery Set now appears, Modern Icons included (v1: never).
+- Playwright e2e at 390 and 1440 px: 83/83 checks.
+- Weight 139.7 KB (budget 150). Every file < 60 KB.
+
+### Not yet / notes
+- Search needs typing (optional): the popular picks are one tap.
+- Answer images for the note families are placeholders (the most typical perfume of each family) until the owner
+  sends the images in `docs/IMAGES.md`.
+- The rest of `docs/QUIZ-V2-PLAN.md` (four-shelf wardrobe result, wear and rotate tips, tweak and compare-with-a-friend)
+  is the next round.
+
 ## quiz-v1 (2026-09-30)
 
 First version of the scent quiz for aromastylist.com (phase 1 of a reusable template).
