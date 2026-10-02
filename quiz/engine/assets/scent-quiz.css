@@ -504,3 +504,16 @@ html.sq-asking .sq-section--personas { display: none; }
   .sq-tiles[data-q="feel"] .sq-tile__img, .sq-tiles[data-q="for"] .sq-tile__img { height: 96px; }
   :is(#root, body) .sq-section .sq-tiles[data-q="feel"] .sq-tile__img img.sq-icon, :is(#root, body) .sq-section .sq-tiles[data-q="for"] .sq-tile__img img.sq-icon { width: 84px !important; height: 84px !important; }
 }
+
+/* v3.28: note families as text cards (name + its notes), two columns, an icon slot on the left when one exists */
+.sq-tiles[data-layout="text"] { gap: 10px; max-width: 520px; margin: 0 auto; }
+:is(#root, body) .sq-section .sq-tiles[data-layout="text"] .sq-tile { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; justify-items: start; min-height: 84px; padding: 12px 34px 12px 14px; text-align: left; }
+:is(#root, body) .sq-section .sq-tiles[data-layout="text"] .sq-tile:has(.sq-tile__img) { grid-template-columns: 48px minmax(0, 1fr); column-gap: 10px; align-items: center; }
+.sq-tiles[data-layout="text"] .sq-tile__img { grid-row: 1 / 3; width: 48px; height: 48px; aspect-ratio: auto; background: none; }
+:is(#root, body) .sq-section .sq-tiles[data-layout="text"] .sq-tile__img img.sq-icon { width: 100% !important; height: 100% !important; }
+.sq-tiles[data-layout="text"] .sq-tile__label { flex: 0 0 auto; padding: 0; justify-content: flex-start; text-align: left; font-size: 15px; letter-spacing: normal; text-transform: none; line-height: 1.25; }
+.sq-tiles[data-layout="text"] .sq-tile__hint { margin: 3px 0 0; padding: 0; text-align: left; font-size: 12px; line-height: 1.4; }
+@media (min-width: 750px) {
+  .sq-tiles[data-layout="text"] { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 720px; }
+  .sq-tiles[data-layout="text"] .sq-tile__label { font-size: 16px; }
+}

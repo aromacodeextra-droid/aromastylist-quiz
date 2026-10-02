@@ -1,5 +1,13 @@
 # Changelog
 
+## quiz-v3.28 (2026-10-02) — notes screen as text cards
+
+- "Which notes pull you in?" (after "I don't have one") no longer shows store product photos with uppercase labels:
+  twelve text cards with the family name (normal case) and its notes, two columns on phones, three on desktop, the
+  same frame + tick as everywhere. An icon slot on the left is ready for `sq-icon-notes-<family>.svg`.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`
+  (58.8 KB: the placeholder photo links are gone). e2e 132 / 132.
+
 ## quiz-v3.27 (2026-10-02) — one card style on every icon screen
 
 - Feelings, screen 1 and What matters now use the moments card style: 72 px icons (84 px desktop) in a fixed box,

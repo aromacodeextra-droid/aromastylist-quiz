@@ -984,7 +984,7 @@
       var chosen = multi ? (v || []) : (v ? [v] : []);
       body = '<ul class="sq-tiles" data-q="' + esc(q.id) + '" data-count="' + q.answers.length + '"' + (q.layout ? ' data-layout="' + esc(q.layout) + '"' : '') + (multi ? ' data-multi' : '') + '>' + q.answers.map(function (a) {
         return '<li><button type="button" class="sq-tile" data-act="' + (multi ? 'toggle' : 'answer') + '" data-q="' + esc(q.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + (chosen.indexOf(a.id) >= 0) + '">' +
-          '<span class="sq-tile__img">' + self.img(a, i < 2) + '</span><span class="sq-tile__label">' + esc(a.label) + '</span>' +
+          (q.layout === 'text' && !a.icon_file ? '' : '<span class="sq-tile__img">' + self.img(a, i < 2) + '</span>') + '<span class="sq-tile__label">' + esc(a.label) + '</span>' +
           (a.hint ? '<span class="sq-tile__hint">' + esc(a.hint) + '</span>' : '') + '</button></li>';
       }).join('') + '</ul>' + this.nextBtn(q, chosen.length, multi);
       var sw = this.borrowed(q.id, null);
