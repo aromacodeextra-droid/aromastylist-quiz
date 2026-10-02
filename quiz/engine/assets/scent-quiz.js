@@ -1156,7 +1156,16 @@
     parts.push((Q(this.config, 'climate').answers || []).filter(function (a) { return cl.indexOf(a.id) >= 0; }).map(function (a) { return a.label; }).join(', '));
     var built = refs.length && c.built_around ? '<p class="sq-built">' + esc(fill(c.built_around, { names: joinList(refs, c.and) })) + '</p>' : '';
     return built + '<p class="sq-summary"><span>' + parts.filter(Boolean).map(esc).join(' · ') + '</span>' +
-      (this.shared ? '' : ' <button type="button" class="sq-edit" data-act="edit">' + esc(c.change_answers) + '</button>') + '</p>';
+      (this.shared ? '' : '<button type="button" class="sq-edit" data-act="edit">' + esc(c.change_answers) + '</button>') + '</p>';
+  };
+  // what the % mean, as computed in profileOf: the note families of the recommended perfumes, averaged with the
+  // named perfume(s) or the chosen note families (half each), top three shown as shares of 100
+  Quiz.prototype.profileNote = function () {
+    var c = this.copy, st = this.state, self = this, ctx = this.result && this.result.ctx;
+    if (!ctx) return c.profile_note;
+    if (ctx.mode === 'families') return c.profile_note_notes;
+    var names = Array.isArray(st.ref) ? st.ref.map(function (v) { var pf = perfumeOf(self.model, v); return pf && pf.vec ? pf.name : ''; }).filter(Boolean) : [];
+    return names.length ? fill(c.profile_note_ref, { names: joinList(names, c.and) }) : c.profile_note;
   };
   Quiz.prototype.showResult = function () {
     var self = this, c = this.copy, res = this.result, per = res.persona || { name: '', line: '' };
@@ -1168,7 +1177,7 @@
     if (res.profile.length) {
       html += '<div class="sq-ref sq-ref--result"><p class="sq-kicker">' + esc(c.profile_title) + '</p><ul class="sq-dna__bars">' + res.profile.map(function (f) {
         return '<li><span class="sq-dna__label">' + esc((c.families || {})[f.family] || f.family) + '</span><span class="sq-dna__track"><span style="width:' + f.pct + '%"></span></span><span class="sq-dna__pct">' + f.pct + '%</span></li>';
-      }).join('') + '</ul></div>';
+      }).join('') + '</ul>' + (c.profile_note ? '<p class="sq-profile-note">' + esc(fill(this.profileNote(), {})) + '</p>' : '') + '</div>';
     }
     html += '<h3 class="sq-subtitle">' + esc(c.result_list_title) + '</h3><ol class="sq-cards sq-shelves">' +
       res.rows.map(function (r, i) { return r.pick ? self.card(r, i) : ''; }).join('') + '</ol>';
@@ -1264,51 +1273,81 @@
     if (line) lines.push(line);
     return lines;
   }
-  // 1080x1920 story: persona, every slot with its perfume, the quiz address
+  // "Uden by Xerjoff" from Xerjoff -> "Uden": the house is written on its own line
+  function shortTitle(title, house) {
+    var t = String(title || ''), h = String(house || '').toLowerCase();
+    var m = /^(.*\S)\s+by\s+(.+)$/i.exec(t);
+    return m && h && (m[2].toLowerCase() === h || h.indexOf(m[2].toLowerCase()) >= 0) ? m[1] : t;
+  }
+  function loadImg(src) {
+    return new Promise(function (done) {
+      if (!src) { done(null); return; }
+      var im = new Image();
+      im.crossOrigin = 'anonymous';   // the store CDN allows it; a refused picture just leaves its box empty
+      im.onload = function () { done(im); };
+      im.onerror = function () { done(null); };
+      im.src = src;
+    });
+  }
+  // 1080x1920 story: persona, the recommended bottles with moment, name and house, AromaStylist.com
   Quiz.prototype.story = function () {
     var self = this, c = this.copy, res = this.result, rows = res.rows.filter(function (r) { return r.pick; });
     var head = this.app.querySelector('.sq-persona') || this.app;
     var cs = getComputedStyle(this.root), hs = getComputedStyle(head);
     var bodyFont = cs.fontFamily, headFont = hs.fontFamily;
-    var bg = getComputedStyle(this.root.closest('.sq-section') || this.root).backgroundColor;
-    if (!bg || bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent') bg = getComputedStyle(document.body).backgroundColor || '#ffffff';
+    var bg = '#ffffff';   // the card is always white with a thin gold frame (owner's choice); product photos sit on white too
     var fg = cs.color, accent = hs.color;
     var loads = document.fonts ? Promise.all([document.fonts.load('400 120px ' + headFont), document.fonts.load('400 34px ' + bodyFont), document.fonts.load('600 34px ' + bodyFont)]).catch(function () {}) : Promise.resolve();
-    return loads.then(function () {
-      var W = 1080, H = 1920, M = 110, LIMIT = H - 230;
+    var pics = Promise.all(rows.map(function (r) { return loadImg(r.pick.p.image ? cdnSized(r.pick.p.image, 600) : ''); }));
+    return Promise.all([loads, pics]).then(function (got) {
+      var imgs = got[1];
+      var W = 1080, H = 1920, M = 110, TOP = 190, LIMIT = H - 230;
+      var n = rows.length, cols = n <= 3 ? n : Math.ceil(n / 2), colW = (W - 2 * M) / Math.max(cols, 1);
       var cv = document.createElement('canvas');
       cv.width = W; cv.height = H;
       var x = cv.getContext('2d');
       var spaced = function (on) { if ('letterSpacing' in x) x.letterSpacing = on ? '6px' : '0px'; };
       function paint(k, draw) {
-        var put = function (t, y) { if (draw) x.fillText(t, W / 2, y); };
-        var y = 300 * k;
-        spaced(true); x.fillStyle = accent; x.font = '600 34px ' + bodyFont;
+        var put = function (t, y, cx) { if (draw) x.fillText(t, cx == null ? W / 2 : cx, y); };
+        var y = TOP + 40 * k;
+        spaced(true); x.fillStyle = accent; x.font = '600 ' + Math.round(32 * k) + 'px ' + bodyFont;
         put(String(c.share_story_kicker || '').toUpperCase(), y);
-        spaced(false); x.fillStyle = fg; x.font = '400 ' + Math.round(110 * k) + 'px ' + headFont;
-        y += 160 * k;
-        wrap(x, res.persona ? res.persona.name : '', W - 2 * M).forEach(function (l) { put(l, y); y += 124 * k; });
-        x.font = '400 ' + Math.round(38 * k) + 'px ' + bodyFont; y += 10 * k;
-        wrap(x, res.persona ? res.persona.line : '', W - 2 * M - 40).forEach(function (l) { put(l, y); y += 56 * k; });
-        y += 50 * k;
+        spaced(false); x.fillStyle = fg; x.font = '400 ' + Math.round(104 * k) + 'px ' + headFont;
+        y += 140 * k;
+        wrap(x, res.persona ? res.persona.name : '', W - 2 * M).forEach(function (l) { put(l, y); y += 116 * k; });
+        x.font = '400 ' + Math.round(36 * k) + 'px ' + bodyFont; y += 4 * k;
+        wrap(x, res.persona ? res.persona.line : '', W - 2 * M - 40).forEach(function (l) { put(l, y); y += 52 * k; });
+        y += 30 * k;
         if (draw) { x.fillStyle = accent; x.fillRect(W / 2 - 60, y, 120, 3); }
-        y += 100 * k;
-        spaced(true); x.fillStyle = accent; x.font = '600 32px ' + bodyFont;
+        y += 80 * k;
+        spaced(true); x.fillStyle = accent; x.font = '600 ' + Math.round(30 * k) + 'px ' + bodyFont;
         put(String(c.share_story_top || '').toUpperCase(), y);
         spaced(false);
-        y += 90 * k;
-        rows.forEach(function (r) {
-          x.fillStyle = accent; x.font = '600 ' + Math.round(28 * k) + 'px ' + bodyFont;
-          put(String(r.slot.label).toUpperCase(), y);
-          x.fillStyle = fg; x.font = '400 ' + Math.round(54 * k) + 'px ' + headFont;
-          var lines = wrap(x, r.pick.p.title, W - 2 * M).slice(0, 2);
-          lines.forEach(function (l, i) { put(l, y + 66 * k + i * 60 * k); });
-          y += 66 * k + (lines.length - 1) * 60 * k;
-          x.font = '400 ' + Math.round(30 * k) + 'px ' + bodyFont;
-          put(r.pick.p.house, y + 48 * k);
-          y += 48 * k + 80 * k;
-        });
-        return y - 80 * k;
+        y += 50 * k;
+        // the bottles: one square box each, same size, the whole bottle drawn inside (contain), text centred under it
+        var box = Math.min(colW - 30, 300) * k;
+        for (var r0 = 0; r0 < n; r0 += cols) {
+          var line = rows.slice(r0, r0 + cols), rowH = 0;
+          var left = (W - line.length * colW) / 2;
+          line.forEach(function (r, j) {
+            var cx = left + colW * j + colW / 2, yy = y, im = imgs[r0 + j];
+            if (draw && im) {
+              var sc = Math.min(box / im.naturalWidth, box / im.naturalHeight), w = im.naturalWidth * sc, h = im.naturalHeight * sc;
+              x.drawImage(im, cx - w / 2, yy + (box - h) / 2, w, h);
+            }
+            yy += box + 46 * k;
+            x.fillStyle = accent; x.font = '600 ' + Math.round(22 * k) + 'px ' + bodyFont;
+            wrap(x, String(r.slot.label).toUpperCase(), colW - 24).slice(0, 2).forEach(function (l) { put(l, yy, cx); yy += 30 * k; });
+            yy += 18 * k;
+            x.fillStyle = fg; x.font = '400 ' + Math.round(42 * k) + 'px ' + headFont;
+            wrap(x, shortTitle(r.pick.p.title, r.pick.p.house), colW - 24).slice(0, 2).forEach(function (l) { put(l, yy, cx); yy += 48 * k; });
+            x.font = '400 ' + Math.round(26 * k) + 'px ' + bodyFont;
+            wrap(x, r.pick.p.house, colW - 24).slice(0, 2).forEach(function (l) { put(l, yy, cx); yy += 34 * k; });
+            rowH = Math.max(rowH, yy - y);
+          });
+          y += rowH + 40 * k;
+        }
+        return y;
       }
       var k = 1;
       while (k > 0.5 && paint(k, false) > LIMIT) k -= 0.05;
@@ -1317,7 +1356,7 @@
       x.textAlign = 'center'; x.textBaseline = 'alphabetic';
       paint(k, true);
       x.fillStyle = fg; x.font = '400 36px ' + bodyFont;
-      x.fillText((self.config.share && self.config.share.url_text) || global.location.host, W / 2, H - 150);
+      x.fillText((self.config.share && self.config.share.url_text) || global.location.host, W / 2, H - 140);
       return new Promise(function (done) { cv.toBlob(function (b) { done(b); }, 'image/png'); });
     });
   };

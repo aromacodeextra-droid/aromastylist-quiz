@@ -476,3 +476,7 @@ html.sq-asking .sq-section--personas { display: none; }
 :is(#root, body) .sq-section .sq-tile__img img:not(.sq-icon) { width: 100% !important; height: 100% !important; }
 :is(#root, body) .sq-section .sq-pop__tile img { width: 100% !important; height: auto !important; aspect-ratio: 1 / 1; }
 .sq-card__img, .sq-set__img { background: #fff; }
+/* v3.24: Change answers on its own line; what the profile % mean */
+:is(#root, body) .sq-section .sq-summary .sq-edit { display: block; margin: 8px auto 0; }
+.sq-summary span { display: block; }
+.sq-profile-note { margin: 10px 0 0; font-size: 12px; line-height: 1.45; opacity: .75; }

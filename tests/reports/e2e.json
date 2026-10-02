@@ -587,10 +587,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 30.2 KB, assets/scent-quiz.js 52.6 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 30.4 KB, assets/scent-quiz.js 53.7 KB"
     },
     {
-      "name": "JS + CSS + JSON 189.0 KB <= 200 KB",
+      "name": "JS + CSS + JSON 190.7 KB <= 200 KB",
       "ok": true
     },
     {
@@ -950,9 +950,9 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16566,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59096,
-      "assets/scent-quiz.css": 30916,
-      "assets/scent-quiz.js": 53831,
+      "assets/scent-quiz-aromastylist.json": 59450,
+      "assets/scent-quiz.css": 31105,
+      "assets/scent-quiz.js": 55022,
       "assets/sq-icon-feel-attractive.svg": 5179,
       "assets/sq-icon-feel-calm.svg": 6815,
       "assets/sq-icon-feel-confident.svg": 5029,
@@ -1053,7 +1053,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 193567,
+    "code_total": 195301,
     "images": 77,
     "images_total": 1269250
   }

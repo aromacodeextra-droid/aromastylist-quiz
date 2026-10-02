@@ -4,7 +4,7 @@
   "locale": "en-US",
   "currency": "USD",
   "share": {
-    "url_text": "aromastylist.com/pages/find-your-perfume",
+    "url_text": "AromaStylist.com",
     "file_name": "my-perfume-wardrobe.png",
     "title": "My perfume wardrobe"
   },
@@ -1170,6 +1170,9 @@
     "shares_named": "In common with {name}: {notes}.",
     "how_to_wear_title": "How to wear",
     "built_around": "Built around your {names}.",
-    "change_answers": "Change answers"
+    "change_answers": "Change answers",
+    "profile_note": "Your three main note families across the perfumes picked for you, as a share of 100%.",
+    "profile_note_ref": "Your three main note families: the perfumes picked for you and your {names}, half and half, as a share of 100%.",
+    "profile_note_notes": "Your three main note families: the perfumes picked for you and the notes you chose, half and half, as a share of 100%."
   }
 }

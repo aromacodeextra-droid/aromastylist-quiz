@@ -1,5 +1,18 @@
 # Changelog
 
+## quiz-v3.24 (2026-10-02) — result header and the share card
+
+- Result: "Change answers" on its own line under the answer summary.
+- Under "Your scent profile" a line saying what the % are, as computed: the three main note families of the perfumes
+  picked for you, averaged half and half with your named perfume(s) (or the note families you chose), as shares of
+  100% ("Your three main note families: the perfumes picked for you and your Baccarat Rouge 540, half and half, as a
+  share of 100%.").
+- Share card (1080 x 1920, white with the thin gold frame, persona name and line kept): under "My perfume wardrobe"
+  the recommended bottles themselves, whole and in equal boxes (up to 3 per row, 2 x 2 for four), each with its moment,
+  name and house; the name no longer repeats the house ("Uden" / Xerjoff instead of "Uden by Xerjoff" / Xerjoff);
+  top and bottom margins tighter; "AromaStylist.com" at the bottom instead of the long address.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`. e2e 128 / 128.
+
 ## quiz-v3.23 (2026-10-02) — result bottles never cut
 
 - On the live theme (`img { height: auto !important }`) tall bottles in the result cards ran out of their square and
