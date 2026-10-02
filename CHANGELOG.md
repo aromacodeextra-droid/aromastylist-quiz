@@ -1,5 +1,11 @@
 # Changelog
 
+## quiz-v3.25 (2026-10-02) — no repeated house in result names
+
+- Result cards and "Also fits this slot" show "Accento" with XERJOFF under it, instead of "Accento by Xerjoff" /
+  XERJOFF (same rule as the share card). The product page title is unchanged.
+- Changed theme file: `assets/scent-quiz.js`. e2e 130 / 130.
+
 ## quiz-v3.24 (2026-10-02) — result header and the share card
 
 - Result: "Change answers" on its own line under the answer summary.

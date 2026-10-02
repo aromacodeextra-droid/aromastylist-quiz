@@ -211,6 +211,7 @@ for (const vp of VIEWPORTS) {
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
     await shot(page, '12-result-A');
+    check(`${tag}: card names do not repeat the house ("Accento", not "Accento by Xerjoff")`, await page.evaluate(() => [...document.querySelectorAll('.sq-card--slot')].every((c) => { const n = c.querySelector('.sq-card__name').textContent.toLowerCase(), h = c.querySelector('.sq-card__house').textContent.toLowerCase(); return !n.endsWith(' by ' + h); })));
     check(`${tag}: result bottles are shown whole inside their square (no cropping)`, await page.evaluate(() => [...document.querySelectorAll('.sq-card__img img, .sq-set__img img')].every((i) => { const r = i.getBoundingClientRect(), b = i.parentElement.getBoundingClientRect(); return r.height <= b.height + 0.5 && r.width <= b.width + 0.5 && getComputedStyle(i).objectFit === 'contain'; })));
     check(`${tag}: persona list and the page's own sections are back under the result`, await page.evaluate(() => getComputedStyle(document.querySelector('.sq-section--personas')).display !== 'none' && getComputedStyle(document.querySelector('[data-existing-content]')).display !== 'none'));
     check(`${tag}: one card per moment, in the owner's order`, st.items.length === 4 && st.slots[0] === 'Everyday Signature' && st.slots[1] === 'Work & Presence' && st.slots[2] === 'Evening & Seduction', st.slots.join(', '));
