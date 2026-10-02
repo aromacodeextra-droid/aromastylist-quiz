@@ -4,9 +4,13 @@ Last saved: 2026-10-02, version **quiz-v3.31**, branch `quiz-v3` (pushed to GitH
 
 ## Preview
 
-- Theme copy (unpublished): **"Xtra – scent quiz (copy of live, 2026-09-30)"**, id `189533225240`.
-- Link: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189533225240
-- The live theme and the rest of the site are untouched. The owner publishes herself.
+- **Live** (published by the owner on 2026-10-02): the former copy "Xtra – scent quiz (copy of live, 2026-09-30)",
+  id `189533225240`, now MAIN. https://aromastylist.com/pages/find-your-perfume serves v3.31.
+- **Theme update** (Xtra 8.3.0, unpublished): "Updated copy of Xtra – scent quiz…", id `189581852952`. Shopify
+  carried all 106 quiz files and `templates/page.find-your-perfume.json` over; checked by md5 / JSON compare on
+  2026-10-02, nothing to re-upload. Preview: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189581852952
+  (needs admin login). The owner publishes it herself; after that, upload future versions to `189581852952`.
+- The rest of the site is untouched.
 - The copy holds exactly the repo files of v3.31, checked by md5 on 2026-10-02: 96 files from `theme-files/`
   (sections, js, css, two JSON files, 59 bottle images, 22 owner icons, 18 style photos (men's, women's, Unisex couples)) plus `templates/page.find-your-perfume.json` =
   `docs/theme-copy/page.find-your-perfume.json`.
