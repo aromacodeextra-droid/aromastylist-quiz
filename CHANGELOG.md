@@ -1,5 +1,12 @@
 # Changelog
 
+## quiz-v3.27 (2026-10-02) — one card style on every icon screen
+
+- Feelings, screen 1 and What matters now use the moments card style: 72 px icons (84 px desktop) in a fixed box,
+  normal-case names in sans 15 px (16 px desktop) in a two-line area, equal card heights. What matters keeps its
+  horizontal rows with the bigger icon.
+- Changed theme file: `assets/scent-quiz.css`. e2e 132 / 132.
+
 ## quiz-v3.26 (2026-10-02) — full pass of the quiz
 
 - Walked every screen on phone and desktop: one fix. A long one-word perfume name (Coco Mademoiselle) ran out of its

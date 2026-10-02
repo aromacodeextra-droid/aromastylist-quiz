@@ -483,3 +483,24 @@ html.sq-asking .sq-section--personas { display: none; }
 /* v3.26: a long single-word perfume name (Mademoiselle) stays inside its tile */
 @media (max-width: 749px) { .sq-pop__name { padding: 0 2px; font-size: 12px; } }
 .sq-pop__name { overflow-wrap: anywhere; } /* last resort for a word longer than the tile */
+
+/* v3.27: the moments card style on the other icon screens (feelings, screen 1, What matters) */
+/* feelings and screen 1: icon in a fixed box over a normal-case name, cards of equal height */
+.sq-tiles[data-q="feel"] .sq-tile__img, .sq-tiles[data-q="for"] .sq-tile__img { aspect-ratio: auto; height: 86px; background: none; }
+:is(#root, body) .sq-section .sq-tiles[data-q="feel"] .sq-tile__img img.sq-icon, :is(#root, body) .sq-section .sq-tiles[data-q="for"] .sq-tile__img img.sq-icon { width: 72px !important; height: 72px !important; }
+:is(#root, body) .sq-section .sq-tiles[data-q="feel"] .sq-tile, :is(#root, body) .sq-section .sq-tiles[data-q="for"] .sq-tile { padding: 14px 6px 12px; gap: 6px; }
+.sq-tiles[data-q="feel"] .sq-tile__label, .sq-tiles[data-q="for"] .sq-tile__label { flex: 0 0 auto; align-items: flex-start; height: calc(2 * 1.25em); padding: 0;
+  font-size: 15px; letter-spacing: normal; text-transform: none; line-height: 1.25; }
+.sq-tiles[data-q="feel"] { gap: 10px; }
+.sq-tiles[data-q="for"] { gap: 10px; max-width: 520px; margin: 0 auto; }
+/* What matters: bigger icon, normal-case name */
+.sq-tiles[data-layout="rows"] .sq-tile__label { text-transform: none; letter-spacing: normal; font-size: 15px; }
+:is(#root, body) .sq-section .sq-tiles[data-layout="rows"] .sq-tile { grid-template-columns: 72px minmax(0, 1fr); min-height: 96px; }
+.sq-tiles[data-layout="rows"] .sq-tile__img { width: 72px; height: 72px; aspect-ratio: auto; background: none; }
+:is(#root, body) .sq-section .sq-tiles[data-layout="rows"] .sq-tile__img img.sq-icon { width: 100% !important; height: 100% !important; }
+@media (min-width: 750px) {
+  .sq-tiles[data-q="feel"] { gap: 12px; max-width: 720px; }
+  .sq-tiles[data-q="feel"] .sq-tile__label, .sq-tiles[data-q="for"] .sq-tile__label { font-size: 16px; }
+  .sq-tiles[data-q="feel"] .sq-tile__img, .sq-tiles[data-q="for"] .sq-tile__img { height: 96px; }
+  :is(#root, body) .sq-section .sq-tiles[data-q="feel"] .sq-tile__img img.sq-icon, :is(#root, body) .sq-section .sq-tiles[data-q="for"] .sq-tile__img img.sq-icon { width: 84px !important; height: 84px !important; }
+}
