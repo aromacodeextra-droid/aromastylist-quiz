@@ -17,7 +17,7 @@
     {
       "name": "390-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=0a5ef90e"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=f037c181"
     },
     {
       "name": "390-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -105,7 +105,7 @@
     {
       "name": "390-A: For Her sees the women's style photos, never the men's",
       "ok": true,
-      "detail": "sq-photo-style-classic-her.webp?v=0a5ef90e, sq-photo-style-dramatic-her.webp?v=0a5ef90e, sq-photo-style-romantic-her.webp?v=0a5ef90e, sq-photo-style-minimal-her.webp?v=0a5ef90e, sq-photo-style-casual-her.webp?v=0a5ef90e, sq-photo-style-sporty-her.webp?v=0a5ef90e"
+      "detail": "sq-photo-style-classic-her.webp?v=f037c181, sq-photo-style-dramatic-her.webp?v=f037c181, sq-photo-style-romantic-her.webp?v=f037c181, sq-photo-style-minimal-her.webp?v=f037c181, sq-photo-style-casual-her.webp?v=f037c181, sq-photo-style-sporty-her.webp?v=f037c181"
     },
     {
       "name": "390-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
@@ -185,7 +185,7 @@
     {
       "name": "390-B: For Him sees the owner's style photos",
       "ok": true,
-      "detail": "sq-photo-style-classic-him.webp?v=0a5ef90e, sq-photo-style-dramatic-him.webp?v=0a5ef90e, sq-photo-style-romantic-him.webp?v=0a5ef90e, sq-photo-style-minimal-him.webp?v=0a5ef90e, sq-photo-style-casual-him.webp?v=0a5ef90e, sq-photo-style-sporty-him.webp?v=0a5ef90e"
+      "detail": "sq-photo-style-classic-him.webp?v=f037c181, sq-photo-style-dramatic-him.webp?v=f037c181, sq-photo-style-romantic-him.webp?v=f037c181, sq-photo-style-minimal-him.webp?v=f037c181, sq-photo-style-casual-him.webp?v=f037c181, sq-photo-style-sporty-him.webp?v=f037c181"
     },
     {
       "name": "390-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
@@ -241,7 +241,7 @@
     {
       "name": "1440-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=0a5ef90e"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=f037c181"
     },
     {
       "name": "1440-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -329,7 +329,7 @@
     {
       "name": "1440-A: For Her sees the women's style photos, never the men's",
       "ok": true,
-      "detail": "sq-photo-style-classic-her.webp?v=0a5ef90e, sq-photo-style-dramatic-her.webp?v=0a5ef90e, sq-photo-style-romantic-her.webp?v=0a5ef90e, sq-photo-style-minimal-her.webp?v=0a5ef90e, sq-photo-style-casual-her.webp?v=0a5ef90e, sq-photo-style-sporty-her.webp?v=0a5ef90e"
+      "detail": "sq-photo-style-classic-her.webp?v=f037c181, sq-photo-style-dramatic-her.webp?v=f037c181, sq-photo-style-romantic-her.webp?v=f037c181, sq-photo-style-minimal-her.webp?v=f037c181, sq-photo-style-casual-her.webp?v=f037c181, sq-photo-style-sporty-her.webp?v=f037c181"
     },
     {
       "name": "1440-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
@@ -409,7 +409,7 @@
     {
       "name": "1440-B: For Him sees the owner's style photos",
       "ok": true,
-      "detail": "sq-photo-style-classic-him.webp?v=0a5ef90e, sq-photo-style-dramatic-him.webp?v=0a5ef90e, sq-photo-style-romantic-him.webp?v=0a5ef90e, sq-photo-style-minimal-him.webp?v=0a5ef90e, sq-photo-style-casual-him.webp?v=0a5ef90e, sq-photo-style-sporty-him.webp?v=0a5ef90e"
+      "detail": "sq-photo-style-classic-him.webp?v=f037c181, sq-photo-style-dramatic-him.webp?v=f037c181, sq-photo-style-romantic-him.webp?v=f037c181, sq-photo-style-minimal-him.webp?v=f037c181, sq-photo-style-casual-him.webp?v=f037c181, sq-photo-style-sporty-him.webp?v=f037c181"
     },
     {
       "name": "1440-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
@@ -569,7 +569,7 @@
     {
       "name": "390: Unisex sees the couple style photos",
       "ok": true,
-      "detail": "{\"classic\":\"sq-photo-style-classic-both.webp\",\"dramatic\":\"sq-photo-style-dramatic-both.webp\",\"romantic\":\"sq-photo-style-romantic-him.webp\",\"minimal\":\"sq-photo-style-minimal-both.webp\",\"casual\":\"sq-photo-style-casual-both.webp\",\"sporty\":\"sq-photo-style-sporty-both.webp\"}"
+      "detail": "{\"classic\":\"sq-photo-style-classic-both.webp\",\"dramatic\":\"sq-photo-style-dramatic-both.webp\",\"romantic\":\"sq-photo-style-romantic-both.webp\",\"minimal\":\"sq-photo-style-minimal-both.webp\",\"casual\":\"sq-photo-style-casual-both.webp\",\"sporty\":\"sq-photo-style-sporty-both.webp\"}"
     },
     {
       "name": "390: with a sticky site header each step opens with Back and the counter below it",
@@ -586,7 +586,7 @@
       "ok": true
     },
     {
-      "name": "76 images 1214 KB <= 1.8 MB, each <= 30 KB",
+      "name": "77 images 1240 KB <= 1.8 MB, each <= 30 KB",
       "ok": true
     }
   ],
@@ -942,7 +942,7 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16566,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59095,
+      "assets/scent-quiz-aromastylist.json": 59096,
       "assets/scent-quiz.css": 30503,
       "assets/scent-quiz.js": 53831,
       "assets/sq-icon-feel-attractive.svg": 5179,
@@ -979,6 +979,7 @@
       "assets/sq-photo-style-minimal-both.webp": 26318,
       "assets/sq-photo-style-minimal-her.webp": 10030,
       "assets/sq-photo-style-minimal-him.webp": 18426,
+      "assets/sq-photo-style-romantic-both.webp": 25622,
       "assets/sq-photo-style-romantic-her.webp": 25274,
       "assets/sq-photo-style-romantic-him.webp": 20410,
       "assets/sq-photo-style-sporty-both.webp": 26598,
@@ -1044,8 +1045,8 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 193153,
-    "images": 76,
-    "images_total": 1243628
+    "code_total": 193154,
+    "images": 77,
+    "images_total": 1269250
   }
 }
