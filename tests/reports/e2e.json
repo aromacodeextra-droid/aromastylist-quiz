@@ -25,6 +25,11 @@
       "ok": true
     },
     {
+      "name": "390-A: week screen - Continue visible without scrolling, counter \"4 / 10\", persona list hidden during the quiz",
+      "ok": true,
+      "detail": "{\"anc\":[\"DIV#root.:hidden:relative\",\"BODY#.:clip visible:static\",\"HTML#.js sq-asking:hidden auto:static\"],\"rt\":776.015625,\"ih\":844,\"inView\":true,\"step\":\"4 / 10\",\"personas\":\"none\"}"
+    },
+    {
       "name": "390-A: \"How far should it reach?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
       "ok": true,
       "detail": "{\"title\":\"How far should it reach?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
@@ -33,6 +38,10 @@
       "name": "390-A: \"When will you wear it?\" = 5 season icons, several can be chosen",
       "ok": true,
       "detail": "{\"title\":\"When will you wear it?\",\"labels\":[\"Winter\",\"Spring\",\"Summer\",\"Fall\",\"All year\"],\"icons\":5}"
+    },
+    {
+      "name": "390-A: persona list is back under the result",
+      "ok": true
     },
     {
       "name": "390-A: one card per slot, biggest first",
@@ -153,6 +162,11 @@
       "ok": true
     },
     {
+      "name": "1440-A: week screen - Continue visible without scrolling, counter \"4 / 10\", persona list hidden during the quiz",
+      "ok": true,
+      "detail": "{\"anc\":[\"BODY#.:clip visible:static\",\"HTML#.js sq-asking:hidden auto:static\"],\"rt\":832.015625,\"ih\":900,\"inView\":true,\"step\":\"4 / 10\",\"personas\":\"none\"}"
+    },
+    {
       "name": "1440-A: \"How far should it reach?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
       "ok": true,
       "detail": "{\"title\":\"How far should it reach?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
@@ -161,6 +175,10 @@
       "name": "1440-A: \"When will you wear it?\" = 5 season icons, several can be chosen",
       "ok": true,
       "detail": "{\"title\":\"When will you wear it?\",\"labels\":[\"Winter\",\"Spring\",\"Summer\",\"Fall\",\"All year\"],\"icons\":5}"
+    },
+    {
+      "name": "1440-A: persona list is back under the result",
+      "ok": true
     },
     {
       "name": "1440-A: one card per slot, biggest first",
@@ -377,10 +395,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 21.8 KB, assets/scent-quiz.js 47.7 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 22.6 KB, assets/scent-quiz.js 48.8 KB"
     },
     {
-      "name": "JS + CSS + JSON 175.8 KB <= 200 KB",
+      "name": "JS + CSS + JSON 177.6 KB <= 200 KB",
       "ok": true
     },
     {
@@ -740,9 +758,9 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16494,
       "assets/scent-quiz-aromastylist-taste.json": 49706,
-      "assets/scent-quiz-aromastylist.json": 59093,
-      "assets/scent-quiz.css": 22333,
-      "assets/scent-quiz.js": 48884,
+      "assets/scent-quiz-aromastylist.json": 59083,
+      "assets/scent-quiz.css": 23140,
+      "assets/scent-quiz.js": 49974,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -803,7 +821,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 180016,
+    "code_total": 181903,
     "images": 59,
     "images_total": 891710
   }

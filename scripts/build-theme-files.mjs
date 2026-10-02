@@ -145,6 +145,10 @@ for (const q of config.questions) for (const a of q.answers || []) {
     if (!a.icon_file && fs.existsSync(`${OUT}/assets/${f}`)) a.icon_file = f;
   }
 }
+for (const q of config.questions) for (const r of q.rows || []) for (const ext of ['svg', 'png', 'webp']) {
+  const f = `sq-icon-${q.id}-${r.id}.${ext}`;
+  if (!r.icon_file && fs.existsSync(`${OUT}/assets/${f}`)) r.icon_file = f;
+}
 // answer images on the store CDN are written relative to it ("@files/x.png") to keep the asset under 60 KB
 const CDN = base.replace(/(files|collections)\/$/, '');
 for (const q of config.questions) for (const a of q.answers || []) if (a.image && CDN && a.image.startsWith(CDN)) a.image = '@' + a.image.slice(CDN.length);

@@ -21,7 +21,7 @@
 .sq-section *, .sq-section *::before, .sq-section *::after { box-sizing: border-box; }
 .sq { max-width: 1080px; margin: 0 auto; }
 .sq-screen { max-width: 1080px; margin: 0 auto; text-align: center; animation: sq-in .35s ease both; }
-@keyframes sq-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes sq-in { from { opacity: 0; } to { opacity: 1; } } /* opacity only: a transform would trap the fixed Continue */
 @media (prefers-reduced-motion: reduce) { .sq-screen { animation: none; } }
 
 .sq-section h2, .sq-section h3 { font-family: var(--main_ff_h, inherit); font-weight: var(--main_fw_h, 400); letter-spacing: var(--main_ls_h, normal); color: var(--sq-h); line-height: var(--main_lh_h, 1.2); text-transform: var(--main_tt_h, none); }
@@ -136,7 +136,6 @@
 /* v2: subtitle, hints, multi-select, perfume search, note DNA */
 .sq-sub { margin-top: -6px; font-size: 14px; }
 .sq-tile__hint { display: block; padding: 0 8px 12px; margin-top: -6px; font-size: 12px; letter-spacing: normal; text-transform: none; opacity: .75; }
-.sq-tiles[data-multi] .sq-tile[aria-pressed="true"] .sq-tile__label::before { content: "\2713\00a0"; color: var(--sq-accent); }
 .sq-next { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 20px; }
 .sq-next .sq-btn { min-width: 220px; }
 .sq-pick { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; text-align: left; }
@@ -170,7 +169,7 @@
 }
 :is(#root, body) .sq-section .sq-chip:hover, :is(#root, body) .sq-section .sq-chip[aria-pressed="true"] { border-color: var(--sq-accent); }
 :is(#root, body) .sq-section .sq-chip:focus-visible { outline: 2px solid var(--sq-accent); outline-offset: 2px; }
-.sq-chip span { font-family: var(--main_ff_h, inherit); font-size: 15px; line-height: 1.25; color: var(--sq-h); }
+.sq-chip span { font-family: var(--main_ff_h, inherit); font-size: 15px; line-height: 1.25; color: var(--sq-fg); }
 .sq-chip small { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
 .sq-pick .sq-restart { align-self: center; }
 .sq-ref { max-width: 520px; margin: 0 auto 20px; padding: 14px 16px; background: var(--sq-card); text-align: left; border-radius: var(--sq-radius); }
@@ -328,3 +327,21 @@
 .sq-dots { display: flex; align-items: center; justify-content: center; gap: 8px; }
 .sq-dot { display: block; width: var(--d); height: var(--d); border-radius: 50%; border: 1.5px solid var(--sq-h); opacity: .35; }
 .sq-dot.is-on { background: var(--sq-h); opacity: 1; }
+
+/* v3.8 (UX step 4) */
+/* one mark for every chosen answer: frame + round tick in the corner */
+:is(#root, body) .sq-section .sq-tile { position: relative; }
+:is(#root, body) .sq-section .sq-tile[aria-pressed="true"]::after { content: "\2713"; display: flex; align-items: center; justify-content: center;
+  position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--sq-accent); color: var(--sq-on-accent); font-size: 13px; line-height: 1; }
+/* dark text for questions and row names; gold stays for buttons, the bar, ticks and frames */
+.sq-section .sq-q .sq-title, .sq-week__label { color: var(--sq-fg); }
+.sq-top .sq-step { font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+/* Continue rides at the bottom of the screen while the step is longer than the screen (the engine sets .is-floating) */
+.sq-q .sq-next.is-floating { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; margin: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  background: var(--sq-bg); box-shadow: 0 -6px 18px rgba(0, 0, 0, .08); }
+/* the persona list waits until the result */
+html.sq-asking .sq-section--personas { display: none; }
+/* long words in tile labels wrap instead of running out of the tile */
+.sq-tile__label { overflow-wrap: anywhere; hyphens: auto; }
+.sq-icon-sm { display: inline-block; width: 28px; height: 28px; margin-right: 8px; vertical-align: middle; object-fit: contain; }
+.sq-chip .sq-icon-sm { display: block; margin: 0 auto 4px; }

@@ -57,7 +57,11 @@ const resultState = (page) => page.evaluate(() => ({
 }));
 
 for (const vp of VIEWPORTS) {
-  const shot = async (page, name) => { await settle(page); await page.screenshot({ path: `${SHOTS}/${vp.name}-${name}.png`, fullPage: true }); };
+  const shot = async (page, name) => { await settle(page);
+    // a full-page capture would freeze the floating Continue mid-page: show it in its place for the capture
+    await page.evaluate(() => { const st = document.createElement('style'); st.id = 'sq-shot'; st.textContent = '.sq-next.is-floating{position:static!important;box-shadow:none!important;padding:0!important}'; document.head.append(st); });
+    await page.screenshot({ path: `${SHOTS}/${vp.name}-${name}.png`, fullPage: true });
+    await page.evaluate(() => document.getElementById('sq-shot')?.remove()); };
   // ---------------------------------------------------------------- run A: with a named perfume
   {
     const tag = `${vp.name}-A`;
@@ -108,6 +112,13 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=toggle][data-a=office]');
     check(`${tag}: "My office is scent-sensitive" is under the Work / study row and can be ticked`, officeUnderWork && (await page.getAttribute('[data-a=office]', 'aria-pressed')) === 'true');
     await shot(page, '05-week');
+    // UX step 4: Continue stays in view on a long screen, counter "4 / 10", persona list waits, viewport shot
+    await page.evaluate(() => window.scrollTo(0, 0));
+    const ux4 = await page.evaluate(() => { const r = document.querySelector('[data-act=next][data-q=week]').getBoundingClientRect(), p = document.querySelector('.sq-section--personas');
+      const n = document.querySelector('.sq-q .sq-next'), anc = []; for (let e = n; e; e = e.parentElement) { const cs = getComputedStyle(e); if (cs.overflow !== 'visible' || cs.position === 'sticky') anc.push(e.tagName + '#' + e.id + '.' + e.className + ':' + cs.overflow + ':' + cs.position); }
+      return { anc, rt: r.top, ih: innerHeight, inView: r.top >= 0 && r.bottom <= innerHeight, step: document.querySelector('.sq-top .sq-step').textContent, personas: p ? getComputedStyle(p).display : 'missing' }; });
+    check(`${tag}: week screen - Continue visible without scrolling, counter "4 / 10", persona list hidden during the quiz`, ux4.inView && ux4.step === '4 / 10' && ux4.personas === 'none', JSON.stringify(ux4));
+    await page.screenshot({ path: `${SHOTS}/${vp.name}-05b-week-viewport.png` });
     await page.click('[data-act=next][data-q=week]');
     await shot(page, '06-how');
     await page.click('[data-act=answer][data-a=full-wardrobe]');
@@ -137,6 +148,7 @@ for (const vp of VIEWPORTS) {
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
     await shot(page, '12-result-A');
+    check(`${tag}: persona list is back under the result`, await page.evaluate(() => getComputedStyle(document.querySelector('.sq-section--personas')).display !== 'none'));
     check(`${tag}: one card per slot, biggest first`, st.items.length === 4 && st.slots[0] === 'Work & Presence' && st.slots[1] === 'Evening & Seduction', st.slots.join(', '));
     check(`${tag}: >= 2 houses, no repeats`, new Set(st.houses).size >= 2 && new Set(st.items.map((i) => i.handle)).size === st.items.length, st.houses.join(', '));
     check(`${tag}: persona, scent profile (3 families), why-lines all different`, st.persona && st.profile === 3 && new Set(st.why).size === st.why.length && st.why.length === st.items.length, st.persona);

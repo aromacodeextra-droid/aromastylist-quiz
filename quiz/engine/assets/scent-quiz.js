@@ -830,6 +830,9 @@
   // ---------------------------------------------------------------- screens
   Quiz.prototype.render = function (html, focusSel) {
     this.app.innerHTML = html;
+    // while a question is on screen the persona list below waits (it stays in the page for search engines)
+    document.documentElement.classList.toggle('sq-asking', !!this.app.querySelector('.sq-q'));
+    this.floatNext();
     if (this.keepScroll) return;
     if (this.root.getBoundingClientRect().top < 0) this.root.scrollIntoView({ block: 'start' });
     var f = this.app.querySelector(focusSel || '[data-sq-focus]');
@@ -844,6 +847,34 @@
     if (a.img) { s600 = a.img.s; s900 = a.img.l || a.img.s; } else { s600 = cdnSized(a.image, 600); s900 = cdnSized(a.image, 900); }
     if (!s600) return '<span class="sq-tile__ph" aria-hidden="true"></span>';
     return '<img src="' + esc(s600) + '" srcset="' + esc(s600) + ' 600w, ' + esc(s900) + ' 900w" sizes="(min-width: 750px) 25vw, 50vw" alt="' + alt + '" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
+  };
+  // Continue on a long step: while the question is on screen but its Continue is still below, Continue rides at
+  // the bottom of the screen (fixed: the theme's #root clips, so sticky does not work there)
+  Quiz.prototype.floatNext = function () {
+    if (this.io) { this.io.disconnect(); this.io = null; }
+    var n = this.app.querySelector('.sq-q .sq-next'), scr = this.app.querySelector('.sq-q');
+    if (!n || !global.IntersectionObserver) return;
+    var slot = document.createElement('div'), seen = {};
+    slot.className = 'sq-next-slot';
+    n.parentNode.insertBefore(slot, n);
+    slot.appendChild(n);
+    var update = function () {
+      var below = slot.getBoundingClientRect().bottom > global.innerHeight;
+      var on = !!(seen.scr && !seen.slot && below);
+      if (on === n.classList.contains('is-floating')) return;
+      slot.style.minHeight = on ? n.offsetHeight + 'px' : '';
+      n.classList.toggle('is-floating', on);
+    };
+    this.io = new global.IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.target === slot) seen.slot = e.intersectionRatio > 0.98; else seen.scr = e.isIntersecting; });
+      update();
+    }, { threshold: [0, 0.99, 1] });
+    this.io.observe(slot);
+    this.io.observe(scr);
+  };
+  // the owner's icon next to a chip or week-row label (assets/sq-icon-avoid-<id>.svg, sq-icon-week-<id>.svg)
+  Quiz.prototype.smallIcon = function (a) {
+    return '<img class="sq-icon-sm" src="' + esc(this.assetBase + a.icon_file) + '" alt="" width="28" height="28" loading="lazy" decoding="async">';
   };
   Quiz.prototype.progress = function (i) {
     var n = 0, at = 0, self = this;
@@ -895,7 +926,7 @@
     this.render(head + body + '</div>', focusSel);
   };
   Quiz.prototype.nextBtn = function (q, n, counter) {
-    return '<div class="sq-next">' + (counter && q.max ? '<p class="sq-step" data-sq-count>' + esc(fill(this.copy.multi_count, { n: n, max: q.max })) + '</p>' : '') +
+    return '<div class="sq-next">' + (counter && q.max && q.max < (q.answers || []).length ? '<p class="sq-step" data-sq-count>' + esc(fill(this.copy.multi_count, { n: n, max: q.max })) + '</p>' : '') +
       '<button type="button" class="sq-btn" data-act="next" data-q="' + esc(q.id) + '"' + (n < (q.min || 0) ? ' disabled' : '') + '>' + esc(this.copy.next) + '</button></div>';
   };
   Quiz.prototype.perfumeScreen = function (q) {
@@ -930,11 +961,11 @@
     return html;
   };
   Quiz.prototype.tabooScreen = function (q) {
-    var cur = this.state[q.id] || [];
+    var cur = this.state[q.id] || [], self = this;
     this.state[q.id] = cur; // Continue with nothing ticked = nothing tabooed
     var chip = function (a) {
       return '<li><button type="button" class="sq-chip' + (a.toggle ? ' sq-chip--toggle' : '') + '" data-act="toggle" data-q="' + esc(q.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + (cur.indexOf(a.id) >= 0) + '">' +
-        '<span>' + esc(a.label) + '</span>' + (a.hint ? '<small>' + esc(a.hint) + '</small>' : '') + '</button></li>';
+        (a.icon_file ? self.smallIcon(a) : '') + '<span>' + esc(a.label) + '</span>' + (a.hint ? '<small>' + esc(a.hint) + '</small>' : '') + '</button></li>';
     };
     return '<ul class="sq-chips sq-chips--taboo">' + q.answers.filter(function (a) { return !a.screen; }).map(chip).join('') + '</ul>' + this.nextBtn(q, cur.length, false);
   };
@@ -957,7 +988,7 @@
     if (!this.state.taboos) this.state.taboos = [];
     return '<ul class="sq-week">' + q.rows.map(function (r, i) {
       var sw = self.borrowed(q.id, r.id);
-      return '<li class="sq-week__row"><span class="sq-week__label" id="sq-week-' + i + '">' + esc(r.label) + '</span><span class="sq-week__levels" role="group" aria-labelledby="sq-week-' + i + '">' +
+      return '<li class="sq-week__row"><span class="sq-week__label" id="sq-week-' + i + '">' + (r.icon_file ? self.smallIcon(r) : '') + esc(r.label) + '</span><span class="sq-week__levels" role="group" aria-labelledby="sq-week-' + i + '">' +
         q.levels.map(function (lv, k) {
           return '<button type="button" class="sq-level" data-act="level" data-q="' + esc(q.id) + '" data-row="' + i + '" data-lv="' + k + '" aria-pressed="' + (cur[i] === k) + '">' + esc(lv) + '</button>';
         }).join('') + '</span>' + (sw ? '<span class="sq-week__switch">' + sw + '</span>' : '') + '</li>';

@@ -1,5 +1,20 @@
 # Changelog
 
+## quiz-v3.8 (2026-10-02) — UX step 4: all screens
+
+- Counter "4 / 10" instead of "QUESTION 4 OF 10".
+- One mark for every chosen answer: frame + round gold tick in the corner (tiles, chips, bottles).
+- Question titles, week rows and taboo answers in dark text; gold stays for buttons, the progress bar, ticks and frames.
+- Continue on a long step (week, taboos, perfumes, notes, seasons) rides at the bottom of the screen until you reach
+  it. Sticky positioning does not work in Xtra (its `#root` clips), so the engine pins it while needed.
+- "All scent personas" is hidden while a question is on screen and comes back under the result (it stays in the page
+  HTML for search engines).
+- "0 of 5 chosen" is no longer shown where every answer may be picked (seasons).
+- Icon slots for the owner's drawings: `sq-icon-week-<row>.svg` next to a week row, `sq-icon-avoid-<answer>.svg` on a
+  taboo chip (in addition to `sq-icon-<screen>-<answer>` on tiles). Found at build time; without a file nothing changes.
+- Long tile labels wrap inside the tile.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`. e2e 86 / 86.
+
 ## quiz-v3.7 (2026-10-01) — seasons and sillage (owner's decision, Fragrantica style)
 
 - Screen "Your climate?" -> **"When will you wear it?"**: Winter, Spring, Summer, Fall (pick any number) or "All year"

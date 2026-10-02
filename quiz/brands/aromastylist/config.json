@@ -1063,7 +1063,7 @@
   "copy": {
     "intro_kicker": "Perfume quiz",
     "back": "Back",
-    "step": "Question {n} of {total}",
+    "step": "{n} / {total}",
     "loading": "Matching your answers to what's on the shelf…",
     "result_kicker": "Your scent persona",
     "and": "and",
