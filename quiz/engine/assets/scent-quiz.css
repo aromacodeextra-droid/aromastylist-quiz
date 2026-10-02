@@ -308,7 +308,7 @@
 .sq-section .sq-search input::placeholder { color: var(--sq-fg); opacity: .5; font-weight: 400; }
 
 /* v3.6: taboo grid (hints in normal case), switches shown on the presence and week screens */
-.sq-chips--taboo .sq-chip small { text-transform: none; letter-spacing: normal; font-size: 12px; opacity: .75; }
+.sq-chips--taboo .sq-chip small, .sq-chips--moments .sq-chip small { text-transform: none; letter-spacing: normal; font-size: 12px; opacity: .75; }
 :is(#root, body) .sq-section .sq-chip[aria-pressed="true"] { position: relative; }
 :is(#root, body) .sq-section .sq-chip[aria-pressed="true"]::after { content: "\2713"; display: flex; align-items: center; justify-content: center;
   position: absolute; top: 6px; right: 6px; width: 20px; height: 20px; border-radius: 50%; background: var(--sq-accent); color: var(--sq-on-accent); font-size: 12px; line-height: 1; }
@@ -363,3 +363,7 @@ html.sq-asking .sq-section--personas { display: none; }
 /* the slot carries the spacing, so Continue floating or not never moves the slot (no flicker at the screen edge) */
 .sq-next-slot { margin-top: 16px; }
 .sq-next-slot > .sq-next { margin-top: 0; }
+/* v3.11: the office line under the moments */
+.sq-switches--moments { margin: 4px auto 0; max-width: 720px; justify-content: flex-start; }
+/* room for the corner tick, so it never sits on a label */
+:is(#root, body) .sq-section .sq-chips--taboo .sq-chip, :is(#root, body) .sq-section .sq-chips--moments .sq-chip { padding-right: 32px; }

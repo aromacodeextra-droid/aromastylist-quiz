@@ -119,13 +119,23 @@ for (const vp of VIEWPORTS) {
     for (const a of ['too-sweet', 'coconut']) await page.click(`[data-act=toggle][data-a="${a}"]`);
     await shot(page, '04-taboos');
     await page.click('[data-act=next][data-q=taboos]');
-    await page.waitForSelector('.sq-week');
-    // work a lot, evenings a lot, everyday sometimes, events sometimes
-    for (const [row, lv] of [[0, 2], [3, 2], [1, 1], [4, 1]]) await page.click(`[data-act=level][data-row="${row}"][data-lv="${lv}"]`);
-    // the office switch now sits under the Work / study row
-    const officeUnderWork = await page.evaluate(() => !!document.querySelector('.sq-week__row:first-child [data-a=office]'));
+    await page.waitForSelector('.sq-chips--moments');
+    // v3.11: moments, nothing chosen beforehand, Continue waits for one; the office line appears only with Work & study
+    const m0 = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-chips--moments .sq-chip span')].map((e) => e.textContent),
+      pressed: document.querySelectorAll('.sq-chips--moments [aria-pressed=true]').length, disabled: document.querySelector('[data-act=next][data-q=week]').disabled, office: !!document.querySelector('[data-a=office]') }));
+    check(`${tag}: "Which moments would you like a fragrance for?" - 7 moments in the owner's order, none chosen, Continue waits, no office line yet`,
+      m0.title === 'Which moments would you like a fragrance for?' && m0.labels.join('|') === 'Everyday & errands|Work & study|Evenings & dates|Special occasions|Home & family|Sport & active|Me-time' && m0.pressed === 0 && m0.disabled && !m0.office, JSON.stringify(m0));
+    // work, evenings, everyday, events
+    for (const row of [0, 3, 1, 4]) await page.click(`[data-act=moment][data-row="${row}"]`);
     await page.click('[data-act=toggle][data-a=office]');
-    check(`${tag}: "My office is scent-sensitive" is under the Work / study row and can be ticked`, officeUnderWork && (await page.getAttribute('[data-a=office]', 'aria-pressed')) === 'true');
+    check(`${tag}: after Work & study, "My workplace or classroom prefers subtle scents" appears and can be ticked`, (await page.getAttribute('[data-a=office]', 'aria-pressed')) === 'true');
+    // taking Work & study away takes the office line (and its tick) with it; put both back
+    await page.click('[data-act=moment][data-row="0"]');
+    const officeGone = await page.evaluate(() => !document.querySelector('[data-a=office]'));
+    await page.click('[data-act=moment][data-row="0"]');
+    const officeBackUnticked = (await page.getAttribute('[data-a=office]', 'aria-pressed')) === 'false';
+    await page.click('[data-act=toggle][data-a=office]');
+    check(`${tag}: removing Work & study removes the office line and its tick`, officeGone && officeBackUnticked);
     await shot(page, '05-week');
     // UX step 4: Continue stays in view on a long screen, counter "4 / 10", persona list waits, viewport shot
     await page.evaluate(() => window.scrollTo(0, 0));
@@ -168,7 +178,7 @@ for (const vp of VIEWPORTS) {
     const st = await resultState(page);
     await shot(page, '12-result-A');
     check(`${tag}: persona list and the page's own sections are back under the result`, await page.evaluate(() => getComputedStyle(document.querySelector('.sq-section--personas')).display !== 'none' && getComputedStyle(document.querySelector('[data-existing-content]')).display !== 'none'));
-    check(`${tag}: one card per slot, biggest first`, st.items.length === 4 && st.slots[0] === 'Work & Presence' && st.slots[1] === 'Evening & Seduction', st.slots.join(', '));
+    check(`${tag}: one card per moment, in the owner's order`, st.items.length === 4 && st.slots[0] === 'Everyday Signature' && st.slots[1] === 'Work & Presence' && st.slots[2] === 'Evening & Seduction', st.slots.join(', '));
     check(`${tag}: >= 2 houses, no repeats`, new Set(st.houses).size >= 2 && new Set(st.items.map((i) => i.handle)).size === st.items.length, st.houses.join(', '));
     check(`${tag}: persona, scent profile (3 families), why-lines all different`, st.persona && st.profile === 3 && new Set(st.why).size === st.why.length && st.why.length === st.items.length, st.persona);
     check(`${tag}: never recommends the named perfume`, !st.items.some((i) => /baccarat-rouge-540/.test(i.handle)));
@@ -177,7 +187,7 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: "Also fits this slot" collapsed on each card`, alts === st.items.length && !(await page.isVisible('.sq-alt p')));
     check(`${tag}: no email field anywhere`, (await page.$$('input[type=email], input[name*=mail]')).length === 0);
     const url = decodeURIComponent(page.url());
-    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~ysl-black-opium\._\.too-sweet\+coconut\+office\.2102100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.fall\+winter\.classic/.test(url), url.replace(BASE, ''));
+    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~ysl-black-opium\._\.too-sweet\+coconut\+office\.1101100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.fall\+winter\.classic/.test(url), url.replace(BASE, ''));
 
     await page.click('[data-act=share-open]');
     await page.waitForFunction(() => document.querySelector('[data-sq-preview]')?.src?.startsWith('blob:'));
@@ -228,7 +238,7 @@ for (const vp of VIEWPORTS) {
     await shot(page, '03-notes-B');
     await page.click('[data-act=next][data-q=notes]');
     await page.click('[data-act=next][data-q=taboos]'); // nothing ticked
-    for (const [row, lv] of [[1, 2], [3, 1], [5, 1]]) await page.click(`[data-act=level][data-row="${row}"][data-lv="${lv}"]`);
+    for (const row of [1, 3, 5]) await page.click(`[data-act=moment][data-row="${row}"]`);
     await page.click('[data-act=next][data-q=week]');
     await choose(page, '[data-act=answer][data-a=day-night]');
     await page.click('[data-act=toggle][data-a=free]');
@@ -244,7 +254,7 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: day & night -> 2 slots (Everyday Signature + Evening & Seduction)`, st.items.length === 2 && st.slots.includes('Everyday Signature') && st.slots.includes('Evening & Seduction'), st.slots.join(', '));
     check(`${tag}: no "shares" line without a named perfume; profile shown`, st.shares.length === 0 && st.profile === 3);
     const code = decodeURIComponent(page.url()).split('sq=')[1];
-    check(`${tag}: taboo screen left empty still gives a valid link`, /^him\.none\.woods\+citrus\+spices\.-\.0201010\.day-night\./.test(code), code);
+    check(`${tag}: taboo screen left empty still gives a valid link`, /^him\.none\.woods\+citrus\+spices\.-\.0101010\.day-night\./.test(code), code);
     check(`${tag}: no page errors`, errors.length === 0, errors.join(' | '));
     report.runs.push({ run: tag, ...st });
     await ctx.close();

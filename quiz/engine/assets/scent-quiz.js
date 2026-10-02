@@ -198,11 +198,13 @@
   // every week row at "sometimes" / "a lot" becomes a wardrobe slot, biggest first; "how" decides how many are kept
   function slotsFor(model, state) {
     var cfg = model.config, wq = Q(cfg, 'week'), levels = state.week || [];
+    var rank = function (i) { var r = wq.rows[i].rank; return r == null ? i : r; };
     var byId = {};
     cfg.slots.forEach(function (s) { byId[s.id] = s; });
     var active = wq.rows.map(function (r, i) { return { slot: r.slot, lv: levels[i] || 0, i: i }; })
       .filter(function (x) { return x.lv > 0; })
-      .sort(function (a, b) { return (b.lv - a.lv) || (a.i - b.i); })
+      // more moments than bottles: "a lot" (old share links) first, then the owner's order (rows[].rank)
+      .sort(function (a, b) { return (b.lv - a.lv) || (rank(a.i) - rank(b.i)); })
       .map(function (x) { return x.slot; });
     var how = findAnswer(Q(cfg, 'how'), state.how) || { min: 1, max: 1 };
     var out = [];
@@ -721,6 +723,7 @@
       else if (act === 'answer') self.pick(t);
       else if (act === 'toggle') self.toggle(t);
       else if (act === 'level') self.level(t);
+      else if (act === 'moment') self.moment(t);
       else if (act === 'next') self.advance(qid);
       else if (act === 'perfume') self.addPerfume(qid, t.getAttribute('data-kind'), t.getAttribute('data-id'));
       else if (act === 'unpick') self.removePerfume(qid, t.getAttribute('data-key'));
@@ -789,6 +792,21 @@
       hint.textContent = fill(full ? this.copy.multi_full : this.copy.multi_count, { n: cur.length, max: q.max });
       hint.classList.toggle('is-full', full);
     }
+  };
+  // moments screen: a tap adds or removes a moment (stored as level 1 of that row; old links may carry 2)
+  Quiz.prototype.moment = function (btn) {
+    var qid = btn.getAttribute('data-q'), row = +btn.getAttribute('data-row'), q = Q(this.config, qid);
+    var cur = (this.state[qid] || q.rows.map(function () { return 0; })).slice();
+    cur[row] = cur[row] ? 0 : 1;
+    this.state[qid] = cur;
+    // a switch that belongs to a moment (office -> Work & study) goes away with it
+    var self = this;
+    if (!cur[row]) this.qs.forEach(function (oq) {
+      (oq.answers || []).forEach(function (a) {
+        if (a.screen === qid && a.row === q.rows[row].id && Array.isArray(self.state[oq.id])) self.state[oq.id] = self.state[oq.id].filter(function (x) { return x !== a.id; });
+      });
+    });
+    this.showInPlace();
   };
   Quiz.prototype.level = function (btn) {
     var qid = btn.getAttribute('data-q'), row = +btn.getAttribute('data-row'), lv = +btn.getAttribute('data-lv');
@@ -1003,13 +1021,15 @@
     var cur = this.state[q.id] || q.rows.map(function () { return 0; }), self = this;
     this.state[q.id] = cur;
     if (!this.state.taboos) this.state.taboos = [];
-    return '<ul class="sq-week">' + q.rows.map(function (r, i) {
-      var sw = self.borrowed(q.id, r.id);
-      return '<li class="sq-week__row"><span class="sq-week__label" id="sq-week-' + i + '">' + (r.icon_file ? self.smallIcon(r) : '') + esc(r.label) + '</span><span class="sq-week__levels" role="group" aria-labelledby="sq-week-' + i + '">' +
-        q.levels.map(function (lv, k) {
-          return '<button type="button" class="sq-level" data-act="level" data-q="' + esc(q.id) + '" data-row="' + i + '" data-lv="' + k + '" aria-pressed="' + (cur[i] === k) + '">' + esc(lv) + '</button>';
-        }).join('') + '</span>' + (sw ? '<span class="sq-week__switch">' + sw + '</span>' : '') + '</li>';
-    }).join('') + '</ul>' + this.nextBtn(q, 1, false);
+    var order = q.rows.map(function (r, i) { return i; }).sort(function (a, b) { return (q.rows[a].rank || 0) - (q.rows[b].rank || 0); });
+    var n = cur.filter(Boolean).length, sw = '';
+    var chips = order.map(function (i) {
+      var r = q.rows[i];
+      if (cur[i]) sw += self.borrowed(q.id, r.id);
+      return '<li><button type="button" class="sq-chip" data-act="moment" data-q="' + esc(q.id) + '" data-row="' + i + '" aria-pressed="' + !!cur[i] + '">' +
+        (r.icon_file ? self.smallIcon(r) : '') + '<span>' + esc(r.label) + '</span>' + (r.hint ? '<small>' + esc(r.hint) + '</small>' : '') + '</button></li>';
+    }).join('');
+    return '<ul class="sq-chips sq-chips--moments">' + chips + '</ul>' + (sw ? '<div class="sq-switches sq-switches--moments">' + sw + '</div>' : '') + this.nextBtn(q, n, false);
   };
 
   // ---------------------------------------------------------------- live inventory

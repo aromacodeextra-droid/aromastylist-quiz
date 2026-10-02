@@ -40,7 +40,16 @@
       "detail": "[\"Very sweet\",\"Powdery\",\"Intense florals\",\"Marine & ozonic\",\"Oud\",\"Smoke & incense\",\"Coconut\",\"Patchouli\",\"Nothing in particular\"]"
     },
     {
-      "name": "390-A: \"My office is scent-sensitive\" is under the Work / study row and can be ticked",
+      "name": "390-A: \"Which moments would you like a fragrance for?\" - 7 moments in the owner's order, none chosen, Continue waits, no office line yet",
+      "ok": true,
+      "detail": "{\"title\":\"Which moments would you like a fragrance for?\",\"labels\":[\"Everyday & errands\",\"Work & study\",\"Evenings & dates\",\"Special occasions\",\"Home & family\",\"Sport & active\",\"Me-time\"],\"pressed\":0,\"disabled\":true,\"office\":false}"
+    },
+    {
+      "name": "390-A: after Work & study, \"My workplace or classroom prefers subtle scents\" appears and can be ticked",
+      "ok": true
+    },
+    {
+      "name": "390-A: removing Work & study removes the office line and its tick",
       "ok": true
     },
     {
@@ -72,14 +81,14 @@
       "ok": true
     },
     {
-      "name": "390-A: one card per slot, biggest first",
+      "name": "390-A: one card per moment, in the owner's order",
       "ok": true,
-      "detail": "Work & Presence, Evening & Seduction, Everyday Signature, Special Occasions"
+      "detail": "Everyday Signature, Work & Presence, Evening & Seduction, Special Occasions"
     },
     {
       "name": "390-A: >= 2 houses, no repeats",
       "ok": true,
-      "detail": "Maison Francis Kurkdjian, Xerjoff, Creed, V Canto"
+      "detail": "Creed, Maison Francis Kurkdjian, Xerjoff, V Canto"
     },
     {
       "name": "390-A: persona, scent profile (3 families), why-lines all different",
@@ -93,7 +102,7 @@
     {
       "name": "390-A: \"Shares the ... of your ...\" lines",
       "ok": true,
-      "detail": "Shares the amber of your Baccarat Rouge 540."
+      "detail": "Shares the amber and benzoin of your Baccarat Rouge 540."
     },
     {
       "name": "390-A: \"Also fits this slot\" collapsed on each card",
@@ -106,7 +115,7 @@
     {
       "name": "390-A: URL carries the answers",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.2102100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.1101100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic"
     },
     {
       "name": "390-A: share image is 1080x1920",
@@ -116,7 +125,7 @@
     {
       "name": "390-A: copied link reopens the same result",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.2102100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.1101100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic"
     },
     {
       "name": "390-A: \"Add sample\" adds one item and updates the header count",
@@ -125,7 +134,7 @@
     {
       "name": "390-A: \"Add all\" POSTs /cart/add.js {items:[{id,quantity:1}...]}",
       "ok": true,
-      "detail": "{\"items\":[{\"id\":50567182745880,\"quantity\":1},{\"id\":50567192412440,\"quantity\":1},{\"id\":52789482160408,\"quantity\":1},{\"id\":50816249397528,\"quantity\":1}]}"
+      "detail": "{\"items\":[{\"id\":52789482160408,\"quantity\":1},{\"id\":50567182745880,\"quantity\":1},{\"id\":50567192412440,\"quantity\":1},{\"id\":50816249397528,\"quantity\":1}]}"
     },
     {
       "name": "390-A: no page errors",
@@ -144,7 +153,7 @@
     {
       "name": "390-B: taboo screen left empty still gives a valid link",
       "ok": true,
-      "detail": "him.none.woods+citrus+spices.-.0201010.day-night.free.close.unique.summer.sporty"
+      "detail": "him.none.woods+citrus+spices.-.0101010.day-night.free.close.unique.summer.sporty"
     },
     {
       "name": "390-B: no page errors",
@@ -205,13 +214,22 @@
       "detail": "[\"Very sweet\",\"Powdery\",\"Intense florals\",\"Marine & ozonic\",\"Oud\",\"Smoke & incense\",\"Coconut\",\"Patchouli\",\"Nothing in particular\"]"
     },
     {
-      "name": "1440-A: \"My office is scent-sensitive\" is under the Work / study row and can be ticked",
+      "name": "1440-A: \"Which moments would you like a fragrance for?\" - 7 moments in the owner's order, none chosen, Continue waits, no office line yet",
+      "ok": true,
+      "detail": "{\"title\":\"Which moments would you like a fragrance for?\",\"labels\":[\"Everyday & errands\",\"Work & study\",\"Evenings & dates\",\"Special occasions\",\"Home & family\",\"Sport & active\",\"Me-time\"],\"pressed\":0,\"disabled\":true,\"office\":false}"
+    },
+    {
+      "name": "1440-A: after Work & study, \"My workplace or classroom prefers subtle scents\" appears and can be ticked",
+      "ok": true
+    },
+    {
+      "name": "1440-A: removing Work & study removes the office line and its tick",
       "ok": true
     },
     {
       "name": "1440-A: week screen - Continue visible without scrolling, counter \"4 / 10\", persona list hidden during the quiz",
       "ok": true,
-      "detail": "{\"anc\":[\"BODY#.:clip visible:static\",\"HTML#.js sq-asking:hidden auto:static\"],\"rt\":832.015625,\"ih\":900,\"inView\":true,\"step\":\"4 / 10\",\"personas\":\"none\"}"
+      "detail": "{\"anc\":[\"BODY#.:clip visible:static\",\"HTML#.js sq-asking:hidden auto:static\"],\"rt\":609.21875,\"ih\":900,\"inView\":true,\"step\":\"4 / 10\",\"personas\":\"none\"}"
     },
     {
       "name": "1440-A: a third feeling is not taken silently: \"You can pick 2\" message, the two stay",
@@ -237,14 +255,14 @@
       "ok": true
     },
     {
-      "name": "1440-A: one card per slot, biggest first",
+      "name": "1440-A: one card per moment, in the owner's order",
       "ok": true,
-      "detail": "Work & Presence, Evening & Seduction, Everyday Signature, Special Occasions"
+      "detail": "Everyday Signature, Work & Presence, Evening & Seduction, Special Occasions"
     },
     {
       "name": "1440-A: >= 2 houses, no repeats",
       "ok": true,
-      "detail": "Maison Francis Kurkdjian, Xerjoff, Creed, V Canto"
+      "detail": "Creed, Maison Francis Kurkdjian, Xerjoff, V Canto"
     },
     {
       "name": "1440-A: persona, scent profile (3 families), why-lines all different",
@@ -258,7 +276,7 @@
     {
       "name": "1440-A: \"Shares the ... of your ...\" lines",
       "ok": true,
-      "detail": "Shares the amber of your Baccarat Rouge 540."
+      "detail": "Shares the amber and benzoin of your Baccarat Rouge 540."
     },
     {
       "name": "1440-A: \"Also fits this slot\" collapsed on each card",
@@ -271,7 +289,7 @@
     {
       "name": "1440-A: URL carries the answers",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.2102100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.1101100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic"
     },
     {
       "name": "1440-A: share image is 1080x1920",
@@ -281,7 +299,7 @@
     {
       "name": "1440-A: copied link reopens the same result",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.2102100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.1101100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic"
     },
     {
       "name": "1440-A: \"Add sample\" adds one item and updates the header count",
@@ -290,7 +308,7 @@
     {
       "name": "1440-A: \"Add all\" POSTs /cart/add.js {items:[{id,quantity:1}...]}",
       "ok": true,
-      "detail": "{\"items\":[{\"id\":50567182745880,\"quantity\":1},{\"id\":50567192412440,\"quantity\":1},{\"id\":52789482160408,\"quantity\":1},{\"id\":50816249397528,\"quantity\":1}]}"
+      "detail": "{\"items\":[{\"id\":52789482160408,\"quantity\":1},{\"id\":50567182745880,\"quantity\":1},{\"id\":50567192412440,\"quantity\":1},{\"id\":50816249397528,\"quantity\":1}]}"
     },
     {
       "name": "1440-A: no page errors",
@@ -309,7 +327,7 @@
     {
       "name": "1440-B: taboo screen left empty still gives a valid link",
       "ok": true,
-      "detail": "him.none.woods+citrus+spices.-.0201010.day-night.free.close.unique.summer.sporty"
+      "detail": "him.none.woods+citrus+spices.-.0101010.day-night.free.close.unique.summer.sporty"
     },
     {
       "name": "1440-B: no page errors",
@@ -451,10 +469,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 23.3 KB, assets/scent-quiz.js 49.4 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.3 KB, assets/scent-quiz.css 23.6 KB, assets/scent-quiz.js 50.0 KB"
     },
     {
-      "name": "JS + CSS + JSON 179.4 KB <= 200 KB",
+      "name": "JS + CSS + JSON 180.4 KB <= 200 KB",
       "ok": true
     },
     {
@@ -467,12 +485,16 @@
       "run": "390-A",
       "persona": "The Skin Secret",
       "slots": [
+        "Everyday Signature",
         "Work & Presence",
         "Evening & Seduction",
-        "Everyday Signature",
         "Special Occasions"
       ],
       "items": [
+        {
+          "handle": "creed-aventus-for-her",
+          "variant": 52789482160408
+        },
         {
           "handle": "mfk-amyris-femme",
           "variant": 50567182745880
@@ -482,30 +504,26 @@
           "variant": 50567192412440
         },
         {
-          "handle": "creed-aventus-for-her",
-          "variant": 52789482160408
-        },
-        {
           "handle": "v-canto-ricina",
           "variant": 50816249397528
         }
       ],
       "houses": [
+        "Creed",
         "Maison Francis Kurkdjian",
         "Xerjoff",
-        "Creed",
         "V Canto"
       ],
       "why": [
+        "Made for every day: rose, sandalwood and milk & cream, with a soft trail.",
         "Built for work hours: iris, vetiver and musk, close to the skin.",
         "Made for evenings out: iris, pepper and musk, with a soft trail.",
-        "Made for every day: rose, sandalwood and milk & cream, with a soft trail.",
         "Saved for the big nights: peony, orange blossom and iris, with a soft trail."
       ],
       "shares": [
+        "Shares the amber and benzoin of your Baccarat Rouge 540.",
         "Shares the amber of your Baccarat Rouge 540.",
         "Shares the jasmine and amber of your Baccarat Rouge 540.",
-        "Shares the amber and benzoin of your Baccarat Rouge 540.",
         "Shares the jasmine and oakmoss of your Baccarat Rouge 540."
       ],
       "profile": 3,
@@ -600,12 +618,16 @@
       "run": "1440-A",
       "persona": "The Skin Secret",
       "slots": [
+        "Everyday Signature",
         "Work & Presence",
         "Evening & Seduction",
-        "Everyday Signature",
         "Special Occasions"
       ],
       "items": [
+        {
+          "handle": "creed-aventus-for-her",
+          "variant": 52789482160408
+        },
         {
           "handle": "mfk-amyris-femme",
           "variant": 50567182745880
@@ -615,30 +637,26 @@
           "variant": 50567192412440
         },
         {
-          "handle": "creed-aventus-for-her",
-          "variant": 52789482160408
-        },
-        {
           "handle": "v-canto-ricina",
           "variant": 50816249397528
         }
       ],
       "houses": [
+        "Creed",
         "Maison Francis Kurkdjian",
         "Xerjoff",
-        "Creed",
         "V Canto"
       ],
       "why": [
+        "Made for every day: rose, sandalwood and milk & cream, with a soft trail.",
         "Built for work hours: iris, vetiver and musk, close to the skin.",
         "Made for evenings out: iris, pepper and musk, with a soft trail.",
-        "Made for every day: rose, sandalwood and milk & cream, with a soft trail.",
         "Saved for the big nights: peony, orange blossom and iris, with a soft trail."
       ],
       "shares": [
+        "Shares the amber and benzoin of your Baccarat Rouge 540.",
         "Shares the amber of your Baccarat Rouge 540.",
         "Shares the jasmine and amber of your Baccarat Rouge 540.",
-        "Shares the amber and benzoin of your Baccarat Rouge 540.",
         "Shares the jasmine and oakmoss of your Baccarat Rouge 540."
       ],
       "profile": 3,
@@ -736,15 +754,15 @@
       "payload": {
         "items": [
           {
+            "id": 52789482160408,
+            "quantity": 1
+          },
+          {
             "id": 50567182745880,
             "quantity": 1
           },
           {
             "id": 50567192412440,
-            "quantity": 1
-          },
-          {
-            "id": 52789482160408,
             "quantity": 1
           },
           {
@@ -759,15 +777,15 @@
       "payload": {
         "items": [
           {
+            "id": 52789482160408,
+            "quantity": 1
+          },
+          {
             "id": 50567182745880,
             "quantity": 1
           },
           {
             "id": 50567192412440,
-            "quantity": 1
-          },
-          {
-            "id": 52789482160408,
             "quantity": 1
           },
           {
@@ -784,7 +802,7 @@
       "data": {
         "quiz": "aromastylist",
         "method": "copy",
-        "persona": "quiet-signature"
+        "persona": "slow-burn"
       }
     },
     {
@@ -814,9 +832,9 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16519,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59465,
-      "assets/scent-quiz.css": 23878,
-      "assets/scent-quiz.js": 50615,
+      "assets/scent-quiz-aromastylist.json": 59723,
+      "assets/scent-quiz.css": 24124,
+      "assets/scent-quiz.js": 51152,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -877,7 +895,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 183682,
+    "code_total": 184723,
     "images": 59,
     "images_total": 891710
   }

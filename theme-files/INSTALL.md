@@ -84,7 +84,7 @@ Open `/pages/find-your-perfume?preview_theme_id=<copy id>`:
    Type `bacarat`: the first row is Maison Francis Kurkdjian · Baccarat Rouge 540 ("on our shelf"). Tap it: an
    **Inside Baccarat Rouge 540** card with notes and family bars. Type `lveb`, `br540`, `savage elixir`: each finds it.
 3. Tap a second perfume (max 2). Continue. Then **I don't have one** on a second pass shows the 12 note-family tiles.
-4. Taboos: tick `Coconut` and `My office is scent-sensitive`. Week: Work a lot, Evenings a lot, Everyday sometimes.
+4. Taboos: tick `Coconut`; after Work & study tick `My workplace or classroom prefers subtle scents`. Moments: Work & study, Evenings & dates, Everyday & errands.
    How: A full wardrobe. Finish the remaining screens.
 5. Result **Your Perfume Wardrobe**: persona, "Your scent profile" (3 families with %), one card per slot with
    Work & Presence and Evening & Seduction first, each card with "Shares the … of your …", a why-line, "How to wear",

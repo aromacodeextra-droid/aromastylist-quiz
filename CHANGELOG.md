@@ -1,5 +1,19 @@
 # Changelog
 
+## quiz-v3.11 (2026-10-02) — review round, stage 3: the week becomes "moments"
+
+- "Where does your week go?" with seven Rarely / Sometimes / A lot scales (Rarely pre-selected) ->
+  **"Which moments would you like a fragrance for?"**, "Select all that apply.", nothing chosen beforehand, Continue
+  after at least one. Moments with plain hints: Everyday & errands (out and about by day) · Work & study (office,
+  classes, meetings) · Evenings & dates (dinners, going out) · Special occasions (weddings, parties, holidays) · Home &
+  family (cosy time at home) · Sport & active (gym, walks, outdoors) · Me-time (rest and self-care).
+- Each chosen moment is a wardrobe slot, as before. When there are more moments than bottles ("How do you wear
+  perfume?"), the owner's order decides: Everyday, Work, Evenings, Special, Home, Sport, Me-time (`rows[].rank`).
+- "My workplace or classroom prefers subtle scents" appears only after Work & study is chosen and leaves with it.
+- Old share links (with Sometimes / A lot) still open with the same result.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`.
+  Combinations 51,260 / 0 failures, e2e 102 / 102.
+
 ## quiz-v3.10 (2026-10-02) — review round, stage 2: screen 1 and "What would you rather avoid?"
 
 - Screen 1: "Which fragrances do you prefer?" with For Her / For Him / Unisex. Icon slots: `sq-icon-for-her|him|both.svg`.

@@ -397,7 +397,7 @@
         },
         {
           "id": "office",
-          "label": "My office is scent-sensitive",
+          "label": "My workplace or classroom prefers subtle scents",
           "screen": "week",
           "row": "work-study"
         },
@@ -411,8 +411,8 @@
     {
       "id": "week",
       "type": "week",
-      "title": "Where does your week go?",
-      "subtitle": "Every part of your week you mark sometimes or a lot gets its own perfume.",
+      "title": "Which moments would you like a fragrance for?",
+      "subtitle": "Select all that apply.",
       "levels": [
         "Rarely",
         "Sometimes",
@@ -421,40 +421,55 @@
       "rows": [
         {
           "id": "work-study",
-          "label": "Work / study",
+          "label": "Work & study",
+          "hint": "Office, classes, meetings",
+          "rank": 1,
           "slot": "work"
         },
         {
           "id": "everyday-errands",
-          "label": "Everyday errands",
+          "label": "Everyday & errands",
+          "hint": "Out and about by day",
+          "rank": 0,
           "slot": "everyday"
         },
         {
           "id": "family-home",
-          "label": "Family & home",
+          "label": "Home & family",
+          "hint": "Cosy time at home",
+          "rank": 4,
           "slot": "relax"
         },
         {
           "id": "evenings-dates",
           "label": "Evenings & dates",
+          "hint": "Dinners, going out",
+          "rank": 2,
           "slot": "evening"
         },
         {
           "id": "events-celebrations",
-          "label": "Events & celebrations",
+          "label": "Special occasions",
+          "hint": "Weddings, parties, holidays",
+          "rank": 3,
           "slot": "special"
         },
         {
           "id": "sport",
-          "label": "Sport",
+          "label": "Sport & active",
+          "hint": "Gym, walks, outdoors",
+          "rank": 5,
           "slot": "move"
         },
         {
           "id": "time-for-me-growth",
-          "label": "Time for me & growth",
+          "label": "Me-time",
+          "hint": "Rest and self-care",
+          "rank": 6,
           "slot": "harmony"
         }
-      ]
+      ],
+      "min": 1
     },
     {
       "id": "how",
