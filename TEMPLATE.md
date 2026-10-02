@@ -5,9 +5,9 @@ built with the same scripts, installed as a second pair of theme assets. Nothing
 
 Frozen copies of the finished quiz (v3.31, 2026-10-02):
 
-- branch **`quiz-template`** and tag **`quiz-template-v3.31`** in this repository (never develop on them; branch
-  off them);
-- the Artifact page "Scent Quiz Template" (same files, downloadable).
+- branch **`quiz-template`** in this repository at commit `9281e40` (never develop on it; branch off it);
+- the Artifact page "Scent Quiz Template": https://claude.ai/artifact/KWGEiTtcasiaeJVdxg5Vws (the same files, each
+  one openable and saveable).
 
 ## What a quiz is made of
 

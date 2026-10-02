@@ -42,6 +42,11 @@ Details per version: `CHANGELOG.md`.
 3. Config file size: 59.0 KB of the 60 KB per-file limit; free room before adding copy.
 4. Open decisions: the site header (theme, not the quiz) is left as is unless the owner asks.
 
+## Template copies
+
+- Branch `quiz-template` (frozen at `9281e40`, v3.31) and the Artifact page https://claude.ai/artifact/KWGEiTtcasiaeJVdxg5Vws;
+  `TEMPLATE.md` says how to make the next quiz from them.
+
 ## How to rebuild, test, upload
 
 ```
