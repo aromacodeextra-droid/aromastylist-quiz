@@ -176,7 +176,11 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: a single season replaces "All year"`, await page.evaluate(() => [...document.querySelectorAll('.sq-tiles [aria-pressed=true]')].map((b) => b.dataset.a).join() === 'fall'));
     await page.click('[data-act=toggle][data-a=winter]');
     await page.click('[data-act=next][data-q=climate]');
-    check(`${tag}: For Her has no men's style photos (women's come later)`, await page.evaluate(() => !document.querySelector('.sq-tiles img[src*="sq-photo-style"]')));
+    const herPhotos = await page.evaluate(() => ['classic', 'dramatic', 'romantic', 'minimal', 'casual'].map((a) => (document.querySelector(`[data-a=${a}] img`)?.getAttribute('src') || '').split('/').pop()));
+    check(`${tag}: For Her sees the women's style photos, never the men's`, herPhotos.every((f, i) => f.startsWith(`sq-photo-style-${['classic', 'dramatic', 'romantic', 'minimal', 'casual'][i]}-her.webp?v=`)) && await page.evaluate(() => !document.querySelector('.sq-tiles img[src*="-him.webp"]')), herPhotos.join(', '));
+    await page.waitForFunction(() => [...document.querySelectorAll('.sq-tiles img')].every((i) => i.complete && i.naturalWidth > 0));
+    await page.waitForTimeout(500);
+    await page.screenshot({ path: `${SHOTS}/${vp.name}-11c-style-her.png` });
     await page.click('[data-act=toggle][data-a=classic]');
     await page.click('[data-act=toggle][data-a=minimal]');
     await shot(page, '11-style');

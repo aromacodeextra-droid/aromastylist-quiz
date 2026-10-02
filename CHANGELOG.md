@@ -1,5 +1,13 @@
 # Changelog
 
+## quiz-v3.17 (2026-10-02) — clothing-style photos (women's)
+
+- For Her: Classic (cream tweed suit), Dramatic (black sculpted suit), Romantic (pink ruffled dress), Minimal (beige
+  sheath dress), Casual (striped shirt, jeans, sweater over the shoulders). Sporty keeps its placeholder until a
+  women's photo comes.
+- New theme files: `assets/sq-photo-style-{classic,dramatic,romantic,minimal,casual}-her.webp` (10-25 KB). Changed:
+  `assets/scent-quiz-aromastylist.json`, `assets/scent-quiz-aromastylist-taste.json` (image version). e2e 118 / 118.
+
 ## quiz-v3.16 (2026-10-02) — clothing-style photos (men's)
 
 - The owner's photos for For Him: Classic (navy suit), Dramatic (leather biker), Romantic (light-blue shirt, chinos),
