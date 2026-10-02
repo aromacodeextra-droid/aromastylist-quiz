@@ -117,9 +117,14 @@
       "ok": true
     },
     {
-      "name": "390-A: \"Shares the ... of your ...\" lines",
+      "name": "390-A: \"In common with <perfume>: notes\" lines (two named perfumes)",
       "ok": true,
-      "detail": "Shares the amber and benzoin of your Baccarat Rouge 540."
+      "detail": "In common with Baccarat Rouge 540: amber and benzoin."
+    },
+    {
+      "name": "390-A: result says \"Built around your Baccarat Rouge 540 and Black Opium.\", sums up the answers, offers \"Change answers\"; How to wear folded; one-line sample buttons",
+      "ok": true,
+      "detail": "{\"built\":\"Built around your Baccarat Rouge 540 and Black Opium.\",\"summary\":\"For Her · Everyday & errands, Work & study, Evenings & dates, Special occasions · Moderate · Winter, Fall\",\"edit\":true,\"wearOpen\":false,\"btnH\":38,\"inside\":true}"
     },
     {
       "name": "390-A: \"Also fits this slot\" collapsed on each card",
@@ -171,6 +176,10 @@
       "name": "390-B: taboo screen left empty still gives a valid link",
       "ok": true,
       "detail": "him.none.woods+citrus+spices.-.0101010.day-night.free.close.unique.summer.sporty"
+    },
+    {
+      "name": "390-B: \"Change answers\" reopens screen 1 with the answers kept",
+      "ok": true
     },
     {
       "name": "390-B: no page errors",
@@ -308,9 +317,14 @@
       "ok": true
     },
     {
-      "name": "1440-A: \"Shares the ... of your ...\" lines",
+      "name": "1440-A: \"In common with <perfume>: notes\" lines (two named perfumes)",
       "ok": true,
-      "detail": "Shares the amber and benzoin of your Baccarat Rouge 540."
+      "detail": "In common with Baccarat Rouge 540: amber and benzoin."
+    },
+    {
+      "name": "1440-A: result says \"Built around your Baccarat Rouge 540 and Black Opium.\", sums up the answers, offers \"Change answers\"; How to wear folded; one-line sample buttons",
+      "ok": true,
+      "detail": "{\"built\":\"Built around your Baccarat Rouge 540 and Black Opium.\",\"summary\":\"For Her · Everyday & errands, Work & study, Evenings & dates, Special occasions · Moderate · Winter, Fall\",\"edit\":true,\"wearOpen\":false,\"btnH\":38,\"inside\":true}"
     },
     {
       "name": "1440-A: \"Also fits this slot\" collapsed on each card",
@@ -362,6 +376,10 @@
       "name": "1440-B: taboo screen left empty still gives a valid link",
       "ok": true,
       "detail": "him.none.woods+citrus+spices.-.0101010.day-night.free.close.unique.summer.sporty"
+    },
+    {
+      "name": "1440-B: \"Change answers\" reopens screen 1 with the answers kept",
+      "ok": true
     },
     {
       "name": "1440-B: no page errors",
@@ -503,10 +521,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.4 KB, assets/scent-quiz.css 25.6 KB, assets/scent-quiz.js 50.4 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.6 KB, assets/scent-quiz.css 26.9 KB, assets/scent-quiz.js 51.6 KB"
     },
     {
-      "name": "JS + CSS + JSON 183.0 KB <= 200 KB",
+      "name": "JS + CSS + JSON 185.6 KB <= 200 KB",
       "ok": true
     },
     {
@@ -555,10 +573,10 @@
         "Saved for the big nights: vanilla, iris and sage, with a soft trail."
       ],
       "shares": [
-        "Shares the amber and benzoin of your Baccarat Rouge 540.",
-        "Shares the amber of your Baccarat Rouge 540.",
-        "Shares the jasmine and amber of your Baccarat Rouge 540.",
-        "Shares the amber and benzoin of your Baccarat Rouge 540."
+        "In common with Baccarat Rouge 540: amber and benzoin.",
+        "In common with Baccarat Rouge 540: amber.",
+        "In common with Baccarat Rouge 540: jasmine and amber.",
+        "In common with Baccarat Rouge 540: amber and benzoin."
       ],
       "profile": 3,
       "set": null
@@ -639,11 +657,11 @@
         "For time that is yours: musk, coconut and peach, close to the skin."
       ],
       "shares": [
-        "Shares the cardamom, sandalwood and cedar of your Santal 33.",
-        "Shares the iris and sandalwood of your Santal 33.",
-        "Shares the iris, violet and sandalwood of your Santal 33.",
-        "Shares the sandalwood and cedar of your Santal 33.",
-        "Shares the iris, sandalwood and cedar of your Santal 33."
+        "In common: cardamom, sandalwood and cedar.",
+        "In common: iris and sandalwood.",
+        "In common: iris, violet and sandalwood.",
+        "In common: sandalwood and cedar.",
+        "In common: iris, sandalwood and cedar."
       ],
       "profile": 3,
       "set": null
@@ -688,10 +706,10 @@
         "Saved for the big nights: vanilla, iris and sage, with a soft trail."
       ],
       "shares": [
-        "Shares the amber and benzoin of your Baccarat Rouge 540.",
-        "Shares the amber of your Baccarat Rouge 540.",
-        "Shares the jasmine and amber of your Baccarat Rouge 540.",
-        "Shares the amber and benzoin of your Baccarat Rouge 540."
+        "In common with Baccarat Rouge 540: amber and benzoin.",
+        "In common with Baccarat Rouge 540: amber.",
+        "In common with Baccarat Rouge 540: jasmine and amber.",
+        "In common with Baccarat Rouge 540: amber and benzoin."
       ],
       "profile": 3,
       "set": null
@@ -772,11 +790,11 @@
         "For time that is yours: musk, coconut and peach, close to the skin."
       ],
       "shares": [
-        "Shares the cardamom, sandalwood and cedar of your Santal 33.",
-        "Shares the iris and sandalwood of your Santal 33.",
-        "Shares the iris, violet and sandalwood of your Santal 33.",
-        "Shares the sandalwood and cedar of your Santal 33.",
-        "Shares the iris, sandalwood and cedar of your Santal 33."
+        "In common: cardamom, sandalwood and cedar.",
+        "In common: iris and sandalwood.",
+        "In common: iris, violet and sandalwood.",
+        "In common: sandalwood and cedar.",
+        "In common: iris, sandalwood and cedar."
       ],
       "profile": 3,
       "set": null
@@ -866,9 +884,9 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16545,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59850,
-      "assets/scent-quiz.css": 26206,
-      "assets/scent-quiz.js": 51590,
+      "assets/scent-quiz-aromastylist.json": 59983,
+      "assets/scent-quiz.css": 27510,
+      "assets/scent-quiz.js": 52887,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -929,7 +947,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 187370,
+    "code_total": 190104,
     "images": 59,
     "images_total": 891710
   }

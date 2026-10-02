@@ -397,3 +397,26 @@ html.sq-asking .sq-section--personas { display: none; }
 .sq-tiles[data-q="presence"] .sq-dots { transform: scale(.8); }
 .sq-tiles[data-layout="seasons"] .sq-tile__img .sq-icon { width: 62%; height: 62%; }
 @media (min-width: 750px) { .sq-tiles[data-q="presence"] .sq-dots { transform: none; } }
+
+/* v3.13: result screen */
+.sq-built { max-width: 56ch; margin: -12px auto 6px; font-size: 14px; }
+.sq-summary { max-width: 60ch; margin: 0 auto 20px; font-size: 13px; opacity: .85; }
+:is(#root, body) .sq-section .sq-edit { display: inline; padding: 0; min-height: 0; background: none; border: 0; color: var(--sq-fg); font: inherit; font-size: 13px;
+  text-decoration: underline; text-underline-offset: 3px; text-transform: none; letter-spacing: normal; cursor: pointer; white-space: nowrap; }
+/* slot and perfume names: serif, dark; house in quiet sans */
+.sq-shelf__name, .sq-section .sq-card__name { color: var(--sq-fg); }
+.sq-card__house { color: var(--sq-fg); opacity: .65; font-weight: var(--btn_fw, 500); }
+/* bigger bottles */
+.sq-card { grid-template-columns: 120px minmax(0, 1fr); }
+/* how to wear folds away */
+.sq-wear { margin-top: 2px; font-size: 12px; }
+.sq-wear summary { cursor: pointer; text-decoration: underline; text-underline-offset: 3px; opacity: .8; }
+.sq-wear .sq-card__wear { margin: 4px 0 0; }
+/* one-line sample buttons; "Add all" stays the main button */
+:is(#root, body) .sq-section .sq-btn--sm { min-height: 38px; padding: 6px 14px; font-size: 12px; letter-spacing: .04em; white-space: nowrap; }
+/* family labels in the profile fit on one line */
+.sq-dna__bars li { grid-template-columns: minmax(0, 11em) minmax(0, 1fr) 3em; }
+.sq-dna__label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (min-width: 750px) { .sq-card { grid-template-columns: 160px minmax(0, 1fr); } }
+:is(#root, body) .sq-section .sq-card .sq-btn--sm { max-width: 100%; padding: 6px 10px; font-size: 11px; letter-spacing: .03em; }
+:is(#root, body) .sq-section .sq-card__name a { color: var(--sq-fg); }

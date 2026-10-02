@@ -87,7 +87,7 @@ function tabooHit(handle, rules) {
 function namedNotes(text, part) {
   let s = text;
   if (part === 'why') s = s.slice(s.indexOf(':') + 1).replace(/,\s*(close to the skin|with a soft trail|with a trail that fills the room)\.$/, '').replace(/\.$/, '');
-  else s = s.replace(/^Shares the /, '').replace(/ of your .*$/, '');
+  else s = s.replace(/^In common( with [^:]+)?: /, '').replace(/\.$/, '');
   return s.split(/, | and /).map((x) => x.trim()).filter(Boolean);
 }
 function personaOk(persona, picks) {

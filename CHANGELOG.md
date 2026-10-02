@@ -1,5 +1,18 @@
 # Changelog
 
+## quiz-v3.13 (2026-10-02) — review round, stage 5: result screen
+
+- Under the persona, once: "Built around your Baccarat Rouge 540." and a one-line summary of the answers
+  (For Her · Everyday & errands, Work & study · Moderate · Winter, Fall) with **Change answers** (back to screen 1,
+  every answer kept).
+- Cards are shorter: "In common: amber and benzoin." (with two named perfumes: "In common with Black Opium: …")
+  instead of repeating "Shares the … of your …" in every card; "How to wear" folds away.
+- "Add sample · $…" is a compact one-line button inside the card; "Add all N samples" stays the main button.
+- Slot and perfume names in dark serif, house in quiet sans; bigger bottles (120 px phone, 160 px desktop); family
+  labels of the profile on one line.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`.
+  Combinations 51,260 / 0 failures, e2e 114 / 114.
+
 ## quiz-v3.12 (2026-10-02) — review round, stage 4: screens 6-10
 
 - Feel: "How do you want to feel?", "Free" -> **Carefree**, six answers three in a row (all visible with little

@@ -190,7 +190,12 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: >= 2 houses, no repeats`, new Set(st.houses).size >= 2 && new Set(st.items.map((i) => i.handle)).size === st.items.length, st.houses.join(', '));
     check(`${tag}: persona, scent profile (3 families), why-lines all different`, st.persona && st.profile === 3 && new Set(st.why).size === st.why.length && st.why.length === st.items.length, st.persona);
     check(`${tag}: never recommends the named perfume`, !st.items.some((i) => /baccarat-rouge-540/.test(i.handle)));
-    check(`${tag}: "Shares the ... of your ..." lines`, st.shares.length >= 1 && st.shares.every((s) => /^Shares the .+ of your (Baccarat Rouge 540|Black Opium)\.$/.test(s)), st.shares[0]);
+    check(`${tag}: "In common with <perfume>: notes" lines (two named perfumes)`, st.shares.length >= 1 && st.shares.every((s) => /^In common with (Baccarat Rouge 540|Black Opium): .+\.$/.test(s)), st.shares[0]);
+    const top = await page.evaluate(() => ({ built: document.querySelector('.sq-built')?.textContent, summary: document.querySelector('.sq-summary span')?.textContent, edit: !!document.querySelector('[data-act=edit]'),
+      wearOpen: [...document.querySelectorAll('.sq-wear')].some((d) => d.open), btnH: Math.max(...[...document.querySelectorAll('.sq-card .sq-btn--sm')].map((b) => b.getBoundingClientRect().height)),
+      inside: [...document.querySelectorAll('.sq-card .sq-btn--sm')].filter((b) => b.offsetParent).every((b) => b.getBoundingClientRect().right <= b.closest('.sq-card').getBoundingClientRect().right + 0.5) }));
+    check(`${tag}: result says "Built around your Baccarat Rouge 540 and Black Opium.", sums up the answers, offers "Change answers"; How to wear folded; one-line sample buttons`,
+      top.built === 'Built around your Baccarat Rouge 540 and Black Opium.' && top.summary === 'For Her · Everyday & errands, Work & study, Evenings & dates, Special occasions · Moderate · Winter, Fall' && top.edit && !top.wearOpen && top.btnH < 44 && top.inside, JSON.stringify(top));
     const alts = await page.$$eval('.sq-alt summary', (l) => l.length);
     check(`${tag}: "Also fits this slot" collapsed on each card`, alts === st.items.length && !(await page.isVisible('.sq-alt p')));
     check(`${tag}: no email field anywhere`, (await page.$$('input[type=email], input[name*=mail]')).length === 0);
@@ -264,6 +269,10 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: no "shares" line without a named perfume; profile shown`, st.shares.length === 0 && st.profile === 3);
     const code = decodeURIComponent(page.url()).split('sq=')[1];
     check(`${tag}: taboo screen left empty still gives a valid link`, /^him\.none\.woods\+citrus\+spices\.-\.0101010\.day-night\./.test(code), code);
+    // "Change answers" goes back to screen 1 with every answer kept
+    await page.click('[data-act=edit]');
+    await page.waitForSelector('.sq-q[data-q=for]');
+    check(`${tag}: "Change answers" reopens screen 1 with the answers kept`, (await page.getAttribute('[data-act=answer][data-a=him]', 'aria-pressed')) === 'true');
     check(`${tag}: no page errors`, errors.length === 0, errors.join(' | '));
     report.runs.push({ run: tag, ...st });
     await ctx.close();

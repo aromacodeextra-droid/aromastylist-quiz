@@ -439,12 +439,13 @@
     return String(tpl || '').replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; });
   }
   // line 1: only notes both perfumes really carry
-  function sharesLine(model, r, c) {
+  // the perfume's name is said once above the cards ("Built around your …"); with two named perfumes the line says which
+  function sharesLine(model, r, c, many) {
     if (!r.ref || !r.shared.length) return '';
     // specific notes first; broad catch-alls ("woods", "floral notes") only when nothing specific is shared
     var spec = r.shared.filter(function (i) { return !model.taste.canon[i][3]; });
     var notes = (spec.length ? spec : r.shared).slice(0, 3).map(function (i) { return noteLabel(model, i); });
-    return fill(c.shares, { notes: joinList(notes, c.and), name: r.ref.name });
+    return fill(many && c.shares_named ? c.shares_named : c.shares, { notes: joinList(notes, c.and), name: r.ref.name });
   }
   // line 2: from this perfume's own matched tags + 2-3 of its real notes; unique within one result
   function whyLines(model, res, c) {
@@ -740,6 +741,7 @@
       else if (act === 'add-all') self.addAll(t);
       else if (act === 'add-set') self.addOne(t, 'set');
       else if (act === 'restart') self.restart();
+      else if (act === 'edit') { self.shared = false; self.go(0); }
       else if (act === 'share-open') self.openShare(t);
       else if (act === 'download') self.shareDownload();
       else if (act === 'native') self.shareNative();
@@ -1101,7 +1103,8 @@
 
   Quiz.prototype.productLink = function (p) { return this.cartRoot + 'products/' + p.handle; };
   Quiz.prototype.card = function (row, i) {
-    var r = row.pick, p = r.p, c = this.copy, why = this.why[i], shares = sharesLine(this.model, r, c);
+    var named = Array.isArray(this.state.ref) ? this.state.ref.length : 0;
+    var r = row.pick, p = r.p, c = this.copy, why = this.why[i], shares = sharesLine(this.model, r, c, named > 1);
     var alt = row.alt ? row.alt.p : null;
     return '<li class="sq-card sq-card--slot"><div class="sq-shelf__head"><p class="sq-shelf__name">' + esc(row.slot.label) + '</p>' +
       (row.slot.text ? '<p class="sq-shelf__text">' + esc(row.slot.text) + '</p>' : '') + '</div>' +
@@ -1111,11 +1114,27 @@
       '<p class="sq-card__house">' + esc(p.house) + '</p>' +
       (shares ? '<p class="sq-card__why sq-card__why--taste" data-sq-shares>' + esc(shares) + '</p>' : '') +
       (why ? '<p class="sq-card__why" data-sq-why>' + esc(why) + '</p>' : '') +
-      '<p class="sq-card__wear">' + esc(howToWear(this.model, row, c)) + '</p>' +
-      '<button type="button" class="sq-btn sq-btn--line" data-act="add" data-variant="' + esc(p.variant) + '" data-handle="' + esc(p.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(p.price)) + '</button>' +
+      '<details class="sq-wear"><summary>' + esc(c.how_to_wear_title) + '</summary><p class="sq-card__wear">' + esc(howToWear(this.model, row, c)) + '</p></details>' +
+      '<button type="button" class="sq-btn sq-btn--line sq-btn--sm" data-act="add" data-variant="' + esc(p.variant) + '" data-handle="' + esc(p.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(p.price)) + '</button>' +
       (alt ? '<details class="sq-alt"><summary>' + esc(c.also_fits) + '</summary><p><a href="' + esc(this.productLink(alt)) + '">' + esc(alt.title) + ' · ' + esc(alt.house) + '</a></p>' +
-        '<button type="button" class="sq-btn sq-btn--line" data-act="add" data-variant="' + esc(alt.variant) + '" data-handle="' + esc(alt.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(alt.price)) + '</button></details>' : '') +
+        '<button type="button" class="sq-btn sq-btn--line sq-btn--sm" data-act="add" data-variant="' + esc(alt.variant) + '" data-handle="' + esc(alt.handle) + '">' + esc(c.add_sample) + ' · ' + esc(this.fmt.format(alt.price)) + '</button></details>' : '') +
       '</div></li>';
+  };
+  // what the wardrobe is based on, in the visitor's own answers, and a way back to change one
+  Quiz.prototype.summaryHtml = function () {
+    var self = this, c = this.copy, st = this.state, parts = [];
+    var lab = function (qid, v) { var a = findAnswer(Q(self.config, qid), v); return a ? a.label : ''; };
+    var refs = Array.isArray(st.ref) ? st.ref.map(function (v) { var pf = perfumeOf(self.model, v); return pf ? pf.name || pf.title : ''; }).filter(Boolean) : [];
+    parts.push(lab('for', st['for']));
+    var wq = Q(this.config, 'week');
+    if (wq && Array.isArray(st.week)) parts.push(wq.rows.map(function (r, i) { return { r: r, i: i }; }).filter(function (x) { return st.week[x.i]; })
+      .sort(function (a, b) { return (a.r.rank || 0) - (b.r.rank || 0); }).map(function (x) { return x.r.label; }).join(', '));
+    parts.push(lab('presence', st.presence));
+    var cl = Array.isArray(st.climate) ? st.climate : [st.climate];
+    parts.push((Q(this.config, 'climate').answers || []).filter(function (a) { return cl.indexOf(a.id) >= 0; }).map(function (a) { return a.label; }).join(', '));
+    var built = refs.length && c.built_around ? '<p class="sq-built">' + esc(fill(c.built_around, { names: joinList(refs, c.and) })) + '</p>' : '';
+    return built + '<p class="sq-summary"><span>' + parts.filter(Boolean).map(esc).join(' · ') + '</span>' +
+      (this.shared ? '' : ' <button type="button" class="sq-edit" data-act="edit">' + esc(c.change_answers) + '</button>') + '</p>';
   };
   Quiz.prototype.showResult = function () {
     var self = this, c = this.copy, res = this.result, per = res.persona || { name: '', line: '' };
@@ -1123,6 +1142,7 @@
     var html = '<div class="sq-screen sq-result">';
     if (this.shared) html += '<div class="sq-shared"><p>' + esc(c.shared_note) + '</p><button type="button" class="sq-btn sq-btn--line" data-act="restart">' + esc(c.shared_cta) + '</button></div>';
     html += '<p class="sq-kicker">' + esc(c.result_kicker) + '</p><h2 class="sq-title sq-persona" tabindex="-1" data-sq-focus>' + esc(per.name) + '</h2><p class="sq-lead">' + esc(per.line) + '</p>';
+    html += this.summaryHtml();
     if (res.profile.length) {
       html += '<div class="sq-ref sq-ref--result"><p class="sq-kicker">' + esc(c.profile_title) + '</p><ul class="sq-dna__bars">' + res.profile.map(function (f) {
         return '<li><span class="sq-dna__label">' + esc((c.families || {})[f.family] || f.family) + '</span><span class="sq-dna__track"><span style="width:' + f.pct + '%"></span></span><span class="sq-dna__pct">' + f.pct + '%</span></li>';

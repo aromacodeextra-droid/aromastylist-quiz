@@ -1,13 +1,13 @@
 # Where we are (resume here)
 
-Last saved: 2026-10-02, version **quiz-v3.12**, branch `quiz-v3` (pushed to GitHub).
+Last saved: 2026-10-02, version **quiz-v3.13**, branch `quiz-v3` (pushed to GitHub).
 
 ## Preview
 
 - Theme copy (unpublished): **"Xtra – scent quiz (copy of live, 2026-09-30)"**, id `189533225240`.
 - Link: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189533225240
 - The live theme and the rest of the site are untouched. The owner publishes herself.
-- The copy holds exactly the repo files of v3.12, checked by md5 on 2026-10-02: 65 files from `theme-files/`
+- The copy holds exactly the repo files of v3.13, checked by md5 on 2026-10-02: 65 files from `theme-files/`
   (sections, js, css, two JSON files, 59 bottle images) plus `templates/page.find-your-perfume.json` =
   `docs/theme-copy/page.find-your-perfume.json`.
 - The second copy "Home Journal" (`189529096472`) still has an old version; update it only if asked.
@@ -27,7 +27,8 @@ Details per version: `CHANGELOG.md`.
 
 ## Next
 
-1. **Result screen review with the owner** (stage 5 of the plan, not started).
+1. Result screen: v3.13 done (built-around line, answer summary + Change answers, short cards, compact buttons).
+   Waiting for the owner's look on her phone.
 2. When the owner sends icons / photos, drop them in `theme-files/assets/` with these names and rebuild:
    - screen 1: `sq-icon-for-her.svg`, `sq-icon-for-him.svg`, `sq-icon-for-both.svg`
    - feelings: `sq-icon-feel-<confident|attractive|calm|energised|festive|free>.svg`

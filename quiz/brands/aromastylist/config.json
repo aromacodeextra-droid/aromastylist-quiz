@@ -1151,7 +1151,7 @@
     "remove": "Remove",
     "profile_title": "Your scent profile",
     "result_list_title": "Your Perfume Wardrobe",
-    "shares": "Shares the {notes} of your {name}.",
+    "shares": "In common: {notes}.",
     "why": "{lead}: {notes}{presence}.",
     "why_family_lead": "A {family} pick",
     "why_presence": {
@@ -1159,7 +1159,7 @@
       "noticed": ", with a soft trail",
       "fills": ", with a trail that fills the room"
     },
-    "how_to_wear": "How to wear: {sprays} on {where}.",
+    "how_to_wear": "{sprays} on {where}.",
     "sprays": {
       "close": "3 sprays",
       "noticed": "2 sprays",
@@ -1172,6 +1172,10 @@
     "share_story_top": "My perfume wardrobe",
     "no_notes": "{name}: the house does not publish its notes, so after this we will ask which notes you like.",
     "remove_named": "Remove {name}",
-    "no_notes_short": "The house does not publish its notes"
+    "no_notes_short": "The house does not publish its notes",
+    "shares_named": "In common with {name}: {notes}.",
+    "how_to_wear_title": "How to wear",
+    "built_around": "Built around your {names}.",
+    "change_answers": "Change answers"
   }
 }
