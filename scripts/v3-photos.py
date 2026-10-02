@@ -1,4 +1,4 @@
-"""Owner photos (quiz/brands/aromastylist/photos-src/<question>-<answer>-<her|him>.png|jpg) -> theme-files/assets/
+"""Owner photos (quiz/brands/aromastylist/photos-src/<question>-<answer>-<her|him|both>.png|jpg) -> theme-files/assets/
 sq-photo-<question>-<answer>-<her|him>.webp, square, 600 px, <= 30 KB each. Run: python3 scripts/v3-photos.py"""
 import os
 from PIL import Image
@@ -8,7 +8,12 @@ for name in sorted(os.listdir(SRC)):
     base, ext = os.path.splitext(name)
     if ext.lower() not in ('.png', '.jpg', '.jpeg', '.webp'):
         continue
-    im = Image.open(f'{SRC}/{name}').convert('RGB')
+    im = Image.open(f'{SRC}/{name}')
+    if im.mode in ('RGBA', 'LA', 'P'):  # a transparent background becomes white, like the other tiles
+        im = im.convert('RGBA')
+        bg = Image.new('RGBA', im.size, (255, 255, 255, 255))
+        im = Image.alpha_composite(bg, im)
+    im = im.convert('RGB')
     side = min(im.size)  # centre square crop
     left, top = (im.width - side) // 2, (im.height - side) // 2
     im = im.crop((left, top, left + side, top + side)).resize((SIZE, SIZE), Image.LANCZOS)

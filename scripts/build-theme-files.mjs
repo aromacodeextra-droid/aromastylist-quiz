@@ -153,8 +153,8 @@ for (const q of config.questions) for (const a of q.answers || []) {
     if (!a.photo_file && fs.existsSync(`${OUT}/assets/${f}`)) a.photo_file = f;
     // per screen-1 answer: sq-photo-<screen>-<answer>-her|him.<ext>
   }
-  // per screen-1 answer: sq-photo-<screen>-<answer>-her|him.webp (only the gender is stored; the engine builds the name)
-  for (const g of ['her', 'him']) if (fs.existsSync(`${OUT}/assets/sq-photo-${q.id}-${a.id}-${g}.webp`)) a.photo_g = (a.photo_g || '') + g[1];
+  // per screen-1 answer: sq-photo-<screen>-<answer>-her|him|both.webp (only the gender is stored; the engine builds the name)
+  for (const g of ['her', 'him', 'both']) if (fs.existsSync(`${OUT}/assets/sq-photo-${q.id}-${a.id}-${g}.webp`)) a.photo_g = (a.photo_g || '') + g[1];
   if (a.icon_file || a.photo_file) delete a.image; // the owner's icon / photo replaces the placeholder image
 }
 for (const q of config.questions) for (const r of q.rows || []) for (const ext of ['svg', 'png', 'webp']) {

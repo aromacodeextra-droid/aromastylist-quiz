@@ -1,5 +1,13 @@
 # Changelog
 
+## quiz-v3.22 (2026-10-02) — Unisex style photos (couples)
+
+- Unisex now sees the owner's couple photos on the clothing-style screen: Classic, Dramatic, Minimal, Casual, Sporty
+  (`sq-photo-style-<answer>-both.webp`). Romantic shows the men's photo until its couple photo arrives.
+- `scripts/v3-photos.py` also takes `-both` files and turns a transparent background white.
+- New theme files: `assets/sq-photo-style-{classic,dramatic,minimal,casual,sporty}-both.webp`. Changed:
+  `assets/scent-quiz.js`, `assets/scent-quiz-aromastylist.json`, `assets/scent-quiz-aromastylist-taste.json`. e2e 126 / 126.
+
 ## quiz-v3.21 (2026-10-02) — "What would your fragrance wardrobe look like?"
 
 - Question "How do you wear perfume?" -> **"What would your fragrance wardrobe look like?"** (choosing a set, not a way

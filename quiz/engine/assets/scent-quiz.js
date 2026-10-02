@@ -900,11 +900,11 @@
   };
   Quiz.prototype.img = function (a, eager) {
     // a photo made for the answer of screen 1 (For Him / For Her); Unisex takes either
-    // photo_g: 'e' = her, 'i' = him (second letter); file sq-photo-<question>-<answer>-<her|him>.webp
+    // photo_g: 'e' = her, 'i' = him, 'o' = both (second letter); file sq-photo-<question>-<answer>-<her|him|both>.webp
     var who = this.state['for'], g = a.photo_g || '', pick = null;
     if (who === 'her' && g.indexOf('e') >= 0) pick = 'her';
     else if (who === 'him' && g.indexOf('i') >= 0) pick = 'him';
-    else if (who === 'both') pick = g.indexOf('i') >= 0 ? 'him' : g.indexOf('e') >= 0 ? 'her' : null;
+    else if (who === 'both') pick = g.indexOf('o') >= 0 ? 'both' : g.indexOf('i') >= 0 ? 'him' : g.indexOf('e') >= 0 ? 'her' : null;
     var photo = a.photo_file || (pick && a.q ? 'sq-photo-' + a.q + '-' + a.id + '-' + pick + '.webp' : null);
     if (photo) return '<img src="' + esc(this.asset(photo)) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
     if (a.icon_file) return '<img class="sq-icon" src="' + esc(this.asset(a.icon_file)) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';

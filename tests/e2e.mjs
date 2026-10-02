@@ -434,6 +434,33 @@ for (const vp of VIEWPORTS) {
   await ctx.close();
 }
 
+// Unisex sees the couple photos on the clothing-style screen (the men's photo only where no couple photo exists yet)
+{
+  const ctx = await newContext({ viewport: { width: 390, height: 844 } });
+  const page = await ctx.newPage();
+  await page.goto(PAGE);
+  await page.click('[data-act=start]');
+  await choose(page, '[data-act=answer][data-a=both]');
+  await page.click('[data-act=no-ref]');
+  await page.click('[data-act=toggle][data-a=woods]'); await page.click('[data-act=next][data-q=notes]');
+  await page.click('[data-act=next][data-q=taboos]');
+  await page.click('[data-act=moment][data-row="0"]'); await page.click('[data-act=next][data-q=week]');
+  await choose(page, '[data-act=answer][data-a=one-bottle]');
+  await page.click('[data-act=toggle][data-a=calm]'); await page.click('[data-act=next][data-q=feel]');
+  await choose(page, '[data-act=answer][data-a=close]');
+  await choose(page, '[data-act=answer][data-a=easy]');
+  await page.click('[data-act=toggle][data-a=winter]'); await page.click('[data-act=next][data-q=climate]');
+  await page.waitForSelector('.sq-tiles[data-q=style]');
+  const both = await page.evaluate(() => Object.fromEntries([...document.querySelectorAll('.sq-tiles[data-q=style] .sq-tile')].map((t) => [t.dataset.a, (t.querySelector('img')?.getAttribute('src') || '').split('/').pop().split('?')[0]])));
+  const fs = await import('node:fs');
+  const ok = Object.entries(both).every(([a, f]) => f === (fs.existsSync(`theme-files/assets/sq-photo-style-${a}-both.webp`) ? `sq-photo-style-${a}-both.webp` : `sq-photo-style-${a}-him.webp`));
+  check('390: Unisex sees the couple style photos', ok, JSON.stringify(both));
+  await page.waitForFunction(() => [...document.querySelectorAll('.sq-tiles img')].every((i) => i.complete && i.naturalWidth > 0));
+  await page.waitForTimeout(500);
+  await fullShot(page, `${SHOTS}/390-11d-style-both.png`);
+  await ctx.close();
+}
+
 // a sticky site header (as on the phone): every step starts below it, Back and the counter fully visible
 {
   const ctx = await newContext({ viewport: { width: 390, height: 844 } });
