@@ -1,4 +1,4 @@
-combinations: 51260 runs (A random 5000, 5000 distinct, B 36 popular tiles x taboos x seasons + the reported Him case 46260), 125952 slots, 89.9 s
+combinations: 51260 runs (A random 5000, 5000 distinct, B 36 popular tiles x taboos x seasons + the reported Him case 46260), 125952 slots, 85.7 s
 failures: none
   slot not filled                        0
   out of stock                           0
@@ -18,5 +18,5 @@ failures: none
   share link does not parse              0
   share link gives another result        0
 perfumes used: 284 in the random part A, 293 overall, of 299 in stock; most used: clive-christian-e-cashmere-musk 11143, creed-himalaya 4832, rosendo-mateu-no-5 3608, creed-royal-oud 3244, nishane-ani 2812, maison-crivelli-hibiscus-mahajad-extrait 2651, guerlain-aqua-allegoria-forte-mandarine-basilic 2284, memo-paris-italian-leather 2201
-personas: skin-secret 13793, boardroom-pull 7083, sunlit-signal 6827, quiet-signature 6026, first-light 5082, cashmere-evening 2572, bright-entrance 1861, sharp-edit 1688, soft-landing 1365, slow-burn 1297, sweet-confidant 1061, after-hours-magnet 601, golden-hour-guest 591, clean-stride 438, temple-smoke 370, open-air 263, still-point 257, grand-entrance 85
+personas: quiet-signature 6569, skin-secret 6328, first-light 6201, boardroom-pull 6047, bright-entrance 4384, sweet-confidant 3315, cashmere-evening 2853, soft-landing 2493, open-air 2173, sunlit-signal 1995, clean-stride 1816, golden-hour-guest 1441, sharp-edit 1332, after-hours-magnet 1283, slow-burn 1027, temple-smoke 885, grand-entrance 739, still-point 379
 ready-made set card shown in 2858 of 51260 (her 1044, him 795, both 1019); set genders: platinum-whisper Feminine, modern-icons Feminine, midnight-bloom Feminine, black-ties Masculine, gilded-gatsby-glam Feminine, the-modern-muse Feminine, the-executive-edit Masculine, modern-legends Masculine, chromatic-couture Feminine, after-hours Masculine

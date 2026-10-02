@@ -1,5 +1,17 @@
 # Changelog
 
+## quiz-v3.31 (2026-10-02) — personas spread out
+
+- The persona now follows the answers first: each chosen feeling names a row of the persona matrix, the reach picks
+  the persona in it (second feeling counts less, the other reaches of the row count a little); "Calm" + Me-time among
+  the moments leads to the Still Point / Temple Smoke row; the clothing style adds a little; the notes of the picked
+  perfumes confirm and break ties. A persona qualifies when at least half of its note requirements are met (all when
+  it has one or two).
+- Spread on 20,000 uniformly random answer sets (`scripts/persona-spread.mjs`, `tests/reports/persona-spread.txt`):
+  before, The Skin Secret 25.7 % and five personas under 1 %; after, the most frequent 13.7 % and 16 of 18 at 1.8 %
+  or more (The Still Point 0.6 %: calm + Me-time + close to skin is a narrow profile).
+- Changed theme file: `assets/scent-quiz.js`. Combinations 51,260 / 0 failures, e2e 134 / 134.
+
 ## quiz-v3.30 (2026-10-02) — wardrobe card names match the moments; two persona names
 
 - Wardrobe cards: Work & Study, Evenings & Dates, Home & Family, Sport & Active, Me-Time (were Work & Presence,

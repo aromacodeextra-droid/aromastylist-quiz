@@ -92,7 +92,9 @@ function namedNotes(text, part) {
 }
 function personaOk(persona, picks) {
   const have = new Set(picks.flatMap((h) => [...(truth[h]?.canon || [])]));
-  return (persona.notes || []).every((req) => req.some((n) => (n.startsWith('fam:') ? CANON.some(([id, , f]) => f === n.slice(4) && have.has(id)) : have.has(n))));
+  // at least half of the requirements met (all of them when there are one or two), as in the engine
+  const reqs = persona.notes || [], met = reqs.filter((req) => req.some((n) => (n.startsWith('fam:') ? CANON.some(([id, , f]) => f === n.slice(4) && have.has(id)) : have.has(n)))).length;
+  return met >= (reqs.length <= 2 ? reqs.length : Math.ceil(reqs.length / 2));
 }
 
 function run(st) {

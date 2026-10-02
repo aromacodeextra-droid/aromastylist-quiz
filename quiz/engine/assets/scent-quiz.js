@@ -387,8 +387,9 @@
     return u;
   }
   // a persona line names notes; it qualifies only if every named note is in at least one pick
-  function personaQualifies(model, persona, have) {
-    return (persona.notes || []).every(function (req) {
+  // how many of a persona's note requirements the picked perfumes meet (each requirement: one of its notes present)
+  function personaMet(model, persona, have) {
+    return (persona.notes || []).filter(function (req) {
       return req.some(function (n) {
         if (n.indexOf('fam:') === 0) {
           var k = famIndex(model, n.slice(4));
@@ -396,22 +397,39 @@
         }
         return canonIdx(model, [n]).some(function (i) { return have[i]; });
       });
-    });
+    }).length;
+  }
+  // a persona fits when at least half of its note requirements are met (all of them when it has one or two)
+  function personaQualifies(model, persona, have) {
+    var n = (persona.notes || []).length;
+    return personaMet(model, persona, have) >= (n <= 2 ? n : Math.ceil(n / 2));
   }
   function personaFor(model, res, state) {
     var P = model.config.personas;
     if (!P || !model.taste) return P ? P.list[0] : null;
     var picks = res.rows.filter(function (r) { return r.pick; }).map(function (r) { return r.pick.p; });
     var have = union(picks);
-    var feel = findAnswer(Q(model.config, 'feel'), (state.feel || [])[0]);
-    var mood = feel && feel.moods ? feel.moods[0] : null;
-    var matrixKey = mood && P.matrix[mood] ? P.matrix[mood][state.presence] : null;
+    // the answers decide first: each chosen feeling names a row of the matrix (its moods), the reach a persona in
+    // that row; a feeling with two moods (calm: relax / harmony) takes the harmony row when Me-time is a moment.
+    // The clothing style adds a little; the notes of the picked perfumes confirm (a persona must qualify) and break ties
+    var slots = res.rows.map(function (r) { return r.slot.id; });
+    var rows = [];
+    (state.feel || []).forEach(function (id, k) {
+      var f = findAnswer(Q(model.config, 'feel'), id), moods = ((f && f.moods) || []).slice();
+      if (moods.length > 1 && slots.indexOf('harmony') >= 0) moods.reverse();   // calm + Me-time: the harmony row first
+      moods.forEach(function (m, j) { if (P.matrix[m]) rows.push({ row: P.matrix[m], w: (k ? 6 : 10) * (j ? 0.7 : 1) }); });
+    });
     var stylePersonas = [];
     stylesOf(model, state).forEach(function (a) { stylePersonas = stylePersonas.concat(a.personas || []); });
     var best = null;
     P.list.forEach(function (x, i) {
       if (!personaQualifies(model, x, have)) return;
-      var s = (x.notes || []).length * 2 + (x.key === matrixKey ? 3 : 0) + (stylePersonas.indexOf(x.key) >= 0 ? 1.5 : 0) - i * 0.001;
+      var s = 0;
+      rows.forEach(function (q) {
+        if (q.row[state.presence] === x.key) s += q.w;
+        else if (Object.keys(q.row).some(function (k) { return q.row[k] === x.key; })) s += q.w * 0.6;
+      });
+      s += (stylePersonas.indexOf(x.key) >= 0 ? 3 : 0) + personaMet(model, x, have) - i * 0.001;
       if (!best || s > best.s) best = { s: s, x: x };
     });
     return best ? best.x : (P.list.filter(function (x) { return !(x.notes || []).length; })[0] || P.list[0]);

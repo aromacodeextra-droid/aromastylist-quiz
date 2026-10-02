@@ -611,10 +611,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.4 KB, assets/scent-quiz.css 33.5 KB, assets/scent-quiz.js 53.8 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.4 KB, assets/scent-quiz.css 33.5 KB, assets/scent-quiz.js 54.2 KB"
     },
     {
-      "name": "JS + CSS + JSON 193.3 KB <= 200 KB",
+      "name": "JS + CSS + JSON 193.6 KB <= 200 KB",
       "ok": true
     },
     {
@@ -673,7 +673,7 @@
     },
     {
       "run": "390-B",
-      "persona": "The Sharp Edit",
+      "persona": "The Clean Stride",
       "slots": [
         "Everyday Signature",
         "Evenings & Dates"
@@ -702,7 +702,7 @@
     },
     {
       "run": "390-C",
-      "persona": "The Sweet Tooth",
+      "persona": "The Soft Landing",
       "slots": [
         "Everyday Signature",
         "Work & Study",
@@ -806,7 +806,7 @@
     },
     {
       "run": "1440-B",
-      "persona": "The Sharp Edit",
+      "persona": "The Clean Stride",
       "slots": [
         "Everyday Signature",
         "Evenings & Dates"
@@ -835,7 +835,7 @@
     },
     {
       "run": "1440-C",
-      "persona": "The Sweet Tooth",
+      "persona": "The Soft Landing",
       "slots": [
         "Everyday Signature",
         "Work & Study",
@@ -976,7 +976,7 @@
       "assets/scent-quiz-aromastylist-taste.json": 49724,
       "assets/scent-quiz-aromastylist.json": 58779,
       "assets/scent-quiz.css": 34292,
-      "assets/scent-quiz.js": 55124,
+      "assets/scent-quiz.js": 55489,
       "assets/sq-icon-feel-attractive.svg": 5179,
       "assets/sq-icon-feel-calm.svg": 6815,
       "assets/sq-icon-feel-confident.svg": 5029,
@@ -1077,7 +1077,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 197919,
+    "code_total": 198284,
     "images": 77,
     "images_total": 1269250
   }
