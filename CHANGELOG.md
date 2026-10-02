@@ -7,8 +7,7 @@
 - Icons and photos get the same image version (`?v=`) as the bottles, so a replaced file reaches phones at once.
 - Variant ids in the catalog are stored in base 36: the config file is back to 59.0 KB (it had reached the 60 KB
   per-file limit). The cart still receives the normal ids.
-- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz-aromastylist.json`,
-  `assets/scent-quiz-aromastylist-taste.json` (image version). e2e 114 / 114.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz-aromastylist.json`. e2e 114 / 114.
 
 ## quiz-v3.13 (2026-10-02) — review round, stage 5: result screen
 
