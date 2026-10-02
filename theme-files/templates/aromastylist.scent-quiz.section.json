@@ -491,7 +491,7 @@
         "type": "persona",
         "settings": {
           "persona_key": "boardroom-pull",
-          "name": "The Boardroom Pull",
+          "name": "The Boardroom Presence",
           "line": "Structured woods and cold spice with a trail that says the meeting starts when you sit down."
         }
       },
@@ -523,7 +523,7 @@
         "type": "persona",
         "settings": {
           "persona_key": "sweet-confidant",
-          "name": "The Sweet Confidant",
+          "name": "The Sweet Tooth",
           "line": "Vanilla, cream and a pinch of spice worn close. Dessert you keep to yourself."
         }
       },

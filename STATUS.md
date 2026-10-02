@@ -1,13 +1,13 @@
 # Where we are (resume here)
 
-Last saved: 2026-10-02, version **quiz-v3.29**, branch `quiz-v3` (pushed to GitHub).
+Last saved: 2026-10-02, version **quiz-v3.30**, branch `quiz-v3` (pushed to GitHub).
 
 ## Preview
 
 - Theme copy (unpublished): **"Xtra – scent quiz (copy of live, 2026-09-30)"**, id `189533225240`.
 - Link: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189533225240
 - The live theme and the rest of the site are untouched. The owner publishes herself.
-- The copy holds exactly the repo files of v3.29, checked by md5 on 2026-10-02: 96 files from `theme-files/`
+- The copy holds exactly the repo files of v3.30, checked by md5 on 2026-10-02: 96 files from `theme-files/`
   (sections, js, css, two JSON files, 59 bottle images, 22 owner icons, 18 style photos (men's, women's, Unisex couples)) plus `templates/page.find-your-perfume.json` =
   `docs/theme-copy/page.find-your-perfume.json`.
 - The second copy "Home Journal" (`189529096472`) still has an old version; update it only if asked.
@@ -27,8 +27,7 @@ Details per version: `CHANGELOG.md`.
 
 ## Next
 
-0. Card style unified on all icon screens (v3.27). Open from the full pass: result names
-   (persona frequency skew, three wardrobe card names differ from the moments).
+0. Card style unified on all icon screens (v3.27). Open from the full pass: persona frequency skew (next: v3.31).
 1. Result screen: v3.13 done (built-around line, answer summary + Change answers, short cards, compact buttons).
    Waiting for the owner's look on her phone.
 2. Owner icons in place (v3.15): screen 1, feelings, moments, What matters. Still to come: avoid-screen and

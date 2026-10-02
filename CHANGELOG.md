@@ -1,5 +1,14 @@
 # Changelog
 
+## quiz-v3.30 (2026-10-02) — wardrobe card names match the moments; two persona names
+
+- Wardrobe cards: Work & Study, Evenings & Dates, Home & Family, Sport & Active, Me-Time (were Work & Presence,
+  Evening & Seduction, Relax & Wind Down, Move & Thrive, Harmony & Meditation). Everyday Signature and Special
+  Occasions stay. Store collections are untouched.
+- Personas: The Boardroom Pull -> **The Boardroom Presence**, The Sweet Confidant -> **The Sweet Tooth**.
+- Changed theme files: `assets/scent-quiz-aromastylist.json`, `templates/aromastylist.scent-quiz.section.json`
+  (persona block names, which override the config) -> `templates/page.find-your-perfume.json`. e2e 134 / 134.
+
 ## quiz-v3.29 (2026-10-02) — sub-step counter, compact "How noticeable" on desktop
 
 - The notes sub-step (after "I don't have one") reads "2b / 10" and its progress bar sits half a step further, so

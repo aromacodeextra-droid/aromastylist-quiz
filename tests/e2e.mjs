@@ -215,7 +215,7 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: card names do not repeat the house ("Accento", not "Accento by Xerjoff")`, await page.evaluate(() => [...document.querySelectorAll('.sq-card--slot')].every((c) => { const n = c.querySelector('.sq-card__name').textContent.toLowerCase(), h = c.querySelector('.sq-card__house').textContent.toLowerCase(); return !n.endsWith(' by ' + h); })));
     check(`${tag}: result bottles are shown whole inside their square (no cropping)`, await page.evaluate(() => [...document.querySelectorAll('.sq-card__img img, .sq-set__img img')].every((i) => { const r = i.getBoundingClientRect(), b = i.parentElement.getBoundingClientRect(); return r.height <= b.height + 0.5 && r.width <= b.width + 0.5 && getComputedStyle(i).objectFit === 'contain'; })));
     check(`${tag}: persona list and the page's own sections are back under the result`, await page.evaluate(() => getComputedStyle(document.querySelector('.sq-section--personas')).display !== 'none' && getComputedStyle(document.querySelector('[data-existing-content]')).display !== 'none'));
-    check(`${tag}: one card per moment, in the owner's order`, st.items.length === 4 && st.slots[0] === 'Everyday Signature' && st.slots[1] === 'Work & Presence' && st.slots[2] === 'Evening & Seduction', st.slots.join(', '));
+    check(`${tag}: one card per moment, in the owner's order`, st.items.length === 4 && st.slots[0] === 'Everyday Signature' && st.slots[1] === 'Work & Study' && st.slots[2] === 'Evenings & Dates', st.slots.join(', '));
     check(`${tag}: >= 2 houses, no repeats`, new Set(st.houses).size >= 2 && new Set(st.items.map((i) => i.handle)).size === st.items.length, st.houses.join(', '));
     check(`${tag}: persona, scent profile (3 families), why-lines all different`, st.persona && st.profile === 3 && new Set(st.why).size === st.why.length && st.why.length === st.items.length, st.persona);
     check(`${tag}: never recommends the named perfume`, !st.items.some((i) => /baccarat-rouge-540/.test(i.handle)));
@@ -301,7 +301,7 @@ for (const vp of VIEWPORTS) {
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
     await shot(page, '12-result-B');
-    check(`${tag}: day & night -> 2 slots (Everyday Signature + Evening & Seduction)`, st.items.length === 2 && st.slots.includes('Everyday Signature') && st.slots.includes('Evening & Seduction'), st.slots.join(', '));
+    check(`${tag}: day & night -> 2 slots (Everyday Signature + Evenings & Dates)`, st.items.length === 2 && st.slots.includes('Everyday Signature') && st.slots.includes('Evenings & Dates'), st.slots.join(', '));
     check(`${tag}: no "shares" line without a named perfume; profile shown`, st.shares.length === 0 && st.profile === 3);
     const code = decodeURIComponent(page.url()).split('sq=')[1];
     check(`${tag}: taboo screen left empty still gives a valid link`, /^him\.none\.woods\+citrus\+spices\.-\.0101010\.day-night\./.test(code), code);

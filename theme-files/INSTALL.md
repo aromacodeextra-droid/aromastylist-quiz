@@ -87,7 +87,7 @@ Open `/pages/find-your-perfume?preview_theme_id=<copy id>`:
 4. Taboos: tick `Coconut`; after Work & study tick `My workplace or classroom prefers subtle scents`. Moments: Work & study, Evenings & dates, Everyday & errands.
    How: A full wardrobe. Finish the remaining screens.
 5. Result **Your Perfume Wardrobe**: persona, "Your scent profile" (3 families with %), one card per slot with
-   Work & Presence and Evening & Seduction first, each card with "Shares the … of your …", a why-line, "How to wear",
+   Work & Study and Evenings & Dates first, each card with "Shares the … of your …", a why-line, "How to wear",
    "Add sample · $…" and a collapsed "Also fits this slot". No two cards the same, at least 2 houses.
 6. "Share my wardrobe" shows a 9:16 image (persona, slot names, perfumes, `aromastylist.com/pages/find-your-perfume`).
    "Copy link" gives a link that **still contains `preview_theme_id`** and reopens the same result.

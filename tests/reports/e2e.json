@@ -131,7 +131,7 @@
     {
       "name": "390-A: one card per moment, in the owner's order",
       "ok": true,
-      "detail": "Everyday Signature, Work & Presence, Evening & Seduction, Special Occasions"
+      "detail": "Everyday Signature, Work & Study, Evenings & Dates, Special Occasions"
     },
     {
       "name": "390-A: >= 2 houses, no repeats",
@@ -204,9 +204,9 @@
       "detail": "sq-photo-style-classic-him.webp?v=f037c181, sq-photo-style-dramatic-him.webp?v=f037c181, sq-photo-style-romantic-him.webp?v=f037c181, sq-photo-style-minimal-him.webp?v=f037c181, sq-photo-style-casual-him.webp?v=f037c181, sq-photo-style-sporty-him.webp?v=f037c181"
     },
     {
-      "name": "390-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
+      "name": "390-B: day & night -> 2 slots (Everyday Signature + Evenings & Dates)",
       "ok": true,
-      "detail": "Everyday Signature, Evening & Seduction"
+      "detail": "Everyday Signature, Evenings & Dates"
     },
     {
       "name": "390-B: no \"shares\" line without a named perfume; profile shown",
@@ -229,7 +229,7 @@
     {
       "name": "390-C: deep link opens the result directly",
       "ok": true,
-      "detail": "Everyday Signature, Work & Presence, Evening & Seduction, Move & Thrive, Harmony & Meditation"
+      "detail": "Everyday Signature, Work & Study, Evenings & Dates, Sport & Active, Me-Time"
     },
     {
       "name": "390-C: copied link keeps preview_theme_id",
@@ -371,7 +371,7 @@
     {
       "name": "1440-A: one card per moment, in the owner's order",
       "ok": true,
-      "detail": "Everyday Signature, Work & Presence, Evening & Seduction, Special Occasions"
+      "detail": "Everyday Signature, Work & Study, Evenings & Dates, Special Occasions"
     },
     {
       "name": "1440-A: >= 2 houses, no repeats",
@@ -444,9 +444,9 @@
       "detail": "sq-photo-style-classic-him.webp?v=f037c181, sq-photo-style-dramatic-him.webp?v=f037c181, sq-photo-style-romantic-him.webp?v=f037c181, sq-photo-style-minimal-him.webp?v=f037c181, sq-photo-style-casual-him.webp?v=f037c181, sq-photo-style-sporty-him.webp?v=f037c181"
     },
     {
-      "name": "1440-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
+      "name": "1440-B: day & night -> 2 slots (Everyday Signature + Evenings & Dates)",
       "ok": true,
-      "detail": "Everyday Signature, Evening & Seduction"
+      "detail": "Everyday Signature, Evenings & Dates"
     },
     {
       "name": "1440-B: no \"shares\" line without a named perfume; profile shown",
@@ -469,7 +469,7 @@
     {
       "name": "1440-C: deep link opens the result directly",
       "ok": true,
-      "detail": "Everyday Signature, Work & Presence, Evening & Seduction, Move & Thrive, Harmony & Meditation"
+      "detail": "Everyday Signature, Work & Study, Evenings & Dates, Sport & Active, Me-Time"
     },
     {
       "name": "1440-C: copied link keeps preview_theme_id",
@@ -628,8 +628,8 @@
       "persona": "The Quiet Signature",
       "slots": [
         "Everyday Signature",
-        "Work & Presence",
-        "Evening & Seduction",
+        "Work & Study",
+        "Evenings & Dates",
         "Special Occasions"
       ],
       "items": [
@@ -676,7 +676,7 @@
       "persona": "The Sharp Edit",
       "slots": [
         "Everyday Signature",
-        "Evening & Seduction"
+        "Evenings & Dates"
       ],
       "items": [
         {
@@ -702,13 +702,13 @@
     },
     {
       "run": "390-C",
-      "persona": "The Sweet Confidant",
+      "persona": "The Sweet Tooth",
       "slots": [
         "Everyday Signature",
-        "Work & Presence",
-        "Evening & Seduction",
-        "Move & Thrive",
-        "Harmony & Meditation"
+        "Work & Study",
+        "Evenings & Dates",
+        "Sport & Active",
+        "Me-Time"
       ],
       "items": [
         {
@@ -761,8 +761,8 @@
       "persona": "The Quiet Signature",
       "slots": [
         "Everyday Signature",
-        "Work & Presence",
-        "Evening & Seduction",
+        "Work & Study",
+        "Evenings & Dates",
         "Special Occasions"
       ],
       "items": [
@@ -809,7 +809,7 @@
       "persona": "The Sharp Edit",
       "slots": [
         "Everyday Signature",
-        "Evening & Seduction"
+        "Evenings & Dates"
       ],
       "items": [
         {
@@ -835,13 +835,13 @@
     },
     {
       "run": "1440-C",
-      "persona": "The Sweet Confidant",
+      "persona": "The Sweet Tooth",
       "slots": [
         "Everyday Signature",
-        "Work & Presence",
-        "Evening & Seduction",
-        "Move & Thrive",
-        "Harmony & Meditation"
+        "Work & Study",
+        "Evenings & Dates",
+        "Sport & Active",
+        "Me-Time"
       ],
       "items": [
         {
@@ -974,7 +974,7 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16566,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 58801,
+      "assets/scent-quiz-aromastylist.json": 58779,
       "assets/scent-quiz.css": 34292,
       "assets/scent-quiz.js": 55124,
       "assets/sq-icon-feel-attractive.svg": 5179,
@@ -1077,7 +1077,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 197941,
+    "code_total": 197919,
     "images": 77,
     "images_total": 1269250
   }
