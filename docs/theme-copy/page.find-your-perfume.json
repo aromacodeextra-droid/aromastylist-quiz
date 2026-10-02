@@ -383,7 +383,7 @@
           "type": "question",
           "settings": {
             "question_id": "feel",
-            "title": "With it on, you want to feel…"
+            "title": "How do you want to feel?"
           }
         },
         "a_feel_confident": {
@@ -431,14 +431,14 @@
           "settings": {
             "question_id": "feel",
             "answer_id": "free",
-            "label": "Free"
+            "label": "Carefree"
           }
         },
         "q_presence": {
           "type": "question",
           "settings": {
             "question_id": "presence",
-            "title": "How far should it reach?"
+            "title": "How noticeable should your fragrance be?"
           }
         },
         "a_presence_close": {
@@ -477,7 +477,7 @@
           "settings": {
             "question_id": "matters",
             "answer_id": "easy",
-            "label": "Easy & loved by all"
+            "label": "Easy to wear"
           }
         },
         "a_matters_trending": {
@@ -485,7 +485,7 @@
           "settings": {
             "question_id": "matters",
             "answer_id": "trending",
-            "label": "What everyone's talking about"
+            "label": "Our bestsellers"
           }
         },
         "a_matters_unique": {
@@ -493,7 +493,7 @@
           "settings": {
             "question_id": "matters",
             "answer_id": "unique",
-            "label": "Unique"
+            "label": "Something less expected"
           }
         },
         "q_climate": {
@@ -547,7 +547,7 @@
           "type": "question",
           "settings": {
             "question_id": "style",
-            "title": "Which style is most you?"
+            "title": "Which clothing style feels most like you?"
           }
         },
         "a_style_classic": {

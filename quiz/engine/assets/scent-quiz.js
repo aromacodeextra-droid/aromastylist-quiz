@@ -263,9 +263,10 @@
     var climate = chosen.length ? { seasons: {}, why: chosen[0].why } : null;
     chosen.forEach(function (a) { Object.keys(a.seasons || {}).forEach(function (k) { climate.seasons[k] = Math.max(climate.seasons[k] || 0, a.seasons[k]); }); });
     var pres = findAnswer(Q(cfg, 'presence'), state.presence);
-    var style = findAnswer(Q(cfg, 'style'), state.style);
+    var styles = stylesOf(model, state), style = styles[0] || null;
     var matters = findAnswer(Q(cfg, 'matters'), state.matters);
-    var styleFams = style && style.families ? style.families.map(function (f) { return famIndex(model, f); }) : [];
+    // up to two clothing styles: a perfume fits when it suits either of them
+    var styleFams = styles.map(function (a) { return (a.families || []).map(function (f) { return famIndex(model, f); }); });
     var avoid = {};
     // never recommend the perfume they already wear
     if (Array.isArray(state.ref)) state.ref.forEach(function (v) { var pf = perfumeOf(model, v); if (pf && pf.handle) avoid[pf.handle] = 1; });
@@ -277,6 +278,11 @@
     return { W: W, ctx: ctx, rules: rules, feels: feels, climate: climate, style: style, matters: matters, styleFams: styleFams, pool: pool, state: state };
   }
 
+  // style answer(s): one id (older links) or a list of up to two
+  function stylesOf(model, state) {
+    var q = Q(model.config, 'style'), v = state.style;
+    return (Array.isArray(v) ? v : v ? [v] : []).map(function (id) { return findAnswer(q, id); }).filter(Boolean);
+  }
   function scoreFor(model, P, p, slot) {
     var W = P.W, parts = {};
     var rf = refFit(p, P.ctx);
@@ -293,7 +299,7 @@
     if (P.climate) Object.keys(P.climate.seasons).forEach(function (v) { c = Math.max(c, carries(p, 'season', v) * P.climate.seasons[v]); });
     parts.climate = c;
     var st = 0;
-    if (p.vec) P.styleFams.forEach(function (k) { if (k >= 0) st += p.vec[k]; });
+    if (p.vec) P.styleFams.forEach(function (fams) { var x = 0; fams.forEach(function (k) { if (k >= 0) x += p.vec[k]; }); st = Math.max(st, x); });
     parts.style = Math.min(1, st * 1.5);
     var m = 0.5;
     if (P.matters && model.fame) {
@@ -400,11 +406,12 @@
     var feel = findAnswer(Q(model.config, 'feel'), (state.feel || [])[0]);
     var mood = feel && feel.moods ? feel.moods[0] : null;
     var matrixKey = mood && P.matrix[mood] ? P.matrix[mood][state.presence] : null;
-    var style = findAnswer(Q(model.config, 'style'), state.style);
+    var stylePersonas = [];
+    stylesOf(model, state).forEach(function (a) { stylePersonas = stylePersonas.concat(a.personas || []); });
     var best = null;
     P.list.forEach(function (x, i) {
       if (!personaQualifies(model, x, have)) return;
-      var s = (x.notes || []).length * 2 + (x.key === matrixKey ? 3 : 0) + (style && (style.personas || []).indexOf(x.key) >= 0 ? 1.5 : 0) - i * 0.001;
+      var s = (x.notes || []).length * 2 + (x.key === matrixKey ? 3 : 0) + (stylePersonas.indexOf(x.key) >= 0 ? 1.5 : 0) - i * 0.001;
       if (!best || s > best.s) best = { s: s, x: x };
     });
     return best ? best.x : (P.list.filter(function (x) { return !(x.notes || []).length; })[0] || P.list[0]);
@@ -629,7 +636,7 @@
     winter: '<path d="M24 6v36M8.4 15l31.2 18M8.4 33l31.2-18M19 9l5 4 5-4M19 39l5-4 5 4"/>',
     spring: '<path d="M24 42V22M24 22c-9 0-14-6-14-14 9 0 14 6 14 14zM24 30c7 0 11-5 11-11-7 0-11 5-11 11z"/>',
     summer: '<circle cx="24" cy="24" r="8"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M9.9 38.1l4.2-4.2M33.9 14.1l4.2-4.2"/>',
-    fall: '<path d="M24 44V24M24 6l4 8 8-3-3 9 8 3-9 5 2 7-10-4-10 4 2-7-9-5 8-3-3-9 8 3z"/>',
+    fall: '<path d="M13 35C10 19 20 8 39 8c0 19-11 29-26 27zM13 35L31 16M13 35l-5 5M20 27h8M24 23v-8M17 31h6"/>',
     'all-year': '<path d="M38 18a15 15 0 0 0-27-4M10 30a15 15 0 0 0 27 4M11 6v8h8M37 42v-8h-8"/>'
   };
   function esc(s) {
@@ -783,6 +790,9 @@
       else if (cur.length < (q.max || 99)) cur.push(id);
       else full = true;
     }
+    // every answer but the exclusive one chosen (four seasons) = that exclusive answer (All year)
+    var excl = (q.answers || []).filter(function (x) { return x.exclusive && x.all_of; })[0];
+    if (excl && excl.all_of.every(function (x) { return cur.indexOf(x) >= 0; })) cur = [excl.id];
     this.state[qid] = cur;
     this.app.querySelectorAll('[data-act=toggle][data-q="' + qid + '"]').forEach(function (b) { b.setAttribute('aria-pressed', String(cur.indexOf(b.getAttribute('data-a')) >= 0)); });
     var next = this.app.querySelector('[data-act=next]');
@@ -949,7 +959,7 @@
     else {
       var multi = q.type === 'multi' || q.type === 'families';
       var chosen = multi ? (v || []) : (v ? [v] : []);
-      body = '<ul class="sq-tiles" data-count="' + q.answers.length + '"' + (multi ? ' data-multi' : '') + '>' + q.answers.map(function (a) {
+      body = '<ul class="sq-tiles" data-q="' + esc(q.id) + '" data-count="' + q.answers.length + '"' + (q.layout ? ' data-layout="' + esc(q.layout) + '"' : '') + (multi ? ' data-multi' : '') + '>' + q.answers.map(function (a) {
         return '<li><button type="button" class="sq-tile" data-act="' + (multi ? 'toggle' : 'answer') + '" data-q="' + esc(q.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + (chosen.indexOf(a.id) >= 0) + '">' +
           '<span class="sq-tile__img">' + self.img(a, i < 2) + '</span><span class="sq-tile__label">' + esc(a.label) + '</span>' +
           (a.hint ? '<span class="sq-tile__hint">' + esc(a.hint) + '</span>' : '') + '</button></li>';

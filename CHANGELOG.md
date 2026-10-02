@@ -1,5 +1,19 @@
 # Changelog
 
+## quiz-v3.12 (2026-10-02) — review round, stage 4: screens 6-10
+
+- Feel: "How do you want to feel?", "Free" -> **Carefree**, six answers three in a row (all visible with little
+  scrolling; room for the owner's figures via `sq-icon-feel-<answer>.svg`).
+- Reach: "How noticeable should your fragrance be?", lower cards, labels aligned even when "Close to skin" wraps.
+- What matters: **Easy to wear** (loved by most people) · **Our bestsellers** (what our clients buy most) ·
+  **Something less expected** (rarely smelled on others), as three horizontal cards one under the other.
+- Seasons: 2 x 2 grid of lower cards, All year a compact full-width card below; all four seasons ticked = All year;
+  the fall leaf redrawn so it no longer looks like a star.
+- Style: "Which clothing style feels most like you?", **up to two** ("Pick up to two."), ends with See my matches. With
+  two styles a perfume fits when it suits either one; old links with one style still open.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
+  `templates/aromastylist.scent-quiz.section.json` (titles and labels). Combinations 51,260 / 0 failures, e2e 110 / 110.
+
 ## quiz-v3.11 (2026-10-02) — review round, stage 3: the week becomes "moments"
 
 - "Where does your week go?" with seven Rarely / Sometimes / A lot scales (Rarely pre-selected) ->

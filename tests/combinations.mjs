@@ -66,7 +66,7 @@ function randomState(fixed = {}) {
   st.presence = one(ids('presence'));
   st.matters = one(ids('matters'));
   st.climate = rnd() < 0.2 ? ['all-year'] : some(ids('climate').filter((x) => x !== 'all-year'), 4, 1);
-  st.style = one(ids('style'));
+  st.style = rnd() < 0.3 ? one(ids('style')) : some(ids('style'), 2, 1); // a single id = older share links
   return Object.assign(st, fixed);
 }
 

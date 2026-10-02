@@ -152,6 +152,7 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=toggle][data-a=calm]');
     const limit = await page.evaluate(() => ({ calm: document.querySelector('[data-a=calm]').getAttribute('aria-pressed'), msg: document.querySelector('[data-sq-count]').textContent }));
     check(`${tag}: a third feeling is not taken silently: "You can pick 2" message, the two stay`, limit.calm === 'false' && /You can pick 2/.test(limit.msg), JSON.stringify(limit));
+    check(`${tag}: "How do you want to feel?" with Carefree, three in a row`, await page.evaluate(() => document.querySelector('.sq-q .sq-title').textContent === 'How do you want to feel?' && [...document.querySelectorAll('.sq-tile__label')].pop().textContent === 'Carefree' && getComputedStyle(document.querySelector('.sq-tiles[data-q=feel]')).gridTemplateColumns.split(' ').length === 3));
     await shot(page, '07-feel');
     // back button: back to "how", forward again
     await page.click('[data-act=back]');
@@ -160,20 +161,27 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=next][data-q=feel]');
     const reach = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-tile__label')].map((e) => e.textContent),
       dots: [...document.querySelectorAll('.sq-tile .sq-dots')].map((d) => d.querySelectorAll('.sq-dot.is-on').length), strong: !!document.querySelector('[data-a=strong]') }));
-    check(`${tag}: "How far should it reach?" = 3 growing-dot answers, no "Strong scents bother me" switch`, reach.title === 'How far should it reach?' && reach.labels.join('|') === 'Close to skin|Moderate|Strong' && reach.dots.join('') === '123' && !reach.strong, JSON.stringify(reach));
+    check(`${tag}: "How noticeable should your fragrance be?" = 3 growing-dot answers, no "Strong scents bother me" switch`, reach.title === 'How noticeable should your fragrance be?' && reach.labels.join('|') === 'Close to skin|Moderate|Strong' && reach.dots.join('') === '123' && !reach.strong, JSON.stringify(reach));
     await shot(page, '08-presence');
     await choose(page, '[data-act=answer][data-a=noticed]');
     await shot(page, '09-matters');
+    check(`${tag}: What matters = Easy to wear / Our bestsellers / Something less expected, one card per row`, await page.evaluate(() => [...document.querySelectorAll('.sq-tile__label')].map((e) => e.textContent).join('|') === 'Easy to wear|Our bestsellers|Something less expected' && !!document.querySelector('.sq-tiles[data-layout=rows]')));
     await choose(page, '[data-act=answer][data-a=easy]');
     await shot(page, '10-climate');
     const seasons = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-tile__label')].map((e) => e.textContent), icons: document.querySelectorAll('.sq-tile svg.sq-icon, .sq-tile img.sq-icon').length }));
     check(`${tag}: "When will you wear it?" = 5 season icons, several can be chosen`, seasons.title === 'When will you wear it?' && seasons.labels.join('|') === 'Winter|Spring|Summer|Fall|All year' && seasons.icons === 5, JSON.stringify(seasons));
+    for (const a of ['winter', 'spring', 'summer', 'fall']) await page.click(`[data-act=toggle][data-a=${a}]`);
+    check(`${tag}: all four seasons become "All year"`, await page.evaluate(() => [...document.querySelectorAll('.sq-tiles [aria-pressed=true]')].map((b) => b.dataset.a).join() === 'all-year'));
     await page.click('[data-act=toggle][data-a=fall]');
+    check(`${tag}: a single season replaces "All year"`, await page.evaluate(() => [...document.querySelectorAll('.sq-tiles [aria-pressed=true]')].map((b) => b.dataset.a).join() === 'fall'));
     await page.click('[data-act=toggle][data-a=winter]');
     await page.click('[data-act=next][data-q=climate]');
+    await page.click('[data-act=toggle][data-a=classic]');
+    await page.click('[data-act=toggle][data-a=minimal]');
     await shot(page, '11-style');
-    check(`${tag}: last step ends with "See my matches"`, (await page.textContent('[data-act=next][data-q=style]')).trim() === 'See my matches');
-    await choose(page, '[data-act=answer][data-a=classic]');
+    const sty = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, hint: document.querySelector('.sq-q .sq-sub').textContent, n: document.querySelectorAll('.sq-tiles [aria-pressed=true]').length, btn: document.querySelector('[data-act=next][data-q=style]').textContent.trim() }));
+    check(`${tag}: "Which clothing style feels most like you?" - up to two styles, ends with "See my matches"`, sty.title === 'Which clothing style feels most like you?' && sty.hint === 'Pick up to two.' && sty.n === 2 && sty.btn === 'See my matches', JSON.stringify(sty));
+    await page.click('[data-act=next][data-q=style]');
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
     await shot(page, '12-result-A');
@@ -187,7 +195,7 @@ for (const vp of VIEWPORTS) {
     check(`${tag}: "Also fits this slot" collapsed on each card`, alts === st.items.length && !(await page.isVisible('.sq-alt p')));
     check(`${tag}: no email field anywhere`, (await page.$$('input[type=email], input[name*=mail]')).length === 0);
     const url = decodeURIComponent(page.url());
-    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~ysl-black-opium\._\.too-sweet\+coconut\+office\.1101100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.fall\+winter\.classic/.test(url), url.replace(BASE, ''));
+    check(`${tag}: URL carries the answers`, /[?&]sq=her\.r~mfk-baccarat-rouge-540\+r~ysl-black-opium\._\.too-sweet\+coconut\+office\.1101100\.full-wardrobe\.confident\+attractive\.noticed\.easy\.fall\+winter\.classic\+minimal/.test(url), url.replace(BASE, ''));
 
     await page.click('[data-act=share-open]');
     await page.waitForFunction(() => document.querySelector('[data-sq-preview]')?.src?.startsWith('blob:'));
@@ -247,7 +255,8 @@ for (const vp of VIEWPORTS) {
     await choose(page, '[data-act=answer][data-a=unique]');
     await page.click('[data-act=toggle][data-a=summer]');
     await page.click('[data-act=next][data-q=climate]');
-    await choose(page, '[data-act=answer][data-a=sporty]');
+    await page.click('[data-act=toggle][data-a=sporty]');
+    await page.click('[data-act=next][data-q=style]');
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
     await shot(page, '12-result-B');

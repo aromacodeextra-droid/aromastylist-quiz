@@ -510,7 +510,7 @@
       "type": "multi",
       "min": 1,
       "max": 2,
-      "title": "With it on, you want to feel…",
+      "title": "How do you want to feel?",
       "subtitle": "Pick up to two.",
       "answers": [
         {
@@ -561,7 +561,7 @@
         },
         {
           "id": "free",
-          "label": "Free",
+          "label": "Carefree",
           "moods": [
             "move-thrive"
           ],
@@ -573,7 +573,7 @@
     {
       "id": "presence",
       "type": "single",
-      "title": "How far should it reach?",
+      "title": "How noticeable should your fragrance be?",
       "subtitle": "Pick one.",
       "answers": [
         {
@@ -602,27 +602,28 @@
       "answers": [
         {
           "id": "easy",
-          "label": "Easy & loved by all",
-          "hint": "Classic, crowd-pleasing",
+          "label": "Easy to wear",
+          "hint": "Loved by most people",
           "prefer": "popular",
           "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/768F88D6-A815-46E6-B09E-4223387D5C0D.png"
         },
         {
           "id": "trending",
-          "label": "What everyone's talking about",
-          "hint": "Our bestsellers right now",
+          "label": "Our bestsellers",
+          "hint": "What our clients buy most",
           "prefer": "trending",
           "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/10.png"
         },
         {
           "id": "unique",
-          "label": "Unique",
-          "hint": "Nobody smells like me",
+          "label": "Something less expected",
+          "hint": "Rarely smelled on others",
           "prefer": "rare",
           "avoid_popular": true,
           "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/07CA7334-91E6-484E-93BB-77EF8A8461E9.png"
         }
-      ]
+      ],
+      "layout": "rows"
     },
     {
       "id": "climate",
@@ -677,18 +678,25 @@
             "mild": 1,
             "cold": 0.7
           },
-          "why": "Works all year round"
+          "why": "Works all year round",
+          "all_of": [
+            "winter",
+            "spring",
+            "summer",
+            "fall"
+          ]
         }
       ],
       "min": 1,
       "max": 5,
-      "subtitle": "Pick every season that fits."
+      "subtitle": "Pick every season that fits.",
+      "layout": "seasons"
     },
     {
       "id": "style",
-      "type": "single",
-      "title": "Which style is most you?",
-      "subtitle": "Pick one.",
+      "type": "multi",
+      "title": "Which clothing style feels most like you?",
+      "subtitle": "Pick up to two.",
       "answers": [
         {
           "id": "classic",
@@ -774,7 +782,9 @@
             "bright-entrance"
           ]
         }
-      ]
+      ],
+      "min": 1,
+      "max": 2
     }
   ],
   "personas": {

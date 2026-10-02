@@ -63,9 +63,17 @@
       "detail": "{\"calm\":\"false\",\"msg\":\"You can pick 2. Tap one to change it.\"}"
     },
     {
-      "name": "390-A: \"How far should it reach?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
+      "name": "390-A: \"How do you want to feel?\" with Carefree, three in a row",
+      "ok": true
+    },
+    {
+      "name": "390-A: \"How noticeable should your fragrance be?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
       "ok": true,
-      "detail": "{\"title\":\"How far should it reach?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
+      "detail": "{\"title\":\"How noticeable should your fragrance be?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
+    },
+    {
+      "name": "390-A: What matters = Easy to wear / Our bestsellers / Something less expected, one card per row",
+      "ok": true
     },
     {
       "name": "390-A: \"When will you wear it?\" = 5 season icons, several can be chosen",
@@ -73,8 +81,17 @@
       "detail": "{\"title\":\"When will you wear it?\",\"labels\":[\"Winter\",\"Spring\",\"Summer\",\"Fall\",\"All year\"],\"icons\":5}"
     },
     {
-      "name": "390-A: last step ends with \"See my matches\"",
+      "name": "390-A: all four seasons become \"All year\"",
       "ok": true
+    },
+    {
+      "name": "390-A: a single season replaces \"All year\"",
+      "ok": true
+    },
+    {
+      "name": "390-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
+      "ok": true,
+      "detail": "{\"title\":\"Which clothing style feels most like you?\",\"hint\":\"Pick up to two.\",\"n\":2,\"btn\":\"See my matches\"}"
     },
     {
       "name": "390-A: persona list and the page's own sections are back under the result",
@@ -88,12 +105,12 @@
     {
       "name": "390-A: >= 2 houses, no repeats",
       "ok": true,
-      "detail": "Creed, Maison Francis Kurkdjian, Xerjoff, V Canto"
+      "detail": "Creed, Maison Francis Kurkdjian, Xerjoff, Memo Paris"
     },
     {
       "name": "390-A: persona, scent profile (3 families), why-lines all different",
       "ok": true,
-      "detail": "The Skin Secret"
+      "detail": "The Quiet Signature"
     },
     {
       "name": "390-A: never recommends the named perfume",
@@ -115,7 +132,7 @@
     {
       "name": "390-A: URL carries the answers",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.1101100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.1101100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic+minimal"
     },
     {
       "name": "390-A: share image is 1080x1920",
@@ -125,7 +142,7 @@
     {
       "name": "390-A: copied link reopens the same result",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.1101100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.1101100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic%2Bminimal"
     },
     {
       "name": "390-A: \"Add sample\" adds one item and updates the header count",
@@ -134,7 +151,7 @@
     {
       "name": "390-A: \"Add all\" POSTs /cart/add.js {items:[{id,quantity:1}...]}",
       "ok": true,
-      "detail": "{\"items\":[{\"id\":52789482160408,\"quantity\":1},{\"id\":50567182745880,\"quantity\":1},{\"id\":50567192412440,\"quantity\":1},{\"id\":50816249397528,\"quantity\":1}]}"
+      "detail": "{\"items\":[{\"id\":52789482160408,\"quantity\":1},{\"id\":50567182745880,\"quantity\":1},{\"id\":50567192412440,\"quantity\":1},{\"id\":50567189561624,\"quantity\":1}]}"
     },
     {
       "name": "390-A: no page errors",
@@ -237,9 +254,17 @@
       "detail": "{\"calm\":\"false\",\"msg\":\"You can pick 2. Tap one to change it.\"}"
     },
     {
-      "name": "1440-A: \"How far should it reach?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
+      "name": "1440-A: \"How do you want to feel?\" with Carefree, three in a row",
+      "ok": true
+    },
+    {
+      "name": "1440-A: \"How noticeable should your fragrance be?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
       "ok": true,
-      "detail": "{\"title\":\"How far should it reach?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
+      "detail": "{\"title\":\"How noticeable should your fragrance be?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
+    },
+    {
+      "name": "1440-A: What matters = Easy to wear / Our bestsellers / Something less expected, one card per row",
+      "ok": true
     },
     {
       "name": "1440-A: \"When will you wear it?\" = 5 season icons, several can be chosen",
@@ -247,8 +272,17 @@
       "detail": "{\"title\":\"When will you wear it?\",\"labels\":[\"Winter\",\"Spring\",\"Summer\",\"Fall\",\"All year\"],\"icons\":5}"
     },
     {
-      "name": "1440-A: last step ends with \"See my matches\"",
+      "name": "1440-A: all four seasons become \"All year\"",
       "ok": true
+    },
+    {
+      "name": "1440-A: a single season replaces \"All year\"",
+      "ok": true
+    },
+    {
+      "name": "1440-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
+      "ok": true,
+      "detail": "{\"title\":\"Which clothing style feels most like you?\",\"hint\":\"Pick up to two.\",\"n\":2,\"btn\":\"See my matches\"}"
     },
     {
       "name": "1440-A: persona list and the page's own sections are back under the result",
@@ -262,12 +296,12 @@
     {
       "name": "1440-A: >= 2 houses, no repeats",
       "ok": true,
-      "detail": "Creed, Maison Francis Kurkdjian, Xerjoff, V Canto"
+      "detail": "Creed, Maison Francis Kurkdjian, Xerjoff, Memo Paris"
     },
     {
       "name": "1440-A: persona, scent profile (3 families), why-lines all different",
       "ok": true,
-      "detail": "The Skin Secret"
+      "detail": "The Quiet Signature"
     },
     {
       "name": "1440-A: never recommends the named perfume",
@@ -289,7 +323,7 @@
     {
       "name": "1440-A: URL carries the answers",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.1101100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r~mfk-baccarat-rouge-540+r~ysl-black-opium._.too-sweet+coconut+office.1101100.full-wardrobe.confident+attractive.noticed.easy.fall+winter.classic+minimal"
     },
     {
       "name": "1440-A: share image is 1080x1920",
@@ -299,7 +333,7 @@
     {
       "name": "1440-A: copied link reopens the same result",
       "ok": true,
-      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.1101100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic"
+      "detail": "/pages/find-your-perfume?sq=her.r%7Emfk-baccarat-rouge-540%2Br%7Eysl-black-opium._.too-sweet%2Bcoconut%2Boffice.1101100.full-wardrobe.confident%2Battractive.noticed.easy.fall%2Bwinter.classic%2Bminimal"
     },
     {
       "name": "1440-A: \"Add sample\" adds one item and updates the header count",
@@ -308,7 +342,7 @@
     {
       "name": "1440-A: \"Add all\" POSTs /cart/add.js {items:[{id,quantity:1}...]}",
       "ok": true,
-      "detail": "{\"items\":[{\"id\":52789482160408,\"quantity\":1},{\"id\":50567182745880,\"quantity\":1},{\"id\":50567192412440,\"quantity\":1},{\"id\":50816249397528,\"quantity\":1}]}"
+      "detail": "{\"items\":[{\"id\":52789482160408,\"quantity\":1},{\"id\":50567182745880,\"quantity\":1},{\"id\":50567192412440,\"quantity\":1},{\"id\":50567189561624,\"quantity\":1}]}"
     },
     {
       "name": "1440-A: no page errors",
@@ -469,10 +503,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.3 KB, assets/scent-quiz.css 23.6 KB, assets/scent-quiz.js 50.0 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.4 KB, assets/scent-quiz.css 25.6 KB, assets/scent-quiz.js 50.4 KB"
     },
     {
-      "name": "JS + CSS + JSON 180.4 KB <= 200 KB",
+      "name": "JS + CSS + JSON 183.0 KB <= 200 KB",
       "ok": true
     },
     {
@@ -483,7 +517,7 @@
   "runs": [
     {
       "run": "390-A",
-      "persona": "The Skin Secret",
+      "persona": "The Quiet Signature",
       "slots": [
         "Everyday Signature",
         "Work & Presence",
@@ -504,27 +538,27 @@
           "variant": 50567192412440
         },
         {
-          "handle": "v-canto-ricina",
-          "variant": 50816249397528
+          "handle": "memo-paris-italian-leather",
+          "variant": 50567189561624
         }
       ],
       "houses": [
         "Creed",
         "Maison Francis Kurkdjian",
         "Xerjoff",
-        "V Canto"
+        "Memo Paris"
       ],
       "why": [
         "Made for every day: rose, sandalwood and milk & cream, with a soft trail.",
         "Built for work hours: iris, vetiver and musk, close to the skin.",
         "Made for evenings out: iris, pepper and musk, with a soft trail.",
-        "Saved for the big nights: peony, orange blossom and iris, with a soft trail."
+        "Saved for the big nights: vanilla, iris and sage, with a soft trail."
       ],
       "shares": [
         "Shares the amber and benzoin of your Baccarat Rouge 540.",
         "Shares the amber of your Baccarat Rouge 540.",
         "Shares the jasmine and amber of your Baccarat Rouge 540.",
-        "Shares the jasmine and oakmoss of your Baccarat Rouge 540."
+        "Shares the amber and benzoin of your Baccarat Rouge 540."
       ],
       "profile": 3,
       "set": null
@@ -616,7 +650,7 @@
     },
     {
       "run": "1440-A",
-      "persona": "The Skin Secret",
+      "persona": "The Quiet Signature",
       "slots": [
         "Everyday Signature",
         "Work & Presence",
@@ -637,27 +671,27 @@
           "variant": 50567192412440
         },
         {
-          "handle": "v-canto-ricina",
-          "variant": 50816249397528
+          "handle": "memo-paris-italian-leather",
+          "variant": 50567189561624
         }
       ],
       "houses": [
         "Creed",
         "Maison Francis Kurkdjian",
         "Xerjoff",
-        "V Canto"
+        "Memo Paris"
       ],
       "why": [
         "Made for every day: rose, sandalwood and milk & cream, with a soft trail.",
         "Built for work hours: iris, vetiver and musk, close to the skin.",
         "Made for evenings out: iris, pepper and musk, with a soft trail.",
-        "Saved for the big nights: peony, orange blossom and iris, with a soft trail."
+        "Saved for the big nights: vanilla, iris and sage, with a soft trail."
       ],
       "shares": [
         "Shares the amber and benzoin of your Baccarat Rouge 540.",
         "Shares the amber of your Baccarat Rouge 540.",
         "Shares the jasmine and amber of your Baccarat Rouge 540.",
-        "Shares the jasmine and oakmoss of your Baccarat Rouge 540."
+        "Shares the amber and benzoin of your Baccarat Rouge 540."
       ],
       "profile": 3,
       "set": null
@@ -766,7 +800,7 @@
             "quantity": 1
           },
           {
-            "id": 50816249397528,
+            "id": 50567189561624,
             "quantity": 1
           }
         ]
@@ -789,7 +823,7 @@
             "quantity": 1
           },
           {
-            "id": 50816249397528,
+            "id": 50567189561624,
             "quantity": 1
           }
         ]
@@ -830,11 +864,11 @@
     "files": {
       "sections/scent-quiz-personas.liquid": 2659,
       "sections/scent-quiz.liquid": 5268,
-      "templates/aromastylist.scent-quiz.section.json": 16519,
+      "templates/aromastylist.scent-quiz.section.json": 16545,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59723,
-      "assets/scent-quiz.css": 24124,
-      "assets/scent-quiz.js": 51152,
+      "assets/scent-quiz-aromastylist.json": 59850,
+      "assets/scent-quiz.css": 26206,
+      "assets/scent-quiz.js": 51590,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -895,7 +929,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 184723,
+    "code_total": 187370,
     "images": 59,
     "images_total": 891710
   }
