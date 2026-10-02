@@ -15,6 +15,10 @@
       "detail": "12 tiles"
     },
     {
+      "name": "390-A: every bottle name stays inside its tile",
+      "ok": true
+    },
+    {
       "name": "390-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
       "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=f037c181"
@@ -247,6 +251,10 @@
       "detail": "12 tiles"
     },
     {
+      "name": "1440-A: every bottle name stays inside its tile",
+      "ok": true
+    },
+    {
       "name": "1440-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
       "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=f037c181"
@@ -477,7 +485,7 @@
     {
       "name": "390: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 573 -> 573"
+      "detail": "scrollY 558 -> 558"
     },
     {
       "name": "390: a second tap on a chosen tile takes it back out",
@@ -595,10 +603,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 30.4 KB, assets/scent-quiz.js 53.8 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.1 KB, assets/scent-quiz.css 30.5 KB, assets/scent-quiz.js 53.8 KB"
     },
     {
-      "name": "JS + CSS + JSON 190.7 KB <= 200 KB",
+      "name": "JS + CSS + JSON 190.8 KB <= 200 KB",
       "ok": true
     },
     {
@@ -959,7 +967,7 @@
       "templates/aromastylist.scent-quiz.section.json": 16566,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
       "assets/scent-quiz-aromastylist.json": 59450,
-      "assets/scent-quiz.css": 31105,
+      "assets/scent-quiz.css": 31211,
       "assets/scent-quiz.js": 55044,
       "assets/sq-icon-feel-attractive.svg": 5179,
       "assets/sq-icon-feel-calm.svg": 6815,
@@ -1061,7 +1069,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 195323,
+    "code_total": 195429,
     "images": 77,
     "images_total": 1269250
   }

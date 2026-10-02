@@ -480,3 +480,6 @@ html.sq-asking .sq-section--personas { display: none; }
 :is(#root, body) .sq-section .sq-summary .sq-edit { display: block; margin: 8px auto 0; }
 .sq-summary span { display: block; }
 .sq-profile-note { margin: 10px 0 0; font-size: 12px; line-height: 1.45; opacity: .75; }
+/* v3.26: a long single-word perfume name (Mademoiselle) stays inside its tile */
+@media (max-width: 749px) { .sq-pop__name { padding: 0 2px; font-size: 12px; } }
+.sq-pop__name { overflow-wrap: anywhere; } /* last resort for a word longer than the tile */

@@ -1,5 +1,12 @@
 # Changelog
 
+## quiz-v3.26 (2026-10-02) — full pass of the quiz
+
+- Walked every screen on phone and desktop: one fix. A long one-word perfume name (Coco Mademoiselle) ran out of its
+  bottle tile on phones; tile names are 12 px on phones now, and a word longer than the tile would wrap rather than
+  overflow. New check: every bottle name stays inside its tile.
+- Changed theme file: `assets/scent-quiz.css`. Search 100 / 100, combinations 51,260 / 0 failures, e2e 132 / 132.
+
 ## quiz-v3.25 (2026-10-02) — no repeated house in result names
 
 - Result cards and "Also fits this slot" show "Accento" with XERJOFF under it, instead of "Accento by Xerjoff" /

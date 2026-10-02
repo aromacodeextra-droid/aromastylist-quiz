@@ -92,6 +92,7 @@ for (const vp of VIEWPORTS) {
     await page.waitForSelector('.sq-pop__tile');
     const tiles = await page.$$eval('.sq-pop__tile', (l) => l.length);
     check(`${tag}: 12 bottle tiles under the name box`, tiles === 12, `${tiles} tiles`);
+    check(`${tag}: every bottle name stays inside its tile`, await page.evaluate(() => [...document.querySelectorAll('.sq-pop__name')].every((e) => e.scrollWidth <= e.clientWidth + 1)));
     const imgSrc = await page.getAttribute('.sq-pop__tile img', 'src');
     check(`${tag}: bottle images carry a version (?v=), so a replaced image reaches phones at once`, /sq-ref-.*\.webp\?v=[0-9a-f]{8}$/.test(imgSrc), imgSrc);
     await shot(page, '03-ref');
@@ -246,6 +247,7 @@ for (const vp of VIEWPORTS) {
     await page2.waitForSelector('.sq-result');
     const st2 = await resultState(page2);
     check(`${tag}: copied link reopens the same result`, st2.persona === st.persona && JSON.stringify(st2.items) === JSON.stringify(st.items) && (await page2.$('.sq-shared')) != null, copied.replace(BASE, ''));
+    await page2.waitForTimeout(500); // let the fade-in finish before the capture
     await shot(page2, '14-shared-link');
     await ctx2.close();
 
