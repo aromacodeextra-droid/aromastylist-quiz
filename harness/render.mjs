@@ -29,8 +29,13 @@ async function renderSection(key, file) {
     settings: { image: null, ...tpl.blocks[id].settings },
     shopify_attributes: `data-shopify-editor-block='{"id":"${id}"}'`,
   }));
-  const section = { id: `template--harness__${key}`, settings: tpl.settings, blocks };
-  const html = await liquid.parseAndRender(fs.readFileSync(file, 'utf8'), { section, request: { design_mode: false } });
+  const src = fs.readFileSync(file, 'utf8');
+  // schema defaults fill the settings the template leaves out, as Shopify does
+  const schema = JSON.parse(src.match(/{%\s*schema\s*%}([\s\S]*?){%\s*endschema\s*%}/)[1]);
+  const settings = { ...tpl.settings };
+  for (const st of schema.settings || []) if (st.id && settings[st.id] === undefined && st.default !== undefined) settings[st.id] = st.default;
+  const section = { id: `template--harness__${key}`, settings, blocks };
+  const html = await liquid.parseAndRender(src, { section, request: { design_mode: false }, routes: { all_products_collection_url: '/collections/all' } });
   return { section, html, count: blocks.length };
 }
 const quiz = await renderSection('scent_quiz', 'theme-files/sections/scent-quiz.liquid');

@@ -12,6 +12,13 @@
 {{ 'scent-quiz.css' | asset_url | stylesheet_tag }}
 <div class="sq-section palette-{{ section.settings.color_palette }} module-color-palette" id="sq-{{ section.id }}">
   {%- if cfg != blank -%}
+    {%- comment -%} Read by search engines and shown until the script runs; the engine replaces it with its intro screen. {%- endcomment -%}
+    <div class="sq-static" data-sq-static>
+      <p class="sq-kicker">{{ section.settings.intro_kicker | default: 'Perfume quiz' }}</p>
+      <h1 class="sq-title">{{ section.settings.intro_title | default: 'Your perfume stylist. Ten questions, one wardrobe.' }}</h1>
+      <p class="sq-lead">{{ section.settings.intro_text | default: 'Tell us the perfume you wear now, what you never want to smell, and where your week goes. We read the notes and build a small wardrobe from what is on our shelf right now: one perfume for each part of your week.' }}</p>
+      <noscript><p class="sq-lead">The quiz needs JavaScript. Turn it on, or browse the <a href="{{ routes.all_products_collection_url }}">perfumes</a> directly.</p></noscript>
+    </div>
     <div class="sq" data-scent-quiz data-config="{{ cfg | asset_url }}"{% if taste != blank %} data-taste="{{ taste | asset_url }}"{% endif %} hidden>
       <script type="application/json" data-sq-overrides>
         {
@@ -39,6 +46,42 @@
     </div>
     {%- if request.design_mode -%}
       {%- for block in section.blocks -%}<span class="sq-anchor" {{ block.shopify_attributes }}></span>{%- endfor -%}
+    {%- endif -%}
+    {%- liquid
+      assign faq_q = ''
+      assign faq_a = ''
+      for i in (1..4)
+        assign qk = 'faq_' | append: i | append: '_q'
+        assign ak = 'faq_' | append: i | append: '_a'
+        if section.settings[qk] != blank and section.settings[ak] != blank
+          assign faq_q = faq_q | append: section.settings[qk] | append: '|||'
+          assign faq_a = faq_a | append: section.settings[ak] | append: '|||'
+        endif
+      endfor
+      assign faq_qs = faq_q | split: '|||'
+      assign faq_as = faq_a | split: '|||'
+    -%}
+    {%- if faq_qs.size > 0 -%}
+      <div class="sq-faq" data-sq-faq>
+        <h2 class="sq-faq__title">{{ section.settings.faq_title | default: 'About the quiz' }}</h2>
+        {%- for q in faq_qs -%}
+          <details class="sq-faq__item">
+            <summary class="sq-faq__q">{{ q }}</summary>
+            <p class="sq-faq__a">{{ faq_as[forloop.index0] }}</p>
+          </details>
+        {%- endfor -%}
+      </div>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {%- for q in faq_qs -%}
+              {"@type": "Question", "name": {{ q | json }}, "acceptedAnswer": {"@type": "Answer", "text": {{ faq_as[forloop.index0] | json }}}}{%- unless forloop.last -%},{%- endunless -%}
+            {%- endfor -%}
+          ]
+        }
+      </script>
     {%- endif -%}
   {%- elsif request.design_mode -%}
     <p class="sq-editor-note">Scent quiz: enter the config file name (for example scent-quiz-brand.json) in the section settings.</p>
@@ -69,7 +112,17 @@
     { "type": "text", "id": "intro_kicker", "label": "Small line above the title" },
     { "type": "text", "id": "intro_title", "label": "Title" },
     { "type": "textarea", "id": "intro_text", "label": "Text" },
-    { "type": "text", "id": "start_label", "label": "Start button" }
+    { "type": "text", "id": "start_label", "label": "Start button" },
+    { "type": "header", "content": "FAQ under the quiz (read by search engines; leave a question blank to drop it)" },
+    { "type": "text", "id": "faq_title", "label": "FAQ title", "default": "About the quiz" },
+    { "type": "text", "id": "faq_1_q", "label": "Question 1", "default": "How does the perfume quiz work?" },
+    { "type": "textarea", "id": "faq_1_a", "label": "Answer 1", "default": "Ten quick questions, about two minutes: who the fragrance is for, the notes you love and the ones you avoid, the perfume you wear now, the moments of your week and your style. We read the notes behind your answers and match them to the perfumes on our shelf." },
+    { "type": "text", "id": "faq_2_q", "label": "Question 2", "default": "What do I get at the end?" },
+    { "type": "textarea", "id": "faq_2_a", "label": "Answer 2", "default": "Your scent persona and a small perfume wardrobe: one fragrance for each part of your week, chosen from niche houses such as Maison Francis Kurkdjian, Creed, Xerjoff, Amouage, Parfums de Marly and Kilian. Every match comes with a sample, so you can wear it before you buy the bottle." },
+    { "type": "text", "id": "faq_3_q", "label": "Question 3", "default": "Is the quiz free, and do I need to sign up?" },
+    { "type": "textarea", "id": "faq_3_a", "label": "Answer 3", "default": "Yes, it is free, and there is no sign-up and no email. Your answers stay in your browser; the result is a page you can share or come back to." },
+    { "type": "text", "id": "faq_4_q", "label": "Question 4", "default": "Can I change my answers or take the quiz again?" },
+    { "type": "textarea", "id": "faq_4_a", "label": "Answer 4", "default": "Yes. On the result screen, Change answers takes you back to any question, and you can start over as many times as you like." }
   ],
   "blocks": [
     {

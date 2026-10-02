@@ -1,6 +1,14 @@
 {
   "checks": [
     {
+      "name": "390-A: live intro replaces the static one, h1 title, FAQ visible",
+      "ok": true
+    },
+    {
+      "name": "390-A: FAQ waits while a question is on screen",
+      "ok": true
+    },
+    {
       "name": "390-A: screen 1 = \"Which fragrances do you prefer?\" For Her / For Him / Unisex",
       "ok": true
     },
@@ -238,6 +246,14 @@
     },
     {
       "name": "390-C: page URL still has preview_theme_id after the result",
+      "ok": true
+    },
+    {
+      "name": "1440-A: live intro replaces the static one, h1 title, FAQ visible",
+      "ok": true
+    },
+    {
+      "name": "1440-A: FAQ waits while a question is on screen",
       "ok": true
     },
     {
@@ -599,6 +615,11 @@
       "detail": "18 personas"
     },
     {
+      "name": "no-JS: static intro (h1 + lead), FAQ and FAQPage JSON-LD are in the HTML (SEO)",
+      "ok": true,
+      "detail": "{\"h1\":\"Your perfume stylist. Ten questions, one wardrobe.\",\"lead\":true,\"faq\":4,\"ld\":4}"
+    },
+    {
       "name": "390: Unisex sees the couple style photos",
       "ok": true,
       "detail": "{\"classic\":\"sq-photo-style-classic-both.webp\",\"dramatic\":\"sq-photo-style-dramatic-both.webp\",\"romantic\":\"sq-photo-style-romantic-both.webp\",\"minimal\":\"sq-photo-style-minimal-both.webp\",\"casual\":\"sq-photo-style-casual-both.webp\",\"sporty\":\"sq-photo-style-sporty-both.webp\"}"
@@ -611,10 +632,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.4 KB, assets/scent-quiz.css 33.5 KB, assets/scent-quiz.js 54.2 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.4 KB, assets/scent-quiz.css 34.5 KB, assets/scent-quiz.js 54.3 KB"
     },
     {
-      "name": "JS + CSS + JSON 193.6 KB <= 200 KB",
+      "name": "JS + CSS + JSON 194.7 KB <= 200 KB",
       "ok": true
     },
     {
@@ -971,12 +992,12 @@
   "weight": {
     "files": {
       "sections/scent-quiz-personas.liquid": 2659,
-      "sections/scent-quiz.liquid": 5268,
+      "sections/scent-quiz.liquid": 9383,
       "templates/aromastylist.scent-quiz.section.json": 16566,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
       "assets/scent-quiz-aromastylist.json": 58779,
-      "assets/scent-quiz.css": 34292,
-      "assets/scent-quiz.js": 55489,
+      "assets/scent-quiz.css": 35319,
+      "assets/scent-quiz.js": 55599,
       "assets/sq-icon-feel-attractive.svg": 5179,
       "assets/sq-icon-feel-calm.svg": 6815,
       "assets/sq-icon-feel-confident.svg": 5029,
@@ -1077,7 +1098,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 198284,
+    "code_total": 199421,
     "images": 77,
     "images_total": 1269250
   }

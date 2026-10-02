@@ -519,3 +519,17 @@ html.sq-asking .sq-section--personas { display: none; }
 }
 /* v3.29: "How noticeable" on desktop: the three dot cards stay compact instead of filling the page */
 @media (min-width: 750px) { .sq-tiles[data-q="presence"] { max-width: 560px; margin: 0 auto; gap: 12px; } .sq-tiles[data-q="presence"] .sq-tile__img { aspect-ratio: 5 / 2; } }
+
+/* v3.32 static intro (before the script runs) and the FAQ under the quiz */
+.sq-section .sq-static { text-align: center; padding: 8px 0 16px; }
+.sq-section .sq-static .sq-title { font-weight: inherit; }
+.sq-section .sq-faq { max-width: 56ch; margin: 32px auto 0; text-align: left; }
+.sq-section .sq-faq__title { font-size: 12px; font-weight: var(--main_fw_strong, 700); letter-spacing: .18em; text-transform: uppercase; color: var(--sq-h); text-align: center; margin: 0 0 8px; }
+.sq-section .sq-faq__item { border-top: 1px solid var(--sq-line, rgba(0,0,0,.12)); }
+.sq-section .sq-faq__item:last-child { border-bottom: 1px solid var(--sq-line, rgba(0,0,0,.12)); }
+.sq-section .sq-faq__q { cursor: pointer; padding: 12px 28px 12px 0; position: relative; font-size: var(--base_fz, 15px); list-style: none; }
+.sq-section .sq-faq__q::-webkit-details-marker { display: none; }
+.sq-section .sq-faq__q::after { content: '+'; position: absolute; right: 4px; top: 10px; color: var(--sq-h); font-size: 18px; line-height: 1; }
+.sq-section .sq-faq__item[open] .sq-faq__q::after { content: '\2212'; }
+.sq-section .sq-faq__a { margin: 0 0 14px; font-size: var(--base_fz, 15px); line-height: 1.55; }
+.sq-asking .sq-faq { display: none; }

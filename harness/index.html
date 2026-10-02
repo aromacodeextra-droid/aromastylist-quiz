@@ -27,7 +27,13 @@
     <nav class="hx-crumbs" aria-label="Breadcrumbs"><a href="/">Homepage</a> / Find your Perfume</nav>
     <div id="shopify-section-template--harness__scent_quiz" class="shopify-section shopify-section-scent-quiz">
 <link href="/theme-files/assets/scent-quiz.css" rel="stylesheet" type="text/css" media="all" />
-<div class="sq-section palette-scheme-1 module-color-palette" id="sq-template--harness__scent_quiz"><div class="sq" data-scent-quiz data-config="/theme-files/assets/scent-quiz-aromastylist.json" data-taste="/theme-files/assets/scent-quiz-aromastylist-taste.json" hidden>
+<div class="sq-section palette-scheme-1 module-color-palette" id="sq-template--harness__scent_quiz"><div class="sq-static" data-sq-static>
+      <p class="sq-kicker">Perfume quiz</p>
+      <h1 class="sq-title">Your perfume stylist. Ten questions, one wardrobe.</h1>
+      <p class="sq-lead">Tell us the perfume you wear now, what you never want to smell, and where your week goes. We read the notes and build a small wardrobe from what is on our shelf right now: one perfume for each part of your week.</p>
+      <noscript><p class="sq-lead">The quiz needs JavaScript. Turn it on, or browse the <a href="/collections/all">perfumes</a> directly.</p></noscript>
+    </div>
+    <div class="sq" data-scent-quiz data-config="/theme-files/assets/scent-quiz-aromastylist.json" data-taste="/theme-files/assets/scent-quiz-aromastylist-taste.json" hidden>
       <script type="application/json" data-sq-overrides>
         {
           "settings": {
@@ -81,7 +87,27 @@
         }
       </script>
       <div class="sq__app" data-sq-app aria-live="polite"></div>
-    </div></div>
+    </div><div class="sq-faq" data-sq-faq>
+        <h2 class="sq-faq__title">About the quiz</h2><details class="sq-faq__item">
+            <summary class="sq-faq__q">How does the perfume quiz work?</summary>
+            <p class="sq-faq__a">Ten quick questions, about two minutes: who the fragrance is for, the notes you love and the ones you avoid, the perfume you wear now, the moments of your week and your style. We read the notes behind your answers and match them to the perfumes on our shelf.</p>
+          </details><details class="sq-faq__item">
+            <summary class="sq-faq__q">What do I get at the end?</summary>
+            <p class="sq-faq__a">Your scent persona and a small perfume wardrobe: one fragrance for each part of your week, chosen from niche houses such as Maison Francis Kurkdjian, Creed, Xerjoff, Amouage, Parfums de Marly and Kilian. Every match comes with a sample, so you can wear it before you buy the bottle.</p>
+          </details><details class="sq-faq__item">
+            <summary class="sq-faq__q">Is the quiz free, and do I need to sign up?</summary>
+            <p class="sq-faq__a">Yes, it is free, and there is no sign-up and no email. Your answers stay in your browser; the result is a page you can share or come back to.</p>
+          </details><details class="sq-faq__item">
+            <summary class="sq-faq__q">Can I change my answers or take the quiz again?</summary>
+            <p class="sq-faq__a">Yes. On the result screen, Change answers takes you back to any question, and you can start over as many times as you like.</p>
+          </details></div>
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{"@type": "Question", "name": "How does the perfume quiz work?", "acceptedAnswer": {"@type": "Answer", "text": "Ten quick questions, about two minutes: who the fragrance is for, the notes you love and the ones you avoid, the perfume you wear now, the moments of your week and your style. We read the notes behind your answers and match them to the perfumes on our shelf."}},{"@type": "Question", "name": "What do I get at the end?", "acceptedAnswer": {"@type": "Answer", "text": "Your scent persona and a small perfume wardrobe: one fragrance for each part of your week, chosen from niche houses such as Maison Francis Kurkdjian, Creed, Xerjoff, Amouage, Parfums de Marly and Kilian. Every match comes with a sample, so you can wear it before you buy the bottle."}},{"@type": "Question", "name": "Is the quiz free, and do I need to sign up?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it is free, and there is no sign-up and no email. Your answers stay in your browser; the result is a page you can share or come back to."}},{"@type": "Question", "name": "Can I change my answers or take the quiz again?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. On the result screen, Change answers takes you back to any question, and you can start over as many times as you like."}}]
+        }
+      </script></div>
 <script src="/theme-files/assets/scent-quiz.js" defer></script>
 
 

@@ -79,8 +79,11 @@ for (const vp of VIEWPORTS) {
     await page.goto(PAGE);
     await page.waitForSelector('.sq-intro');
     await shot(page, '01-intro');
+    // v3.32: the static intro is gone once the live one is up; the intro title is the page's only h1; the FAQ shows under the intro
+    check(`${tag}: live intro replaces the static one, h1 title, FAQ visible`, await page.evaluate(() => !document.querySelector('[data-sq-static]') && document.querySelectorAll('h1').length === 1 && document.querySelector('.sq-intro h1.sq-title') !== null && getComputedStyle(document.querySelector('.sq-faq')).display !== 'none' && document.querySelectorAll('.sq-faq__item').length === 4));
     await page.click('[data-act=start]');
     await shot(page, '02-for');
+    check(`${tag}: FAQ waits while a question is on screen`, await page.evaluate(() => getComputedStyle(document.querySelector('.sq-faq')).display === 'none'));
     // v3.9: a tap selects, Continue moves on; the page's own sections wait while a question is on screen
     await page.click('[data-act=answer][data-a=her]');
     const v39 = await page.evaluate(() => ({ still: !!document.querySelector('.sq-q[data-q=for]'), pressed: document.querySelector('[data-a=her]').getAttribute('aria-pressed'),
@@ -435,6 +438,9 @@ for (const vp of VIEWPORTS) {
   check('no-JS: quiz hidden, existing page content visible', !(await page.isVisible('[data-scent-quiz]')) && (await page.isVisible('[data-existing-content]')));
   const personas = await page.$$eval('.sq-personas__list li', (l) => l.length);
   check('no-JS: "All scent personas" is static HTML (SEO)', personas === 18, `${personas} personas`);
+  const seo = await page.evaluate(() => ({ h1: document.querySelector('h1.sq-title')?.textContent, lead: !!document.querySelector('[data-sq-static] .sq-lead'), faq: document.querySelectorAll('.sq-faq__item').length,
+    ld: (() => { try { return JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent).mainEntity.length; } catch (e) { return 0; } })() }));
+  check('no-JS: static intro (h1 + lead), FAQ and FAQPage JSON-LD are in the HTML (SEO)', seo.h1 === 'Your perfume stylist. Ten questions, one wardrobe.' && seo.lead && seo.faq === 4 && seo.ld === 4, JSON.stringify(seo));
   await page.screenshot({ path: `${SHOTS}/390-00-no-js.png`, fullPage: true });
   await ctx.close();
 }

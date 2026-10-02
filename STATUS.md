@@ -1,6 +1,6 @@
 # Where we are (resume here)
 
-Last saved: 2026-10-02, version **quiz-v3.31**, branch `quiz-v3` (pushed to GitHub).
+Last saved: 2026-10-02, version **quiz-v3.32**, branch `quiz-v3` (pushed to GitHub).
 
 ## Preview
 
@@ -10,6 +10,8 @@ Last saved: 2026-10-02, version **quiz-v3.31**, branch `quiz-v3` (pushed to GitH
   carried all 106 quiz files and `templates/page.find-your-perfume.json` over; checked by md5 / JSON compare on
   2026-10-02, nothing to re-upload. Preview: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189581852952
   (needs admin login). The owner publishes it herself; after that, upload future versions to `189581852952`.
+  v3.32 (static intro + FAQ for search engines) is uploaded to `189581852952` only; the live theme stays at v3.31
+  until the owner publishes the update.
 - The rest of the site is untouched.
 - The copy holds exactly the repo files of v3.31, checked by md5 on 2026-10-02: 96 files from `theme-files/`
   (sections, js, css, two JSON files, 59 bottle images, 22 owner icons, 18 style photos (men's, women's, Unisex couples)) plus `templates/page.find-your-perfume.json` =
@@ -28,6 +30,15 @@ Last saved: 2026-10-02, version **quiz-v3.31**, branch `quiz-v3` (pushed to GitH
   expected), seasons 2x2 + All year, up to two clothing styles.
 
 Details per version: `CHANGELOG.md`.
+
+## SEO (started 2026-10-02)
+
+- Done in v3.32: crawlable intro with `h1`, FAQ + FAQPage JSON-LD, no-JS fallback. Page is in `sitemap_pages_1.xml`
+  and linked from the menu ("Quiz Find your Perfume" under Perfume Wardrobe).
+- Owner's side (Shopify Admin > Online Store > Pages > Find your Perfume > Search engine listing): title and
+  description suggested in the chat of 2026-10-02; Google Search Console: request indexing of the page URL.
+- Ideas not done: homepage banner linking to the quiz (theme, owner), an og:image for the page (theme head),
+  a blog post "How to find your signature perfume" linking to the quiz.
 
 ## Next
 

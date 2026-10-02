@@ -1,5 +1,16 @@
 # Changelog
 
+## quiz-v3.32 (2026-10-02) — what search engines read
+
+- The section renders the intro (kicker, `h1` title, lead) as plain HTML before the script runs; the engine removes
+  it when its own intro is up, and the live intro title is now an `h1` (the page had none). Without JavaScript the
+  intro stays, with a line pointing to the perfumes.
+- A four-question FAQ under the quiz ("About the quiz": how it works, what you get, free / no sign-up, change
+  answers), editable in the section settings, with matching `FAQPage` JSON-LD. It shows on the intro and the result
+  and waits while a question is on screen.
+- Harness applies the schema defaults like Shopify; e2e checks the static intro, the single `h1`, the FAQ and the
+  JSON-LD (139 checks).
+
 ## quiz-v3.31 (2026-10-02) — personas spread out
 
 - The persona now follows the answers first: each chosen feeling names a row of the persona matrix, the reach picks

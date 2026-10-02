@@ -987,9 +987,12 @@
   Quiz.prototype.show = function (i, focusSel) {
     this.step = i;
     var c = this.copy, self = this;
+    // the static intro (what search engines and no-script visitors read) gives way to the live one
+    var st = this.root.parentNode && this.root.parentNode.querySelector('[data-sq-static]');
+    if (st) st.parentNode.removeChild(st);
     if (i < 0) {
       this.render('<div class="sq-screen sq-intro">' + (c.intro_kicker ? '<p class="sq-kicker">' + esc(c.intro_kicker) + '</p>' : '') +
-        '<h2 class="sq-title" tabindex="-1" data-sq-focus>' + esc(c.intro_title) + '</h2><p class="sq-lead">' + esc(c.intro_text) + '</p>' +
+        '<h1 class="sq-title" tabindex="-1" data-sq-focus>' + esc(c.intro_title) + '</h1><p class="sq-lead">' + esc(c.intro_text) + '</p>' +
         '<button type="button" class="sq-btn" data-act="start">' + esc(c.start) + '</button></div>');
       return;
     }
