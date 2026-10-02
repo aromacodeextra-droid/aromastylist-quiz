@@ -7,8 +7,8 @@ Last saved: 2026-10-02, version **quiz-v3.17**, branch `quiz-v3` (pushed to GitH
 - Theme copy (unpublished): **"Xtra – scent quiz (copy of live, 2026-09-30)"**, id `189533225240`.
 - Link: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189533225240
 - The live theme and the rest of the site are untouched. The owner publishes herself.
-- The copy holds exactly the repo files of v3.17, checked by md5 on 2026-10-02: 95 files from `theme-files/`
-  (sections, js, css, two JSON files, 59 bottle images, 19 owner icons, 6 men's + 5 women's style photos) plus `templates/page.find-your-perfume.json` =
+- The copy holds exactly the repo files of v3.17, checked by md5 on 2026-10-02: 96 files from `theme-files/`
+  (sections, js, css, two JSON files, 59 bottle images, 19 owner icons, 12 style photos, men's and women's) plus `templates/page.find-your-perfume.json` =
   `docs/theme-copy/page.find-your-perfume.json`.
 - The second copy "Home Journal" (`189529096472`) still has an old version; update it only if asked.
 
@@ -30,8 +30,7 @@ Details per version: `CHANGELOG.md`.
 1. Result screen: v3.13 done (built-around line, answer summary + Change answers, short cards, compact buttons).
    Waiting for the owner's look on her phone.
 2. Owner icons in place (v3.15): screen 1, feelings, moments, What matters. Still to come: avoid-screen and
-   season icons (optional; built-in season icons work), a women's Sporty photo (put it in
-   `quiz/brands/aromastylist/photos-src/style-sporty-her.png`, run `python3 scripts/v3-photos.py`). When the owner sends icons / photos, drop them in `theme-files/assets/` with these names and rebuild:
+   season icons (optional; built-in season icons work). All 12 clothing-style photos are in (photos-src -> `python3 scripts/v3-photos.py`). When the owner sends icons / photos, drop them in `theme-files/assets/` with these names and rebuild:
    - screen 1: `sq-icon-for-her.svg`, `sq-icon-for-him.svg`, `sq-icon-for-both.svg`
    - feelings: `sq-icon-feel-<confident|attractive|calm|energised|festive|free>.svg`
    - moments: `sq-icon-week-<everyday-errands|work-study|evenings-dates|events-celebrations|family-home|sport|time-for-me-growth>.svg`
