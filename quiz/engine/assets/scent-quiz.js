@@ -888,7 +888,14 @@
     this.started = true;
   };
   Quiz.prototype.img = function (a, eager) {
-    if (a.photo_file) return '<img src="' + esc(this.asset(a.photo_file)) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
+    // a photo made for the answer of screen 1 (For Him / For Her); Unisex takes either
+    // photo_g: 'e' = her, 'i' = him (second letter); file sq-photo-<question>-<answer>-<her|him>.webp
+    var who = this.state['for'], g = a.photo_g || '', pick = null;
+    if (who === 'her' && g.indexOf('e') >= 0) pick = 'her';
+    else if (who === 'him' && g.indexOf('i') >= 0) pick = 'him';
+    else if (who === 'both') pick = g.indexOf('i') >= 0 ? 'him' : g.indexOf('e') >= 0 ? 'her' : null;
+    var photo = a.photo_file || (pick && a.q ? 'sq-photo-' + a.q + '-' + a.id + '-' + pick + '.webp' : null);
+    if (photo) return '<img src="' + esc(this.asset(photo)) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
     if (a.icon_file) return '<img class="sq-icon" src="' + esc(this.asset(a.icon_file)) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
     if (a.icon && ICONS[a.icon]) return '<svg class="sq-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">' + ICONS[a.icon] + '</svg>';
     if (a.dots) return '<span class="sq-dots" aria-hidden="true">' + [1, 2, 3].map(function (k) { return '<i class="sq-dot' + (k <= a.dots ? ' is-on' : '') + '" style="--d:' + (6 + k * 7) + 'px"></i>'; }).join('') + '</span>';

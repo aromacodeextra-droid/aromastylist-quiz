@@ -151,7 +151,10 @@ for (const q of config.questions) for (const a of q.answers || []) {
   for (const ext of ['webp', 'jpg', 'png']) {
     const f = `sq-photo-${q.id}-${a.id}.${ext}`;
     if (!a.photo_file && fs.existsSync(`${OUT}/assets/${f}`)) a.photo_file = f;
+    // per screen-1 answer: sq-photo-<screen>-<answer>-her|him.<ext>
   }
+  // per screen-1 answer: sq-photo-<screen>-<answer>-her|him.webp (only the gender is stored; the engine builds the name)
+  for (const g of ['her', 'him']) if (fs.existsSync(`${OUT}/assets/sq-photo-${q.id}-${a.id}-${g}.webp`)) a.photo_g = (a.photo_g || '') + g[1];
   if (a.icon_file || a.photo_file) delete a.image; // the owner's icon / photo replaces the placeholder image
 }
 for (const q of config.questions) for (const r of q.rows || []) for (const ext of ['svg', 'png', 'webp']) {
@@ -162,6 +165,7 @@ for (const q of config.questions) for (const r of q.rows || []) for (const ext o
 const CDN = base.replace(/(files|collections)\/$/, '');
 for (const q of config.questions) for (const a of q.answers || []) if (a.image && CDN && a.image.startsWith(CDN)) a.image = '@' + a.image.slice(CDN.length);
 delete config.gender.note;
+for (const q of config.questions) if (q.type === 'week') delete q.levels; // the moments screen has no levels any more
 const merged = {
   ...config,
   cdn: CDN,
