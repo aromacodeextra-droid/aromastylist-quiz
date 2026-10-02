@@ -84,7 +84,7 @@ function row(p) {
   const d = dims(p);
   if (p.is_set) d.gender = cell('gender', [fact(setGender(p, catalog.products))]);
   return [shortHandle(p), p.title, houses.indexOf(p.house), p.image ? p.image.slice(base.length).replace(/\?v=\d+$/, '') : '',
-    d.gender, d.moment, d.mood, d.presence, d.season, variant.id, variant.price, p.variants.some((v) => v.available) ? 1 : 0];
+    d.gender, d.moment, d.mood, d.presence, d.season, variant.id.toString(36) /* base 36: shorter */, variant.price, p.variants.some((v) => v.available) ? 1 : 0];
 }
 const items = catalog.products.filter((p) => !p.is_set);
 const sets = catalog.products.filter((p) => p.is_set);
@@ -126,7 +126,7 @@ const tasteFile = {
   house_aliases: meta.house_aliases || {},
   refs,
   // one short version for all bottle images: a changed image gets a new URL, so phones and the CDN do not keep the old one
-  imgv: (() => { const h = crypto.createHash('md5'); for (const f of fs.readdirSync(`${OUT}/assets`).filter((f) => /^sq-ref-.*\.webp$/.test(f)).sort()) h.update(f).update(fs.readFileSync(`${OUT}/assets/${f}`)); return h.digest('hex').slice(0, 8); })(),
+  imgv: (() => { const h = crypto.createHash('md5'); for (const f of fs.readdirSync(`${OUT}/assets`).filter((f) => /^sq-(ref|icon|photo)-/.test(f)).sort()) h.update(f).update(fs.readFileSync(`${OUT}/assets/${f}`)); return h.digest('hex').slice(0, 8); })(),
 };
 
 // ---- config: placeholder images for answers without one (note families, styles): the most typical in-stock perfume
@@ -146,6 +146,11 @@ for (const q of config.questions) for (const a of q.answers || []) {
   for (const scr of [ICON_SCREEN[q.id], q.id].filter(Boolean)) for (const ext of ['svg', 'png', 'webp']) {
     const f = `sq-icon-${scr}-${a.id}.${ext}`;
     if (!a.icon_file && fs.existsSync(`${OUT}/assets/${f}`)) a.icon_file = f;
+  }
+  // owner photos (e.g. the clothing styles): sq-photo-<screen>-<answer>.(webp|jpg|png) fill the whole tile
+  for (const ext of ['webp', 'jpg', 'png']) {
+    const f = `sq-photo-${q.id}-${a.id}.${ext}`;
+    if (!a.photo_file && fs.existsSync(`${OUT}/assets/${f}`)) a.photo_file = f;
   }
 }
 for (const q of config.questions) for (const r of q.rows || []) for (const ext of ['svg', 'png', 'webp']) {

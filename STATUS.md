@@ -1,13 +1,13 @@
 # Where we are (resume here)
 
-Last saved: 2026-10-02, version **quiz-v3.13**, branch `quiz-v3` (pushed to GitHub).
+Last saved: 2026-10-02, version **quiz-v3.14**, branch `quiz-v3` (pushed to GitHub).
 
 ## Preview
 
 - Theme copy (unpublished): **"Xtra – scent quiz (copy of live, 2026-09-30)"**, id `189533225240`.
 - Link: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189533225240
 - The live theme and the rest of the site are untouched. The owner publishes herself.
-- The copy holds exactly the repo files of v3.13, checked by md5 on 2026-10-02: 65 files from `theme-files/`
+- The copy holds exactly the repo files of v3.14, checked by md5 on 2026-10-02: 65 files from `theme-files/`
   (sections, js, css, two JSON files, 59 bottle images) plus `templates/page.find-your-perfume.json` =
   `docs/theme-copy/page.find-your-perfume.json`.
 - The second copy "Home Journal" (`189529096472`) still has an old version; update it only if asked.
@@ -34,9 +34,11 @@ Details per version: `CHANGELOG.md`.
    - feelings: `sq-icon-feel-<confident|attractive|calm|energised|festive|free>.svg`
    - moments: `sq-icon-week-<everyday-errands|work-study|evenings-dates|events-celebrations|family-home|sport|time-for-me-growth>.svg`
    - avoid: `sq-icon-avoid-<answer id>.svg`; seasons: `sq-icon-season-<winter|spring|summer|fall|all-year>.svg`
-   - styles (photos): `sq-icon-style-<classic|dramatic|romantic|minimal|casual|sporty>.webp`
    SVG, or PNG/WebP 600x600 with transparent background.
-3. Open decisions: the site header (theme, not the quiz) is left as is unless the owner asks.
+   - styles (photos, fill the tile): `sq-photo-style-<classic|dramatic|romantic|minimal|casual|sporty>.webp`,
+     square 600x600, under 60 KB each.
+3. Config file size: 59.0 KB of the 60 KB per-file limit; free room before adding copy.
+4. Open decisions: the site header (theme, not the quiz) is left as is unless the owner asks.
 
 ## How to rebuild, test, upload
 

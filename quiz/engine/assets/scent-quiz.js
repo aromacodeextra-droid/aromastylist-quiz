@@ -19,7 +19,7 @@
       var p = {
         handle: h, title: r[f.title], house: cat.houses[r[f.house]] || '',
         image: r[f.image] ? (/^(https?:)?\/\//.test(r[f.image]) ? r[f.image] : cat.img + r[f.image]) : '',
-        variant: r[f.variant], price: r[f.price], available: !!r[f.available], isSet: isSet, dims: {},
+        variant: typeof r[f.variant] === 'string' ? parseInt(r[f.variant], 36) : r[f.variant], price: r[f.price], available: !!r[f.available], isSet: isSet, dims: {},
         hot: 0
       };
       DIMS.forEach(function (d) {
@@ -829,7 +829,9 @@
   };
 
   // ---------------------------------------------------------------- perfume picker
-  Quiz.prototype.refImg = function (id) { var v = this.model.taste && this.model.taste.imgv; return this.assetBase + 'sq-ref-' + id + '.webp' + (v ? '?v=' + v : ''); };
+  // theme assets next to the config; the image version makes a replaced file reach phones at once
+  Quiz.prototype.asset = function (file) { var v = this.model.taste && this.model.taste.imgv; return this.assetBase + file + (v ? '?v=' + v : ''); };
+  Quiz.prototype.refImg = function (id) { return this.asset('sq-ref-' + id + '.webp'); };
   Quiz.prototype.index = function () { return this._index || (this._index = buildIndex(this.model)); };
   Quiz.prototype.addPerfume = function (qid, kind, id) {
     var q = Q(this.config, qid), cur = Array.isArray(this.state[qid]) ? this.state[qid].slice() : [];
@@ -886,7 +888,8 @@
     this.started = true;
   };
   Quiz.prototype.img = function (a, eager) {
-    if (a.icon_file) return '<img class="sq-icon" src="' + esc(this.assetBase + a.icon_file) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
+    if (a.photo_file) return '<img src="' + esc(this.asset(a.photo_file)) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
+    if (a.icon_file) return '<img class="sq-icon" src="' + esc(this.asset(a.icon_file)) + '" alt="" width="600" height="600" loading="' + (eager ? 'eager' : 'lazy') + '" decoding="async">';
     if (a.icon && ICONS[a.icon]) return '<svg class="sq-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">' + ICONS[a.icon] + '</svg>';
     if (a.dots) return '<span class="sq-dots" aria-hidden="true">' + [1, 2, 3].map(function (k) { return '<i class="sq-dot' + (k <= a.dots ? ' is-on' : '') + '" style="--d:' + (6 + k * 7) + 'px"></i>'; }).join('') + '</span>';
     var alt = esc(a.img && a.img.alt ? a.img.alt : ''), s600, s900;
@@ -920,7 +923,7 @@
   };
   // the owner's icon next to a chip or week-row label (assets/sq-icon-avoid-<id>.svg, sq-icon-week-<id>.svg)
   Quiz.prototype.smallIcon = function (a) {
-    return '<img class="sq-icon-sm" src="' + esc(this.assetBase + a.icon_file) + '" alt="" width="28" height="28" loading="lazy" decoding="async">';
+    return '<img class="sq-icon-sm" src="' + esc(this.asset(a.icon_file)) + '" alt="" width="28" height="28" loading="lazy" decoding="async">';
   };
   Quiz.prototype.progress = function (i) {
     var n = 0, at = 0, self = this;

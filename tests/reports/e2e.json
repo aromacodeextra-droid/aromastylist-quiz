@@ -521,10 +521,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 58.6 KB, assets/scent-quiz.css 26.9 KB, assets/scent-quiz.js 51.6 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 26.9 KB, assets/scent-quiz.js 51.9 KB"
     },
     {
-      "name": "JS + CSS + JSON 185.6 KB <= 200 KB",
+      "name": "JS + CSS + JSON 185.0 KB <= 200 KB",
       "ok": true
     },
     {
@@ -884,9 +884,9 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16545,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59983,
+      "assets/scent-quiz-aromastylist.json": 59056,
       "assets/scent-quiz.css": 27510,
-      "assets/scent-quiz.js": 52887,
+      "assets/scent-quiz.js": 53139,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -947,7 +947,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 190104,
+    "code_total": 189429,
     "images": 59,
     "images_total": 891710
   }
