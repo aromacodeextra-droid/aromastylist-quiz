@@ -1,5 +1,13 @@
 # Changelog
 
+## quiz-v3.29 (2026-10-02) — sub-step counter, compact "How noticeable" on desktop
+
+- The notes sub-step (after "I don't have one") reads "2b / 10" and its progress bar sits half a step further, so
+  it no longer looks like the same step as the perfume screen.
+- Desktop "How noticeable should your fragrance be?": the three dot cards sit in a 560 px row with lower boxes instead
+  of three large empty cards.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`. e2e 134 / 134.
+
 ## quiz-v3.28 (2026-10-02) — notes screen as text cards
 
 - "Which notes pull you in?" (after "I don't have one") no longer shows store product photos with uppercase labels:

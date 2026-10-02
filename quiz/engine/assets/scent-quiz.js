@@ -946,10 +946,13 @@
   Quiz.prototype.progress = function (i) {
     var n = 0, at = 0, self = this;
     this.qs.forEach(function (q, k) { if (q.sub) return; if (k === i || visible(self.model, self.state, q.id)) { n++; if (k <= i) at = n; } });
-    if (this.qs[i].sub) at = Math.max(at, 1);
+    // a sub-step (the notes after "I don't have one") reads "2b / 10" and the bar sits half a step further
+    var sub = !!this.qs[i].sub;
+    if (sub) at = Math.max(at, 1);
+    var label = fill(this.copy.step, { n: sub ? at + 'b' : at, total: n }), bar = (sub ? at + 0.5 : at) / n * 100;
     return '<div class="sq-top"><button type="button" class="sq-back" data-act="back"><span aria-hidden="true">&larr;</span> ' + esc(this.copy.back) + '</button>' +
-      '<p class="sq-step">' + esc(fill(this.copy.step, { n: at, total: n })) + '</p></div>' +
-      '<div class="sq-bar" role="progressbar" aria-valuemin="0" aria-valuemax="' + n + '" aria-valuenow="' + at + '"><span style="width:' + (at / n * 100) + '%"></span></div>';
+      '<p class="sq-step">' + esc(label) + '</p></div>' +
+      '<div class="sq-bar" role="progressbar" aria-valuemin="0" aria-valuemax="' + n + '" aria-valuenow="' + at + '"><span style="width:' + bar + '%"></span></div>';
   };
   Quiz.prototype.dnaHtml = function (vec, canon) {
     var t = this.model.taste, labels = this.copy.families || {};

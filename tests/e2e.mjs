@@ -278,6 +278,7 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=no-ref]');
     await page.waitForSelector('[data-act=toggle][data-a=woods]');
     for (const f of ['woods', 'citrus', 'spices']) await page.click(`[data-act=toggle][data-a=${f}]`);
+    check(`${tag}: the notes sub-step reads "2b / 10"`, (await page.textContent('.sq-top .sq-step')).trim() === '2b / 10');
     await shot(page, '03-notes-B');
     await page.click('[data-act=next][data-q=notes]');
     await page.click('[data-act=next][data-q=taboos]'); // nothing ticked

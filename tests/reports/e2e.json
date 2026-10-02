@@ -195,6 +195,10 @@
       "detail": ""
     },
     {
+      "name": "390-B: the notes sub-step reads \"2b / 10\"",
+      "ok": true
+    },
+    {
       "name": "390-B: For Him sees the owner's style photos",
       "ok": true,
       "detail": "sq-photo-style-classic-him.webp?v=f037c181, sq-photo-style-dramatic-him.webp?v=f037c181, sq-photo-style-romantic-him.webp?v=f037c181, sq-photo-style-minimal-him.webp?v=f037c181, sq-photo-style-casual-him.webp?v=f037c181, sq-photo-style-sporty-him.webp?v=f037c181"
@@ -431,6 +435,10 @@
       "detail": ""
     },
     {
+      "name": "1440-B: the notes sub-step reads \"2b / 10\"",
+      "ok": true
+    },
+    {
       "name": "1440-B: For Him sees the owner's style photos",
       "ok": true,
       "detail": "sq-photo-style-classic-him.webp?v=f037c181, sq-photo-style-dramatic-him.webp?v=f037c181, sq-photo-style-romantic-him.webp?v=f037c181, sq-photo-style-minimal-him.webp?v=f037c181, sq-photo-style-casual-him.webp?v=f037c181, sq-photo-style-sporty-him.webp?v=f037c181"
@@ -603,10 +611,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.4 KB, assets/scent-quiz.css 33.3 KB, assets/scent-quiz.js 53.8 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.4 KB, assets/scent-quiz.css 33.5 KB, assets/scent-quiz.js 53.8 KB"
     },
     {
-      "name": "JS + CSS + JSON 193.1 KB <= 200 KB",
+      "name": "JS + CSS + JSON 193.3 KB <= 200 KB",
       "ok": true
     },
     {
@@ -967,8 +975,8 @@
       "templates/aromastylist.scent-quiz.section.json": 16566,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
       "assets/scent-quiz-aromastylist.json": 58801,
-      "assets/scent-quiz.css": 34116,
-      "assets/scent-quiz.js": 55086,
+      "assets/scent-quiz.css": 34292,
+      "assets/scent-quiz.js": 55124,
       "assets/sq-icon-feel-attractive.svg": 5179,
       "assets/sq-icon-feel-calm.svg": 6815,
       "assets/sq-icon-feel-confident.svg": 5029,
@@ -1069,7 +1077,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 197727,
+    "code_total": 197941,
     "images": 77,
     "images_total": 1269250
   }

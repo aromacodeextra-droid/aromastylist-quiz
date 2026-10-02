@@ -335,7 +335,7 @@
   position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--sq-accent); color: var(--sq-on-accent); font-size: 13px; line-height: 1; }
 /* dark text for questions and row names; gold stays for buttons, the bar, ticks and frames */
 .sq-section .sq-q .sq-title, .sq-week__label { color: var(--sq-fg); }
-.sq-top .sq-step { font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.sq-top .sq-step { font-variant-numeric: tabular-nums; letter-spacing: .04em; text-transform: none; }
 /* Continue rides at the bottom of the screen while the step is longer than the screen (the engine sets .is-floating) */
 .sq-q .sq-next.is-floating { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; margin: 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
   background: var(--sq-bg); box-shadow: 0 -6px 18px rgba(0, 0, 0, .08); }
@@ -517,3 +517,5 @@ html.sq-asking .sq-section--personas { display: none; }
   .sq-tiles[data-layout="text"] { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 720px; }
   .sq-tiles[data-layout="text"] .sq-tile__label { font-size: 16px; }
 }
+/* v3.29: "How noticeable" on desktop: the three dot cards stay compact instead of filling the page */
+@media (min-width: 750px) { .sq-tiles[data-q="presence"] { max-width: 560px; margin: 0 auto; gap: 12px; } .sq-tiles[data-q="presence"] .sq-tile__img { aspect-ratio: 5 / 2; } }
