@@ -59,6 +59,11 @@ Details per version: `CHANGELOG.md`.
 3. Config file size: 59.0 KB of the 60 KB per-file limit; free room before adding copy.
 4. Open decisions: the site header (theme, not the quiz) is left as is unless the owner asks.
 
+## Session logs
+
+- `docs/sessions/2026-10-02.md` (+ screenshots in `docs/sessions/2026-10-02/`), also as the Claude doc
+  https://claude.ai/code/artifact/cfffa0b9-ce04-4305-a57d-6eaa44daf09f
+
 ## Template copies
 
 - Branch `quiz-template` (frozen at `9281e40`, v3.31) and the Artifact page https://claude.ai/artifact/KWGEiTtcasiaeJVdxg5Vws;
