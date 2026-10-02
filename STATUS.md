@@ -4,15 +4,16 @@ Last saved: 2026-10-02, version **quiz-v3.32**, branch `quiz-v3` (pushed to GitH
 
 ## Preview
 
-- **Live** (published by the owner on 2026-10-02, 17:40 UTC): the theme update "Updated copy of Xtra – scent quiz…",
-  Xtra 8.3.0, id `189581852952`, now MAIN with quiz v3.31. The earlier quiz theme `189533225240` is no longer live.
-- **Working copy** (unpublished): "Xtra 8.3.0 – scent quiz v3.32 SEO (copy of live, 2026-10-02)", id
-  `189582835992`, duplicated from the live theme via `themeDuplicate` and holding v3.32 (section, js, css checked by md5).
-  Preview: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189582835992 (needs admin login).
-  Upload future versions here until the owner publishes it. Note: `themeFilesUpsert` to a theme that is still
-  `processing` after duplication is silently overwritten; wait for `processing: false`, then upload. A schema
-  header longer than 50 characters is rejected only when the body is sent as TEXT; with a URL body the file
-  silently keeps its old content, so always compare md5 after an upload.
+- **Live** (published by the owner on 2026-10-02, 18:20 UTC): "Xtra 8.3.0 – scent quiz v3.32 SEO (copy of live, 2026-10-02)",
+  id `189582835992`, now MAIN with quiz v3.32 and `templates/article.how-to-find-your-signature-perfume.json`.
+  Older themes `189581852952` (v3.31) and `189533225240` are unpublished leftovers.
+- **No working copy at the moment.** For the next change: `themeDuplicate` the live theme, wait for
+  `processing: false`, upload, compare md5, and the owner publishes. `themeFilesUpsert` to a theme still
+  `processing` after duplication is silently overwritten. A schema header longer than 50 characters is rejected
+  only when the body is sent as TEXT; with a URL body the file silently keeps its old content, so always compare md5.
+- Journal post "How to Find Your Signature Perfume (Without Smelling Fifty Bottles)" is published
+  (`gid://shopify/Article/634497106200`, handle `how-to-find-your-signature-perfume`, its own template without the
+  default gallery; source `docs/blog/`). Page SEO title/description of Find your Perfume set via metafields.
 - The rest of the site is untouched.
 - The copy holds exactly the repo files of v3.31, checked by md5 on 2026-10-02: 96 files from `theme-files/`
   (sections, js, css, two JSON files, 59 bottle images, 22 owner icons, 18 style photos (men's, women's, Unisex couples)) plus `templates/page.find-your-perfume.json` =
