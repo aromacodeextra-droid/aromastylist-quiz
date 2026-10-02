@@ -871,6 +871,16 @@
     }).join('') + (input.value.trim() && !hits.length ? '<li class="sq-noresult">' + esc(c.search_none) + '</li>' : '');
   };
 
+  // height of the site header when it stays on screen (sticky / fixed at the top), so a step never starts under it
+  function headerOffset() {
+    var off = 0;
+    document.querySelectorAll('header, [id*="header"], [class*="header"]').forEach(function (el) {
+      if (el.closest('.sq-section')) return;
+      var cs = global.getComputedStyle(el), r = el.getBoundingClientRect();
+      if ((cs.position === 'fixed' || cs.position === 'sticky') && r.top <= 1 && r.bottom > 0 && r.height < global.innerHeight / 3) off = Math.max(off, r.bottom);
+    });
+    return off;
+  }
   // ---------------------------------------------------------------- screens
   Quiz.prototype.render = function (html, focusSel) {
     this.app.innerHTML = html;
@@ -882,7 +892,8 @@
     for (var el = sec && sec.nextElementSibling; el; el = el.nextElementSibling) el.classList.toggle('sq-page-wait', asking);
     this.floatNext();
     if (this.keepScroll) return;
-    if (this.root.getBoundingClientRect().top < 0) this.root.scrollIntoView({ block: 'start' });
+    var off = headerOffset(), top = this.root.getBoundingClientRect().top;
+    if (top < off) global.scrollTo(0, global.scrollY + top - off - 8);
     var f = this.app.querySelector(focusSel || '[data-sq-focus]');
     if (f && this.started) f.focus({ preventScroll: true });
     this.started = true;
@@ -1048,8 +1059,9 @@
     var chips = order.map(function (i) {
       var r = q.rows[i];
       if (cur[i]) sw += self.borrowed(q.id, r.id);
-      return '<li><button type="button" class="sq-chip" data-act="moment" data-q="' + esc(q.id) + '" data-row="' + i + '" aria-pressed="' + !!cur[i] + '">' +
-        (r.icon_file ? self.smallIcon(r) : '') + '<span>' + esc(r.label) + '</span>' + (r.hint ? '<small>' + esc(r.hint) + '</small>' : '') + '</button></li>';
+      return '<li><button type="button" class="sq-chip sq-moment" data-act="moment" data-q="' + esc(q.id) + '" data-row="' + i + '" aria-pressed="' + !!cur[i] + '">' +
+        '<span class="sq-moment__icon">' + (r.icon_file ? '<img src="' + esc(self.asset(r.icon_file)) + '" alt="" width="72" height="72" decoding="async">' : '') + '</span>' +
+        '<span class="sq-moment__label">' + esc(r.label) + '</span></button></li>';
     }).join('');
     return '<ul class="sq-chips sq-chips--moments">' + chips + '</ul>' + (sw ? '<div class="sq-switches sq-switches--moments">' + sw + '</div>' : '') + this.nextBtn(q, n, false);
   };

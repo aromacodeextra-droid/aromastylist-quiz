@@ -366,7 +366,7 @@ html.sq-asking .sq-section--personas { display: none; }
 /* v3.11: the office line under the moments */
 .sq-switches--moments { margin: 4px auto 0; max-width: 720px; justify-content: flex-start; }
 /* room for the corner tick, so it never sits on a label */
-:is(#root, body) .sq-section .sq-chips--taboo .sq-chip, :is(#root, body) .sq-section .sq-chips--moments .sq-chip { padding-right: 32px; }
+:is(#root, body) .sq-section .sq-chips--taboo .sq-chip { padding-right: 32px; }
 
 /* v3.12: screens 6-10 */
 /* feelings: three in a row, so all six show with little scrolling */
@@ -423,3 +423,26 @@ html.sq-asking .sq-section--personas { display: none; }
 /* v3.15: owner figures on the moment chips are read at a glance: a bit larger */
 .sq-chips--moments .sq-icon-sm { width: 40px; height: 40px; margin: 0 0 6px; }
 .sq-tile__img img.sq-icon { width: 80%; height: 80%; }
+
+/* v3.19: moments screen - equal cards, icon over a two-line name, all centred */
+.sq-q .sq-chips--moments { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 520px; margin: 0 auto 8px; }
+.sq-chips--moments li { flex: 0 0 calc(50% - 5px); }
+:is(#root, body) .sq-section .sq-chips--moments .sq-moment { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  position: relative; height: 144px; padding: 14px 10px; text-align: center; }
+.sq-moment__icon { display: block; flex: 0 0 72px; width: 72px; height: 72px; }
+.sq-moment__icon img { display: block; width: 100%; height: 100%; }
+.sq-chip .sq-moment__label { display: flex; align-items: flex-start; justify-content: center; height: calc(2 * 1.25em); font-family: var(--main_ff, inherit);
+  font-size: 15px; font-weight: var(--btn_fw, 500); line-height: 1.25; color: var(--sq-fg); }
+@media (min-width: 750px) {
+  .sq-q .sq-chips--moments { max-width: 720px; gap: 12px; }
+  .sq-chips--moments li { flex-basis: 165px; }
+  .sq-chip .sq-moment__label { font-size: 16px; }
+}
+/* phones keep a "hover" after a tap: only a real mouse hover draws the frame, so the frame always means "chosen" */
+@media (hover: none) {
+  :is(#root, body) .sq-section .sq-chip:hover:not([aria-pressed="true"]),
+  :is(#root, body) .sq-section .sq-tile:hover:not([aria-pressed="true"]),
+  :is(#root, body) .sq-section .sq-pop__tile:hover:not([aria-pressed="true"]) { border-color: transparent; }
+}
+/* the steps start below a sticky site header even when the browser scrolls to them itself */
+.sq-section { scroll-margin-top: 90px; }

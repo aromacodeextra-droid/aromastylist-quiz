@@ -53,14 +53,17 @@ for sheet, rows, names in SHEETS:
     gold = '#%02x%02x%02x' % tuple(int(v) for v in rgb[lum < 150].mean(0))
     for b, name in zip(boxes, names):
         crop = lum[b[0], b[1]]
+        ys, xs = np.where(crop < 200)                       # the drawing itself, without the blob margin
+        crop = crop[max(0, ys.min() - 4):ys.max() + 5, max(0, xs.min() - 4):xs.max() + 5]
         ch, cw = crop.shape
-        side = int(max(ch, cw) * 1.08)
-        canvas = np.full((side, side), 255.0)
-        oy, ox = (side - ch) // 2, (side - cw) // 2
-        canvas[oy:oy + ch, ox:ox + cw] = crop
-        # trace at 1000 px so curves stay smooth
-        big = np.asarray(Image.fromarray(canvas.astype(np.uint8)).resize((1000, 1000), Image.LANCZOS))
-        svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">'
+        k = 1000 / max(ch, cw)                               # trace with the long side at 1000 units
+        big = np.asarray(Image.fromarray(crop.astype(np.uint8)).resize((round(cw * k), round(ch * k)), Image.LANCZOS))
+        w, h = big.shape[1], big.shape[0]
+        # equal visual weight: every drawing covers the same share of its square (sqrt(w*h) = 66 % of the side),
+        # but never more than 96 % of it in either direction; a tall figure fills the height, a hammock the width
+        side = max(max(w, h) / 0.96, (w * h) ** 0.5 / 0.66)
+        vb = f'{-(side - w) / 2:.0f} {-(side - h) / 2:.0f} {side:.0f} {side:.0f}'
+        svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}">'
                f'<path fill="{gold}" fill-rule="evenodd" d="{trace(big >= 190)}"/></svg>')
         path = f'{OUT}/sq-icon-{name}.svg'
         with open(path, 'w') as f:

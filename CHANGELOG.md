@@ -1,5 +1,20 @@
 # Changelog
 
+## quiz-v3.19 (2026-10-02) — moments screen redesign (owner's 10 points)
+
+- Cards show only the icon and the name (hints removed; "Select all that apply." stays).
+- Seven equal cards, 144 px high, two columns on phones with Me-time centred in the last row; on desktop 165 px cards,
+  4 + 3, the grid never wider than 720 px.
+- Icons 72 px (were 40) in a fixed box, centred over the name; names in sans 15 px (16 px desktop), centred, in a
+  two-line area so icons and names line up across cards; 10 px between icon and name and between cards.
+- Icons re-balanced (`scripts/v3-icons.py`): each drawing covers the same share of its square, so the hammock and the
+  couple fill the width and single figures the height; the empty margins of the files are gone. Applies to all 19 icons.
+- Selected = gold frame + tick; card size never changes. On phones the frame no longer stays after a tap on an
+  unselected card (it was the browser's "hover"), on every screen.
+- A step never opens under a sticky site header: the quiz scrolls so Back and the step number sit below it.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
+  `assets/scent-quiz-aromastylist-taste.json`, `assets/sq-icon-*.svg` (19). e2e 123 / 123.
+
 ## quiz-v3.18 (2026-10-02) — Santal 33 on white
 
 - The Santal 33 tile had Le Labo's dark-grey studio background. The grey is now divided out and everything outside the

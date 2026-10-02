@@ -121,12 +121,24 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=next][data-q=taboos]');
     await page.waitForSelector('.sq-chips--moments');
     // v3.11: moments, nothing chosen beforehand, Continue waits for one; the office line appears only with Work & study
-    const m0 = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-chips--moments .sq-chip span')].map((e) => e.textContent),
+    const m0 = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-chips--moments .sq-moment__label')].map((e) => e.textContent),
       pressed: document.querySelectorAll('.sq-chips--moments [aria-pressed=true]').length, disabled: document.querySelector('[data-act=next][data-q=week]').disabled, office: !!document.querySelector('[data-a=office]') }));
     check(`${tag}: "Which moments would you like a fragrance for?" - 7 moments in the owner's order, none chosen, Continue waits, no office line yet`,
       m0.title === 'Which moments would you like a fragrance for?' && m0.labels.join('|') === 'Everyday & errands|Work & study|Evenings & dates|Special occasions|Home & family|Sport & active|Me-time' && m0.pressed === 0 && m0.disabled && !m0.office, JSON.stringify(m0));
+    // v3.19 layout: 7 equal cards, two columns on phones, Me-time centred in the last row, icon over a centred name, no hints
+    const lay = await page.evaluate(() => {
+      const cards = [...document.querySelectorAll('.sq-moment')].map((b) => b.getBoundingClientRect());
+      const box = document.querySelector('.sq-chips--moments').getBoundingClientRect(), last = cards[cards.length - 1];
+      const icons = [...document.querySelectorAll('.sq-moment__icon')].map((i) => i.getBoundingClientRect());
+      return { n: cards.length, w: [...new Set(cards.map((r) => Math.round(r.width)))], h: [...new Set(cards.map((r) => Math.round(r.height)))],
+        lastCentred: (() => { const row = cards.filter((r) => Math.round(r.top) === Math.round(last.top)); return Math.abs((row[0].left + row[row.length - 1].right) / 2 - (box.left + box.right) / 2) < 2; })(), icon: [...new Set(icons.map((r) => Math.round(r.width)))],
+        hints: document.querySelectorAll('.sq-chips--moments small').length, cols: new Set(cards.slice(0, 6).map((r) => Math.round(r.left))).size };
+    });
+    check(`${tag}: moments - 7 equal cards, Me-time centred, 72 px icons, no hints`, lay.n === 7 && lay.w.length === 1 && lay.h.length === 1 && lay.lastCentred && lay.icon.join() === '72' && !lay.hints && (vp.width > 700 || lay.cols === 2), JSON.stringify(lay));
     // work, evenings, everyday, events
     for (const row of [0, 3, 1, 4]) await page.click(`[data-act=moment][data-row="${row}"]`);
+    const same = await page.evaluate(() => [...new Set([...document.querySelectorAll('.sq-moment')].map((b) => Math.round(b.getBoundingClientRect().height)))].length === 1);
+    check(`${tag}: choosing moments does not change card sizes`, same);
     await page.click('[data-act=toggle][data-a=office]');
     check(`${tag}: after Work & study, "My workplace or classroom prefers subtle scents" appears and can be ticked`, (await page.getAttribute('[data-a=office]', 'aria-pressed')) === 'true');
     // taking Work & study away takes the office line (and its tick) with it; put both back
@@ -410,6 +422,24 @@ for (const vp of VIEWPORTS) {
   const personas = await page.$$eval('.sq-personas__list li', (l) => l.length);
   check('no-JS: "All scent personas" is static HTML (SEO)', personas === 18, `${personas} personas`);
   await page.screenshot({ path: `${SHOTS}/390-00-no-js.png`, fullPage: true });
+  await ctx.close();
+}
+
+// a sticky site header (as on the phone): every step starts below it, Back and the counter fully visible
+{
+  const ctx = await newContext({ viewport: { width: 390, height: 844 } });
+  const page = await ctx.newPage();
+  await page.goto(PAGE);
+  await page.addStyleTag({ content: '.hx-header{position:sticky;top:0;z-index:50;height:110px;background:#f3f0ea}' });
+  await page.click('[data-act=start]');
+  const tops = [];
+  for (const step of [() => choose(page, '[data-act=answer][data-a=her]'), () => page.click('[data-act=no-ref]')]) {
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await step();
+    await page.waitForTimeout(150);
+    tops.push(await page.evaluate(() => ({ back: Math.round(document.querySelector('.sq-top').getBoundingClientRect().top), header: Math.round(document.querySelector('.hx-header').getBoundingClientRect().bottom) })));
+  }
+  check('390: with a sticky site header each step opens with Back and the counter below it', tops.every((t) => t.back >= t.header), JSON.stringify(tops));
   await ctx.close();
 }
 

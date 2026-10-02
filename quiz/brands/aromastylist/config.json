@@ -422,49 +422,42 @@
         {
           "id": "work-study",
           "label": "Work & study",
-          "hint": "Office, classes, meetings",
           "rank": 1,
           "slot": "work"
         },
         {
           "id": "everyday-errands",
           "label": "Everyday & errands",
-          "hint": "Out and about by day",
           "rank": 0,
           "slot": "everyday"
         },
         {
           "id": "family-home",
           "label": "Home & family",
-          "hint": "Cosy time at home",
           "rank": 4,
           "slot": "relax"
         },
         {
           "id": "evenings-dates",
           "label": "Evenings & dates",
-          "hint": "Dinners, going out",
           "rank": 2,
           "slot": "evening"
         },
         {
           "id": "events-celebrations",
           "label": "Special occasions",
-          "hint": "Weddings, parties, holidays",
           "rank": 3,
           "slot": "special"
         },
         {
           "id": "sport",
           "label": "Sport & active",
-          "hint": "Gym, walks, outdoors",
           "rank": 5,
           "slot": "move"
         },
         {
           "id": "time-for-me-growth",
           "label": "Me-time",
-          "hint": "Rest and self-care",
           "rank": 6,
           "slot": "harmony"
         }
