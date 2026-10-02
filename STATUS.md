@@ -4,14 +4,15 @@ Last saved: 2026-10-02, version **quiz-v3.32**, branch `quiz-v3` (pushed to GitH
 
 ## Preview
 
-- **Live** (published by the owner on 2026-10-02): the former copy "Xtra – scent quiz (copy of live, 2026-09-30)",
-  id `189533225240`, now MAIN. https://aromastylist.com/pages/find-your-perfume serves v3.31.
-- **Theme update** (Xtra 8.3.0, unpublished): "Updated copy of Xtra – scent quiz…", id `189581852952`. Shopify
-  carried all 106 quiz files and `templates/page.find-your-perfume.json` over; checked by md5 / JSON compare on
-  2026-10-02, nothing to re-upload. Preview: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189581852952
-  (needs admin login). The owner publishes it herself; after that, upload future versions to `189581852952`.
-  v3.32 (static intro + FAQ for search engines) is uploaded to `189581852952` only; the live theme stays at v3.31
-  until the owner publishes the update.
+- **Live** (published by the owner on 2026-10-02, 17:40 UTC): the theme update "Updated copy of Xtra – scent quiz…",
+  Xtra 8.3.0, id `189581852952`, now MAIN with quiz v3.31. The earlier quiz theme `189533225240` is no longer live.
+- **Working copy** (unpublished): "Xtra 8.3.0 – scent quiz v3.32 SEO (copy of live, 2026-10-02)", id
+  `189582835992`, duplicated from the live theme via `themeDuplicate` and holding v3.32 (section, js, css checked by md5).
+  Preview: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189582835992 (needs admin login).
+  Upload future versions here until the owner publishes it. Note: `themeFilesUpsert` to a theme that is still
+  `processing` after duplication is silently overwritten; wait for `processing: false`, then upload. A schema
+  header longer than 50 characters is rejected only when the body is sent as TEXT; with a URL body the file
+  silently keeps its old content, so always compare md5 after an upload.
 - The rest of the site is untouched.
 - The copy holds exactly the repo files of v3.31, checked by md5 on 2026-10-02: 96 files from `theme-files/`
   (sections, js, css, two JSON files, 59 bottle images, 22 owner icons, 18 style photos (men's, women's, Unisex couples)) plus `templates/page.find-your-perfume.json` =
@@ -70,7 +71,7 @@ node scripts/build-page-template.cjs      # docs/theme-copy/page.find-your-perfu
 node tests/search.mjs && node tests/combinations.mjs && node tests/e2e.mjs
 ```
 
-Upload: Shopify Admin `themeFilesUpsert` on theme `189533225240` with body `{type: URL}` pointing to
+Upload: Shopify Admin `themeFilesUpsert` on the working copy (id in "Preview" above) with body `{type: URL}` pointing to
 `raw.githubusercontent.com/aromacodeextra-droid/aromastylist-quiz/<commit>/theme-files/...` (and
 `docs/theme-copy/page.find-your-perfume.json` for `templates/page.find-your-perfume.json` whenever a question title or
 answer label changes, because the section blocks there override the config). Then compare `checksumMd5` with local md5.
