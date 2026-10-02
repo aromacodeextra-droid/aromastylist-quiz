@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "hide_mobile": false
+      }
+    },
+    "main-article": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1",
+            "show_banner": true,
+            "overlay_opacity": 25,
+            "color_palette": "",
+            "show_date": true,
+            "show_author": true,
+            "show_article_reading_time": true
+          }
+        },
+        "excerpt": {
+          "type": "excerpt",
+          "settings": {}
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "tags": {
+          "type": "tags",
+          "settings": {}
+        },
+        "comments": {
+          "type": "comments",
+          "settings": {}
+        },
+        "spacer": {
+          "type": "spacer",
+          "settings": {
+            "height": 20
+          }
+        },
+        "share": {
+          "type": "share_buttons",
+          "settings": {
+            "share_whatsapp": true,
+            "share_facebook": true,
+            "share_twitter": true,
+            "share_pinterest": true,
+            "share_messenger": true,
+            "share_email": true
+          }
+        }
+      },
+      "block_order": ["title", "excerpt", "content", "tags", "comments", "spacer", "share"],
+      "settings": {
+        "big_fontsize": true,
+        "compact": true
+      }
+    }
+  },
+  "order": ["breadcrumbs", "main-article"]
+}
