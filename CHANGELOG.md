@@ -1,5 +1,13 @@
 # Changelog
 
+## quiz-v3.20 (2026-10-02) — icons for "How do you wear perfume?"
+
+- The owner's bottle icons: One bottle (one bottle), Day & night (two bottles, sun and moon), A full wardrobe (three
+  bottles, briefcase / heart / sparkle), traced like the others (`icons-src/how.png`).
+- Tile names are never hyphenated any more ("ONE BOT-TLE" -> "ONE BOTTLE" on two lines).
+- New theme files: `assets/sq-icon-how-{one-bottle,day-night,full-wardrobe}.svg`. Changed: `assets/scent-quiz.css`,
+  `assets/scent-quiz-aromastylist.json`, `assets/scent-quiz-aromastylist-taste.json`. e2e 123 / 123.
+
 ## quiz-v3.19 (2026-10-02) — moments screen redesign (owner's 10 points)
 
 - Cards show only the icon and the name (hints removed; "Select all that apply." stays).

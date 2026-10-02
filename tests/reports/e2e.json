@@ -17,7 +17,7 @@
     {
       "name": "390-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=d821f14b"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=1b9af1bc"
     },
     {
       "name": "390-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -100,7 +100,7 @@
     {
       "name": "390-A: For Her sees the women's style photos, never the men's",
       "ok": true,
-      "detail": "sq-photo-style-classic-her.webp?v=d821f14b, sq-photo-style-dramatic-her.webp?v=d821f14b, sq-photo-style-romantic-her.webp?v=d821f14b, sq-photo-style-minimal-her.webp?v=d821f14b, sq-photo-style-casual-her.webp?v=d821f14b, sq-photo-style-sporty-her.webp?v=d821f14b"
+      "detail": "sq-photo-style-classic-her.webp?v=1b9af1bc, sq-photo-style-dramatic-her.webp?v=1b9af1bc, sq-photo-style-romantic-her.webp?v=1b9af1bc, sq-photo-style-minimal-her.webp?v=1b9af1bc, sq-photo-style-casual-her.webp?v=1b9af1bc, sq-photo-style-sporty-her.webp?v=1b9af1bc"
     },
     {
       "name": "390-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
@@ -180,7 +180,7 @@
     {
       "name": "390-B: For Him sees the owner's style photos",
       "ok": true,
-      "detail": "sq-photo-style-classic-him.webp?v=d821f14b, sq-photo-style-dramatic-him.webp?v=d821f14b, sq-photo-style-romantic-him.webp?v=d821f14b, sq-photo-style-minimal-him.webp?v=d821f14b, sq-photo-style-casual-him.webp?v=d821f14b, sq-photo-style-sporty-him.webp?v=d821f14b"
+      "detail": "sq-photo-style-classic-him.webp?v=1b9af1bc, sq-photo-style-dramatic-him.webp?v=1b9af1bc, sq-photo-style-romantic-him.webp?v=1b9af1bc, sq-photo-style-minimal-him.webp?v=1b9af1bc, sq-photo-style-casual-him.webp?v=1b9af1bc, sq-photo-style-sporty-him.webp?v=1b9af1bc"
     },
     {
       "name": "390-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
@@ -236,7 +236,7 @@
     {
       "name": "1440-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=d821f14b"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=1b9af1bc"
     },
     {
       "name": "1440-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -319,7 +319,7 @@
     {
       "name": "1440-A: For Her sees the women's style photos, never the men's",
       "ok": true,
-      "detail": "sq-photo-style-classic-her.webp?v=d821f14b, sq-photo-style-dramatic-her.webp?v=d821f14b, sq-photo-style-romantic-her.webp?v=d821f14b, sq-photo-style-minimal-her.webp?v=d821f14b, sq-photo-style-casual-her.webp?v=d821f14b, sq-photo-style-sporty-her.webp?v=d821f14b"
+      "detail": "sq-photo-style-classic-her.webp?v=1b9af1bc, sq-photo-style-dramatic-her.webp?v=1b9af1bc, sq-photo-style-romantic-her.webp?v=1b9af1bc, sq-photo-style-minimal-her.webp?v=1b9af1bc, sq-photo-style-casual-her.webp?v=1b9af1bc, sq-photo-style-sporty-her.webp?v=1b9af1bc"
     },
     {
       "name": "1440-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
@@ -399,7 +399,7 @@
     {
       "name": "1440-B: For Him sees the owner's style photos",
       "ok": true,
-      "detail": "sq-photo-style-classic-him.webp?v=d821f14b, sq-photo-style-dramatic-him.webp?v=d821f14b, sq-photo-style-romantic-him.webp?v=d821f14b, sq-photo-style-minimal-him.webp?v=d821f14b, sq-photo-style-casual-him.webp?v=d821f14b, sq-photo-style-sporty-him.webp?v=d821f14b"
+      "detail": "sq-photo-style-classic-him.webp?v=1b9af1bc, sq-photo-style-dramatic-him.webp?v=1b9af1bc, sq-photo-style-romantic-him.webp?v=1b9af1bc, sq-photo-style-minimal-him.webp?v=1b9af1bc, sq-photo-style-casual-him.webp?v=1b9af1bc, sq-photo-style-sporty-him.webp?v=1b9af1bc"
     },
     {
       "name": "1440-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
@@ -927,8 +927,8 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16545,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59127,
-      "assets/scent-quiz.css": 28752,
+      "assets/scent-quiz-aromastylist.json": 59060,
+      "assets/scent-quiz.css": 28770,
       "assets/scent-quiz.js": 53806,
       "assets/sq-icon-feel-attractive.svg": 5179,
       "assets/sq-icon-feel-calm.svg": 6815,
@@ -939,6 +939,9 @@
       "assets/sq-icon-for-both.svg": 7019,
       "assets/sq-icon-for-her.svg": 5538,
       "assets/sq-icon-for-him.svg": 4435,
+      "assets/sq-icon-how-day-night.svg": 4954,
+      "assets/sq-icon-how-full-wardrobe.svg": 7466,
+      "assets/sq-icon-how-one-bottle.svg": 1543,
       "assets/sq-icon-matters-easy.svg": 3559,
       "assets/sq-icon-matters-trending.svg": 2883,
       "assets/sq-icon-matters-unique.svg": 3595,
@@ -1021,7 +1024,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 191409,
+    "code_total": 191360,
     "images": 71,
     "images_total": 1110654
   }

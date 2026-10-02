@@ -342,7 +342,7 @@
 /* the persona list waits until the result */
 html.sq-asking .sq-section--personas { display: none; }
 /* long words in tile labels wrap instead of running out of the tile */
-.sq-tile__label { overflow-wrap: anywhere; hyphens: auto; }
+.sq-tile__label { overflow-wrap: normal; word-break: normal; hyphens: manual; } /* a word is never cut ("ONE BOT-TLE") */
 .sq-icon-sm { display: inline-block; width: 28px; height: 28px; margin-right: 8px; vertical-align: middle; object-fit: contain; }
 .sq-chip .sq-icon-sm { display: block; margin: 0 auto 4px; }
 

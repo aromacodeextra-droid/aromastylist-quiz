@@ -18,6 +18,7 @@ SHEETS = [
                         'week-events-celebrations', 'week-sport', 'week-time-for-me-growth']),
     ('matters.png', 1, ['matters-easy', 'matters-trending', 'matters-unique']),
     ('for.png', 1, ['for-her', 'for-him', 'for-both']),
+    ('how.png', 1, ['how-one-bottle', 'how-day-night', 'how-full-wardrobe'], 40),  # bottles + sun / moon belong together
 ]
 
 
@@ -41,10 +42,10 @@ def inside(a, b):
     return a != b and a[0].start >= b[0].start and a[0].stop <= b[0].stop and a[1].start >= b[1].start and a[1].stop <= b[1].stop
 
 
-for sheet, rows, names in SHEETS:
+for sheet, rows, names, *grow in SHEETS:
     rgb = np.asarray(Image.open(f'{SRC}/{sheet}').convert('RGB')).astype(float)
     lum = rgb.mean(2)
-    lab, _ = ndimage.label(ndimage.binary_dilation(lum < 200, iterations=25))
+    lab, _ = ndimage.label(ndimage.binary_dilation(lum < 200, iterations=grow[0] if grow else 25))
     boxes = [b for b in ndimage.find_objects(lab) if (b[0].stop - b[0].start) * (b[1].stop - b[1].start) > 5000]
     boxes = [a for a in boxes if not any(inside(a, b) for b in boxes)]  # a star inside a bottle is part of it
     h = rgb.shape[0]
