@@ -1,5 +1,21 @@
 # Changelog
 
+## quiz-v3.9 (2026-10-02) — review round, stage 1: general
+
+- One-answer screens no longer jump ahead: a tap selects (a second tap on another answer replaces it), Continue moves
+  on. The last step ends with **See my matches**.
+- Every question says how many to pick: "Pick one." on Who / How / Reach / What matters / Style; the others already
+  said "Pick up to two." / "Select all that apply." / "Pick every season that fits.".
+- Counter "1/2 selected". A third tap on "How do you want to feel" is not taken silently: "You can pick 2. Tap one to
+  change it."
+- Serif only for the questions; perfume names, taboo answers and week rows in the theme's sans, dark.
+- The page's own sections below the quiz (image banners, collections) are hidden while a question is on screen and come
+  back under the result (they stay in the page HTML).
+- Bottle images carry a version (`?v=`), so a replaced image (e.g. 1 Million) reaches phones at once.
+- Tighter title / hint / Continue spacing.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
+  `assets/scent-quiz-aromastylist-taste.json` (image version). e2e 94 / 94.
+
 ## quiz-v3.8 (2026-10-02) — UX step 4: all screens
 
 - Counter "4 / 10" instead of "QUESTION 4 OF 10".

@@ -1,9 +1,19 @@
 {
   "checks": [
     {
+      "name": "390-A: one-answer screen stays after a tap (\"Pick one.\", Continue enabled), page sections below hidden while asking",
+      "ok": true,
+      "detail": "{\"still\":true,\"pressed\":\"true\",\"hint\":\"Pick one.\",\"enabled\":true,\"pageHidden\":true}"
+    },
+    {
       "name": "390-A: 12 bottle tiles under the name box",
       "ok": true,
       "detail": "12 tiles"
+    },
+    {
+      "name": "390-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
+      "ok": true,
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=1774ef40"
     },
     {
       "name": "390-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -30,6 +40,11 @@
       "detail": "{\"anc\":[\"DIV#root.:hidden:relative\",\"BODY#.:clip visible:static\",\"HTML#.js sq-asking:hidden auto:static\"],\"rt\":776.015625,\"ih\":844,\"inView\":true,\"step\":\"4 / 10\",\"personas\":\"none\"}"
     },
     {
+      "name": "390-A: a third feeling is not taken silently: \"You can pick 2\" message, the two stay",
+      "ok": true,
+      "detail": "{\"calm\":\"false\",\"msg\":\"You can pick 2. Tap one to change it.\"}"
+    },
+    {
       "name": "390-A: \"How far should it reach?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
       "ok": true,
       "detail": "{\"title\":\"How far should it reach?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
@@ -40,7 +55,11 @@
       "detail": "{\"title\":\"When will you wear it?\",\"labels\":[\"Winter\",\"Spring\",\"Summer\",\"Fall\",\"All year\"],\"icons\":5}"
     },
     {
-      "name": "390-A: persona list is back under the result",
+      "name": "390-A: last step ends with \"See my matches\"",
+      "ok": true
+    },
+    {
+      "name": "390-A: persona list and the page's own sections are back under the result",
       "ok": true
     },
     {
@@ -138,9 +157,19 @@
       "ok": true
     },
     {
+      "name": "1440-A: one-answer screen stays after a tap (\"Pick one.\", Continue enabled), page sections below hidden while asking",
+      "ok": true,
+      "detail": "{\"still\":true,\"pressed\":\"true\",\"hint\":\"Pick one.\",\"enabled\":true,\"pageHidden\":true}"
+    },
+    {
       "name": "1440-A: 12 bottle tiles under the name box",
       "ok": true,
       "detail": "12 tiles"
+    },
+    {
+      "name": "1440-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
+      "ok": true,
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=1774ef40"
     },
     {
       "name": "1440-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -167,6 +196,11 @@
       "detail": "{\"anc\":[\"BODY#.:clip visible:static\",\"HTML#.js sq-asking:hidden auto:static\"],\"rt\":832.015625,\"ih\":900,\"inView\":true,\"step\":\"4 / 10\",\"personas\":\"none\"}"
     },
     {
+      "name": "1440-A: a third feeling is not taken silently: \"You can pick 2\" message, the two stay",
+      "ok": true,
+      "detail": "{\"calm\":\"false\",\"msg\":\"You can pick 2. Tap one to change it.\"}"
+    },
+    {
       "name": "1440-A: \"How far should it reach?\" = 3 growing-dot answers, no \"Strong scents bother me\" switch",
       "ok": true,
       "detail": "{\"title\":\"How far should it reach?\",\"labels\":[\"Close to skin\",\"Moderate\",\"Strong\"],\"dots\":[1,2,3],\"strong\":false}"
@@ -177,7 +211,11 @@
       "detail": "{\"title\":\"When will you wear it?\",\"labels\":[\"Winter\",\"Spring\",\"Summer\",\"Fall\",\"All year\"],\"icons\":5}"
     },
     {
-      "name": "1440-A: persona list is back under the result",
+      "name": "1440-A: last step ends with \"See my matches\"",
+      "ok": true
+    },
+    {
+      "name": "1440-A: persona list and the page's own sections are back under the result",
       "ok": true
     },
     {
@@ -287,7 +325,7 @@
     {
       "name": "390: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 795 -> 795"
+      "detail": "scrollY 565 -> 565"
     },
     {
       "name": "390: a second tap on a chosen tile takes it back out",
@@ -321,7 +359,7 @@
     {
       "name": "1440: tapping a tile keeps the place on the page and opens no keyboard",
       "ok": true,
-      "detail": "scrollY 87 -> 87"
+      "detail": "scrollY 105 -> 105"
     },
     {
       "name": "1440: a second tap on a chosen tile takes it back out",
@@ -395,10 +433,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.5 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 22.6 KB, assets/scent-quiz.js 48.8 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.9 KB, assets/scent-quiz.css 23.3 KB, assets/scent-quiz.js 49.4 KB"
     },
     {
-      "name": "JS + CSS + JSON 177.6 KB <= 200 KB",
+      "name": "JS + CSS + JSON 179.1 KB <= 200 KB",
       "ok": true
     },
     {
@@ -757,10 +795,10 @@
       "sections/scent-quiz-personas.liquid": 2659,
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16494,
-      "assets/scent-quiz-aromastylist-taste.json": 49706,
-      "assets/scent-quiz-aromastylist.json": 59083,
-      "assets/scent-quiz.css": 23140,
-      "assets/scent-quiz.js": 49974,
+      "assets/scent-quiz-aromastylist-taste.json": 49724,
+      "assets/scent-quiz-aromastylist.json": 59285,
+      "assets/scent-quiz.css": 23812,
+      "assets/scent-quiz.js": 50615,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -821,7 +859,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 181903,
+    "code_total": 183436,
     "images": 59,
     "images_total": 891710
   }

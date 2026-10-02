@@ -173,6 +173,7 @@
       "id": "for",
       "type": "single",
       "title": "Who is it for?",
+      "subtitle": "Pick one.",
       "answers": [
         {
           "id": "her",
@@ -451,6 +452,7 @@
       "id": "how",
       "type": "single",
       "title": "How do you wear perfume?",
+      "subtitle": "Pick one.",
       "answers": [
         {
           "id": "one-bottle",
@@ -549,6 +551,7 @@
       "id": "presence",
       "type": "single",
       "title": "How far should it reach?",
+      "subtitle": "Pick one.",
       "answers": [
         {
           "id": "close",
@@ -572,6 +575,7 @@
       "id": "matters",
       "type": "single",
       "title": "What matters most?",
+      "subtitle": "Pick one.",
       "answers": [
         {
           "id": "easy",
@@ -661,6 +665,7 @@
       "id": "style",
       "type": "single",
       "title": "Which style is most you?",
+      "subtitle": "Pick one.",
       "answers": [
         {
           "id": "classic",
@@ -1083,7 +1088,9 @@
     "shared_cta": "Take the quiz",
     "start_over": "Start over",
     "next": "Continue",
-    "multi_count": "{n} of {max} chosen",
+    "multi_count": "{n}/{max} selected",
+    "multi_full": "You can pick {max}. Tap one to change it.",
+    "see_matches": "See my matches",
     "search_label": "Type a perfume name",
     "popular_title": "Or tap one of these",
     "on_our_shelf": "on our shelf",

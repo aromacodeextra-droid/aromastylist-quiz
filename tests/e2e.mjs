@@ -21,6 +21,14 @@ fs.mkdirSync('tests/reports', { recursive: true });
 const VIEWPORTS = [{ name: '390', width: 390, height: 844 }, { name: '1440', width: 1440, height: 900 }];
 
 const report = { checks: [], runs: [], cart_payloads: [] };
+// one-answer screens: tap the answer, then Continue (no auto-advance since v3.9)
+// a full-page capture would freeze the floating Continue mid-page: show it in its place for the capture
+const fullShot = async (page, file) => {
+  await page.evaluate(() => { const st = document.createElement('style'); st.id = 'sq-shot'; st.textContent = '.sq-next.is-floating{position:static!important;box-shadow:none!important;padding:0!important}'; document.head.append(st); });
+  await page.screenshot({ path: file, fullPage: true });
+  await page.evaluate(() => document.getElementById('sq-shot')?.remove());
+};
+const choose = async (page, sel) => { await page.click(sel); await page.click('[data-act=next]'); };
 const check = (name, ok, detail) => {
   report.checks.push({ name, ok: !!ok, detail });
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ' - ' + detail : ''}`);
@@ -57,11 +65,7 @@ const resultState = (page) => page.evaluate(() => ({
 }));
 
 for (const vp of VIEWPORTS) {
-  const shot = async (page, name) => { await settle(page);
-    // a full-page capture would freeze the floating Continue mid-page: show it in its place for the capture
-    await page.evaluate(() => { const st = document.createElement('style'); st.id = 'sq-shot'; st.textContent = '.sq-next.is-floating{position:static!important;box-shadow:none!important;padding:0!important}'; document.head.append(st); });
-    await page.screenshot({ path: `${SHOTS}/${vp.name}-${name}.png`, fullPage: true });
-    await page.evaluate(() => document.getElementById('sq-shot')?.remove()); };
+  const shot = async (page, name) => { await settle(page); await fullShot(page, `${SHOTS}/${vp.name}-${name}.png`); };
   // ---------------------------------------------------------------- run A: with a named perfume
   {
     const tag = `${vp.name}-A`;
@@ -76,10 +80,18 @@ for (const vp of VIEWPORTS) {
     await shot(page, '01-intro');
     await page.click('[data-act=start]');
     await shot(page, '02-for');
+    // v3.9: a tap selects, Continue moves on; the page's own sections wait while a question is on screen
     await page.click('[data-act=answer][data-a=her]');
+    const v39 = await page.evaluate(() => ({ still: !!document.querySelector('.sq-q[data-q=for]'), pressed: document.querySelector('[data-a=her]').getAttribute('aria-pressed'),
+      hint: document.querySelector('.sq-q .sq-sub')?.textContent, enabled: !document.querySelector('[data-act=next][data-q=for]').disabled,
+      pageHidden: getComputedStyle(document.querySelector('[data-existing-content]')).display === 'none' }));
+    check(`${tag}: one-answer screen stays after a tap ("Pick one.", Continue enabled), page sections below hidden while asking`, v39.still && v39.pressed === 'true' && v39.hint === 'Pick one.' && v39.enabled && v39.pageHidden, JSON.stringify(v39));
+    await page.click('[data-act=next][data-q=for]');
     await page.waitForSelector('.sq-pop__tile');
     const tiles = await page.$$eval('.sq-pop__tile', (l) => l.length);
     check(`${tag}: 12 bottle tiles under the name box`, tiles === 12, `${tiles} tiles`);
+    const imgSrc = await page.getAttribute('.sq-pop__tile img', 'src');
+    check(`${tag}: bottle images carry a version (?v=), so a replaced image reaches phones at once`, /sq-ref-.*\.webp\?v=[0-9a-f]{8}$/.test(imgSrc), imgSrc);
     await shot(page, '03-ref');
     await page.fill('[data-sq-search]', 'bacarat');
     await page.waitForSelector('.sq-result-item');
@@ -121,22 +133,25 @@ for (const vp of VIEWPORTS) {
     await page.screenshot({ path: `${SHOTS}/${vp.name}-05b-week-viewport.png` });
     await page.click('[data-act=next][data-q=week]');
     await shot(page, '06-how');
-    await page.click('[data-act=answer][data-a=full-wardrobe]');
+    await choose(page, '[data-act=answer][data-a=full-wardrobe]');
     await page.click('[data-act=toggle][data-a=confident]');
     await page.click('[data-act=toggle][data-a=attractive]');
+    await page.click('[data-act=toggle][data-a=calm]');
+    const limit = await page.evaluate(() => ({ calm: document.querySelector('[data-a=calm]').getAttribute('aria-pressed'), msg: document.querySelector('[data-sq-count]').textContent }));
+    check(`${tag}: a third feeling is not taken silently: "You can pick 2" message, the two stay`, limit.calm === 'false' && /You can pick 2/.test(limit.msg), JSON.stringify(limit));
     await shot(page, '07-feel');
     // back button: back to "how", forward again
     await page.click('[data-act=back]');
     await page.waitForSelector('[data-act=answer][data-a=full-wardrobe][aria-pressed=true]');
-    await page.click('[data-act=answer][data-a=full-wardrobe]');
+    await choose(page, '[data-act=answer][data-a=full-wardrobe]');
     await page.click('[data-act=next][data-q=feel]');
     const reach = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-tile__label')].map((e) => e.textContent),
       dots: [...document.querySelectorAll('.sq-tile .sq-dots')].map((d) => d.querySelectorAll('.sq-dot.is-on').length), strong: !!document.querySelector('[data-a=strong]') }));
     check(`${tag}: "How far should it reach?" = 3 growing-dot answers, no "Strong scents bother me" switch`, reach.title === 'How far should it reach?' && reach.labels.join('|') === 'Close to skin|Moderate|Strong' && reach.dots.join('') === '123' && !reach.strong, JSON.stringify(reach));
     await shot(page, '08-presence');
-    await page.click('[data-act=answer][data-a=noticed]');
+    await choose(page, '[data-act=answer][data-a=noticed]');
     await shot(page, '09-matters');
-    await page.click('[data-act=answer][data-a=easy]');
+    await choose(page, '[data-act=answer][data-a=easy]');
     await shot(page, '10-climate');
     const seasons = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-tile__label')].map((e) => e.textContent), icons: document.querySelectorAll('.sq-tile svg.sq-icon, .sq-tile img.sq-icon').length }));
     check(`${tag}: "When will you wear it?" = 5 season icons, several can be chosen`, seasons.title === 'When will you wear it?' && seasons.labels.join('|') === 'Winter|Spring|Summer|Fall|All year' && seasons.icons === 5, JSON.stringify(seasons));
@@ -144,11 +159,12 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=toggle][data-a=winter]');
     await page.click('[data-act=next][data-q=climate]');
     await shot(page, '11-style');
-    await page.click('[data-act=answer][data-a=classic]');
+    check(`${tag}: last step ends with "See my matches"`, (await page.textContent('[data-act=next][data-q=style]')).trim() === 'See my matches');
+    await choose(page, '[data-act=answer][data-a=classic]');
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
     await shot(page, '12-result-A');
-    check(`${tag}: persona list is back under the result`, await page.evaluate(() => getComputedStyle(document.querySelector('.sq-section--personas')).display !== 'none'));
+    check(`${tag}: persona list and the page's own sections are back under the result`, await page.evaluate(() => getComputedStyle(document.querySelector('.sq-section--personas')).display !== 'none' && getComputedStyle(document.querySelector('[data-existing-content]')).display !== 'none'));
     check(`${tag}: one card per slot, biggest first`, st.items.length === 4 && st.slots[0] === 'Work & Presence' && st.slots[1] === 'Evening & Seduction', st.slots.join(', '));
     check(`${tag}: >= 2 houses, no repeats`, new Set(st.houses).size >= 2 && new Set(st.items.map((i) => i.handle)).size === st.items.length, st.houses.join(', '));
     check(`${tag}: persona, scent profile (3 families), why-lines all different`, st.persona && st.profile === 3 && new Set(st.why).size === st.why.length && st.why.length === st.items.length, st.persona);
@@ -202,7 +218,7 @@ for (const vp of VIEWPORTS) {
     page.on('pageerror', (e) => errors.push(e.message));
     await page.goto(PAGE);
     await page.click('[data-act=start]');
-    await page.click('[data-act=answer][data-a=him]');
+    await choose(page, '[data-act=answer][data-a=him]');
     await page.click('[data-act=no-ref]');
     await page.waitForSelector('[data-act=toggle][data-a=woods]');
     for (const f of ['woods', 'citrus', 'spices']) await page.click(`[data-act=toggle][data-a=${f}]`);
@@ -211,14 +227,14 @@ for (const vp of VIEWPORTS) {
     await page.click('[data-act=next][data-q=taboos]'); // nothing ticked
     for (const [row, lv] of [[1, 2], [3, 1], [5, 1]]) await page.click(`[data-act=level][data-row="${row}"][data-lv="${lv}"]`);
     await page.click('[data-act=next][data-q=week]');
-    await page.click('[data-act=answer][data-a=day-night]');
+    await choose(page, '[data-act=answer][data-a=day-night]');
     await page.click('[data-act=toggle][data-a=free]');
     await page.click('[data-act=next][data-q=feel]');
-    await page.click('[data-act=answer][data-a=close]');
-    await page.click('[data-act=answer][data-a=unique]');
+    await choose(page, '[data-act=answer][data-a=close]');
+    await choose(page, '[data-act=answer][data-a=unique]');
     await page.click('[data-act=toggle][data-a=summer]');
     await page.click('[data-act=next][data-q=climate]');
-    await page.click('[data-act=answer][data-a=sporty]');
+    await choose(page, '[data-act=answer][data-a=sporty]');
     await page.waitForSelector('.sq-result');
     const st = await resultState(page);
     await shot(page, '12-result-B');
@@ -261,7 +277,7 @@ for (const vp of VIEWPORTS) {
     for (const [who, want] of [['her', 'F'], ['him', 'M'], ['both', 'U']]) {
       await page.goto(PAGE);
       await page.click('[data-act=start]');
-      await page.click(`[data-act=answer][data-a=${who}]`);
+      await choose(page, `[data-act=answer][data-a=${who}]`);
       await page.waitForSelector('.sq-pop__tile');
       const ids = await page.$$eval('.sq-pop__tile', (l) => l.map((b) => b.dataset.id));
       const imgs = await page.$$eval('.sq-pop__tile img', (l) => l.length);
@@ -269,7 +285,7 @@ for (const vp of VIEWPORTS) {
       const wrong = ids.filter((id) => G[id] !== want);
       check(`${vp.name}: screen 2 tiles for "${who}" are all ${want === 'F' ? 'feminine' : want === 'M' ? 'masculine' : 'unisex'}`, ids.length === 12 && imgs === 12 && !wrong.length, wrong.length ? 'wrong: ' + wrong.join(', ') : ids.slice(0, 4).join(', ') + ' …');
       await settle(page);
-      await page.screenshot({ path: `${SHOTS}/${vp.name}-03-ref-tiles-${who}.png`, fullPage: true });
+      await fullShot(page, `${SHOTS}/${vp.name}-03-ref-tiles-${who}.png`);
       if (who === 'her') {
         const order = await page.evaluate(() => {
           const s = document.querySelector('[data-sq-search]'), t = document.querySelector('.sq-pop');
@@ -319,7 +335,7 @@ for (const vp of VIEWPORTS) {
     const set = await page.$eval('.sq-set [data-act=add-set]', (b) => b.dataset.handle).catch(() => null);
     const g = set ? SET_GENDER[set] : null;
     check(`set card for ${who}: ${set ? `${set} (${g})` : 'hidden'}`, (set ? allowed.includes(g) : true) && (!mustShow || !!set), allowed.join(' / ') + ' allowed');
-    if (who === 'her') await page.screenshot({ path: `${SHOTS}/390-16-set-card-her.png`, fullPage: true });
+    if (who === 'her') await fullShot(page, `${SHOTS}/390-16-set-card-her.png`);
   }
   await ctx.close();
 }
@@ -335,7 +351,7 @@ for (const vp of VIEWPORTS) {
   await page.click('.sq-card--slot > .sq-card__body > [data-act=add]');
   await page.waitForSelector('.sq-btn--done');
   await page.click('[data-act=restart]');
-  await page.click('[data-act=answer][data-a=her]');
+  await choose(page, '[data-act=answer][data-a=her]');
   const events = await page.evaluate(() => window.__sqEvents);
   const names = events.map((e) => e.name);
   for (const n of ['quiz_started', 'quiz_shared', 'quiz_add_to_cart']) check(`analytics: ${n} published`, names.includes(n));

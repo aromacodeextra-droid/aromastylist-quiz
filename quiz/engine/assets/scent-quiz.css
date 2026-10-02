@@ -345,3 +345,18 @@ html.sq-asking .sq-section--personas { display: none; }
 .sq-tile__label { overflow-wrap: anywhere; hyphens: auto; }
 .sq-icon-sm { display: inline-block; width: 28px; height: 28px; margin-right: 8px; vertical-align: middle; object-fit: contain; }
 .sq-chip .sq-icon-sm { display: block; margin: 0 auto 4px; }
+
+/* v3.9: serif only for questions; answers, rows and explanations in the theme's sans */
+.sq-chip span, .sq-week__label, .sq-pop__name, .sq-picked__name, .sq-result-item__name { font-family: var(--main_ff, inherit); color: var(--sq-fg); }
+.sq-chip span { font-size: 14px; font-weight: var(--btn_fw, 500); }
+.sq-week__label { font-size: 14px; font-weight: var(--btn_fw, 500); }
+.sq-pop__name { font-size: 13px; font-weight: var(--btn_fw, 500); line-height: 1.25; height: calc(3 * 1.25em); }
+.sq-picked__name, .sq-result-item__name { font-size: 15px; font-weight: var(--btn_fw, 500); }
+/* "you can pick two" when a third answer is tapped */
+.sq-next .sq-step.is-full { color: var(--sq-accent-dark); text-transform: none; letter-spacing: normal; font-size: 14px; }
+/* the page's own sections under the quiz wait until the result */
+.sq-page-wait { display: none !important; }
+/* tighter vertical rhythm */
+.sq-title { margin: 2px auto 6px; }
+.sq-sub { margin: 0 auto 16px; }
+.sq-next { margin-top: 16px; }

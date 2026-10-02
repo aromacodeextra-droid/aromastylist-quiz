@@ -1,4 +1,4 @@
-combinations: 28220 runs (A random 5000, 5000 distinct, B 36 popular tiles x taboos x seasons + the reported Him case 23220), 69902 slots, 37.0 s
+combinations: 28220 runs (A random 5000, 5000 distinct, B 36 popular tiles x taboos x seasons + the reported Him case 23220), 69902 slots, 35.1 s
 failures: none
   slot not filled                        0
   out of stock                           0

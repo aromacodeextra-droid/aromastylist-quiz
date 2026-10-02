@@ -6,6 +6,7 @@
 //   theme-files/templates/<brand>.scent-quiz.section.json  (both section entries with their blocks, for INSTALL.md)
 // Usage: node scripts/build-theme-files.mjs [brand]
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import { taste, FAMILIES, CANON, encVec } from './taste.mjs';
 import { minify } from 'terser';
@@ -124,6 +125,8 @@ const tasteFile = {
   popular: meta.popular_by_for,
   house_aliases: meta.house_aliases || {},
   refs,
+  // one short version for all bottle images: a changed image gets a new URL, so phones and the CDN do not keep the old one
+  imgv: (() => { const h = crypto.createHash('md5'); for (const f of fs.readdirSync(`${OUT}/assets`).filter((f) => /^sq-ref-.*\.webp$/.test(f)).sort()) h.update(f).update(fs.readFileSync(`${OUT}/assets/${f}`)); return h.digest('hex').slice(0, 8); })(),
 };
 
 // ---- config: placeholder images for answers without one (note families, styles): the most typical in-stock perfume

@@ -718,7 +718,7 @@
       if (!t || !self.app.contains(t)) return;
       var act = t.getAttribute('data-act'), qid = t.getAttribute('data-q');
       if (act === 'start') { publish(self.root, 'quiz_started', { quiz: self.config.id }); self.state = {}; self.go(0); }
-      else if (act === 'answer') { self.state[qid] = t.getAttribute('data-a'); self.advance(qid); }
+      else if (act === 'answer') self.pick(t);
       else if (act === 'toggle') self.toggle(t);
       else if (act === 'level') self.level(t);
       else if (act === 'next') self.advance(qid);
@@ -761,22 +761,34 @@
     this.qs.forEach(function (q) { if (!visible(self.model, self.state, q.id)) delete self.state[q.id]; });
     this.go(this.nextVisible(at));
   };
+  // one-answer screens: a tap selects (a second answer replaces it), Continue moves on
+  Quiz.prototype.pick = function (btn) {
+    var qid = btn.getAttribute('data-q'), id = btn.getAttribute('data-a');
+    this.state[qid] = id;
+    this.app.querySelectorAll('[data-act=answer][data-q="' + qid + '"]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-a') === id)); });
+    var next = this.app.querySelector('[data-act=next]');
+    if (next) next.disabled = false;
+  };
   Quiz.prototype.toggle = function (btn) {
     var qid = btn.getAttribute('data-q'), q = Q(this.config, qid), id = btn.getAttribute('data-a');
-    var cur = (this.state[qid] || []).slice(), at = cur.indexOf(id), a = findAnswer(q, id);
+    var cur = (this.state[qid] || []).slice(), at = cur.indexOf(id), a = findAnswer(q, id), full = false;
     var elsewhere = function (x) { var y = findAnswer(q, x); return !!(y && y.screen); };
     if (a && a.exclusive) cur = (at >= 0 ? [] : [id]).concat(cur.filter(elsewhere));
     else {
       cur = cur.filter(function (x) { var y = findAnswer(q, x); return !(y && y.exclusive && !a.screen); });
       if (at >= 0) cur.splice(cur.indexOf(id), 1);
       else if (cur.length < (q.max || 99)) cur.push(id);
+      else full = true;
     }
     this.state[qid] = cur;
     this.app.querySelectorAll('[data-act=toggle][data-q="' + qid + '"]').forEach(function (b) { b.setAttribute('aria-pressed', String(cur.indexOf(b.getAttribute('data-a')) >= 0)); });
     var next = this.app.querySelector('[data-act=next]');
     if (next) next.disabled = cur.length < (q.min || 0);
     var hint = this.app.querySelector('[data-sq-count]');
-    if (hint && q.max < 99) hint.textContent = fill(this.copy.multi_count, { n: cur.length, max: q.max });
+    if (hint && q.max < 99) {
+      hint.textContent = fill(full ? this.copy.multi_full : this.copy.multi_count, { n: cur.length, max: q.max });
+      hint.classList.toggle('is-full', full);
+    }
   };
   Quiz.prototype.level = function (btn) {
     var qid = btn.getAttribute('data-q'), row = +btn.getAttribute('data-row'), lv = +btn.getAttribute('data-lv');
@@ -787,7 +799,7 @@
   };
 
   // ---------------------------------------------------------------- perfume picker
-  Quiz.prototype.refImg = function (id) { return this.assetBase + 'sq-ref-' + id + '.webp'; };
+  Quiz.prototype.refImg = function (id) { var v = this.model.taste && this.model.taste.imgv; return this.assetBase + 'sq-ref-' + id + '.webp' + (v ? '?v=' + v : ''); };
   Quiz.prototype.index = function () { return this._index || (this._index = buildIndex(this.model)); };
   Quiz.prototype.addPerfume = function (qid, kind, id) {
     var q = Q(this.config, qid), cur = Array.isArray(this.state[qid]) ? this.state[qid].slice() : [];
@@ -831,7 +843,11 @@
   Quiz.prototype.render = function (html, focusSel) {
     this.app.innerHTML = html;
     // while a question is on screen the persona list below waits (it stays in the page for search engines)
-    document.documentElement.classList.toggle('sq-asking', !!this.app.querySelector('.sq-q'));
+    var asking = !!this.app.querySelector('.sq-q');
+    document.documentElement.classList.toggle('sq-asking', asking);
+    // the page's own sections below the quiz (banners, collections) wait until the result; they stay in the HTML
+    var sec = this.root.closest('.shopify-section');
+    for (var el = sec && sec.nextElementSibling; el; el = el.nextElementSibling) el.classList.toggle('sq-page-wait', asking);
     this.floatNext();
     if (this.keepScroll) return;
     if (this.root.getBoundingClientRect().top < 0) this.root.scrollIntoView({ block: 'start' });
@@ -919,7 +935,7 @@
         return '<li><button type="button" class="sq-tile" data-act="' + (multi ? 'toggle' : 'answer') + '" data-q="' + esc(q.id) + '" data-a="' + esc(a.id) + '" aria-pressed="' + (chosen.indexOf(a.id) >= 0) + '">' +
           '<span class="sq-tile__img">' + self.img(a, i < 2) + '</span><span class="sq-tile__label">' + esc(a.label) + '</span>' +
           (a.hint ? '<span class="sq-tile__hint">' + esc(a.hint) + '</span>' : '') + '</button></li>';
-      }).join('') + '</ul>' + (multi ? this.nextBtn(q, chosen.length, true) : '');
+      }).join('') + '</ul>' + this.nextBtn(q, chosen.length, multi);
       var sw = this.borrowed(q.id, null);
       if (sw) { if (!this.state.taboos) this.state.taboos = []; body = '<div class="sq-switches">' + sw + '</div>' + body; }
     }
@@ -927,7 +943,8 @@
   };
   Quiz.prototype.nextBtn = function (q, n, counter) {
     return '<div class="sq-next">' + (counter && q.max && q.max < (q.answers || []).length ? '<p class="sq-step" data-sq-count>' + esc(fill(this.copy.multi_count, { n: n, max: q.max })) + '</p>' : '') +
-      '<button type="button" class="sq-btn" data-act="next" data-q="' + esc(q.id) + '"' + (n < (q.min || 0) ? ' disabled' : '') + '>' + esc(this.copy.next) + '</button></div>';
+      '<button type="button" class="sq-btn" data-act="next" data-q="' + esc(q.id) + '"' + (n < (q.type === 'single' ? 1 : q.min || 0) ? ' disabled' : '') + '>' +
+      esc(this.nextVisible(this.qs.indexOf(q)) >= this.qs.length ? this.copy.see_matches || this.copy.next : this.copy.next) + '</button></div>';
   };
   Quiz.prototype.perfumeScreen = function (q) {
     var c = this.copy, self = this, cur = Array.isArray(this.state[q.id]) ? this.state[q.id] : [];
