@@ -218,7 +218,7 @@
           "type": "question",
           "settings": {
             "question_id": "for",
-            "title": "Who is it for?"
+            "title": "Which fragrances do you prefer?"
           }
         },
         "a_for_her": {
@@ -226,7 +226,7 @@
           "settings": {
             "question_id": "for",
             "answer_id": "her",
-            "label": "Her"
+            "label": "For Her"
           }
         },
         "a_for_him": {
@@ -234,7 +234,7 @@
           "settings": {
             "question_id": "for",
             "answer_id": "him",
-            "label": "Him"
+            "label": "For Him"
           }
         },
         "a_for_both": {

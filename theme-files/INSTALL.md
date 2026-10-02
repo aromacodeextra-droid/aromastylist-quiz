@@ -59,7 +59,7 @@ Blocks exist for the questions with image tiles. An empty picker shows the defau
 
 | Question id | Screen | Answer blocks (answer_id) |
 |---|---|---|
-| `for` | 1 Who is it for? | `her`, `him`, `both` |
+| `for` | 1 Which fragrances do you prefer? | `her`, `him`, `both` |
 | `notes` | 2b Which notes pull you in? (only after "I don't have one") | `citrus`, `green`, `aquatic`, `florals`, `white-florals`, `fruity`, `gourmand`, `woods`, `amber`, `oud-leather`, `spices`, `musk-powder` |
 | `how` | 5 How do you wear perfume? | `one-bottle`, `day-night`, `full-wardrobe` |
 | `feel` | 6 With it on, you want to feel… | `confident`, `attractive`, `calm`, `energised`, `festive`, `free` |

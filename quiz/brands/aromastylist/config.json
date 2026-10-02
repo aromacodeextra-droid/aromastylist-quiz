@@ -172,17 +172,17 @@
     {
       "id": "for",
       "type": "single",
-      "title": "Who is it for?",
+      "title": "Which fragrances do you prefer?",
       "subtitle": "Pick one.",
       "answers": [
         {
           "id": "her",
-          "label": "Her",
+          "label": "For Her",
           "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/232F799F-EEF2-4F0D-8771-EDBDE91E4E35.png"
         },
         {
           "id": "him",
-          "label": "Him",
+          "label": "For Him",
           "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/files/73DC8906-1DD4-4869-9014-8BBDA04BAE83.png"
         },
         {
@@ -304,8 +304,8 @@
       "answers": [
         {
           "id": "too-sweet",
-          "label": "Too sweet",
-          "hint": "Caramel, honey",
+          "label": "Very sweet",
+          "hint": "Caramel, honey, candy",
           "rule": {
             "notes": [
               "caramel",
@@ -319,7 +319,7 @@
         {
           "id": "powdery",
           "label": "Powdery",
-          "hint": "Iris, violet",
+          "hint": "Iris, violet, lipstick",
           "rule": {
             "notes": [
               "iris",
@@ -329,24 +329,9 @@
           }
         },
         {
-          "id": "heavy-oud-smoke",
-          "label": "Oud & smoke",
-          "hint": "Oud, incense",
-          "rule": {
-            "notes": [
-              "oud",
-              "smoke",
-              "incense",
-              "tobacco"
-            ],
-            "family": "oud_leather",
-            "max_share": 0.2
-          }
-        },
-        {
           "id": "big-florals",
-          "label": "Big florals",
-          "hint": "Tuberose, gardenia",
+          "label": "Intense florals",
+          "hint": "Tuberose, gardenia, ylang",
           "rule": {
             "notes": [
               "tuberose",
@@ -359,8 +344,8 @@
         },
         {
           "id": "shower-gel-fresh",
-          "label": "Too fresh",
-          "hint": "Sea notes, ozone",
+          "label": "Marine & ozonic",
+          "hint": "Sea air, watery fresh",
           "rule": {
             "notes": [
               "sea"
@@ -370,8 +355,30 @@
           }
         },
         {
+          "id": "heavy-oud-smoke",
+          "label": "Oud",
+          "hint": "Dark, resinous wood",
+          "rule": {
+            "notes": [
+              "oud"
+            ]
+          }
+        },
+        {
+          "id": "smoke-incense",
+          "label": "Smoke & incense",
+          "hint": "Campfire, church",
+          "rule": {
+            "notes": [
+              "smoke",
+              "incense"
+            ]
+          }
+        },
+        {
           "id": "coconut",
           "label": "Coconut",
+          "hint": "Beachy, like sun cream",
           "rule": {
             "notes": [
               "coconut"
@@ -381,6 +388,7 @@
         {
           "id": "patchouli",
           "label": "Patchouli",
+          "hint": "Earthy, damp woods",
           "rule": {
             "notes": [
               "patchouli"

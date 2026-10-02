@@ -360,3 +360,6 @@ html.sq-asking .sq-section--personas { display: none; }
 .sq-title { margin: 2px auto 6px; }
 .sq-sub { margin: 0 auto 16px; }
 .sq-next { margin-top: 16px; }
+/* the slot carries the spacing, so Continue floating or not never moves the slot (no flicker at the screen edge) */
+.sq-next-slot { margin-top: 16px; }
+.sq-next-slot > .sq-next { margin-top: 0; }

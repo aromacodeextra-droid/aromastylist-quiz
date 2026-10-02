@@ -35,6 +35,7 @@ const check = (name, ok, detail) => {
 };
 
 const server = spawn(process.execPath, ['harness/server.mjs', String(PORT)], { stdio: ['ignore', 'pipe', 'inherit'] });
+process.on('exit', () => server.kill()); // a failed run must not leave the harness holding the port
 await new Promise((res) => server.stdout.on('data', (d) => { if (String(d).includes('harness:')) res(); }));
 const browser = await chromium.launch();
 async function newContext(opts = {}) {
@@ -85,6 +86,7 @@ for (const vp of VIEWPORTS) {
     const v39 = await page.evaluate(() => ({ still: !!document.querySelector('.sq-q[data-q=for]'), pressed: document.querySelector('[data-a=her]').getAttribute('aria-pressed'),
       hint: document.querySelector('.sq-q .sq-sub')?.textContent, enabled: !document.querySelector('[data-act=next][data-q=for]').disabled,
       pageHidden: getComputedStyle(document.querySelector('[data-existing-content]')).display === 'none' }));
+    check(`${tag}: screen 1 = "Which fragrances do you prefer?" For Her / For Him / Unisex`, await page.evaluate(() => document.querySelector('.sq-q .sq-title').textContent === 'Which fragrances do you prefer?' && [...document.querySelectorAll('.sq-tile__label')].map((e) => e.textContent).join('|') === 'For Her|For Him|Unisex'));
     check(`${tag}: one-answer screen stays after a tap ("Pick one.", Continue enabled), page sections below hidden while asking`, v39.still && v39.pressed === 'true' && v39.hint === 'Pick one.' && v39.enabled && v39.pageHidden, JSON.stringify(v39));
     await page.click('[data-act=next][data-q=for]');
     await page.waitForSelector('.sq-pop__tile');
@@ -111,6 +113,7 @@ for (const vp of VIEWPORTS) {
     const tabooScreen = await page.evaluate(() => ({ title: document.querySelector('.sq-q .sq-title').textContent, hint: document.querySelector('.sq-q .sq-sub')?.textContent,
       chips: [...document.querySelectorAll('.sq-chips--taboo .sq-chip span')].map((e) => e.textContent), andAlso: /and also/i.test(document.querySelector('.sq-q').textContent),
       switches: document.querySelectorAll('.sq-q [data-a=strong], .sq-q [data-a=office]').length }));
+    check(`${tag}: taboo answers named by notes, Oud and Smoke & incense separate`, tabooScreen.chips.join('|') === 'Very sweet|Powdery|Intense florals|Marine & ozonic|Oud|Smoke & incense|Coconut|Patchouli|Nothing in particular', tabooScreen.chips.join('|'));
     check(`${tag}: taboo screen = "What would you rather avoid?" + "Select all that apply." + one grid with "Nothing in particular"; switches moved out`,
       tabooScreen.title === 'What would you rather avoid?' && tabooScreen.hint === 'Select all that apply.' && tabooScreen.chips.includes('Nothing in particular') && !tabooScreen.andAlso && tabooScreen.switches === 0, JSON.stringify(tabooScreen.chips));
     for (const a of ['too-sweet', 'coconut']) await page.click(`[data-act=toggle][data-a="${a}"]`);

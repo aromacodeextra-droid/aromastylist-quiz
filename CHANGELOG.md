@@ -1,5 +1,16 @@
 # Changelog
 
+## quiz-v3.10 (2026-10-02) — review round, stage 2: screen 1 and "What would you rather avoid?"
+
+- Screen 1: "Which fragrances do you prefer?" with For Her / For Him / Unisex. Icon slots: `sq-icon-for-her|him|both.svg`.
+- Avoid screen, named by notes with plain hints: Very sweet (caramel, honey, candy) · Powdery (iris, violet, lipstick) ·
+  Intense florals (tuberose, gardenia, ylang) · Marine & ozonic (sea air, watery fresh) · **Oud** (dark, resinous
+  wood) · **Smoke & incense** (campfire, church) — now two separate answers · Coconut (beachy, like sun cream) ·
+  Patchouli (earthy, damp woods) · Nothing in particular. Old share links keep working.
+- Fix: Continue no longer flickers when it sits right at the bottom edge of the screen.
+- Changed theme files: `assets/scent-quiz.js`, `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
+  `templates/aromastylist.scent-quiz.section.json` (screen 1 labels). Combinations 51,260 / 0 failures, e2e 98 / 98.
+
 ## quiz-v3.9 (2026-10-02) — review round, stage 1: general
 
 - One-answer screens no longer jump ahead: a tap selects (a second tap on another answer replaces it), Continue moves
