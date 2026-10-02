@@ -158,6 +158,15 @@ for (const vp of VIEWPORTS) {
     await page.screenshot({ path: `${SHOTS}/${vp.name}-05b-week-viewport.png` });
     await page.click('[data-act=next][data-q=week]');
     await shot(page, '06-how');
+    const how = await page.evaluate(() => {
+      const t = [...document.querySelectorAll('.sq-tiles[data-q=how] .sq-tile')], r = t.map((b) => b.getBoundingClientRect());
+      const boxes = [...document.querySelectorAll('.sq-tiles[data-q=how] .sq-tile__img')].map((b) => b.getBoundingClientRect());
+      return { title: document.querySelector('.sq-q .sq-title').textContent, labels: [...document.querySelectorAll('.sq-tiles[data-q=how] .sq-tile__label')].map((e) => e.innerText),
+        hints: [...document.querySelectorAll('.sq-tiles[data-q=how] .sq-tile__hint')].map((e) => e.textContent), cols: new Set(r.map((x) => Math.round(x.left))).size,
+        boxes: [...new Set(boxes.map((b) => Math.round(b.width / 2) * 2 + 'x' + Math.round(b.height / 2) * 2))], fits: [...document.querySelectorAll('.sq-tiles[data-q=how] img')].every((i) => { const r = i.getBoundingClientRect(), b = i.parentElement.getBoundingClientRect(); return r.top >= b.top - 0.5 && r.bottom <= b.bottom + 0.5; }) };
+    });
+    check(`${tag}: "What would your fragrance wardrobe look like?" - normal-case names, short hints, ${vp.width > 700 ? 'three columns' : 'one card per row'}, equal icon boxes`,
+      how.title === 'What would your fragrance wardrobe look like?' && how.labels.join('|') === 'One bottle|Day & night|A full wardrobe' && how.hints.join('|') === 'One scent for everything|One for day, one for night|3–5 scents for different moments' && how.cols === (vp.width > 700 ? 3 : 1) && how.boxes.length === 1 && how.fits, JSON.stringify(how));
     await choose(page, '[data-act=answer][data-a=full-wardrobe]');
     await page.click('[data-act=toggle][data-a=confident]');
     await page.click('[data-act=toggle][data-a=attractive]');

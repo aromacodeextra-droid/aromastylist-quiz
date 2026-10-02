@@ -467,13 +467,13 @@
     {
       "id": "how",
       "type": "single",
-      "title": "How do you wear perfume?",
+      "title": "What would your fragrance wardrobe look like?",
       "subtitle": "Pick one.",
       "answers": [
         {
           "id": "one-bottle",
           "label": "One bottle",
-          "hint": "One perfume for everything",
+          "hint": "One scent for everything",
           "min": 1,
           "max": 1,
           "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/768F88D6-A815-46E6-B09E-4223387D5C0D.png"
@@ -481,7 +481,7 @@
         {
           "id": "day-night",
           "label": "Day & night",
-          "hint": "One for day, one for after dark",
+          "hint": "One for day, one for night",
           "split": [
             "everyday",
             "evening"
@@ -491,12 +491,13 @@
         {
           "id": "full-wardrobe",
           "label": "A full wardrobe",
-          "hint": "3 to 5, one for each part of my week",
+          "hint": "3–5 scents for different moments",
           "min": 3,
           "max": 5,
           "image": "https://cdn.shopify.com/s/files/1/0901/7344/0280/collections/99A11F99-2D04-40A1-9AC7-C020D16B0A6A.png"
         }
-      ]
+      ],
+      "layout": "rows-m"
     },
     {
       "id": "feel",

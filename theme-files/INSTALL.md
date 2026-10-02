@@ -61,7 +61,7 @@ Blocks exist for the questions with image tiles. An empty picker shows the defau
 |---|---|---|
 | `for` | 1 Which fragrances do you prefer? | `her`, `him`, `both` |
 | `notes` | 2b Which notes pull you in? (only after "I don't have one") | `citrus`, `green`, `aquatic`, `florals`, `white-florals`, `fruity`, `gourmand`, `woods`, `amber`, `oud-leather`, `spices`, `musk-powder` |
-| `how` | 5 How do you wear perfume? | `one-bottle`, `day-night`, `full-wardrobe` |
+| `how` | 5 What would your fragrance wardrobe look like? | `one-bottle`, `day-night`, `full-wardrobe` |
 | `feel` | 6 How do you want to feel? | `confident`, `attractive`, `calm`, `energised`, `festive`, `free` |
 | `presence` | 7 How noticeable should your fragrance be? | `close`, `noticed`, `fills` |
 | `matters` | 8 What matters most? | `easy`, `trending`, `unique` |

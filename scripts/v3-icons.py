@@ -18,7 +18,7 @@ SHEETS = [
                         'week-events-celebrations', 'week-sport', 'week-time-for-me-growth']),
     ('matters.png', 1, ['matters-easy', 'matters-trending', 'matters-unique']),
     ('for.png', 1, ['for-her', 'for-him', 'for-both']),
-    ('how.png', 1, ['how-one-bottle', 'how-day-night', 'how-full-wardrobe'], 40),  # bottles + sun / moon belong together
+    ('how.png', 1, ['how-one-bottle', 'how-day-night', 'how-full-wardrobe'], 40, 'tight'),  # bottles + sun / moon belong together; drawn in a wide box
 ]
 
 
@@ -42,7 +42,8 @@ def inside(a, b):
     return a != b and a[0].start >= b[0].start and a[0].stop <= b[0].stop and a[1].start >= b[1].start and a[1].stop <= b[1].stop
 
 
-for sheet, rows, names, *grow in SHEETS:
+for sheet, rows, names, *extra in SHEETS:
+    grow = [x for x in extra if isinstance(x, int)]
     rgb = np.asarray(Image.open(f'{SRC}/{sheet}').convert('RGB')).astype(float)
     lum = rgb.mean(2)
     lab, _ = ndimage.label(ndimage.binary_dilation(lum < 200, iterations=grow[0] if grow else 25))
@@ -64,6 +65,8 @@ for sheet, rows, names, *grow in SHEETS:
         # but never more than 96 % of it in either direction; a tall figure fills the height, a hammock the width
         side = max(max(w, h) / 0.96, (w * h) ** 0.5 / 0.66)
         vb = f'{-(side - w) / 2:.0f} {-(side - h) / 2:.0f} {side:.0f} {side:.0f}'
+        if 'tight' in extra:  # the page gives these one wide box of equal size; the drawing keeps its own proportions
+            vb = f'-8 -8 {w + 16} {h + 16}'
         svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}">'
                f'<path fill="{gold}" fill-rule="evenodd" d="{trace(big >= 190)}"/></svg>')
         path = f'{OUT}/sq-icon-{name}.svg'

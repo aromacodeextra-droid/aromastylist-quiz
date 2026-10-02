@@ -1,5 +1,18 @@
 # Changelog
 
+## quiz-v3.21 (2026-10-02) — "What would your fragrance wardrobe look like?"
+
+- Question "How do you wear perfume?" -> **"What would your fragrance wardrobe look like?"** (choosing a set, not a way
+  of applying). Names in normal case: One bottle / Day & night / A full wardrobe. Short hints: One scent for
+  everything / One for day, one for night / 3–5 scents for different moments.
+- Phones: three horizontal cards, icon left in one equal 112 x 72 box (wide enough for three bottles), name and hint
+  right, tick on the right; desktop keeps three columns.
+- The three bottle icons keep their own proportions (no square padding) and are centred in that box.
+- Fix: the live theme forces `img { height: auto !important }`, which pushed tall icons out of their box; quiz icons
+  now hold their box on every screen.
+- Changed theme files: `assets/sq-icon-how-*.svg` (3), `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
+  `assets/scent-quiz-aromastylist-taste.json`, `templates/page.find-your-perfume.json` (question title). e2e 125 / 125.
+
 ## quiz-v3.20 (2026-10-02) — icons for "How do you wear perfume?"
 
 - The owner's bottle icons: One bottle (one bottle), Day & night (two bottles, sun and moon), A full wardrobe (three

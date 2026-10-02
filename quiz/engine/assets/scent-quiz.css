@@ -446,3 +446,27 @@ html.sq-asking .sq-section--personas { display: none; }
 }
 /* the steps start below a sticky site header even when the browser scrolls to them itself */
 .sq-section { scroll-margin-top: 90px; }
+
+/* v3.21: "What would your fragrance wardrobe look like?" - horizontal cards on phones, three columns on desktop */
+.sq-tiles[data-layout="rows-m"] .sq-tile__label { text-transform: none; letter-spacing: normal; font-size: 15px; }
+.sq-tiles[data-layout="rows-m"] .sq-tile__img img.sq-icon { object-fit: contain; }
+@media (max-width: 749px) {
+  .sq-tiles[data-layout="rows-m"] { grid-template-columns: 1fr; gap: 10px; }
+  :is(#root, body) .sq-section .sq-tiles[data-layout="rows-m"] .sq-tile { display: grid; grid-template-columns: 112px minmax(0, 1fr); grid-template-rows: auto auto;
+    align-items: center; column-gap: 16px; min-height: 96px; padding: 12px 44px 12px 12px; text-align: left; }
+  /* one box for every drawing, wide enough for three bottles; the drawing keeps its proportions, centred */
+  .sq-tiles[data-layout="rows-m"] .sq-tile__img { grid-row: 1 / 3; width: 112px; height: 72px; aspect-ratio: auto; background: none; }
+  .sq-tiles[data-layout="rows-m"] .sq-tile__img img.sq-icon { width: 100%; height: 100%; }
+  .sq-tiles[data-layout="rows-m"] .sq-tile__label { align-self: end; justify-content: flex-start; padding: 0; }
+  .sq-tiles[data-layout="rows-m"] .sq-tile__hint { align-self: start; margin: 3px 0 0; padding: 0; font-size: 13px; }
+  :is(#root, body) .sq-section .sq-tiles[data-layout="rows-m"] .sq-tile[aria-pressed="true"]::after { top: 50%; margin-top: -11px; right: 12px; }
+}
+@media (min-width: 750px) {
+  .sq-tiles[data-layout="rows-m"] .sq-tile__img { aspect-ratio: 4 / 3; }
+  .sq-tiles[data-layout="rows-m"] .sq-tile__img img.sq-icon { width: 76%; height: 76%; }
+}
+:is(#root, body) .sq-section .sq-tiles[data-layout="rows-m"] .sq-tile__img img.sq-icon { object-fit: contain; transform: none; }
+/* the theme sets img { height: auto }: hold the icon to its box so "contain" can centre it */
+:is(#root, body) .sq-section .sq-tile__img img.sq-icon { width: 80% !important; height: 80% !important; }
+:is(#root, body) .sq-section .sq-tiles[data-layout="rows-m"] .sq-tile__img img.sq-icon { width: 76% !important; height: 76% !important; }
+@media (max-width: 749px) { :is(#root, body) .sq-section .sq-tiles[data-layout="rows-m"] .sq-tile__img img.sq-icon { width: 100% !important; height: 100% !important; } }
