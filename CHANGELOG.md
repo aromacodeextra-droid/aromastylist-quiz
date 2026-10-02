@@ -1,5 +1,12 @@
 # Changelog
 
+## quiz-v3.23 (2026-10-02) — result bottles never cut
+
+- On the live theme (`img { height: auto !important }`) tall bottles in the result cards ran out of their square and
+  were cut at the bottom (Aqua Celestia, Ani, Thundra). Every quiz picture now keeps its box; result and set bottles
+  are shown whole (contain) on white.
+- Changed theme file: `assets/scent-quiz.css`. e2e 128 / 128 (new check: result bottles fit their square).
+
 ## quiz-v3.22 (2026-10-02) — Unisex style photos (couples)
 
 - Unisex now sees the owner's couple photos on all six clothing styles (`sq-photo-style-<answer>-both.webp`).

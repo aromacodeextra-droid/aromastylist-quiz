@@ -113,6 +113,10 @@
       "detail": "{\"title\":\"Which clothing style feels most like you?\",\"hint\":\"Pick up to two.\",\"n\":2,\"btn\":\"See my matches\"}"
     },
     {
+      "name": "390-A: result bottles are shown whole inside their square (no cropping)",
+      "ok": true
+    },
+    {
       "name": "390-A: persona list and the page's own sections are back under the result",
       "ok": true
     },
@@ -335,6 +339,10 @@
       "name": "1440-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
       "ok": true,
       "detail": "{\"title\":\"Which clothing style feels most like you?\",\"hint\":\"Pick up to two.\",\"n\":2,\"btn\":\"See my matches\"}"
+    },
+    {
+      "name": "1440-A: result bottles are shown whole inside their square (no cropping)",
+      "ok": true
     },
     {
       "name": "1440-A: persona list and the page's own sections are back under the result",
@@ -579,10 +587,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 29.8 KB, assets/scent-quiz.js 52.6 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 30.2 KB, assets/scent-quiz.js 52.6 KB"
     },
     {
-      "name": "JS + CSS + JSON 188.6 KB <= 200 KB",
+      "name": "JS + CSS + JSON 189.0 KB <= 200 KB",
       "ok": true
     },
     {
@@ -943,7 +951,7 @@
       "templates/aromastylist.scent-quiz.section.json": 16566,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
       "assets/scent-quiz-aromastylist.json": 59096,
-      "assets/scent-quiz.css": 30503,
+      "assets/scent-quiz.css": 30916,
       "assets/scent-quiz.js": 53831,
       "assets/sq-icon-feel-attractive.svg": 5179,
       "assets/sq-icon-feel-calm.svg": 6815,
@@ -1045,7 +1053,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 193154,
+    "code_total": 193567,
     "images": 77,
     "images_total": 1269250
   }

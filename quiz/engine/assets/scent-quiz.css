@@ -470,3 +470,9 @@ html.sq-asking .sq-section--personas { display: none; }
 :is(#root, body) .sq-section .sq-tile__img img.sq-icon { width: 80% !important; height: 80% !important; }
 :is(#root, body) .sq-section .sq-tiles[data-layout="rows-m"] .sq-tile__img img.sq-icon { width: 76% !important; height: 76% !important; }
 @media (max-width: 749px) { :is(#root, body) .sq-section .sq-tiles[data-layout="rows-m"] .sq-tile__img img.sq-icon { width: 100% !important; height: 100% !important; } }
+/* v3.23: the theme forces img { height: auto !important }; every quiz picture keeps its square instead.
+   Bottles in the result are shown whole (contain), never cut. */
+:is(#root, body) .sq-section .sq-card__img img, :is(#root, body) .sq-section .sq-set__img img { width: 100% !important; height: 100% !important; object-fit: contain; }
+:is(#root, body) .sq-section .sq-tile__img img:not(.sq-icon) { width: 100% !important; height: 100% !important; }
+:is(#root, body) .sq-section .sq-pop__tile img { width: 100% !important; height: auto !important; aspect-ratio: 1 / 1; }
+.sq-card__img, .sq-set__img { background: #fff; }
