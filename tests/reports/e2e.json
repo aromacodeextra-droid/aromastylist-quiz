@@ -17,7 +17,7 @@
     {
       "name": "390-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=82fd97f0"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=5484224c"
     },
     {
       "name": "390-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -170,7 +170,7 @@
     {
       "name": "390-B: For Him sees the owner's style photos",
       "ok": true,
-      "detail": "sq-photo-style-classic-him.webp?v=82fd97f0, sq-photo-style-dramatic-him.webp?v=82fd97f0, sq-photo-style-romantic-him.webp?v=82fd97f0, sq-photo-style-minimal-him.webp?v=82fd97f0, sq-photo-style-casual-him.webp?v=82fd97f0"
+      "detail": "sq-photo-style-classic-him.webp?v=5484224c, sq-photo-style-dramatic-him.webp?v=5484224c, sq-photo-style-romantic-him.webp?v=5484224c, sq-photo-style-minimal-him.webp?v=5484224c, sq-photo-style-casual-him.webp?v=5484224c, sq-photo-style-sporty-him.webp?v=5484224c"
     },
     {
       "name": "390-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
@@ -226,7 +226,7 @@
     {
       "name": "1440-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=82fd97f0"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=5484224c"
     },
     {
       "name": "1440-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -379,7 +379,7 @@
     {
       "name": "1440-B: For Him sees the owner's style photos",
       "ok": true,
-      "detail": "sq-photo-style-classic-him.webp?v=82fd97f0, sq-photo-style-dramatic-him.webp?v=82fd97f0, sq-photo-style-romantic-him.webp?v=82fd97f0, sq-photo-style-minimal-him.webp?v=82fd97f0, sq-photo-style-casual-him.webp?v=82fd97f0"
+      "detail": "sq-photo-style-classic-him.webp?v=5484224c, sq-photo-style-dramatic-him.webp?v=5484224c, sq-photo-style-romantic-him.webp?v=5484224c, sq-photo-style-minimal-him.webp?v=5484224c, sq-photo-style-casual-him.webp?v=5484224c, sq-photo-style-sporty-him.webp?v=5484224c"
     },
     {
       "name": "1440-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
@@ -546,7 +546,7 @@
       "ok": true
     },
     {
-      "name": "64 images 973 KB <= 1.8 MB, each <= 30 KB",
+      "name": "65 images 990 KB <= 1.8 MB, each <= 30 KB",
       "ok": true
     }
   ],
@@ -902,7 +902,7 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16545,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59322,
+      "assets/scent-quiz-aromastylist.json": 59336,
       "assets/scent-quiz.css": 27626,
       "assets/scent-quiz.js": 53377,
       "assets/sq-icon-feel-attractive.svg": 4308,
@@ -929,6 +929,7 @@
       "assets/sq-photo-style-dramatic-him.webp": 23338,
       "assets/sq-photo-style-minimal-him.webp": 18426,
       "assets/sq-photo-style-romantic-him.webp": 20410,
+      "assets/sq-photo-style-sporty-him.webp": 17258,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -989,8 +990,8 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 190049,
-    "images": 64,
-    "images_total": 996562
+    "code_total": 190063,
+    "images": 65,
+    "images_total": 1013820
   }
 }

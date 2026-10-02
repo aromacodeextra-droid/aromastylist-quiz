@@ -3,13 +3,13 @@
 ## quiz-v3.16 (2026-10-02) — clothing-style photos (men's)
 
 - The owner's photos for For Him: Classic (navy suit), Dramatic (leather biker), Romantic (light-blue shirt, chinos),
-  Minimal (cream linen), Casual (denim). Sporty keeps its placeholder until a photo comes.
+  Minimal (cream linen), Casual (denim), Sporty (black zip jacket).
 - Photos follow screen 1: `sq-photo-style-<answer>-him.webp` for For Him, `-her.webp` for For Her (coming), Unisex
   takes the men's one, then the women's. For Her keeps the placeholders until the women's photos arrive.
 - `scripts/v3-photos.py` turns the owner's files in `quiz/brands/aromastylist/photos-src/` into 600 px WebP
   (<= 30 KB; these are 17-26 KB).
 - The moments question no longer carries the unused Rarely / Sometimes / A lot labels (config 59.3 KB).
-- New theme files: `assets/sq-photo-style-{classic,dramatic,romantic,minimal,casual}-him.webp`. Changed:
+- New theme files: `assets/sq-photo-style-{classic,dramatic,romantic,minimal,casual,sporty}-him.webp`. Changed:
   `assets/scent-quiz.js`, `assets/scent-quiz-aromastylist.json`, `assets/scent-quiz-aromastylist-taste.json`. e2e 118 / 118.
 
 ## quiz-v3.15 (2026-10-02) — the owner's icons

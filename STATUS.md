@@ -7,8 +7,8 @@ Last saved: 2026-10-02, version **quiz-v3.16**, branch `quiz-v3` (pushed to GitH
 - Theme copy (unpublished): **"Xtra – scent quiz (copy of live, 2026-09-30)"**, id `189533225240`.
 - Link: https://aromastylist.com/pages/find-your-perfume?preview_theme_id=189533225240
 - The live theme and the rest of the site are untouched. The owner publishes herself.
-- The copy holds exactly the repo files of v3.16, checked by md5 on 2026-10-02: 89 files from `theme-files/`
-  (sections, js, css, two JSON files, 59 bottle images, 19 owner icons, 5 style photos) plus `templates/page.find-your-perfume.json` =
+- The copy holds exactly the repo files of v3.16, checked by md5 on 2026-10-02: 90 files from `theme-files/`
+  (sections, js, css, two JSON files, 59 bottle images, 19 owner icons, 6 men's style photos) plus `templates/page.find-your-perfume.json` =
   `docs/theme-copy/page.find-your-perfume.json`.
 - The second copy "Home Journal" (`189529096472`) still has an old version; update it only if asked.
 
@@ -31,8 +31,7 @@ Details per version: `CHANGELOG.md`.
    Waiting for the owner's look on her phone.
 2. Owner icons in place (v3.15): screen 1, feelings, moments, What matters. Still to come: avoid-screen and
    season icons (optional; built-in season icons work), women's clothing-style photos (put them in
-   `quiz/brands/aromastylist/photos-src/style-<answer>-her.png`, run `python3 scripts/v3-photos.py`), and a Sporty
-   photo (men's and women's). When the owner sends icons / photos, drop them in `theme-files/assets/` with these names and rebuild:
+   `quiz/brands/aromastylist/photos-src/style-<answer>-her.png`, run `python3 scripts/v3-photos.py`). When the owner sends icons / photos, drop them in `theme-files/assets/` with these names and rebuild:
    - screen 1: `sq-icon-for-her.svg`, `sq-icon-for-him.svg`, `sq-icon-for-both.svg`
    - feelings: `sq-icon-feel-<confident|attractive|calm|energised|festive|free>.svg`
    - moments: `sq-icon-week-<everyday-errands|work-study|evenings-dates|events-celebrations|family-home|sport|time-for-me-growth>.svg`
