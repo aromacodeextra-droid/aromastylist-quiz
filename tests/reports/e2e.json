@@ -992,7 +992,7 @@
   "weight": {
     "files": {
       "sections/scent-quiz-personas.liquid": 2659,
-      "sections/scent-quiz.liquid": 9383,
+      "sections/scent-quiz.liquid": 9350,
       "templates/aromastylist.scent-quiz.section.json": 16566,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
       "assets/scent-quiz-aromastylist.json": 58779,
