@@ -1,5 +1,12 @@
 # Changelog
 
+## quiz-v3.18 (2026-10-02) — Santal 33 on white
+
+- The Santal 33 tile had Le Labo's dark-grey studio background. The grey is now divided out and everything outside the
+  bottle outline is white, like the other tiles (`scripts/v3-santal33-white.py`, 17.9 KB).
+- Changed theme files: `assets/sq-ref-le-labo-santal-33.webp`, `assets/scent-quiz-aromastylist-taste.json` (image
+  version, so phones fetch the new picture at once). e2e 118 / 118.
+
 ## quiz-v3.17 (2026-10-02) — clothing-style photos (women's)
 
 - For Her: Classic (cream tweed suit), Dramatic (black sculpted suit), Romantic (pink ruffled dress), Minimal (beige

@@ -17,7 +17,7 @@
     {
       "name": "390-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=c27b8ef5"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=cb0b3df6"
     },
     {
       "name": "390-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -91,7 +91,7 @@
     {
       "name": "390-A: For Her sees the women's style photos, never the men's",
       "ok": true,
-      "detail": "sq-photo-style-classic-her.webp?v=c27b8ef5, sq-photo-style-dramatic-her.webp?v=c27b8ef5, sq-photo-style-romantic-her.webp?v=c27b8ef5, sq-photo-style-minimal-her.webp?v=c27b8ef5, sq-photo-style-casual-her.webp?v=c27b8ef5, sq-photo-style-sporty-her.webp?v=c27b8ef5"
+      "detail": "sq-photo-style-classic-her.webp?v=cb0b3df6, sq-photo-style-dramatic-her.webp?v=cb0b3df6, sq-photo-style-romantic-her.webp?v=cb0b3df6, sq-photo-style-minimal-her.webp?v=cb0b3df6, sq-photo-style-casual-her.webp?v=cb0b3df6, sq-photo-style-sporty-her.webp?v=cb0b3df6"
     },
     {
       "name": "390-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
@@ -171,7 +171,7 @@
     {
       "name": "390-B: For Him sees the owner's style photos",
       "ok": true,
-      "detail": "sq-photo-style-classic-him.webp?v=c27b8ef5, sq-photo-style-dramatic-him.webp?v=c27b8ef5, sq-photo-style-romantic-him.webp?v=c27b8ef5, sq-photo-style-minimal-him.webp?v=c27b8ef5, sq-photo-style-casual-him.webp?v=c27b8ef5, sq-photo-style-sporty-him.webp?v=c27b8ef5"
+      "detail": "sq-photo-style-classic-him.webp?v=cb0b3df6, sq-photo-style-dramatic-him.webp?v=cb0b3df6, sq-photo-style-romantic-him.webp?v=cb0b3df6, sq-photo-style-minimal-him.webp?v=cb0b3df6, sq-photo-style-casual-him.webp?v=cb0b3df6, sq-photo-style-sporty-him.webp?v=cb0b3df6"
     },
     {
       "name": "390-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
@@ -227,7 +227,7 @@
     {
       "name": "1440-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=c27b8ef5"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=cb0b3df6"
     },
     {
       "name": "1440-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -301,7 +301,7 @@
     {
       "name": "1440-A: For Her sees the women's style photos, never the men's",
       "ok": true,
-      "detail": "sq-photo-style-classic-her.webp?v=c27b8ef5, sq-photo-style-dramatic-her.webp?v=c27b8ef5, sq-photo-style-romantic-her.webp?v=c27b8ef5, sq-photo-style-minimal-her.webp?v=c27b8ef5, sq-photo-style-casual-her.webp?v=c27b8ef5, sq-photo-style-sporty-her.webp?v=c27b8ef5"
+      "detail": "sq-photo-style-classic-her.webp?v=cb0b3df6, sq-photo-style-dramatic-her.webp?v=cb0b3df6, sq-photo-style-romantic-her.webp?v=cb0b3df6, sq-photo-style-minimal-her.webp?v=cb0b3df6, sq-photo-style-casual-her.webp?v=cb0b3df6, sq-photo-style-sporty-her.webp?v=cb0b3df6"
     },
     {
       "name": "1440-A: \"Which clothing style feels most like you?\" - up to two styles, ends with \"See my matches\"",
@@ -381,7 +381,7 @@
     {
       "name": "1440-B: For Him sees the owner's style photos",
       "ok": true,
-      "detail": "sq-photo-style-classic-him.webp?v=c27b8ef5, sq-photo-style-dramatic-him.webp?v=c27b8ef5, sq-photo-style-romantic-him.webp?v=c27b8ef5, sq-photo-style-minimal-him.webp?v=c27b8ef5, sq-photo-style-casual-him.webp?v=c27b8ef5, sq-photo-style-sporty-him.webp?v=c27b8ef5"
+      "detail": "sq-photo-style-classic-him.webp?v=cb0b3df6, sq-photo-style-dramatic-him.webp?v=cb0b3df6, sq-photo-style-romantic-him.webp?v=cb0b3df6, sq-photo-style-minimal-him.webp?v=cb0b3df6, sq-photo-style-casual-him.webp?v=cb0b3df6, sq-photo-style-sporty-him.webp?v=cb0b3df6"
     },
     {
       "name": "1440-B: day & night -> 2 slots (Everyday Signature + Evening & Seduction)",
@@ -548,7 +548,7 @@
       "ok": true
     },
     {
-      "name": "71 images 1096 KB <= 1.8 MB, each <= 30 KB",
+      "name": "71 images 1085 KB <= 1.8 MB, each <= 30 KB",
       "ok": true
     }
   ],
@@ -969,7 +969,7 @@
       "assets/sq-ref-kilian-good-girl-gone-bad.webp": 8170,
       "assets/sq-ref-lancome-idole.webp": 9506,
       "assets/sq-ref-lancome-la-vie-est-belle.webp": 18516,
-      "assets/sq-ref-le-labo-santal-33.webp": 29320,
+      "assets/sq-ref-le-labo-santal-33.webp": 17852,
       "assets/sq-ref-marc-jacobs-daisy.webp": 10824,
       "assets/sq-ref-margiela-by-the-fireplace.webp": 21974,
       "assets/sq-ref-margiela-jazz-club.webp": 22188,
@@ -1000,6 +1000,6 @@
     },
     "code_total": 190069,
     "images": 71,
-    "images_total": 1122122
+    "images_total": 1110654
   }
 }
