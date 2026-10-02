@@ -17,7 +17,7 @@
     {
       "name": "390-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=1774ef40"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=8ba51445"
     },
     {
       "name": "390-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -217,7 +217,7 @@
     {
       "name": "1440-A: bottle images carry a version (?v=), so a replaced image reaches phones at once",
       "ok": true,
-      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=1774ef40"
+      "detail": "/theme-files/assets/sq-ref-ysl-black-opium.webp?v=8ba51445"
     },
     {
       "name": "1440-A: typo \"bacarat\" finds Baccarat Rouge 540",
@@ -255,7 +255,7 @@
     {
       "name": "1440-A: week screen - Continue visible without scrolling, counter \"4 / 10\", persona list hidden during the quiz",
       "ok": true,
-      "detail": "{\"anc\":[\"BODY#.:clip visible:static\",\"HTML#.js sq-asking:hidden auto:static\"],\"rt\":609.21875,\"ih\":900,\"inView\":true,\"step\":\"4 / 10\",\"personas\":\"none\"}"
+      "detail": "{\"anc\":[\"BODY#.:clip visible:static\",\"HTML#.js sq-asking:hidden auto:static\"],\"rt\":753.21875,\"ih\":900,\"inView\":true,\"step\":\"4 / 10\",\"personas\":\"none\"}"
     },
     {
       "name": "1440-A: a third feeling is not taken silently: \"You can pick 2\" message, the two stay",
@@ -521,10 +521,10 @@
     {
       "name": "every theme file <= 60 KB (images aside)",
       "ok": true,
-      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.7 KB, assets/scent-quiz.css 26.9 KB, assets/scent-quiz.js 51.9 KB"
+      "detail": "assets/scent-quiz-aromastylist-taste.json 48.6 KB, assets/scent-quiz-aromastylist.json 57.9 KB, assets/scent-quiz.css 27.0 KB, assets/scent-quiz.js 51.9 KB"
     },
     {
-      "name": "JS + CSS + JSON 185.0 KB <= 200 KB",
+      "name": "JS + CSS + JSON 185.3 KB <= 200 KB",
       "ok": true
     },
     {
@@ -884,9 +884,28 @@
       "sections/scent-quiz.liquid": 5268,
       "templates/aromastylist.scent-quiz.section.json": 16545,
       "assets/scent-quiz-aromastylist-taste.json": 49724,
-      "assets/scent-quiz-aromastylist.json": 59056,
-      "assets/scent-quiz.css": 27510,
+      "assets/scent-quiz-aromastylist.json": 59292,
+      "assets/scent-quiz.css": 27626,
       "assets/scent-quiz.js": 53139,
+      "assets/sq-icon-feel-attractive.svg": 4308,
+      "assets/sq-icon-feel-calm.svg": 5652,
+      "assets/sq-icon-feel-confident.svg": 4320,
+      "assets/sq-icon-feel-energised.svg": 3677,
+      "assets/sq-icon-feel-festive.svg": 4864,
+      "assets/sq-icon-feel-free.svg": 3478,
+      "assets/sq-icon-for-both.svg": 6977,
+      "assets/sq-icon-for-her.svg": 4806,
+      "assets/sq-icon-for-him.svg": 4001,
+      "assets/sq-icon-matters-easy.svg": 3506,
+      "assets/sq-icon-matters-trending.svg": 2770,
+      "assets/sq-icon-matters-unique.svg": 3275,
+      "assets/sq-icon-week-evenings-dates.svg": 3456,
+      "assets/sq-icon-week-events-celebrations.svg": 4053,
+      "assets/sq-icon-week-everyday-errands.svg": 5115,
+      "assets/sq-icon-week-family-home.svg": 5806,
+      "assets/sq-icon-week-sport.svg": 4063,
+      "assets/sq-icon-week-time-for-me-growth.svg": 2697,
+      "assets/sq-icon-week-work-study.svg": 4786,
       "assets/sq-ref-armani-acqua-di-gio-profondo.webp": 10196,
       "assets/sq-ref-armani-acqua-di-gio.webp": 7230,
       "assets/sq-ref-armani-stronger-with-you-intensely.webp": 20176,
@@ -947,7 +966,7 @@
       "assets/sq-ref-ysl-mon-paris.webp": 16942,
       "assets/sq-ref-ysl-y.webp": 12692
     },
-    "code_total": 189429,
+    "code_total": 189781,
     "images": 59,
     "images_total": 891710
   }

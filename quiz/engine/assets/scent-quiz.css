@@ -420,3 +420,6 @@ html.sq-asking .sq-section--personas { display: none; }
 @media (min-width: 750px) { .sq-card { grid-template-columns: 160px minmax(0, 1fr); } }
 :is(#root, body) .sq-section .sq-card .sq-btn--sm { max-width: 100%; padding: 6px 10px; font-size: 11px; letter-spacing: .03em; }
 :is(#root, body) .sq-section .sq-card__name a { color: var(--sq-fg); }
+/* v3.15: owner figures on the moment chips are read at a glance: a bit larger */
+.sq-chips--moments .sq-icon-sm { width: 40px; height: 40px; margin: 0 0 6px; }
+.sq-tile__img img.sq-icon { width: 80%; height: 80%; }

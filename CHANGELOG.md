@@ -1,5 +1,15 @@
 # Changelog
 
+## quiz-v3.15 (2026-10-02) — the owner's icons
+
+- 19 line icons from the owner, traced to SVG in the brand gold (`scripts/v3-icons.py`, sheets in
+  `quiz/brands/aromastylist/icons-src/`): screen 1 For Her / For Him / Unisex; feelings Confident, Attractive, Calm,
+  Energised, Festive, Carefree; moments Work & study, Everyday & errands, Home & family, Evenings & dates, Special
+  occasions, Sport & active, Me-time; What matters Easy to wear, Our bestsellers, Something less expected. 82 KB in all.
+- Answers with an icon no longer carry their placeholder photo link (config stays under 60 KB: 59.3 KB).
+- New theme files: `assets/sq-icon-*.svg` (19). Changed: `assets/scent-quiz.css`, `assets/scent-quiz-aromastylist.json`,
+  `assets/scent-quiz-aromastylist-taste.json` (image version). e2e 114 / 114.
+
 ## quiz-v3.14 (2026-10-02) — photo slots for the clothing styles
 
 - Owner photos: `assets/sq-photo-<question>-<answer>.webp|jpg|png` (e.g. `sq-photo-style-classic.webp`) fill the

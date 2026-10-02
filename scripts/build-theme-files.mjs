@@ -152,6 +152,7 @@ for (const q of config.questions) for (const a of q.answers || []) {
     const f = `sq-photo-${q.id}-${a.id}.${ext}`;
     if (!a.photo_file && fs.existsSync(`${OUT}/assets/${f}`)) a.photo_file = f;
   }
+  if (a.icon_file || a.photo_file) delete a.image; // the owner's icon / photo replaces the placeholder image
 }
 for (const q of config.questions) for (const r of q.rows || []) for (const ext of ['svg', 'png', 'webp']) {
   const f = `sq-icon-${q.id}-${r.id}.${ext}`;
